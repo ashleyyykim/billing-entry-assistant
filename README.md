@@ -1,31 +1,23 @@
 # Billing Entry Assistant
 
-A two-stage pipeline that automates legal time-entry review: matching raw, multi-format time entries to the correct client/matter, then flagging narratives that fail billing guideline standards (vagueness, block billing) before invoice submission.
+Legal time entries show up in messy formats: spreadsheets, PDFs, emails, even handwritten notes. Billing Entry Assistant matches each entry to the right client and matter, then flags narratives that won't hold up to billing guidelines before they reach a client.
 
-Capstone project for UC Berkeley MIDS DATASCI 210.
+Built as a capstone project for UC Berkeley's Master of Information and Data Science (MIDS) program.
+
+## How it works
+
+1. **Extraction and matching:** reads raw time entries in different formats and identifies the client and matter each one belongs to.
+2. **Compliance detection:** checks each narrative against billing guidelines and explains anything it flags, so a person always makes the final call.
+
+## Data
+
+- **Compliance:** real time entries and fee examiner reports from public bankruptcy fee filings on [CourtListener](https://www.courtlistener.com/), with violation categories based on the U.S. Trustee fee guidelines.
+- **Matching:** synthetic time entries modeled on corporate and transactional practice, with known correct matters for evaluation. Real client time records are confidential, so this stage uses synthetic data.
+
+## Repo layout
+
+- `courtlistener_scrape/`: builds reference data from public bankruptcy filings. See its README for details.
 
 ## Team
 
 Serina Li, Ashley Kim, Jennifer Nishimura
-
-## Pipeline
-
-1. **Extraction & Matching** — ingest raw time entries (Excel, PDF, email, handwritten notes) and identify the correct client/matter
-2. **Compliance Detection** — flag narratives against billing guideline standards, with explanations, for human review before submission
-
-## Data
-
-- **Compliance stage**: real, itemized time entries and fee examiner findings pulled from CourtListener/RECAP bankruptcy fee filings, evaluated against U.S. Trustee Fee Guidelines
-- **Extraction/matching stage**: synthetic time entries (starting with Excel format) built to mirror corporate/transactional practice, with known ground-truth matter assignments
-
-## Repo structure
-
-```
-courtlistener_scrape/
-  courtlistener_fee_scraper.ipynb  # scraper notebook
-  cases.csv                        # case list
-  data/
-    raw/                           # raw scraped filings
-    intermediate/                  # parsed, pre-cleaning
-    final/                         # cleaned time entries + fee examiner reports
-```
