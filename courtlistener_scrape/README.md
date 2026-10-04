@@ -13,7 +13,7 @@ The two CSVs in `data/final/` are ready to use:
 
 | File | Contents |
 |---|---|
-| `time_entries_clean_balanced.csv` | Clean attorney time entries from 8 bankruptcy cases, capped per case. `SOURCE:` columns link each entry back to its filing. |
+| `time_entries_clean_balanced.csv` | Clean attorney time entries from bankruptcy cases listed in `cases.csv`, capped per case. `SOURCE:` columns link each entry back to its filing. |
 | `examiner_paragraphs.csv` | Fee examiner report paragraphs tagged by violation category, such as vague entries, block billing, and non-working travel. |
 
 The notebook also produces a full audit file of every parsed entry and the full text of each examiner report. Those are too large for GitHub, so they aren't included here, but the notebook rebuilds them.
