@@ -1,0 +1,23 @@
+# Setup (run from the repo root):
+#   conda env create -f environment.yml
+#   conda activate tenth
+#   python -m ipykernel install --user --name tenth
+# Then select the "tenth" kernel in Jupyter / VS Code.
+
+# After adding a package below:
+#   conda env update -f environment.yml --prune
+
+name: tenth
+channels:
+  - conda-forge
+dependencies:
+  - python=3.14
+  - pandas
+  - numpy
+  - matplotlib
+  - openpyxl
+  - rapidfuzz=3.14.6
+  - jupyter
+  - ipykernel
+  - python-dotenv
+  - requests
