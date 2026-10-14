@@ -17,6 +17,17 @@ Built as a capstone project for UC Berkeley's Master of Information and Data Sci
 ## Repo layout
 
 - `courtlistener_scrape/`: builds reference data from public bankruptcy filings. See its README for details.
+- `matching/`: matches time entries to clients and matters, from fuzzy matching to a rule baseline. See its README for details.
+
+## Setup
+
+```
+conda env create -f environment.yml
+conda activate tenth
+python -m ipykernel install --user --name tenth
+```
+
+Then select the `tenth` kernel in Jupyter or VS Code. After adding a package to `environment.yml`, run `conda env update -f environment.yml --prune`.
 
 ## Team
 
