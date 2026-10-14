@@ -21,3 +21,4 @@ dependencies:
   - ipykernel
   - python-dotenv
   - requests
+  - pyarrow

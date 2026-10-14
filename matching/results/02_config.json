@@ -1,0 +1,82 @@
+{
+  "features": {
+    "typed_fields": [
+      "has_cmid",
+      "has_client",
+      "has_matter",
+      "client_is_ditto",
+      "client_had_matter",
+      "cmid_from_text",
+      "is_pdf",
+      "is_handwritten",
+      "is_email"
+    ],
+    "cmid": [
+      "cmid_valid",
+      "cmid_client_known",
+      "is_typed_cmid",
+      "is_flipped_cmid",
+      "cmid_similarity",
+      "same_client_number"
+    ],
+    "names": [
+      "client_ratio",
+      "client_token_sort_ratio",
+      "client_token_set_ratio",
+      "matter_ratio",
+      "matter_token_sort_ratio",
+      "matter_token_set_ratio"
+    ],
+    "narrative": [
+      "keyterm_score",
+      "keyterm_hits",
+      "own_keyterm_hits",
+      "n_matters_named",
+      "cue_hits",
+      "cue_share",
+      "n_types_cued",
+      "n_parts",
+      "client_in_text",
+      "n_clients_named",
+      "client_contact_hits",
+      "matter_contact_hits"
+    ],
+    "dates": [
+      "not_open",
+      "opened_after_history"
+    ],
+    "history": [
+      "tk_known",
+      "in_history",
+      "history_hours",
+      "history_share"
+    ],
+    "gaps": [
+      "client_ratio_gap",
+      "matter_token_sort_ratio_gap",
+      "keyterm_score_gap",
+      "cue_share_gap",
+      "client_in_text_gap",
+      "history_share_gap",
+      "cmid_similarity_gap"
+    ]
+  },
+  "scorers": [
+    "ratio",
+    "token_sort_ratio",
+    "token_set_ratio"
+  ],
+  "client_col": "client_ratio",
+  "matter_col": "matter_token_sort_ratio",
+  "phrase_min": 90,
+  "gap_cols": [
+    "client_ratio",
+    "matter_token_sort_ratio",
+    "keyterm_score",
+    "cue_share",
+    "client_in_text",
+    "history_share",
+    "cmid_similarity"
+  ],
+  "history_end": "2026-06-30"
+}
