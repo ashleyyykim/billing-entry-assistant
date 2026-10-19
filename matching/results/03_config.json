@@ -1,0 +1,22 @@
+{
+  "rules": {
+    "client_col": "client_ratio",
+    "matter_col": "matter_token_sort_ratio",
+    "client_min": 70,
+    "matter_min": 85,
+    "no_match_max": 75,
+    "phrase_min": 90,
+    "split_other_client": true,
+    "accept_cue_only": false,
+    "require_history": true,
+    "flag_cue_conflict": true,
+    "flag_contact_conflict": true,
+    "cue_fit_agrees": true,
+    "history_within_client": false,
+    "bad_cmid_use_text": true,
+    "bad_cmid_accept_closest": false,
+    "bad_cmid_fallback": "NEEDS_REVIEW",
+    "shortlist_size": 3
+  },
+  "precision_target": 0.98
+}

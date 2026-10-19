@@ -1,0 +1,7 @@
+{
+  "client_scorer": "ratio",
+  "client_runner_up": "token_sort_ratio",
+  "matter_scorer": "token_sort_ratio",
+  "matter_runner_up": "token_set_ratio",
+  "no_match_cutoff": 80
+}
