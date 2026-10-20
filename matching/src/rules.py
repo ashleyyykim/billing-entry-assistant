@@ -1,12 +1,12 @@
-"""Rule baseline: route each entry to AUTO_MATCH, FLAG_MISMATCH, NEEDS_REVIEW, SPLIT_ENTRY, or NO_MATCH.
+"""Rule baseline: route each entry to AUTO_MATCH, FLAG_MISMATCH, NEEDS_REVIEW, MULTI_MATTER, or NO_MATCH.
 
 Works on the pairs table from notebook 02. Each entry is decided from its own rows only (g below).
 """
 import numpy as np
 import pandas as pd
 
-ACTIONS = ["AUTO_MATCH", "FLAG_MISMATCH", "NEEDS_REVIEW", "SPLIT_ENTRY", "NO_MATCH"]
-OUTCOMES = ["Accepted, right", "Accepted, wrong", "Flagged", "Sent to review", "Split", "No match"]
+ACTIONS = ["AUTO_MATCH", "FLAG_MISMATCH", "NEEDS_REVIEW", "MULTI_MATTER", "NO_MATCH"]
+OUTCOMES = ["Accepted, right", "Accepted, wrong", "Flagged", "Sent to review", "Multi-matter", "No match"]
 
 # Settings are explained in notebook 03, section 3
 DEFAULTS = {
@@ -16,11 +16,10 @@ DEFAULTS = {
     "matter_min": 90,
     "no_match_max": 80,
     "phrase_min": 90,
-    "split_other_client": False,
+    "multi_other_client": False,
     "accept_cue_only": True,
     "require_history": False,
     "flag_cue_conflict": False,
-    "flag_contact_conflict": False,
     "cue_fit_agrees": False,
     "history_within_client": False,
     "bad_cmid_use_text": True,
@@ -32,7 +31,7 @@ DEFAULTS = {
 RULE_COLS = ["entry_id", "cmid", "client", "typed_client", "cmid_status", "has_cmid", "has_client", "has_matter",
              "cmid_valid", "cmid_client_known", "is_typed_cmid", "is_flipped_cmid", "cmid_similarity",
              "same_client_number", "keyterm_hits", "own_keyterm_hits", "n_matters_named", "cue_hits", "cue_share",
-             "n_parts", "client_in_text", "n_clients_named", "client_contact_hits", "not_open",
+             "n_parts", "client_in_text", "n_clients_named", "not_open",
              "opened_after_history", "tk_known", "in_history"]
 
 
@@ -58,7 +57,7 @@ def looks_like_acronym(typed_client):
 
 def find_client(g, cfg):
     """The candidates at the client the entry seems to be for, and where that came from.
-    Checks the typed client, the CMID's client number, a client named in the narrative, then a contact."""
+    Checks the typed client, the CMID's client number, then a client named in the narrative."""
     e = g.iloc[0]
     best_client = g[cfg["client_col"]].max()
     if e["has_client"] and best_client >= cfg["client_min"]:
@@ -69,9 +68,6 @@ def find_client(g, cfg):
     named = g.loc[g["client_in_text"] >= cfg["phrase_min"], "client"].unique()
     if len(named) == 1:
         return g[g["client"] == named[0]], "client named in narrative"
-    contact = g.loc[g["client_contact_hits"] > 0, "client"].unique()
-    if len(contact) == 1:
-        return g[g["client"] == contact[0]], "client contact in narrative"
     return g.iloc[0:0], None
 
 
@@ -124,11 +120,9 @@ def text_vote(g, cfg):
 
 
 def text_disagrees(g, cmid, cfg):
-    """The narrative argues against cmid: cues found but none fit its type, or only other clients' contacts named."""
+    """The narrative argues against cmid: task cues were found, but none fit its type of work."""
     row = _row(g, cmid)
     if cfg["flag_cue_conflict"] and g["cue_hits"].max() > 0 and row["cue_hits"] == 0:
-        return True
-    if cfg["flag_contact_conflict"] and g["client_contact_hits"].max() > 0 and row["client_contact_hits"] == 0:
         return True
     return False
 
@@ -154,7 +148,7 @@ def typed_name_unknown(g, cfg):
 
 
 def other_client_named(g, cfg):
-    """A multi-part narrative names a matter (by its own key term) at a different client. Hints at a split."""
+    """A multi-part narrative names a matter (by its own key term) at a different client. Hints at a second matter."""
     if g["n_parts"].iloc[0] < 2:
         return False
     client_rows, _ = find_client(g, cfg)
@@ -170,8 +164,8 @@ def shortlist(g, cfg):
     return " | ".join(top["cmid"])
 
 
-def status_quo(g, cfg):
-    """Today's process: accept a valid typed CMID as is, send everything else to a person."""
+def cmid_only(g, cfg):
+    """Lower-bound baseline: accept a valid typed CMID without reading the narrative, send everything else to a person."""
     out = {"entry_id": g["entry_id"].iloc[0], "shortlist": shortlist(g, cfg)}
     hit = g[g["is_typed_cmid"] == 1]
     if g["cmid_valid"].iloc[0] and len(hit) == 1:
@@ -196,13 +190,13 @@ def decide(g, cfg):
             return result("FLAG_MISMATCH", text_vote(others, cfg)[0], "matter not open on the work date")
         return result("AUTO_MATCH", cmid, reason)
 
-    # 1. Split
+    # 1. More than one matter
     named = sorted(g.loc[g["own_keyterm_hits"] > 0, "cmid"])
     if e["n_matters_named"] >= 2:
-        return result("SPLIT_ENTRY", " | ".join(named), "two or more matters named")
-    if cfg["split_other_client"] and other_client_named(g, cfg):
+        return result("MULTI_MATTER", " | ".join(named), "two or more matters named")
+    if cfg["multi_other_client"] and other_client_named(g, cfg):
         both = sorted({c for c in [typed or text, *named] if c})
-        return result("SPLIT_ENTRY", " | ".join(both), "matter at another client named")
+        return result("MULTI_MATTER", " | ".join(both), "matter at another client named")
 
     # 2. Typed name not in Matter Master
     if typed_name_unknown(g, cfg):
@@ -255,10 +249,15 @@ def run_rules(pairs, cfg, decide_fn=decide):
     return pd.DataFrame([decide_fn(g, cfg) for _, g in pairs[cols].groupby("entry_id")])
 
 
+# The synthetic answer key calls entries that cover more than one matter "splits"
+RENAMED = {"SPLIT_ENTRY": "MULTI_MATTER", "SPLIT_NAMED": "MULTI_NAMED", "SPLIT_UNNAMED": "MULTI_UNNAMED"}
+
+
 def answer_key(pairs):
-    """One row per entry: the split and the answer-key (key_) columns."""
+    """One row per entry: the data split (TRAIN/VAL/TEST) and the answer-key (key_) columns."""
     cols = ["entry_id", "split"] + [c for c in pairs.columns if c.startswith("key_")]
-    return pairs[cols].drop_duplicates("entry_id").reset_index(drop=True)
+    answers = pairs[cols].drop_duplicates("entry_id").reset_index(drop=True)
+    return answers.replace({"key_expected_action": RENAMED, "key_entry_category": RENAMED})
 
 
 def _cmids(text):
@@ -269,16 +268,18 @@ def _cmids(text):
 
 
 def _outcome(row):
+    """An auto-accept is right when all of the time lands on the right matter: the matter is right
+    and the entry doesn't cover more than one matter (accepting just one bills part of the time wrong)."""
     if row["action"] == "AUTO_MATCH":
-        safe = row["key_expected_action"] == "AUTO_MATCH" and row["matter_right"]
+        safe = row["matter_right"] and row["key_expected_action"] != "MULTI_MATTER"
         return OUTCOMES[0] if safe else OUTCOMES[1]
-    return {"FLAG_MISMATCH": OUTCOMES[2], "NEEDS_REVIEW": OUTCOMES[3], "SPLIT_ENTRY": OUTCOMES[4]}.get(row["action"], OUTCOMES[5])
+    return {"FLAG_MISMATCH": OUTCOMES[2], "NEEDS_REVIEW": OUTCOMES[3], "MULTI_MATTER": OUTCOMES[4]}.get(row["action"], OUTCOMES[5])
 
 
 def score(decisions, answers):
     """Attach the answer key and mark whether each action, matter, and shortlist is right.
 
-    The true matters are True CMID plus Secondary CMID (splits). For an unnamed split the second
+    The true matters are True CMID plus Secondary CMID (multi-matter entries). When the narrative doesn't name the second
     matter can't be known, so the primary matter is enough.
     """
     df = decisions.merge(answers, on="entry_id", how="left", validate="one_to_one")
@@ -286,7 +287,7 @@ def score(decisions, answers):
     for pred, primary, second, category in zip(df["pred_cmid"], df["key_true_cmid"], df["key_secondary_cmid"],
                                                df["key_entry_category"]):
         pred, primary, both = _cmids(pred), _cmids(primary), _cmids(primary) | _cmids(second)
-        needed = primary if category == "SPLIT_UNNAMED" else both
+        needed = primary if category == "MULTI_UNNAMED" else both
         right.append(needed <= pred <= both)
     df["matter_right"] = right
     df["action_right"] = df["action"] == df["key_expected_action"]
@@ -295,20 +296,50 @@ def score(decisions, answers):
     return df
 
 
+def pick_best(results, target):
+    """The best row of a settings sweep (one row per setting, columns from summarize).
+
+    Among rows with decided_precision >= target: highest straight_through, then highest action_accuracy.
+    If none reach the target: highest decided_precision to the half point (smaller differences are noise with a
+    few thousand entries), then highest straight_through.
+    """
+    ok = results[results["decided_precision"] >= target]
+    if ok.empty:
+        half_point = np.floor(results["decided_precision"] * 200) / 200
+        return results.assign(half_point=half_point).sort_values(["half_point", "straight_through"], ascending=False).index[0]
+    return ok.sort_values(["straight_through", "action_accuracy"], ascending=False).index[0]
+
+
+def precision_ci(scored, n_boot=2000, seed=210):
+    """95% bootstrap interval for decided_precision: resample the decided entries with replacement."""
+    decided = scored[scored["action"].isin(["AUTO_MATCH", "NO_MATCH"])]
+    right = np.where(decided["action"] == "AUTO_MATCH", decided["outcome"] == OUTCOMES[0],
+                     decided["key_expected_action"] == "NO_MATCH")
+    rng = np.random.default_rng(seed)
+    boots = [rng.choice(right, len(right)).mean() for _ in range(n_boot)]
+    return np.percentile(boots, [2.5, 97.5])
+
+
 def summarize(scored):
     """Headline numbers for one set of decisions.
 
-    auto_precision     share of auto-accepts that are right
+    auto_precision     share of auto-accepts that put all of the time on the right matter
     decided_precision  share of AUTO_MATCH and NO_MATCH decisions that are right (both skip a reviewer)
+    straight_through   share of entries decided with no person at all (AUTO_MATCH or NO_MATCH)
     silent_by_design   wrong auto-accepts where nothing in the entry could catch it (KEY: Silent Error = Y)
+    multi_flag_right   share of MULTI_MATTER calls where the entry really covers more than one matter
+    multi_caught       share of entries covering more than one matter that get a MULTI_MATTER call
+    multi_matters_right  share of MULTI_MATTER calls where all suggested matters are right
     """
     auto = scored["action"] == "AUTO_MATCH"
+    multi = scored["action"] == "MULTI_MATTER"
     no_match = scored["action"] == "NO_MATCH"
     review = scored["action"] == "NEEDS_REVIEW"
     flagged = scored["action"] == "FLAG_MISMATCH"
     auto_right = scored["outcome"] == OUTCOMES[0]
     auto_wrong = auto & ~auto_right
     no_match_right = no_match & (scored["key_expected_action"] == "NO_MATCH")
+    is_multi = scored["key_expected_action"] == "MULTI_MATTER"
     by_design = scored["key_silent_error"] == "Y"
 
     def rate(hits, base):
@@ -317,6 +348,7 @@ def summarize(scored):
     return {
         "entries": len(scored),
         "action_accuracy": float(scored["action_right"].mean()),
+        "straight_through": float((auto | no_match).mean()),
         "auto_share": float(auto.mean()),
         "auto_precision": rate(auto_right, auto),
         "decided_precision": rate(auto_right | no_match_right, auto | no_match),
@@ -327,6 +359,10 @@ def summarize(scored):
         "flag_share": float(flagged.mean()),
         "flag_suggestion_right": rate(scored["matter_right"], flagged),
         "shortlist_hit": rate(scored["in_shortlist"], review),
+        "multi_share": float(multi.mean()),
+        "multi_flag_right": rate(is_multi, multi),
+        "multi_caught": rate(multi, is_multi),
+        "multi_matters_right": rate(scored["matter_right"], multi),
         "no_match_share": float(no_match.mean()),
         "no_match_precision": rate(no_match_right, no_match),
     }

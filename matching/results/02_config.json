@@ -37,9 +37,7 @@
       "n_types_cued",
       "n_parts",
       "client_in_text",
-      "n_clients_named",
-      "client_contact_hits",
-      "matter_contact_hits"
+      "n_clients_named"
     ],
     "dates": [
       "not_open",
@@ -59,6 +57,10 @@
       "client_in_text_gap",
       "history_share_gap",
       "cmid_similarity_gap"
+    ],
+    "past_narratives": [
+      "past_narrative_sim",
+      "past_narrative_sim_gap"
     ]
   },
   "scorers": [
@@ -78,5 +80,9 @@
     "history_share",
     "cmid_similarity"
   ],
-  "history_end": "2026-06-30"
+  "history_end": "2026-06-30",
+  "folds": 5,
+  "seed": 210,
+  "embedding_model": "all-MiniLM-L6-v2",
+  "past_k": 3
 }
