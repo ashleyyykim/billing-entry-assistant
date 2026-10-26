@@ -1,0 +1,61 @@
+{
+  "split": "VAL",
+  "setting": "default",
+  "fingerprints": {
+    "VAL": "1b45a83afbff",
+    "TEST ids": "d21414339749"
+  },
+  "results": {
+    "entries": 601,
+    "decided_precision": 0.9768637532133676,
+    "ci_low": 0.9613523457343494,
+    "ci_high": 0.9896920433518372,
+    "straight_through": 0.6472545757071547,
+    "review_share": 0.22129783693843594,
+    "matter_accuracy": 0.8652246256239601,
+    "action_accuracy": 0.6688851913477537,
+    "silent_errors": 8,
+    "silent_rate": 0.021447721179624665,
+    "multi_caught": 0.8108108108108109,
+    "no_match_precision": 0.9375,
+    "shortlist_hit": 0.8120300751879699,
+    "top_1": 0.9308510638297872,
+    "top_3": 0.9840425531914894,
+    "log_loss": 0.008855588647620764,
+    "calibration_error": 0.050127695417291784,
+    "rules_decided_precision": 0.872093023255814,
+    "rules_silent_errors": 36,
+    "violations": 0,
+    "formatting_changed": 0.0,
+    "stress_worst_precision": 0.950207468879668,
+    "format_worst_precision": 0.9411764705882353
+  },
+  "gates": {
+    "decided precision, low end of range": true,
+    "silent errors per auto-match": true,
+    "decided precision above the rules": true,
+    "fewer silent errors than the rules": true,
+    "decisions breaking a check": true,
+    "decisions changed by formatting": true,
+    "new-client calls right": true,
+    "multi-matter entries caught": true,
+    "right matter in review shortlist": true,
+    "top-pick calibration error": false
+  },
+  "tracked": {
+    "worst stress test, decided precision": true,
+    "worst source format, decided precision": true
+  },
+  "stress": {
+    "clean": 0.9768637532133676,
+    "same, upper case narrative": 0.9768637532133676,
+    "same, extra spaces": 0.9768637532133676,
+    "OCR noise (10% of letters)": 0.9693593314763231,
+    "typo in client name": 0.9744245524296675,
+    "typo in narrative": 0.9727520435967303,
+    "CMID digits swapped": 0.9602272727272727,
+    "CMID left blank": 0.9595375722543352,
+    "client left blank": 0.950207468879668,
+    "new timekeeper (no history)": 0.9624277456647399
+  }
+}

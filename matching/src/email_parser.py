@@ -6,12 +6,11 @@ The rules come from general email and billing conventions, not from any labeled 
 - requests to the person entering time ("Please enter...", "My time for today:")
 - hours written as decimals (".3", "1.5 hrs"), minutes ("45 min"), "1 hr 15 min", or "1:15"
 - client-matter numbers ("7215.003", "7215-003", "C/M 7215/003")
-- client names from the firm's own client list (names and aliases), allowing typos and missing spaces,
+- client names from the firm's own client list (names, aliases, and initials), allowing typos and missing spaces,
   with "Client / Matter" and "Client: ..." headers for anything not on the list
 """
 import re
 
-import pandas as pd
 from rapidfuzz import fuzz, process
 
 from clean import is_blank
@@ -160,7 +159,7 @@ def matter_lookup(matter_names):
 
 
 def client_lookup(client_names, skip=()):
-    """Names to look for: each client's name and aliases, from fuzzy.client_name_table."""
+    """Names to look for: each client's name, aliases, and initials, from fuzzy.client_name_table."""
     names = client_names[~client_names["id"].isin(skip)].copy()
     names["squashed"] = names["name"].map(squash)
     return names[names["squashed"].str.len() > 1].reset_index(drop=True)

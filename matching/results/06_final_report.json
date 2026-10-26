@@ -1,0 +1,119 @@
+{
+  "setting": "default",
+  "cutoffs": {
+    "auto_min": 0.93,
+    "no_match_min": 0.9,
+    "multi_min": 0.15,
+    "correct_typed_cmid": true
+  },
+  "fingerprints": {
+    "TEST ids": "d21414339749",
+    "HOLDOUT ids": "cb4f24282457"
+  },
+  "results": {
+    "TEST": {
+      "entries": 597,
+      "decided_precision": 0.9713541666666666,
+      "ci_low": 0.9537245249516338,
+      "ci_high": 0.987012987012987,
+      "straight_through": 0.6432160804020101,
+      "review_share": 0.22278056951423786,
+      "matter_accuracy": 0.8425460636515912,
+      "action_accuracy": 0.7018425460636516,
+      "silent_errors": 11,
+      "silent_rate": 0.030136986301369864,
+      "multi_caught": 0.6756756756756757,
+      "no_match_precision": 1.0,
+      "shortlist_hit": 0.7744360902255639,
+      "top_1": 0.8983957219251337,
+      "top_3": 0.9625668449197861,
+      "log_loss": 0.010023955979310719,
+      "calibration_error": 0.04609037433007996,
+      "rules_decided_precision": 0.8457300275482094,
+      "rules_silent_errors": 48,
+      "violations": 0,
+      "formatting_changed": 0.0,
+      "stress_worst_precision": 0.9442815249266863,
+      "format_worst_precision": 0.9411764705882353
+    },
+    "HOLDOUT": {
+      "entries": 800,
+      "decided_precision": 0.982646420824295,
+      "ci_low": 0.9681087335821258,
+      "ci_high": 0.9939027482313363,
+      "straight_through": 0.57625,
+      "review_share": 0.2775,
+      "matter_accuracy": 0.8475,
+      "action_accuracy": 0.63375,
+      "silent_errors": 7,
+      "silent_rate": 0.01583710407239819,
+      "multi_caught": 0.868421052631579,
+      "no_match_precision": 0.9473684210526315,
+      "shortlist_hit": 0.8198198198198198,
+      "top_1": 0.8885976408912188,
+      "top_3": 0.9541284403669725,
+      "log_loss": 0.010756560408303303,
+      "calibration_error": 0.06961502305890481,
+      "rules_decided_precision": 0.8813905930470347,
+      "rules_silent_errors": 50,
+      "violations": 0,
+      "formatting_changed": 0.0,
+      "stress_worst_precision": 0.9584352078239609,
+      "format_worst_precision": 0.9411764705882353
+    }
+  },
+  "gates": {
+    "TEST": {
+      "decided precision, low end of range": true,
+      "silent errors per auto-match": false,
+      "decided precision above the rules": true,
+      "fewer silent errors than the rules": true,
+      "decisions breaking a check": true,
+      "decisions changed by formatting": true,
+      "new-client calls right": true,
+      "multi-matter entries caught": false,
+      "right matter in review shortlist": false,
+      "top-pick calibration error": true,
+      "worst stress test, decided precision": false,
+      "worst source format, decided precision": true
+    },
+    "HOLDOUT": {
+      "decided precision, low end of range": true,
+      "silent errors per auto-match": true,
+      "decided precision above the rules": true,
+      "fewer silent errors than the rules": true,
+      "decisions breaking a check": true,
+      "decisions changed by formatting": true,
+      "new-client calls right": true,
+      "multi-matter entries caught": true,
+      "right matter in review shortlist": true,
+      "top-pick calibration error": false,
+      "worst stress test, decided precision": true,
+      "worst source format, decided precision": true
+    }
+  },
+  "stress": {
+    "TEST": {
+      "same, upper case narrative": 0.9713541666666666,
+      "same, extra spaces": 0.9713541666666666,
+      "OCR noise (10% of letters)": 0.9692737430167597,
+      "typo in client name": 0.969309462915601,
+      "typo in narrative": 0.9782016348773842,
+      "CMID digits swapped": 0.9442815249266863,
+      "CMID left blank": 0.9566473988439307,
+      "client left blank": 0.9551569506726457,
+      "new timekeeper (no history)": 0.968299711815562
+    },
+    "HOLDOUT": {
+      "same, upper case narrative": 0.982646420824295,
+      "same, extra spaces": 0.982646420824295,
+      "OCR noise (10% of letters)": 0.9864864864864865,
+      "typo in client name": 0.98068669527897,
+      "typo in narrative": 0.9844097995545658,
+      "CMID digits swapped": 0.9603729603729604,
+      "CMID left blank": 0.9584352078239609,
+      "client left blank": 0.9787985865724381,
+      "new timekeeper (no history)": 0.9699769053117783
+    }
+  }
+}

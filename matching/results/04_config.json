@@ -95,15 +95,24 @@
     },
     "strict": {
       "auto_min": 0.97,
+      "no_match_min": 0.7,
+      "multi_min": 0.15,
+      "correct_typed_cmid": true
+    },
+    "default": {
+      "auto_min": 0.93,
       "no_match_min": 0.9,
-      "multi_min": 0.15
+      "multi_min": 0.15,
+      "correct_typed_cmid": true
     },
     "balanced": {
       "auto_min": 0.5,
       "no_match_min": 0.3,
-      "multi_min": 0.15
+      "multi_min": 0.15,
+      "correct_typed_cmid": true
     }
   },
   "multi_beta": 2,
-  "precision_target": 0.98
+  "precision_target": 0.98,
+  "default_target": 0.97
 }

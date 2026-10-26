@@ -135,27 +135,34 @@ def route_actions(top, action_probs, cfg):
 
     1. P(no_match) >= no_match_min                 -> NO_MATCH
     2. P(multi) >= multi_min                       -> MULTI_MATTER (the top pick, plus the second if it's likely)
-    3. A valid typed CMID isn't the top pick,
+    3. correct_typed_cmid is on, a valid typed CMID
+       isn't the top pick, P(auto) >= auto_min,
+       and the top pick was open                   -> AUTO_MATCH to the top pick (typed CMID corrected)
+    4. A valid typed CMID isn't the top pick,
        or the typed matter wasn't open             -> FLAG_MISMATCH (suggest the top pick)
-    4. P(auto) >= auto_min but the top pick
+    5. P(auto) >= auto_min but the top pick
        wasn't open on the work date                -> FLAG_MISMATCH
-    5. P(auto) >= auto_min                         -> AUTO_MATCH
-    6. Otherwise                                   -> NEEDS_REVIEW with the shortlist
+    6. P(auto) >= auto_min                         -> AUTO_MATCH
+    7. Otherwise                                   -> NEEDS_REVIEW with the shortlist
     action_probs: DataFrame with columns auto, review, multi, no_match (one row per entry, same order as top).
+    cfg: the cutoffs, plus correct_typed_cmid (True or False, off if missing).
     """
     p = action_probs.set_axis(top.index)
     has_typed = top["typed_cmid"].notna()
     typed_disagrees = has_typed & ((top["top_cmid"] != top["typed_cmid"]) | (top["typed_not_open"] == 1))
     confident = p["auto"] >= cfg["auto_min"]
+    correctable = (cfg.get("correct_typed_cmid", False) & has_typed & (top["top_cmid"] != top["typed_cmid"])
+                   & confident & (top["top_not_open"] == 0))
 
     checks = [p["no_match"] >= cfg["no_match_min"],
               p["multi"] >= cfg["multi_min"],
+              correctable,
               typed_disagrees,
               confident & (top["top_not_open"] == 1),
               confident]
-    actions = ["NO_MATCH", "MULTI_MATTER", "FLAG_MISMATCH", "FLAG_MISMATCH", "AUTO_MATCH"]
-    reasons = ["likely a new client or matter", "likely covers more than one matter", "typed CMID disagrees with the model",
-               "matter not open on the work date", "top pick very likely right"]
+    actions = ["NO_MATCH", "MULTI_MATTER", "AUTO_MATCH", "FLAG_MISMATCH", "FLAG_MISMATCH", "AUTO_MATCH"]
+    reasons = ["likely a new client or matter", "likely covers more than one matter", "typed CMID corrected to the top pick",
+               "typed CMID disagrees with the model", "matter not open on the work date", "top pick very likely right"]
 
     out = top[["entry_id", "shortlist", "top_prob", "second_prob"]].copy()
     out["action"] = np.select(checks, actions, "NEEDS_REVIEW")
@@ -238,6 +245,8 @@ def reasons_for(row, split=None):
     action = row["action"]
 
     if action == "AUTO_MATCH":
+        if isinstance(row["typed_cmid"], str) and row["typed_cmid"] != row["top_cmid"]:
+            return "Typed CMID corrected", f"Auto-match to {pick}, correcting the typed CMID {row['typed_cmid']}: {why or 'strong overall match'}."
         short = clues[0][0] if clues else "Strong overall match"
         return short, f"Auto-match to {pick}: {why or 'strong overall match'}."
 

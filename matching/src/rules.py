@@ -254,8 +254,9 @@ RENAMED = {"SPLIT_ENTRY": "MULTI_MATTER", "SPLIT_NAMED": "MULTI_NAMED", "SPLIT_U
 
 
 def answer_key(pairs):
-    """One row per entry: the data split (TRAIN/VAL/TEST) and the answer-key (key_) columns."""
-    cols = ["entry_id", "split"] + [c for c in pairs.columns if c.startswith("key_")]
+    """One row per entry: the data split (TRAIN/VAL/TEST), the timekeeper, and the answer-key (key_) columns.
+    The timekeeper is kept so precision ranges can resample by timekeeper (precision_ci)."""
+    cols = ["entry_id", "split", "tk_id"] + [c for c in pairs.columns if c.startswith("key_")]
     answers = pairs[cols].drop_duplicates("entry_id").reset_index(drop=True)
     return answers.replace({"key_expected_action": RENAMED, "key_entry_category": RENAMED})
 
@@ -310,14 +311,57 @@ def pick_best(results, target):
     return ok.sort_values(["straight_through", "action_accuracy"], ascending=False).index[0]
 
 
+def decided_right(scored):
+    """For each entry: (decided with no person, and if so, whether the decision is right)."""
+    decided = scored["action"].isin(["AUTO_MATCH", "NO_MATCH"]).to_numpy()
+    right = np.where(scored["action"] == "AUTO_MATCH", scored["outcome"] == OUTCOMES[0],
+                     (scored["action"] == "NO_MATCH") & (scored["key_expected_action"] == "NO_MATCH"))
+    return decided, right & decided
+
+
+def group_positions(groups):
+    """Row positions of each group ([[0, 3, 7], [1, 2], ...]), for resample."""
+    return pd.Series(np.arange(len(groups))).groupby(np.asarray(groups)).apply(np.asarray).tolist()
+
+
+def resample(positions, rng):
+    """Row positions for one bootstrap sample that draws whole groups with replacement.
+    Entries from one timekeeper are alike, so drawing timekeepers (not entries) gives a more honest range."""
+    picks = rng.integers(len(positions), size=len(positions))
+    return np.concatenate([positions[i] for i in picks])
+
+
 def precision_ci(scored, n_boot=2000, seed=210):
-    """95% bootstrap interval for decided_precision: resample the decided entries with replacement."""
-    decided = scored[scored["action"].isin(["AUTO_MATCH", "NO_MATCH"])]
-    right = np.where(decided["action"] == "AUTO_MATCH", decided["outcome"] == OUTCOMES[0],
-                     decided["key_expected_action"] == "NO_MATCH")
+    """95% bootstrap interval for decided_precision. Resamples timekeepers when tk_id is there, else entries."""
+    decided, right = decided_right(scored)
+    groups = scored["tk_id"].to_numpy() if "tk_id" in scored else np.arange(len(scored))
+    positions, right = group_positions(groups[decided]), right[decided]
     rng = np.random.default_rng(seed)
-    boots = [rng.choice(right, len(right)).mean() for _ in range(n_boot)]
+    boots = [right[resample(positions, rng)].mean() for _ in range(n_boot)]
     return np.percentile(boots, [2.5, 97.5])
+
+
+def cutoff_stability(scored_by_setting, target, n_boot=200, seed=210):
+    """How often each setting would be chosen (pick_best) if TRAIN were a little different: TRAIN is resampled
+    by timekeeper n_boot times and the best setting is picked again each time.
+    scored_by_setting: {setting: scored decisions}, all for the same entries in the same order."""
+    settings = list(scored_by_setting)
+    flags = [decided_right(s) for s in scored_by_setting.values()]
+    decided = np.array([d for d, _ in flags])
+    right = np.array([r for _, r in flags])
+    action_right = np.array([s["action_right"].to_numpy() for s in scored_by_setting.values()])
+    positions = group_positions(next(iter(scored_by_setting.values()))["tk_id"])
+
+    rng = np.random.default_rng(seed)
+    picks = []
+    for _ in range(n_boot):
+        rows = resample(positions, rng)
+        n_decided = decided[:, rows].sum(axis=1)
+        table = pd.DataFrame({"decided_precision": right[:, rows].sum(axis=1) / np.maximum(n_decided, 1),
+                              "straight_through": n_decided / len(rows),
+                              "action_accuracy": action_right[:, rows].mean(axis=1)}, index=settings)
+        picks.append(pick_best(table, target))
+    return pd.Series(picks).value_counts(normalize=True).rename("share of resamples")
 
 
 def summarize(scored):

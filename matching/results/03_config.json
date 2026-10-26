@@ -2,8 +2,8 @@
   "rules": {
     "client_col": "client_ratio",
     "matter_col": "matter_token_sort_ratio",
-    "client_min": 65,
-    "matter_min": 70,
+    "client_min": 70,
+    "matter_min": 60,
     "no_match_max": 80,
     "phrase_min": 90,
     "multi_other_client": true,

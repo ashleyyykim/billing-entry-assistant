@@ -7,12 +7,12 @@ from rapidfuzz import fuzz, process
 
 from clean import clean_cmid, clean_entries, cmid_similarity, cmid_status, flip_cmid, normalize
 from cues import check_cue_types
-from fuzzy import add_name_scores
+from fuzzy import add_name_scores, client_acronyms
 
 SOURCE_FORMATS = ["PDF", "HANDWRITTEN", "EMAIL"]   # TYPED is the baseline
 # Where one piece of work ends and the next begins: semicolons, hours in parentheses "(1.1)", " + ",
 # sentence ends ("...schedules. Call with..."), and linking words. Initials like "O. Grant" aren't sentence ends.
-PART_SEPARATORS = re.compile(r";|\(\s*\d*\.?\d+\s*(?:hrs?)?\s*\)|\s\+\s|(?<=[a-z]{2})\.\s+(?=[A-Z])"
+PART_SEPARATORS = re.compile(r";|\(\s*\d*\.?\d+\s*(?:(?i:hrs?))?\s*\)|\s\+\s|(?<=[a-z]{2})\.\s+(?=[A-Z])"
                              r"|(?i:\b(?:also|separately|plus|then)\b)")
 
 # Numbers, roman numerals, and single letters ("fund ii", "series a") have to match exactly
@@ -127,9 +127,10 @@ def keyterm_table(mm):
     return table
 
 
-def client_mention_table(mm, skip=("Firm",)):
-    """Client names to look for in narratives: name, name without spaces, and listed aliases.
-    skip: clients whose name is an ordinary word ("firm meeting" doesn't name a client)."""
+def client_mention_table(mm, skip=("Firm",), acronym_skip=()):
+    """Client names to look for in narratives: name, name without spaces, listed aliases, and initials.
+    skip: clients whose name is an ordinary word ("firm meeting" doesn't name a client).
+    Initials (kind "acronym") only count when written exactly, in capitals (see acronym_mentions)."""
     rows = []
     for client, aliases in mm[["Client", "Known Aliases"]].drop_duplicates().itertuples(index=False):
         if client in skip:
@@ -137,10 +138,22 @@ def client_mention_table(mm, skip=("Firm",)):
         names = [client, client.replace(" ", "")]
         if pd.notna(aliases):
             names += [a.strip() for a in str(aliases).split(",") if a.strip()]
-        rows += [(n, client) for n in names]
-    table = pd.DataFrame(rows, columns=["name", "client"])
+        rows += [(n, client, "name") for n in names]
+    rows += [(a, c, "acronym") for a, c in client_acronyms(mm, acronym_skip).itertuples(index=False) if c not in skip]
+    table = pd.DataFrame(rows, columns=["name", "client", "kind"])
     table["name_norm"] = table["name"].map(lambda t: normalize(t, drop_suffixes=False))
     return table.drop_duplicates(["name_norm", "client"]).reset_index(drop=True)
+
+
+def acronym_mentions(pairs, acronyms):
+    """Client initials written exactly, in capitals, in the original narrative ("call w/ NCP re closing").
+    Lowercase or partial matches don't count, so "mts" in "mtgs" never names a client."""
+    texts = pairs[["narrative", "narrative_norm"]].drop_duplicates()
+    rows = []
+    for acronym, client in zip(acronyms["name"], acronyms["client"]):
+        found = texts["narrative"].fillna("").str.contains(rf"\b{re.escape(acronym)}\b", regex=True)
+        rows += [(t, client, 100.0) for t in texts.loc[found, "narrative_norm"]]
+    return pd.DataFrame(rows, columns=["narrative_norm", "client", "score"])
 
 
 def window_score(phrase, text):
@@ -217,8 +230,8 @@ def add_text_features(pairs, keyterms, cues, client_mentions, min_score):
     client_in_text                  best score of the candidate's client name in the narrative
     n_clients_named                 clients named in the narrative
     """
-    scores = phrase_scores([*keyterms["term_norm"], *cues["cue_norm"], *client_mentions["name_norm"]],
-                           pairs["narrative_norm"])
+    names = client_mentions[client_mentions["kind"] != "acronym"]
+    scores = phrase_scores([*keyterms["term_norm"], *cues["cue_norm"], *names["name_norm"]], pairs["narrative_norm"])
     keys = ["narrative_norm"]
 
     terms = _long(scores, keyterms["term_norm"]).merge(keyterms, left_on="phrase", right_on="term_norm")
@@ -233,7 +246,9 @@ def add_text_features(pairs, keyterms, cues, client_mentions, min_score):
     by_type = found_cues.groupby(keys + ["matter_type"], as_index=False).agg(cue_hits=("phrase", "nunique"))
     per_text = found_cues.groupby(keys).agg(cue_total=("phrase", "nunique"), n_types_cued=("matter_type", "nunique"))
 
-    clients = _long(scores, client_mentions["name_norm"]).merge(client_mentions, left_on="phrase", right_on="name_norm")
+    clients = _long(scores, names["name_norm"]).merge(names, left_on="phrase", right_on="name_norm")
+    clients = pd.concat([clients[keys + ["client", "score"]],
+                         acronym_mentions(pairs, client_mentions[client_mentions["kind"] == "acronym"])])
     clients = clients.groupby(keys + ["client"], as_index=False).agg(client_in_text=("score", "max"))
     n_clients = clients.query("client_in_text >= @min_score").groupby(keys).agg(n_clients_named=("client", "nunique"))
 
