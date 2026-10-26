@@ -22,3 +22,5 @@ dependencies:
   - python-dotenv
   - requests
   - pyarrow
+  - scikit-learn
+  - sentence-transformers

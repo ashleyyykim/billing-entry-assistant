@@ -1,10 +1,15 @@
 """Fuzzy matching of typed client and matter names against Matter Master."""
+import re
+
 import numpy as np
 import pandas as pd
 from rapidfuzz import fuzz, process
 from rapidfuzz.distance import JaroWinkler
 
-from clean import normalize
+from clean import LEGAL_SUFFIXES, normalize
+
+ACRONYM_MIN = 3                      # shorter initials ("MT", "HB") collide too easily
+SMALL_WORDS = {"and", "of", "the"}   # left out of initials ("Aster & Vale" -> "AV")
 
 # name -> (scorer, multiplier that puts it on a 0-100 scale)
 SCORERS = {
@@ -21,11 +26,32 @@ def _names(cell):
     return [] if pd.isna(cell) else [n.strip() for n in str(cell).split(",") if n.strip()]
 
 
-def client_name_table(mm):
-    """One row per known client name: the client's own name plus its listed aliases."""
+def client_acronyms(mm, skip=()):
+    """Each client's initials ("Northgate Capital Partners" -> "NCP"), built from Matter Master.
+
+    Kept only when they are at least ACRONYM_MIN letters, belong to one client, aren't already a name or alias,
+    and aren't in skip (billing shorthand like "SPA" or "TCW"). Returns columns acronym, client.
+    """
+    rows = []
+    for client in mm["Client"].drop_duplicates():
+        words = [w for w in re.split(r"[\s&]+", str(client)) if w and w.lower() not in LEGAL_SUFFIXES | SMALL_WORDS]
+        rows.append(("".join(w[0] for w in words).upper(), client))
+    table = pd.DataFrame(rows, columns=["acronym", "client"])
+    known = {normalize(n) for n in mm["Client"]} | {normalize(n) for cell in mm["Known Aliases"] for n in _names(cell)}
+    keep = ((table["acronym"].str.len() >= ACRONYM_MIN)
+            & ~table.duplicated("acronym", keep=False)
+            & ~table["acronym"].str.lower().isin(known)
+            & ~table["acronym"].isin({str(x).upper() for x in skip}))
+    return table[keep].reset_index(drop=True)
+
+
+def client_name_table(mm, acronym_skip=()):
+    """One row per known client name: the client's own name, its listed aliases, and its initials.
+    Initials (kind "acronym") only count on an exact match (see score_table)."""
     rows = []
     for client, aliases in zip(mm["Client"], mm["Known Aliases"]):
         rows += [(client, client, "canonical")] + [(a, client, "alias") for a in _names(aliases)]
+    rows += [(a, c, "acronym") for a, c in client_acronyms(mm, acronym_skip).itertuples(index=False)]
     table = pd.DataFrame(rows, columns=["name", "id", "kind"]).drop_duplicates(["name", "id"])
     table["name_norm"] = table["name"].map(normalize)
     return table.reset_index(drop=True)
@@ -41,9 +67,15 @@ def matter_name_table(mm):
 
 
 def score_table(typed, names, scorer):
-    """Score every typed value against every name. Rows = typed values, columns = ids (best name per id)."""
+    """Score every typed value against every name. Rows = typed values, columns = ids (best name per id).
+    Initials score 100 on an exact match and 0 otherwise, since short strings look alike to every scorer."""
     fn, mult = SCORERS[scorer]
-    scores = process.cdist(list(typed), names["name_norm"].tolist(), scorer=fn, workers=-1) * mult
+    typed = list(typed)
+    scores = process.cdist(typed, names["name_norm"].tolist(), scorer=fn, workers=-1) * mult
+    exact_only = (names["kind"] == "acronym").to_numpy()
+    if exact_only.any():
+        same = np.array(typed, dtype=object)[:, None] == names["name_norm"].to_numpy()[exact_only]
+        scores[:, exact_only] = np.where(same, 100.0, 0.0)
     return pd.DataFrame(scores, columns=names["id"].values).T.groupby(level=0).max().T
 
 

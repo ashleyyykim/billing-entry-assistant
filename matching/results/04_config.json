@@ -1,0 +1,118 @@
+{
+  "model": "gradient boosting",
+  "model_params": {
+    "learning_rate": 0.05,
+    "max_leaf_nodes": 31,
+    "min_samples_leaf": 100
+  },
+  "features": [
+    "has_cmid",
+    "has_client",
+    "has_matter",
+    "client_is_ditto",
+    "client_had_matter",
+    "cmid_from_text",
+    "is_pdf",
+    "is_handwritten",
+    "is_email",
+    "cmid_valid",
+    "cmid_client_known",
+    "is_typed_cmid",
+    "is_flipped_cmid",
+    "cmid_similarity",
+    "same_client_number",
+    "client_ratio",
+    "client_token_sort_ratio",
+    "client_token_set_ratio",
+    "matter_ratio",
+    "matter_token_sort_ratio",
+    "matter_token_set_ratio",
+    "keyterm_score",
+    "keyterm_hits",
+    "own_keyterm_hits",
+    "n_matters_named",
+    "cue_hits",
+    "cue_share",
+    "n_types_cued",
+    "n_parts",
+    "client_in_text",
+    "n_clients_named",
+    "not_open",
+    "opened_after_history",
+    "tk_known",
+    "in_history",
+    "history_hours",
+    "history_share",
+    "client_ratio_gap",
+    "matter_token_sort_ratio_gap",
+    "keyterm_score_gap",
+    "cue_share_gap",
+    "client_in_text_gap",
+    "history_share_gap",
+    "cmid_similarity_gap",
+    "past_narrative_sim",
+    "past_narrative_sim_gap"
+  ],
+  "action_features": [
+    "top_prob",
+    "second_prob",
+    "third_prob",
+    "prob_total",
+    "top_share",
+    "same_client_top2",
+    "typed_is_top",
+    "typed_prob",
+    "top_not_open",
+    "top_in_history",
+    "top_past_sim",
+    "second_past_sim",
+    "best_client_score",
+    "best_matter_score",
+    "has_cmid",
+    "cmid_valid",
+    "cmid_client_known",
+    "has_client",
+    "has_matter",
+    "n_parts",
+    "n_types_cued",
+    "n_matters_named",
+    "n_clients_named",
+    "is_email",
+    "multi_text_score"
+  ],
+  "text_model_params": {
+    "logisticregression__C": 10
+  },
+  "action_model_params": {
+    "max_iter": 50,
+    "min_samples_leaf": 50
+  },
+  "routing": {
+    "one_step": {
+      "auto_min": 0.98,
+      "multi_min": 0.5,
+      "no_match_max": 0.02
+    },
+    "strict": {
+      "auto_min": 0.97,
+      "no_match_min": 0.7,
+      "multi_min": 0.15,
+      "correct_typed_cmid": true
+    },
+    "default": {
+      "auto_min": 0.93,
+      "no_match_min": 0.9,
+      "multi_min": 0.15,
+      "correct_typed_cmid": true
+    },
+    "balanced": {
+      "auto_min": 0.5,
+      "no_match_min": 0.3,
+      "multi_min": 0.15,
+      "correct_typed_cmid": true
+    }
+  },
+  "multi_beta": 2,
+  "precision_target": 0.98,
+  "default_target": 0.97
+}

@@ -6,18 +6,20 @@ Built as a capstone project for UC Berkeley's Master of Information and Data Sci
 
 ## How it works
 
-1. **Extraction and matching:** reads raw time entries in different formats and identifies the client and matter each one belongs to.
-2. **Compliance detection:** checks each narrative against billing guidelines and explains anything it flags, so a person always makes the final call.
+1. **Matching:** finds the client and matter each entry belongs to. Confident matches go through on their own, and everything else goes to a person with a shortlist and a short reason. An entry that covers more than one matter is split into one entry per matter before the next step.
+2. **Compliance:** checks each narrative against its client's billing guidelines (vague wording, block billing, shorthand) and explains anything it flags, so a person always makes the final call.
 
 ## Data
 
+- **Matching:** synthetic time entries modeled on corporate and transactional practice, with the correct matter for each entry. Real client time records are confidential, so this stage uses synthetic data.
 - **Compliance:** real time entries and fee examiner reports from public bankruptcy fee filings on [CourtListener](https://www.courtlistener.com/), with violation categories based on the U.S. Trustee fee guidelines.
-- **Matching:** synthetic time entries modeled on corporate and transactional practice, with known correct matters for evaluation. Real client time records are confidential, so this stage uses synthetic data.
 
 ## Repo layout
 
-- `courtlistener_scrape/`: builds reference data from public bankruptcy filings. See its README for details.
-- `matching/`: matches time entries to clients and matters, from fuzzy matching to a rule baseline. See its README for details.
+| Folder | What it is |
+|---|---|
+| `matching/` | Matching stage: fuzzy matching, feature building, a rule baseline, and a classifier. See its README. |
+| `courtlistener_scrape/` | Reference data for the compliance stage, built from public bankruptcy filings. See its README. |
 
 ## Setup
 

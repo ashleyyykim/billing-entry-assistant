@@ -1,0 +1,122 @@
+[
+  {
+    "layout": "Outlook reply",
+    "text": "Hi Pat,\n\nPlease enter the following for today:\nHarborlight Bio / General Corporate - reviewed board consent for option grants, 0.6 hrs\n\nThanks,\nAlex\n\nAlex Chen | Associate\nCorporate Group\n\nFrom: Pat Lee\nSent: Monday, October 12, 2026 9:02 AM\nTo: Alex Chen\nSubject: Time for last week?\n\nHi Alex, can you send me your time from last week?",
+    "expected": [
+      {
+        "client": "Harborlight Bio",
+        "hours": 0.6,
+        "cmid": null
+      }
+    ]
+  },
+  {
+    "layout": "Phone reply",
+    "text": "1.5 on Meridian Therapeutics annual meeting - revised proxy draft and sent to client\n\nSent from my iPhone\n\nOn Oct 14, 2026, at 6:02 PM, Pat Lee <plee@example.com> wrote:\n> Reminder to send your time today",
+    "expected": [
+      {
+        "client": "Meridian Therapeutics",
+        "hours": 1.5,
+        "cmid": null
+      }
+    ]
+  },
+  {
+    "layout": "List of entries",
+    "text": "My time for 10/13:\n- Juniper Peak Capital (9140.001): call with GP re LPA comments .4\n- Cobalt Ridge Partners / Fund II: revise subscription docs 1.2\n- Pelican Row Holdings: review title commitment 1 hr\n\nThx\nM",
+    "expected": [
+      {
+        "client": "Juniper Peak Capital",
+        "hours": 0.4,
+        "cmid": "9140.001"
+      },
+      {
+        "client": "Cobalt Ridge Partners",
+        "hours": 1.2,
+        "cmid": null
+      },
+      {
+        "client": "Pelican Row Holdings",
+        "hours": 1.0,
+        "cmid": null
+      }
+    ]
+  },
+  {
+    "layout": "Labeled fields",
+    "text": "Client: Lanternfish Software\nMatter: Series C Financing\nTime: 2 hours 15 minutes\nDescription: Drafted disclosure schedules and circulated to company counsel.",
+    "expected": [
+      {
+        "client": "Lanternfish Software",
+        "hours": 2.25,
+        "cmid": null
+      }
+    ]
+  },
+  {
+    "layout": "Confidentiality notice",
+    "text": "Pelican Row Holdings - 45 min - call w/ title co re survey exceptions\n\nJordan\n\nCONFIDENTIALITY NOTICE: This e-mail message and any attachments are privileged and confidential and intended only for the named recipient.",
+    "expected": [
+      {
+        "client": "Pelican Row Holdings",
+        "hours": 0.75,
+        "cmid": null
+      }
+    ]
+  },
+  {
+    "layout": "Minutes and CMID",
+    "text": "Please bill 30 min to 7215-003 for reviewing the Asterion amendment redline. Thanks!",
+    "expected": [
+      {
+        "client": null,
+        "hours": 0.5,
+        "cmid": "7215.003"
+      }
+    ]
+  },
+  {
+    "layout": "Client not on the list",
+    "text": "Pls log 0.8 hrs for Quarry Lane Ventures - kickoff call re new engagement\n-JD",
+    "expected": [
+      {
+        "client": "Quarry Lane Ventures",
+        "hours": 0.8,
+        "cmid": null
+      }
+    ]
+  },
+  {
+    "layout": "Alias and clock hours",
+    "text": "JPC fund II - 1:15 - markup of side letter\nBest,\nT",
+    "expected": [
+      {
+        "client": "JPC",
+        "hours": 1.25,
+        "cmid": null
+      }
+    ]
+  },
+  {
+    "layout": "Rule and Item numbers",
+    "text": "Meridian Therapeutics: researched Rule 10b5-1 plan requirements and Item 5.02 disclosure, 2.3h",
+    "expected": [
+      {
+        "client": "Meridian Therapeutics",
+        "hours": 2.3,
+        "cmid": null
+      }
+    ]
+  },
+  {
+    "layout": "Forward",
+    "text": "---------- Forwarded message ---------\nFrom: Dana Park <dpark@example.com>\nDate: Tue, Oct 13, 2026 at 5:40 PM\nSubject: time\nTo: Billing <billing@example.com>\n\nNorthgate Bank / Asterion: conference call with lender counsel re amendment 2.0",
+    "expected": [
+      {
+        "client": "Northgate Bank",
+        "hours": 2.0,
+        "cmid": null
+      }
+    ]
+  }
+]
