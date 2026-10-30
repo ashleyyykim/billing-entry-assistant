@@ -32,6 +32,16 @@ GENERIC_NAME_WORDS = {
 }
 TOO_VAGUE_ALONE = {"fund", "series"}
 
+# People named in a narrative: an initial and a surname ("M. Carter", "S. NG"), or a capitalized word right after
+# "w/" or "with" ("call w/ Kaur"). Role words and words from client and matter names aren't people.
+INITIAL_NAME = re.compile(r"\b([A-Z])\.\s?([A-Z][A-Za-z]+)\b")
+WITH_NAME = re.compile(r"(?:\bw/|\bwith)\s+([A-Z][a-z]+)\b")
+NOT_PEOPLE = {
+    "client", "team", "counsel", "buyer", "seller", "company", "partner", "partners", "ceo", "cfo", "gc", "board",
+    "investor", "investors", "lender", "bank", "opposing", "sponsor", "target", "management", "mgmt", "founder",
+    "founders", "the", "re", "cc", "all", "staff", "accounting", "auditor", "auditors", "committee", "cmte",
+}
+
 
 # ---------------- Pairs ----------------
 
@@ -260,7 +270,7 @@ def add_text_features(pairs, keyterms, cues, client_mentions, min_score):
 
     counts = ["keyterm_score", "keyterm_hits", "own_keyterm_hits", "n_matters_named", "cue_hits", "cue_total",
               "n_types_cued", "client_in_text", "n_clients_named"]
-    p[counts] = p[counts].fillna(0)
+    p[counts] = p[counts].fillna(0).astype(float)
     p["cue_share"] = np.where(p["cue_total"] > 0, p["cue_hits"] / p["cue_total"].clip(lower=1), 0.0)
     p["n_parts"] = p["narrative"].map(count_parts)
     return p.drop(columns="cue_total")
@@ -330,6 +340,77 @@ def add_past_narrative_sim(pairs, entries, vecs, folds, k=3):
     scores = past_sim(vecs, fold, *_past_set(entries, vecs, folds), pairs["cmid"].unique(), k)
     long = scores.set_axis(entries["entry_id"]).stack().rename("past_narrative_sim")
     return pairs.merge(long.rename_axis(["entry_id", "cmid"]).reset_index(), on=["entry_id", "cmid"], how="left")
+
+
+# ---------------- People ----------------
+
+def not_people(mm):
+    """Capitalized words that can follow "with" but aren't people: role words, plus every word in client and matter
+    names and codenames ("call w/ Harbor team")."""
+    names = pd.concat([mm["Client"], mm["Matter"], mm["Codename"]]).dropna()
+    return NOT_PEOPLE | {w for name in names for w in normalize(name, drop_suffixes=False).split()}
+
+
+def known_people(narratives, skip):
+    """Everyone written the usual way in these narratives, lowercase: "initial surname" when written with an initial
+    ("s bauer" from "S. Bauer"), else the surname ("kaur" from "call w/ Kaur"). Run on TRAIN narratives, this is the
+    list of people billing history knows about."""
+    found = set()
+    for text in narratives.dropna():
+        found |= {f"{i.lower()} {n.lower()}" for i, n in INITIAL_NAME.findall(text) if n.lower() not in skip}
+        found |= {n.lower() for n in WITH_NAME.findall(text) if n.lower() not in skip}
+    return sorted(found)
+
+
+def find_people(narratives_norm, people):
+    """Known people named in each normalized narrative, as surnames: a known "initial surname" ("tcw s bauer"), or a
+    known surname right after "w" or "with" ("call w kaur"). Normalized text has no capitals or punctuation, so
+    "S. NG" and "s ng" match the same way. The initial has to be one seen with that surname, so "option grant" and
+    "a grant of options" don't match O. Grant. Returns a list of surnames per narrative."""
+    if not people:
+        return narratives_norm.map(lambda _: [])
+    full = sorted({p for p in people if " " in p}, key=len, reverse=True)
+    surnames = sorted({p.split()[-1] for p in people}, key=len, reverse=True)
+    parts = [r"\b(" + "|".join(map(re.escape, full)) + r")\b"] if full else []
+    parts.append(r"\b(?:w|with) (" + "|".join(map(re.escape, surnames)) + r")\b")
+    pattern = re.compile("|".join(parts))
+    return narratives_norm.map(lambda text: sorted({m.split()[-1] for groups in pattern.findall(text)
+                                                    for m in (groups if isinstance(groups, tuple) else (groups,)) if m}))
+
+
+def person_history(entries, named, matters, folds):
+    """Which client each known person was billed with: one row per (person, client, fold).
+
+    Past entries are TRAIN entries with one known matter, standing in for billing history. Multi-matter entries are
+    left out, since a firm splits them before they're billed, so a person can't be credited to the wrong matter.
+    entries: entry_id, split, key_true_cmid, key_secondary_cmid. named: entry_id -> find_people list.
+    """
+    past = entries[(entries["split"] == "TRAIN") & (entries["key_true_cmid"] != "NONE")
+                   & entries["key_secondary_cmid"].isna()]
+    rows = past[["entry_id", "key_true_cmid"]].assign(person=past["entry_id"].map(named)).explode("person").dropna()
+    client_of = matters.set_index("cmid")["client"]
+    return pd.DataFrame({"person": rows["person"], "client": rows["key_true_cmid"].map(client_of),
+                         "fold": rows["entry_id"].map(folds)}).drop_duplicates().reset_index(drop=True)
+
+
+def add_person_features(pairs, named, history, folds):
+    """person_hits: people named in the entry who were billed with this candidate's client before.
+    person_conflict: people named who were billed before, but never with this candidate's client.
+
+    named: entry_id -> find_people list. history: person_history output. folds: TRAIN entry_id -> fold.
+    A TRAIN entry only uses history from the other folds, like past_narrative_sim. Other entries use all of it.
+    """
+    mentions = named.explode().dropna().rename("person").rename_axis("entry_id").reset_index()
+    mentions["fold"] = mentions["entry_id"].map(folds)
+    seen = mentions.merge(history.rename(columns={"fold": "past_fold"}), on="person")
+    seen = seen[seen["fold"] != seen["past_fold"]]
+    known = seen.groupby("entry_id")["person"].nunique().rename("people_known").reset_index()
+    hits = seen.groupby(["entry_id", "client"])["person"].nunique().rename("person_hits").reset_index()
+
+    p = pairs.merge(hits, on=["entry_id", "client"], how="left").merge(known, on="entry_id", how="left")
+    p["person_hits"] = p["person_hits"].fillna(0).astype(int)
+    p["person_conflict"] = p["people_known"].fillna(0).astype(int) - p["person_hits"]
+    return p.drop(columns="people_known")
 
 
 # ---------------- Narrative parts ----------------

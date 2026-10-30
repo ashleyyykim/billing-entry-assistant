@@ -8,9 +8,9 @@ import operator
 
 import numpy as np
 import pandas as pd
-from sklearn.metrics import log_loss
+from sklearn.metrics import average_precision_score, log_loss, roc_auc_score
 
-from classifier import CLUES, confidence
+from classifier import CLUES, action_labels, confidence
 from clean import is_blank
 from fuzzy import match
 from rules import ACTIONS, OUTCOMES, precision_ci, summarize
@@ -62,6 +62,10 @@ def parse_metrics(parsed, answers, client_names, min_score=80):
 
 def pair_metrics(pairs, prob_col="prob"):
     """Step 1 (pair model): how often the right matter is ranked first or in the top 3, and how good the probabilities are.
+
+    mrr: mean reciprocal rank, the average of 1 / (rank of the right matter), so 1 means always first.
+    auroc and pr_auc: across all pairs. AUROC looks near perfect because most of an entry's 103 candidates are easy no's;
+    PR-AUC suits the 1-in-100 positive rate better. Ranking within each entry (top-1, MRR) is what a reviewer sees.
     Calibration uses each entry's top pick, the probability a reviewer sees. Across all pairs it would look
     near perfect only because most pairs are obvious no's close to 0."""
     df = pairs[["entry_id", "is_true_matter", prob_col]].copy()
@@ -70,8 +74,27 @@ def pair_metrics(pairs, prob_col="prob"):
     best_rank = df[has_true & (df["is_true_matter"] == 1)].groupby("entry_id")["rank"].min()
     top = df[df["rank"] == 1]
     return {"entries": int(df["entry_id"].nunique()), "top_1": float((best_rank <= 1).mean()),
-            "top_3": float((best_rank <= 3).mean()), "log_loss": float(log_loss(df["is_true_matter"], df[prob_col])),
+            "top_3": float((best_rank <= 3).mean()), "mrr": float((1 / best_rank).mean()),
+            "auroc": float(roc_auc_score(df["is_true_matter"], df[prob_col])),
+            "pr_auc": float(average_precision_score(df["is_true_matter"], df[prob_col])),
+            "log_loss": float(log_loss(df["is_true_matter"], df[prob_col])),
             "calibration_error": calibration_error(top["is_true_matter"], top[prob_col])}
+
+
+def action_metrics(top, answers):
+    """Step 2 (action model): how well each action probability separates entries with that label from the rest.
+
+    top: entry clues with the action model's probabilities (p_auto, p_review, p_multi, p_no_match), from
+    pipeline.decide_pairs. The last row scores step 1's top probability alone as a P(auto), for comparison.
+    share: how common the label is, the PR-AUC a random score would get."""
+    labels = np.asarray(action_labels(top, answers))
+    scores = {label: (labels == label, top[f"p_{label}"]) for label in ["auto", "review", "multi", "no_match"]}
+    scores["auto, top probability alone"] = (labels == "auto", top["top_prob"])
+    rows = {name: {"share": float(y.mean()),
+                   "auroc": float(roc_auc_score(y, p)) if 0 < y.sum() < len(y) else np.nan,
+                   "pr_auc": float(average_precision_score(y, p)) if y.any() else np.nan}
+            for name, (y, p) in scores.items()}
+    return pd.DataFrame(rows).T
 
 
 def action_table(scored):
@@ -100,6 +123,15 @@ def headline(scored):
             "silent_errors": s["silent_errors"], "silent_rate": s["silent_errors"] / auto.sum() if auto.any() else np.nan,
             "multi_caught": s["multi_caught"], "no_match_precision": s["no_match_precision"],
             "shortlist_hit": s["shortlist_hit"]}
+
+
+def matter_history(scored, past_cmids):
+    """Whether each entry's right matter already has past entries in billing history ("seen before"), has none yet
+    ("new matter", e.g. one that just opened), or isn't in Matter Master at all ("new client or matter").
+    past_cmids: the matters of the past entries the clues were built from."""
+    known = set(past_cmids)
+    return np.select([scored["key_true_cmid"] == "NONE", scored["key_true_cmid"].isin(known)],
+                     ["new client or matter", "seen before"], "new matter")
 
 
 def slice_table(scored, by, min_entries=10):
@@ -163,7 +195,7 @@ def check_decisions(scored, pairs, valid_cmids, client_col, matter_col, phrase_m
     pick = pick.rename(columns={client_col: "client_score", matter_col: "matter_score"}).set_index("entry_id")
     df = scored.set_index("entry_id").join(pick[["prob", "not_open", "is_typed_cmid", "cmid_valid", "cmid_clean",
                                                  "past_narrative_sim", "in_history", "own_keyterm_hits", "client_in_text",
-                                                 "client_score", "matter_score", "cue_share"]])
+                                                 "client_score", "matter_score", "cue_share", "person_hits"]])
     auto = df["action"] == "AUTO_MATCH"
     preds = df["pred_cmid"].fillna("").str.split(" | ", regex=False)
     typed_valid = df["cmid_clean"].isin(valid_cmids)
