@@ -1,9 +1,9 @@
 {
   "model": "gradient boosting",
   "model_params": {
-    "learning_rate": 0.05,
-    "max_leaf_nodes": 31,
-    "min_samples_leaf": 100
+    "min_child_samples": 200,
+    "n_estimators": 400,
+    "num_leaves": 31
   },
   "features": [
     "has_cmid",
@@ -51,7 +51,9 @@
     "history_share_gap",
     "cmid_similarity_gap",
     "past_narrative_sim",
-    "past_narrative_sim_gap"
+    "past_narrative_sim_gap",
+    "person_hits",
+    "person_conflict"
   ],
   "action_features": [
     "top_prob",
@@ -78,29 +80,31 @@
     "n_matters_named",
     "n_clients_named",
     "is_email",
+    "n_other_sources",
     "multi_text_score"
   ],
   "text_model_params": {
     "logisticregression__C": 10
   },
   "action_model_params": {
-    "max_iter": 50,
-    "min_samples_leaf": 50
+    "min_child_samples": 20,
+    "n_estimators": 100,
+    "num_leaves": 7
   },
   "routing": {
     "one_step": {
-      "auto_min": 0.98,
-      "multi_min": 0.5,
+      "auto_min": 0.999,
+      "multi_min": 0.9,
       "no_match_max": 0.02
     },
     "strict": {
       "auto_min": 0.97,
-      "no_match_min": 0.7,
+      "no_match_min": 0.9,
       "multi_min": 0.15,
       "correct_typed_cmid": true
     },
     "default": {
-      "auto_min": 0.93,
+      "auto_min": 0.9,
       "no_match_min": 0.9,
       "multi_min": 0.15,
       "correct_typed_cmid": true
@@ -114,5 +118,6 @@
   },
   "multi_beta": 2,
   "precision_target": 0.98,
-  "default_target": 0.97
+  "default_target": 0.97,
+  "robust_share": 0.9
 }

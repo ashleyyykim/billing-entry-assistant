@@ -364,6 +364,35 @@ def cutoff_stability(scored_by_setting, target, n_boot=200, seed=210):
     return pd.Series(picks).value_counts(normalize=True).rename("share of resamples")
 
 
+def pick_robust(scored_by_setting, target, share=0.9, n_boot=200, seed=210):
+    """Like pick_best, but with a margin: the setting with the highest straight_through among those that reach the
+    target in at least `share` of timekeeper resamples of TRAIN (the same resamples as cutoff_stability).
+
+    pick_best takes the most automatic setting that reaches the target on TRAIN as a whole, which often reaches it
+    by a hair, so a slightly different set of entries lands under it. If no setting is safe enough, falls back to
+    pick_best on the whole sweep.
+    scored_by_setting: {setting: scored decisions}, all for the same entries in the same order.
+    """
+    settings = list(scored_by_setting)
+    table = pd.DataFrame({s: summarize(scored) for s, scored in scored_by_setting.items()}).T
+    flags = [decided_right(s) for s in scored_by_setting.values()]
+    decided = np.array([d for d, _ in flags])
+    right = np.array([r for _, r in flags])
+    positions = group_positions(next(iter(scored_by_setting.values()))["tk_id"])
+
+    rng = np.random.default_rng(seed)
+    hits = np.zeros(len(settings))
+    for _ in range(n_boot):
+        rows = resample(positions, rng)
+        hits += right[:, rows].sum(axis=1) / np.maximum(decided[:, rows].sum(axis=1), 1) >= target
+    table["share_reaching_target"] = hits / n_boot
+
+    safe = table[table["share_reaching_target"] >= share]
+    if safe.empty:
+        return pick_best(table, target)
+    return safe.sort_values(["straight_through", "action_accuracy"], ascending=False).index[0]
+
+
 def summarize(scored):
     """Headline numbers for one set of decisions.
 
