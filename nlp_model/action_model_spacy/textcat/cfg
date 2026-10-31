@@ -1,0 +1,11 @@
+{
+  "labels":[
+    "AUTO_MATCH",
+    "FLAG_MISMATCH",
+    "NEEDS_REVIEW",
+    "NO_MATCH",
+    "SPLIT_ENTRY"
+  ],
+  "threshold":0.0,
+  "positive_label":null
+}
