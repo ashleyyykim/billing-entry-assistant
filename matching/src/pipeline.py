@@ -4,7 +4,8 @@ This is the code the deployed service runs. In order:
 1. load_reference: once at startup. Matter Master, timekeeper history, settings, models, past narratives, people.
 2. decide: for each batch of new entries (emails already parsed). Clues, both models, cutoffs, and reasons.
 3. add_confirmed: after a reviewer confirms entries, so tomorrow's clues use them (notebook 09).
-Retraining is separate (src/train.py).
+Retraining is separate (src/train.py). Emails are parsed with extraction/src/text_parser.py, so that folder
+needs to be on the path too.
 
 Notebooks: 05 scores changed copies of VAL (stress tests), 06 runs the final TEST and holdout sets, 09 replays feedback.
 load_entries reads a labeled time-entry file the way notebooks 00 and 02 do; the service gets entries without labels.
@@ -19,11 +20,11 @@ import pandas as pd
 from classifier import ACTION_FEATURES, entry_features, explain, route_actions
 from clean import normalize
 from cues import cue_table
-from email_parser import parse_email_entries
 from features import (add_gaps, add_person_features, build_pairs, client_mention_table, find_people, keyterm_table,
                       known_people, not_people, past_sim)
 from fuzzy import client_name_table, matter_name_table
 from rules import RENAMED
+from text_parser import parse_email_entries
 
 RAW_ENTRY_COLS = {"Time ID": "entry_id", "TK ID": "tk_id", "Source Format": "source_format", "Date": "work_date",
                   "CMID": "cmid", "Client": "client", "Matter": "matter", "Narrative": "narrative", "Hours": "hours"}

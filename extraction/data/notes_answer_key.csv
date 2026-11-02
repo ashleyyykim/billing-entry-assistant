@@ -1,0 +1,12 @@
+photo,entry,work_date,hours,client,cmid,narrative,note
+note_01.JPG,1,,0.4,Halvorsen,,call w/lender counsel re Brightline closing,
+note_02.JPG,1,2026-10-27,1.6,,5602.003,review Quanta disclosure schedules,
+note_03.JPG,1,,2.5,Ironwood,,diligence calls w/ Quanta mgmt,An arrow is drawn after 2.5
+note_03.JPG,2,,0.8,Ironwood,,markup SPA,Written as same; the client comes from the line above
+note_04.JPG,1,,1.2,Tidewater Analytics,,draft side letter for Series A lead,The entry wraps onto a second line; a crossed-out word before lead
+note_04.JPG,2,,0.3,,,Firm admin time entries,"Firm time: the client is left blank on purpose, since matching reads firm time from the narrative"
+note_05.JPG,1,2026-10-26,0.9,Orchard Lane,,review vendor contract,Narrative on the line below the hours
+note_05.JPG,2,2026-10-27,1.1,Solace Health,,board minutes,Second date on the same note (TUES 10/27)
+note_06.JPG,1,,0.5,Ridgeview,,call re capital call,
+note_06.JPG,2,,1.0,,,Firm BD lunch w/ prospective client,"Firm time: the client is left blank on purpose, since matching reads firm time from the narrative"
+note_08.JPG,1,,1.25,Ironwood,,Prism bringdown call,Written 1:15; a scribble before Prism

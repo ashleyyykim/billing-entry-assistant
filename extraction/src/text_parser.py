@@ -1,4 +1,5 @@
-"""Parse time entries sent by email into the same fields as a typed entry: CMID, client, matter, hours, narrative.
+"""Parse time entries written as free text into the same fields as a typed entry: CMID, client, matter, hours,
+narrative. Free text covers emails, typed notes and texts, photographed notes (after Textract), and voice transcripts.
 
 The rules come from general email and billing conventions, not from any labeled entries:
 - email clutter: reply chains ("On ... wrote:", "-----Original Message-----", Outlook From/Sent/To blocks),
@@ -11,9 +12,13 @@ The rules come from general email and billing conventions, not from any labeled 
 """
 import re
 
+import pandas as pd
 from rapidfuzz import fuzz, process
 
-from clean import is_blank
+
+def is_blank(value):
+    return value is None or pd.isna(value) or str(value).strip() == ""
+
 
 # ---------------- Email clutter ----------------
 
@@ -273,10 +278,11 @@ def parse_line(line, lookup, context=None, matters=None):
     return fields
 
 
-def parse_email(text, lookup, matters=None):
-    """All entries in one email: a list of dicts with cmid, client, matter, hours, narrative.
+def parse_text(text, lookup, matters=None):
+    """All entries in one piece of free text (an email, a note): a list of dicts with cmid, client, matter, hours,
+    narrative.
 
-    Most emails hold one entry. When several lines each have their own hours, each line is its own entry,
+    Most emails and notes hold one entry. When several lines each have their own hours, each line is its own entry,
     and lines without hours above them (a client header, "Client: ..." labels) carry over to the entries below.
     """
     if is_blank(text):
@@ -325,7 +331,7 @@ def parse_email_entries(entries, client_names, matter_names=None, skip=()):
     out["parsed_hours"], out["n_parsed"] = None, 0
     is_email = out["source_format"].str.upper() == "EMAIL"
     for idx in out.index[is_email]:
-        found = parse_email(out.at[idx, "narrative"], lookup, matters)
+        found = parse_text(out.at[idx, "narrative"], lookup, matters)
         if not found:
             continue
         first = found[0]

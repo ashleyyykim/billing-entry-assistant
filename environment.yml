@@ -25,3 +25,5 @@ dependencies:
   - scikit-learn
   - lightgbm
   - sentence-transformers
+  - boto3
+  - pymupdf
