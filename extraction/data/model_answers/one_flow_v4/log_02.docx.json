@@ -1,0 +1,136 @@
+{
+ "model": "us.amazon.nova-pro-v1:0",
+ "entries": [
+  {
+   "lines": [
+    1,
+    2,
+    3
+   ],
+   "client": "Pelican Row",
+   "cmid": "",
+   "matter": "review purchase agreement for 450 Harbor St.",
+   "date": "Mon 10/26",
+   "hours_written": "1.5",
+   "hours": 1.5,
+   "narrative": "review purchase agreement for 450 Harbor St.",
+   "billable": true,
+   "unsure": "",
+   "timekeeper": ""
+  },
+  {
+   "lines": [
+    1,
+    2,
+    4
+   ],
+   "client": "Lanternfish",
+   "cmid": "",
+   "matter": "call w/ CFO re reorg steps",
+   "date": "Mon 10/26",
+   "hours_written": ".6",
+   "hours": 0.6,
+   "narrative": "call w/ CFO re reorg steps",
+   "billable": true,
+   "unsure": "",
+   "timekeeper": ""
+  },
+  {
+   "lines": [
+    1,
+    5,
+    6
+   ],
+   "client": "Ember Grid",
+   "cmid": "",
+   "matter": "Mesa Solar credit agreement comments",
+   "date": "Tues 10/27",
+   "hours_written": "2.2",
+   "hours": 2.2,
+   "narrative": "Mesa Solar credit agreement comments",
+   "billable": true,
+   "unsure": "",
+   "timekeeper": ""
+  },
+  {
+   "lines": [
+    1,
+    5,
+    7
+   ],
+   "client": "Firm",
+   "cmid": "",
+   "matter": "admin",
+   "date": "Tues 10/27",
+   "hours_written": ".3",
+   "hours": 0.3,
+   "narrative": "admin",
+   "billable": true,
+   "unsure": "",
+   "timekeeper": ""
+  },
+  {
+   "lines": [
+    1,
+    8,
+    9
+   ],
+   "client": "",
+   "cmid": "8340.003",
+   "matter": "title review for 88 Bay Rd.",
+   "date": "Wed 10/28",
+   "hours_written": ".9",
+   "hours": 0.9,
+   "narrative": "title review for 88 Bay Rd.",
+   "billable": true,
+   "unsure": "",
+   "timekeeper": ""
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "text": "Week of Oct 26"
+  },
+  {
+   "id": 2,
+   "text": "Mon 10/26"
+  },
+  {
+   "id": 3,
+   "text": "Pelican Row - review purchase agreement for 450 Harbor St. 1.5"
+  },
+  {
+   "id": 4,
+   "text": "Lanternfish: call w/ CFO re reorg steps .6"
+  },
+  {
+   "id": 5,
+   "text": "Tues 10/27"
+  },
+  {
+   "id": 6,
+   "text": "Ember Grid - Mesa Solar credit agreement comments 2.2"
+  },
+  {
+   "id": 7,
+   "text": "Firm admin .3"
+  },
+  {
+   "id": 8,
+   "text": "Wed 10/28"
+  },
+  {
+   "id": 9,
+   "text": "8340.003 - title review for 88 Bay Rd. .9"
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 4373,
+  "outputTokens": 505,
+  "totalTokens": 4878
+ },
+ "latency_ms": 4663
+}

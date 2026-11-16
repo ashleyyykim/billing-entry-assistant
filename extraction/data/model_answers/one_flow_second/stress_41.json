@@ -1,0 +1,47 @@
+{
+ "model": "us.meta.llama4-maverick-17b-instruct-v1:0",
+ "entries": [
+  {
+   "lines": [
+    1
+   ],
+   "client": "Meridian",
+   "cmid": "",
+   "matter": "proxy",
+   "date": "",
+   "hours_written": ".5",
+   "hours": 0.5,
+   "narrative": "Spent on Meridian proxy",
+   "billable": true,
+   "unsure": ""
+  },
+  {
+   "lines": [
+    1
+   ],
+   "client": "Kestrel Foods",
+   "cmid": "",
+   "matter": "APA",
+   "date": "",
+   "hours_written": ".3",
+   "hours": 0.3,
+   "narrative": "on Kestrel Foods APA",
+   "billable": true,
+   "unsure": ""
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "text": "Spent .5 on Meridian proxy. Then .3 on Kestrel Foods APA."
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 2692,
+  "outputTokens": 154,
+  "totalTokens": 2846
+ },
+ "latency_ms": 724
+}

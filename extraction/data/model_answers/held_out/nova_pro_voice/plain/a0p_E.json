@@ -1,0 +1,67 @@
+{
+ "model": "us.amazon.nova-pro-v1:0",
+ "entries": [
+  {
+   "lines": [
+    1
+   ],
+   "client": "Solace Health",
+   "cmid": "",
+   "date": "",
+   "hours_written": "2.6",
+   "hours": 2.6,
+   "narrative": "board meeting prep in minutes",
+   "unsure": ""
+  },
+  {
+   "lines": [
+    1
+   ],
+   "client": "Meridian",
+   "cmid": "",
+   "date": "",
+   "hours_written": "1.3",
+   "hours": 1.3,
+   "narrative": "review underrated comments on the prospectus",
+   "unsure": ""
+  },
+  {
+   "lines": [
+    1
+   ],
+   "client": "Meridian",
+   "cmid": "3455.002",
+   "date": "",
+   "hours_written": "0.5",
+   "hours": 0.5,
+   "narrative": "10Q comments",
+   "unsure": ""
+  },
+  {
+   "lines": [
+    1
+   ],
+   "client": "",
+   "cmid": "3455.002",
+   "date": "",
+   "hours_written": "",
+   "hours": 0.4,
+   "narrative": "committee charter updates",
+   "unsure": "0.4 hours assumed for 'Matter' as it is a short task"
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "text": "Solace Health, 2.6, board meeting prep in minutes. Meridian, 1.3, review underrated comments on the prospectus. Meridian, 0.5, 10Q comments. Matter 3455.002.4 committee charter updates."
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 3036,
+  "outputTokens": 273,
+  "totalTokens": 3309
+ },
+ "latency_ms": 2225
+}

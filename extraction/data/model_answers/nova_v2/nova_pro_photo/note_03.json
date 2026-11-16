@@ -1,0 +1,72 @@
+{
+ "model": "us.amazon.nova-pro-v1:0",
+ "entries": [
+  {
+   "lines": [
+    1
+   ],
+   "client": "Ironwood",
+   "cmid": "",
+   "date": "",
+   "hours_written": "2.5",
+   "hours": 2.5,
+   "narrative": "diligence",
+   "unsure": ""
+  },
+  {
+   "lines": [
+    1,
+    2
+   ],
+   "client": "Ironwood",
+   "cmid": "",
+   "date": "",
+   "hours_written": "",
+   "hours": 0.0,
+   "narrative": "calls w/ Quanta mgmt",
+   "unsure": ""
+  },
+  {
+   "lines": [
+    3
+   ],
+   "client": "Ironwood",
+   "cmid": "",
+   "date": "",
+   "hours_written": ", 8",
+   "hours": 0.8,
+   "narrative": "markup SPA",
+   "unsure": "\", 8\" read as.8"
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "across": 26,
+   "down": 45,
+   "conf": 97,
+   "text": "Ironwood 2.5 diligence"
+  },
+  {
+   "id": 2,
+   "across": 25,
+   "down": 50,
+   "conf": 96,
+   "text": "calls w/ Quanta mgmt"
+  },
+  {
+   "id": 3,
+   "across": 26,
+   "down": 61,
+   "conf": 39,
+   "text": "same - markup SPA , 8"
+  }
+ ],
+ "stop_reason": "tool_use",
+ "usage": {
+  "inputTokens": 4775,
+  "outputTokens": 195,
+  "totalTokens": 4970
+ },
+ "latency_ms": 2331
+}

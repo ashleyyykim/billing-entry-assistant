@@ -1,0 +1,84 @@
+{
+ "model": "us.amazon.nova-pro-v1:0",
+ "entries": [
+  {
+   "lines": [
+    1,
+    2,
+    3
+   ],
+   "client": "",
+   "cmid": "3012.0055",
+   "date": "",
+   "hours_written": "1.3",
+   "hours": 1.3,
+   "narrative": "corvid NDA Markup",
+   "unsure": ""
+  },
+  {
+   "lines": [
+    4,
+    5,
+    6
+   ],
+   "client": "Harborline",
+   "cmid": "2207.003",
+   "date": "",
+   "hours_written": ". 9",
+   "hours": 0.9,
+   "narrative": "calder license redline",
+   "unsure": ". 9 read as 0.9"
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "across": 19,
+   "down": 33,
+   "conf": 85,
+   "text": "3012.0055"
+  },
+  {
+   "id": 2,
+   "across": 37,
+   "down": 36,
+   "conf": 95,
+   "text": "corvid NDA Markup"
+  },
+  {
+   "id": 3,
+   "across": 72,
+   "down": 41,
+   "conf": 100,
+   "text": "1.3"
+  },
+  {
+   "id": 4,
+   "across": 19,
+   "down": 52,
+   "conf": 95,
+   "text": "Harborline 2207.003"
+  },
+  {
+   "id": 5,
+   "across": 37,
+   "down": 60,
+   "conf": 65,
+   "text": ". 9"
+  },
+  {
+   "id": 6,
+   "across": 44,
+   "down": 62,
+   "conf": 54,
+   "text": "calder license redlin C"
+  }
+ ],
+ "stop_reason": "tool_use",
+ "usage": {
+  "inputTokens": 4858,
+  "outputTokens": 170,
+  "totalTokens": 5028
+ },
+ "latency_ms": 1964
+}

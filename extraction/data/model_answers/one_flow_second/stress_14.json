@@ -1,0 +1,33 @@
+{
+ "model": "us.meta.llama4-maverick-17b-instruct-v1:0",
+ "entries": [
+  {
+   "lines": [
+    1
+   ],
+   "client": "",
+   "cmid": "5520.001",
+   "matter": "",
+   "date": "",
+   "hours_written": ".6",
+   "hours": 0.6,
+   "narrative": "review purchase agmt",
+   "billable": true,
+   "unsure": ""
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "text": "5520001 .6 review purchase agmt"
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 2683,
+  "outputTokens": 82,
+  "totalTokens": 2765
+ },
+ "latency_ms": 549
+}

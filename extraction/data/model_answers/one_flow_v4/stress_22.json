@@ -1,0 +1,51 @@
+{
+ "model": "us.amazon.nova-pro-v1:0",
+ "entries": [
+  {
+   "lines": [
+    1
+   ],
+   "client": "",
+   "cmid": "5520.001",
+   "matter": "",
+   "date": "",
+   "hours_written": ".6",
+   "hours": 0.6,
+   "narrative": "review purchase agmt",
+   "billable": true,
+   "unsure": ""
+  },
+  {
+   "lines": [
+    2
+   ],
+   "client": "",
+   "cmid": "4590.003",
+   "matter": "",
+   "date": "",
+   "hours_written": ".4",
+   "hours": 0.4,
+   "narrative": "charter amendment",
+   "billable": true,
+   "unsure": ""
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "text": "5520.001 .6 review purchase agmt"
+  },
+  {
+   "id": 2,
+   "text": "4590.003 .4 charter amendment"
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 2930,
+  "outputTokens": 159,
+  "totalTokens": 3089
+ },
+ "latency_ms": 1700
+}

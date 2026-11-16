@@ -1,0 +1,67 @@
+{
+ "model": "us.amazon.nova-pro-v1:0",
+ "entries": [
+  {
+   "lines": [
+    1
+   ],
+   "client": "Silverleaf",
+   "cmid": "7215.003",
+   "date": "",
+   "hours_written": "0.7",
+   "hours": 0.7,
+   "narrative": "review lender comments on the Esterion credit agreement",
+   "unsure": ""
+  },
+  {
+   "lines": [
+    1
+   ],
+   "client": "Silverleaf",
+   "cmid": "",
+   "date": "",
+   "hours_written": "0.9",
+   "hours": 0.9,
+   "narrative": "title objection letter for Nine Pine",
+   "unsure": ""
+  },
+  {
+   "lines": [
+    1
+   ],
+   "client": "Silverleaf",
+   "cmid": "",
+   "date": "",
+   "hours_written": "0.3",
+   "hours": 0.3,
+   "narrative": "call with the title company",
+   "unsure": ""
+  },
+  {
+   "lines": [
+    1
+   ],
+   "client": "Ember Grid",
+   "cmid": "",
+   "date": "",
+   "hours_written": "1.2",
+   "hours": 1.2,
+   "narrative": "review the Mesa Solar interconnection agreement",
+   "unsure": ""
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "text": "Matter 7215.003 0.7 review lender comments on the Esterion credit agreement. Silver leaf 0.9 title objection letter for Nine Pine. Silver leaf 0.3 call with the title company and then Ember Grid 1.2 review the Mesa Solar interconnection agreement."
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 3041,
+  "outputTokens": 265,
+  "totalTokens": 3306
+ },
+ "latency_ms": 2875
+}

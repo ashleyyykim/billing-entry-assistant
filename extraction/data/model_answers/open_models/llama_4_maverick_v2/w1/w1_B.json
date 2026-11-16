@@ -1,0 +1,116 @@
+{
+ "model": "us.meta.llama4-maverick-17b-instruct-v1:0",
+ "prompt": "v2",
+ "mode": "tool_auto",
+ "system_prompt": true,
+ "entries": [
+  {
+   "lines": [
+    1,
+    2
+   ],
+   "client": "",
+   "cmid": "5602.001",
+   "date": "11-2",
+   "hours_written": "3.2",
+   "hours": 3.2,
+   "narrative": "10Q risk update",
+   "unsure": ""
+  },
+  {
+   "lines": [
+    3,
+    4
+   ],
+   "client": "A&V",
+   "cmid": "",
+   "date": "11-3",
+   "hours_written": "0.5",
+   "hours": 0.5,
+   "narrative": "8k Draft",
+   "unsure": ""
+  },
+  {
+   "lines": [
+    5
+   ],
+   "client": "Solace Health",
+   "cmid": "",
+   "date": "11-3",
+   "hours_written": "0.8",
+   "hours": 0.8,
+   "narrative": "Board",
+   "unsure": ""
+  },
+  {
+   "lines": [
+    6
+   ],
+   "client": "",
+   "cmid": "",
+   "date": "11-4",
+   "hours_written": "0.5",
+   "hours": 0.5,
+   "narrative": "CFO call",
+   "unsure": "\"U.S\" is likely \"US\" or a client name; \"CFO\" is clear"
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "across": 12,
+   "down": 12,
+   "conf": 89,
+   "number_conf": 89,
+   "text": "11-2 5602.001 3.2 10Q"
+  },
+  {
+   "id": 2,
+   "across": 61,
+   "down": 18,
+   "conf": 70,
+   "number_conf": null,
+   "text": "lisk update"
+  },
+  {
+   "id": 3,
+   "across": 11,
+   "down": 26,
+   "conf": 79,
+   "number_conf": 79,
+   "text": "11-3 A&V 0.5 8k"
+  },
+  {
+   "id": 4,
+   "across": 67,
+   "down": 32,
+   "conf": 99,
+   "number_conf": null,
+   "text": "Draft"
+  },
+  {
+   "id": 5,
+   "across": 13,
+   "down": 41,
+   "conf": 98,
+   "number_conf": 98,
+   "text": "11-3 Solace Health 0.8 Board"
+  },
+  {
+   "id": 6,
+   "across": 13,
+   "down": 50,
+   "conf": 94,
+   "number_conf": 100,
+   "text": "11-4 U.S CFO call"
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 7726,
+  "outputTokens": 281,
+  "totalTokens": 8007
+ },
+ "latency_ms": 1433
+}

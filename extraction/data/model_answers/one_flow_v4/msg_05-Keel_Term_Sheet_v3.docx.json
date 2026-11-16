@@ -1,0 +1,64 @@
+{
+ "model": "us.amazon.nova-pro-v1:0",
+ "entries": [
+  {
+   "lines": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+   ],
+   "client": "Bluefin Robotics",
+   "cmid": "",
+   "matter": "Series A Term Sheet (draft v3)",
+   "date": "",
+   "hours_written": "",
+   "hours": 0.0,
+   "narrative": "Issuer: Bluefin Robotics, Inc. Amount: up to $12,000,000 of Series A Preferred at $1.25 per share Liquidation preference: 1x non-participating Dividends: 8% non-cumulative, when declared Board: 2 seats for Series A, 1 independent Closing: on or before 11/30/2026",
+   "unsure": "",
+   "timekeeper": "",
+   "billable": false
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "text": "Keel Ventures - Series A Term Sheet (draft v3)"
+  },
+  {
+   "id": 2,
+   "text": "Issuer: Bluefin Robotics, Inc."
+  },
+  {
+   "id": 3,
+   "text": "Amount: up to $12,000,000 of Series A Preferred at $1.25 per share"
+  },
+  {
+   "id": 4,
+   "text": "Liquidation preference: 1x non-participating"
+  },
+  {
+   "id": 5,
+   "text": "Dividends: 8% non-cumulative, when declared"
+  },
+  {
+   "id": 6,
+   "text": "Board: 2 seats for Series A, 1 independent"
+  },
+  {
+   "id": 7,
+   "text": "Closing: on or before 11/30/2026"
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 4364,
+  "outputTokens": 195,
+  "totalTokens": 4559
+ },
+ "latency_ms": 1855
+}

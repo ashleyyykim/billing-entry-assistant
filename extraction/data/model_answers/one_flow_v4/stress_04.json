@@ -1,0 +1,61 @@
+{
+ "model": "us.amazon.nova-pro-v1:0",
+ "entries": [
+  {
+   "lines": [
+    1
+   ],
+   "client": "Meridian",
+   "cmid": "",
+   "matter": "proxy draft",
+   "date": "",
+   "hours_written": "1.5",
+   "hours": 1.5,
+   "narrative": "",
+   "billable": true,
+   "unsure": ""
+  },
+  {
+   "lines": [
+    1
+   ],
+   "client": "Tidewater",
+   "cmid": "",
+   "matter": "board consent",
+   "date": "",
+   "hours_written": ".3",
+   "hours": 0.3,
+   "narrative": "",
+   "billable": true,
+   "unsure": ""
+  },
+  {
+   "lines": [
+    1
+   ],
+   "client": "Bluefin",
+   "cmid": "",
+   "matter": "option grant call",
+   "date": "",
+   "hours_written": ".6",
+   "hours": 0.6,
+   "narrative": "",
+   "billable": true,
+   "unsure": ""
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "text": "Meridian proxy draft 1.5; Tidewater board consent .3; Bluefin option grant call .6"
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 2920,
+  "outputTokens": 212,
+  "totalTokens": 3132
+ },
+ "latency_ms": 1764
+}

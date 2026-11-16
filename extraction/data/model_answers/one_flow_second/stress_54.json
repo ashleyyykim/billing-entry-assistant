@@ -1,0 +1,33 @@
+{
+ "model": "us.meta.llama4-maverick-17b-instruct-v1:0",
+ "entries": [
+  {
+   "lines": [
+    1
+   ],
+   "client": "Halvorsen",
+   "cmid": "",
+   "matter": "",
+   "date": "",
+   "hours_written": "Quarter of an hour",
+   "hours": 0.25,
+   "narrative": "call",
+   "billable": true,
+   "unsure": ""
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "text": "Quarter of an hour on the Halvorsen call"
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 2683,
+  "outputTokens": 81,
+  "totalTokens": 2764
+ },
+ "latency_ms": 473
+}

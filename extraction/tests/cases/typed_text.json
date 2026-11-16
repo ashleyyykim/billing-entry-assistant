@@ -1,0 +1,242 @@
+{
+ "upload_date": "2026-11-02",
+ "uploader": "TK102",
+ "typed_notes": [
+  {
+   "layout": "Shorthand line",
+   "text": ".4 Halvorsen - call w/ CEO re hiring",
+   "expected": [
+    {
+     "work_date": "2026-11-02",
+     "client": "Halvorsen",
+     "hours": 0.4,
+     "cmid": null
+    }
+   ]
+  },
+  {
+   "layout": "Date on top",
+   "text": "10/13\nCobalt Ridge Partners\nrevise sub docs for Fund II 1.2",
+   "expected": [
+    {
+     "work_date": "2026-10-13",
+     "client": "Cobalt Ridge Partners",
+     "hours": 1.2,
+     "cmid": null
+    }
+   ]
+  },
+  {
+   "layout": "Two entries",
+   "text": "Meridian - proxy draft 1.5\nTidewater - board consent .3",
+   "expected": [
+    {
+     "work_date": "2026-11-02",
+     "client": "Meridian",
+     "hours": 1.5,
+     "cmid": null
+    },
+    {
+     "work_date": "2026-11-02",
+     "client": "Tidewater",
+     "hours": 0.3,
+     "cmid": null
+    }
+   ]
+  },
+  {
+   "layout": "CMID instead of client",
+   "text": "5520.001 .6 review purchase agmt",
+   "expected": [
+    {
+     "work_date": "2026-11-02",
+     "client": null,
+     "hours": 0.6,
+     "cmid": "5520.001"
+    }
+   ]
+  },
+  {
+   "layout": "Minutes",
+   "text": "45 min Bluefin - option grant call",
+   "expected": [
+    {
+     "work_date": "2026-11-02",
+     "client": "Bluefin",
+     "hours": 0.75,
+     "cmid": null
+    }
+   ]
+  },
+  {
+   "layout": "Hours and minutes",
+   "text": "Kestrel Foods 1:15 bakery APA markup",
+   "expected": [
+    {
+     "work_date": "2026-11-02",
+     "client": "Kestrel Foods",
+     "hours": 1.25,
+     "cmid": null
+    }
+   ]
+  },
+  {
+   "layout": "Client typo",
+   "text": "Halvorson ind - TCW lender counsel re Brightline 2.1",
+   "expected": [
+    {
+     "work_date": "2026-11-02",
+     "client": "Halvorson ind",
+     "hours": 2.1,
+     "cmid": null
+    }
+   ]
+  },
+  {
+   "layout": "Initials as a header",
+   "text": "HLP\n- LPA comments .8\n- side letter tracker .4",
+   "expected": [
+    {
+     "work_date": "2026-11-02",
+     "client": "HLP",
+     "hours": 0.8,
+     "cmid": null
+    },
+    {
+     "work_date": "2026-11-02",
+     "client": "HLP",
+     "hours": 0.4,
+     "cmid": null
+    }
+   ]
+  },
+  {
+   "layout": "Day header",
+   "text": "Tues 10/13\n.3 Ironwood 10-Q comments\n1.1 Ironwood - Project Prism diligence calls",
+   "expected": [
+    {
+     "work_date": "2026-10-13",
+     "client": "Ironwood",
+     "hours": 0.3,
+     "cmid": null
+    },
+    {
+     "work_date": "2026-10-13",
+     "client": "Ironwood",
+     "hours": 1.1,
+     "cmid": null
+    }
+   ]
+  },
+  {
+   "layout": "Same as above",
+   "text": "Meridian proxy .5\nsame - call w/ GC re timing .3",
+   "expected": [
+    {
+     "work_date": "2026-11-02",
+     "client": "Meridian",
+     "hours": 0.5,
+     "cmid": null
+    },
+    {
+     "work_date": "2026-11-02",
+     "client": "Meridian",
+     "hours": 0.3,
+     "cmid": null
+    }
+   ]
+  },
+  {
+   "layout": "Firm time",
+   "text": "firm admin - update time entries .2",
+   "expected": [
+    {
+     "work_date": "2026-11-02",
+     "client": null,
+     "hours": 0.2,
+     "cmid": null
+    }
+   ]
+  },
+  {
+   "layout": "No hours",
+   "text": "Saffron Labs - review seed docs",
+   "expected": [
+    {
+     "work_date": "2026-11-02",
+     "client": "Saffron Labs",
+     "hours": null,
+     "cmid": null
+    }
+   ]
+  }
+ ],
+ "dictated": [
+  {
+   "layout": "Client, hours, narrative",
+   "text": "Halvorsen, point four, call with lender counsel about the Brightline closing.",
+   "expected": [
+    {
+     "work_date": "2026-11-02",
+     "client": "Halvorsen",
+     "hours": 0.4,
+     "cmid": null
+    }
+   ]
+  },
+  {
+   "layout": "Two entries in one breath",
+   "text": "Ridgewater one point two hours revised the Fund IV LPA and Quarry Lane half an hour on sub docs",
+   "expected": [
+    {
+     "work_date": "2026-11-02",
+     "client": "Ridgewater",
+     "hours": 1.2,
+     "cmid": null
+    },
+    {
+     "work_date": "2026-11-02",
+     "client": "Quarry Lane",
+     "hours": 0.5,
+     "cmid": null
+    }
+   ]
+  },
+  {
+   "layout": "Minutes typed as digits",
+   "text": "Tidewater AI, 45 minutes, board consent",
+   "expected": [
+    {
+     "work_date": "2026-11-02",
+     "client": "Tidewater AI",
+     "hours": 0.75,
+     "cmid": null
+    }
+   ]
+  },
+  {
+   "layout": "Hours first, in words",
+   "text": "Bill an hour and a half to Cobalt Ridge Partners for revising the Fund II sub docs",
+   "expected": [
+    {
+     "work_date": "2026-11-02",
+     "client": "Cobalt Ridge Partners",
+     "hours": 1.5,
+     "cmid": null
+    }
+   ]
+  },
+  {
+   "layout": "Tenths in words",
+   "text": "Meridian, three tenths, proxy draft",
+   "expected": [
+    {
+     "work_date": "2026-11-02",
+     "client": "Meridian",
+     "hours": 0.3,
+     "cmid": null
+    }
+   ]
+  }
+ ]
+}

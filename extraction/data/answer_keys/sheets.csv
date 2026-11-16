@@ -1,0 +1,34 @@
+source,sheet_id,page,rows,timekeeper,tk_id,work_date,date_from,hours,client,cmid,narrative,expected_checks,note
+2399_001.pdf,HW-02,1,1-2,R. Patel,TK102,08/10/2026,row,0.4,Halvorsen Ind.,,Tel conference w/ CEO re hiring questions,,The worksheet spells it Halvorsen Ind.
+2399_001.pdf,HW-02,1,4,R. Patel,TK102,08/11/2026,row,1.4,Halvorsen Ind.,,Advise re option grant mechanics,client_copied,Client is an arrow drawn down from row 1
+2399_001.pdf,HW-02,1,5,R. Patel,TK102,08/11/2026,row,1.3,,5520.001,attend to matter.,,
+2399_001.pdf,HW-02,1,6-7,R. Patel,TK102,08/11/2026,row,3.0,Halvorson Industrial - Acq of Brightline,3012.004,TCW lender counsel re acquisition financing for Brightline; prepare sig pckts for Lark closing,hours_10x,Written 3; the worksheet says 3.0. The worksheet confirms this is one entry with 3012.004
+2399_001.pdf,HW-02,1,9,R. Patel,TK102,08/14/2026,row,0.8,,3012.001,Drft consulting agmt.,,
+2399_001.pdf,HW-03,2,1-2,E. Brandt,TK109,09/14/2026,row,2.4,,,Draft side letter for LP (Fund III); conference re MFN elections.,,No client written
+2399_001.pdf,HW-03,2,3,E. Brandt,TK109,09/17/2026,row,0.8,Harorlight Bio,,Attend to financing matters.,,Typo copied from the worksheet
+2399_001.pdf,HW-03,2,4,E. Brandt,TK109,09/18/2026,row,0.8,,4590-003,Attend to financing matters.,,Written 4590-003; small hooked arrow before the narrative
+2399_001.pdf,HW-03,2,5,E. Brandt,TK109,09/18/2026,row,0.9,Tidewater AI,,Reconcile cap tale to stock ledger,,
+2399_001.pdf,HW-03,2,6-9,E. Brandt,TK109,09/18/2026,row,2.9,,4590.003,Prepare charter amendment for Project Kite; revise territory & exclusivity provisions in Northwind license.,,
+2399_001.pdf,HW-01,3,1,L. Moreno,TK103,11/02/2026,week,1.3,Cobalt Ridge,5520.002,revise confidential information memorandum risk language,date_guessed,"CMID written sideways in the left margin. The worksheet dates this sheet 08/18 to 08/21, but only Week of 11/2 is written"
+2399_001.pdf,HW-01,3,2,L. Moreno,TK103,11/02/2026,week,2.3,Ridge Water,,review Fund II capital call notice,date_guessed,
+2399_001.pdf,HW-01,3,3,L. Moreno,TK103,11/02/2026,week,0.9,Daily Journal,,respond to buyer DD request,date_guessed,Client not in the synthetic firm
+2399_001.pdf,HW-01,3,4,L. Moreno,TK103,11/02/2026,week,0.9,Stand AI,,track Fund III investor subscriptions,date_guessed,A crossed-out word before subscriptions; client not in the synthetic firm
+2399_001.pdf,HW-01,3,5-7,L. Moreno,TK103,11/02/2026,week,1.0,Litera,,Respond to LP inquiry re Fund II distributions; draft side letter for LP (Calpine Pension); conference re MFN elections,date_guessed,Rows 6 and 7 have no hours; the worksheet shows they belong to this entry. The writer swapped in other client names and moved some hours around
+2399_001.pdf,HW-04,4,1,A. Chen,TK101,07/20/2026,week,0.3,Rat Bio - Series B,,TCW M. White re new tax plan,date_guessed; hours_10x,"Decimal point is small; Textract read 3. This writer didn't copy the worksheet, so all HW-04 entries are their own"
+2399_001.pdf,HW-04,4,2-3,A. Chen,TK101,07/20/2026,week,4.7,Brave Capital - gen,,TCW A. Stone re amendments to LPA; make edits to LPA; finalize legal opinion; present LPA to LPs.,date_guessed,LPA in present LPA to LPs is hard to read (Textract read UA)
+2399_001.pdf,HW-04,4,4,A. Chen,TK101,07/20/2026,week,0.2,Firm - admin,,attend to gen admin,date_guessed; hours_10x,Textract read 2
+2399_001.pdf,HW-04,4,5,A. Chen,TK101,07/20/2026,week,0.6,Firm - interview,,Interview fund / lateral candidate.,date_guessed; hours_10x,Textract read 6
+2399_001.pdf,HW-04,4,6,A. Chen,TK101,07/20/2026,week,0.4,Theories Fund 007,,Attend to transfers of GP interest for Wang.,date_guessed; hours_10x,Textract read 4; client name hard to read
+2399_001.pdf,HW-04,4,7,A. Chen,TK101,07/20/2026,week,0.9,Labs - Formation,,Review agreement; attend to closing matters,date_guessed; hours_10x,
+2399_001.pdf,HW-04,4,8,A. Chen,TK101,07/20/2026,week,0.2,River Ventures,,TCW J. Obberan.,date_guessed; hours_10x,Textract read 2
+2399_001.pdf,HW-04,4,9,A. Chen,TK101,07/20/2026,week,0.7,Firm - BD,,attend lunch w/ potential new client.,date_guessed; hours_10x,Textract read 7
+mon_fri_sample.jpg,,1,1,,,09/21/2026,row,0.4,,1238.001,Attend to call with T. Smith re financial plan,,Client column holds Mon. 09/21/26 and an X mark
+mon_fri_sample.jpg,,1,2,,,09/21/2026,row,1.2,Dream AI,4599.002,Attend to financial review and legal opinion,,Client not in the synthetic firm
+mon_fri_sample.jpg,,1,3,,,09/21/2026,row,2.0,Firm Admin,1111.001,Attend to general admin. matters.,,
+mon_fri_sample.jpg,,1,4,,,09/18/2026,row,1.5,Google BOD,1111.007,Attend Google board meeting,,Client column holds Fri. 09/18/26; Google BOD is written small between the columns
+mon_fri_sample.jpg,,1,5,,,09/18/2026,row,0.4,Nob Hill Tech,2198.001,File form 83(b).,,Client not in the synthetic firm
+mon_fri_sample.jpg,,1,6,,,09/18/2026,row,2.1,Rockblack,4433.007,TCW J. Black re stock plan.,,Client not in the synthetic firm
+mon_fri_sample.jpg,,1,7,,,09/18/2026,row,1.8,Firm BD,1111.002,Take potential client to lunch @ Kokari.,,
+note_07.JPG,,1,1,,,10/28/2026,row,1.4,,3012.004,revise disclosure schedules for Brightline,,Client column holds Wed 10/28
+note_07.JPG,,1,2,,,10/28/2026,row,2.0,Halvorsen,,TCW buyer counsel re escrow,,
+note_07.JPG,,1,3,,,10/28/2026,row,0.3,Firm Admin,1111.001,update time entries,,

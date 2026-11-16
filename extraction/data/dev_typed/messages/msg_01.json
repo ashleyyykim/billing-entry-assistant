@@ -1,0 +1,12 @@
+{
+ "id": "msg_01",
+ "sender": "Pat Lee <plee@example.com>",
+ "sent": "2026-10-30",
+ "subject": "Fwd: time this week",
+ "body": "Adding to the queue.\n\n---------- Forwarded message ---------\nFrom: \"R. Patel\" <rpatel@example.com>\nDate: Fri, Oct 30, 2026 at 5:42 PM\nSubject: time this week\nTo: Pat Lee <plee@example.com>\n\nHi Pat, my report for the week is attached, plus a sticky from Monday. One more from today:\nKestrel Foods .3 call w/ CFO re bakery closing\n\nThanks",
+ "attachments": [
+  "dev_typed/documents/report_01.pdf",
+  "dev_photos/note_15.jpg"
+ ],
+ "note": "An assistant forwards an attorney's email: a typed report, a sticky note photo, and an entry in the body"
+}

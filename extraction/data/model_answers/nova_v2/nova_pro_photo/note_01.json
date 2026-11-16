@@ -1,0 +1,57 @@
+{
+ "model": "us.amazon.nova-pro-v1:0",
+ "entries": [
+  {
+   "lines": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "client": "Halvorsen",
+   "cmid": "",
+   "date": "",
+   "hours_written": "4",
+   "hours": 4.0,
+   "narrative": "call w/lender counsel re Brightline closing",
+   "unsure": "4 hours for a call is likely.4 with the point missing"
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "across": 28,
+   "down": 40,
+   "conf": 74,
+   "text": "4 Halvorsen -"
+  },
+  {
+   "id": 2,
+   "across": 27,
+   "down": 48,
+   "conf": 98,
+   "text": "call w/lender"
+  },
+  {
+   "id": 3,
+   "across": 27,
+   "down": 53,
+   "conf": 59,
+   "text": "counselve Brightline"
+  },
+  {
+   "id": 4,
+   "across": 27,
+   "down": 61,
+   "conf": 99,
+   "text": "closing"
+  }
+ ],
+ "stop_reason": "tool_use",
+ "usage": {
+  "inputTokens": 4789,
+  "outputTokens": 101,
+  "totalTokens": 4890
+ },
+ "latency_ms": 1734
+}

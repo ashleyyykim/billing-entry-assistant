@@ -1,0 +1,75 @@
+{
+ "model": "us.meta.llama4-maverick-17b-instruct-v1:0",
+ "entries": [
+  {
+   "lines": [
+    1
+   ],
+   "client": "Northgate Capital",
+   "cmid": "",
+   "matter": "",
+   "date": "",
+   "hours_written": "6 tenths",
+   "hours": 0.6,
+   "narrative": "call with the seller's council about the escrow",
+   "billable": true,
+   "unsure": ""
+  },
+  {
+   "lines": [
+    1
+   ],
+   "client": "Northgate Capital",
+   "cmid": "",
+   "matter": "",
+   "date": "",
+   "hours_written": "2.3",
+   "hours": 2.3,
+   "narrative": "revising the disclosure schedules for Summit Ridge",
+   "billable": true,
+   "unsure": ""
+  },
+  {
+   "lines": [
+    1
+   ],
+   "client": "Lantern Software",
+   "cmid": "",
+   "matter": "",
+   "date": "",
+   "hours_written": "1.4",
+   "hours": 1.4,
+   "narrative": "viewed the Vios markup of the merger agreement",
+   "billable": true,
+   "unsure": ""
+  },
+  {
+   "lines": [
+    1
+   ],
+   "client": "Firm",
+   "cmid": "",
+   "matter": "",
+   "date": "",
+   "hours_written": "an hour",
+   "hours": 1.0,
+   "narrative": "business development, lunch with the prospective client",
+   "billable": true,
+   "unsure": ""
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "text": "OK, the time for today, Northgate Capital. I had a call with the seller's council about the escrow that was 6 tents. Then the same client, 2.3 revising the disclosure schedules for Summit Ridge. Lantern Software, I viewed the Vios markup of the merger agreement, 1.4, and an hour of firm time for business development, lunch with the prospective client."
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 3201,
+  "outputTokens": 304,
+  "totalTokens": 3505
+ },
+ "latency_ms": 1028
+}

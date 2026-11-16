@@ -1,0 +1,55 @@
+{
+ "model": "us.amazon.nova-pro-v1:0",
+ "entries": [
+  {
+   "lines": [
+    1
+   ],
+   "client": "CR Partners",
+   "cmid": "",
+   "date": "",
+   "hours_written": "2 hours",
+   "hours": 2.0,
+   "narrative": "reading the LP subscription documents",
+   "unsure": ""
+  },
+  {
+   "lines": [
+    1
+   ],
+   "client": "Harbor Light",
+   "cmid": "",
+   "date": "",
+   "hours_written": "36 minutes",
+   "hours": 0.6,
+   "narrative": "following up on investor questionnaires",
+   "unsure": "36 minutes read as 0.6 hours"
+  },
+  {
+   "lines": [
+    1
+   ],
+   "client": "",
+   "cmid": "8820.001",
+   "date": "",
+   "hours_written": "1.1",
+   "hours": 1.1,
+   "narrative": "updating the side letter tracker",
+   "unsure": "CMID fixed from 8820001 to 8820.001"
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "text": "CR partners, 2 hours of reading the LP subscription documents. Harbor Light, 36 minutes following up on investor questionnaires. And 8820001 1.1 updating the side letter tracker."
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 3023,
+  "outputTokens": 229,
+  "totalTokens": 3252
+ },
+ "latency_ms": 1903
+}

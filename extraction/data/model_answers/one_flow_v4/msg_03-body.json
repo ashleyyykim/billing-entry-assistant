@@ -1,0 +1,18 @@
+{
+ "model": "us.amazon.nova-pro-v1:0",
+ "entries": [],
+ "lines": [
+  {
+   "id": 1,
+   "text": "Notes from E. Brandt attached, and the scanned sheets from last week."
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 3314,
+  "outputTokens": 16,
+  "totalTokens": 3330
+ },
+ "latency_ms": 662
+}

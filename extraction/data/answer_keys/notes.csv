@@ -1,0 +1,32 @@
+photo,entry,work_date,hours,client,cmid,narrative,note
+note_01.JPG,1,,0.4,Halvorsen,,call w/lender counsel re Brightline closing,
+note_02.JPG,1,2026-10-27,1.6,,5602.003,review Quanta disclosure schedules,
+note_03.JPG,1,,2.5,Ironwood,,diligence calls w/ Quanta mgmt,An arrow is drawn after 2.5
+note_03.JPG,2,,0.8,Ironwood,,markup SPA,Written as same; the client comes from the line above
+note_04.JPG,1,,1.2,Tidewater Analytics,,draft side letter for Series A lead,The entry wraps onto a second line; a crossed-out word before lead
+note_04.JPG,2,,0.3,,,Firm admin time entries,"Firm time: the client is left blank on purpose, since matching reads firm time from the narrative"
+note_05.JPG,1,2026-10-26,0.9,Orchard Lane,,review vendor contract,Narrative on the line below the hours
+note_05.JPG,2,2026-10-27,1.1,Solace Health,,board minutes,Second date on the same note (TUES 10/27)
+note_06.JPG,1,,0.5,Ridgeview,,call re capital call,
+note_06.JPG,2,,1.0,,,Firm BD lunch w/ prospective client,"Firm time: the client is left blank on purpose, since matching reads firm time from the narrative"
+note_08.JPG,1,,1.25,Ironwood,,Prism bringdown call,Written 1:15; a scribble before Prism
+note_09.JPG,1,,0.6,Halvorsen,,call w/ E. Lindqvist re Brightline,"Sticky note; hours off to the right, narrative slanted below"
+note_10.JPG,1,2026-11-03,1.2,,4471.002,review Calpine side letter,"Sticky note, photo tilted; CMID written with a dash (4471-002), date in the corner"
+note_11.JPG,1,,2.0,,5602.003,Quanta disclosure schedules,"Sticky note; CMID written S602.003 (S for 5)"
+note_12.jpg,1,,0.5,Bluefin,,w/ Y. Tanaka re Keel term sheet,"Sticky note; hours written as half an hour, lines wrap crookedly"
+note_13.JPG,1,,0.5,Tidewater,,board consent,"Sticky note on a laptop, shadow; hours written 1/2 hr"
+note_14.JPG,1,2026-11-02,0.8,Ridgewater,,revised Fund IV LPA,"Notepad, one run-on paragraph with three entries and one date"
+note_14.JPG,2,2026-11-02,1.5,Quarry Lane,,Fund III sub docs,"Second entry in the paragraph; the date at the start applies"
+note_14.JPG,3,2026-11-02,0.3,Ridgeview,,call w/ L. Moretti,"Third entry in the paragraph; the date at the start applies"
+note_15.jpg,1,,2.1,Cobalt Ridge,5520.004,capital call notice,"Notepad; hours and narrative on their own lines to the right"
+note_15.jpg,2,,0.4,Cobalt Ridge,5520.004,call w/ admin re wire,"An arrow means same as above"
+note_15.jpg,3,,1.0,Aster & Vale,,10-Q comments,"1.0 written right next to 10-Q"
+note_15.jpg,4,,0.5,Aster & Vale,,board minutes,"Written as same; a crossed-out mark before .5"
+note_16.JPG,1,,1.3,,3012.005,Corvid NDA markup,"CMID written with an extra digit (3012.0055); the intended CMID is 3012.005"
+note_16.JPG,2,,0.9,Harborline,2207.003,Calder license redline,"An arrow from Harborline to the CMID; hours on their own line below"
+note_17.JPG,1,,2.0,Northgate,,Summit Ridge SPA,"Big writing; hours written as two hours"
+note_17.JPG,2,,0.5,,,firm admin,"Firm time: the client is left blank on purpose, since matching reads firm time from the narrative"
+note_17.JPG,3,,0.3,Orchard Lane,,email to client re consent,"Small writing at the bottom of the page"
+note_18.JPG,1,,1.0,Harborlight,2201.004,A-1 ext docs,"CMID written on its own line above the entry; dashes start each entry"
+note_18.JPG,2,,0.4,Harbor Light Partners,,Fund II call,"Hours written above the entry with a curvy arrow pointing down to it"
+note_18.JPG,3,,0.8,Halverson,,Tamarack disc sched,"Narrative on the line below"

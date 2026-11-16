@@ -1,0 +1,40 @@
+file,entry,work_date,tk_id,hours,client,cmid,narrative,note
+report_01.pdf,1,2026-10-26,TK102,0.6,Cobalt Ridge Capital,5520.004,Review capital call notice; call w/ fund admin re wire timing,"Ruled table over two pages, header repeated, Total row"
+report_01.pdf,2,2026-10-26,TK102,2.3,Halvorsen Industrial,3012.004,Revise disclosure schedules for Brightline acquisition,
+report_01.pdf,3,2026-10-27,TK102,1.8,Kestrel Foods,6888.002,Draft APA comments re Copper Kettle working capital adjustment,
+report_01.pdf,4,2026-10-27,TK102,1.0,Firm,1111.002,Business development lunch w/ prospective client,
+report_01.pdf,5,2026-10-28,TK102,0.9,Tidewater AI,4590.003,Prepare Series B closing checklist,
+report_01.pdf,6,2026-10-28,TK102,1.2,Aster & Vale,3455.001,Comment on 10-Q draft,
+report_01.pdf,7,2026-10-29,TK102,1.5,Northgate Bank,7215.004,Review credit agreement markup for Kestrel Foods facility,"Ruled table over two pages, header repeated, Total row"
+report_01.pdf,8,2026-10-29,TK102,0.7,Ironwood Semiconductor,5602.003,Call w/ Quanta management re diligence requests,
+report_01.pdf,9,2026-10-30,TK102,0.4,Juniper Peak Capital,9140.001,Revise LPA side letter tracker,
+report_01.pdf,10,2026-10-30,TK102,0.8,Bluefin Robotics,3120.002,Review Keel Ventures term sheet comments,
+report_02.pdf,1,2026-10-27,TK109,0.5,Aster & Vale,3455.002,Prepare board minutes for October meeting,Matter heading above the entries; no ruled lines
+report_02.pdf,2,2026-10-29,TK109,0.3,Aster & Vale,3455.002,Revise board consent re officer appointments,
+report_02.pdf,3,2026-10-26,TK109,1.4,Copperline Networks,7633.002,Draft stock purchase agreement,
+report_02.pdf,4,2026-10-28,TK109,0.6,Copperline Networks,7633.002,Call w/ lead investor counsel re closing conditions,
+report_02.pdf,5,2026-10-30,TK109,0.2,,1111.001,Time entry and billing admin,Firm time: the client is left blank on purpose
+log_01.docx,1,2026-10-26,TK103,1.1,Ridgewater Partners,,Revise Fund IV LPA per GP comments,Word table; the date has no year
+log_01.docx,2,2026-10-26,TK103,0.5,Quarry Lane Ventures,,Sub docs review,
+log_01.docx,3,2026-10-27,TK103,0.8,Saffron Labs,,Draft SAFE side letter,
+log_01.docx,4,2026-10-28,TK103,0.5,Firm,,Interview summer associate candidates,
+log_01.docx,5,2026-10-29,TK103,2.0,Mosaic Health Partners,,Diligence call re clinic leases,
+log_02.docx,1,2026-10-26,TK106,1.5,Pelican Row,,review purchase agreement for 450 Harbor St.,Day heading above bulleted entries
+log_02.docx,2,2026-10-26,TK106,0.6,Lanternfish,,call w/ CFO re reorg steps,
+log_02.docx,3,2026-10-27,TK106,2.2,Ember Grid,,Mesa Solar credit agreement comments,
+log_02.docx,4,2026-10-27,TK106,0.3,,,Firm admin,Firm time
+log_02.docx,5,2026-10-28,TK106,0.9,,8340.003,title review for 88 Bay Rd.,
+shared_03.txt,1,2026-11-02,TK107,1.2,Bluefin Robotics,,equity plan grant tracker update,Plain text from a shared doc
+shared_03.txt,2,2026-11-02,TK107,0.8,Tidewater AI,,board consent signature packets,
+shared_03.txt,3,2026-11-03,TK107,0.5,Copperline,,exec comp - 409A memo cite check,Two entries on one line
+shared_03.txt,4,2026-11-03,TK107,0.4,Saffron,,commercial contracts - NDA log,
+log_03.docx,1,2026-11-02,TK106,0.75,Kestrel,,call w/ CFO re APA schedules,Round 2: a time range and a full weekday and month
+log_03.docx,2,2026-11-02,TK106,0.5,Saffron,,review investor questions,Round 2: minutes and a task code
+log_03.docx,3,2026-11-03,TK106,1.5,Ember Grid,,board call,Round 2: a time range and a second entry in one bullet
+log_03.docx,4,2026-11-03,TK106,0.2,Ember Grid,,follow-up email to GC re minutes,Same client as the entry before it
+log_03.docx,5,2026-11-04,TK106,1.25,Lanternfish,,reorg steps memo,Round 2: hours and minutes in words
+log_03.docx,6,2026-11-04,TK106,1.0,,,CLE webinar,Firm time
+report_03.pdf,1,2026-11-02,TK102,1.4,Cobalt Ridge Capital,5520.004,Review LPA amendment and side letters,"Round 2: timekeeper initials, task codes, rate and amount"
+report_03.pdf,2,2026-11-02,TK109,0.3,Aster & Vale,3455.002,Draft board consent,
+report_03.pdf,3,2026-11-03,TK102,2.1,Kestrel Foods,6888.002,Negotiate APA indemnity with seller counsel,
+report_03.pdf,4,2026-11-03,TK109,0.8,Copperline Networks,7633.002,Prepare closing set,

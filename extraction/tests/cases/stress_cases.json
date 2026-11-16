@@ -1,0 +1,927 @@
+[
+ {
+  "group": "Several entries in one paragraph",
+  "case": "Hours in the middle of a sentence",
+  "input": "TEXT",
+  "text": "Today I spent .4 on a call with Halvorsen about hiring, then 1.2 revising sub docs for Cobalt Ridge Partners, and .3 on Tidewater board consent.",
+  "expected": [
+   {
+    "client": "Halvorsen",
+    "hours": 0.4,
+    "cmid": null
+   },
+   {
+    "client": "Cobalt Ridge Partners",
+    "hours": 1.2,
+    "cmid": null
+   },
+   {
+    "client": "Tidewater",
+    "hours": 0.3,
+    "cmid": null
+   }
+  ],
+  "outcome": "right"
+ },
+ {
+  "group": "Several entries in one paragraph",
+  "case": "Hours at the end of each phrase",
+  "input": "TEXT",
+  "text": "Call with Halvorsen about hiring .4, revised sub docs for Cobalt Ridge Partners 1.2, Tidewater board consent .3",
+  "expected": [
+   {
+    "client": "Halvorsen",
+    "hours": 0.4,
+    "cmid": null
+   },
+   {
+    "client": "Cobalt Ridge Partners",
+    "hours": 1.2,
+    "cmid": null
+   },
+   {
+    "client": "Tidewater",
+    "hours": 0.3,
+    "cmid": null
+   }
+  ],
+  "outcome": "right"
+ },
+ {
+  "group": "Several entries in one paragraph",
+  "case": "Joined with 'and'",
+  "input": "TEXT",
+  "text": "Halvorsen call .4 and Meridian proxy draft 1.5",
+  "expected": [
+   {
+    "client": "Halvorsen",
+    "hours": 0.4,
+    "cmid": null
+   },
+   {
+    "client": "Meridian",
+    "hours": 1.5,
+    "cmid": null
+   }
+  ],
+  "outcome": "right"
+ },
+ {
+  "group": "Several entries in one paragraph",
+  "case": "Separated by semicolons",
+  "input": "TEXT",
+  "text": "Meridian proxy draft 1.5; Tidewater board consent .3; Bluefin option grant call .6",
+  "expected": [
+   {
+    "client": "Meridian",
+    "hours": 1.5,
+    "cmid": null
+   },
+   {
+    "client": "Tidewater",
+    "hours": 0.3,
+    "cmid": null
+   },
+   {
+    "client": "Bluefin",
+    "hours": 0.6,
+    "cmid": null
+   }
+  ],
+  "outcome": "right"
+ },
+ {
+  "group": "Several entries in one paragraph",
+  "case": "Numbered, all on one line",
+  "input": "TEXT",
+  "text": "1) Meridian proxy 1.5 2) Tidewater consent .3",
+  "expected": [
+   {
+    "client": "Meridian",
+    "hours": 1.5,
+    "cmid": null
+   },
+   {
+    "client": "Tidewater",
+    "hours": 0.3,
+    "cmid": null
+   }
+  ],
+  "outcome": "right"
+ },
+ {
+  "group": "Several entries in one paragraph",
+  "case": "All caps, no punctuation",
+  "input": "TEXT",
+  "text": "HALVORSEN CALL .4 TIDEWATER CONSENT .3",
+  "expected": [
+   {
+    "client": "Halvorsen",
+    "hours": 0.4,
+    "cmid": null
+   },
+   {
+    "client": "Tidewater",
+    "hours": 0.3,
+    "cmid": null
+   }
+  ],
+  "outcome": "right"
+ },
+ {
+  "group": "Several entries in one paragraph",
+  "case": "Same client, two tasks",
+  "input": "TEXT",
+  "text": "Halvorsen: call w/ CEO .4, lender memo 1.2",
+  "expected": [
+   {
+    "client": "Halvorsen",
+    "hours": 0.4,
+    "cmid": null
+   },
+   {
+    "client": "Halvorsen",
+    "hours": 1.2,
+    "cmid": null
+   }
+  ],
+  "outcome": "right"
+ },
+ {
+  "group": "Several entries in one paragraph",
+  "case": "One total for two clients",
+  "input": "TEXT",
+  "text": "Worked on Meridian and Kestrel Foods today, 2.5 hours total",
+  "expected": null,
+  "outcome": "right"
+ },
+ {
+  "group": "Several entries in one paragraph",
+  "case": "Block-billed, one total",
+  "input": "TEXT",
+  "text": "Halvorsen: call w/ CEO, lender memo, review comments. Total 2.1",
+  "expected": [
+   {
+    "client": "Halvorsen",
+    "hours": 2.1,
+    "cmid": null
+   }
+  ],
+  "outcome": "right"
+ },
+ {
+  "group": "Several entries in one paragraph",
+  "case": "Breakdown in parentheses",
+  "input": "TEXT",
+  "text": "Kestrel Foods 1.5 hrs (.8 call + .7 memo)",
+  "expected": [
+   {
+    "client": "Kestrel Foods",
+    "hours": 1.5,
+    "cmid": null
+   }
+  ],
+  "outcome": "right"
+ },
+ {
+  "group": "CMID written wrong",
+  "case": "Written correctly",
+  "input": "TEXT",
+  "text": "5520.001 .6 review purchase agmt",
+  "expected": [
+   {
+    "client": null,
+    "hours": 0.6,
+    "cmid": "5520.001"
+   }
+  ],
+  "outcome": "right"
+ },
+ {
+  "group": "CMID written wrong",
+  "case": "Dash instead of a dot",
+  "input": "TEXT",
+  "text": "5520-001 .6 review purchase agmt",
+  "expected": [
+   {
+    "client": null,
+    "hours": 0.6,
+    "cmid": "5520.001"
+   }
+  ],
+  "outcome": "right"
+ },
+ {
+  "group": "CMID written wrong",
+  "case": "Space instead of a dot",
+  "input": "TEXT",
+  "text": "5520 001 .6 review purchase agmt",
+  "expected": [
+   {
+    "client": null,
+    "hours": 0.6,
+    "cmid": "5520.001"
+   }
+  ],
+  "outcome": "right"
+ },
+ {
+  "group": "CMID written wrong",
+  "case": "No separator",
+  "input": "TEXT",
+  "text": "5520001 .6 review purchase agmt",
+  "expected": [
+   {
+    "client": null,
+    "hours": 0.6,
+    "cmid": "5520.001"
+   }
+  ],
+  "outcome": "right"
+ },
+ {
+  "group": "CMID written wrong",
+  "case": "Short matter number",
+  "input": "TEXT",
+  "text": "5520.1 .6 review purchase agmt",
+  "expected": [
+   {
+    "client": null,
+    "hours": 0.6,
+    "cmid": "5520.001"
+   }
+  ],
+  "outcome": "right"
+ },
+ {
+  "group": "CMID written wrong",
+  "case": "Extra digit in the client number",
+  "input": "TEXT",
+  "text": "55200.001 .6 review purchase agmt",
+  "expected": [
+   {
+    "client": null,
+    "hours": 0.6,
+    "cmid": "5520.001"
+   }
+  ],
+  "outcome": "wrong, flagged"
+ },
+ {
+  "group": "CMID written wrong",
+  "case": "Extra digit in the matter number",
+  "input": "TEXT",
+  "text": "5520.0011 .6 review purchase agmt",
+  "expected": [
+   {
+    "client": null,
+    "hours": 0.6,
+    "cmid": "5520.001"
+   }
+  ],
+  "outcome": "wrong, flagged"
+ },
+ {
+  "group": "CMID written wrong",
+  "case": "Missing digit",
+  "input": "TEXT",
+  "text": "552.001 .6 review purchase agmt",
+  "expected": [
+   {
+    "client": null,
+    "hours": 0.6,
+    "cmid": "5520.001"
+   }
+  ],
+  "outcome": "wrong, flagged"
+ },
+ {
+  "group": "CMID written wrong",
+  "case": "Letter S for 5",
+  "input": "TEXT",
+  "text": "S520.001 .6 review purchase agmt",
+  "expected": [
+   {
+    "client": null,
+    "hours": 0.6,
+    "cmid": "5520.001"
+   }
+  ],
+  "outcome": "right"
+ },
+ {
+  "group": "CMID written wrong",
+  "case": "Letter O for 0",
+  "input": "TEXT",
+  "text": "5520.OO1 .6 review purchase agmt",
+  "expected": [
+   {
+    "client": null,
+    "hours": 0.6,
+    "cmid": "5520.001"
+   }
+  ],
+  "outcome": "right"
+ },
+ {
+  "group": "CMID written wrong",
+  "case": "Inside a sentence",
+  "input": "TEXT",
+  "text": "Re matter no. 5520.001: reviewed purchase agmt .6",
+  "expected": [
+   {
+    "client": null,
+    "hours": 0.6,
+    "cmid": "5520.001"
+   }
+  ],
+  "outcome": "right"
+ },
+ {
+  "group": "CMID written wrong",
+  "case": "Two CMIDs on two lines",
+  "input": "TEXT",
+  "text": "5520.001 .6 review purchase agmt\n4590.003 .4 charter amendment",
+  "expected": [
+   {
+    "client": null,
+    "hours": 0.6,
+    "cmid": "5520.001"
+   },
+   {
+    "client": null,
+    "hours": 0.4,
+    "cmid": "4590.003"
+   }
+  ],
+  "outcome": "right"
+ },
+ {
+  "group": "Numbers that look like hours",
+  "case": "Rule number",
+  "input": "TEXT",
+  "text": "Reviewed Rule 1.5 conflict memo for Halvorsen .6",
+  "expected": [
+   {
+    "client": "Halvorsen",
+    "hours": 0.6,
+    "cmid": null
+   }
+  ],
+  "outcome": "right"
+ },
+ {
+  "group": "Numbers that look like hours",
+  "case": "Version number",
+  "input": "TEXT",
+  "text": "Updated model v2.1 for Kestrel Foods 1.0",
+  "expected": [
+   {
+    "client": "Kestrel Foods",
+    "hours": 1.0,
+    "cmid": null
+   }
+  ],
+  "outcome": "right"
+ },
+ {
+  "group": "Numbers that look like hours",
+  "case": "Section symbol",
+  "input": "TEXT",
+  "text": "Reviewed \u00a7 2.1 of credit agreement for Meridian .7",
+  "expected": [
+   {
+    "client": "Meridian",
+    "hours": 0.7,
+    "cmid": null
+   }
+  ],
+  "outcome": "right"
+ },
+ {
+  "group": "Numbers that look like hours",
+  "case": "Date in the line",
+  "input": "TEXT",
+  "text": "Halvorsen call on 10/27 .4",
+  "expected": [
+   {
+    "client": "Halvorsen",
+    "hours": 0.4,
+    "cmid": null
+   }
+  ],
+  "outcome": "right"
+ },
+ {
+  "group": "Numbers that look like hours",
+  "case": "Percent",
+  "input": "TEXT",
+  "text": "Negotiated 5.5% fee with Tidewater .8",
+  "expected": [
+   {
+    "client": "Tidewater",
+    "hours": 0.8,
+    "cmid": null
+   }
+  ],
+  "outcome": "right"
+ },
+ {
+  "group": "Numbers that look like hours",
+  "case": "Dollar amount",
+  "input": "TEXT",
+  "text": "Tidewater $2.5M financing call .6",
+  "expected": [
+   {
+    "client": "Tidewater",
+    "hours": 0.6,
+    "cmid": null
+   }
+  ],
+  "outcome": "right"
+ },
+ {
+  "group": "Numbers that look like hours",
+  "case": "Clock time",
+  "input": "TEXT",
+  "text": "2:30 call with Halvorsen .5",
+  "expected": [
+   {
+    "client": "Halvorsen",
+    "hours": 0.5,
+    "cmid": null
+   }
+  ],
+  "outcome": "right"
+ },
+ {
+  "group": "Numbers that look like hours",
+  "case": "Clock time with pm",
+  "input": "TEXT",
+  "text": "2:30pm call with Halvorsen .5",
+  "expected": [
+   {
+    "client": "Halvorsen",
+    "hours": 0.5,
+    "cmid": null
+   }
+  ],
+  "outcome": "right"
+ },
+ {
+  "group": "Numbers that look like hours",
+  "case": "Phone number in a signature",
+  "input": "EMAIL",
+  "text": "Halvorsen call .4\n\nThanks,\nAlex Kim\n415.555.1234",
+  "expected": [
+   {
+    "client": "Halvorsen",
+    "hours": 0.4,
+    "cmid": null
+   }
+  ],
+  "outcome": "right"
+ },
+ {
+  "group": "Hours missing or in words",
+  "case": "No hours",
+  "input": "TEXT",
+  "text": "Reviewed docs for Halvorsen",
+  "expected": null,
+  "outcome": "right"
+ },
+ {
+  "group": "Hours missing or in words",
+  "case": "Hours in words",
+  "input": "TEXT",
+  "text": "Halvorsen call, point four",
+  "expected": [
+   {
+    "client": "Halvorsen",
+    "hours": 0.4,
+    "cmid": null
+   }
+  ],
+  "outcome": "right"
+ },
+ {
+  "group": "Hours missing or in words",
+  "case": "Two-digit decimal",
+  "input": "TEXT",
+  "text": "Halvorsen call .75",
+  "expected": [
+   {
+    "client": "Halvorsen",
+    "hours": 0.75,
+    "cmid": null
+   }
+  ],
+  "outcome": "right"
+ },
+ {
+  "group": "Hours missing or in words",
+  "case": "Half an hour",
+  "input": "TEXT",
+  "text": "Half an hour on the Tidewater consent",
+  "expected": [
+   {
+    "client": "Tidewater",
+    "hours": 0.5,
+    "cmid": null
+   }
+  ],
+  "outcome": "right"
+ },
+ {
+  "group": "Client carried from the line above",
+  "case": "Arrow",
+  "input": "TEXT",
+  "text": "Meridian proxy .5\n-> call w/ GC .3",
+  "expected": [
+   {
+    "client": "Meridian",
+    "hours": 0.5,
+    "cmid": null
+   },
+   {
+    "client": "Meridian",
+    "hours": 0.3,
+    "cmid": null
+   }
+  ],
+  "outcome": "right"
+ },
+ {
+  "group": "Client carried from the line above",
+  "case": "Nothing written",
+  "input": "TEXT",
+  "text": "Meridian proxy .5\ncall w/ GC .3",
+  "expected": [
+   {
+    "client": "Meridian",
+    "hours": 0.5,
+    "cmid": null
+   },
+   {
+    "client": "Meridian",
+    "hours": 0.3,
+    "cmid": null
+   }
+  ],
+  "outcome": "right"
+ },
+ {
+  "group": "Client carried from the line above",
+  "case": "'Same'",
+  "input": "TEXT",
+  "text": "Meridian proxy .5\nsame - call w/ GC .3",
+  "expected": [
+   {
+    "client": "Meridian",
+    "hours": 0.5,
+    "cmid": null
+   },
+   {
+    "client": "Meridian",
+    "hours": 0.3,
+    "cmid": null
+   }
+  ],
+  "outcome": "right"
+ },
+ {
+  "group": "Client carried from the line above",
+  "case": "Client header with bullets",
+  "input": "TEXT",
+  "text": "HLP\n- LPA comments .8\n- side letter tracker .4",
+  "expected": [
+   {
+    "client": "HLP",
+    "hours": 0.8,
+    "cmid": null
+   },
+   {
+    "client": "HLP",
+    "hours": 0.4,
+    "cmid": null
+   }
+  ],
+  "outcome": "right"
+ },
+ {
+  "group": "Client carried from the line above",
+  "case": "Slashes as separators",
+  "input": "TEXT",
+  "text": "HALVORSEN//call w/ CEO//.4",
+  "expected": [
+   {
+    "client": "Halvorsen",
+    "hours": 0.4,
+    "cmid": null
+   }
+  ],
+  "outcome": "wrong, flagged"
+ },
+ {
+  "group": "Round 2: written after the rules",
+  "case": "Two sentences",
+  "input": "TEXT",
+  "text": "Spent .5 on Meridian proxy. Then .3 on Kestrel Foods APA.",
+  "expected": [
+   {
+    "client": "Meridian",
+    "hours": 0.5,
+    "cmid": null
+   },
+   {
+    "client": "Kestrel Foods",
+    "hours": 0.3,
+    "cmid": null
+   }
+  ],
+  "outcome": "right"
+ },
+ {
+  "group": "Round 2: written after the rules",
+  "case": "Joined with 'also'",
+  "input": "TEXT",
+  "text": "Halvorsen lender call .4, also Tidewater consent .3, also Bluefin option grant .6",
+  "expected": [
+   {
+    "client": "Halvorsen",
+    "hours": 0.4,
+    "cmid": null
+   },
+   {
+    "client": "Tidewater",
+    "hours": 0.3,
+    "cmid": null
+   },
+   {
+    "client": "Bluefin",
+    "hours": 0.6,
+    "cmid": null
+   }
+  ],
+  "outcome": "right"
+ },
+ {
+  "group": "Round 2: written after the rules",
+  "case": "Leading zeros",
+  "input": "TEXT",
+  "text": "0.5 Halvorsen call and 0.7 Tidewater memo",
+  "expected": [
+   {
+    "client": "Halvorsen",
+    "hours": 0.5,
+    "cmid": null
+   },
+   {
+    "client": "Tidewater",
+    "hours": 0.7,
+    "cmid": null
+   }
+  ],
+  "outcome": "right"
+ },
+ {
+  "group": "Round 2: written after the rules",
+  "case": "Minutes in a paragraph",
+  "input": "TEXT",
+  "text": "45 min on Halvorsen call and 30 min on Meridian proxy",
+  "expected": [
+   {
+    "client": "Halvorsen",
+    "hours": 0.75,
+    "cmid": null
+   },
+   {
+    "client": "Meridian",
+    "hours": 0.5,
+    "cmid": null
+   }
+  ],
+  "outcome": "right"
+ },
+ {
+  "group": "Round 2: written after the rules",
+  "case": "Hours and minutes mixed",
+  "input": "TEXT",
+  "text": "Halvorsen call 1 hr; Tidewater consent 30 min",
+  "expected": [
+   {
+    "client": "Halvorsen",
+    "hours": 1.0,
+    "cmid": null
+   },
+   {
+    "client": "Tidewater",
+    "hours": 0.5,
+    "cmid": null
+   }
+  ],
+  "outcome": "right"
+ },
+ {
+  "group": "Round 2: written after the rules",
+  "case": "Same client named twice",
+  "input": "TEXT",
+  "text": "Halvorsen lender call with Halvorsen CEO .4",
+  "expected": [
+   {
+    "client": "Halvorsen",
+    "hours": 0.4,
+    "cmid": null
+   }
+  ],
+  "outcome": "right"
+ },
+ {
+  "group": "Round 2: written after the rules",
+  "case": "Paragraph in an email",
+  "input": "EMAIL",
+  "text": "Hi,\n\nToday I spent .4 on the Halvorsen hiring call, then 1.2 on Cobalt Ridge Partners sub docs.\n\nThanks,\nAlex",
+  "expected": [
+   {
+    "client": "Halvorsen",
+    "hours": 0.4,
+    "cmid": null
+   },
+   {
+    "client": "Cobalt Ridge Partners",
+    "hours": 1.2,
+    "cmid": null
+   }
+  ],
+  "outcome": "right"
+ },
+ {
+  "group": "Round 2: written after the rules",
+  "case": "Two CMIDs on one line",
+  "input": "TEXT",
+  "text": "5520.001 .6 review and 4590.003 .4 charter",
+  "expected": [
+   {
+    "client": null,
+    "hours": 0.6,
+    "cmid": "5520.001"
+   },
+   {
+    "client": null,
+    "hours": 0.4,
+    "cmid": "4590.003"
+   }
+  ],
+  "outcome": "right"
+ },
+ {
+  "group": "Round 2: written after the rules",
+  "case": "Comma in the CMID",
+  "input": "TEXT",
+  "text": "5520,001 .6 review purchase agmt",
+  "expected": [
+   {
+    "client": null,
+    "hours": 0.6,
+    "cmid": "5520.001"
+   }
+  ],
+  "outcome": "right"
+ },
+ {
+  "group": "Round 2: written after the rules",
+  "case": "Letter l for 1 in the CMID",
+  "input": "TEXT",
+  "text": "5520.00l .6 review purchase agmt",
+  "expected": [
+   {
+    "client": null,
+    "hours": 0.6,
+    "cmid": "5520.001"
+   }
+  ],
+  "outcome": "right"
+ },
+ {
+  "group": "Round 2: written after the rules",
+  "case": "Hours with an h",
+  "input": "TEXT",
+  "text": "1.5h Halvorsen call",
+  "expected": [
+   {
+    "client": "Halvorsen",
+    "hours": 1.5,
+    "cmid": null
+   }
+  ],
+  "outcome": "right"
+ },
+ {
+  "group": "Round 2: written after the rules",
+  "case": "Fraction of an hour",
+  "input": "TEXT",
+  "text": "Halvorsen call 1/2 hr",
+  "expected": [
+   {
+    "client": "Halvorsen",
+    "hours": 0.5,
+    "cmid": null
+   }
+  ],
+  "outcome": "right"
+ },
+ {
+  "group": "Round 2: written after the rules",
+  "case": "Hours in words",
+  "input": "TEXT",
+  "text": "Two hours on the Meridian proxy",
+  "expected": [
+   {
+    "client": "Meridian",
+    "hours": 2.0,
+    "cmid": null
+   }
+  ],
+  "outcome": "right"
+ },
+ {
+  "group": "Round 2: written after the rules",
+  "case": "Quarter of an hour",
+  "input": "TEXT",
+  "text": "Quarter of an hour on the Halvorsen call",
+  "expected": [
+   {
+    "client": "Halvorsen",
+    "hours": 0.25,
+    "cmid": null
+   }
+  ],
+  "outcome": "right"
+ },
+ {
+  "group": "Round 2: written after the rules",
+  "case": "Money with two decimals",
+  "input": "TEXT",
+  "text": "Reviewed $1.25 fee dispute for Halvorsen .5",
+  "expected": [
+   {
+    "client": "Halvorsen",
+    "hours": 0.5,
+    "cmid": null
+   }
+  ],
+  "outcome": "right"
+ },
+ {
+  "group": "Round 2: written after the rules",
+  "case": "Time range",
+  "input": "TEXT",
+  "text": "10:00-11:30 call with Halvorsen",
+  "expected": [
+   {
+    "client": "Halvorsen",
+    "hours": 1.5,
+    "cmid": null
+   }
+  ],
+  "outcome": "right"
+ },
+ {
+  "group": "Round 2: written after the rules",
+  "case": "Down arrow",
+  "input": "TEXT",
+  "text": "Meridian proxy .5\n\u2193 call w/ GC .3",
+  "expected": [
+   {
+    "client": "Meridian",
+    "hours": 0.5,
+    "cmid": null
+   },
+   {
+    "client": "Meridian",
+    "hours": 0.3,
+    "cmid": null
+   }
+  ],
+  "outcome": "right"
+ },
+ {
+  "group": "Round 2: written after the rules",
+  "case": "Firm time after a client",
+  "input": "TEXT",
+  "text": "Meridian proxy .5\nFirm admin .2",
+  "expected": [
+   {
+    "client": "Meridian",
+    "hours": 0.5,
+    "cmid": null
+   },
+   {
+    "client": null,
+    "hours": 0.2,
+    "cmid": null
+   }
+  ],
+  "outcome": "right"
+ }
+]

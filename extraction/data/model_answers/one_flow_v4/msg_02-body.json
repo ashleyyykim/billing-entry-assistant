@@ -1,0 +1,65 @@
+{
+ "model": "us.amazon.nova-pro-v1:0",
+ "entries": [
+  {
+   "lines": [
+    1
+   ],
+   "client": "Saffron",
+   "cmid": "",
+   "matter": "SAFE side letter",
+   "date": "10/27",
+   "hours_written": ".8",
+   "hours": 0.8,
+   "narrative": "on 10/27",
+   "billable": true,
+   "unsure": ""
+  },
+  {
+   "lines": [
+    1
+   ],
+   "client": "Saffron",
+   "cmid": "",
+   "matter": "",
+   "date": "",
+   "hours_written": "",
+   "hours": 0.0,
+   "narrative": "in case it's not in the log",
+   "billable": true,
+   "unsure": ""
+  },
+  {
+   "lines": [
+    2
+   ],
+   "client": "",
+   "cmid": "",
+   "matter": "",
+   "date": "",
+   "hours_written": "",
+   "hours": 0.0,
+   "narrative": "Elena's export is attached too",
+   "billable": true,
+   "unsure": ""
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "text": "Time attached. Also Saffron .8 SAFE side letter on 10/27 in case it's not in the log."
+  },
+  {
+   "id": 2,
+   "text": "Elena's export is attached too."
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 3338,
+  "outputTokens": 230,
+  "totalTokens": 3568
+ },
+ "latency_ms": 2307
+}

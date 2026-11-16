@@ -1,0 +1,33 @@
+{
+ "model": "us.amazon.nova-pro-v1:0",
+ "entries": [
+  {
+   "lines": [
+    1
+   ],
+   "client": "Tidewater",
+   "cmid": "",
+   "matter": "",
+   "date": "",
+   "hours_written": "Half an hour",
+   "hours": 0.5,
+   "narrative": "on the Tidewater consent",
+   "billable": true,
+   "unsure": ""
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "text": "Half an hour on the Tidewater consent"
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 2904,
+  "outputTokens": 86,
+  "totalTokens": 2990
+ },
+ "latency_ms": 908
+}

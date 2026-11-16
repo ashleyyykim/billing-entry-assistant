@@ -1,0 +1,65 @@
+{
+ "model": "us.meta.llama4-maverick-17b-instruct-v1:0",
+ "entries": [
+  {
+   "lines": [
+    8
+   ],
+   "client": "Kestrel Foods",
+   "cmid": "",
+   "matter": "",
+   "date": "",
+   "hours_written": ".3",
+   "hours": 0.3,
+   "narrative": "call w/ CFO re bakery closing",
+   "billable": true,
+   "unsure": ""
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "text": "Adding to the queue."
+  },
+  {
+   "id": 2,
+   "text": "---------- Forwarded message ---------"
+  },
+  {
+   "id": 3,
+   "text": "From: \"R. Patel\" <rpatel@example.com>"
+  },
+  {
+   "id": 4,
+   "text": "Date: Fri, Oct 30, 2026 at 5:42 PM"
+  },
+  {
+   "id": 5,
+   "text": "Subject: time this week"
+  },
+  {
+   "id": 6,
+   "text": "To: Pat Lee <plee@example.com>"
+  },
+  {
+   "id": 7,
+   "text": "Hi Pat, my report for the week is attached, plus a sticky from Monday. One more from today:"
+  },
+  {
+   "id": 8,
+   "text": "Kestrel Foods .3 call w/ CFO re bakery closing"
+  },
+  {
+   "id": 9,
+   "text": "Thanks"
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 3166,
+  "outputTokens": 85,
+  "totalTokens": 3251
+ },
+ "latency_ms": 523
+}

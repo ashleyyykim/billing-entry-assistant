@@ -1,0 +1,75 @@
+{
+ "model": "us.meta.llama4-maverick-17b-instruct-v1:0",
+ "entries": [
+  {
+   "lines": [
+    1
+   ],
+   "client": "Solace Health",
+   "cmid": "",
+   "matter": "",
+   "date": "",
+   "hours_written": "2.6",
+   "hours": 2.6,
+   "narrative": "board meeting prep in minutes",
+   "billable": true,
+   "unsure": ""
+  },
+  {
+   "lines": [
+    1
+   ],
+   "client": "Meridian",
+   "cmid": "",
+   "matter": "",
+   "date": "",
+   "hours_written": "1.3",
+   "hours": 1.3,
+   "narrative": "review underrated comments on the prospectus",
+   "billable": true,
+   "unsure": ""
+  },
+  {
+   "lines": [
+    1
+   ],
+   "client": "Meridian",
+   "cmid": "3455.002",
+   "matter": "",
+   "date": "",
+   "hours_written": "0.5",
+   "hours": 0.5,
+   "narrative": "10Q comments",
+   "billable": true,
+   "unsure": ""
+  },
+  {
+   "lines": [
+    1
+   ],
+   "client": "",
+   "cmid": "3455.002",
+   "matter": "",
+   "date": "",
+   "hours_written": ".4",
+   "hours": 0.4,
+   "narrative": "committee charter updates",
+   "billable": true,
+   "unsure": ""
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "text": "Solace Health, 2.6, board meeting prep in minutes. Meridian, 1.3, review underrated comments on the prospectus. Meridian, 0.5, 10Q comments. Matter 3455.002.4 committee charter updates."
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 3174,
+  "outputTokens": 292,
+  "totalTokens": 3466
+ },
+ "latency_ms": 1141
+}

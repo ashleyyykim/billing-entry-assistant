@@ -1,0 +1,37 @@
+{
+ "model": "us.meta.llama4-maverick-17b-instruct-v1:0",
+ "entries": [
+  {
+   "lines": [
+    2
+   ],
+   "client": "Pelican Row",
+   "cmid": "",
+   "matter": "",
+   "date": "10/30",
+   "hours_written": ".4",
+   "hours": 0.4,
+   "narrative": "call w/ broker re 450 Harbor St.",
+   "billable": true,
+   "unsure": ""
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "text": "My log for the week is attached."
+  },
+  {
+   "id": 2,
+   "text": "Also Pelican Row .4 call w/ broker re 450 Harbor St. on 10/30."
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 3079,
+  "outputTokens": 90,
+  "totalTokens": 3169
+ },
+ "latency_ms": 472
+}

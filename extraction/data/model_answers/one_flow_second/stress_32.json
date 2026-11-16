@@ -1,0 +1,32 @@
+{
+ "model": "us.meta.llama4-maverick-17b-instruct-v1:0",
+ "entries": [
+  {
+   "lines": [
+    1
+   ],
+   "client": "Halvorsen",
+   "cmid": "",
+   "date": "",
+   "hours_written": "",
+   "narrative": "Reviewed docs",
+   "billable": true,
+   "unsure": "",
+   "matter": ""
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "text": "Reviewed docs for Halvorsen"
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 2679,
+  "outputTokens": 69,
+  "totalTokens": 2748
+ },
+ "latency_ms": 527
+}

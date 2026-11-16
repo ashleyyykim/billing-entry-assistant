@@ -1,0 +1,67 @@
+{
+ "model": "us.amazon.nova-pro-v1:0",
+ "entries": [
+  {
+   "lines": [
+    1
+   ],
+   "client": "Solace Health",
+   "cmid": "",
+   "date": "",
+   "hours_written": "2.6",
+   "hours": 2.6,
+   "narrative": "board meeting prep and minutes",
+   "unsure": ""
+  },
+  {
+   "lines": [
+    1
+   ],
+   "client": "Meridian",
+   "cmid": "",
+   "date": "",
+   "hours_written": "1.3",
+   "hours": 1.3,
+   "narrative": "reviewed the underwriter comments on the prospectus",
+   "unsure": ""
+  },
+  {
+   "lines": [
+    1
+   ],
+   "client": "Meridian",
+   "cmid": "",
+   "date": "",
+   "hours_written": "half an hour",
+   "hours": 0.5,
+   "narrative": "10-Q comments",
+   "unsure": ""
+  },
+  {
+   "lines": [
+    1
+   ],
+   "client": "",
+   "cmid": "3455.002",
+   "date": "",
+   "hours_written": "0.4",
+   "hours": 0.4,
+   "narrative": "committee charter updates",
+   "unsure": ""
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "text": "Today I worked on board meeting prep and minutes for Solace Health for 2.6. Then for Meridian, I reviewed the underwriter comments on the prospectus for 1.3 and did 10-Q comments for half an hour, and then 0.4 on 3455.002 for committee charter updates."
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 3049,
+  "outputTokens": 257,
+  "totalTokens": 3306
+ },
+ "latency_ms": 2218
+}

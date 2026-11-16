@@ -1,0 +1,75 @@
+{
+ "model": "us.amazon.nova-pro-v1:0",
+ "entries": [
+  {
+   "lines": [
+    1
+   ],
+   "client": "",
+   "cmid": "7215.003",
+   "matter": "",
+   "date": "",
+   "hours_written": "1.7",
+   "hours": 1.7,
+   "narrative": "reviewing lender comments on the Ethereum credit agreement",
+   "billable": true,
+   "unsure": ""
+  },
+  {
+   "lines": [
+    1
+   ],
+   "client": "Nine Pine",
+   "cmid": "",
+   "matter": "",
+   "date": "",
+   "hours_written": "0.9",
+   "hours": 0.9,
+   "narrative": "title objection letter",
+   "billable": true,
+   "unsure": ""
+  },
+  {
+   "lines": [
+    1
+   ],
+   "client": "",
+   "cmid": "",
+   "matter": "",
+   "date": "",
+   "hours_written": "0.3",
+   "hours": 0.3,
+   "narrative": "quick call with the title company",
+   "billable": true,
+   "unsure": ""
+  },
+  {
+   "lines": [
+    1
+   ],
+   "client": "Amber grid",
+   "cmid": "",
+   "matter": "",
+   "date": "",
+   "hours_written": "1.2",
+   "hours": 1.2,
+   "narrative": "reviewing the Mesa solar interconnection agreement",
+   "billable": true,
+   "unsure": "the speaker corrected the hours from 1.5 to 1.2"
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "text": "7215.0031.7 reviewing lender comments on the Ethereum credit agreement. Self relief 0.9 on the title objection letter for Nine Pine, plus a quick call with the title company 0.3. And then Amber grid 1.5, sorry, 1.2, reviewing the Mesa solar interconnection agreement."
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 3441,
+  "outputTokens": 311,
+  "totalTokens": 3752
+ },
+ "latency_ms": 2499
+}

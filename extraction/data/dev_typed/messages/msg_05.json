@@ -1,0 +1,13 @@
+{
+ "id": "msg_05",
+ "sender": "Pat Lee <plee@example.com>",
+ "sent": "2026-11-04",
+ "subject": "FW: time + term sheet",
+ "body": "Pat - see below.\n\n________________________________\nFrom: Raj Patel <rpatel@example.com>\nSent: Wednesday, November 4, 2026 6:12 PM\nTo: Pat Lee <plee@example.com>\nSubject: RE: time\n\nPat, my timer export is attached. Add 9:30-10:15am call w/ Kestrel CFO re escrow today.\nThe Keel term sheet is attached for the file, no time on it.\n\nRaj Patel | Partner\nDemo Firm LLP | 555-0100\n\nCONFIDENTIALITY NOTICE: This email may contain privileged information. If you received it in error, please delete it.\n\n-----Original Message-----\nFrom: Pat Lee\nSent: Wednesday, November 4, 2026 9:00 AM\nTo: Raj Patel\nSubject: time\n\nHi Raj, can you send your time for this week?",
+ "attachments": [
+  "dev_typed/documents/report_03.pdf",
+  "dev_typed/messages/image001.png",
+  "dev_typed/messages/Keel Term Sheet v3.docx"
+ ],
+ "note": "Round 2: an Outlook forward with a signature, disclaimer, and reply chain; a logo; a document with no time"
+}

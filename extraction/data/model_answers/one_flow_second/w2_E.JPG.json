@@ -1,0 +1,135 @@
+{
+ "model": "us.meta.llama4-maverick-17b-instruct-v1:0",
+ "prompt": "v2",
+ "mode": "tool_auto",
+ "system_prompt": true,
+ "image_first": false,
+ "entries": [
+  {
+   "lines": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "client": "Solace Health",
+   "cmid": "",
+   "date": "11/2",
+   "hours_written": "2.6 hours",
+   "hours": 2.6,
+   "narrative": "worked on board meeting prep + minutes, reviewed underwriter comments on prospectus",
+   "unsure": ""
+  },
+  {
+   "lines": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "client": "",
+   "cmid": "",
+   "date": "11/2",
+   "hours_written": ".3 hours",
+   "hours": 0.3,
+   "narrative": "provided 10-Q comments",
+   "unsure": ""
+  },
+  {
+   "lines": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "client": "Meridian",
+   "cmid": "",
+   "date": "11/2",
+   "hours_written": "0.5 hours",
+   "hours": 0.5,
+   "narrative": "provided committee charter updates",
+   "unsure": ""
+  },
+  {
+   "lines": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "client": "",
+   "cmid": "3455.002",
+   "date": "11/2",
+   "hours_written": "0.4 hours",
+   "hours": 0.4,
+   "narrative": "",
+   "unsure": ""
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "across": 10,
+   "down": 23,
+   "conf": 87,
+   "number_conf": null,
+   "text": "page E."
+  },
+  {
+   "id": 2,
+   "across": 10,
+   "down": 31,
+   "conf": 76,
+   "number_conf": 98,
+   "text": "Monday 11/2 worked on board meeting prap + minutes"
+  },
+  {
+   "id": 3,
+   "across": 10,
+   "down": 37,
+   "conf": 59,
+   "number_conf": 93,
+   "text": "for solace Health for 2.6 hours, reviewed underwriter"
+  },
+  {
+   "id": 4,
+   "across": 11,
+   "down": 42,
+   "conf": 44,
+   "number_conf": 81,
+   "text": "comments on prospectus for . 3 hours and provided 10-Q"
+  },
+  {
+   "id": 5,
+   "across": 11,
+   "down": 48,
+   "conf": 57,
+   "number_conf": 94,
+   "text": "comments for 0.5hourson meridian, provided committee"
+  },
+  {
+   "id": 6,
+   "across": 11,
+   "down": 53,
+   "conf": 31,
+   "number_conf": 97,
+   "text": "chaster updates for 0.4 hours for 3455.002."
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 7743,
+  "outputTokens": 328,
+  "totalTokens": 8071
+ },
+ "latency_ms": 1520
+}

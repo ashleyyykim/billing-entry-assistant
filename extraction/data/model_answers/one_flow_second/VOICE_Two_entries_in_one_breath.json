@@ -1,0 +1,47 @@
+{
+ "model": "us.meta.llama4-maverick-17b-instruct-v1:0",
+ "entries": [
+  {
+   "lines": [
+    1
+   ],
+   "client": "Ridgewater",
+   "cmid": "",
+   "matter": "Fund IV",
+   "date": "",
+   "hours_written": "one point two hours",
+   "hours": 1.2,
+   "narrative": "revised the LPA",
+   "billable": true,
+   "unsure": ""
+  },
+  {
+   "lines": [
+    1
+   ],
+   "client": "Quarry Lane",
+   "cmid": "",
+   "matter": "",
+   "date": "",
+   "hours_written": "half an hour",
+   "hours": 0.5,
+   "narrative": "sub docs",
+   "billable": true,
+   "unsure": ""
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "text": "Ridgewater one point two hours revised the Fund IV LPA and Quarry Lane half an hour on sub docs"
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 3139,
+  "outputTokens": 154,
+  "totalTokens": 3293
+ },
+ "latency_ms": 950
+}

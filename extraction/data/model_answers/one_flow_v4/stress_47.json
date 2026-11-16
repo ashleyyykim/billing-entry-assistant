@@ -1,0 +1,59 @@
+{
+ "model": "us.amazon.nova-pro-v1:0",
+ "entries": [
+  {
+   "lines": [
+    2
+   ],
+   "client": "Halvorsen",
+   "cmid": "",
+   "matter": "hiring call",
+   "date": "Today",
+   "hours_written": ".4",
+   "hours": 0.4,
+   "narrative": "",
+   "billable": true,
+   "unsure": ""
+  },
+  {
+   "lines": [
+    2
+   ],
+   "client": "Cobalt Ridge Partners",
+   "cmid": "",
+   "matter": "sub docs",
+   "date": "Today",
+   "hours_written": "1.2",
+   "hours": 1.2,
+   "narrative": "",
+   "billable": true,
+   "unsure": ""
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "text": "Hi,"
+  },
+  {
+   "id": 2,
+   "text": "Today I spent .4 on the Halvorsen hiring call, then 1.2 on Cobalt Ridge Partners sub docs."
+  },
+  {
+   "id": 3,
+   "text": "Thanks,"
+  },
+  {
+   "id": 4,
+   "text": "Alex"
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 3339,
+  "outputTokens": 155,
+  "totalTokens": 3494
+ },
+ "latency_ms": 1882
+}

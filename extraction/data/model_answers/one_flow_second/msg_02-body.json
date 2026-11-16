@@ -1,0 +1,37 @@
+{
+ "model": "us.meta.llama4-maverick-17b-instruct-v1:0",
+ "entries": [
+  {
+   "lines": [
+    1
+   ],
+   "client": "Saffron",
+   "cmid": "",
+   "matter": "",
+   "date": "10/27",
+   "hours_written": ".8",
+   "hours": 0.8,
+   "narrative": "SAFE side letter",
+   "billable": true,
+   "unsure": ""
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "text": "Time attached. Also Saffron .8 SAFE side letter on 10/27 in case it's not in the log."
+  },
+  {
+   "id": 2,
+   "text": "Elena's export is attached too."
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 3081,
+  "outputTokens": 181,
+  "totalTokens": 3262
+ },
+ "latency_ms": 799
+}

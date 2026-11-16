@@ -1,0 +1,111 @@
+{
+ "model": "us.meta.llama4-maverick-17b-instruct-v1:0",
+ "entries": [
+  {
+   "lines": [
+    3,
+    4
+   ],
+   "client": "Northgate Bank",
+   "cmid": "7215.003",
+   "matter": "",
+   "date": "10/27/26",
+   "hours_written": "0.6",
+   "hours": 0.6,
+   "narrative": "Zoom w/ client re amend. fee",
+   "billable": true,
+   "unsure": "",
+   "timekeeper": "Okafor, D."
+  },
+  {
+   "lines": [
+    3,
+    5
+   ],
+   "client": "Cobalt Ridge Capital",
+   "cmid": "",
+   "matter": "",
+   "date": "10/27/26",
+   "hours_written": "2.1",
+   "hours": 2.1,
+   "narrative": "Revise sub docs for Fund II",
+   "billable": true,
+   "unsure": "",
+   "timekeeper": "Okafor, D."
+  },
+  {
+   "lines": [
+    3,
+    6
+   ],
+   "client": "Kestrel Foods",
+   "cmid": "",
+   "matter": "",
+   "date": "10/28/26",
+   "hours_written": "1.25",
+   "hours": 1.25,
+   "narrative": "Bakery APA markup",
+   "billable": true,
+   "unsure": "",
+   "timekeeper": "Okafor, D."
+  },
+  {
+   "lines": [
+    3,
+    7
+   ],
+   "client": "Harborlight Bio",
+   "cmid": "",
+   "matter": "Series A Financing",
+   "date": "10/28/26",
+   "hours_written": "0.5",
+   "hours": 0.5,
+   "narrative": "Board consent",
+   "billable": true,
+   "unsure": "",
+   "timekeeper": "Okafor, D."
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "text": "Time Entry Export |  |  |  | "
+  },
+  {
+   "id": 2,
+   "text": "Run date: 11/02/2026 |  |  |  | "
+  },
+  {
+   "id": 3,
+   "text": "Atty | Dt Worked | Client/Matter | Hrs | Work Description"
+  },
+  {
+   "id": 4,
+   "text": "Okafor, D. | 10/27/26 | Northgate Bank / 7215.003 | 0.6 | Zoom w/ client re amend. fee"
+  },
+  {
+   "id": 5,
+   "text": "Okafor, D. | 10/27/26 | Cobalt Ridge Capital | 2.1 | Revise sub docs for Fund II"
+  },
+  {
+   "id": 6,
+   "text": "Okafor, D. | 10/28/26 | Kestrel Foods | 1.25 | Bakery APA markup"
+  },
+  {
+   "id": 7,
+   "text": "Okafor, D. | 10/28/26 | Harborlight Bio / Series A Financing | 0.5 | Board consent"
+  },
+  {
+   "id": 8,
+   "text": "Total |  |  | 4.45 | "
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 3975,
+  "outputTokens": 384,
+  "totalTokens": 4359
+ },
+ "latency_ms": 1293
+}

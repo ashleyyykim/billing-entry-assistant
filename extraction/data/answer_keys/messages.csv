@@ -1,0 +1,42 @@
+message,part,entry,tk_id,work_date,hours,client,cmid,note
+msg_01,body,1,TK102,2026-10-30,0.3,Kestrel Foods,,Body of a forwarded email
+msg_01,report_01.pdf,1,TK102,2026-10-26,0.6,Cobalt Ridge Capital,5520.004,
+msg_01,report_01.pdf,2,TK102,2026-10-26,2.3,Halvorsen Industrial,3012.004,
+msg_01,report_01.pdf,3,TK102,2026-10-27,1.8,Kestrel Foods,6888.002,
+msg_01,report_01.pdf,4,TK102,2026-10-27,1.0,Firm,1111.002,
+msg_01,report_01.pdf,5,TK102,2026-10-28,0.9,Tidewater AI,4590.003,
+msg_01,report_01.pdf,6,TK102,2026-10-28,1.2,Aster & Vale,3455.001,
+msg_01,report_01.pdf,7,TK102,2026-10-29,1.5,Northgate Bank,7215.004,
+msg_01,report_01.pdf,8,TK102,2026-10-29,0.7,Ironwood Semiconductor,5602.003,
+msg_01,report_01.pdf,9,TK102,2026-10-30,0.4,Juniper Peak Capital,9140.001,
+msg_01,report_01.pdf,10,TK102,2026-10-30,0.8,Bluefin Robotics,3120.002,
+msg_01,note_15.jpg,1,TK102,2026-10-30,2.1,Cobalt Ridge,5520.004,Photo credited to the writer of the forwarded email
+msg_01,note_15.jpg,2,TK102,2026-10-30,0.4,Cobalt Ridge,5520.004,Photo credited to the writer of the forwarded email
+msg_01,note_15.jpg,3,TK102,2026-10-30,1.0,Aster & Vale,,Photo credited to the writer of the forwarded email
+msg_01,note_15.jpg,4,TK102,2026-10-30,0.5,Aster & Vale,,Photo credited to the writer of the forwarded email
+msg_02,body,1,TK103,2026-10-27,0.8,Saffron,,Also in the log: flagged as a duplicate
+msg_02,log_01.docx,1,TK103,2026-10-26,1.1,Ridgewater Partners,,
+msg_02,log_01.docx,2,TK103,2026-10-26,0.5,Quarry Lane Ventures,,
+msg_02,log_01.docx,3,TK103,2026-10-27,0.8,Saffron Labs,,
+msg_02,log_01.docx,4,TK103,2026-10-28,0.5,Firm,,
+msg_02,log_01.docx,5,TK103,2026-10-29,2.0,Mosaic Health Partners,,
+msg_02,export_04.csv,1,TK109,2026-10-26,0.9,Tidewater AI,,A colleague's export keeps its own timekeeper
+msg_02,export_04.csv,2,TK109,2026-10-26,0.4,Halvorsen,,
+msg_02,export_04.csv,3,TK109,2026-10-27,0.75,Bluefin Robotics,,
+msg_02,export_04.csv,4,TK109,2026-10-27,0.5,Firm,,
+msg_03,report_02.pdf,1,TK109,2026-10-27,0.5,Aster & Vale,3455.002,The report names its timekeeper
+msg_03,report_02.pdf,2,TK109,2026-10-29,0.3,Aster & Vale,3455.002,
+msg_03,report_02.pdf,3,TK109,2026-10-26,1.4,Copperline Networks,7633.002,
+msg_03,report_02.pdf,4,TK109,2026-10-28,0.6,Copperline Networks,7633.002,
+msg_03,report_02.pdf,5,TK109,2026-10-30,0.2,,1111.001,
+msg_04,body,1,TK106,2026-10-30,0.4,Pelican Row,,A real .eml file
+msg_04,log_02.docx,1,TK106,2026-10-26,1.5,Pelican Row,,
+msg_04,log_02.docx,2,TK106,2026-10-26,0.6,Lanternfish,,
+msg_04,log_02.docx,3,TK106,2026-10-27,2.2,Ember Grid,,
+msg_04,log_02.docx,4,TK106,2026-10-27,0.3,,,
+msg_04,log_02.docx,5,TK106,2026-10-28,0.9,,8340.003,
+msg_05,body,1,TK102,2026-11-04,0.75,Kestrel,,Round 2: a time range in an Outlook forward
+msg_05,report_03.pdf,1,TK102,2026-11-02,1.4,Cobalt Ridge Capital,5520.004,
+msg_05,report_03.pdf,2,TK109,2026-11-02,0.3,Aster & Vale,3455.002,
+msg_05,report_03.pdf,3,TK102,2026-11-03,2.1,Kestrel Foods,6888.002,
+msg_05,report_03.pdf,4,TK109,2026-11-03,0.8,Copperline Networks,7633.002,

@@ -1,0 +1,33 @@
+{
+ "model": "us.amazon.nova-pro-v1:0",
+ "entries": [
+  {
+   "lines": [
+    1
+   ],
+   "client": "Meridian",
+   "cmid": "",
+   "matter": "",
+   "date": "",
+   "hours_written": "three tenths",
+   "hours": 0.3,
+   "narrative": "proxy draft",
+   "billable": true,
+   "unsure": ""
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "text": "Meridian, three tenths, proxy draft"
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 2,
+ "usage": {
+  "inputTokens": 3377,
+  "outputTokens": 82,
+  "totalTokens": 3459
+ },
+ "latency_ms": 973
+}

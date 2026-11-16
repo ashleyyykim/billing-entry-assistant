@@ -1,0 +1,157 @@
+[
+ {
+  "photo": "note_01.JPG",
+  "entry": 1,
+  "outcome": "wrong, flagged"
+ },
+ {
+  "photo": "note_02.JPG",
+  "entry": 1,
+  "outcome": "right"
+ },
+ {
+  "photo": "note_03.JPG",
+  "entry": 1,
+  "outcome": "right"
+ },
+ {
+  "photo": "note_03.JPG",
+  "entry": 2,
+  "outcome": "right"
+ },
+ {
+  "photo": "note_04.JPG",
+  "entry": 1,
+  "outcome": "right"
+ },
+ {
+  "photo": "note_04.JPG",
+  "entry": 2,
+  "outcome": "right"
+ },
+ {
+  "photo": "note_05.JPG",
+  "entry": 1,
+  "outcome": "right"
+ },
+ {
+  "photo": "note_05.JPG",
+  "entry": 2,
+  "outcome": "wrong, flagged"
+ },
+ {
+  "photo": "note_06.JPG",
+  "entry": 1,
+  "outcome": "right"
+ },
+ {
+  "photo": "note_06.JPG",
+  "entry": 2,
+  "outcome": "right"
+ },
+ {
+  "photo": "note_08.JPG",
+  "entry": 1,
+  "outcome": "wrong, flagged"
+ },
+ {
+  "photo": "note_09.JPG",
+  "entry": 1,
+  "outcome": "right"
+ },
+ {
+  "photo": "note_10.JPG",
+  "entry": 1,
+  "outcome": "right"
+ },
+ {
+  "photo": "note_11.JPG",
+  "entry": 1,
+  "outcome": "right"
+ },
+ {
+  "photo": "note_12.jpg",
+  "entry": 1,
+  "outcome": "right"
+ },
+ {
+  "photo": "note_13.JPG",
+  "entry": 1,
+  "outcome": "right"
+ },
+ {
+  "photo": "note_14.JPG",
+  "entry": 1,
+  "outcome": "right"
+ },
+ {
+  "photo": "note_14.JPG",
+  "entry": 2,
+  "outcome": "right"
+ },
+ {
+  "photo": "note_14.JPG",
+  "entry": 3,
+  "outcome": "right"
+ },
+ {
+  "photo": "note_15.jpg",
+  "entry": 1,
+  "outcome": "wrong, flagged"
+ },
+ {
+  "photo": "note_15.jpg",
+  "entry": 2,
+  "outcome": "wrong, flagged"
+ },
+ {
+  "photo": "note_15.jpg",
+  "entry": 3,
+  "outcome": "wrong, flagged"
+ },
+ {
+  "photo": "note_15.jpg",
+  "entry": 4,
+  "outcome": "right"
+ },
+ {
+  "photo": "note_16.JPG",
+  "entry": 1,
+  "outcome": "wrong, flagged"
+ },
+ {
+  "photo": "note_16.JPG",
+  "entry": 2,
+  "outcome": "right"
+ },
+ {
+  "photo": "note_17.JPG",
+  "entry": 1,
+  "outcome": "wrong, silent"
+ },
+ {
+  "photo": "note_17.JPG",
+  "entry": 2,
+  "outcome": "right"
+ },
+ {
+  "photo": "note_17.JPG",
+  "entry": 3,
+  "outcome": "right"
+ },
+ {
+  "photo": "note_18.JPG",
+  "entry": 1,
+  "outcome": "right"
+ },
+ {
+  "photo": "note_18.JPG",
+  "entry": 2,
+  "outcome": "wrong, flagged"
+ },
+ {
+  "photo": "note_18.JPG",
+  "entry": 3,
+  "outcome": "right"
+ }
+]

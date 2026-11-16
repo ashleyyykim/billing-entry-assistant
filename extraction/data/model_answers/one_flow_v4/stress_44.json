@@ -1,0 +1,47 @@
+{
+ "model": "us.amazon.nova-pro-v1:0",
+ "entries": [
+  {
+   "lines": [
+    1
+   ],
+   "client": "Halvorsen",
+   "cmid": "",
+   "matter": "",
+   "date": "",
+   "hours_written": "45 min",
+   "hours": 0.75,
+   "narrative": "call",
+   "billable": true,
+   "unsure": ""
+  },
+  {
+   "lines": [
+    1
+   ],
+   "client": "Meridian",
+   "cmid": "",
+   "matter": "",
+   "date": "",
+   "hours_written": "30 min",
+   "hours": 0.5,
+   "narrative": "proxy",
+   "billable": true,
+   "unsure": ""
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "text": "45 min on Halvorsen call and 30 min on Meridian proxy"
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 2913,
+  "outputTokens": 147,
+  "totalTokens": 3060
+ },
+ "latency_ms": 1320
+}

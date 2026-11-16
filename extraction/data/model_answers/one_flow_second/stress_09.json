@@ -1,0 +1,33 @@
+{
+ "model": "us.meta.llama4-maverick-17b-instruct-v1:0",
+ "entries": [
+  {
+   "lines": [
+    1
+   ],
+   "client": "Halvorsen",
+   "cmid": "",
+   "matter": "",
+   "date": "",
+   "hours_written": "2.1",
+   "hours": 2.1,
+   "narrative": "call w/ CEO, lender memo, review comments",
+   "billable": true,
+   "unsure": ""
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "text": "Halvorsen: call w/ CEO, lender memo, review comments. Total 2.1"
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 2693,
+  "outputTokens": 89,
+  "totalTokens": 2782
+ },
+ "latency_ms": 505
+}

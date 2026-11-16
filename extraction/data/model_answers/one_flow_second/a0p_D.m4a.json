@@ -1,0 +1,60 @@
+{
+ "model": "us.meta.llama4-maverick-17b-instruct-v1:0",
+ "entries": [
+  {
+   "lines": [
+    1
+   ],
+   "client": "CR Partners",
+   "cmid": "",
+   "matter": "",
+   "date": "",
+   "hours_written": "2.0",
+   "hours": 2.0,
+   "narrative": "review LP subscription documents",
+   "billable": true,
+   "unsure": ""
+  },
+  {
+   "lines": [
+    1
+   ],
+   "client": "Harbor Light",
+   "cmid": "",
+   "matter": "",
+   "date": "",
+   "hours_written": "0.6",
+   "hours": 0.6,
+   "narrative": "follow up on investor questionnaires",
+   "billable": true,
+   "unsure": ""
+  },
+  {
+   "lines": [
+    1
+   ],
+   "client": "",
+   "cmid": "8820.001",
+   "matter": "1.1",
+   "date": "",
+   "hours_written": "",
+   "narrative": "update the side letter tracker",
+   "billable": true,
+   "unsure": "the CMID is missing a digit (8820.0011.1): read as 8820.001"
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "text": "CR Partners 2.0 review LP subscription documents, Harbor Light 0.6, follow up on investor questionnaires. Matter 8820.0011.1, update the side letter tracker."
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 3157,
+  "outputTokens": 242,
+  "totalTokens": 3399
+ },
+ "latency_ms": 2037
+}

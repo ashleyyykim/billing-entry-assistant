@@ -1,0 +1,75 @@
+{
+ "model": "us.meta.llama4-maverick-17b-instruct-v1:0",
+ "entries": [
+  {
+   "lines": [
+    1
+   ],
+   "client": "Northgate Capital",
+   "cmid": "",
+   "matter": "",
+   "date": "",
+   "hours_written": "0.6",
+   "hours": 0.6,
+   "narrative": "call with the seller's council about the escrow",
+   "billable": true,
+   "unsure": ""
+  },
+  {
+   "lines": [
+    1
+   ],
+   "client": "Northgate Capital",
+   "cmid": "",
+   "matter": "",
+   "date": "",
+   "hours_written": "2.3%",
+   "hours": 2.3,
+   "narrative": "revised disclosure schedules for Summit Ridge",
+   "billable": true,
+   "unsure": "stray mark in hours (2.3%)"
+  },
+  {
+   "lines": [
+    1
+   ],
+   "client": "Lantern Software",
+   "cmid": "",
+   "matter": "",
+   "date": "",
+   "hours_written": "1.4%",
+   "hours": 1.4,
+   "narrative": "review videos, markup for the merger agreement",
+   "billable": true,
+   "unsure": "stray mark in hours (1.4%)"
+  },
+  {
+   "lines": [
+    1
+   ],
+   "client": "Firm",
+   "cmid": "",
+   "matter": "business development",
+   "date": "",
+   "hours_written": "one hour",
+   "hours": 1.0,
+   "narrative": "lunch with a prospective client",
+   "billable": true,
+   "unsure": ""
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "text": "Northgate Capital, 0.6, call with the seller's council about the escrow. Northgate Capital, 2.3%, revised disclosure schedules for Summit Ridge. Lantern Software, 1.4% review videos, markup for the merger agreement. Firm time, business development, one hour, lunch with a prospective client."
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 3186,
+  "outputTokens": 322,
+  "totalTokens": 3508
+ },
+ "latency_ms": 1137
+}

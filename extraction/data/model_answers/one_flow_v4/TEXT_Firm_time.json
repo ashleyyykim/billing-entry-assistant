@@ -1,0 +1,33 @@
+{
+ "model": "us.amazon.nova-pro-v1:0",
+ "entries": [
+  {
+   "lines": [
+    1
+   ],
+   "client": "Firm",
+   "cmid": "",
+   "matter": "admin",
+   "date": "",
+   "hours_written": ".2",
+   "hours": 0.2,
+   "narrative": "update time entries",
+   "billable": true,
+   "unsure": ""
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "text": "firm admin - update time entries .2"
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 2905,
+  "outputTokens": 83,
+  "totalTokens": 2988
+ },
+ "latency_ms": 957
+}

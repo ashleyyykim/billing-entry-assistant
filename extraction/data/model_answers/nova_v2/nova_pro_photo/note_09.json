@@ -1,0 +1,65 @@
+{
+ "model": "us.amazon.nova-pro-v1:0",
+ "entries": [
+  {
+   "lines": [
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "client": "Halvorsen",
+   "cmid": "",
+   "date": "",
+   "hours_written": ".6",
+   "hours": 0.6,
+   "narrative": "call w/ E. re Lindquist Brightline",
+   "unsure": ""
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "across": 15,
+   "down": 31,
+   "conf": 99,
+   "text": "Halvorsen"
+  },
+  {
+   "id": 2,
+   "across": 65,
+   "down": 40,
+   "conf": 71,
+   "text": ".6"
+  },
+  {
+   "id": 3,
+   "across": 17,
+   "down": 50,
+   "conf": 84,
+   "text": "call w/ E."
+  },
+  {
+   "id": 4,
+   "across": 18,
+   "down": 59,
+   "conf": 73,
+   "text": "re Lindquist"
+  },
+  {
+   "id": 5,
+   "across": 25,
+   "down": 64,
+   "conf": 52,
+   "text": "Brightline"
+  }
+ ],
+ "stop_reason": "tool_use",
+ "usage": {
+  "inputTokens": 4811,
+  "outputTokens": 92,
+  "totalTokens": 4903
+ },
+ "latency_ms": 1765
+}

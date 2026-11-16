@@ -1,0 +1,51 @@
+{
+ "model": "us.amazon.nova-pro-v1:0",
+ "entries": [
+  {
+   "lines": [
+    1
+   ],
+   "client": "Meridian",
+   "cmid": "",
+   "matter": "proxy draft",
+   "date": "",
+   "hours_written": "1.5",
+   "hours": 1.5,
+   "narrative": "",
+   "billable": true,
+   "unsure": ""
+  },
+  {
+   "lines": [
+    2
+   ],
+   "client": "Tidewater",
+   "cmid": "",
+   "matter": "board consent",
+   "date": "",
+   "hours_written": ".3",
+   "hours": 0.3,
+   "narrative": "",
+   "billable": true,
+   "unsure": ""
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "text": "Meridian - proxy draft 1.5"
+  },
+  {
+   "id": 2,
+   "text": "Tidewater - board consent .3"
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 2916,
+  "outputTokens": 147,
+  "totalTokens": 3063
+ },
+ "latency_ms": 1386
+}

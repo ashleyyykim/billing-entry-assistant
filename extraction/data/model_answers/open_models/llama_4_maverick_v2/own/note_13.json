@@ -1,0 +1,47 @@
+{
+ "model": "us.meta.llama4-maverick-17b-instruct-v1:0",
+ "prompt": "v2",
+ "mode": "tool_auto",
+ "system_prompt": true,
+ "entries": [
+  {
+   "lines": [
+    1,
+    2
+   ],
+   "client": "Tidewater",
+   "cmid": "",
+   "date": "",
+   "hours_written": "1/2 hr",
+   "hours": 0.5,
+   "narrative": "board consent",
+   "unsure": ""
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "across": 12,
+   "down": 34,
+   "conf": 99,
+   "number_conf": 100,
+   "text": "Tidewater 1/2 hr"
+  },
+  {
+   "id": 2,
+   "across": 13,
+   "down": 45,
+   "conf": 100,
+   "number_conf": null,
+   "text": "board consent"
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 7609,
+  "outputTokens": 75,
+  "totalTokens": 7684
+ },
+ "latency_ms": 702
+}

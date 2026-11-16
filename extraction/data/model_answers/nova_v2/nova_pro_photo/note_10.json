@@ -1,0 +1,49 @@
+{
+ "model": "us.amazon.nova-pro-v1:0",
+ "entries": [
+  {
+   "lines": [
+    1,
+    2,
+    3
+   ],
+   "client": "",
+   "cmid": "4471.002",
+   "date": "11/3",
+   "hours_written": "1.2",
+   "hours": 1.2,
+   "narrative": "review Calpine side letter",
+   "unsure": "CMID fixed from 4471-002 to 4471.002, hours written as 1.2 instead of 12, date fixed from 113 to 11/3"
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "across": 27,
+   "down": 33,
+   "conf": 70,
+   "text": "4471-002 1.2 11/3"
+  },
+  {
+   "id": 2,
+   "across": 19,
+   "down": 45,
+   "conf": 100,
+   "text": "review Calpine side"
+  },
+  {
+   "id": 3,
+   "across": 17,
+   "down": 54,
+   "conf": 99,
+   "text": "letter"
+  }
+ ],
+ "stop_reason": "tool_use",
+ "usage": {
+  "inputTokens": 4778,
+  "outputTokens": 141,
+  "totalTokens": 4919
+ },
+ "latency_ms": 1987
+}

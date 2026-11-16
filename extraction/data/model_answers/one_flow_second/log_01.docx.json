@@ -1,0 +1,146 @@
+{
+ "model": "us.meta.llama4-maverick-17b-instruct-v1:0",
+ "entries": [
+  {
+   "lines": [
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "client": "Ridgewater Partners",
+   "cmid": "",
+   "matter": "Fund IV Formation",
+   "date": "10/26",
+   "hours_written": "1.1",
+   "hours": 1.1,
+   "narrative": "Revise Fund IV LPA per GP comments",
+   "billable": true,
+   "unsure": "",
+   "timekeeper": "L. Moreno"
+  },
+  {
+   "lines": [
+    1,
+    2,
+    3,
+    4,
+    6
+   ],
+   "client": "Quarry Lane Ventures",
+   "cmid": "",
+   "matter": "Fund III Formation",
+   "date": "10/26",
+   "hours_written": "0.5",
+   "hours": 0.5,
+   "narrative": "Sub docs review",
+   "billable": true,
+   "unsure": "",
+   "timekeeper": "L. Moreno"
+  },
+  {
+   "lines": [
+    1,
+    2,
+    3,
+    4,
+    7
+   ],
+   "client": "Saffron Labs",
+   "cmid": "",
+   "matter": "Seed Financing",
+   "date": "10/27",
+   "hours_written": "0.8",
+   "hours": 0.8,
+   "narrative": "Draft SAFE side letter",
+   "billable": true,
+   "unsure": "",
+   "timekeeper": "L. Moreno"
+  },
+  {
+   "lines": [
+    1,
+    2,
+    3,
+    4,
+    8
+   ],
+   "client": "Firm",
+   "cmid": "",
+   "matter": "Recruiting",
+   "date": "10/28",
+   "hours_written": "0.5",
+   "hours": 0.5,
+   "narrative": "Interview summer associate candidates",
+   "billable": true,
+   "unsure": "",
+   "timekeeper": "L. Moreno"
+  },
+  {
+   "lines": [
+    1,
+    2,
+    3,
+    4,
+    9
+   ],
+   "client": "Mosaic Health Partners",
+   "cmid": "",
+   "matter": "Acquisition of Brightview Clinics",
+   "date": "10/29",
+   "hours_written": "2.0",
+   "hours": 2.0,
+   "narrative": "Diligence call re clinic leases",
+   "billable": true,
+   "unsure": "",
+   "timekeeper": "L. Moreno"
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "text": "Time Log"
+  },
+  {
+   "id": 2,
+   "text": "Attorney: L. Moreno"
+  },
+  {
+   "id": 3,
+   "text": "Week of 10/26"
+  },
+  {
+   "id": 4,
+   "text": "Date | Client | Matter | Hrs | Description"
+  },
+  {
+   "id": 5,
+   "text": "10/26 | Ridgewater Partners | Fund IV Formation | 1.1 | Revise Fund IV LPA per GP comments"
+  },
+  {
+   "id": 6,
+   "text": "10/26 | Quarry Lane Ventures | Fund III Formation | 0.5 | Sub docs review"
+  },
+  {
+   "id": 7,
+   "text": "10/27 | Saffron Labs | Seed Financing | 0.8 | Draft SAFE side letter"
+  },
+  {
+   "id": 8,
+   "text": "10/28 | Firm | Recruiting | 0.5 | Interview summer associate candidates"
+  },
+  {
+   "id": 9,
+   "text": "10/29 | Mosaic Health Partners | Acquisition of Brightview Clinics | 2.0 | Diligence call re clinic leases"
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 4082,
+  "outputTokens": 507,
+  "totalTokens": 4589
+ },
+ "latency_ms": 1819
+}

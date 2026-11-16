@@ -1,0 +1,67 @@
+{
+ "model": "us.amazon.nova-pro-v1:0",
+ "entries": [
+  {
+   "lines": [
+    1
+   ],
+   "client": "Tidewater",
+   "cmid": "",
+   "date": "",
+   "hours_written": "2.1",
+   "hours": 2.1,
+   "narrative": "red line for Orbis MSA",
+   "unsure": ""
+  },
+  {
+   "lines": [
+    1
+   ],
+   "client": "Tidewater",
+   "cmid": "",
+   "date": "",
+   "hours_written": "0.3",
+   "hours": 0.3,
+   "narrative": "annual consents",
+   "unsure": ""
+  },
+  {
+   "lines": [
+    1
+   ],
+   "client": "",
+   "cmid": "9028.001",
+   "date": "",
+   "hours_written": ".5",
+   "hours": 0.5,
+   "narrative": "stock issuance question",
+   "unsure": ""
+  },
+  {
+   "lines": [
+    1
+   ],
+   "client": "Solace Media",
+   "cmid": "",
+   "date": "",
+   "hours_written": "0.2",
+   "hours": 0.2,
+   "narrative": "registered agent change",
+   "unsure": ""
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "text": "Tidewater 2.1 red line for Orbis MSA. Tidewater 0.3 annual consents. Matter 90 28.001.5 stock issuance question. Solace Media 0.2 registered agent change."
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 3029,
+  "outputTokens": 252,
+  "totalTokens": 3281
+ },
+ "latency_ms": 2269
+}

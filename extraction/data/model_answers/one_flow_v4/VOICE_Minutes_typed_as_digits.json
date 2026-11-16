@@ -1,0 +1,33 @@
+{
+ "model": "us.amazon.nova-pro-v1:0",
+ "entries": [
+  {
+   "lines": [
+    1
+   ],
+   "client": "Tidewater AI",
+   "cmid": "",
+   "matter": "",
+   "date": "",
+   "hours_written": "45 minutes",
+   "hours": 0.75,
+   "narrative": "board consent",
+   "billable": true,
+   "unsure": ""
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "text": "Tidewater AI, 45 minutes, board consent"
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 3380,
+  "outputTokens": 85,
+  "totalTokens": 3465
+ },
+ "latency_ms": 1072
+}

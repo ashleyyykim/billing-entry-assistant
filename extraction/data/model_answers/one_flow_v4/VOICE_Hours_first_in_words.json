@@ -1,0 +1,33 @@
+{
+ "model": "us.amazon.nova-pro-v1:0",
+ "entries": [
+  {
+   "lines": [
+    1
+   ],
+   "client": "Cobalt Ridge Partners",
+   "cmid": "",
+   "matter": "Fund II sub docs",
+   "date": "",
+   "hours_written": "an hour and a half",
+   "hours": 1.5,
+   "narrative": "revising",
+   "billable": true,
+   "unsure": ""
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "text": "Bill an hour and a half to Cobalt Ridge Partners for revising the Fund II sub docs"
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 3386,
+  "outputTokens": 92,
+  "totalTokens": 3478
+ },
+ "latency_ms": 1001
+}

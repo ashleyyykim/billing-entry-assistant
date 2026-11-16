@@ -1,0 +1,18 @@
+file,entry,work_date,tk_id,hours,client,cmid,narrative,note
+export_01.xlsx,1,2026-10-26,TK102,0.9,Tidewater AI,4590.003,Charter amendment for Project Kite,
+export_01.xlsx,2,2026-10-26,TK102,1.4,Ridgewater Partners,,LPA comments,
+export_01.xlsx,3,2026-10-27,TK103,0.6,,5520.001,Review purchase agreement,
+export_01.xlsx,4,2026-10-27,TK103,1.5,Meridian Therapeutics,,Draft prospectus supplement,
+export_01.xlsx,5,2026-10-28,TK106,0.4,Halvorsen Industrial,,Call w/ CEO re hiring plan,
+export_02.xlsx,1,2026-10-27,TK104,0.6,Northgate Bank,7215.003,Zoom w/ client re amend. fee,Client and matter in one column
+export_02.xlsx,2,2026-10-27,TK104,2.1,Cobalt Ridge Capital,,Revise sub docs for Fund II,
+export_02.xlsx,3,2026-10-28,TK104,1.25,Kestrel Foods,,Bakery APA markup,Hours in hundredths
+export_02.xlsx,4,2026-10-28,TK104,0.5,Harborlight Bio,,Board consent,A matter name after the client
+export_03.xlsx,1,2026-10-27,TK102,0.6,,5520.001,Review purchase agmt,Units are tenths of an hour
+export_03.xlsx,2,2026-10-27,TK102,1.6,,5602.003,Review Quanta disclosure schedules,
+export_03.xlsx,3,2026-10-28,TK102,0.3,,4590.003,Charter amendment call,
+export_03.xlsx,4,2026-10-28,,0.4,,2201.001,Series A board consent,A user who isn't a timekeeper
+export_04.csv,1,2026-10-26,TK109,0.9,Tidewater AI,,"Charter amendment for Project Kite, Series B",Minutes
+export_04.csv,2,2026-10-26,TK109,0.4,Halvorsen,,Call w/ CEO re hiring plan,
+export_04.csv,3,2026-10-27,TK109,0.75,Bluefin Robotics,,Option grant call,
+export_04.csv,4,2026-10-27,TK109,0.5,,,Associate training lunch,Firm time

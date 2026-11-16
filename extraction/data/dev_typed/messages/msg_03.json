@@ -1,0 +1,13 @@
+{
+ "id": "msg_03",
+ "sender": "Pat Lee <plee@example.com>",
+ "sent": "2026-11-02",
+ "subject": "notes",
+ "body": "Notes from E. Brandt attached, and the scanned sheets from last week.",
+ "attachments": [
+  "dev_typed/documents/report_02.pdf",
+  "dev_scans/2399_001.pdf",
+  "dev_typed/messages/IMG_2041.HEIC"
+ ],
+ "note": "An assistant sends files with no forwarded email: a pre-bill, a scan, and an iPhone photo"
+}

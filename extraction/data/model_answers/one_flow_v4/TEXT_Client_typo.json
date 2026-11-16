@@ -1,0 +1,33 @@
+{
+ "model": "us.amazon.nova-pro-v1:0",
+ "entries": [
+  {
+   "lines": [
+    1
+   ],
+   "client": "Halvorson Ind.",
+   "cmid": "",
+   "matter": "TCW lender counsel re Brightline",
+   "date": "",
+   "hours_written": "2.1",
+   "hours": 2.1,
+   "narrative": "",
+   "billable": true,
+   "unsure": ""
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "text": "Halvorson ind - TCW lender counsel re Brightline 2.1"
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 2913,
+  "outputTokens": 89,
+  "totalTokens": 3002
+ },
+ "latency_ms": 962
+}

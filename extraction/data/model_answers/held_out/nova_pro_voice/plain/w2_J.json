@@ -1,0 +1,79 @@
+{
+ "model": "us.amazon.nova-pro-v1:0",
+ "entries": [
+  {
+   "lines": [
+    1
+   ],
+   "client": "Cobalt Ridge Capital",
+   "cmid": "",
+   "date": "11/9",
+   "hours_written": "1.6",
+   "hours": 1.6,
+   "narrative": "Worked on project run buyer's markup of the purchase agreement.",
+   "unsure": ""
+  },
+  {
+   "lines": [
+    1
+   ],
+   "client": "",
+   "cmid": "7222.001",
+   "date": "11/9",
+   "hours_written": "0.9",
+   "hours": 0.9,
+   "narrative": "fund 4 LPA comments.",
+   "unsure": ""
+  },
+  {
+   "lines": [
+    1
+   ],
+   "client": "QLV",
+   "cmid": "",
+   "date": "11/9",
+   "hours_written": "0.7",
+   "hours": 0.7,
+   "narrative": "fund 3 subscription documents.",
+   "unsure": ""
+  },
+  {
+   "lines": [
+    1
+   ],
+   "client": "Firm",
+   "cmid": "",
+   "date": "11/9",
+   "hours_written": "1",
+   "hours": 1.0,
+   "narrative": "recruiting, spend an hour on campus interviews.",
+   "unsure": ""
+  },
+  {
+   "lines": [
+    1
+   ],
+   "client": "",
+   "cmid": "",
+   "date": "11/9",
+   "hours_written": "",
+   "hours": 0.0,
+   "narrative": "Make sure to call Dana at 415-555-0134.",
+   "unsure": ""
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "text": "Page J. November 9. CRC 1.6 hours. Worked on project run buyer's markup of the purchase agreement. Matter 2. With 7222001, 0.9 hours, fund 4 LPA comments. Matter 3, QLV 0.7 hours, fund 3 subscription documents. Matter 4, firm time recruiting, spend an hour on campus interviews. Make sure to call Dana at 415-555-0134."
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 3085,
+  "outputTokens": 358,
+  "totalTokens": 3443
+ },
+ "latency_ms": 3310
+}

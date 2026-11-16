@@ -1,0 +1,12 @@
+{
+ "id": "msg_02",
+ "sender": "\"L. Moreno\" <lmoreno@example.com>",
+ "sent": "2026-10-30",
+ "subject": "my time",
+ "body": "Time attached. Also Saffron .8 SAFE side letter on 10/27 in case it's not in the log.\nElena's export is attached too.",
+ "attachments": [
+  "dev_typed/documents/log_01.docx",
+  "dev_typed/spreadsheets/export_04.csv"
+ ],
+ "note": "An attorney sends a Word log, a colleague's export, and an entry already in the log"
+}

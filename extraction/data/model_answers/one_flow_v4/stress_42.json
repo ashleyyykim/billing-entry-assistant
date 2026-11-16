@@ -1,0 +1,61 @@
+{
+ "model": "us.amazon.nova-pro-v1:0",
+ "entries": [
+  {
+   "lines": [
+    1
+   ],
+   "client": "Halvorsen",
+   "cmid": "",
+   "matter": "lender call",
+   "date": "",
+   "hours_written": ".4",
+   "hours": 0.4,
+   "narrative": "",
+   "billable": true,
+   "unsure": ""
+  },
+  {
+   "lines": [
+    1
+   ],
+   "client": "Tidewater",
+   "cmid": "",
+   "matter": "consent",
+   "date": "",
+   "hours_written": ".3",
+   "hours": 0.3,
+   "narrative": "",
+   "billable": true,
+   "unsure": ""
+  },
+  {
+   "lines": [
+    1
+   ],
+   "client": "Bluefin",
+   "cmid": "",
+   "matter": "option grant",
+   "date": "",
+   "hours_written": ".6",
+   "hours": 0.6,
+   "narrative": "",
+   "billable": true,
+   "unsure": ""
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "text": "Halvorsen lender call .4, also Tidewater consent .3, also Bluefin option grant .6"
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 2921,
+  "outputTokens": 210,
+  "totalTokens": 3131
+ },
+ "latency_ms": 1873
+}
