@@ -1,0 +1,13 @@
+# Build and run Tenth locally:  docker compose -f docker/compose.yaml up --build
+# Then open http://localhost:8080
+services:
+  tenth:
+    image: tenth
+    build:
+      context: ..                 # the repo root: the image needs matching/ and phase2_model/
+      dockerfile: docker/Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      # Set to put a sign-in prompt in front of the page and API. Empty = open (fine on your laptop only).
+      TENTH_PASSWORD: ${TENTH_PASSWORD:-}

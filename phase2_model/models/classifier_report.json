@@ -1,0 +1,128 @@
+{
+  "dev": {
+    "MISSING_PARTICIPANT": {
+      "precision": 0.864367816091954,
+      "recall": 0.9170731707317074,
+      "f1-score": 0.8899408284023669,
+      "support": 410.0
+    },
+    "MISSING_SUBJECT": {
+      "precision": 0.9239130434782609,
+      "recall": 0.9030544488711819,
+      "f1-score": 0.9133646742780389,
+      "support": 753.0
+    },
+    "VAGUE": {
+      "precision": 0.8955223880597015,
+      "recall": 0.9917355371900827,
+      "f1-score": 0.9411764705882353,
+      "support": 121.0
+    },
+    "JUNK": {
+      "precision": 0.9333333333333333,
+      "recall": 1.0,
+      "f1-score": 0.9655172413793104,
+      "support": 14.0
+    },
+    "micro avg": {
+      "precision": 0.9015151515151515,
+      "recall": 0.9167950693374423,
+      "f1-score": 0.9090909090909091,
+      "support": 1298.0
+    },
+    "macro avg": {
+      "precision": 0.9042841452408124,
+      "recall": 0.952965789198243,
+      "f1-score": 0.9274998036619879,
+      "support": 1298.0
+    },
+    "weighted avg": {
+      "precision": 0.9025594776261341,
+      "recall": 0.9167950693374423,
+      "f1-score": 0.9091209042348386,
+      "support": 1298.0
+    },
+    "samples avg": {
+      "precision": 0.4268689057421452,
+      "recall": 0.4297580353918382,
+      "f1-score": 0.42783194895870946,
+      "support": 1298.0
+    }
+  },
+  "gold": {
+    "flag_precision": 0.505,
+    "flag_recall": 0.527,
+    "crosstab": {
+      "AMBIGUOUS_SHORTHAND": {
+        "CLERICAL": 0,
+        "DENSE_SHORTHAND": 0,
+        "GOOD": 0,
+        "JUNK": 0,
+        "MISSING_SUBJECT": 0,
+        "SPECIFIC": 1,
+        "VAGUE": 0,
+        "All": 1
+      },
+      "FORMATTING": {
+        "CLERICAL": 2,
+        "DENSE_SHORTHAND": 0,
+        "GOOD": 7,
+        "JUNK": 0,
+        "MISSING_SUBJECT": 0,
+        "SPECIFIC": 6,
+        "VAGUE": 8,
+        "All": 23
+      },
+      "JUNK": {
+        "CLERICAL": 2,
+        "DENSE_SHORTHAND": 0,
+        "GOOD": 3,
+        "JUNK": 12,
+        "MISSING_SUBJECT": 0,
+        "SPECIFIC": 2,
+        "VAGUE": 0,
+        "All": 19
+      },
+      "MISSING_PARTICIPANT": {
+        "CLERICAL": 0,
+        "DENSE_SHORTHAND": 0,
+        "GOOD": 6,
+        "JUNK": 0,
+        "MISSING_SUBJECT": 0,
+        "SPECIFIC": 3,
+        "VAGUE": 4,
+        "All": 13
+      },
+      "MISSING_SUBJECT": {
+        "CLERICAL": 1,
+        "DENSE_SHORTHAND": 1,
+        "GOOD": 16,
+        "JUNK": 8,
+        "MISSING_SUBJECT": 3,
+        "SPECIFIC": 4,
+        "VAGUE": 8,
+        "All": 41
+      },
+      "OK": {
+        "CLERICAL": 7,
+        "DENSE_SHORTHAND": 2,
+        "GOOD": 72,
+        "JUNK": 9,
+        "MISSING_SUBJECT": 4,
+        "SPECIFIC": 27,
+        "VAGUE": 22,
+        "All": 143
+      },
+      "All": {
+        "CLERICAL": 12,
+        "DENSE_SHORTHAND": 3,
+        "GOOD": 104,
+        "JUNK": 29,
+        "MISSING_SUBJECT": 7,
+        "SPECIFIC": 43,
+        "VAGUE": 42,
+        "All": 240
+      }
+    }
+  }
+}

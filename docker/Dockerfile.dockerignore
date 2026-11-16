@@ -1,0 +1,28 @@
+# The build context is the whole repo, so this lists what MAY go in (everything else stays out).
+# Docker reads this file because it sits next to docker/Dockerfile with the name <Dockerfile>.dockerignore.
+*
+
+# stage 1: matching
+!matching/pyproject.toml
+!matching/uv.lock
+!matching/app.py
+!matching/src/
+!matching/frontend/
+!matching/data/
+!matching/results/
+
+# stage 2: narrative check
+!phase2_model/pipeline/
+!phase2_model/models/
+
+# ...and, inside those, what must still stay out
+# the holdout file must never ship with the service
+matching/data/*HOLDOUT*
+# 06_decisions.csv holds the holdout entries' decisions and answer key, so keep the final-run outputs out too
+matching/results/06_*
+# evaluation outputs that contain gold-set text; the service doesn't need them
+phase2_model/models/*predictions*.csv
+phase2_model/models/*.log
+**/__pycache__
+**/*.pyc
+**/.DS_Store

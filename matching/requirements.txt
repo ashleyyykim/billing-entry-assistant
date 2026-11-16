@@ -1,0 +1,14 @@
+# Pin each package to the version in the environment that trained the models:
+#   pip freeze | grep -iE "^(scikit-learn|lightgbm|joblib|numpy|pandas|pyarrow|sentence-transformers|openpyxl)=="
+# Model pickles break silently across scikit-learn / LightGBM versions.
+# torch is installed separately in the Dockerfile (CPU-only build).
+numpy
+pandas
+pyarrow
+openpyxl
+scikit-learn
+lightgbm
+joblib
+sentence-transformers
+fastapi
+uvicorn[standard]

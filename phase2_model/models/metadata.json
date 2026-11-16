@@ -1,0 +1,24 @@
+{
+  "classifier": {
+    "trained": "2026-11-10T05:01:58+00:00",
+    "pairs": "data\\outputs\\pairs",
+    "n_train": 24639,
+    "flags": [
+      "MISSING_PARTICIPANT",
+      "MISSING_SUBJECT",
+      "VAGUE",
+      "JUNK"
+    ],
+    "gold": {
+      "precision": 0.505,
+      "recall": 0.527
+    }
+  },
+  "rewriter": {
+    "trained": "2026-11-09T07:45:44+00:00",
+    "base": "google/flan-t5-small",
+    "n_train": 24447,
+    "epochs": 1.0,
+    "dev_exact": 0.762
+  }
+}

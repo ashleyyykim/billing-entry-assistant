@@ -7,3 +7,11 @@ __pycache__/
 **/data/final/*
 !**/data/final/*.csv
 .venv/
+
+# narrative check: rebuilt by phase2_model/training/. The classifier (a few MB) stays in git so the
+# image builds; the rewriter is too big, and the outputs can be regenerated (the hand audit is kept).
+phase2_model/models/rewriter/
+phase2_model/models/*predictions*.csv
+phase2_model/models/*.log
+phase2_model/data/outputs/*
+!phase2_model/data/outputs/pairs_audit.csv

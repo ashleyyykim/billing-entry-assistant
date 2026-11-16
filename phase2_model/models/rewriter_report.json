@@ -1,0 +1,34 @@
+{
+  "exact": 0.762,
+  "safe": 0.99,
+  "by_type": {
+    "all_caps": {
+      "exact": 0.434,
+      "safe": 0.961
+    },
+    "ambiguous_shorthand": {
+      "exact": 0.556,
+      "safe": 1.0
+    },
+    "context_suggested": {
+      "exact": 0.833,
+      "safe": 1.0
+    },
+    "identity": {
+      "exact": 1.0,
+      "safe": 1.0
+    },
+    "missing_participant": {
+      "exact": 0.878,
+      "safe": 0.98
+    },
+    "missing_subject": {
+      "exact": 0.577,
+      "safe": 1.0
+    },
+    "vague_object": {
+      "exact": 1.0,
+      "safe": 1.0
+    }
+  }
+}

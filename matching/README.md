@@ -72,6 +72,16 @@ The app calls three functions from `src/pipeline.py`:
 
 Retraining runs separately with `train` and `save` in `src/train.py`. The app needs five files from `results/`: `02_config.json`, `02_pairs.parquet`, `02_people.parquet`, `04_config.json`, and `04_model.joblib`.
 
+## Narrative check (stage 2)
+
+The same service also reviews narratives. `POST /review` takes entries (`narrative`, `hours`, and optionally `cmid`, `tk_id`, `work_date`, `history`) and `block` (false = one entry per task). For each entry it returns the task lines, their flags, a suggested rewrite with placeholders such as `[PARTICIPANT]`, candidates for each placeholder, and the assembled entry. Candidates come from the entry's other tasks and from earlier entries on the same matter (`results/00_entries.parquet`, TRAIN entries only), and the timekeeper picks them; nothing is filled in automatically. `GET /review/info` shows which models are loaded.
+
+The code and models live in `../phase2_model/pipeline/` and `../phase2_model/models/` (see that folder's README); the app reads them from there, and the Docker image copies them in. Without the models, matching still works and `/review` returns 503. Without `models/rewriter/`, rewrites come from rules instead of the model.
+
+## Docker
+
+The Docker files are in `../docker/`, because the image holds both stages. See its README.
+
 ## Limitations
 
 - The data is synthetic, since firms can't share real time entries. A firm's own entries would need the models retrained on its history.

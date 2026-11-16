@@ -1,0 +1,929 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tenth</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #ebe6df;
+    --card: #ffffff;
+    --ink: #2b2623;
+    --muted: #6d655e;
+    --line: #d9d1c7;
+    --rust: #a8361a;
+    --green: #2f7a55;
+    --amber: #8a5a12;
+    --amber-bg: #f6e9cf;
+    --blue: #2c5d8a;
+    --blue-bg: #dce8f3;
+    --grey-bg: #e4ddd3;
+    --pill: #e8e1d8;
+    --label: #6a5a78;
+    --focus: #1d5fd1;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font: 400 16px/1.45 "Source Sans 3", system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+  .wrap { max-width: 780px; margin: 0 auto; padding: 28px 16px 64px; }
+  :focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+
+  header.top { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 20px; }
+  .brand { font-size: 28px; font-weight: 700; letter-spacing: -0.01em; margin: 0; }
+  .brand small { font-size: 15px; font-weight: 400; color: var(--muted); margin-left: 10px; }
+
+  button, input, textarea { font: inherit; color: inherit; }
+  .btn {
+    border: 1.5px solid var(--ink); background: transparent; border-radius: 999px;
+    padding: 6px 18px; font-weight: 600; cursor: pointer; white-space: nowrap;
+  }
+  .btn:hover { background: var(--ink); color: #fff; }
+  .btn.solid { background: var(--ink); color: #fff; }
+  .btn.solid:hover { background: #000; }
+  .btn.quiet { border-color: transparent; text-decoration: underline; padding: 6px 8px; font-weight: 400; }
+  .btn.quiet:hover { background: transparent; color: var(--rust); }
+  .btn[disabled] { opacity: .5; cursor: default; }
+
+
+  .intake { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 18px 16px; margin-bottom: 28px; }
+  .intake h2 { margin: 0 0 4px; font-size: 20px; }
+  .intake p { margin: 0 0 14px; color: var(--muted); }
+  .actions { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+  .paste { margin-top: 14px; }
+  .paste summary { cursor: pointer; color: var(--muted); }
+  .paste textarea { width: 100%; min-height: 120px; margin: 10px 0; border: 1px solid var(--line); border-radius: 6px; padding: 10px; font: 13px/1.4 ui-monospace, Menlo, Consolas, monospace; }
+
+  .bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 16px; margin: 0 0 12px; }
+  .section-label { font-size: 12.5px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--label); margin: 0; }
+  .summary { font-size: 15px; color: var(--muted); margin: 0 0 12px; }
+  .summary strong { color: var(--ink); }
+  .tabs { display: flex; flex-wrap: wrap; gap: 6px; }
+  .tab { border: 1px solid var(--line); background: transparent; border-radius: 999px; padding: 4px 14px; cursor: pointer; font-size: 15px; white-space: nowrap; }
+  .tab[aria-pressed="true"] { background: var(--ink); color: #fff; border-color: var(--ink); }
+
+  #status { min-height: 1.4em; margin: 0 0 8px; font-size: 15px; }
+  #status.error { color: var(--rust); font-weight: 600; }
+
+  .list { display: grid; gap: 12px; }
+  .card {
+    display: grid; grid-template-columns: 124px 1fr auto; gap: 8px 18px; align-items: start;
+    background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 16px 18px;
+  }
+  .badges { display: grid; gap: 6px; justify-items: stretch; }
+  .pill { display: block; text-align: center; border-radius: 999px; padding: 3px 10px; font-size: 14px; font-weight: 600; white-space: nowrap; }
+  .pill.action { background: var(--green); color: #fff; }
+  .pill.action.flag, .pill.action.review { background: var(--amber-bg); color: var(--amber); }
+  .pill.action.multi { background: var(--blue-bg); color: var(--blue); }
+  .pill.action.none { background: var(--grey-bg); color: var(--ink); }
+  .pill.action.changed { background: var(--ink); color: #fff; }
+  .pill.conf { background: var(--pill); color: #4a4540; font-weight: 400; font-size: 13.5px; }
+  .matter { margin: 0; font-size: 17px; font-weight: 600; }
+  .why { margin: 2px 0 0; }
+  .why strong { color: var(--rust); font-weight: 700; }
+  .more { margin: 2px 0 0; color: var(--muted); }
+  .entry { margin: 8px 0 0; font-size: 14px; color: var(--muted); border-left: 3px solid var(--line); padding-left: 10px;
+           display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+  .entry b { font-weight: 600; color: var(--ink); }
+  .side { display: grid; gap: 8px; justify-items: end; }
+
+  .editor { grid-column: 1 / -1; border-top: 1px solid var(--line); margin-top: 6px; padding-top: 14px; }
+  .editor h4 { margin: 0 0 8px; font-size: 16px; }
+  .choices { display: grid; gap: 6px; margin-bottom: 12px; }
+  .choice { display: flex; gap: 10px; align-items: baseline; border: 1px solid var(--line); border-radius: 8px; padding: 8px 12px; cursor: pointer; }
+  .choice:has(input:checked) { border-color: var(--ink); background: #faf7f3; }
+  .choice input { accent-color: var(--ink); }
+  .editor .cmid { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin-bottom: 12px; }
+  .editor .cmid input[type=text] { border: 1px solid var(--line); border-radius: 6px; padding: 7px 10px; width: 160px; }
+  .editor .row { display: flex; gap: 10px; }
+
+  .empty { text-align: center; color: var(--muted); padding: 36px 12px; border: 1.5px dashed var(--line); border-radius: 10px; }
+
+  /* ---- narrative check (stage 2) ---- */
+  .stage { margin-top: 40px; }
+  .field { display: grid; gap: 4px; margin-bottom: 12px; }
+  .field > span { font-size: 14px; font-weight: 600; }
+  .intake textarea#nText { width: 100%; min-height: 90px; border: 1px solid var(--line); border-radius: 6px; padding: 10px; }
+  .nrow { display: flex; flex-wrap: wrap; gap: 12px 18px; align-items: end; margin-bottom: 14px; }
+  .nrow input[type=number], .nrow input[type=text] { border: 1px solid var(--line); border-radius: 6px; padding: 7px 10px; width: 130px; }
+  .check { display: flex; gap: 8px; align-items: center; font-size: 15px; }
+  .check input { accent-color: var(--ink); width: 18px; height: 18px; }
+  .muted { color: var(--muted); font-size: 14px; }
+  #nStatus { min-height: 1.4em; margin: 0 0 8px; font-size: 15px; }
+  #nStatus.error { color: var(--rust); font-weight: 600; }
+
+  .rcard { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 16px 18px; display: grid; gap: 10px; }
+  .rhead { display: flex; flex-wrap: wrap; gap: 6px 12px; align-items: baseline; }
+  .rhead h3 { margin: 0; font-size: 17px; }
+  .pill.inline { display: inline-block; }
+  .pill.ok { background: var(--green); color: #fff; }
+  .pill.warn { background: var(--amber-bg); color: var(--amber); }
+  .pill.junk { background: var(--grey-bg); color: var(--ink); }
+  .badge { margin-left: auto; font-size: 14px; font-weight: 600; border-radius: 999px; padding: 2px 12px; }
+  .badge.todo { background: var(--amber-bg); color: var(--amber); }
+  .badge.done { background: var(--green); color: #fff; }
+
+  /* tasks: one row each, problems marked by a coloured edge */
+  .tlist { list-style: none; margin: 0; padding: 0; display: grid; }
+  .trow { padding: 9px 0 9px 12px; border-left: 3px solid transparent; border-top: 1px solid var(--line); }
+  .trow:first-child { border-top: 0; }
+  .trow.todo { border-left-color: var(--amber); }
+  .trow.removed .ttext { text-decoration: line-through; color: var(--muted); }
+  .tmain { display: flex; gap: 16px; align-items: baseline; justify-content: space-between; }
+  .ttext { font-size: 16px; line-height: 1.9; }
+  .thrs { flex: none; font-variant-numeric: tabular-nums; color: var(--muted); font-size: 14px; }
+  input.blank { font: inherit; border: 0; border-bottom: 2px solid var(--amber); background: var(--amber-bg); color: var(--ink);
+                border-radius: 4px 4px 0 0; padding: 0 6px; margin: 0 2px; min-width: 4ch; max-width: 100%; }
+  input.blank:not(:placeholder-shown) { background: var(--blue-bg); border-bottom-color: var(--blue); }
+  input.blank::placeholder { color: var(--amber); font-style: italic; }
+  .hint { margin: 4px 0 0; font-size: 14px; color: var(--muted); }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+  .opt { border: 1px solid var(--line); background: #faf7f3; border-radius: 999px; padding: 2px 12px; font-size: 14px; cursor: pointer; }
+  .opt:hover { border-color: var(--ink); }
+  .opt[aria-pressed="true"] { background: var(--ink); color: #fff; border-color: var(--ink); }
+  .origd summary { cursor: pointer; color: var(--muted); font-size: 14px; }
+  .orig { margin: 6px 0 0; font-size: 14px; color: var(--muted); border-left: 3px solid var(--line); padding-left: 10px; }
+  .fine { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 12px 18px; }
+  .fine summary { cursor: pointer; font-weight: 600; color: var(--green); }
+  .fine > .list { margin-top: 12px; }
+  .fine .rcard { border-color: var(--line); box-shadow: none; }
+
+  /* context: what else was going on */
+  .ctx { margin: 0; font-size: 14px; background: #faf7f3; border-radius: 8px; padding: 8px 12px; }
+  .ctx-title { margin: 0 0 4px; color: var(--label); font-weight: 600; }
+  .ctx ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 3px; }
+  .ctx-when { color: var(--muted); margin-right: 8px; font-variant-numeric: tabular-nums; }
+
+  /* editing a task */
+  .tside { flex: none; display: flex; gap: 10px; align-items: baseline; }
+  .edit-link { background: none; border: 0; padding: 0; color: var(--blue); text-decoration: underline; cursor: pointer; font-size: 14px; }
+  .trow.editing { border-left-color: var(--blue); }
+  .edit-box { display: grid; grid-template-columns: 1fr auto; gap: 8px 10px; align-items: start; }
+  .edit-box .chips { grid-column: 1 / -1; }
+  .edit-text { width: 100%; font: inherit; border: 1px solid var(--ink); border-radius: 6px; padding: 6px 8px; resize: vertical; }
+  .edit-h { display: flex; gap: 4px; align-items: center; color: var(--muted); font-size: 14px; }
+  .edit-hrs { width: 70px; font: inherit; border: 1px solid var(--line); border-radius: 6px; padding: 6px 8px; }
+  .btn.small { padding: 3px 14px; font-size: 14px; }
+  .sugg { margin: 0; font-size: 16px; }
+  ol.sugg { padding-left: 20px; }
+
+  /* ---- steps ---- */
+  .stepper { margin: 0 0 22px; }
+  .stepper ol { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  .stepper li { position: relative; }
+  .step-btn { width: 100%; display: flex; align-items: center; gap: 10px; background: transparent; border: 0; border-top: 4px solid var(--line);
+              padding: 10px 2px 0; text-align: left; cursor: pointer; color: var(--muted); font-size: 15px; }
+  .step-btn:disabled { cursor: default; }
+  .step-btn .num { flex: none; width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center; font-weight: 700;
+                   border: 2px solid var(--line); background: var(--card); color: var(--muted); }
+  .stepper li.done .step-btn { border-top-color: var(--green); color: var(--ink); }
+  .stepper li.done .num { background: var(--green); border-color: var(--green); color: #fff; }
+  .stepper li.current .step-btn { border-top-color: var(--ink); color: var(--ink); font-weight: 700; }
+  .stepper li.current .num { background: var(--ink); border-color: var(--ink); color: #fff; }
+  .step h2[tabindex] { outline: none; }
+  .step-nav { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap;
+              margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--line); }
+  .step-nav-right { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; justify-content: flex-end; margin-left: auto; }
+  .btn.big { padding: 10px 26px; font-size: 17px; }
+  @media (max-width: 640px) {
+    .step-btn { flex-direction: column; align-items: flex-start; gap: 4px; font-size: 13.5px; }
+    .step-nav-right { width: 100%; justify-content: space-between; }
+  }
+
+  @media (max-width: 640px) {
+    .card { grid-template-columns: 1fr; }
+    .badges { grid-auto-flow: column; justify-content: start; }
+    .side { justify-items: start; grid-auto-flow: column; justify-content: start; }
+      .brand small { display: block; margin: 2px 0 0; line-height: 1.3; }
+  }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <h1 class="brand">Tenth<small>Every tenth of an hour, on the right matter</small></h1>
+  </header>
+
+  <nav class="stepper" aria-label="Progress">
+    <ol>
+      <li><button type="button" class="step-btn" data-step="1"><span class="num">1</span><span class="step-name">Match to matters</span></button></li>
+      <li><button type="button" class="step-btn" data-step="2"><span class="num">2</span><span class="step-name">Check narratives</span></button></li>
+      <li><button type="button" class="step-btn" data-step="3"><span class="num">3</span><span class="step-name">Review &amp; export</span></button></li>
+    </ol>
+  </nav>
+
+  <!-- ============ step 1: matching ============ -->
+  <section class="step" id="step1" aria-labelledby="intakeTitle">
+    <div class="intake">
+      <h2 id="intakeTitle" tabindex="-1">Time entries</h2>
+      <p>Upload a CSV or JSON file of entries. Tenth decides the clear ones and hands the rest to you, with the reason.</p>
+      <div class="actions">
+        <input id="file" type="file" accept=".csv,.json,application/json,text/csv" hidden>
+        <button class="btn solid" id="pick" type="button">Upload entries</button>
+        <button class="btn" id="selftest" type="button">Try 20 sample entries</button>
+      </div>
+      <details class="paste">
+        <summary>Paste JSON instead</summary>
+        <textarea id="pasted" spellcheck="false" aria-label="Entries as JSON" placeholder='[{"entry_id": "T-1", "narrative": "…"}]'></textarea>
+        <button class="btn" id="runPasted" type="button">Decide</button>
+      </details>
+      <details class="paste">
+        <summary>Just check one narrative</summary>
+        <label class="field" style="margin-top:10px"><span>Narrative</span>
+          <textarea id="nText" spellcheck="true" placeholder="Rev docs (0.5); call re APA (0.3); tcw J. Smith re same (0.2)"></textarea></label>
+        <div class="nrow">
+          <label class="field" style="margin:0"><span>Hours</span><input id="nHours" type="number" step="0.1" min="0" inputmode="decimal"></label>
+          <label class="field" style="margin:0"><span>Matter (optional)</span><input id="nCmid" type="text" placeholder="e.g. 2201.001" autocomplete="off"></label>
+        </div>
+        <div class="actions">
+          <button class="btn" id="nRun" type="button">Check narrative</button>
+          <button class="btn quiet" id="nExample" type="button">Use an example</button>
+        </div>
+      </details>
+    </div>
+
+    <p id="status" role="status" aria-live="polite"></p>
+
+    <div id="results" hidden>
+      <div class="bar">
+        <h2 class="section-label">Every decision comes with a reason</h2>
+        <div class="tabs" role="group" aria-label="Filter decisions">
+          <button class="tab" data-filter="all" aria-pressed="true" type="button"></button>
+          <button class="tab" data-filter="review" aria-pressed="false" type="button"></button>
+          <button class="tab" data-filter="auto" aria-pressed="false" type="button"></button>
+        </div>
+      </div>
+      <p class="summary" id="summary"></p>
+      <div class="list" id="list"></div>
+    </div>
+
+    <div class="step-nav">
+      <span></span>
+      <div class="step-nav-right">
+        <span class="muted" id="next1Note"></span>
+        <button class="btn solid big" id="next1" type="button" disabled>Continue</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ step 2: narratives ============ -->
+  <section class="step" id="step2" aria-labelledby="step2Title" hidden>
+    <div class="intake">
+      <h2 id="step2Title" tabindex="-1">Check narratives</h2>
+      <p>Fill in the blanks. Suggestions come from the entry's other tasks and past entries on the same matter.</p>
+    </div>
+    <p id="nStatus" role="status" aria-live="polite"></p>
+    <div id="nResults" hidden>
+      <div class="bar">
+        <h2 class="section-label" id="nSummary"></h2>
+      </div>
+      <div class="list" id="nList"></div>
+    </div>
+    <div class="step-nav">
+      <button class="btn" id="back2" type="button">Back</button>
+      <div class="step-nav-right">
+        <span class="muted" id="next2Note"></span>
+        <button class="btn solid big" id="next2" type="button" disabled>Continue</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ step 3: review & export ============ -->
+  <section class="step" id="step3" aria-labelledby="step3Title" hidden>
+    <div class="intake">
+      <h2 id="step3Title" tabindex="-1">Review &amp; export</h2>
+      <p id="doneSummary"></p>
+      <label class="check"><input type="checkbox" id="nSeparate"> No block billing (one entry per task)</label>
+    </div>
+    <div class="list" id="finalList"></div>
+    <div class="step-nav">
+      <button class="btn" id="back3" type="button">Back</button>
+      <div class="step-nav-right">
+        <button class="btn quiet" id="startOver" type="button">Start over</button>
+        <button class="btn solid big" id="exportFinal" type="button">Export entries (CSV)</button>
+      </div>
+    </div>
+  </section>
+</div>
+
+<script>
+"use strict";
+const $ = (s, r = document) => r.querySelector(s);
+
+// ---------- field mapping -------------------------------------------------
+// The service returns one object per entry. These lists say where to look for each thing,
+// in order. If your decide() output uses other names, add them here.
+const FIELDS = {
+  id: ["entry_id", "id"],
+  action: ["action"],
+  cmid: ["pred_cmid", "cmid"],
+  short: ["reason_short"],
+  full: ["reason_full", "reason"],
+  confidence: ["confidence", "confidence_pct", "p_auto", "top_prob", "pred_prob"],
+  narrative: ["narrative", "narrative_raw", "narrative_norm", "description"],
+  shortlist: ["shortlist", "suggestions", "alternatives", "top3", "candidates"],
+};
+const pick = (d, names) => { for (const n of names) if (d[n] !== undefined && d[n] !== null && d[n] !== "") return d[n]; return undefined; };
+
+const ACTIONS = {
+  AUTO_MATCH: { label: "Auto-match", cls: "" },
+  FLAG_MISMATCH: { label: "Flagged", cls: "flag" },
+  MULTI_MATTER: { label: "Two matters", cls: "multi" },
+  NO_MATCH: { label: "New client?", cls: "none" },
+  REVIEW: { label: "Needs review", cls: "review" },
+};
+const humanize = s => String(s).toLowerCase().replace(/_/g, " ").replace(/^./, c => c.toUpperCase());
+const actionInfo = a => ACTIONS[a] || { label: a ? humanize(a) : "Needs review", cls: "review" };
+
+function confidenceText(d) {
+  const v = pick(d, FIELDS.confidence);
+  if (v === undefined) return "";
+  if (typeof v === "number" || /^[\d.]+%?$/.test(String(v))) {
+    let n = parseFloat(v);
+    if (n <= 1) n *= 100;
+    return `${Math.round(n)}% confident`;
+  }
+  return `${String(v).replace(/\s*confidence$/i, "")} confidence`;
+}
+
+function matterName(d) {
+  const keys = Object.keys(d).filter(k => k.startsWith("matter_") && d[k] != null && d[k] !== "");
+  const clientKey = keys.find(k => /client/i.test(k));
+  const nameKey = keys.find(k => k !== clientKey && !/cmid|id$|date|status|open|close/i.test(k) && /matter|name|desc/i.test(k));
+  const client = clientKey ? d[clientKey] : "";
+  const matter = nameKey ? d[nameKey] : "";
+  return { client: String(client), matter: String(matter) };
+}
+
+function normalizeShortlist(d) {
+  let s = pick(d, FIELDS.shortlist);
+  if (s === undefined) return [];
+  if (typeof s === "string") {
+    try { s = JSON.parse(s); } catch { s = s.split(/[;|,]/).map(x => x.trim()).filter(Boolean); }
+  }
+  if (!Array.isArray(s)) return [];
+  return s.map(item => {
+    if (typeof item === "string" || typeof item === "number") return { cmid: String(item), label: String(item) };
+    const cmid = String(item.cmid ?? item.pred_cmid ?? item.matter_cmid ?? "");
+    const parts = [item.client ?? item.matter_client, item.matter ?? item.matter_name ?? item.name].filter(Boolean);
+    return { cmid, label: [cmid, parts.join(", ")].filter(Boolean).join("  ") };
+  }).filter(x => x.cmid);
+}
+
+// ---------- state ---------------------------------------------------------
+let items = [];            // { d, id, state: 'pending'|'accepted'|'changed', finalCmid, finalLabel, editing }
+let filter = "all";
+
+const isAuto = it => pick(it.d, FIELDS.action) === "AUTO_MATCH";
+
+// ---------- API -----------------------------------------------------------
+async function api(path, opts = {}) {
+  let res;
+  try { res = await fetch(path, { ...opts, headers: { "Content-Type": "application/json" } }); }
+  catch { throw new Error("Can't reach the service. Check your connection and try again."); }
+  if (res.status === 401) throw new Error("You've been signed out. Reload the page to sign in again.");
+  if (!res.ok) {
+    let detail = "";
+    try { const j = await res.json(); detail = typeof j.detail === "string" ? j.detail : JSON.stringify(j.detail); } catch { /* not JSON */ }
+    throw new Error(detail || `The service returned ${res.status}.`);
+  }
+  return res.json();
+}
+
+function setStatus(msg, isError = false) {
+  const s = $("#status"); s.textContent = msg; s.className = isError ? "error" : "";
+}
+function busy(on) { for (const b of document.querySelectorAll(".actions .btn, #runPasted")) b.disabled = on; }
+
+// ---------- loading entries ----------------------------------------------
+function parseCSV(text) {
+  const rows = []; let row = [], field = "", quoted = false;
+  for (let i = 0; i < text.length; i++) {
+    const c = text[i];
+    if (quoted) {
+      if (c === '"') { if (text[i + 1] === '"') { field += '"'; i++; } else quoted = false; } else field += c;
+    } else if (c === '"') quoted = true;
+    else if (c === ",") { row.push(field); field = ""; }
+    else if (c === "\n" || c === "\r") { if (c === "\r" && text[i + 1] === "\n") i++; row.push(field); field = ""; rows.push(row); row = []; }
+    else field += c;
+  }
+  if (field !== "" || row.length) { row.push(field); rows.push(row); }
+  const [head, ...body] = rows.filter(r => r.some(v => v !== ""));
+  if (!head) return [];
+  return body.map(r => Object.fromEntries(head.map((k, i) => [k.trim(), r[i] ?? ""])));
+}
+
+function entriesFromText(text, name = "") {
+  const t = text.trim();
+  if (!t) throw new Error("There are no entries to send.");
+  const kind = /\.json$/i.test(name) ? "json" : /\.csv$/i.test(name) ? "csv" : /^[\[{]/.test(t) ? "json" : "csv";
+  if (kind === "csv") return parseCSV(t);
+  let j;
+  try { j = JSON.parse(t); } catch { throw new Error("That isn't valid JSON. Check for a missing comma or quote."); }
+  const list = Array.isArray(j) ? j : j.entries;
+  if (!Array.isArray(list)) throw new Error('Expected a list of entries, or an object like {"entries": [...]}.');
+  return list;
+}
+
+async function decide(entries) {
+  if (!entries.length) throw new Error("The file has no entries.");
+  busy(true); setStatus(`Deciding ${entries.length} ${entries.length === 1 ? "entry" : "entries"}…`);
+  try {
+    const out = await api("/decide", { method: "POST", body: JSON.stringify({ entries }) });
+    show(out.decisions);
+  } catch (e) { setStatus(e.message, true); }
+  finally { busy(false); }
+}
+
+function show(decisions) {
+  items = decisions.map((d, i) => ({ d, id: pick(d, FIELDS.id) ?? i + 1, state: "pending", editing: false }));
+  items.sort((a, b) => isAuto(a) - isAuto(b));   // the ones that need you first
+  filter = "all";
+  maxStep = 1; goTo(1);
+  $("#results").hidden = false;
+  setStatus("");
+  render();
+  $("#results").scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+// ---------- rendering -----------------------------------------------------
+function el(tag, props = {}, ...kids) {
+  const n = document.createElement(tag);
+  for (const [k, v] of Object.entries(props)) {
+    if (k === "class") n.className = v; else if (k === "text") n.textContent = v;
+    else if (k.startsWith("on")) n.addEventListener(k.slice(2), v); else n.setAttribute(k, v);
+  }
+  for (const kid of kids.flat()) if (kid != null && kid !== false) n.append(kid);
+  return n;
+}
+
+function render() {
+  const auto = items.filter(isAuto).length;
+  const pending = items.filter(it => !isAuto(it) && it.state === "pending").length;
+  const tabs = { all: `All (${items.length})`, review: `Needs you (${items.length - auto})`, auto: `Auto-matched (${auto})` };
+  for (const t of document.querySelectorAll(".tab")) { t.textContent = tabs[t.dataset.filter]; t.setAttribute("aria-pressed", String(t.dataset.filter === filter)); }
+  $("#summary").replaceChildren(
+    el("strong", { text: `${auto} of ${items.length}` }),
+    ` decided without you. ${pending ? `${pending} still need${pending === 1 ? "s" : ""} a look.` : "Nothing left to check."}`);
+
+  const shown = items.filter(it => filter === "all" || (filter === "auto" ? isAuto(it) : !isAuto(it)));
+  const list = $("#list");
+  list.replaceChildren(...(shown.length ? shown.map(card) : [el("div", { class: "empty", text: "No entries in this view." })]));
+  updateStep1Nav();
+}
+
+function card(it) {
+  const d = it.d;
+  const info = it.state === "changed" ? { label: "Changed by you", cls: "changed" }
+             : it.state === "accepted" ? { label: "Accepted", cls: "" }
+             : actionInfo(pick(d, FIELDS.action));
+  const cmid = it.state === "changed" ? it.finalCmid : (pick(d, FIELDS.cmid) ?? "");
+  const { client, matter } = matterName(d);
+  const title = it.state === "changed" ? it.finalLabel
+              : [String(cmid), [client, matter].filter(Boolean).join(", ")].filter(Boolean).join("  ");
+  const conf = it.state === "changed" ? "" : confidenceText(d);
+  const was = pick(d, FIELDS.cmid);
+  const short = it.state === "changed" ? `Changed from ${was ?? "no match"}` : pick(d, FIELDS.short);
+  const full = it.state === "changed" ? "" : pick(d, FIELDS.full);
+  const narrative = pick(d, FIELDS.narrative);
+
+  const badges = el("div", { class: "badges" }, el("span", { class: `pill action ${info.cls}`, text: info.label }), conf && el("span", { class: "pill conf", text: conf }));
+  const body = el("div", {},
+    el("h3", { class: "matter", text: title || "No matter suggested" }),
+    short && el("p", { class: "why" }, el("strong", { text: short })),
+    full && el("p", { class: "more", text: full }),
+    narrative && el("p", { class: "entry" }, el("b", { text: `${it.id}: ` }), String(narrative)));
+
+  const side = el("div", { class: "side" });
+  if (!isAuto(it) && it.state === "pending") side.append(el("button", { class: "btn solid", type: "button", text: "Accept", "aria-label": `Accept the suggestion for entry ${it.id}`, onclick: () => { it.state = "accepted"; it.finalCmid = String(cmid); render(); } }));
+  side.append(el("button", { class: "btn", type: "button", text: "Change", "aria-expanded": String(it.editing), "aria-label": `Change the matter for entry ${it.id}`, onclick: () => { it.editing = !it.editing; render(); } }));
+
+  const c = el("article", { class: "card" }, badges, body, side);
+  if (it.editing) c.append(editor(it));
+  return c;
+}
+
+function editor(it) {
+  const choices = normalizeShortlist(it.d);
+  const name = `m-${it.id}`;
+  const wrap = el("div", { class: "editor" }, el("h4", { text: choices.length ? "Pick the right matter" : "Enter the right matter" }));
+  if (choices.length) {
+    wrap.append(el("div", { class: "choices", role: "radiogroup", "aria-label": "Suggested matters" },
+      choices.map((c, i) => el("label", { class: "choice" }, el("input", { type: "radio", name, value: c.cmid, "data-label": c.label, ...(i === 0 ? { checked: "" } : {}) }), c.label))));
+  }
+  const input = el("input", { type: "text", id: `cmid-${it.id}`, placeholder: "e.g. 2201.001", autocomplete: "off" });
+  wrap.append(el("div", { class: "cmid" }, el("label", { for: `cmid-${it.id}`, text: choices.length ? "Or type a matter number:" : "Matter number:" }), input));
+  wrap.append(el("div", { class: "row" },
+    el("button", { class: "btn solid", type: "button", text: "Save change", onclick: () => {
+      const typed = input.value.trim();
+      const sel = wrap.querySelector(`input[name="${CSS.escape(name)}"]:checked`);
+      const cmid = typed || (sel && sel.value);
+      if (!cmid) { input.focus(); return; }
+      it.finalCmid = cmid;
+      it.finalLabel = typed ? cmid : sel.dataset.label;
+      it.state = "changed"; it.editing = false; render();
+    } }),
+    el("button", { class: "btn quiet", type: "button", text: "Cancel", onclick: () => { it.editing = false; render(); } })));
+  return wrap;
+}
+
+// ---------- wiring --------------------------------------------------------
+$("#pick").addEventListener("click", () => $("#file").click());
+$("#file").addEventListener("change", async e => {
+  const f = e.target.files[0]; e.target.value = "";
+  if (!f) return;
+  try { await decide(entriesFromText(await f.text(), f.name)); } catch (err) { setStatus(err.message, true); }
+});
+$("#runPasted").addEventListener("click", async () => {
+  try { await decide(entriesFromText($("#pasted").value, "pasted.json")); } catch (err) { setStatus(err.message, true); }
+});
+$("#selftest").addEventListener("click", async () => {
+  busy(true); setStatus("Running 20 sample entries…");
+  try { show((await api("/selftest?n=20", { method: "POST" })).decisions); }
+  catch (e) { setStatus(e.message, true); }
+  finally { busy(false); }
+});
+for (const t of document.querySelectorAll(".tab")) t.addEventListener("click", () => { filter = t.dataset.filter; render(); });
+// ======================= narrative check (stage 2, /review) =======================
+const BLANK = { PARTICIPANT: "who?", SUBJECT: "about what?", DOCUMENT: "which document?" };
+const PH_RX = /\[(PARTICIPANT|SUBJECT|DOCUMENT)\]/g;
+const fmtH = h => (h === null || h === undefined) ? "" : String(+(+h).toFixed(2));
+
+let reviews = [];   // { r, block, cmid, fills: { "line:blank": value }, removed: Set(line), kept: Set(line) }
+let reviewedKey = "";
+const keyOf = entries => JSON.stringify(entries.map(e => [e.entry_id ?? null, e.narrative, e.hours ?? null, e.cmid ?? null]));
+
+function nStatus(msg, isError = false) { const s = $("#nStatus"); s.textContent = msg; s.className = isError ? "error" : ""; }
+
+async function runReview(entries) {
+  if (!entries.length) { nStatus("There are no narratives to check.", true); return; }
+  $("#next2").disabled = true;
+  $("#nResults").hidden = true;
+  nStatus(`Checking ${entries.length} ${entries.length === 1 ? "narrative" : "narratives"}…`);
+  try {
+    const block = !$("#nSeparate").checked;
+    const out = await api("/review", { method: "POST", body: JSON.stringify({ entries, block }) });
+    reviews = out.reviews.map((r, i) => ({ r, block, fills: {}, removed: new Set(), kept: new Set(), edits: {}, hoursEdit: {},
+                                            editing: null, entry: entries[i], cmid: entries[i].cmid || "" }));
+    fineOpen = false;
+    reviewedKey = keyOf(entries);
+    $("#nResults").hidden = false;
+    nStatus("");
+    renderReviews();
+  } catch (e) { nStatus(e.message, true); }
+}
+
+// ---- what is left to do
+const isJunkLine = l => l.flags.includes("JUNK");
+const liveLines = rv => rv.r.lines.map((l, i) => [l, i]).filter(([, i]) => !rv.removed.has(i));
+function lineText(rv, i) {
+  if (rv.edits[i] != null) return rv.edits[i];                 // the timekeeper rewrote this task by hand
+  let k = 0;
+  return rv.r.lines[i].suggestion.replace(PH_RX, m => rv.fills[`${i}:${k++}`] || m);
+}
+const lineHours = (rv, i) => (i in rv.hoursEdit ? rv.hoursEdit[i] : rv.r.lines[i].hours);
+let fineOpen = false;
+const openBlanks = (rv, i) => (lineText(rv, i).match(PH_RX) || []).length;
+const openCount = rv => liveLines(rv).reduce((n, [, i]) => n + openBlanks(rv, i), 0);
+const junkOpen = rv => liveLines(rv).filter(([l, i]) => isJunkLine(l) && !rv.kept.has(i)).length;
+const toFix = rv => openCount(rv) + junkOpen(rv);
+// Something to act on: a blank, a travel/expense task, or shorthand to check. Fixed at load, so cards don't jump while you work.
+const needsWork = rv => rv.r.lines.some(l => (l.suggestion.match(PH_RX) || []).length || isJunkLine(l) || l.ambiguous_shorthand.length);
+
+function finalBlock(rv) {
+  const lines = liveLines(rv);
+  const parts = lines.map(([, i]) => {
+    const t = lineText(rv, i).replace(/\.\s*$/, "");
+    const h = lineHours(rv, i);
+    return lines.length > 1 && h !== null ? `${t} (${fmtH(h)})` : t;
+  });
+  return (rv.r.heading ? rv.r.heading + " " : "") + parts.join("; ") + ".";
+}
+
+// ---- one task: the sentence with fill-in-the-blank boxes, its hours, an Edit button, and at most one short hint below
+function editRow(rv, i, idx) {
+  const id = `e-${idx}-${i}`;
+  const ta = el("textarea", { id, class: "edit-text", rows: "2", "aria-label": `Task ${i + 1} text` });
+  ta.value = lineText(rv, i);
+  const h = lineHours(rv, i);
+  const hrs = el("input", { type: "number", class: "edit-hrs", step: "0.1", min: "0", inputmode: "decimal", value: h === null ? "" : fmtH(h),
+                            "aria-label": `Task ${i + 1} hours` });
+  const save = () => {
+    const t = ta.value.trim();
+    if (t && t !== lineText(rv, i)) rv.edits[i] = t;
+    const v = hrs.value.trim();
+    const newH = v === "" ? null : +v;
+    if (newH !== rv.r.lines[i].hours) rv.hoursEdit[i] = newH; else delete rv.hoursEdit[i];
+    rv.editing = null; renderReviews(`edit-btn-${idx}-${i}`);
+  };
+  ta.addEventListener("keydown", e => { if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); save(); } if (e.key === "Escape") { rv.editing = null; renderReviews(); } });
+  return el("li", { class: "trow editing" },
+    el("div", { class: "edit-box" },
+      ta,
+      el("label", { class: "edit-h" }, hrs, " h"),
+      el("div", { class: "chips" },
+        el("button", { class: "btn solid small", type: "button", text: "Save", onclick: save }),
+        el("button", { class: "btn quiet small", type: "button", text: "Cancel", onclick: () => { rv.editing = null; renderReviews(); } }),
+        (rv.edits[i] != null || i in rv.hoursEdit) ? el("button", { class: "btn quiet small", type: "button", text: "Undo my edits",
+          onclick: () => { delete rv.edits[i]; delete rv.hoursEdit[i]; rv.editing = null; renderReviews(); } }) : null)));
+}
+
+function taskRow(rv, i, idx) {
+  if (rv.editing === i) return editRow(rv, i, idx);
+  const l = rv.r.lines[i];
+  const removed = rv.removed.has(i);
+  const edited = rv.edits[i] != null;
+  const text = el("div", { class: "ttext" });
+  const blanks = [];
+  if (edited) {
+    text.append(rv.edits[i]);
+  } else {
+    const s = l.suggestion;
+    let k = 0, last = 0;
+    for (const m of s.matchAll(PH_RX)) {
+      text.append(s.slice(last, m.index));
+      const key = `${i}:${k++}`;
+      const inp = el("input", { type: "text", class: "blank", id: `b-${idx}-${key.replace(":", "-")}`, value: rv.fills[key] || "",
+        placeholder: BLANK[m[1]], autocomplete: "off", "aria-label": `Task ${i + 1}: ${BLANK[m[1]]}` });
+      const fit = () => { inp.size = Math.max(inp.placeholder.length, inp.value.length) + 1; };
+      fit();
+      inp.addEventListener("input", () => { rv.fills[key] = inp.value.trim(); fit(); refreshCounts(rv, idx); });
+      if (removed) inp.disabled = true;
+      text.append(inp);
+      blanks.push({ key, kind: m[1], ph: l.placeholders[k - 1] });
+      last = m.index + m[0].length;
+    }
+    text.append(s.slice(last));
+  }
+
+  const hints = [];
+  if (!removed) {
+    for (const b of blanks) {
+      const cands = (b.ph && b.ph.candidates) || [];
+      if (!cands.length) continue;
+      hints.push(el("div", { class: "hint chips" },
+        el("span", { text: blanks.length > 1 ? `${BLANK[b.kind]}` : "Suggestions:" }),
+        cands.map(c => el("button", { class: "opt", type: "button", "aria-pressed": String(rv.fills[b.key] === c.value),
+          title: c.source === "history" ? `Used in ${c.count} past ${c.count === 1 ? "entry" : "entries"} on this matter` : "From another task in this entry",
+          onclick: () => { rv.fills[b.key] = rv.fills[b.key] === c.value ? "" : c.value; renderReviews(`b-${idx}-${b.key.replace(":", "-")}`); } }, c.value))));
+    }
+    if (isJunkLine(l) && !rv.kept.has(i)) {
+      hints.push(el("div", { class: "hint chips" },
+        el("span", { text: "Travel and expenses usually aren't billed as legal work." }),
+        el("button", { class: "opt", type: "button", text: "Remove task", onclick: () => { rv.removed.add(i); renderReviews(); } }),
+        el("button", { class: "opt", type: "button", text: "Keep", onclick: () => { rv.kept.add(i); renderReviews(); } })));
+    } else if (!edited && l.flags.includes("AMBIGUOUS_SHORTHAND") && l.ambiguous_shorthand.length) {
+      hints.push(el("p", { class: "hint", text: `Check the wording: "${l.ambiguous_shorthand[0].found}" can mean more than one thing.` }));
+    }
+    if (edited) hints.push(el("p", { class: "hint", text: "Edited by you." }));
+  } else {
+    hints.push(el("div", { class: "hint chips" }, el("span", { text: "Removed from this entry." }),
+      el("button", { class: "opt", type: "button", text: "Undo", onclick: () => { rv.removed.delete(i); renderReviews(); } })));
+  }
+
+  const h = lineHours(rv, i);
+  const todo = !removed && (openBlanks(rv, i) || (isJunkLine(l) && !rv.kept.has(i)));
+  return el("li", { class: `trow${todo ? " todo" : ""}${removed ? " removed" : ""}` },
+    el("div", { class: "tmain" }, text,
+      el("span", { class: "tside" },
+        el("span", { class: "thrs", text: h !== null ? `${fmtH(h)} h` : "? h" }),
+        removed ? null : el("button", { class: "edit-link", type: "button", id: `edit-btn-${idx}-${i}`, text: "Edit",
+          "aria-label": `Edit task ${i + 1}`, onclick: () => { rv.editing = i; renderReviews(`e-${idx}-${i}`); } }))),
+    hints);
+}
+
+function badgeText(rv) { const n = toFix(rv); return n ? `${n} to fix` : "Done"; }
+
+// ---- what an entry is called: its client and matter, not an internal id
+function fmtDate(d) {
+  if (!d) return "";
+  const t = new Date(d);
+  return isNaN(t) ? String(d) : t.toLocaleDateString(undefined, { month: "short", day: "numeric", year: "numeric" });
+}
+function entryTitle(rv, idx) {
+  const r = rv.r;
+  if (r.client || r.matter_name) return [r.client, r.matter_name].filter(Boolean).join(" · ");
+  return rv.cmid ? `Matter ${rv.cmid}` : `Narrative ${idx + 1}`;
+}
+function entryMeta(rv) {
+  const named = rv.r.client || rv.r.matter_name;
+  return [named && rv.cmid ? rv.cmid : "", fmtDate(rv.entry && rv.entry.work_date)].filter(Boolean).join(" · ");
+}
+
+// Context for filling the blanks: other entries on the same matter (this batch first, then earlier ones).
+// The entry's own other tasks are the rows of the card.
+function contextBlock(rv, idx) {
+  const clip = t => { t = String(t); return t.length > 200 ? t.slice(0, 197) + "…" : t; };
+  const batch = rv.cmid ? reviews.filter((o, j) => j !== idx && o.cmid === rv.cmid)
+    .map(o => ({ when: fmtDate(o.entry && o.entry.work_date), text: o.r.narrative })) : [];
+  const past = (rv.r.history_preview || []).map(t => ({ when: "earlier", text: t }));
+  const seen = new Set([String(rv.r.narrative).trim().toLowerCase()]);
+  const rows = [...batch, ...past].filter(x => {                       // drop repeats of the same text
+    const k = String(x.text).trim().toLowerCase(); if (seen.has(k)) return false; seen.add(k); return true;
+  }).slice(0, 4);
+  if (!rows.length) return null;
+  return el("div", { class: "ctx" },
+    el("p", { class: "ctx-title", text: "Other entries on this matter" }),
+    el("ul", {}, rows.map(x => el("li", { title: String(x.text) },
+      x.when ? el("span", { class: "ctx-when", text: x.when }) : null, clip(x.text)))));
+}
+
+function reviewCard(rv, idx) {
+  const r = rv.r;
+  const n = toFix(rv);
+  const anyMissing = r.lines.some((_, i) => lineHours(rv, i) === null);
+  const timeNote = r.split_status === "split_hours_mismatch" ? "The task times don't add up to the total hours."
+                 : anyMissing && r.lines.length > 1 ? "Some tasks have no time. Use Edit to add it." : "";
+  const meta = entryMeta(rv);
+  return el("article", { class: "rcard", id: `rv-${idx}` },
+    el("div", { class: "rhead" },
+      el("h3", { text: entryTitle(rv, idx) }),
+      meta ? el("span", { class: "muted", text: meta }) : null,
+      el("span", { class: `badge ${n ? "todo" : "done"}`, id: `badge-${idx}`, text: badgeText(rv) })),
+    el("ol", { class: "tlist", "aria-label": "Tasks" }, r.lines.map((_, i) => taskRow(rv, i, idx))),
+    timeNote ? el("p", { class: "hint", text: timeNote }) : null,
+    contextBlock(rv, idx),
+    el("details", { class: "origd" }, el("summary", { text: "Show original" }), el("p", { class: "orig", text: r.narrative })));
+}
+
+// Entries with nothing flagged: the same editable cards, folded away until opened.
+function fineGroup(list) {
+  const d = el("details", { class: "fine", id: "fineGroup" },
+    el("summary", { text: `${list.length} ${list.length === 1 ? "entry looks" : "entries look"} fine. Open to read or edit them.` }),
+    el("div", { class: "list" }, list.map(([rv, idx]) => reviewCard(rv, idx))));
+  d.open = fineOpen;
+  d.addEventListener("toggle", () => { fineOpen = d.open; });
+  return d;
+}
+
+function summaryText() {
+  const work = reviews.filter(needsWork);
+  const left = reviews.reduce((n, rv) => n + toFix(rv), 0);
+  if (!work.length) return "Every entry looks fine";
+  const need = `${work.length} of ${reviews.length} ${reviews.length === 1 ? "entry" : "entries"} ${work.length === 1 ? "needs" : "need"} a look`;
+  return left ? `${need} · ${left} left to fix` : `${need} · all fixed`;
+}
+
+// Typing in a blank only updates counts, so the box keeps focus.
+function refreshCounts(rv, idx) {
+  const b = document.getElementById(`badge-${idx}`);
+  if (b) { b.textContent = badgeText(rv); b.className = `badge ${toFix(rv) ? "todo" : "done"}`; }
+  $("#nSummary").textContent = summaryText();
+  const left = reviews.reduce((n, x) => n + toFix(x), 0);
+  $("#next2Note").textContent = left ? "You can continue now and come back to the rest." : "";
+}
+
+function renderReviews(focusId) {
+  const work = [], fine = [];
+  reviews.forEach((rv, idx) => (needsWork(rv) ? work : fine).push([rv, idx]));
+  $("#nList").replaceChildren(
+    ...(work.length ? work.map(([rv, idx]) => reviewCard(rv, idx)) : [el("div", { class: "empty", text: "Nothing to fix. Continue to review and export." })]),
+    fine.length ? fineGroup(fine) : "");
+  if (focusId && document.getElementById(focusId)) document.getElementById(focusId).focus();
+  $("#next2").disabled = !reviews.length;
+  refreshCounts(reviews[0] || {}, -1);
+}
+
+// ======================= steps (one stage at a time, Continue / Back) =======================
+let step = 1, maxStep = 1, singleEntries = null;
+
+function goTo(n) {
+  step = n; maxStep = Math.max(maxStep, n);
+  for (const i of [1, 2, 3]) $(`#step${i}`).hidden = i !== n;
+  for (const b of document.querySelectorAll(".step-btn")) {
+    const s = +b.dataset.step;
+    b.parentElement.className = s === n ? "current" : s <= maxStep ? "done" : "";
+    if (s === n) b.setAttribute("aria-current", "step"); else b.removeAttribute("aria-current");
+    b.disabled = s > maxStep;
+  }
+  window.scrollTo({ top: 0, behavior: "smooth" });
+  const h = $(`#step${n} h2`); if (h) h.focus({ preventScroll: true });
+}
+
+// Entries for step 2: the matched entries with the matter each one ended up with, or the single narrative.
+function step2Entries() {
+  if (singleEntries) return singleEntries;
+  return items.filter(it => pick(it.d, FIELDS.narrative)).map(it => ({
+    entry_id: it.id, narrative: String(pick(it.d, FIELDS.narrative)),
+    hours: it.d.hours ?? it.d.parsed_hours ?? null,
+    cmid: it.state === "pending" ? (pick(it.d, FIELDS.cmid) ?? null) : (it.finalCmid ?? null),
+    tk_id: it.d.tk_id ?? null, work_date: it.d.work_date ?? null,
+  }));
+}
+
+function enterStep2() {
+  goTo(2);
+  const entries = step2Entries();
+  if (keyOf(entries) !== reviewedKey) runReview(entries);   // only re-check when the entries or matters changed
+}
+
+function updateStep1Nav() {
+  const pending = items.filter(it => !isAuto(it) && it.state === "pending").length;
+  $("#next1").disabled = !items.length;
+  $("#next1").textContent = "Continue to narratives";
+  $("#next1Note").textContent = !items.length ? "Load entries to continue."
+    : pending ? `${pending} still need${pending === 1 ? "s" : ""} a matter. You can continue and come back.` : "";
+}
+
+// ---- step 3
+const hasJunk = rv => junkOpen(rv) > 0;
+
+function finalRows(rv) {
+  const lines = liveLines(rv);
+  const changed = rv.removed.size || Object.keys(rv.hoursEdit).length || rv.r.hours == null;
+  if (rv.block) return [{ id: rv.r.entry_id ?? "", text: finalBlock(rv),
+    hours: changed ? lines.reduce((s, [, i]) => s + (lineHours(rv, i) ?? 0), 0) : rv.r.hours }];
+  return lines.map(([, i], n) => ({ id: `${rv.r.entry_id ?? ""}${lines.length > 1 ? `-${n + 1}` : ""}`, text: lineText(rv, i), hours: lineHours(rv, i) }));
+}
+
+function renderFinal() {
+  const open = reviews.filter(rv => openCount(rv)).length;
+  const junk = reviews.filter(hasJunk).length;
+  const ready = reviews.filter(rv => !openCount(rv) && !hasJunk(rv)).length;
+  $("#doneSummary").replaceChildren(el("strong", { text: `${ready} of ${reviews.length} ready to bill.` }),
+    open ? ` ${open} still ${open === 1 ? "has" : "have"} details to fill in.` : "",
+    junk ? ` ${junk} may include time that isn't billable.` : "");
+  $("#finalList").replaceChildren(...reviews.map((rv, idx) => {
+    const n = openCount(rv), isJunk = hasJunk(rv);
+    const status = n ? { cls: "warn", text: `${n} detail${n === 1 ? "" : "s"} missing` }
+                 : isJunk ? { cls: "junk", text: "Not billable?" } : { cls: "ok", text: "Ready" };
+    const rows = finalRows(rv);
+    return el("article", { class: "rcard" },
+      el("div", { class: "rhead" },
+        el("span", { class: `pill inline ${status.cls}`, text: status.text }),
+        el("h3", { text: entryTitle(rv, idx) }),
+        entryMeta(rv) ? el("span", { class: "muted", text: entryMeta(rv) }) : null),
+      rows.length === 1
+        ? el("p", { class: "sugg", text: `${rows[0].text}${rows[0].hours != null ? `  (${fmtH(rows[0].hours)} h)` : ""}` })
+        : el("ol", { class: "sugg" }, rows.map(x => el("li", { text: `${x.text}  (${x.hours != null ? fmtH(x.hours) + " h" : "hours needed"})` }))),
+      el("div", { class: "actions" }, el("button", { class: "btn", type: "button", text: (n || isJunk) ? "Fix it" : "Edit",
+        onclick: () => {
+          if (!needsWork(rv)) fineOpen = true;            // its card is in the folded "look fine" group
+          renderReviews();
+          goTo(2);
+          setTimeout(() => {
+            const c = document.getElementById(`rv-${idx}`);
+            if (!c) return;
+            c.scrollIntoView({ block: "start" });
+            const f = c.querySelector("input.blank:not(:disabled), .opt, .edit-link");
+            if (f) f.focus({ preventScroll: true });
+          }, 50);
+        } })));
+  }));
+}
+
+function exportFinal() {
+  const q = v => `"${String(v ?? "").replace(/"/g, '""')}"`;
+  const rows = [["entry_id", "cmid", "hours", "narrative", "details_missing", "flags"]];
+  for (const rv of reviews) {
+    const flags = [...new Set(rv.r.lines.flatMap(l => l.flags))].join("|");
+    for (const x of finalRows(rv)) rows.push([x.id, rv.cmid, x.hours != null ? fmtH(x.hours) : "", x.text, openCount(rv), flags]);
+  }
+  const blob = new Blob([rows.map(r => r.map(q).join(",")).join("\n")], { type: "text/csv" });
+  const a = el("a", { href: URL.createObjectURL(blob), download: "tenth-entries.csv" });
+  document.body.append(a); a.click(); a.remove();
+}
+
+// ---- wiring
+$("#next1").addEventListener("click", () => { singleEntries = null; enterStep2(); });
+$("#back2").addEventListener("click", () => goTo(1));
+$("#next2").addEventListener("click", () => { renderFinal(); goTo(3); });
+$("#back3").addEventListener("click", () => goTo(2));
+$("#exportFinal").addEventListener("click", exportFinal);
+$("#startOver").addEventListener("click", () => {
+  items = []; reviews = []; reviewedKey = ""; singleEntries = null; maxStep = 1;
+  $("#results").hidden = true; $("#nResults").hidden = true; setStatus(""); nStatus("");
+  updateStep1Nav(); goTo(1);
+});
+for (const b of document.querySelectorAll(".step-btn")) b.addEventListener("click", () => {
+  const s = +b.dataset.step;
+  if (s === 2) enterStep2(); else if (s === 3) { renderFinal(); goTo(3); } else goTo(1);
+});
+$("#nSeparate").addEventListener("change", () => { for (const rv of reviews) rv.block = !$("#nSeparate").checked; renderFinal(); });
+
+$("#nRun").addEventListener("click", () => {
+  const narrative = $("#nText").value.trim();
+  if (!narrative) { setStatus("Type or paste a narrative first.", true); $("#nText").focus(); return; }
+  const hours = $("#nHours").value;
+  singleEntries = [{ narrative, hours: hours === "" ? null : +hours, cmid: $("#nCmid").value.trim() || null }];
+  maxStep = 1; setStatus("");
+  enterStep2();
+});
+$("#nExample").addEventListener("click", () => {
+  $("#nText").value = "Rev docs (0.5); tcw J. Smith re APA (0.3); call re same (0.2); travel to Wilmington for hearing (1.5).";
+  $("#nHours").value = "2.5";
+  $("#nText").focus();
+});
+
+updateStep1Nav();
+goTo(1);
+</script>
+</body>
+</html>

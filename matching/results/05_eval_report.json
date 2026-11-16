@@ -2,8 +2,8 @@
   "split": "VAL",
   "setting": "default",
   "fingerprints": {
-    "VAL": "1b45a83afbff",
-    "TEST ids": "d21414339749"
+    "VAL": "3c645f750792",
+    "TEST ids": "bd980499a01b"
   },
   "results": {
     "entries": 601,
@@ -25,7 +25,7 @@
     "auroc": 0.9962909142272693,
     "pr_auc": 0.9265116767590243,
     "log_loss": 0.00809055173166711,
-    "calibration_error": 0.03745095452717126,
+    "calibration_error": 0.03745095452717127,
     "auto_auroc": 0.9471888698303792,
     "multi_auroc": 0.9792984473835538,
     "no_match_auroc": 0.9883074563925628,
@@ -33,7 +33,7 @@
     "rules_silent_errors": 36,
     "violations": 0,
     "formatting_changed": 0.0,
-    "stress_worst_precision": 0.9498327759197325,
+    "stress_worst_precision": 0.9496644295302014,
     "format_worst_precision": 0.9444444444444444
   },
   "gates": {
@@ -53,15 +53,15 @@
     "worst source format, decided precision": true
   },
   "stress": {
-    "clean": 0.9773755656108597,
-    "same, upper case narrative": 0.9773755656108597,
-    "same, extra spaces": 0.9773755656108597,
+    "clean": 0.9773242630385488,
+    "same, upper case narrative": 0.9773242630385488,
+    "same, extra spaces": 0.9773242630385488,
     "OCR noise (10% of letters)": 0.9685230024213075,
-    "typo in client name": 0.9751131221719457,
+    "typo in client name": 0.9750566893424036,
     "typo in narrative": 0.9735576923076923,
     "CMID digits swapped": 0.9681372549019608,
     "CMID left blank": 0.9629629629629629,
-    "client left blank": 0.9498327759197325,
-    "new timekeeper (no history)": 0.9558441558441558
+    "client left blank": 0.9496644295302014,
+    "new timekeeper (no history)": 0.9559585492227979
   }
 }

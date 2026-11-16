@@ -1,0 +1,73 @@
+shorthand,pattern,expansion,case_sensitive,ambiguous,notes
+TCW,\bTCW\b,telephone conference with,N,N,
+TCF,\bTCF\b,telephone call from,N,N,
+TCT,\bTCT\b,telephone call to,N,N,
+OCW,\bOCW\b,office conference with,N,N,
+CW,\bCW\b,conference with,Y,Y,Collides with initials
+VCW,\bVCW\b,video conference with,N,N,
+MTW,\bMTW\b,meeting with,N,N,
+ECW,\bECW\b,email correspondence with,N,N,
+EMT,\bEMT\b,email to,N,N,
+EMF,\bEMF\b,email from,N,N,
+LMW,\bLMW\b,left message with,N,N,v2: split from LMF
+LMF,\bLMF\b,left message for,N,N,v2: was 'left message with'
+R&R,\b(R&R|R/R|RR)\b,review and revise,N,N,
+D&R,\b(D&R|D/R)\b,draft and revise,N,N,
+R&A,\b(R&A|R/A)\b,review and analyze,N,N,
+P&F,\b(P&F|P/F)\b,prepare and file,N,N,
+w/,\bw/(?!o)\s*,with ,N,N,
+w/o,\bw/o\b,without,N,N,
+b/w,\bb/w\b,between,N,N,
+re:,\bre:,regarding,N,N,
+f/u,\bf/u\b,follow up,N,N,
+t/c,\bt/?c\b,telephone conference,N,N,
+tel conf,\btel\.? ?conf\b(?:\.(?=\s+\S))?,telephone conference,N,N,v2: no stray period ('conf. with' -> 'conference with')
+conf,\bconf\b(?:\.(?=\s+\S))?,conference,N,N,v2: no stray period; sentence-final period kept
+mtgs,\bmtgs\b,meetings,N,N,v2: plural kept
+mtg,\bmtg\b,meeting,N,N,
+rvw,\b(rvw|revw)\b,review,N,N,v2: split from rev; unambiguous
+rev,\brev\b,review,N,Y,Could mean revise/revision
+revs,\brevs\b,revisions,N,N,
+drft,\b(drft|dft)\b,draft,N,N,
+prep,\bprep\b,prepare,N,N,
+rsrch,\brsrch\b,research,N,N,
+ck,\b(ck|chk)\b,check,N,N,
+disc,\bdisc\b,discussion,N,Y,Could mean discovery (litigation)
+analys,\banalys\b,analysis,N,N,
+corr,\b(corr|corresp)\b,correspondence,N,N,
+ems,\bems\b,emails,N,N,v2: plural kept
+em,\bem\b,email,N,N,
+ltrs,\bltrs\b,letters,N,N,v2: plural kept
+ltr,\bltr\b,letter,N,N,
+docs,\bdocs\b,documents,N,N,
+agmts,\b(agmt|agrmt|agt)s\b,agreements,N,N,v2: plural kept
+agmt,\b(agmt|agrmt|agt)\b,agreement,N,N,
+cmts,\bcmts\b,comments,N,N,
+SPA,\bSPA\b,Stock Purchase Agreement,Y,N,
+APA,\bAPA\b,Asset Purchase Agreement,Y,N,
+NDA,\bNDA\b,Nondisclosure Agreement,Y,N,
+LOI,\bLOI\b,Letter of Intent,Y,N,
+TS,\bTS\b,term sheet,Y,Y,Too terse; collides with initials
+IRA,\bIRA\b,Investors' Rights Agreement,Y,Y,Collides with retirement account
+ROFR,\bROFR\b,Right of First Refusal and Co-Sale Agreement,Y,N,
+VA,\bVA\b,Voting Agreement,Y,Y,Collides with Virginia
+COI,\bCOI\b,Certificate of Incorporation,Y,Y,Collides with conflict of interest
+A&R,\bA&R\b,Amended and Restated,Y,N,
+UWC,\bUWC\b,Unanimous Written Consent,Y,N,
+BOD,\bBOD\b,Board of Directors,Y,N,
+s/h,(?i:\bs/h\b)|\bSH\b,stockholder,Y,N,v2: 'SH' only in capitals (was matching 'sh')
+D&O,\bD&O\b,Directors and Officers,Y,N,
+DD,\bDD\b,due diligence,Y,N,
+cap table,\bcap table\b,capitalization table,N,N,
+DE,\bDE\b,Delaware,Y,Y,
+SOS,\bSOS\b,Secretary of State,Y,N,
+OC,\bOC\b,opposing counsel,Y,Y,v2: collides with initials
+cl,\bcl\b,client,N,Y,
+attys,\battys\b,attorneys,N,N,v2: plural kept
+atty,\batty\b,attorney,N,N,
+ptnr,\bptnr\b,partner,N,N,
+assoc,\bassoc\b,associate,N,N,
+incl,\bincl\b,including,N,N,
+misc,\bmisc\b,miscellaneous,N,N,
+admin,\badmin(?=\s+(?:claims?|expenses?|priority)\b),administrative,N,N,v2: bankruptcy 'administrative claims'; other 'admin' stays ambiguous
+admin,\badmin\b,administrative,N,Y,v2: administrative vs administration

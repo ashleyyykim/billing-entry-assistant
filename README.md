@@ -18,7 +18,9 @@ Built as a capstone project for UC Berkeley's Master of Information and Data Sci
 
 | Folder | What it is |
 |---|---|
-| `matching/` | Matching stage: fuzzy matching, feature building, a rule baseline, and a classifier. See its README. |
+| `matching/` | Matching stage: fuzzy matching, feature building, a rule baseline, and a classifier. Also the web app. See its README. |
+| `phase2_model/` | Narrative check: splits block entries, flags vague or incomplete tasks, and suggests rewrites. See its README. |
+| `docker/` | Builds and runs the web app (both stages) in one container. See its README. |
 | `courtlistener_scrape/` | Reference data for the compliance stage, built from public bankruptcy filings. See its README. |
 
 ## Setup
