@@ -1,12 +1,16 @@
+# Environment
 .env
+.venv/
 __pycache__/
 .ipynb_checkpoints/
+.pytest_cache/
 .DS_Store
+
+# Data
 **/data/raw/
 **/data/intermediate/
 **/data/final/*
 !**/data/final/*.csv
-.venv/
 
 # narrative check: rebuilt by phase2_model/training/. The classifier (a few MB) stays in git so the
 # image builds; the rewriter is too big, and the outputs can be regenerated (the hand audit is kept).
@@ -15,3 +19,27 @@ phase2_model/models/*predictions*.csv
 phase2_model/models/*.log
 phase2_model/data/outputs/*
 !phase2_model/data/outputs/pairs_audit.csv
+
+# Photos and voice memos
+*.[jJ][pP][gG]
+*.[jJ][pP][eE][gG]
+*.[hH][eE][iI][cCfF]
+*.[mM]4[aA]
+*.mp3
+*.wav
+*.aac
+*.caf
+*.amr
+!extraction/data/dev_typed/messages/IMG_2041.HEIC
+**/data/dev_photos/
+**/data/held_out/photos/
+**/data/held_out/voice/
+**/data/dev_typed/messages/attachments/
+
+# Extraction
+extraction/_private/
+**/data/copies/
+**/data/textract/copies/
+**/data/model_answers/copies/
+**/data/model_answers/one_flow_second/note_*_*.jpg.json
+**/data/model_answers/one_flow/pages/
