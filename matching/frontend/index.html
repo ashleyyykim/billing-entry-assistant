@@ -51,6 +51,26 @@
   .btn.quiet:hover { background: transparent; color: var(--rust); }
   .btn[disabled] { opacity: .5; cursor: default; }
 
+  /* ---- time note upload (extraction) ---- */
+  .tk-field { max-width: 380px; }
+  .tk-field input { border: 1px solid var(--line); border-radius: 6px; padding: 8px 10px; }
+  .drop { border: 1.5px dashed var(--muted); border-radius: 10px; padding: 26px 16px; text-align: center; cursor: pointer;
+          background: #faf7f3; transition: background .15s, border-color .15s; }
+  .drop:hover, .drop.over { border-color: var(--ink); background: #f3ede5; }
+  .drop.busy { opacity: .55; pointer-events: none; }
+  .intake .drop p { margin: 0; color: var(--ink); }
+  .intake .drop .drop-types { margin-top: 8px; color: var(--muted); font-size: 14px; }
+  .drop .fake-btn { display: inline-block; margin-left: 4px; }
+  .progress { margin-top: 12px; }
+  .progress .track { height: 6px; background: var(--pill); border-radius: 999px; overflow: hidden; }
+  .progress .track span { display: block; height: 100%; width: 35%; background: var(--ink); border-radius: 999px;
+                          animation: slide 1.4s ease-in-out infinite; }
+  @keyframes slide { from { transform: translateX(-100%); } to { transform: translateX(300%); } }
+  @media (prefers-reduced-motion: reduce) { .progress .track span { animation: none; width: 100%; opacity: .35; } }
+  .intake .progress p { margin: 6px 0 0; font-size: 14px; }
+  .thumb img { width: 100%; height: 96px; object-fit: cover; border-radius: 6px; border: 1px solid var(--line); display: block; }
+  .src-link { font-size: 13px; color: var(--muted); overflow-wrap: anywhere; }
+
 
   .intake { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 18px 16px; margin-bottom: 28px; }
   .intake h2 { margin: 0 0 4px; font-size: 20px; }
@@ -60,6 +80,7 @@
   .paste summary { cursor: pointer; color: var(--muted); }
   .paste textarea { width: 100%; min-height: 120px; margin: 10px 0; border: 1px solid var(--line); border-radius: 6px; padding: 10px; font: 13px/1.4 ui-monospace, Menlo, Consolas, monospace; }
 
+  .bar.sticky { position: sticky; top: 0; z-index: 2; background: var(--bg); padding: 10px 0; margin-bottom: 4px; }
   .bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 16px; margin: 0 0 12px; }
   .section-label { font-size: 12.5px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--label); margin: 0; }
   .summary { font-size: 15px; color: var(--muted); margin: 0 0 12px; }
@@ -73,7 +94,7 @@
 
   .list { display: grid; gap: 12px; }
   .card {
-    display: grid; grid-template-columns: 124px 1fr auto; gap: 8px 18px; align-items: start;
+    display: grid; grid-template-columns: 144px 1fr auto; gap: 8px 18px; align-items: start;
     background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 16px 18px;
   }
   .badges { display: grid; gap: 6px; justify-items: stretch; }
@@ -86,11 +107,45 @@
   .pill.conf { background: var(--pill); color: #4a4540; font-weight: 400; font-size: 13.5px; }
   .matter { margin: 0; font-size: 17px; font-weight: 600; }
   .why { margin: 2px 0 0; }
-  .why strong { color: var(--rust); font-weight: 700; }
+  .why strong { color: var(--ink); font-weight: 700; }
+  .why.warn, .why.warn strong { color: var(--amber); }
+  .whyd { margin: 6px 0 0; }
+  .whyd summary { cursor: pointer; color: var(--muted); font-size: 14px; }
+  .whyd p { margin: 4px 0 0; color: var(--muted); }
   .more { margin: 2px 0 0; color: var(--muted); }
-  .entry { margin: 8px 0 0; font-size: 14px; color: var(--muted); border-left: 3px solid var(--line); padding-left: 10px;
-           display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
-  .entry b { font-weight: 600; color: var(--ink); }
+  /* a step 1 card reads top to bottom: the entry, the suggested matter, what to do, then why */
+  .entry-meta { margin: 0; font-size: 13.5px; color: var(--muted); }
+  .entry-meta b { font-weight: 600; color: var(--ink); }
+  .entry-text { margin: 2px 0 12px; font-size: 16px; }
+  /* "As written" sits in its own box, with space before "Tenth suggests", so what the timekeeper wrote and what Tenth
+     made of it read as two separate things */
+  .label-row { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
+  .entry-id { font-size: 12.5px; color: var(--muted); }
+  .written { background: #faf7f3; border: 1px solid var(--line); border-radius: 8px; padding: 8px 12px; margin: 4px 0 18px; }
+  .written .entry-text { margin: 0; }
+  .written .entry-meta { margin: 2px 0 0; }
+  .sugg-label { margin: 0 0 2px; font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--label); }
+  .matter-meta { margin: 0; }
+  .reason { margin: 4px 0 0; color: var(--muted); font-size: 14px; }
+  .whyd .why-link { text-decoration: underline; }
+  .changes-key { margin: 6px 0 0; }
+  .tk-banner { display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center; background: var(--amber-bg);
+               border-radius: 10px; padding: 12px 14px; margin: 0 0 12px; }
+  .tk-banner[hidden] { display: none; }
+  .tk-banner input { border: 1px solid var(--line); border-radius: 6px; padding: 6px 10px; min-width: 220px; font: inherit; }
+  .src-group { display: grid; gap: 10px; margin-bottom: 14px; }
+  .src-head { display: flex; gap: 14px; align-items: center; }
+  .src-head img { width: 88px; height: 88px; object-fit: cover; border-radius: 8px; border: 1px solid var(--line); display: block; }
+  .src-head p { margin: 2px 0 0; }
+  .more-actions { justify-self: end; text-align: right; }
+  .more-actions summary { cursor: pointer; color: var(--muted); font-size: 14px; list-style: none; }
+  .more-actions summary::-webkit-details-marker { display: none; }
+  .more-actions[open] summary { margin-bottom: 4px; }
+  .more-actions .btn { display: block; margin-left: auto; }
+  .why-head { margin: 8px 0 2px; font-size: 13px; font-weight: 600; color: var(--ink); }
+  .why-points { margin: 0; padding-left: 18px; color: var(--muted); }
+  .ttext ins, .sugg ins, .changes-key ins { text-decoration: none; background: var(--blue-bg); border-radius: 3px; padding: 0 2px; }
+  .ttext del, .sugg del, .changes-key del { color: var(--muted); }
   .side { display: grid; gap: 8px; justify-items: end; }
 
   .editor { grid-column: 1 / -1; border-top: 1px solid var(--line); margin-top: 6px; padding-top: 14px; }
@@ -150,7 +205,7 @@
   .origd summary { cursor: pointer; color: var(--muted); font-size: 14px; }
   .orig { margin: 6px 0 0; font-size: 14px; color: var(--muted); border-left: 3px solid var(--line); padding-left: 10px; }
   .fine { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 12px 18px; }
-  .fine summary { cursor: pointer; font-weight: 600; color: var(--green); }
+  .fine > summary { cursor: pointer; font-weight: 600; color: var(--green); }
   .fine > .list { margin-top: 12px; }
   .fine .rcard { border-color: var(--line); box-shadow: none; }
 
@@ -171,6 +226,9 @@
   .edit-hrs { width: 70px; font: inherit; border: 1px solid var(--line); border-radius: 6px; padding: 6px 8px; }
   .btn.small { padding: 3px 14px; font-size: 14px; }
   .sugg { margin: 0; font-size: 16px; }
+  .export-note { margin: 16px 0 0; text-align: right; color: var(--amber); font-weight: 600; font-size: 15px; }
+  .export-note:empty { display: none; }
+  .gap { background: var(--amber-bg); color: var(--amber); border-radius: 4px; padding: 0 5px; font-style: italic; }
   ol.sugg { padding-left: 20px; }
 
   /* ---- steps ---- */
@@ -223,19 +281,23 @@
   <section class="step" id="step1" aria-labelledby="intakeTitle">
     <div class="intake">
       <h2 id="intakeTitle" tabindex="-1">Time entries</h2>
-      <p>Upload a CSV or JSON file of entries. Tenth decides the clear ones and hands the rest to you, with the reason.</p>
-      <div class="actions">
-        <input id="file" type="file" accept=".csv,.json,application/json,text/csv" hidden>
-        <button class="btn solid" id="pick" type="button">Upload entries</button>
-        <button class="btn" id="selftest" type="button">Try 20 sample entries</button>
+      <p>Upload a time note as it was sent. Tenth reads it, finds each entry's matter, and tidies the narrative. You check only what it isn't sure of, then export.</p>
+      <label class="field tk-field" id="tkField"><span>Whose time is this? <span class="muted">(optional)</span></span>
+        <input id="tk" type="text" list="tkList" autocomplete="off" placeholder="Type a name, or leave blank">
+        <datalist id="tkList"></datalist></label>
+      <input id="note" type="file" accept=".jpg,.jpeg,.png,.pdf,.docx,.txt,.xlsx,.csv,.eml" multiple hidden>
+      <div class="drop" id="drop" role="button" tabindex="0" aria-describedby="dropTypes"
+           aria-label="Upload time notes. Drop files here, or press Enter to browse.">
+        <p><strong>Drop time notes here</strong>, or <span class="btn solid fake-btn">Browse files</span></p>
+        <p class="drop-types" id="dropTypes">Photos (JPG, PNG) · PDF · Word · Excel or CSV · Email (.eml) · Text · Up to 25 at a time</p>
+      </div>
+      <div class="progress" id="progress" hidden>
+        <div class="track" aria-hidden="true"><span></span></div>
+        <p><span id="progressText" role="status"></span> <span id="progressTime" class="muted" aria-hidden="true"></span><br>
+          <span id="progressHint" class="muted"></span></p>
       </div>
       <details class="paste">
-        <summary>Paste JSON instead</summary>
-        <textarea id="pasted" spellcheck="false" aria-label="Entries as JSON" placeholder='[{"entry_id": "T-1", "narrative": "…"}]'></textarea>
-        <button class="btn" id="runPasted" type="button">Decide</button>
-      </details>
-      <details class="paste">
-        <summary>Just check one narrative</summary>
+        <summary>Check one narrative</summary>
         <label class="field" style="margin-top:10px"><span>Narrative</span>
           <textarea id="nText" spellcheck="true" placeholder="Rev docs (0.5); call re APA (0.3); tcw J. Smith re same (0.2)"></textarea></label>
         <div class="nrow">
@@ -247,20 +309,32 @@
           <button class="btn quiet" id="nExample" type="button">Use an example</button>
         </div>
       </details>
+      <details class="paste" id="testingTools" hidden>
+        <summary>Testing tools</summary>
+        <p class="muted" style="margin:10px 0">Entries already in Tenth's table format go straight to matching, without reading a note.</p>
+        <div class="actions">
+          <input id="file" type="file" accept=".csv,.json,application/json,text/csv" hidden>
+          <button class="btn" id="pick" type="button">Upload an entry table (CSV or JSON)</button>
+          <button class="btn" id="selftest" type="button">Try 20 sample entries</button>
+        </div>
+        <textarea id="pasted" spellcheck="false" aria-label="Entries as JSON" placeholder='Or paste entries as JSON: [{"entry_id": "T-1", "narrative": "…"}]'></textarea>
+        <button class="btn" id="runPasted" type="button">Decide</button>
+      </details>
     </div>
 
     <p id="status" role="status" aria-live="polite"></p>
 
     <div id="results" hidden>
-      <div class="bar">
+      <div class="bar sticky">
         <h2 class="section-label">Every decision comes with a reason</h2>
-        <div class="tabs" role="group" aria-label="Filter decisions">
-          <button class="tab" data-filter="all" aria-pressed="true" type="button"></button>
-          <button class="tab" data-filter="review" aria-pressed="false" type="button"></button>
+        <div class="tabs" role="group" aria-label="Show entries">
+          <button class="tab" data-filter="review" aria-pressed="true" type="button"></button>
           <button class="tab" data-filter="auto" aria-pressed="false" type="button"></button>
+          <button class="tab" data-filter="all" aria-pressed="false" type="button"></button>
         </div>
       </div>
       <p class="summary" id="summary"></p>
+      <div class="tk-banner" id="tkBanner" hidden></div>
       <div class="list" id="list"></div>
     </div>
 
@@ -277,20 +351,29 @@
   <section class="step" id="step2" aria-labelledby="step2Title" hidden>
     <div class="intake">
       <h2 id="step2Title" tabindex="-1">Check narratives</h2>
-      <p>Fill in the blanks. Suggestions come from the entry's other tasks and past entries on the same matter.</p>
+      <p>Tenth tidies each narrative. Check its changes and fill in any blanks; suggestions come from the entry's other tasks and past entries on the same matter.</p>
+      <label class="check"><input type="checkbox" id="showChanges2" checked> Show what Tenth changed</label>
+      <p class="muted changes-key" id="changesKey2">Words Tenth added are <ins>highlighted</ins>; words it took out are <del>crossed out</del>.</p>
     </div>
     <p id="nStatus" role="status" aria-live="polite"></p>
+    <div class="progress" id="nProgress" hidden><div class="track" aria-hidden="true"><span></span></div></div>
     <div id="nResults" hidden>
-      <div class="bar">
-        <h2 class="section-label" id="nSummary"></h2>
+      <div class="bar sticky">
+        <h2 class="section-label">Narratives to check</h2>
+        <div class="tabs" role="group" aria-label="Show narratives">
+          <button class="tab" data-filter="work" aria-pressed="true" type="button"></button>
+          <button class="tab" data-filter="fine" aria-pressed="false" type="button"></button>
+          <button class="tab" data-filter="all" aria-pressed="false" type="button"></button>
+        </div>
       </div>
+      <p class="summary" id="nSummary"></p>
       <div class="list" id="nList"></div>
     </div>
     <div class="step-nav">
       <button class="btn" id="back2" type="button">Back</button>
       <div class="step-nav-right">
         <span class="muted" id="next2Note"></span>
-        <button class="btn solid big" id="next2" type="button" disabled>Continue</button>
+        <button class="btn solid big" id="next2" type="button" disabled>Continue to review &amp; export</button>
       </div>
     </div>
   </section>
@@ -301,8 +384,21 @@
       <h2 id="step3Title" tabindex="-1">Review &amp; export</h2>
       <p id="doneSummary"></p>
       <label class="check"><input type="checkbox" id="nSeparate"> No block billing (one entry per task)</label>
+      <label class="check"><input type="checkbox" id="showChanges" checked> Show what Tenth changed</label>
+      <p class="muted changes-key" id="changesKey">Words Tenth added are <ins>highlighted</ins>; words it took out are <del>crossed out</del>.</p>
     </div>
-    <div class="list" id="finalList"></div>
+    <div id="finalBox">
+      <div class="bar sticky">
+        <h2 class="section-label">Entries to bill</h2>
+        <div class="tabs" role="group" aria-label="Show entries to bill">
+          <button class="tab" data-filter="todo" aria-pressed="true" type="button"></button>
+          <button class="tab" data-filter="ready" aria-pressed="false" type="button"></button>
+          <button class="tab" data-filter="all" aria-pressed="false" type="button"></button>
+        </div>
+      </div>
+      <div class="list" id="finalList"></div>
+    </div>
+    <p class="export-note" id="exportNote" role="status"></p>
     <div class="step-nav">
       <button class="btn" id="back3" type="button">Back</button>
       <div class="step-nav-right">
@@ -334,10 +430,11 @@ const pick = (d, names) => { for (const n of names) if (d[n] !== undefined && d[
 
 const ACTIONS = {
   AUTO_MATCH: { label: "Auto-match", cls: "" },
-  FLAG_MISMATCH: { label: "Flagged", cls: "flag" },
+  FLAG_MISMATCH: { label: "Check matter", cls: "flag" },
+  NEEDS_REVIEW: { label: "Check matter", cls: "review" },
   MULTI_MATTER: { label: "Two matters", cls: "multi" },
   NO_MATCH: { label: "New client?", cls: "none" },
-  REVIEW: { label: "Needs review", cls: "review" },
+  REVIEW: { label: "Check matter", cls: "review" },
 };
 const humanize = s => String(s).toLowerCase().replace(/_/g, " ").replace(/^./, c => c.toUpperCase());
 const actionInfo = a => ACTIONS[a] || { label: a ? humanize(a) : "Needs review", cls: "review" };
@@ -348,7 +445,7 @@ function confidenceText(d) {
   if (typeof v === "number" || /^[\d.]+%?$/.test(String(v))) {
     let n = parseFloat(v);
     if (n <= 1) n *= 100;
-    return `${Math.round(n)}% confident`;
+    return n >= 90 ? "High match" : n >= 60 ? "Medium match" : "Low match";
   }
   return `${String(v).replace(/\s*confidence$/i, "")} confidence`;
 }
@@ -379,14 +476,16 @@ function normalizeShortlist(d) {
 
 // ---------- state ---------------------------------------------------------
 let items = [];            // { d, id, state: 'pending'|'accepted'|'changed', finalCmid, finalLabel, editing }
-let filter = "all";
+let filter = "review";   // which entries step 1 shows: review (needs you), auto, or all
 
-const isAuto = it => pick(it.d, FIELDS.action) === "AUTO_MATCH";
+// An entry extraction wants a person to check (a misread is possible) is never counted as decided without you
+const isAuto = it => pick(it.d, FIELDS.action) === "AUTO_MATCH" && !it.d.extraction_review && !it.d.missing_tk;
 
 // ---------- API -----------------------------------------------------------
 async function api(path, opts = {}) {
   let res;
-  try { res = await fetch(path, { ...opts, headers: { "Content-Type": "application/json" } }); }
+  const headers = opts.body instanceof FormData ? {} : { "Content-Type": "application/json" };   // the browser sets a file upload's own
+  try { res = await fetch(path, { ...opts, headers }); }
   catch { throw new Error("Can't reach the service. Check your connection and try again."); }
   if (res.status === 401) throw new Error("You've been signed out. Reload the page to sign in again.");
   if (!res.ok) {
@@ -400,7 +499,10 @@ async function api(path, opts = {}) {
 function setStatus(msg, isError = false) {
   const s = $("#status"); s.textContent = msg; s.className = isError ? "error" : "";
 }
-function busy(on) { for (const b of document.querySelectorAll(".actions .btn, #runPasted")) b.disabled = on; }
+function busy(on) {
+  for (const b of document.querySelectorAll(".actions .btn, #runPasted")) b.disabled = on;
+  $("#drop").classList.toggle("busy", on); $("#drop").setAttribute("aria-disabled", String(on));
+}
 
 // ---------- loading entries ----------------------------------------------
 function parseCSV(text) {
@@ -443,14 +545,122 @@ async function decide(entries) {
 }
 
 function show(decisions) {
-  items = decisions.map((d, i) => ({ d, id: pick(d, FIELDS.id) ?? i + 1, state: "pending", editing: false }));
+  items = decisions.map((d, i) => ({ d, id: pick(d, FIELDS.id) ?? i + 1, state: "pending", editing: false, seq: i }));
   items.sort((a, b) => isAuto(a) - isAuto(b));   // the ones that need you first
-  filter = "all";
+  filter = items.some(it => !isAuto(it)) ? "review" : "all";   // open on the work, or on everything if nothing needs you
   maxStep = 1; goTo(1);
   $("#results").hidden = false;
   setStatus("");
   render();
   $("#results").scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+// ---------- whose time: asked once for the entries that have no timekeeper ----------
+const MATCH_COLS = ["entry_id", "tk_id", "source_format", "work_date", "cmid", "client", "matter", "narrative", "hours"];
+const tkName = id => (timekeepers.find(t => t.tk_id === id) || {}).name;
+
+function renderTkBanner() {
+  const missing = items.filter(it => it.d.missing_tk).length;
+  const bar = $("#tkBanner");
+  bar.hidden = !missing;
+  if (!missing) return bar.replaceChildren();
+  const input = el("input", { id: "tkFix", type: "text", list: "tkList", autocomplete: "off", placeholder: "Type a name", value: tkFixText,
+                              "aria-label": "Whose time these entries are" });
+  input.addEventListener("input", () => { tkFixText = input.value; });
+  bar.replaceChildren(
+    el("span", {}, el("strong", { text: "Whose time is this? " }),
+      `Tenth couldn't find a timekeeper on ${missing} ${missing === 1 ? "entry" : "entries"}.`),
+    input,
+    el("button", { class: "btn solid small", type: "button", text: "Apply", onclick: applyTimekeeper }));
+}
+
+// Matching uses the timekeeper's own billing history, so those entries are matched again once it's known
+async function applyTimekeeper() {
+  const typed = tkFixText.trim(), tkId = tkFor(typed);
+  if (!tkId) { setStatus(typed ? `${typed} isn't in the firm's timekeeper list.` : "Type a timekeeper's name first.", true); return; }
+  const fix = items.filter(it => it.d.missing_tk && sourceRows[it.id]);
+  const entries = fix.map(it => ({ ...Object.fromEntries(MATCH_COLS.map(c => [c, sourceRows[it.id][c] ?? null])), tk_id: tkId }));
+  busy(true); setStatus(`Matching ${fix.length} ${fix.length === 1 ? "entry" : "entries"} again for ${tkName(tkId)}…`);
+  try {
+    const out = await api("/decide", { method: "POST", body: JSON.stringify({ entries }) });
+    const byId = Object.fromEntries(out.decisions.map(x => [String(x.entry_id), x]));
+    for (const it of fix) {
+      const n = byId[String(it.id)];
+      if (!n) continue;
+      const { extraction_review, extraction_check, extraction_reasons, source_name, source_url, source_photo, order } = it.d;
+      it.d = { ...n, extraction_review, extraction_check, extraction_reasons, source_name, source_url, source_photo, order,
+               tk_id: tkId, missing_tk: false };   // a matter the person already accepted or changed stays theirs
+    }
+    tkFixText = "";
+    setStatus("");
+    render();
+  } catch (e) { setStatus(e.message, true); }
+  finally { busy(false); }
+}
+
+// Entries grouped under the note or file they came from, in upload order and in their order on the note, with the
+// note shown once and how many entries Tenth found on it, so a wrong count (an entry split in two) is easy to spot.
+// Entries loaded from the testing tools have no source and are listed as before.
+function groups(shown) {
+  if (!shown.some(it => it.d.source_name)) return shown.map(it => card(it));
+  const bySource = new Map();
+  for (const it of [...shown].sort((a, b) => (a.d.order ?? 0) - (b.d.order ?? 0) || a.seq - b.seq)) {
+    const k = it.d.source_name || "";
+    if (!bySource.has(k)) bySource.set(k, []);
+    bySource.get(k).push(it);
+  }
+  return [...bySource].map(([name, list]) => {
+    const d = list[0].d;
+    const total = items.filter(it => it.d.source_name === name).length;
+    const open = (text, ...kids) => el("a", { href: d.source_url, target: "_blank", rel: "noopener", text }, ...kids);
+    return el("section", { class: "src-group", "aria-label": `Entries from ${name}` },
+      name && el("div", { class: "src-head" },
+        d.source_photo && open("", el("img", { src: d.source_url, alt: `The note, ${name}` })),
+        el("div", {}, el("strong", { text: name }),
+          el("p", { class: "muted", text: `${total} ${total === 1 ? "entry" : "entries"} from this ${d.source_photo ? "note" : "file"}${list.length < total ? `, ${list.length} in this view` : ""}.` }),
+          el("p", {}, open(d.source_photo ? "Open full size" : "Open the file")))),
+      el("div", { class: "list" }, list.map(it => card(it, true))));
+  });
+}
+
+// ---------- fixing how a note was split into entries ----------
+const snapshot = () => items.map(it => ({ ...it, d: { ...it.d } }));
+function undoable(message, before) {
+  render();
+  $("#status").className = "";
+  $("#status").replaceChildren(`${message} `, el("button", { class: "btn quiet small", type: "button", text: "Undo",
+    onclick: () => { items = before; setStatus(""); render(); } }));
+}
+function removeEntry(it) {
+  const before = snapshot();
+  items = items.filter(x => x !== it);
+  undoable(`Removed ${it.id}.`, before);
+}
+const entryAbove = it => items.filter(x => x.d.source_name && x.d.source_name === it.d.source_name && x.seq < it.seq)
+  .sort((a, b) => b.seq - a.seq)[0];
+// A note line read as two entries goes back to being one: the text joined, the hours added up, and its matter found again
+async function mergeUp(it) {
+  const above = entryAbove(it);
+  const a = above && sourceRows[above.id], b = sourceRows[it.id];
+  if (!a || !b) return;
+  const hours = a.hours == null && b.hours == null ? null : (+a.hours || 0) + (+b.hours || 0);
+  const merged = { ...a, narrative: [a.narrative, b.narrative].filter(Boolean).join(" "), hours,
+                   tk_id: above.d.tk_id ?? a.tk_id ?? null };
+  const before = snapshot(), rowsBefore = { ...sourceRows };
+  busy(true); setStatus(`Joining ${it.id} into ${above.id}…`);
+  try {
+    const out = await api("/decide", { method: "POST", body: JSON.stringify({ entries: [Object.fromEntries(MATCH_COLS.map(c => [c, merged[c] ?? null]))] }) });
+    const n = out.decisions[0];
+    const { extraction_review, extraction_check, extraction_reasons, source_name, source_url, source_photo, order, missing_tk } = above.d;
+    above.d = { ...n, extraction_review, extraction_check, extraction_reasons, source_name, source_url, source_photo, order,
+                missing_tk: missing_tk && !merged.tk_id };
+    above.state = "pending";
+    sourceRows[above.id] = merged;
+    items = items.filter(x => x !== it);
+    undoable(`Joined ${it.id} into ${above.id}.`, before);
+    $("#status").lastChild.addEventListener("click", () => { sourceRows = rowsBefore; });
+  } catch (e) { setStatus(e.message, true); }
+  finally { busy(false); }
 }
 
 // ---------- rendering -----------------------------------------------------
@@ -464,46 +674,85 @@ function el(tag, props = {}, ...kids) {
   return n;
 }
 
+// A week's entries can run to a hundred, so step 1 opens on the ones that need you, with the counts always in view
 function render() {
-  const auto = items.filter(isAuto).length;
-  const pending = items.filter(it => !isAuto(it) && it.state === "pending").length;
-  const tabs = { all: `All (${items.length})`, review: `Needs you (${items.length - auto})`, auto: `Auto-matched (${auto})` };
-  for (const t of document.querySelectorAll(".tab")) { t.textContent = tabs[t.dataset.filter]; t.setAttribute("aria-pressed", String(t.dataset.filter === filter)); }
+  const auto = items.filter(isAuto), need = items.filter(it => !isAuto(it));
+  const pending = need.filter(it => it.state === "pending").length;
+  const tabs = { review: `Needs you (${need.length})`, auto: `Auto-matched (${auto.length})`, all: `All (${items.length})` };
+  for (const t of document.querySelectorAll("#results .tab")) { t.textContent = tabs[t.dataset.filter]; t.setAttribute("aria-pressed", String(t.dataset.filter === filter)); }
   $("#summary").replaceChildren(
-    el("strong", { text: `${auto} of ${items.length}` }),
+    el("strong", { text: `${auto.length} of ${items.length}` }),
     ` decided without you. ${pending ? `${pending} still need${pending === 1 ? "s" : ""} a look.` : "Nothing left to check."}`);
-
-  const shown = items.filter(it => filter === "all" || (filter === "auto" ? isAuto(it) : !isAuto(it)));
-  const list = $("#list");
-  list.replaceChildren(...(shown.length ? shown.map(card) : [el("div", { class: "empty", text: "No entries in this view." })]));
+  renderTkBanner();
+  const shown = filter === "review" ? need : filter === "auto" ? auto : items;
+  const empty = filter === "review" ? "Nothing needs you. Every entry was matched automatically." : "No automatic matches in this batch.";
+  $("#list").replaceChildren(...(shown.length ? groups(shown) : [el("div", { class: "empty", text: empty })]));
   updateStep1Nav();
 }
 
-function card(it) {
+// What the person should do about an entry matching wasn't sure of. Only actions go in amber; reasons stay grey.
+const NEXT_STEP = {
+  NEEDS_REVIEW: "Pick the right matter.", REVIEW: "Pick the right matter.", FLAG_MISMATCH: "Pick the right matter.",
+  MULTI_MATTER: "Check whether this covers two matters.", NO_MATCH: "Check whether this is a new client or matter.",
+};
+
+function card(it, grouped = false) {
   const d = it.d;
+  const action = pick(d, FIELDS.action);
+  const pending = it.state === "pending";
   const info = it.state === "changed" ? { label: "Changed by you", cls: "changed" }
              : it.state === "accepted" ? { label: "Accepted", cls: "" }
-             : actionInfo(pick(d, FIELDS.action));
-  const cmid = it.state === "changed" ? it.finalCmid : (pick(d, FIELDS.cmid) ?? "");
-  const { client, matter } = matterName(d);
-  const title = it.state === "changed" ? it.finalLabel
-              : [String(cmid), [client, matter].filter(Boolean).join(", ")].filter(Boolean).join("  ");
-  const conf = it.state === "changed" ? "" : confidenceText(d);
+             : d.extraction_review && action === "AUTO_MATCH" ? { label: "Check details", cls: "flag" }
+             : d.missing_tk && action === "AUTO_MATCH" ? { label: "Needs timekeeper", cls: "flag" }
+             : actionInfo(action);
   const was = pick(d, FIELDS.cmid);
-  const short = it.state === "changed" ? `Changed from ${was ?? "no match"}` : pick(d, FIELDS.short);
+  const cmid = it.state === "changed" ? it.finalCmid : (was ?? "");
+  const { client, matter } = matterName(d);
+  const named = it.state !== "changed" && (client || matter);
+  const title = it.state === "changed" ? it.finalLabel : named ? [client, matter].filter(Boolean).join(" · ") : String(cmid);
+  const meta = it.state === "changed" ? `Changed from ${was ?? "no match"}`
+             : [named && cmid, confidenceText(d)].filter(Boolean).join(" · ");
+  const todo = pending ? [d.extraction_review && (d.extraction_check || d.extraction_reasons), action !== "AUTO_MATCH" && (NEXT_STEP[action] || "Pick the right matter.")].filter(Boolean) : [];
+  const short = it.state === "changed" ? "" : pick(d, FIELDS.short);
   const full = it.state === "changed" ? "" : pick(d, FIELDS.full);
+  const xr = it.state === "changed" ? "" : d.extraction_reasons;
   const narrative = pick(d, FIELDS.narrative);
+  const hours = pick(d, ["hours", "parsed_hours"]);
+  const who = d.missing_tk ? "No timekeeper" : tkName(d.tk_id);
+  const facts = [who, hours != null && `${+hours} h`, fmtDate(d.work_date)].filter(Boolean).join(" · ");   // so a misread is visible
 
-  const badges = el("div", { class: "badges" }, el("span", { class: `pill action ${info.cls}`, text: info.label }), conf && el("span", { class: "pill conf", text: conf }));
+  const original = d.source_url && (d.source_photo
+    ? el("a", { class: "thumb", href: d.source_url, target: "_blank", rel: "noopener", title: `Open ${d.source_name} full size` },
+        el("img", { src: d.source_url, alt: `The note this entry came from, ${d.source_name}` }))
+    : el("a", { class: "src-link", href: d.source_url, target: "_blank", rel: "noopener", text: d.source_name }));
+  const badges = el("div", { class: "badges" }, el("span", { class: `pill action ${info.cls}`, text: info.label }), !grouped && original);
+  const points = it.state === "changed" || !Array.isArray(d.reason_points) ? [] : d.reason_points;
+  const why = (points.length || full || xr)
+    ? el("details", { class: "whyd" },
+        el("summary", {}, short ? `${short} · ` : "", el("span", { class: "why-link", text: "Why?" })),
+        xr && el("p", { class: "why-head", text: "What Tenth noticed on the note" }), xr && el("p", { text: xr }),
+        (points.length > 0 || !!full) && el("p", { class: "why-head", text: "Why this matter" }),
+        points.length > 0 ? el("ul", { class: "why-points" }, points.map(t => el("li", { text: t }))) : full && el("p", { text: full }))
+    : short && el("p", { class: "reason", text: short });
   const body = el("div", {},
+    el("div", { class: "label-row" }, el("p", { class: "sugg-label", text: "As written" }), el("span", { class: "entry-id", text: it.id })),
+    el("div", { class: "written" },
+      el("p", { class: "entry-text", text: narrative ? String(narrative) : "No narrative" }),
+      facts && el("p", { class: "entry-meta", text: facts })),
+    el("p", { class: "sugg-label", text: pending ? "Tenth suggests" : "Matter" }),
     el("h3", { class: "matter", text: title || "No matter suggested" }),
-    short && el("p", { class: "why" }, el("strong", { text: short })),
-    full && el("p", { class: "more", text: full }),
-    narrative && el("p", { class: "entry" }, el("b", { text: `${it.id}: ` }), String(narrative)));
+    meta && el("p", { class: "muted matter-meta", text: meta, title: it.state === "changed" ? "" : "How sure Tenth is of the matter (not of the reading)" }),
+    todo.length > 0 && el("p", { class: "why warn" }, el("strong", { text: todo.join(" ") })),
+    why);
 
   const side = el("div", { class: "side" });
-  if (!isAuto(it) && it.state === "pending") side.append(el("button", { class: "btn solid", type: "button", text: "Accept", "aria-label": `Accept the suggestion for entry ${it.id}`, onclick: () => { it.state = "accepted"; it.finalCmid = String(cmid); render(); } }));
-  side.append(el("button", { class: "btn", type: "button", text: "Change", "aria-expanded": String(it.editing), "aria-label": `Change the matter for entry ${it.id}`, onclick: () => { it.editing = !it.editing; render(); } }));
+  if (!isAuto(it) && pending) side.append(el("button", { class: "btn solid", type: "button", text: "Accept matter", "aria-label": `Accept the suggested matter for entry ${it.id}`, onclick: () => { it.state = "accepted"; it.finalCmid = String(cmid); render(); } }));
+  side.append(el("button", { class: "btn", type: "button", text: "Change matter", "aria-expanded": String(it.editing), "aria-label": `Change the matter for entry ${it.id}`, onclick: () => { it.editing = !it.editing; render(); } }));
+  const canJoin = entryAbove(it) && sourceRows[it.id];
+  side.append(el("details", { class: "more-actions" }, el("summary", { text: "More", "aria-label": `More actions for entry ${it.id}` }),
+    canJoin && el("button", { class: "btn quiet small", type: "button", text: "Join with the entry above",
+      title: "For one line of the note that Tenth read as two entries", onclick: () => mergeUp(it) }),
+    el("button", { class: "btn quiet small", type: "button", text: "Remove entry", onclick: () => removeEntry(it) })));
 
   const c = el("article", { class: "card" }, badges, body, side);
   if (it.editing) c.append(editor(it));
@@ -541,6 +790,94 @@ $("#file").addEventListener("change", async e => {
   if (!f) return;
   try { await decide(entriesFromText(await f.text(), f.name)); } catch (err) { setStatus(err.message, true); }
 });
+// ---------- time notes (extraction, /extract) ----------
+const NOTE_TYPES = [".jpg", ".jpeg", ".png", ".pdf", ".docx", ".txt", ".xlsx", ".csv", ".eml"];
+const PHOTO_TYPES = [".jpg", ".jpeg", ".png"];
+const MAX_FILES = 25, AT_ONCE = 3;   // each file is read with its own AWS calls, so a batch is capped and read three at a time
+const timekeepers = [];   // { tk_id, name, label } from /timekeepers
+let sourceRows = {};      // the entries as extraction read them, by entry_id, so matching can run again with a timekeeper
+let tkFixText = "";       // what's typed in the "whose time" bar, kept across re-renders
+let sourceUrls = [];      // this batch's files, so each card can show its original; freed when the next batch starts
+const ext = name => (String(name).match(/\.[^.]+$/) || [""])[0].toLowerCase();
+
+function tkFor(typed) {
+  const t = typed.trim().toLowerCase();
+  const found = t && timekeepers.find(k => [k.label, k.name, k.tk_id].some(v => v.toLowerCase() === t));
+  return found ? found.tk_id : null;
+}
+
+function cantRead(f) {
+  return ext(f.name) === ".heic" ? "iPhone HEIC photos can't be read yet. Export it as a JPEG and try again."
+    : "Tenth can't read that kind of file yet. Try a photo, PDF, Word, Excel or CSV, email, or text file.";
+}
+
+// The server doesn't report its steps, so this shows that it's working, how many files are done, and for how long
+function startProgress(files) {
+  const t0 = Date.now();
+  const label = done => { $("#progressText").textContent = files.length === 1 ? `Reading ${files[0].name}…` : `Reading ${files.length} files… ${done} done`; };
+  label(0);
+  $("#progressHint").textContent = files.some(f => PHOTO_TYPES.includes(ext(f.name))) ? "Photos take longer than typed files." : "";
+  $("#progress").hidden = false;
+  const tick = () => { const sec = Math.round((Date.now() - t0) / 1000); $("#progressTime").textContent = `${Math.floor(sec / 60)}:${String(sec % 60).padStart(2, "0")}`; };
+  tick();
+  const timer = setInterval(tick, 1000);
+  return { done: label, stop: () => { clearInterval(timer); $("#progress").hidden = true; } };
+}
+
+async function readNotes(list) {
+  const files = [...list];
+  if (!files.length || $("#drop").classList.contains("busy")) return;
+  if (files.length > MAX_FILES) { setStatus(`Choose up to ${MAX_FILES} files at a time.`, true); return; }
+  const readable = files.filter(f => NOTE_TYPES.includes(ext(f.name)));
+  const problems = files.filter(f => !readable.includes(f)).map(f => `${f.name}: ${cantRead(f)}`);
+  if (!readable.length) { setStatus(problems.join(" "), true); return; }
+  const typed = $("#tk").value.trim();
+  const tkId = tkFor(typed);
+  for (const u of sourceUrls) URL.revokeObjectURL(u);
+  sourceUrls = [];
+  sourceRows = {};
+  busy(true); setStatus("");
+  const progress = startProgress(readable);
+  const found = [];
+  let done = 0;
+  const readOne = async (f, order) => {
+    const form = new FormData();
+    form.append("file", f);
+    form.append("upload_date", new Date().toLocaleDateString("en-CA"));   // today here, as YYYY-MM-DD
+    if (tkId) form.append("tk_id", tkId);
+    try {
+      const out = await api("/extract", { method: "POST", body: form });
+      if (out.photo_check && !out.photo_check.ok && !out.entries.length) problems.push(`${f.name}: ${out.photo_check.message}`);
+      else if (!out.decisions.length) problems.push(`${f.name}: no time entries found.`);
+      else {
+        const url = URL.createObjectURL(f);
+        sourceUrls.push(url);
+        for (const e of out.entries) sourceRows[e.entry_id] = e;
+        for (const d of out.decisions) found.push({ ...d, source_name: f.name, source_url: url, source_photo: PHOTO_TYPES.includes(ext(f.name)), order });
+      }
+    } catch (err) { problems.push(err.message); }
+    progress.done(++done);
+  };
+  const queue = readable.map((f, i) => [f, i]);
+  await Promise.all(Array.from({ length: Math.min(AT_ONCE, queue.length) }, async () => {
+    while (queue.length) { const [f, i] = queue.shift(); await readOne(f, i); }
+  }));
+  progress.stop(); busy(false);
+  if (found.length) show(found.sort((a, b) => a.order - b.order));   // in the order the files were chosen
+  const tkNote = typed && !tkId ? `${typed} isn't in the firm's timekeeper list, so Tenth looked for a name in the note.` : "";
+  if (problems.length) setStatus(`${problems.length} of ${files.length} ${files.length === 1 ? "file" : "files"} ${problems.length === 1 ? "wasn't" : "weren't"} read. ${problems.join(" ")}`, true);
+  else if (tkNote) setStatus(tkNote);
+}
+
+const drop = $("#drop");
+drop.addEventListener("click", () => $("#note").click());
+drop.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); $("#note").click(); } });
+for (const t of ["dragenter", "dragover"]) drop.addEventListener(t, e => { e.preventDefault(); drop.classList.add("over"); });
+for (const t of ["dragleave", "drop"]) drop.addEventListener(t, () => drop.classList.remove("over"));
+drop.addEventListener("drop", e => { e.preventDefault(); readNotes(e.dataTransfer.files); });
+// A file dropped beside the zone would otherwise open in the browser and leave the page
+for (const t of ["dragover", "drop"]) window.addEventListener(t, e => { if (!drop.contains(e.target)) e.preventDefault(); });
+$("#note").addEventListener("change", e => { const files = [...e.target.files]; e.target.value = ""; readNotes(files); });
 $("#runPasted").addEventListener("click", async () => {
   try { await decide(entriesFromText($("#pasted").value, "pasted.json")); } catch (err) { setStatus(err.message, true); }
 });
@@ -550,12 +887,12 @@ $("#selftest").addEventListener("click", async () => {
   catch (e) { setStatus(e.message, true); }
   finally { busy(false); }
 });
-for (const t of document.querySelectorAll(".tab")) t.addEventListener("click", () => { filter = t.dataset.filter; render(); });
 // ======================= narrative check (stage 2, /review) =======================
 const BLANK = { PARTICIPANT: "who?", SUBJECT: "about what?", DOCUMENT: "which document?" };
 const PH_RX = /\[(PARTICIPANT|SUBJECT|DOCUMENT)\]/g;
 const fmtH = h => (h === null || h === undefined) ? "" : String(+(+h).toFixed(2));
 
+let showChanges = true;   // Tenth's rewrites shown as tracked changes against what was written, in steps 2 and 3
 let reviews = [];   // { r, block, cmid, fills: { "line:blank": value }, removed: Set(line), kept: Set(line) }
 let reviewedKey = "";
 const keyOf = entries => JSON.stringify(entries.map(e => [e.entry_id ?? null, e.narrative, e.hours ?? null, e.cmid ?? null]));
@@ -567,17 +904,20 @@ async function runReview(entries) {
   $("#next2").disabled = true;
   $("#nResults").hidden = true;
   nStatus(`Checking ${entries.length} ${entries.length === 1 ? "narrative" : "narratives"}…`);
+  $("#nProgress").hidden = false;
   try {
     const block = !$("#nSeparate").checked;
     const out = await api("/review", { method: "POST", body: JSON.stringify({ entries, block }) });
     reviews = out.reviews.map((r, i) => ({ r, block, fills: {}, removed: new Set(), kept: new Set(), edits: {}, hoursEdit: {},
                                             editing: null, entry: entries[i], cmid: entries[i].cmid || "" }));
-    fineOpen = false;
+    nFilter = reviews.some(needsWork) ? "work" : "all";
+    fFilter = null;   // step 3 picks its own starting pill for the new entries
     reviewedKey = keyOf(entries);
     $("#nResults").hidden = false;
     nStatus("");
     renderReviews();
   } catch (e) { nStatus(e.message, true); }
+  finally { $("#nProgress").hidden = true; }
 }
 
 // ---- what is left to do
@@ -589,7 +929,7 @@ function lineText(rv, i) {
   return rv.r.lines[i].suggestion.replace(PH_RX, m => rv.fills[`${i}:${k++}`] || m);
 }
 const lineHours = (rv, i) => (i in rv.hoursEdit ? rv.hoursEdit[i] : rv.r.lines[i].hours);
-let fineOpen = false;
+let nFilter = "work";   // which narratives step 2 shows: work (needs you), fine, or all
 const openBlanks = (rv, i) => (lineText(rv, i).match(PH_RX) || []).length;
 const openCount = rv => liveLines(rv).reduce((n, [, i]) => n + openBlanks(rv, i), 0);
 const junkOpen = rv => liveLines(rv).filter(([l, i]) => isJunkLine(l) && !rv.kept.has(i)).length;
@@ -646,9 +986,17 @@ function taskRow(rv, i, idx) {
     text.append(rv.edits[i]);
   } else {
     const s = l.suggestion;
-    let k = 0, last = 0;
-    for (const m of s.matchAll(PH_RX)) {
-      text.append(s.slice(last, m.index));
+    let k = 0;
+    // A stretch of the rewrite, with an input box for each blank in it
+    const put = (t, added) => {   // added words marked, the spaces around them not
+      if (!added || !t.trim()) return text.append(t);
+      const lead = t.match(/^\s*/)[0], core = t.trim();
+      text.append(lead, el("ins", { text: core }), t.slice(lead.length + core.length));
+    };
+    const addWithBlanks = (str, added) => {
+    let last = 0;
+    for (const m of str.matchAll(PH_RX)) {
+      put(str.slice(last, m.index), added);
       const key = `${i}:${k++}`;
       const inp = el("input", { type: "text", class: "blank", id: `b-${idx}-${key.replace(":", "-")}`, value: rv.fills[key] || "",
         placeholder: BLANK[m[1]], autocomplete: "off", "aria-label": `Task ${i + 1}: ${BLANK[m[1]]}` });
@@ -660,7 +1008,15 @@ function taskRow(rv, i, idx) {
       blanks.push({ key, kind: m[1], ph: l.placeholders[k - 1] });
       last = m.index + m[0].length;
     }
-    text.append(s.slice(last));
+    put(str.slice(last), added);
+    };
+    // With changes shown, words Tenth added are marked and words it took out are crossed out, against the task as written
+    const parts = showChanges && l.text ? diffWords(l.text, s) : [{ op: "same", text: s }];
+    parts.forEach((part, n) => {
+      if (n) text.append(" ");
+      if (part.op === "del") text.append(el("del", { text: part.text }));
+      else addWithBlanks(part.text, part.op === "ins");
+    });
   }
 
   const hints = [];
@@ -753,15 +1109,6 @@ function reviewCard(rv, idx) {
     el("details", { class: "origd" }, el("summary", { text: "Show original" }), el("p", { class: "orig", text: r.narrative })));
 }
 
-// Entries with nothing flagged: the same editable cards, folded away until opened.
-function fineGroup(list) {
-  const d = el("details", { class: "fine", id: "fineGroup" },
-    el("summary", { text: `${list.length} ${list.length === 1 ? "entry looks" : "entries look"} fine. Open to read or edit them.` }),
-    el("div", { class: "list" }, list.map(([rv, idx]) => reviewCard(rv, idx))));
-  d.open = fineOpen;
-  d.addEventListener("toggle", () => { fineOpen = d.open; });
-  return d;
-}
 
 function summaryText() {
   const work = reviews.filter(needsWork);
@@ -783,9 +1130,11 @@ function refreshCounts(rv, idx) {
 function renderReviews(focusId) {
   const work = [], fine = [];
   reviews.forEach((rv, idx) => (needsWork(rv) ? work : fine).push([rv, idx]));
-  $("#nList").replaceChildren(
-    ...(work.length ? work.map(([rv, idx]) => reviewCard(rv, idx)) : [el("div", { class: "empty", text: "Nothing to fix. Continue to review and export." })]),
-    fine.length ? fineGroup(fine) : "");
+  const tabs = { work: `Needs you (${work.length})`, fine: `Looks fine (${fine.length})`, all: `All (${reviews.length})` };
+  for (const t of document.querySelectorAll("#nResults .tab")) { t.textContent = tabs[t.dataset.filter]; t.setAttribute("aria-pressed", String(t.dataset.filter === nFilter)); }
+  const shown = nFilter === "work" ? work : nFilter === "fine" ? fine : [...work, ...fine];
+  const empty = nFilter === "work" ? "Nothing to fix. Continue to review and export." : "No narratives in this view.";
+  $("#nList").replaceChildren(...(shown.length ? shown.map(([rv, idx]) => reviewCard(rv, idx)) : [el("div", { class: "empty", text: empty })]));
   if (focusId && document.getElementById(focusId)) document.getElementById(focusId).focus();
   $("#next2").disabled = !reviews.length;
   refreshCounts(reviews[0] || {}, -1);
@@ -834,6 +1183,7 @@ function updateStep1Nav() {
 
 // ---- step 3
 const hasJunk = rv => junkOpen(rv) > 0;
+let fFilter = null;   // which entries step 3 shows: todo (needs you), ready, or all; null picks one when step 3 opens
 
 function finalRows(rv) {
   const lines = liveLines(rv);
@@ -843,29 +1193,77 @@ function finalRows(rv) {
   return lines.map(([, i], n) => ({ id: `${rv.r.entry_id ?? ""}${lines.length > 1 ? `-${n + 1}` : ""}`, text: lineText(rv, i), hours: lineHours(rv, i) }));
 }
 
+// Word-level differences between what was written and the final text, by longest common subsequence.
+// Words match ignoring case and trailing punctuation, so "SPA" and "SPA." aren't shown as a change.
+function diffWords(a, b) {
+  const A = String(a || "").split(/\s+/).filter(Boolean), B = String(b || "").split(/\s+/).filter(Boolean);
+  const key = w => w.toLowerCase().replace(/[.,;:]+$/, "");
+  const n = A.length, m = B.length;
+  if (n * m > 40000) return [{ op: "del", text: A.join(" ") }, { op: "ins", text: B.join(" ") }];   // too long to compare word by word
+  const L = Array.from({ length: n + 1 }, () => new Array(m + 1).fill(0));
+  for (let i = n - 1; i >= 0; i--) for (let j = m - 1; j >= 0; j--) L[i][j] = key(A[i]) === key(B[j]) ? L[i + 1][j + 1] + 1 : Math.max(L[i + 1][j], L[i][j + 1]);
+  const out = [];
+  const add = (op, w) => { const last = out[out.length - 1]; if (last && last.op === op) last.text += " " + w; else out.push({ op, text: w }); };
+  let i = 0, j = 0;
+  while (i < n && j < m) {
+    if (key(A[i]) === key(B[j])) { add("same", B[j]); i++; j++; }
+    else if (L[i + 1][j] >= L[i][j + 1]) add("del", A[i++]);
+    else add("ins", B[j++]);
+  }
+  while (i < n) add("del", A[i++]);
+  while (j < m) add("ins", B[j++]);
+  return out;
+}
+
+function changesView(written, final) {
+  return diffWords(written, final).flatMap((part, k) => [k ? " " : "",
+    part.op === "same" ? withGaps(part.text) : part.op === "del" ? el("del", { text: part.text })
+      : withGaps(part.text).map(x => (typeof x === "string" && x.trim() ? el("ins", { text: x }) : x))]);
+}
+
+// A missing detail shows as a marked gap ("who?"), not as [PARTICIPANT]
+function withGaps(text) {
+  const out = [];
+  let last = 0;
+  for (const m of text.matchAll(PH_RX)) { out.push(text.slice(last, m.index), el("mark", { class: "gap", text: BLANK[m[1]] })); last = m.index + m[0].length; }
+  out.push(text.slice(last));
+  return out;
+}
+
 function renderFinal() {
+  resetExport();
   const open = reviews.filter(rv => openCount(rv)).length;
   const junk = reviews.filter(hasJunk).length;
   const ready = reviews.filter(rv => !openCount(rv) && !hasJunk(rv)).length;
   $("#doneSummary").replaceChildren(el("strong", { text: `${ready} of ${reviews.length} ready to bill.` }),
     open ? ` ${open} still ${open === 1 ? "has" : "have"} details to fill in.` : "",
     junk ? ` ${junk} may include time that isn't billable.` : "");
-  $("#finalList").replaceChildren(...reviews.map((rv, idx) => {
+  const rank = rv => (openCount(rv) ? 0 : hasJunk(rv) ? 1 : 2);   // the ones that need you first
+  const order = reviews.map((rv, idx) => [rv, idx]).sort((a, b) => rank(a[0]) - rank(b[0]));
+  const todo = order.filter(([rv]) => rank(rv) < 2), done = order.filter(([rv]) => rank(rv) === 2);
+  if (!fFilter) fFilter = todo.length ? "todo" : "all";
+  const tabs = { todo: `Needs you (${todo.length})`, ready: `Ready (${done.length})`, all: `All (${order.length})` };
+  for (const t of document.querySelectorAll("#finalBox .tab")) { t.textContent = tabs[t.dataset.filter]; t.setAttribute("aria-pressed", String(t.dataset.filter === fFilter)); }
+  const shown = fFilter === "todo" ? todo : fFilter === "ready" ? done : order;
+  const empty = fFilter === "todo" ? "Everything is ready to bill." : "Nothing is ready to bill yet.";
+  $("#finalList").replaceChildren(...(shown.length ? [] : [el("div", { class: "empty", text: empty })]), ...shown.map(([rv, idx]) => {
     const n = openCount(rv), isJunk = hasJunk(rv);
     const status = n ? { cls: "warn", text: `${n} detail${n === 1 ? "" : "s"} missing` }
                  : isJunk ? { cls: "junk", text: "Not billable?" } : { cls: "ok", text: "Ready" };
     const rows = finalRows(rv);
+    const written = rv.block ? [rv.r.narrative] : liveLines(rv).map(([, i]) => rv.r.lines[i].text);   // what each row was before
+    const textOf = (text, k) => (showChanges ? changesView(written[k], text) : withGaps(text));
     return el("article", { class: "rcard" },
       el("div", { class: "rhead" },
         el("span", { class: `pill inline ${status.cls}`, text: status.text }),
         el("h3", { text: entryTitle(rv, idx) }),
         entryMeta(rv) ? el("span", { class: "muted", text: entryMeta(rv) }) : null),
       rows.length === 1
-        ? el("p", { class: "sugg", text: `${rows[0].text}${rows[0].hours != null ? `  (${fmtH(rows[0].hours)} h)` : ""}` })
-        : el("ol", { class: "sugg" }, rows.map(x => el("li", { text: `${x.text}  (${x.hours != null ? fmtH(x.hours) + " h" : "hours needed"})` }))),
+        ? el("p", { class: "sugg" }, textOf(rows[0].text, 0), rows[0].hours != null ? `  (${fmtH(rows[0].hours)} h)` : "")
+        : el("ol", { class: "sugg" }, rows.map((x, k) => el("li", {}, textOf(x.text, k), `  (${x.hours != null ? fmtH(x.hours) + " h" : "hours needed"})`))),
       el("div", { class: "actions" }, el("button", { class: "btn", type: "button", text: (n || isJunk) ? "Fix it" : "Edit",
         onclick: () => {
-          if (!needsWork(rv)) fineOpen = true;            // its card is in the folded "look fine" group
+          nFilter = needsWork(rv) ? "work" : "fine";      // open step 2 on the pill this entry's card is under
           renderReviews();
           goTo(2);
           setTimeout(() => {
@@ -892,12 +1290,32 @@ function exportFinal() {
 }
 
 // ---- wiring
+// After switching pills deep in a long list, go back to the top of it rather than land somewhere in the middle
+function toListTop(bar) { if (bar.getBoundingClientRect().top <= 1) bar.parentElement.scrollIntoView({ block: "start" }); }
+for (const t of document.querySelectorAll("#results .tab")) t.addEventListener("click", () => { filter = t.dataset.filter; render(); toListTop(t.closest(".bar")); });
+for (const t of document.querySelectorAll("#nResults .tab")) t.addEventListener("click", () => { nFilter = t.dataset.filter; renderReviews(); toListTop(t.closest(".bar")); });
+for (const t of document.querySelectorAll("#finalBox .tab")) t.addEventListener("click", () => { fFilter = t.dataset.filter; renderFinal(); toListTop(t.closest(".bar")); });
 $("#next1").addEventListener("click", () => { singleEntries = null; enterStep2(); });
 $("#back2").addEventListener("click", () => goTo(1));
 $("#next2").addEventListener("click", () => { renderFinal(); goTo(3); });
 $("#back3").addEventListener("click", () => goTo(2));
-$("#exportFinal").addEventListener("click", exportFinal);
+// Exporting entries with gaps or time that may not be billable takes a second click, so it's never by accident
+let exportArmed = false;
+function resetExport() { exportArmed = false; $("#exportNote").textContent = ""; $("#exportFinal").textContent = "Export entries (CSV)"; }
+$("#exportFinal").addEventListener("click", () => {
+  const open = reviews.filter(rv => openCount(rv)).length, junk = reviews.filter(hasJunk).length;
+  if ((open || junk) && !exportArmed) {
+    exportArmed = true;
+    $("#exportNote").textContent = [open && `${open} still ${open === 1 ? "has" : "have"} missing details`,
+      junk && `${junk} may include time that isn't billable`].filter(Boolean).join(" and ") + ". Export anyway?";
+    $("#exportFinal").textContent = "Export anyway";
+    return;
+  }
+  exportFinal();
+  resetExport();
+});
 $("#startOver").addEventListener("click", () => {
+  if ((items.length || reviews.length) && !confirm("Start over? This clears the entries and everything you filled in.")) return;
   items = []; reviews = []; reviewedKey = ""; singleEntries = null; maxStep = 1;
   $("#results").hidden = true; $("#nResults").hidden = true; setStatus(""); nStatus("");
   updateStep1Nav(); goTo(1);
@@ -907,6 +1325,14 @@ for (const b of document.querySelectorAll(".step-btn")) b.addEventListener("clic
   if (s === 2) enterStep2(); else if (s === 3) { renderFinal(); goTo(3); } else goTo(1);
 });
 $("#nSeparate").addEventListener("change", () => { for (const rv of reviews) rv.block = !$("#nSeparate").checked; renderFinal(); });
+// One setting for steps 2 and 3, so turning changes off in one step doesn't surprise you in the other
+function setShowChanges(on) {
+  showChanges = on;
+  for (const id of ["showChanges", "showChanges2"]) $(`#${id}`).checked = on;
+  for (const id of ["changesKey", "changesKey2"]) $(`#${id}`).hidden = !on;
+  if (reviews.length) { renderReviews(); renderFinal(); }
+}
+for (const id of ["showChanges", "showChanges2"]) $(`#${id}`).addEventListener("change", e => setShowChanges(e.target.checked));
 
 $("#nRun").addEventListener("click", () => {
   const narrative = $("#nText").value.trim();
@@ -921,6 +1347,19 @@ $("#nExample").addEventListener("click", () => {
   $("#nHours").value = "2.5";
   $("#nText").focus();
 });
+
+// The firm's timekeepers for "Whose time is this?" (type to filter); hidden if extraction isn't loaded
+api("/timekeepers")
+  .then(out => {
+    for (const t of out.timekeepers) {
+      const label = `${t.name} (${t.tk_id})`;
+      timekeepers.push({ ...t, label });
+      $("#tkList").append(el("option", { value: label }));
+    }
+  })
+  .catch(() => { $("#tkField").hidden = true; });
+
+$("#testingTools").hidden = !new URLSearchParams(location.search).has("testing");   // open the page with ?testing to see them
 
 updateStep1Nav();
 goTo(1);

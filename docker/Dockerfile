@@ -1,5 +1,5 @@
-# Tenth: matching (stage 1) and narrative check (stage 2) in one service.
-# Build from the repo root, so both matching/ and phase2_model/ are in the build context:
+# Tenth: extraction and matching (stage 1) and narrative check (stage 2) in one service.
+# Build from the repo root, so extraction/, matching/, and phase2_model/ are in the build context:
 #   docker build -f docker/Dockerfile -t tenth .
 # or: docker compose -f docker/compose.yaml up --build
 # What may enter the image is listed in Dockerfile.dockerignore next to this file.
@@ -12,8 +12,10 @@ ENV PYTHONUNBUFFERED=1 \
     UV_COMPILE_BYTECODE=1 \
     UV_LINK_MODE=copy \
     PATH="/app/.venv/bin:$PATH" \
-    PYTHONPATH=/app/src \
+    PYTHONPATH=/app/src:/app/extraction \
     PHASE2_DIR=/app/phase2 \
+    EXTRACTION_DIR=/app/extraction \
+    TIMEKEEPERS_PATH=/app/data/timekeepers.csv \
     HF_HOME=/opt/hf
 
 # LightGBM needs the OpenMP runtime
@@ -38,6 +40,11 @@ COPY matching/app.py .
 # (phase2_model/training/train_classifier.py; without models/rewriter/ rewrites come from rules).
 COPY phase2_model/pipeline ./phase2
 COPY phase2_model/models ./phase2/models
+
+# Stage 1: extraction. The run-time code and prompts only (no photos, voice memos, or saved model answers),
+# and the made-up timekeeper list it credits entries to. AWS credentials are passed in at run time, never copied.
+COPY extraction/src ./extraction
+COPY extraction/data/timekeepers.csv ./data/timekeepers.csv
 
 # Bake the embedding model into the image so the container never needs the network at runtime
 RUN python -c "import json; from sentence_transformers import SentenceTransformer as S; S(json.load(open('results/02_config.json'))['embedding_model'])"

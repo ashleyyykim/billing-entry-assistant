@@ -15,6 +15,10 @@
 !phase2_model/pipeline/
 !phase2_model/models/
 
+# stage 1: extraction (photos, voice memos, extraction/_private, and saved model answers stay out)
+!extraction/src/
+!extraction/data/timekeepers.csv
+
 # ...and, inside those, what must still stay out
 # the holdout file must never ship with the service
 matching/data/*HOLDOUT*

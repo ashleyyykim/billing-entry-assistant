@@ -29,4 +29,5 @@ dependencies:
   - pymupdf
   - pytest
   - python-docx
+  - python-multipart
   - ffmpeg

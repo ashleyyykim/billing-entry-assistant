@@ -11,3 +11,13 @@ services:
     environment:
       # Set to put a sign-in prompt in front of the page and API. Empty = open (fine on your laptop only).
       TENTH_PASSWORD: ${TENTH_PASSWORD:-}
+      # Extraction calls Textract and Bedrock with your own AWS credentials, passed in from your shell at run time
+      # (see docker/README.md). Left unset, they aren't set in the container, and /extract still runs with use_aws=false.
+      AWS_ACCESS_KEY_ID:
+      AWS_SECRET_ACCESS_KEY:
+      AWS_SESSION_TOKEN:
+      # Testing only: set TENTH_DEV_CACHE=/cache in your shell to keep each file's AWS answers in ~/.tenth-dev-cache,
+      # so uploading the same file again is free. Left unset, nothing from an upload is kept.
+      TENTH_DEV_CACHE:
+    volumes:
+      - ${HOME}/.tenth-dev-cache:/cache

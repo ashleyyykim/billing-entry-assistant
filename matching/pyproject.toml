@@ -19,6 +19,12 @@ dependencies = [
     "torch==2.14.1",
     "fastapi",
     "uvicorn[standard]",
+    "python-multipart",   # file uploads to /extract
+    # extraction: Textract and Bedrock, PDFs, Word files, and photos
+    "boto3",
+    "pymupdf",
+    "python-docx",
+    "pillow",
 ]
 
 [tool.uv]

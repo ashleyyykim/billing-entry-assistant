@@ -277,6 +277,14 @@ def two_step(train_pairs, train_probs, val_pairs, val_probs, answers, narratives
 
 # ---------------- Reasons ----------------
 
+# Matter types as a reason says them ("the tasks fit an acquisition matter"), not as Matter Master codes them (MA_BUY)
+MATTER_TYPE_WORDS = {"ADMIN": "a firm admin", "BD": "a business development", "BOARD": "a board", "CAPMKT": "a capital markets",
+                     "DEBT": "a debt financing", "EXECCOMP": "an executive compensation", "FUND_FORM": "a fund formation",
+                     "FUND_GEN": "a fund", "GENCORP": "a general corporate", "LICENSING": "a licensing",
+                     "MA_BUY": "an acquisition", "MA_SELL": "a sale", "RECRUIT": "a recruiting",
+                     "RE_ACQ": "a real estate acquisition", "RE_LEASE": "a lease", "SEC": "an SEC reporting", "TAX": "a tax",
+                     "VC": "a venture financing"}
+
 # Clues about the top pick a reason can cite. Each one: (is it there?, short reason, full reason).
 # A decision cites only the clues that are there, in the order they pushed that decision (clue_weights).
 CLUES = [
@@ -287,7 +295,7 @@ CLUES = [
     (lambda r: r["client_named"], "Narrative names the client", "the narrative names {client}"),
     (lambda r: r["client_score"] >= 80, "Typed client matches", "the typed client matches {client}"),
     (lambda r: r["matter_score"] >= 80, "Typed matter matches", "the typed matter matches"),
-    (lambda r: r["cue_share"] >= 0.5, "Tasks fit the matter type", "the tasks fit a {matter_type} matter"),
+    (lambda r: r["cue_share"] >= 0.5, "Tasks fit the matter type", "the tasks fit {matter_type} matter"),
     (lambda r: r["person_hits"] > 0, "Names someone at this client", "the narrative names someone billed with {client} before"),
 ]
 
@@ -360,17 +368,23 @@ def suggest_split(decisions, parts):
     return pd.Series(out, dtype=object)
 
 
+def cited_clues(row):
+    """The clues a reason cites for the top pick, as (short, full): only clues that are there, and with clue weights
+    (from the model) only those that pushed toward the pick, strongest first."""
+    weights = row.get("clue_weights")
+    present = [(short, full) for check, short, full in CLUES if check(row)]
+    if isinstance(weights, dict):
+        present = sorted([c for c in present if weights.get(c[0], 0) > 0], key=lambda c: -weights[c[0]])
+    return [(short, full.format(**row)) for short, full in present]
+
+
 def reasons_for(row, split=None):
     """(short, full) reason for one decision. row has the decision plus the top pick's clues.
 
     With clue weights (from the model), only clues that are there and pushed toward the pick are cited, strongest
     first. Without them, clues that are there are cited in the order of CLUES.
     """
-    weights = row.get("clue_weights")
-    present = [(short, full) for check, short, full in CLUES if check(row)]
-    if isinstance(weights, dict):
-        present = sorted([c for c in present if weights.get(c[0], 0) > 0], key=lambda c: -weights[c[0]])
-    clues = [(short, full.format(**row)) for short, full in present]
+    clues = cited_clues(row)
     why = "; ".join(full for _, full in clues[:3])
     pick = f"{row['top_cmid']} ({row['client']} - {row['matter']}), {confidence(row['top_prob'])} confidence"
     action = row["action"]
@@ -430,6 +444,7 @@ def explain(decisions, top, pairs, client_col, matter_col, phrase_min=90, parts=
 
     reason_short  a few words for the review list ("Typed CMID matches")
     reason_full   the decision, confidence, the top pick's strongest clues, and the shortlist or suggested split
+    reason_points the top pick's strongest clues (up to 3) as sentences, for a reader who wants them one by one
     With the pair model and its inputs, clues are ordered by how much they pushed that decision (clue_weights).
     """
     cols = ["entry_id", "cmid", "client", "matter", "matter_type", "is_typed_cmid", "cmid_valid", "past_narrative_sim",
@@ -440,12 +455,15 @@ def explain(decisions, top, pairs, client_col, matter_col, phrase_min=90, parts=
     clues = pairs[keep].rename(columns={"cmid": "top_cmid", client_col: "client_score", matter_col: "matter_score"})
     rows = top[entry_cols + (["multi_text_score"] if "multi_text_score" in top else [])].merge(clues, on=["entry_id", "top_cmid"], how="left")
     rows["client_named"] = rows["client_in_text"] >= phrase_min
-    rows["matter_type"] = rows["matter_type"].astype(str).str.lower()
+    rows["matter_type"] = rows["matter_type"].astype(str).map(lambda t: MATTER_TYPE_WORDS.get(t, f"a {t.lower()}"))
     if model is not None:
         model_rows = rows.rename(columns={"top_cmid": "cmid", "client_score": client_col, "matter_score": matter_col})
         rows["clue_weights"] = clue_weights(model, model_rows, features).to_dict("records")
     rows = rows.drop(columns=[f for f in features or [] if f in rows and f not in cols + entry_cols])
 
     splits = suggest_split(decisions, parts) if parts is not None else {}
-    reasons = [reasons_for(row, splits.get(row["entry_id"])) for row in decisions.merge(rows, on="entry_id", how="left").to_dict("records")]
-    return decisions.assign(reason_short=[short for short, _ in reasons], reason_full=[full for _, full in reasons])
+    records = decisions.merge(rows, on="entry_id", how="left").to_dict("records")
+    reasons = [reasons_for(row, splits.get(row["entry_id"])) for row in records]
+    points = [[full[0].upper() + full[1:] for _, full in cited_clues(row)[:3]] for row in records]
+    return decisions.assign(reason_short=[short for short, _ in reasons], reason_full=[full for _, full in reasons],
+                            reason_points=points)
