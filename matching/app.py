@@ -24,6 +24,7 @@ import os
 import secrets
 import sys
 import tempfile
+import threading
 import time
 from concurrent.futures import ThreadPoolExecutor
 from contextlib import asynccontextmanager
@@ -32,11 +33,13 @@ from pathlib import Path
 
 import pandas as pd
 from fastapi import FastAPI, File, Form, HTTPException, Request, Response, UploadFile
+from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 from sentence_transformers import SentenceTransformer
 
 from pipeline import decide, load_entries, load_reference  # /app/src is on PYTHONPATH
+from source_lines import locate as locate_lines
 
 # Stage 2, narrative review: code from phase2_model/pipeline, models from phase2_model/models.
 # In the image, docker/Dockerfile puts both in /app/phase2 (PHASE2_DIR). Run from matching/ without Docker,
@@ -53,10 +56,12 @@ _REPO_EXTRACTION = Path(__file__).resolve().parent.parent / "extraction"
 EXTRACTION_DIR = Path(os.getenv("EXTRACTION_DIR", _REPO_EXTRACTION / "src"))
 TIMEKEEPERS_PATH = Path(os.getenv("TIMEKEEPERS_PATH", _REPO_EXTRACTION / "data" / "timekeepers.csv"))
 AWS_REGION = os.getenv("AWS_REGION", "us-west-2")   # Textract and Bedrock
+BILLING_INCREMENT = float(os.getenv("TENTH_INCREMENT", "0.1"))   # the firm bills in tenths of an hour unless set otherwise
 # Testing only: a folder where each upload's Textract and model answers are kept, keyed by the file's contents, so
 # uploading the same file again costs nothing. Unset (the default), every upload is read in a temporary folder that is
 # deleted after, and nothing from it is kept.
 DEV_CACHE = os.getenv("TENTH_DEV_CACHE", "")
+VOICE_BUCKET = os.getenv("TENTH_S3_BUCKET", "")   # voice memos: Amazon Transcribe reads the recording from S3, so it goes here for the job and is deleted after
 sys.path.append(str(EXTRACTION_DIR))   # last, so phase2's review.py keeps its name (see extraction_module)
 log = logging.getLogger("tenth")
 
@@ -65,6 +70,14 @@ RESULTS_DIR = Path(os.getenv("RESULTS_DIR", "results"))
 SETTING = os.getenv("SETTING", "default")
 SKIP_CLIENTS = [c for c in os.getenv("SKIP_CLIENTS", "Firm").split(",") if c]
 FRONTEND_DIR = Path(os.getenv("FRONTEND_DIR", "frontend"))
+# Demo files for the page's "Try a sample" buttons: one of each kind of note (made-up firm data, like the rest).
+SAMPLES_DIR = Path(os.getenv("SAMPLES_DIR", "data/samples"))
+# Model calls running at once across every upload, and how long to wait before trying a busy call again.
+MODEL_CALLS = threading.BoundedSemaphore(int(os.getenv("TENTH_MODEL_CALLS", "4")))
+RETRY_WAITS = (3, 8)
+MAX_SHEET_ROWS = int(os.getenv("TENTH_MAX_SHEET_ROWS", "200"))   # a spreadsheet is read 25 rows at a time by two models, so each row costs time and money
+PROGRESS_LOCK = threading.Lock()
+PROGRESS = {}   # progress_id -> where each upload is (stage, readers, entries found), for the page's reading screen
 # Set TENTH_PASSWORD (App Runner: from Secrets Manager) to put a sign-in prompt in front of the page and the API.
 # The browser asks once and remembers it. Left empty, the service is open: fine on your laptop, not on a public URL.
 PASSWORD = os.getenv("TENTH_PASSWORD", "")
@@ -137,6 +150,8 @@ def load_extractor():
         # A page read with its image can take over a minute, so a call may wait 5 minutes (as in extraction notebook 01)
         runtime = boto3.client("bedrock-runtime", region_name=AWS_REGION, config=Config(
             connect_timeout=20, read_timeout=300, retries={"max_attempts": 4, "mode": "adaptive"}))
+        state["aws"] = ("found" if boto3.Session().get_credentials() else
+                        "none: start the container with AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY and AWS_SESSION_TOKEN set (docker/README.md)")
         state["extractor"] = {"firm": firm_lookup(matter_master), "runtime": runtime,
                               "timekeepers": timekeeper_table(pd.read_csv(TIMEKEEPERS_PATH)),
                               "review": extraction_module("review")}
@@ -170,8 +185,8 @@ async def sign_in(request: Request, call_next):
 async def fresh_page(request: Request, call_next):
     """The page is one file that changes with each release, so browsers check for a new copy instead of showing a stale one."""
     response = await call_next(request)
-    if response.headers.get("content-type", "").startswith("text/html"):
-        response.headers["Cache-Control"] = "no-cache"
+    if response.headers.get("content-type", "").startswith(("text/html", "text/css", "image/svg+xml")):
+        response.headers["Cache-Control"] = "no-cache"   # the theme and the logo too, so a redesign never shows half old
     return response
 
 
@@ -199,7 +214,45 @@ def health():
     return {"status": "ok", "matters": len(state["ref"]["matters"]),
             "narrative_review": r.rewriter_name if r else f"off ({state.get('reviewer_error') or 'not loaded'})",
             "extraction": "Nova Pro, Llama 4 Maverick" if state.get("extractor")
-                          else f"off ({state.get('extractor_error') or 'not loaded'})"}
+                          else f"off ({state.get('extractor_error') or 'not loaded'})",
+            "aws_credentials": state.get("aws", "not checked")}
+
+
+@app.get("/health/models")
+def health_models():
+    """Asks each reading model one tiny question, to say which one can't answer and why. Open it in a browser at
+    /health/models when notes come back read by the backup reader. It is behind the sign-in, since each call costs a little."""
+    x = state.get("extractor")
+    if not x:
+        raise HTTPException(503, f"extraction is not loaded: {state.get('extractor_error') or 'unknown'}")
+    from one_flow import MAVERICK, NOVA_MODELS
+    out = {"region": AWS_REGION, "aws_credentials": state.get("aws", "not checked"), "models": {}}
+    for label, model_id in [("Nova Pro", NOVA_MODELS["Nova Pro"]), ("Llama 4 Maverick", MAVERICK)]:
+        start = time.perf_counter()
+        try:
+            x["runtime"].converse(modelId=model_id, messages=[{"role": "user", "content": [{"text": "Reply with the word ok."}]}],
+                                  inferenceConfig={"maxTokens": 10})
+            out["models"][label] = {"model_id": model_id, "answer": "ok", "seconds": round(time.perf_counter() - start, 1)}
+        except Exception as err:  # noqa: BLE001 - the reason is the point
+            out["models"][label] = {"model_id": model_id, "answer": f"failed: {type(err).__name__}: {err}"[:400]}
+    return out
+
+
+@app.get("/samples")
+def samples():
+    """The demo files for the page's "Try a sample" buttons, in a fixed order: name, what to call it, and what kind of file."""
+    kinds = {"notebook.jpg": ("Handwritten notebook page", "photo"), "sticky-note.jpg": ("Sticky note photo", "photo"),
+             "typed-note.txt": ("Typed note", "doc"), "excel-sheet.xlsx": ("Excel sheet", "sheet"), "csv-export.csv": ("CSV export", "sheet"),
+             "word-log.docx": ("Word time log", "doc"), "pdf-report.pdf": ("PDF report", "doc"), "forwarded-email.eml": ("Forwarded email", "email")}
+    return {"samples": [{"name": n, "label": kinds[n][0], "kind": kinds[n][1]} for n in kinds if (SAMPLES_DIR / n).is_file()]}
+
+
+@app.get("/samples/{name}")
+def sample_file(name: str):
+    path = SAMPLES_DIR / Path(name).name   # only a file in the folder, never a path
+    if not path.is_file():
+        raise HTTPException(404, "no such sample")
+    return FileResponse(path)
 
 
 @app.get("/schema")
@@ -240,7 +293,74 @@ def timekeepers():
     if not x:
         raise HTTPException(503, f"extraction is not loaded: {state.get('extractor_error') or 'unknown'}")
     t = x["timekeepers"]
-    return {"timekeepers": [{"tk_id": i, "name": n} for i, n in zip(t["tk_id"], t["name"])]}
+    return {"timekeepers": [{"tk_id": i, "name": n} for i, n in zip(t["tk_id"], t["name"])], "increment": BILLING_INCREMENT}
+
+
+class ExportRows(BaseModel):
+    columns: list[str]
+    rows: list[list]
+
+
+@app.post("/export.xlsx")
+def export_xlsx(body: ExportRows):
+    """The released time sheet as an Excel file. Matter numbers and CMIDs stay text (leading zeros and ".001" survive),
+    dates are real dates, hours are numbers with one decimal, and the header row stays put while scrolling."""
+    from io import BytesIO
+    from openpyxl import Workbook
+    from openpyxl.styles import Alignment, Font, PatternFill
+    from openpyxl.utils import get_column_letter
+
+    wb = Workbook()
+    ws = wb.active
+    ws.title = "Time entries"
+    ws.append(body.columns)
+    for c in ws[1]:
+        c.font = Font(bold=True)
+        c.fill = PatternFill("solid", fgColor="ECEAF2")
+    text_cols = {"matter", "cmid", "entry_id", "client", "timekeeper"}
+    for row in body.rows:
+        out = []
+        for name, v in zip(body.columns, row):
+            v = "" if v is None else v
+            if name == "work_date" and v:
+                try:
+                    v = date.fromisoformat(str(v)[:10])
+                except ValueError:
+                    pass
+            elif name == "hours" and v != "":
+                try:
+                    v = float(v)
+                except (TypeError, ValueError):
+                    pass
+            elif name in text_cols:
+                v = str(v)
+            out.append(v)
+        ws.append(out)
+    for i, name in enumerate(body.columns, start=1):
+        letter = get_column_letter(i)
+        for cell in ws[letter][1:]:
+            if name == "work_date":
+                cell.number_format = "yyyy-mm-dd"
+            elif name == "hours":
+                cell.number_format = "0.0"
+            elif name in text_cols:
+                cell.number_format = "@"
+            if name in ("narrative", "needs_review"):
+                cell.alignment = Alignment(wrap_text=True, vertical="top")
+        longest = max([len(str(name))] + [len(str(c.value or "")) for c in ws[letter][1:]])
+        ws.column_dimensions[letter].width = min(60, max(10, longest + 2))
+    ws.freeze_panes = "A2"
+    buf = BytesIO()
+    wb.save(buf)
+    return Response(buf.getvalue(), media_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                    headers={"Content-Disposition": 'attachment; filename="tenth-entries.xlsx"'})
+
+
+@app.get("/matters")
+def matters():
+    """The firm's matters, for the page's matter picker and to check a matter number someone types."""
+    m = state["ref"]["matters"]
+    return {"matters": [{"cmid": str(c), "client": cl, "matter": mt} for c, cl, mt in zip(m["cmid"], m["client"], m["matter"])]}
 
 
 # What Tenth noticed about an entry (shown under Why?) and how to fix it where the page has a way (shown in amber).
@@ -249,11 +369,11 @@ FIX_HOURS = "You can fix the hours in the next step."
 FIX_MATTER = "Use Change matter if it's wrong."
 IN_WORDS = {
     "model_unsure": ("Part of the note was unclear.", ""),
-    "readers_disagree": ("Two readings of the note didn't agree.", ""),
+    "readers_disagree": ("Tenth wasn't sure it read this entry right.", ""),
     "low_conf": ("Part of the note was hard to read.", ""),
     "poor_photo": ("The photo was blurry, dark, or small.", ""),
-    "read_by_rules": ("This was read without AI.", ""),
-    "second_reader_only": ("Only one of two readings found this entry.", ""),
+    "read_by_rules": ("Tenth couldn't read this note the usual way, so it used a simpler method. Check it against the note.", ""),
+    "second_reader_only": ("Tenth isn't sure this is its own entry. It may repeat another one.", ""),
     "multiple_entries": ("This may be more than one entry.", ""),
     "hours_10x": ("The hours may be missing a decimal point.", FIX_HOURS),
     "hours_mismatch": ("The hours may be misread.", FIX_HOURS),
@@ -342,11 +462,70 @@ def what_was_noticed(reasons, fallback, diffs=()):
     said = []
     for r in reasons:
         if r == "readers_disagree" and diffs:
-            said.append("Two readings of the note gave different " + " and ".join(
-                f"{f} ({shown(f, a)} and {shown(f, b)})" for f, a, b in diffs) + ".")
+            said.append("Tenth wasn't sure about " + " and ".join(
+                f"the {f} ({shown(f, a)} or {shown(f, b)})" for f, a, b in diffs) + ".")
         else:
             said.append(IN_WORDS.get(r, (fallback.get(r, r) + ".", ""))[0])
     return " ".join(dict.fromkeys(said))
+
+
+AWS_LOGIN_CODES = {"ExpiredToken", "ExpiredTokenException", "InvalidClientTokenId", "UnrecognizedClientException",
+                   "InvalidSignatureException", "SignatureDoesNotMatch", "AccessDenied", "AccessDeniedException", "AuthFailure"}
+AWS_BUSY_CODES = {"ThrottlingException", "ProvisionedThroughputExceededException", "ServiceUnavailableException",
+                  "LimitExceededException"}
+
+
+def reading_error(name, err):
+    """The HTTP error for an upload that couldn't be read. detail.message is for the person: what happened and what they
+    can do. detail.debug is the technical reason, which the page keeps behind a Details link."""
+    from botocore.exceptions import BotoCoreError, ClientError, NoCredentialsError, PartialCredentialsError
+    code = err.response.get("Error", {}).get("Code", "") if isinstance(err, ClientError) else ""
+    hint = ""
+    if isinstance(err, (NoCredentialsError, PartialCredentialsError)) or code in AWS_LOGIN_CODES:
+        status, say = 503, ("Tenth isn't signed in to its reading service, so it can't read this file. "
+                            "Whoever runs Tenth needs to sign it in again.")
+        hint = " | Start the container from a shell where AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY and AWS_SESSION_TOKEN are set (docker/README.md)."
+    elif code in AWS_BUSY_CODES:
+        status, say = 503, "Tenth is busy right now. Try again in a minute."
+    elif isinstance(err, BotoCoreError):
+        status, say = 503, "Tenth lost its connection while reading this. Try again in a minute."
+    elif Path(name).suffix.lower() in (".jpg", ".jpeg", ".png"):
+        status, say = 502, f"Tenth couldn't read {name}. Try again, or retake the photo in better light."
+    else:
+        status, say = 502, f"Tenth couldn't read {name}. Try again, or save it as a Word, Excel, CSV or PDF file and upload that."
+    return HTTPException(status, detail={"message": say, "debug": f"{type(err).__name__}: {err}"[:300] + hint})
+
+
+BUSY = ("Throttl", "TooManyRequests", "ServiceUnavailable", "Timeout", "timed out", "Connection", "ModelNotReady", "InternalServer")
+
+
+def watch_reader(reader, label, errors, name, progress=None, key=""):
+    """Wraps one reader's calls. Only MODEL_CALLS run at once across every upload, a busy answer (throttled, timed out) is
+    tried again after a short wait, and a call that still fails keeps its reason: one_flow.read turns a failed call
+    into read_by_rules and drops the reason, so this notes it in the log and in errors, which /extract returns for the
+    page's Details. progress: where the page's reading screen sees each reader."""
+    answer = reader.answer
+
+    def watched(piece, source, number):
+        if progress is not None:
+            progress["readers"][key] = "reading"
+        for wait in (*RETRY_WAITS, None):
+            with MODEL_CALLS:
+                out = answer(piece, source, number)
+            problem = out.get("error") if isinstance(out, dict) else None
+            if not problem or wait is None or not any(w in problem for w in BUSY):
+                break
+            log.warning("%s was busy reading %s (%s), trying again in %ss", label, name, problem, wait)
+            time.sleep(wait)
+        if problem:
+            errors.append(f"{label}: {problem}")
+            log.warning("%s couldn't read %s: %s", label, name, problem)
+        if progress is not None:
+            progress["readers"][key] = "failed" if problem else "done"
+            with PROGRESS_LOCK:
+                progress["done"] = progress.get("done", 0) + 1   # model calls finished, out of progress["total"] when that is known
+        return out
+    reader.answer = watched
 
 
 def new_readers(folder: Path, use_aws: bool):
@@ -385,7 +564,7 @@ def read_both(content, kind, first, second, disagreements, image=None, **kw):
 
 
 def read_upload(path: Path, input_type: str, reader, folder: Path, common: dict, use_aws: bool, send_anyway: bool,
-                timing: dict):
+                timing: dict, progress: dict):
     """(entries, photo check, email parts) for one uploaded file, read the way extraction/README.md lays out: Textract
     for photos and scans, then one_flow.read for every input type. entries is None when a photo should be retaken."""
     from documents import is_scanned
@@ -399,10 +578,22 @@ def read_upload(path: Path, input_type: str, reader, folder: Path, common: dict,
     def textract(mode):
         if not use_aws:
             raise HTTPException(422, "photos and scans need Textract: send them with use_aws=true")
+        progress["stage"] = "textract"
         start = time.perf_counter()
         run_textract(path, pages_dir, mode, AWS_REGION)
         timing["textract_s"] = round(time.perf_counter() - start, 1)
         return load_pages(pages_dir, path, mode)
+
+    tables_lock = threading.Lock()
+
+    def tables_later():
+        """A scanned sheet's tables and fields (AnalyzeDocument, about 40 times the plain text's price), only when the
+        models can't read it and the rules step in. Both readers may ask at once; Textract is called once."""
+        with tables_lock:
+            start = time.perf_counter()
+            run_textract(path, pages_dir, "sheet", AWS_REGION)
+            timing["tables_s"] = round(time.perf_counter() - start, 1)
+            return load_pages(pages_dir, path, "sheet")
 
     suffix = path.suffix.lower()
     if suffix in PHOTO_TYPES:
@@ -410,15 +601,39 @@ def read_upload(path: Path, input_type: str, reader, folder: Path, common: dict,
         check = json.loads(json.dumps(check_photo(path), default=float)) if kind in ("NOTE", "SHEET") else None
         if check and not check["ok"] and not send_anyway:
             return None, check, None
-        return reader(textract("sheet" if kind == "SHEET" else "note"), kind, image=path, **common), check, None
+        more = dict(rules_content=tables_later) if kind == "SHEET" else {}
+        return reader(textract("note"), kind, image=path, **more, **common), check, None
     if suffix == ".pdf":
         if is_scanned(path):
-            return reader(textract("sheet"), "SHEET", image=path, **common), None, None
+            return reader(textract("note"), "SHEET", image=path, rules_content=tables_later, **common), None, None
         return reader(path, "PDF", **common), None, None
     if suffix in (".docx", ".txt"):
         return reader(path, "DOC", **common), None, None
     if suffix in (".xlsx", ".csv"):
-        return reader(read_spreadsheet(path), "SPREADSHEET", **common), None, None
+        from one_flow import spreadsheet_rows
+        raw = read_spreadsheet(path)
+        rows = len(spreadsheet_rows(raw)[1])
+        if rows > MAX_SHEET_ROWS:   # checked before any model call, so a huge file costs nothing
+            raise HTTPException(422, f"{path.name} has {rows:,} rows, and Tenth reads up to {MAX_SHEET_ROWS:,} at a time. "
+                                     "Split it into smaller files, such as one week each, and add those.")
+        return reader(raw, "SPREADSHEET", **common), None, None
+    from voice import AUDIO_TYPES, recorded_on, transcribe
+    if suffix in AUDIO_TYPES:   # a voice memo: Transcribe writes it out, then the readers read the transcript like an email
+        if not use_aws:
+            raise HTTPException(422, f"{path.name}: voice memos need Amazon Transcribe, so send them with use_aws=true")
+        if not VOICE_BUCKET:
+            raise HTTPException(422, f"{path.name}: voice memos aren't set up on this server yet (TENTH_S3_BUCKET isn't set)")
+        import boto3
+        progress["stage"] = "transcribing"
+        start = time.perf_counter()
+        heard = transcribe(path, folder / "transcript.json", boto3.client("s3", region_name=AWS_REGION),
+                           boto3.client("transcribe", region_name=AWS_REGION), VOICE_BUCKET)
+        timing["transcribe_s"] = round(time.perf_counter() - start, 1)
+        if heard.get("error") or not str(heard.get("text", "")).strip():
+            raise HTTPException(422, f"Tenth couldn't hear any words in {path.name}. "
+                                     + ("Transcribe said: " + heard["error"] if heard.get("error") else "Is it the right recording?"))
+        day = recorded_on(path)   # the day it was recorded, from the file, beats the day it was sent
+        return reader(heard["text"], "VOICE", **({**common, "upload_date": day} if day else common)), None, None
     if suffix == ".eml":
         x = state["extractor"]
         entries, parts = message_entries(read_eml(path, folder / "attachments"), state["ref"], x["timekeepers"],
@@ -430,18 +645,42 @@ def read_upload(path: Path, input_type: str, reader, folder: Path, common: dict,
 @app.post("/extract")
 def extract_upload(file: UploadFile | None = File(None), text: str = Form(""), input_type: str = Form(""),
                    tk_id: str = Form(""), upload_date: str = Form(""), use_aws: bool = Form(True),
-                   send_anyway: bool = Form(False)):
+                   send_anyway: bool = Form(False), progress_id: str = Form("")):
     """Stage 1 extraction for one upload, then matching on its entries (the same run() as /decide).
 
-    file: a photo (.jpg, .png), PDF, Word or text file, spreadsheet (.xlsx, .csv), or email (.eml). Or text: a typed
+    file: a photo (.jpg, .png), PDF, Word or text file, spreadsheet (.xlsx, .csv), email (.eml), or voice memo (.m4a, .mp3,
+    .wav, .ogg, .opus, .webm, .mp4; needs TENTH_S3_BUCKET for Amazon Transcribe). Or text: a typed
     note or text message. input_type: NOTE, SHEET (a time sheet form), or SCREENSHOT for a photo; left empty, a .png
     is a SCREENSHOT and a .jpg a NOTE. tk_id: whose time it is, when the assistant knows. upload_date: the day it was
     sent (default today), for "yesterday" and entries with no date. use_aws=false: no Textract or Bedrock calls, so the
     rule readers read it (free, for testing; photos and scans need AWS). send_anyway: read a photo that failed the
     photo check instead of asking for a retake.
 
-    Returns photo_check (note photos only), entries (each with review, notes, and check_reasons), parts (emails only:
-    how each part was read), and decisions, each with extraction_review and extraction_reasons in words."""
+    Returns photo_check (note photos only), entries (each with review, notes, check_reasons, and evidence: the lines of
+    the file it came from), layout (the lines the models read, for drawing the file with those lines marked; see
+    source_lines.py), parts (emails only: how each part was read), and decisions, each with extraction_review and
+    extraction_reasons in words.
+
+    progress_id: any id the page makes up. While the upload is read, GET /extract/progress/<id> says where it is."""
+    if len(PROGRESS) > 200:
+        PROGRESS.clear()
+    prog = PROGRESS.setdefault(progress_id, {"stage": "starting", "readers": {}, "entries": None}) if progress_id else {"stage": "", "readers": {}}
+    try:
+        return extract_one(file, text, input_type, tk_id, upload_date, use_aws, send_anyway, prog)
+    finally:
+        PROGRESS.pop(progress_id, None)
+
+
+@app.get("/extract/progress/{progress_id}")
+def extract_progress(progress_id: str):
+    """Where one upload is: stage (starting, textract or transcribing, reading, matching), each reader (reading, done, failed), how
+    many entries the readers found, once they have, and done / total: model calls finished out of all of them (total is
+    only known for a spreadsheet, which is read in pieces)."""
+    return PROGRESS.get(progress_id, {"stage": "", "readers": {}, "entries": None})
+
+
+def extract_one(file, text, input_type, tk_id, upload_date, use_aws, send_anyway, prog):
+    """/extract's work for one upload. prog is updated as it goes (see extract_progress)."""
     x = state.get("extractor")
     if not x:
         raise HTTPException(503, f"extraction is not loaded: {state.get('extractor_error') or 'unknown'}")
@@ -457,9 +696,18 @@ def extract_upload(file: UploadFile | None = File(None), text: str = Form(""), i
         folder = Path(tmp)
         folder.mkdir(parents=True, exist_ok=True)
         first, second = new_readers(folder, use_aws)
-        disagreements = {}
-        reader = lambda content, kind, image=None, **kw: read_both(content, kind, first, second, disagreements,
-                                                                   image=image, **kw)
+        read_errors = []
+        watch_reader(first, "Nova Pro", read_errors, name, prog, "first")
+        watch_reader(second, "Llama 4 Maverick", read_errors, name, prog, "second")
+        disagreements, seen, path = {}, {}, None
+
+        def reader(content, kind, image=None, **kw):
+            seen.update(content=content, kind=kind)   # kept for source_lines, which marks where each entry came from
+            prog["stage"] = "reading"
+            if kind == "SPREADSHEET":
+                from one_flow import spreadsheet_pieces
+                prog["total"] = 2 * len(spreadsheet_pieces(content))   # one call per reader for each piece, so the page can show a real bar
+            return read_both(content, kind, first, second, disagreements, image=image, **kw)
         try:
             if file is None:
                 entries, check, parts = reader(text, input_type or "TEXT", source=name, **common), None, None
@@ -467,7 +715,7 @@ def extract_upload(file: UploadFile | None = File(None), text: str = Form(""), i
                 path = folder / name
                 path.write_bytes(data)
                 entries, check, parts = read_upload(path, input_type, reader, folder, {**common, "source": name},
-                                                    use_aws, send_anyway, timing)
+                                                    use_aws, send_anyway, timing, prog)
         except HTTPException:
             raise
         except ValueError as err:   # written for people: an encrypted email, a photo type Textract doesn't take
@@ -475,13 +723,21 @@ def extract_upload(file: UploadFile | None = File(None), text: str = Form(""), i
         except OSError as err:      # a file that isn't what its name says
             log.warning("couldn't open %s: %s", name, err)
             raise HTTPException(422, f"{name} couldn't be opened. It may be damaged, or not the kind of file its name says.")
-        except Exception:  # noqa: BLE001 - the details go to the log; the page gets a message a person can act on
+        except Exception as err:  # noqa: BLE001 - the details go to the log; the page gets a message a person can act on
             log.exception("couldn't read %s", name)
-            raise HTTPException(502, f"Tenth couldn't read {name} right now. Try again in a minute, and if it keeps "
-                                     "happening, let the team know.")
-    timing["reading_s"] = round(time.perf_counter() - start - timing.get("textract_s", 0), 1)   # both models and the checks
+            raise reading_error(name, err)
+        layout = None
+        if entries is not None and len(entries):
+            try:   # which lines each entry came from, for the page to mark on the file; the page works without it
+                entries, layout = locate_lines(entries, name, first, second, path=path, pages_dir=folder / "textract",
+                                               kind=seen.get("kind"),
+                                               spreadsheet=seen["content"] if seen.get("kind") == "SPREADSHEET" else None)
+            except Exception:  # noqa: BLE001
+                log.exception("couldn't find the source lines for %s", name)
+    timing["reading_s"] = round(time.perf_counter() - start - timing.get("textract_s", 0) - timing.get("transcribe_s", 0), 1)   # both models and the checks
     if entries is None:
-        return {"photo_check": check, "entries": [], "parts": parts, "decisions": [], "timing": timing}
+        return {"photo_check": check, "entries": [], "parts": parts, "decisions": [], "layout": None, "timing": timing}
+    prog.update(stage="matching", entries=len(entries))
     review = x["review"]
     entries = review.add_review(entries)
     said = {e: review.split_reasons(c)[0] for e, c in zip(entries["entry_id"], entries["check_reasons"])}
@@ -498,7 +754,7 @@ def extract_upload(file: UploadFile | None = File(None), text: str = Form(""), i
         d["extraction_reasons"] = what_was_noticed(reasons, review.REVIEW_REASONS, diffs)
     print(f"/extract {name}: " + ", ".join(f"{k[:-2]} {v}s" for k, v in timing.items()), flush=True)   # shows in the container log
     return {"photo_check": check, "entries": json.loads(entries.to_json(orient="records", date_format="iso")),
-            "parts": parts, "decisions": decisions, "timing": timing}
+            "parts": parts, "decisions": decisions, "layout": layout, "read_errors": read_errors, "timing": timing}
 
 
 class ReviewBatch(BaseModel):

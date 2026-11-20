@@ -19,5 +19,8 @@ services:
       # Testing only: set TENTH_DEV_CACHE=/cache in your shell to keep each file's AWS answers in ~/.tenth-dev-cache,
       # so uploading the same file again is free. Left unset, nothing from an upload is kept.
       TENTH_DEV_CACHE:
+      # Voice memos: an S3 bucket in AWS_REGION that your credentials can write to. Amazon Transcribe reads each memo from
+      # it; the memo and the job are deleted right after. Left unset, voice memos get a message saying they aren't set up.
+      TENTH_S3_BUCKET:
     volumes:
       - ${HOME}/.tenth-dev-cache:/cache

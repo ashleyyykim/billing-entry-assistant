@@ -1,0 +1,91 @@
+/* Tenth, "Morning plaster" (redesign 2026-11-19). Tokens only; components use the semantic aliases.
+   Old variable names are kept as aliases so every existing rule picks up the new palette. */
+:root {
+  /* Base */
+  --tenth-paper: #F6F4F2;        /* pearl page */
+  --tenth-surface: #FFFFFF;      /* cards */
+  --tenth-surface-alt: #F4F3F6;  /* the one grey tint */
+  --tenth-ink: #2C2A36;          /* text, main buttons */
+  --tenth-slate: #5C5869;        /* muted text, 6.4:1 on pearl */
+  --tenth-edge: #8E899C;         /* text field and select borders, 3.3:1 on white (WCAG 1.4.11) */
+  --tenth-outline: #CDC9D4;      /* outline buttons, decorative borders */
+  --tenth-hover: #B7B2C2;
+  --tenth-line: #E3E0E7;         /* hairlines, card borders */
+  --tenth-row: #EFEDF1;          /* row separators */
+
+  /* Accent: slate violet means "this one, now". No status meaning. */
+  --tenth-dusk: #5B567E;
+  --tenth-dusk-wash: #ECEAF2;
+  --tenth-dusk-lilac: #A9A3C6;   /* logo light, on ink surfaces */
+  --tenth-dusk-text: #5B567E;
+
+  /* Status, reserved: honey waiting / needs you, sage done, clay problem */
+  --tenth-gold: #C9A24E;         /* dots and fills only */
+  --tenth-gold-text: #765608;
+  --tenth-gold-tint: #F5ECD6;
+  --tenth-green: #6E8F78;        /* checks, ripple */
+  --tenth-green-text: #48664F;
+  --tenth-green-tint: #E3ECE6;
+  --tenth-copper: #913C2B;       /* clay */
+  --tenth-copper-tint: #F3E1DC;
+  --tenth-blue: #3D6B91;
+  --tenth-blue-tint: #E1EAF2;
+  --tenth-sun: #FAF0DE;          /* morning glow only */
+
+  /* Semantic aliases: use these in components */
+  --color-bg: var(--tenth-paper);
+  --color-panel: var(--tenth-surface);
+  --color-text: var(--tenth-ink);
+  --color-text-muted: var(--tenth-slate);
+  --color-action: var(--tenth-ink);
+  --color-control-border: var(--tenth-edge);
+  --color-outline: var(--tenth-outline);
+  --color-divider: var(--tenth-line);
+  --color-selected-bg: var(--tenth-dusk-wash);
+  --color-selected-bar: var(--tenth-dusk);
+
+  /* Type */
+  --font-display: 'EB Garamond', Georgia, serif;
+  --font-ui: 'Hanken Grotesk', system-ui, sans-serif;
+  --font-hand: 'Caveat', cursive;
+
+  /* Shape: four radii only, plus round */
+  --radius-sm: 8px;              /* menu items, tabs, icon buttons */
+  --radius-control: 12px;        /* buttons, inputs, menus, toasts */
+  --radius-panel: 16px;          /* cards */
+  --radius-drop: 20px;           /* drop zone, dialogs, the question card */
+  --radius-pill: 999px;
+
+  /* Shadows, three levels */
+  --shadow-rest: 0 1px 2px rgba(44,42,54,.04), 0 8px 24px rgba(91,86,126,.07);
+  --shadow-raised: 0 16px 40px rgba(91,86,126,.12);
+  --shadow-float: 0 16px 48px rgba(44,42,54,.16);
+
+  /* Motion */
+  --ease: cubic-bezier(.2,.7,.2,1);
+
+  /* Focus: 2px slate violet ring, 2px off the edge */
+  --focus-ring: 0 0 0 2px #FFFFFF, 0 0 0 4px var(--tenth-dusk);
+}
+body { margin: 0; background: var(--color-bg); color: var(--color-text); font-family: var(--font-ui); font-size: 16px; line-height: 24px; }
+.tnum, td.num, th.num { font-variant-numeric: tabular-nums; text-align: right; }
+:focus-visible { outline: 2px solid transparent; outline-offset: 2px; box-shadow: var(--focus-ring); }
+
+/* The Tenth mark (Lit glass). The reading motion runs on .tk-busy. */
+.tk-mark { display: inline-block; flex: none; }
+.tk-busy .lg-spin { transform-origin: 48px 48px; animation: lg-spin 8s infinite; }
+.tk-busy .lg-top { animation: lg-top 8s linear infinite; }
+.tk-busy .lg-bot { animation: lg-bot 8s linear infinite; }
+.tk-busy .lg-stream { animation: lg-stream 8s linear infinite; }
+.lg-bot { transform: translateY(23px); }
+.lg-stream { opacity: 0; }
+.tk-busy .lg-bot { transform: translateY(32px); }
+@keyframes lg-spin { 0% { transform: rotate(0deg); } 78% { transform: rotate(0deg); animation-timing-function: cubic-bezier(.6,0,.3,1); } 95%, 100% { transform: rotate(180deg); } }
+@keyframes lg-top { 0% { transform: translateY(0px); } 75%, 100% { transform: translateY(32px); } }
+@keyframes lg-bot { 0% { transform: translateY(32px); } 75%, 100% { transform: translateY(0px); } }
+@keyframes lg-stream { 0%, 1% { opacity: 0; } 4%, 72% { opacity: 1; } 75%, 100% { opacity: 0; } }
+@media (prefers-reduced-motion: reduce) {
+  .tk-busy .lg-spin, .tk-busy .lg-top, .tk-busy .lg-bot, .tk-busy .lg-stream { animation: none; }
+  .tk-busy .lg-bot { transform: translateY(23px); }
+  .tk-busy .lg-stream { opacity: 0; }
+}

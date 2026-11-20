@@ -126,10 +126,13 @@ def read_attachment(path, ref, timekeepers, textract_dir, tk_id, upload_date, so
         return read(pages, "NOTE", image=path, **common), "photo (Textract)"
     if kind == "pdf":
         if is_scanned(path):
-            pages = textract_pages(path, textract_dir, "sheet", run_ocr)
+            # the rules need the tables; a model reader only uses the lines, so it gets the plain text and asks for
+            # the tables only if the rules have to step in
+            pages = textract_pages(path, textract_dir, "sheet" if rules else "note", run_ocr)
             if not pages:
                 return None, "scanned PDF not read yet: run Textract on it (run_ocr=True)"
-            return read(pages, "SHEET", image=path, **common), "scanned PDF (Textract)"
+            more = {} if rules else dict(rules_content=lambda: textract_pages(path, textract_dir, "sheet", run_ocr))
+            return read(pages, "SHEET", image=path, **more, **common), "scanned PDF (Textract)"
         return read(path, "PDF", **common), "typed PDF"
     if kind == "spreadsheet":
         return read(read_spreadsheet(path), "SPREADSHEET", **common), "spreadsheet"

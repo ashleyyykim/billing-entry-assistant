@@ -624,9 +624,11 @@ def combine(first, second, clears=AGREE_CLEARS, dates=False, note_missing=False)
 
 
 def read(content, input_type, ref, timekeepers, model, tk_id=None, tk_name=None, upload_date=None, source=None,
-         year=None, image=None):
+         year=None, image=None, rules_content=None):
     """The shared entry table for one upload, the same way for every input type. The arguments are extract's, plus
     model (a ModelReader) and image (the photo or scan the Textract pages came from, if any).
+    rules_content: a function giving what the rules read instead of content when the model can't. The app reads a
+    scanned sheet with Textract's plain text (the model only uses the lines) and asks for its tables only here.
 
     With model.new_checks:
     - a matter name the model put in "cmid" is moved to "matter", and a CMID written with a dash or without its dot
@@ -647,7 +649,8 @@ def read(content, input_type, ref, timekeepers, model, tk_id=None, tk_name=None,
         if not failed and "empty" in fixes and not answer["entries"] and has_amounts(part, input_type):
             failed = True   # nothing found in text that has amounts in it: the rules read it and a person looks
         if failed:
-            entries = extract(content, input_type, ref, timekeepers, tk_id=tk_id, tk_name=tk_name,
+            entries = extract(rules_content() if rules_content else content, input_type, ref, timekeepers,
+                              tk_id=tk_id, tk_name=tk_name,
                               upload_date=upload_date, source=source, year=year)
             return add_reason(entries, pd.Series(True, index=entries.index), "read_by_rules")
         amounts = ([line["text"] for line in part["lines"]

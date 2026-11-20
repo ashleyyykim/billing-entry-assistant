@@ -1,0 +1,17 @@
+# Edit without rebuilding. Layer this on top of compose.yaml:
+#   docker compose -f docker/compose.yaml -f docker/compose.dev.yaml up
+# (build once first with: docker compose -f docker/compose.yaml up --build)
+#
+# Your local folders replace the copies baked into the image, so:
+#   - frontend (index.html, theme.css): save, then hard refresh the browser (Cmd+Shift+R)
+#   - Python (app.py, matching/src, extraction/src): save, then run
+#       docker compose -f docker/compose.yaml -f docker/compose.dev.yaml restart tenth
+# A new package or a change to pyproject.toml / uv.lock still needs a normal --build.
+# Development only. Use the plain compose.yaml (a real build) to check what will actually ship.
+services:
+  tenth:
+    volumes:
+      - ../matching/frontend:/app/frontend
+      - ../matching/app.py:/app/app.py
+      - ../matching/src:/app/src
+      - ../extraction/src:/app/extraction
