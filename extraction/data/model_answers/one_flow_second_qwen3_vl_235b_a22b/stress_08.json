@@ -1,0 +1,48 @@
+{
+ "model": "qwen.qwen3-vl-235b-a22b",
+ "entries": [
+  {
+   "lines": [
+    1
+   ],
+   "client": "Meridian",
+   "cmid": "",
+   "matter": "",
+   "date": "",
+   "hours_written": "2.5",
+   "hours": 2.5,
+   "narrative": "Worked on",
+   "billable": true,
+   "unsure": ""
+  },
+  {
+   "lines": [
+    1
+   ],
+   "client": "Kestrel Foods",
+   "cmid": "",
+   "matter": "",
+   "date": "",
+   "hours_written": "2.5",
+   "hours": 2.5,
+   "narrative": "Worked on",
+   "billable": true,
+   "unsure": ""
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "text": "Worked on Meridian and Kestrel Foods today, 2.5 hours total"
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 2672,
+  "outputTokens": 150,
+  "totalTokens": 2822
+ },
+ "latency_ms": 2187,
+ "prompt_hash": "8033befe5f"
+}

@@ -1,0 +1,47 @@
+{
+ "model": "qwen.qwen3-vl-235b-a22b",
+ "prompt": "v2",
+ "mode": "tool",
+ "system_prompt": true,
+ "entries": [
+  {
+   "date": "",
+   "hours_written": "half an hour",
+   "hours": 0.5,
+   "unsure": "",
+   "narrative": "w/ Y. Tanakare Keel term sheet",
+   "client": "Bluefin",
+   "cmid": "",
+   "lines": [
+    1,
+    2
+   ]
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "across": 8,
+   "down": 38,
+   "conf": 80,
+   "number_conf": null,
+   "text": "Bluefin - half an hour w/ Y."
+  },
+  {
+   "id": 2,
+   "across": 12,
+   "down": 51,
+   "conf": 73,
+   "number_conf": null,
+   "text": "Tanakare Keel term sheet."
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 7007,
+  "outputTokens": 70,
+  "totalTokens": 7077
+ },
+ "latency_ms": 2179
+}

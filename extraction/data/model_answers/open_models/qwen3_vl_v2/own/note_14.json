@@ -1,0 +1,78 @@
+{
+ "model": "qwen.qwen3-vl-235b-a22b",
+ "prompt": "v2",
+ "mode": "tool",
+ "system_prompt": true,
+ "entries": [
+  {
+   "date": "11/2",
+   "hours_written": ".8",
+   "hours": 0.8,
+   "unsure": "",
+   "narrative": "revised Fund IV LPA",
+   "client": "Ridgewater",
+   "cmid": "",
+   "lines": [
+    1
+   ]
+  },
+  {
+   "date": "11/2",
+   "hours_written": "1.5",
+   "hours": 1.5,
+   "unsure": "",
+   "narrative": "Fund III sub docs",
+   "client": "Quarry Lane",
+   "cmid": "",
+   "lines": [
+    2
+   ]
+  },
+  {
+   "date": "11/2",
+   "hours_written": ".3",
+   "hours": 0.3,
+   "unsure": "",
+   "narrative": "call w/ L. Moretti",
+   "client": "Ridgeview",
+   "cmid": "",
+   "lines": [
+    3
+   ]
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "across": 6,
+   "down": 29,
+   "conf": 67,
+   "number_conf": 67,
+   "text": "11/2 Ridgewater .8 revised Fund IV LPA , then"
+  },
+  {
+   "id": 2,
+   "across": 6,
+   "down": 35,
+   "conf": 68,
+   "number_conf": 95,
+   "text": "Quarry Lane 1.5 Fund III sub docs and"
+  },
+  {
+   "id": 3,
+   "across": 6,
+   "down": 41,
+   "conf": 59,
+   "number_conf": 61,
+   "text": "Ridgeview .3 call w/ L. Moretti"
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 7047,
+  "outputTokens": 189,
+  "totalTokens": 7236
+ },
+ "latency_ms": 4502
+}

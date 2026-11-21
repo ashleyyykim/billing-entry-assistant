@@ -1,0 +1,34 @@
+{
+ "model": "qwen.qwen3-vl-235b-a22b",
+ "entries": [
+  {
+   "lines": [
+    1
+   ],
+   "client": "Halvorsen",
+   "cmid": "",
+   "matter": "",
+   "date": "",
+   "hours_written": ".4",
+   "hours": 0.4,
+   "narrative": "lender call with Halvorsen CEO",
+   "billable": true,
+   "unsure": ""
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "text": "Halvorsen lender call with Halvorsen CEO .4"
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 2668,
+  "outputTokens": 89,
+  "totalTokens": 2757
+ },
+ "latency_ms": 1620,
+ "prompt_hash": "8033befe5f"
+}

@@ -1,0 +1,165 @@
+{
+ "model": "qwen.qwen3-vl-235b-a22b",
+ "entries": [
+  {
+   "lines": [
+    3,
+    4,
+    5
+   ],
+   "client": "Aster & Vale",
+   "cmid": "3455.002",
+   "matter": "Board & Governance",
+   "date": "10/27/26",
+   "hours_written": "0.50",
+   "hours": 0.5,
+   "narrative": "Prepare board minutes for October meeting",
+   "billable": true,
+   "unsure": "",
+   "timekeeper": "E. Brandt"
+  },
+  {
+   "lines": [
+    3,
+    4,
+    6
+   ],
+   "client": "Aster & Vale",
+   "cmid": "3455.002",
+   "matter": "Board & Governance",
+   "date": "10/29/26",
+   "hours_written": "0.30",
+   "hours": 0.3,
+   "narrative": "Revise board consent re officer appointments",
+   "billable": true,
+   "unsure": "",
+   "timekeeper": "E. Brandt"
+  },
+  {
+   "lines": [
+    3,
+    8,
+    9
+   ],
+   "client": "Copperline Networks",
+   "cmid": "7633.002",
+   "matter": "Series A Financing",
+   "date": "10/26/26",
+   "hours_written": "1.40",
+   "hours": 1.4,
+   "narrative": "Draft stock purchase agreement",
+   "billable": true,
+   "unsure": "",
+   "timekeeper": "E. Brandt"
+  },
+  {
+   "lines": [
+    3,
+    8,
+    10
+   ],
+   "client": "Copperline Networks",
+   "cmid": "7633.002",
+   "matter": "Series A Financing",
+   "date": "10/28/26",
+   "hours_written": "0.60",
+   "hours": 0.6,
+   "narrative": "Call w/ lead investor counsel re closing conditions",
+   "billable": true,
+   "unsure": "",
+   "timekeeper": "E. Brandt"
+  },
+  {
+   "lines": [
+    3,
+    12,
+    13
+   ],
+   "client": "Firm",
+   "cmid": "1111.001",
+   "matter": "Admin",
+   "date": "10/30/26",
+   "hours_written": "0.20",
+   "hours": 0.2,
+   "narrative": "Time entry and billing admin",
+   "billable": true,
+   "unsure": "",
+   "timekeeper": "E. Brandt"
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "text": "PRE-BILL WORKSHEET"
+  },
+  {
+   "id": 2,
+   "text": "Billing period: October 2026"
+  },
+  {
+   "id": 3,
+   "text": "Timekeeper: E. Brandt"
+  },
+  {
+   "id": 4,
+   "text": "3455.002 Aster & Vale - Board & Governance"
+  },
+  {
+   "id": 5,
+   "text": "10/27/26 | EB | 0.50 | Prepare board minutes for October meeting"
+  },
+  {
+   "id": 6,
+   "text": "10/29/26 | EB | 0.30 | Revise board consent re officer appointments"
+  },
+  {
+   "id": 7,
+   "text": "0.80 | Matter total"
+  },
+  {
+   "id": 8,
+   "text": "7633.002 Copperline Networks - Series A Financing"
+  },
+  {
+   "id": 9,
+   "text": "10/26/26 | EB | 1.40 | Draft stock purchase agreement"
+  },
+  {
+   "id": 10,
+   "text": "10/28/26 | EB | 0.60 | Call w/ lead investor counsel re closing conditions"
+  },
+  {
+   "id": 11,
+   "text": "2.00 | Matter total"
+  },
+  {
+   "id": 12,
+   "text": "1111.001 Firm - Admin"
+  },
+  {
+   "id": 13,
+   "text": "10/30/26 | EB | 0.20 | Time entry and billing admin"
+  },
+  {
+   "id": 14,
+   "text": "0.20 | Matter total"
+  },
+  {
+   "id": 15,
+   "text": "Total hours: 3.0"
+  },
+  {
+   "id": 16,
+   "text": "Page 1 of 1"
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 4326,
+  "outputTokens": 559,
+  "totalTokens": 4885
+ },
+ "latency_ms": 15521,
+ "prompt_hash": "c83a23abef"
+}

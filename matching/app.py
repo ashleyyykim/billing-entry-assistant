@@ -18,15 +18,17 @@ import base64
 import contextlib
 import hashlib
 import importlib.util
+import io
 import json
 import logging
 import os
+import re
 import secrets
 import sys
 import tempfile
 import threading
 import time
-from concurrent.futures import ThreadPoolExecutor
+import types
 from contextlib import asynccontextmanager
 from datetime import date
 from pathlib import Path
@@ -38,6 +40,7 @@ from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 from sentence_transformers import SentenceTransformer
 
+import ops_log
 from pipeline import decide, load_entries, load_reference  # /app/src is on PYTHONPATH
 from source_lines import locate as locate_lines
 
@@ -75,7 +78,17 @@ SAMPLES_DIR = Path(os.getenv("SAMPLES_DIR", "data/samples"))
 # Model calls running at once across every upload, and how long to wait before trying a busy call again.
 MODEL_CALLS = threading.BoundedSemaphore(int(os.getenv("TENTH_MODEL_CALLS", "4")))
 RETRY_WAITS = (3, 8)
-MAX_SHEET_ROWS = int(os.getenv("TENTH_MAX_SHEET_ROWS", "200"))   # a spreadsheet is read 25 rows at a time by two models, so each row costs time and money
+UPLOAD_SECONDS = int(os.getenv("TENTH_UPLOAD_SECONDS", "300"))   # after this, pieces with no answer count as failed
+LOG_FILE_NAMES = os.getenv("TENTH_LOG_FILE_NAMES", "") == "1"   # name uploads (and show tracebacks) in the container log;
+                                                                 # off by default, since a file name can name a client
+JOB_KEEP_SECONDS = 600   # a background read's result is kept this long after it finishes, for the page to collect
+# The two reading models on Bedrock. Left unset, Nova Pro and Qwen3 VL (one_flow's defaults). Set them to swap a
+# model that is being retired, such as TENTH_MODEL_FIRST=us.amazon.nova-2-lite-v1:0, after rerunning the benchmark.
+MODEL_FIRST = os.getenv("TENTH_MODEL_FIRST", "")
+MODEL_SECOND = os.getenv("TENTH_MODEL_SECOND", "")
+MODEL_NAMES = {"us.amazon.nova-pro-v1:0": "Nova Pro", "us.amazon.nova-2-lite-v1:0": "Nova 2 Lite",
+               "us.meta.llama4-maverick-17b-instruct-v1:0": "Llama 4 Maverick", "qwen.qwen3-vl-235b-a22b": "Qwen3 VL"}
+MAX_SHEET_ROWS = int(os.getenv("TENTH_MAX_SHEET_ROWS", "1000"))   # code reads the rows from a column map (2 model calls), so the page and matching set the limit
 PROGRESS_LOCK = threading.Lock()
 PROGRESS = {}   # progress_id -> where each upload is (stage, readers, entries found), for the page's reading screen
 # Set TENTH_PASSWORD (App Runner: from Secrets Manager) to put a sign-in prompt in front of the page and the API.
@@ -147,17 +160,60 @@ def load_extractor():
         from intake import timekeeper_table
         from one_flow import firm_lookup
         matter_master = pd.read_excel(DATA_PATH, sheet_name="Matter Master", dtype=str)
-        # A page read with its image can take over a minute, so a call may wait 5 minutes (as in extraction notebook 01)
+        # A page read with its image can take over a minute. A call that takes longer than 90 seconds is tried once
+        # more; watch_reader adds its own retries for busy answers, and UPLOAD_SECONDS caps the whole upload.
         runtime = boto3.client("bedrock-runtime", region_name=AWS_REGION, config=Config(
-            connect_timeout=20, read_timeout=300, retries={"max_attempts": 4, "mode": "adaptive"}))
+            connect_timeout=20, read_timeout=90, retries={"max_attempts": 2, "mode": "adaptive"}))
         state["aws"] = ("found" if boto3.Session().get_credentials() else
                         "none: start the container with AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY and AWS_SESSION_TOKEN set (docker/README.md)")
+        from one_flow import NOVA_MODELS, SECOND_MODEL
+        models = {"first": MODEL_FIRST or NOVA_MODELS["Nova Pro"], "second": MODEL_SECOND or SECOND_MODEL}
         state["extractor"] = {"firm": firm_lookup(matter_master), "runtime": runtime,
                               "timekeepers": timekeeper_table(pd.read_csv(TIMEKEEPERS_PATH)),
-                              "review": extraction_module("review")}
+                              "review": extraction_module("review"), "models": models,
+                              "fingerprint": prompt_fingerprint(models)}
+        state["model_lifecycle"] = {model_id: "checking" for model_id in models.values()}
+        threading.Thread(target=check_lifecycle, args=(list(models.values()),), daemon=True).start()
     except Exception as err:  # noqa: BLE001 - report any load failure on /health instead of crashing the service
         state["extractor_error"] = f"{type(err).__name__}: {err}"
         log.warning("extraction not loaded: %s", state["extractor_error"])
+
+
+def prompt_fingerprint(models):
+    """A short fingerprint of the reading models and the files that hold their prompts. TENTH_DEV_CACHE keeps answers
+    under it, so a new model or prompt is never handed an old answer."""
+    text = "|".join(models.values()) + "".join((EXTRACTION_DIR / name).read_text()
+                                               for name in ("prompts.py", "prompts_v6.py", "column_map.py",
+                                                            "model_readers.py", "open_models.py"))
+    return hashlib.sha256(text.encode()).hexdigest()[:8]
+
+
+def model_name(model_id):
+    return MODEL_NAMES.get(model_id, model_id)
+
+
+def check_lifecycle(model_ids):
+    """Asks Bedrock (a free call) whether each reading model is ACTIVE or LEGACY, for /health. A Legacy model is being
+    retired: new accounts can't use it, an account that hasn't called it for 15 days may lose access, and on its end
+    date every call fails, so every upload would be read by the rules. Runs in the background at startup; a failure
+    is reported, never raised."""
+    try:
+        import boto3
+        from botocore.config import Config
+        client = boto3.client("bedrock", region_name=AWS_REGION,
+                              config=Config(connect_timeout=5, read_timeout=10, retries={"max_attempts": 1}))
+    except Exception as err:  # noqa: BLE001
+        state["model_lifecycle"] = {m: f"not checked: {type(err).__name__}" for m in model_ids}
+        return
+    for model_id in model_ids:
+        base = re.sub(r"^(us|eu|apac|global|us-gov)\.", "", model_id)   # a cross-Region profile is looked up by its model
+        try:
+            status = client.get_foundation_model(modelIdentifier=base)["modelDetails"]["modelLifecycle"]["status"]
+        except Exception as err:  # noqa: BLE001 - the reason is the point
+            status = f"not checked: {type(err).__name__}: {err}"[:200]
+        state["model_lifecycle"][model_id] = status
+        if status != "ACTIVE":
+            log.warning("%s lifecycle is %s; see /health", model_name(model_id), status)
 
 
 app = FastAPI(title="Tenth", lifespan=lifespan)
@@ -213,8 +269,9 @@ def health():
     r = state.get("reviewer")
     return {"status": "ok", "matters": len(state["ref"]["matters"]),
             "narrative_review": r.rewriter_name if r else f"off ({state.get('reviewer_error') or 'not loaded'})",
-            "extraction": "Nova Pro, Llama 4 Maverick" if state.get("extractor")
+            "extraction": ", ".join(model_name(m) for m in state["extractor"]["models"].values()) if state.get("extractor")
                           else f"off ({state.get('extractor_error') or 'not loaded'})",
+            "model_lifecycle": {model_name(m): s for m, s in state.get("model_lifecycle", {}).items()},
             "aws_credentials": state.get("aws", "not checked")}
 
 
@@ -225,9 +282,9 @@ def health_models():
     x = state.get("extractor")
     if not x:
         raise HTTPException(503, f"extraction is not loaded: {state.get('extractor_error') or 'unknown'}")
-    from one_flow import MAVERICK, NOVA_MODELS
     out = {"region": AWS_REGION, "aws_credentials": state.get("aws", "not checked"), "models": {}}
-    for label, model_id in [("Nova Pro", NOVA_MODELS["Nova Pro"]), ("Llama 4 Maverick", MAVERICK)]:
+    for model_id in x["models"].values():
+        label = model_name(model_id)
         start = time.perf_counter()
         try:
             x["runtime"].converse(modelId=model_id, messages=[{"role": "user", "content": [{"text": "Reply with the word ok."}]}],
@@ -294,6 +351,18 @@ def timekeepers():
         raise HTTPException(503, f"extraction is not loaded: {state.get('extractor_error') or 'unknown'}")
     t = x["timekeepers"]
     return {"timekeepers": [{"tk_id": i, "name": n} for i, n in zip(t["tk_id"], t["name"])], "increment": BILLING_INCREMENT}
+
+
+@app.post("/check-batch")
+def check_batch(batch: Batch):
+    """Checks across every entry in the workspace, which one upload alone can't make: the same time entered twice
+    (possible_duplicate) and a timekeeper's day over 14 hours (day_over_max). The page sends entry_id, tk_id,
+    work_date, hours, cmid, client, and narrative for each entry after every upload, and gets back
+    {"flags": {entry_id: [reasons]}} for the ones flagged and {"repeats": {entry_id: [the entries it may repeat]}}."""
+    if not state.get("extractor"):
+        raise HTTPException(503, f"extraction is not loaded: {state.get('extractor_error') or 'unknown'}")
+    from intake import batch_flags, batch_repeats
+    return {"flags": batch_flags(batch.entries), "repeats": batch_repeats(batch.entries)}
 
 
 class ExportRows(BaseModel):
@@ -392,14 +461,17 @@ IN_WORDS = {
     "unknown_tk": ("No timekeeper was found.", ""),   # the page asks once for the whole upload (missing_tk), not per entry
     "unused_hours": ("The note has hours that no entry uses.", ""),
     "rows_unread": ("The spreadsheet has rows that no entry uses.", ""),
+    "columns_unsure": ("Tenth wasn't sure which column of the spreadsheet holds what.", ""),
     "answer_cut_off": ("The note was too long to read in one go.", ""),
     "possible_duplicate": ("This may repeat another entry.", ""),
     "not_billable": ("It's marked not billable or no charge.", ""),
+    "hours_reused": ("The same hours were given to more than one entry.", FIX_HOURS),
+    "no_narrative": ("No description of the work was found.", ""),
 }
 # What part of the entry each reason is about, for the amber "Check ..." line
 SOME_PART = "the hours, date, and client against the note"
 CHECK_WHAT = {
-    **dict.fromkeys(["hours_10x", "hours_mismatch", "not_on_page", "no_hours", "day_over_max"], "the hours"),
+    **dict.fromkeys(["hours_10x", "hours_mismatch", "not_on_page", "no_hours", "day_over_max", "hours_reused"], "the hours"),
     **dict.fromkeys(["no_date", "date_gap", "date_weekday"], "the date"),
     **dict.fromkeys(["client_unknown", "client_ambiguous", "client_cmid_mismatch", "client_gap", "cmid_unknown", "cmid_shape"],
                     "the matter"),
@@ -422,10 +494,11 @@ def shown(field, value):
     return str(value)
 
 
-def differences(a, b):
+def differences(a, b, narratives=False):
     """The fields two readings of one entry disagree on, as (field, first reading, second reading), compared the way
-    model_readers.cross_check compares them."""
+    model_readers.cross_check compares them. narratives: the description too (one_flow's narrative_agree fix)."""
     from grade import same_cmid, similar
+    from model_readers import same_narrative
     out = []
     if not (pd.notna(a["hours"]) and pd.notna(b["hours"]) and round(a["hours"], 2) == round(b["hours"], 2)):
         out.append(("hours", a["hours"], b["hours"]))
@@ -435,6 +508,8 @@ def differences(a, b):
         out.append(("matter number", a["cmid"], b["cmid"]))
     if pd.notna(a["work_date"]) and pd.notna(b["work_date"]) and pd.Timestamp(a["work_date"]) != pd.Timestamp(b["work_date"]):
         out.append(("date", a["work_date"], b["work_date"]))
+    if narratives and not same_narrative(a, b):
+        out.append(("description", a["narrative"], b["narrative"]))
     return out
 
 
@@ -475,6 +550,29 @@ AWS_BUSY_CODES = {"ThrottlingException", "ProvisionedThroughputExceededException
                   "LimitExceededException"}
 
 
+def logged(name, upload=None):
+    """How the container log names an upload: its id and file type ("upload 3f2a... (.jpg)"), or its file name with
+    TENTH_LOG_FILE_NAMES=1."""
+    if LOG_FILE_NAMES:
+        return name
+    return f"upload {upload or '?'} ({Path(str(name)).suffix.lower() or 'text'})"
+
+
+def error_said(problem, name):
+    """An error message for the container log, with the file name taken out unless TENTH_LOG_FILE_NAMES=1."""
+    return problem if LOG_FILE_NAMES else str(problem).replace(str(name), "<file>")
+
+
+def log_failure(what, name, upload, err):
+    """A failed step in the container log: with TENTH_LOG_FILE_NAMES=1 the traceback, else the error's type and message
+    with the file name taken out."""
+    if LOG_FILE_NAMES:
+        log.exception("%s %s", what, name)
+    else:
+        log.error("%s %s: %s: %s", what, logged(name, upload), type(err).__name__,
+                  str(err).replace(str(name), "<file>")[:300])
+
+
 def reading_error(name, err):
     """The HTTP error for an upload that couldn't be read. detail.message is for the person: what happened and what they
     can do. detail.debug is the technical reason, which the page keeps behind a Details link."""
@@ -499,27 +597,35 @@ def reading_error(name, err):
 BUSY = ("Throttl", "TooManyRequests", "ServiceUnavailable", "Timeout", "timed out", "Connection", "ModelNotReady", "InternalServer")
 
 
-def watch_reader(reader, label, errors, name, progress=None, key=""):
+def watch_reader(reader, label, errors, name, progress=None, key="", deadline=None, upload=None):
     """Wraps one reader's calls. Only MODEL_CALLS run at once across every upload, a busy answer (throttled, timed out) is
     tried again after a short wait, and a call that still fails keeps its reason: one_flow.read turns a failed call
     into read_by_rules and drops the reason, so this notes it in the log and in errors, which /extract returns for the
-    page's Details. progress: where the page's reading screen sees each reader."""
+    page's Details. progress: where the page's reading screen sees each reader. deadline: a time.monotonic() value
+    after which a busy call isn't tried again. upload: the upload's id for the operations log (ops_log), which gets a
+    line for each call."""
     answer = reader.answer
 
     def watched(piece, source, number):
         if progress is not None:
             progress["readers"][key] = "reading"
+        began, retries = time.perf_counter(), -1
         for wait in (*RETRY_WAITS, None):
+            retries += 1
             with MODEL_CALLS:
                 out = answer(piece, source, number)
             problem = out.get("error") if isinstance(out, dict) else None
             if not problem or wait is None or not any(w in problem for w in BUSY):
                 break
-            log.warning("%s was busy reading %s (%s), trying again in %ss", label, name, problem, wait)
+            if deadline is not None and time.monotonic() + wait > deadline:
+                break
+            log.warning("%s was busy reading %s (%s), trying again in %ss", label, logged(name, upload),
+                        error_said(problem, name), wait)
             time.sleep(wait)
         if problem:
             errors.append(f"{label}: {problem}")
-            log.warning("%s couldn't read %s: %s", label, name, problem)
+            log.warning("%s couldn't read %s: %s", label, logged(name, upload), error_said(problem, name))
+        ops_log.write(ops_log.call_line(upload, key, piece, number, out, time.perf_counter() - began, retries))
         if progress is not None:
             progress["readers"][key] = "failed" if problem else "done"
             with PROGRESS_LOCK:
@@ -529,38 +635,35 @@ def watch_reader(reader, label, errors, name, progress=None, key=""):
 
 
 def new_readers(folder: Path, use_aws: bool):
-    """Nova Pro and Llama 4 Maverick (the second reader), as extraction notebook 01 sets them up but each on its own, so
-    the app can run them side by side (one_flow.read runs the second only after the first) and see where they disagree.
+    """The two reading models (TENTH_MODEL_FIRST and TENTH_MODEL_SECOND; Nova Pro and Qwen3 VL by default), set up
+    as extraction notebook 01 sets them up but given to one_flow.read_pair apart, so the app can see where they disagree.
     Their answers and page images go in this request's folder, which is deleted after, so nothing from an upload is kept.
     use_aws=False: no Bedrock calls, so the rule readers read the upload (every entry gets read_by_rules)."""
-    from one_flow import MAVERICK, ModelReader
+    from one_flow import ModelReader
     x = state["extractor"]
     common = dict(**x["firm"], runtime=x["runtime"] if use_aws else None, catch_errors=True)
-    first = ModelReader(**common, answers_dir=folder / "first", images_dir=folder / "pages_first")
-    second = ModelReader(**common, answers_dir=folder / "second", images_dir=folder / "pages_second", model_id=MAVERICK,
-                         force_tool=False, open_note_prompt=True)
+    first = ModelReader(**common, answers_dir=folder / "first", images_dir=folder / "pages_first",
+                        model_id=x["models"]["first"])
+    second = ModelReader(**common, answers_dir=folder / "second", images_dir=folder / "pages_second",
+                         model_id=x["models"]["second"], force_tool=False, open_note_prompt=True)
     return first, second
 
 
 def read_both(content, kind, first, second, disagreements, image=None, **kw):
-    """one_flow.read with both readers at once, then one_flow.combine the way read does. disagreements gets, for each
-    entry the readers read differently, the fields they differ on (differences)."""
+    """one_flow.read_pair: both readers at once, a piece one fails on taken from the other, and the rules only for
+    pieces both fail on. disagreements gets, for each entry the readers read differently, the fields they differ on
+    (differences)."""
     from grade import align
-    from one_flow import combine, read
+    from one_flow import read_pair
     x = state["extractor"]
-    run = lambda model: read(content, kind, state["ref"], x["timekeepers"], model, image=image, **kw)
-    with ThreadPoolExecutor(max_workers=2) as pool:
-        ones, twos = (job.result() for job in [pool.submit(run, first), pool.submit(run, second)])
-    if len(ones) and ones["check_reasons"].str.contains("read_by_rules").all():
-        return ones   # read stops here when the first reader has no answer, without asking the second
-    fixes = set(first.fixes or ())
+    entries, ones, twos = read_pair(content, kind, state["ref"], x["timekeepers"], first, second, image=image, **kw)
     if len(ones) and len(twos):
         for i, j in align(ones, twos):
             if i is not None and j is not None:
-                found = differences(ones.iloc[i], twos.iloc[j])
+                found = differences(ones.iloc[i], twos.iloc[j], "narrative_agree" in (first.fixes or ()))
                 if found:
                     disagreements[ones.iloc[i]["entry_id"]] = found
-    return combine(ones, twos, dates="date_agree" in fixes, note_missing="one_reader" in fixes)
+    return entries
 
 
 def read_upload(path: Path, input_type: str, reader, folder: Path, common: dict, use_aws: bool, send_anyway: bool,
@@ -645,7 +748,7 @@ def read_upload(path: Path, input_type: str, reader, folder: Path, common: dict,
 @app.post("/extract")
 def extract_upload(file: UploadFile | None = File(None), text: str = Form(""), input_type: str = Form(""),
                    tk_id: str = Form(""), upload_date: str = Form(""), use_aws: bool = Form(True),
-                   send_anyway: bool = Form(False), progress_id: str = Form("")):
+                   send_anyway: bool = Form(False), progress_id: str = Form(""), wait: bool = Form(True)):
     """Stage 1 extraction for one upload, then matching on its entries (the same run() as /decide).
 
     file: a photo (.jpg, .png), PDF, Word or text file, spreadsheet (.xlsx, .csv), email (.eml), or voice memo (.m4a, .mp3,
@@ -661,26 +764,85 @@ def extract_upload(file: UploadFile | None = File(None), text: str = Form(""), i
     source_lines.py), parts (emails only: how each part was read), and decisions, each with extraction_review and
     extraction_reasons in words.
 
-    progress_id: any id the page makes up. While the upload is read, GET /extract/progress/<id> says where it is."""
-    if len(PROGRESS) > 200:
-        PROGRESS.clear()
-    prog = PROGRESS.setdefault(progress_id, {"stage": "starting", "readers": {}, "entries": None}) if progress_id else {"stage": "", "readers": {}}
+    progress_id: any id the page makes up. While the upload is read, GET /extract/progress/<id> says where it is.
+    wait=false (submit, then poll): the answer is {"job": progress_id} at once, the upload is read in the background,
+    and GET /extract/progress/<id>?result=true gives the result (or the error) once it is finished. No request then
+    stays open while the models read, so a load balancer's idle timeout doesn't apply. Jobs live in this process:
+    with more than one copy of the service, the polls must reach the same copy (sticky sessions)."""
+    forget_old_jobs()
+    job = progress_id or ops_log.new_upload_id()
+    kept = types.SimpleNamespace(filename=file.filename, file=io.BytesIO(file.file.read())) if file is not None else None
+    args = (kept, text, input_type, tk_id, upload_date, use_aws, send_anyway)
+    PROGRESS[job] = {"stage": "starting", "readers": {}, "entries": None, "finished": False, "started": time.time()}
+    if wait:
+        try:
+            return read_job(job, *args)
+        finally:
+            PROGRESS.pop(job, None)
+    threading.Thread(target=keep_result, args=(job, *args), daemon=True).start()
+    return Response(json.dumps({"job": job}), status_code=202, media_type="application/json")
+
+
+def read_job(job, file, text, input_type, tk_id, upload_date, use_aws, send_anyway):
+    """extract_one for one upload, with its line in the operations log (ops_log)."""
+    upload, began = ops_log.new_upload_id(), time.perf_counter()
+    suffix = Path(file.filename or "").suffix.lower() if file is not None else "typed"
+    status, result = 500, None
     try:
-        return extract_one(file, text, input_type, tk_id, upload_date, use_aws, send_anyway, prog)
+        result = extract_one(file, text, input_type, tk_id, upload_date, use_aws, send_anyway, PROGRESS[job], upload)
+        status = 200
+        return result
+    except HTTPException as err:
+        status = err.status_code
+        raise
     finally:
-        PROGRESS.pop(progress_id, None)
+        ops_log.write(ops_log.upload_line(upload, suffix, use_aws, status, time.perf_counter() - began, result))
+
+
+def keep_result(job, *args):
+    """read_job in the background: its result, or the error /extract would have answered with, kept for the poll."""
+    prog = PROGRESS[job]
+    try:
+        prog["result"] = read_job(job, *args)
+    except HTTPException as err:
+        prog["error"] = {"status": err.status_code, "detail": err.detail}
+    except Exception as err:  # noqa: BLE001 - kept for the page, like any other failed read
+        log.exception("background read failed")
+        failed = reading_error(Path(getattr(args[0], "filename", None) or "upload").name, err)
+        prog["error"] = {"status": failed.status_code, "detail": failed.detail}
+    prog.update(finished=True, finished_at=time.time())
+
+
+def forget_old_jobs():
+    """Drops jobs finished more than JOB_KEEP_SECONDS ago (the page took their result, or left), and any job older
+    than an upload can take."""
+    now = time.time()
+    for job, prog in list(PROGRESS.items()):
+        done_long_ago = prog.get("finished") and now - prog.get("finished_at", now) > JOB_KEEP_SECONDS
+        stuck = now - prog.get("started", now) > UPLOAD_SECONDS + JOB_KEEP_SECONDS
+        if done_long_ago or stuck:
+            PROGRESS.pop(job, None)
 
 
 @app.get("/extract/progress/{progress_id}")
-def extract_progress(progress_id: str):
+def extract_progress(progress_id: str, result: bool = False):
     """Where one upload is: stage (starting, textract or transcribing, reading, matching), each reader (reading, done, failed), how
     many entries the readers found, once they have, and done / total: model calls finished out of all of them (total is
-    only known for a spreadsheet, which is read in pieces)."""
-    return PROGRESS.get(progress_id, {"stage": "", "readers": {}, "entries": None})
+    only known for a spreadsheet, which is read in pieces). known: false when this copy of the service has no such
+    upload (never sent, forgotten, or the service restarted). finished: true once a job sent with wait=false is done;
+    then result=true also gives "result" (what /extract would have returned) or "error" ({status, detail})."""
+    prog = PROGRESS.get(progress_id)
+    if prog is None:
+        return {"stage": "", "readers": {}, "entries": None, "known": False, "finished": False}
+    shown = {k: v for k, v in prog.items() if k not in ("result", "error", "started", "finished_at")}
+    if result and prog.get("finished"):
+        shown.update({k: prog[k] for k in ("result", "error") if k in prog})
+    return {**shown, "known": True}
 
 
-def extract_one(file, text, input_type, tk_id, upload_date, use_aws, send_anyway, prog):
-    """/extract's work for one upload. prog is updated as it goes (see extract_progress)."""
+def extract_one(file, text, input_type, tk_id, upload_date, use_aws, send_anyway, prog, upload=None):
+    """/extract's work for one upload. prog is updated as it goes (see extract_progress). upload: its id in the
+    operations log."""
     x = state.get("extractor")
     if not x:
         raise HTTPException(503, f"extraction is not loaded: {state.get('extractor_error') or 'unknown'}")
@@ -691,23 +853,24 @@ def extract_one(file, text, input_type, tk_id, upload_date, use_aws, send_anyway
     name = Path(file.filename or "upload").name if file is not None else "typed"
     timing, start = {}, time.perf_counter()
     data = file.file.read() if file is not None else text.encode()
-    keep = Path(DEV_CACHE) / hashlib.sha256(data).hexdigest()[:16] if DEV_CACHE else None
+    keep = Path(DEV_CACHE) / f"{hashlib.sha256(data).hexdigest()[:16]}-{x['fingerprint']}" if DEV_CACHE else None
     with contextlib.nullcontext(str(keep)) if keep else tempfile.TemporaryDirectory(prefix="tenth-") as tmp:
         folder = Path(tmp)
         folder.mkdir(parents=True, exist_ok=True)
         first, second = new_readers(folder, use_aws)
         read_errors = []
-        watch_reader(first, "Nova Pro", read_errors, name, prog, "first")
-        watch_reader(second, "Llama 4 Maverick", read_errors, name, prog, "second")
+        deadline = time.monotonic() + UPLOAD_SECONDS
+        watch_reader(first, model_name(first.model_id), read_errors, name, prog, "first", deadline, upload)
+        watch_reader(second, model_name(second.model_id), read_errors, name, prog, "second", deadline, upload)
         disagreements, seen, path = {}, {}, None
 
         def reader(content, kind, image=None, **kw):
             seen.update(content=content, kind=kind)   # kept for source_lines, which marks where each entry came from
             prog["stage"] = "reading"
             if kind == "SPREADSHEET":
-                from one_flow import spreadsheet_pieces
-                prog["total"] = 2 * len(spreadsheet_pieces(content))   # one call per reader for each piece, so the page can show a real bar
-            return read_both(content, kind, first, second, disagreements, image=image, **kw)
+                from one_flow import spreadsheet_calls
+                prog["total"] = 2 * spreadsheet_calls(content, first.fixes)   # calls per reader, so the page can show a real bar
+            return read_both(content, kind, first, second, disagreements, image=image, deadline=deadline, **kw)
         try:
             if file is None:
                 entries, check, parts = reader(text, input_type or "TEXT", source=name, **common), None, None
@@ -721,10 +884,10 @@ def extract_one(file, text, input_type, tk_id, upload_date, use_aws, send_anyway
         except ValueError as err:   # written for people: an encrypted email, a photo type Textract doesn't take
             raise HTTPException(422, f"{name}: {err}")
         except OSError as err:      # a file that isn't what its name says
-            log.warning("couldn't open %s: %s", name, err)
+            log_failure("couldn't open", name, upload, err)
             raise HTTPException(422, f"{name} couldn't be opened. It may be damaged, or not the kind of file its name says.")
         except Exception as err:  # noqa: BLE001 - the details go to the log; the page gets a message a person can act on
-            log.exception("couldn't read %s", name)
+            log_failure("couldn't read", name, upload, err)
             raise reading_error(name, err)
         layout = None
         if entries is not None and len(entries):
@@ -732,8 +895,8 @@ def extract_one(file, text, input_type, tk_id, upload_date, use_aws, send_anyway
                 entries, layout = locate_lines(entries, name, first, second, path=path, pages_dir=folder / "textract",
                                                kind=seen.get("kind"),
                                                spreadsheet=seen["content"] if seen.get("kind") == "SPREADSHEET" else None)
-            except Exception:  # noqa: BLE001
-                log.exception("couldn't find the source lines for %s", name)
+            except Exception as err:  # noqa: BLE001
+                log_failure("couldn't find the source lines for", name, upload, err)
     timing["reading_s"] = round(time.perf_counter() - start - timing.get("textract_s", 0) - timing.get("transcribe_s", 0), 1)   # both models and the checks
     if entries is None:
         return {"photo_check": check, "entries": [], "parts": parts, "decisions": [], "layout": None, "timing": timing}
@@ -752,7 +915,7 @@ def extract_one(file, text, input_type, tk_id, upload_date, use_aws, send_anyway
         diffs = disagreements.get(d.get("entry_id"), [])
         d["extraction_check"] = what_to_do(reasons, diffs)
         d["extraction_reasons"] = what_was_noticed(reasons, review.REVIEW_REASONS, diffs)
-    print(f"/extract {name}: " + ", ".join(f"{k[:-2]} {v}s" for k, v in timing.items()), flush=True)   # shows in the container log
+    print(f"/extract {logged(name, upload)}: " + ", ".join(f"{k[:-2]} {v}s" for k, v in timing.items()), flush=True)   # shows in the container log
     return {"photo_check": check, "entries": json.loads(entries.to_json(orient="records", date_format="iso")),
             "parts": parts, "decisions": decisions, "layout": layout, "read_errors": read_errors, "timing": timing}
 

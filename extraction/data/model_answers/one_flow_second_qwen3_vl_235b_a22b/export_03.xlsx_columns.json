@@ -1,0 +1,63 @@
+{
+ "model": "qwen.qwen3-vl-235b-a22b",
+ "map": {
+  "columns": [
+   {
+    "column": 1,
+    "role": "timekeeper"
+   },
+   {
+    "column": 2,
+    "role": "date"
+   },
+   {
+    "column": 3,
+    "role": "cmid"
+   },
+   {
+    "column": 4,
+    "role": "tenths"
+   },
+   {
+    "column": 5,
+    "role": "narrative"
+   }
+  ],
+  "unsure": ""
+ },
+ "lines": [
+  {
+   "id": 1,
+   "text": "Billing export |  |  |  | "
+  },
+  {
+   "id": 2,
+   "text": "User | Entry Date | Matter No | Units | Narrative"
+  },
+  {
+   "id": 3,
+   "text": "rpatel@example.com | 10/27/2026 | 5520.001 | 6 | Review purchase agmt"
+  },
+  {
+   "id": 4,
+   "text": "rpatel@example.com | 10/27/2026 | 5602.003 | 16 | Review Quanta disclosure schedules"
+  },
+  {
+   "id": 5,
+   "text": "rpatel@example.com | 10/28/2026 | 4590.003 | 3 | Charter amendment call"
+  },
+  {
+   "id": 6,
+   "text": "pat.lee@example.com | 10/28/2026 | 2201.001 | 4 | Series A board consent"
+  }
+ ],
+ "stop_reason": "tool_use",
+ "usage": {
+  "inputTokens": 983,
+  "outputTokens": 89,
+  "totalTokens": 1072
+ },
+ "latency_ms": 1494,
+ "entries": [],
+ "prompt_hash": "6f98450c7e"
+}

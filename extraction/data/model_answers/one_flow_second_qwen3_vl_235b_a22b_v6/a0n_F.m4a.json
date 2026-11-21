@@ -1,0 +1,76 @@
+{
+ "model": "qwen.qwen3-vl-235b-a22b",
+ "entries": [
+  {
+   "lines": [
+    1
+   ],
+   "client": "Tidewater",
+   "cmid": "",
+   "matter": "",
+   "date": "",
+   "hours_written": "2.1",
+   "hours": 2.1,
+   "narrative": "red line the Orbis MSA",
+   "billable": true,
+   "unsure": ""
+  },
+  {
+   "lines": [
+    1
+   ],
+   "client": "Tidewater",
+   "cmid": "",
+   "matter": "",
+   "date": "",
+   "hours_written": "0.3",
+   "hours": 0.3,
+   "narrative": "annual consents",
+   "billable": true,
+   "unsure": ""
+  },
+  {
+   "lines": [
+    1
+   ],
+   "client": "",
+   "cmid": "9028.001",
+   "matter": "",
+   "date": "",
+   "hours_written": "Half an hour",
+   "hours": 0.5,
+   "narrative": "stock issuance question",
+   "billable": true,
+   "unsure": ""
+  },
+  {
+   "lines": [
+    1
+   ],
+   "client": "Solace Media",
+   "cmid": "",
+   "matter": "",
+   "date": "",
+   "hours_written": "12 minutes",
+   "hours": 0.2,
+   "narrative": "registered agent change",
+   "billable": true,
+   "unsure": ""
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "text": "Tidewater 2.1 red line the Orbis MSA and another 0.3 on their annual consents. Um, 9028.001. Half an hour on a stock issuance question. And then the last one, Solace Media, not Solace Health, 12 minutes on the registered agent change. That's it."
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 3433,
+  "outputTokens": 291,
+  "totalTokens": 3724
+ },
+ "latency_ms": 3761,
+ "prompt_hash": "2a8a0d5370"
+}

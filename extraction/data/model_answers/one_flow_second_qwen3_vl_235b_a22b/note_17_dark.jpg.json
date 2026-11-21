@@ -1,0 +1,99 @@
+{
+ "model": "qwen.qwen3-vl-235b-a22b",
+ "prompt": "v2",
+ "mode": "tool",
+ "system_prompt": true,
+ "image_first": false,
+ "entries": [
+  {
+   "lines": [
+    1,
+    2
+   ],
+   "client": "Northgate",
+   "cmid": "",
+   "date": "",
+   "hours_written": "two hours",
+   "narrative": "Summit Ridge SPA",
+   "unsure": "",
+   "hours": 2.0
+  },
+  {
+   "lines": [
+    3
+   ],
+   "client": "Firm",
+   "cmid": "",
+   "date": "",
+   "hours_written": ".5",
+   "narrative": "admin",
+   "unsure": "",
+   "hours": 0.5
+  },
+  {
+   "lines": [
+    4
+   ],
+   "client": "Orchard Lane",
+   "cmid": "",
+   "date": "",
+   "hours_written": ". 3",
+   "narrative": "email to client re consent",
+   "unsure": "\". 3\" read as .3"
+  },
+  {
+   "lines": [
+    4
+   ],
+   "client": "Orchard Lane",
+   "cmid": "",
+   "date": "",
+   "hours_written": ". 3",
+   "narrative": "email to client re consent",
+   "unsure": "\". 3\" read as .3"
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "across": 16,
+   "down": 31,
+   "conf": 100,
+   "number_conf": null,
+   "text": "Northgate two hours"
+  },
+  {
+   "id": 2,
+   "across": 16,
+   "down": 41,
+   "conf": 98,
+   "number_conf": null,
+   "text": "Summit Ridge SPA"
+  },
+  {
+   "id": 3,
+   "across": 14,
+   "down": 53,
+   "conf": 80,
+   "number_conf": 80,
+   "text": "firm admin .5"
+  },
+  {
+   "id": 4,
+   "across": 15,
+   "down": 72,
+   "conf": 57,
+   "number_conf": 57,
+   "text": "orchard Lane . 3 email to clientre consent."
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 7057,
+  "outputTokens": 228,
+  "totalTokens": 7285
+ },
+ "latency_ms": 6855,
+ "prompt_hash": "4be68320a8"
+}

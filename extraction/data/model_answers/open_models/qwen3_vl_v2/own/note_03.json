@@ -1,0 +1,67 @@
+{
+ "model": "qwen.qwen3-vl-235b-a22b",
+ "prompt": "v2",
+ "mode": "tool",
+ "system_prompt": true,
+ "entries": [
+  {
+   "date": "",
+   "hours_written": "2.5",
+   "hours": 2.5,
+   "unsure": "",
+   "narrative": "diligence calls w/ Quanta mgmt",
+   "client": "Ironwood",
+   "cmid": "",
+   "lines": [
+    1,
+    2
+   ]
+  },
+  {
+   "date": "",
+   "hours_written": ", 8",
+   "hours": 0.8,
+   "unsure": "\", 8\" read as .8",
+   "narrative": "markup SPA",
+   "client": "Ironwood",
+   "cmid": "",
+   "lines": [
+    3
+   ]
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "across": 26,
+   "down": 45,
+   "conf": 97,
+   "number_conf": 97,
+   "text": "Ironwood 2.5 diligence"
+  },
+  {
+   "id": 2,
+   "across": 25,
+   "down": 50,
+   "conf": 96,
+   "number_conf": null,
+   "text": "calls w/ Quanta mgmt"
+  },
+  {
+   "id": 3,
+   "across": 26,
+   "down": 61,
+   "conf": 39,
+   "number_conf": 97,
+   "text": "same - markup SPA , 8"
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 7033,
+  "outputTokens": 129,
+  "totalTokens": 7162
+ },
+ "latency_ms": 4400
+}

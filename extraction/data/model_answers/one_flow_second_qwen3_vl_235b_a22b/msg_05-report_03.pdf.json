@@ -1,0 +1,112 @@
+{
+ "model": "qwen.qwen3-vl-235b-a22b",
+ "entries": [
+  {
+   "lines": [
+    3,
+    4
+   ],
+   "client": "Cobalt Ridge Capital",
+   "cmid": "5520.004",
+   "matter": "",
+   "date": "11/02/2026",
+   "hours_written": "1.40",
+   "hours": 1.4,
+   "narrative": "Review LPA amendment and side letters",
+   "billable": true,
+   "unsure": "",
+   "timekeeper": "RP"
+  },
+  {
+   "lines": [
+    3,
+    5
+   ],
+   "client": "Aster & Vale",
+   "cmid": "3455.002",
+   "matter": "",
+   "date": "11/02/2026",
+   "hours_written": "0.30",
+   "hours": 0.3,
+   "narrative": "Draft board consent",
+   "billable": true,
+   "unsure": "",
+   "timekeeper": "EB"
+  },
+  {
+   "lines": [
+    3,
+    6
+   ],
+   "client": "Kestrel Foods",
+   "cmid": "6888.002",
+   "matter": "",
+   "date": "11/03/2026",
+   "hours_written": "2.10",
+   "hours": 2.1,
+   "narrative": "Negotiate APA indemnity with seller counsel",
+   "billable": true,
+   "unsure": "",
+   "timekeeper": "RP"
+  },
+  {
+   "lines": [
+    3,
+    7
+   ],
+   "client": "Copperline Networks",
+   "cmid": "7633.002",
+   "matter": "",
+   "date": "11/03/2026",
+   "hours_written": "0.80",
+   "hours": 0.8,
+   "narrative": "Prepare closing set",
+   "billable": true,
+   "unsure": "",
+   "timekeeper": "EB"
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "text": "Time Capture Export"
+  },
+  {
+   "id": 2,
+   "text": "Run date: 11/04/2026"
+  },
+  {
+   "id": 3,
+   "text": "Date | Tkpr | Matter No. | Client | Task | Activity | Hours | Rate | Amount | Narrative"
+  },
+  {
+   "id": 4,
+   "text": "11/02/2026 | RP | 5520.004 | Cobalt Ridge Capital | L120 | A104 | 1.40 | 950.00 | 1,330.00 | Review LPA amendment and side letters"
+  },
+  {
+   "id": 5,
+   "text": "11/02/2026 | EB | 3455.002 | Aster & Vale | L110 | A103 | 0.30 | 650.00 | 195.00 | Draft board consent"
+  },
+  {
+   "id": 6,
+   "text": "11/03/2026 | RP | 6888.002 | Kestrel Foods | L240 | A106 | 2.10 | 950.00 | 1,995.00 | Negotiate APA indemnity with seller counsel"
+  },
+  {
+   "id": 7,
+   "text": "11/03/2026 | EB | 7633.002 | Copperline Networks | L120 | A103 | 0.80 | 650.00 | 520.00 | Prepare closing set"
+  },
+  {
+   "id": 8,
+   "text": "Total | 4.60 | 4,040.00"
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 4386,
+  "outputTokens": 418,
+  "totalTokens": 4804
+ },
+ "latency_ms": 11819,
+ "prompt_hash": "c83a23abef"
+}

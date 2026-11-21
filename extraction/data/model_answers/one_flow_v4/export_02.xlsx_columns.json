@@ -1,0 +1,71 @@
+{
+ "model": "us.amazon.nova-pro-v1:0",
+ "map": {
+  "unsure": "",
+  "columns": [
+   {
+    "column": 1,
+    "role": "timekeeper"
+   },
+   {
+    "column": 2,
+    "role": "date"
+   },
+   {
+    "column": 3,
+    "role": "client"
+   },
+   {
+    "column": 4,
+    "role": "hours"
+   },
+   {
+    "column": 5,
+    "role": "narrative"
+   }
+  ]
+ },
+ "lines": [
+  {
+   "id": 1,
+   "text": "Time Entry Export |  |  |  | "
+  },
+  {
+   "id": 2,
+   "text": "Run date: 11/02/2026 |  |  |  | "
+  },
+  {
+   "id": 3,
+   "text": "Atty | Dt Worked | Client/Matter | Hrs | Work Description"
+  },
+  {
+   "id": 4,
+   "text": "Okafor, D. | 10/27/26 | Northgate Bank / 7215.003 | 0.6 | Zoom w/ client re amend. fee"
+  },
+  {
+   "id": 5,
+   "text": "Okafor, D. | 10/27/26 | Cobalt Ridge Capital | 2.1 | Revise sub docs for Fund II"
+  },
+  {
+   "id": 6,
+   "text": "Okafor, D. | 10/28/26 | Kestrel Foods | 1.25 | Bakery APA markup"
+  },
+  {
+   "id": 7,
+   "text": "Okafor, D. | 10/28/26 | Harborlight Bio / Series A Financing | 0.5 | Board consent"
+  },
+  {
+   "id": 8,
+   "text": "Total |  |  | 4.45 | "
+  }
+ ],
+ "stop_reason": "tool_use",
+ "usage": {
+  "inputTokens": 1275,
+  "outputTokens": 80,
+  "totalTokens": 1355
+ },
+ "latency_ms": 958,
+ "entries": [],
+ "prompt_hash": "6f98450c7e"
+}

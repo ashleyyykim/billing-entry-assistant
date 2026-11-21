@@ -1,0 +1,58 @@
+{
+ "model": "qwen.qwen3-vl-235b-a22b",
+ "prompt": "v2",
+ "mode": "tool",
+ "system_prompt": true,
+ "image_first": false,
+ "entries": [
+  {
+   "lines": [
+    1,
+    2,
+    3
+   ],
+   "client": "Halvorsen",
+   "cmid": "",
+   "date": "",
+   "hours_written": ".6",
+   "narrative": "call w/ E. Lindqvist re Brightline",
+   "unsure": "photo shows \"call w/ E. Lindqvist re Brightline\"; the reader has \"\u05e8\u05e9\u05d5\u05dc Im I\" and \"re Brigh ghtline Lindquist\" which are likely misreads of the handwriting",
+   "hours": 0.6
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "across": 19,
+   "down": 34,
+   "conf": 76,
+   "number_conf": 76,
+   "text": "Halvorsen .6"
+  },
+  {
+   "id": 2,
+   "across": 25,
+   "down": 51,
+   "conf": 32,
+   "number_conf": null,
+   "text": "\u05e8\u05e9\u05d5\u05dc Im I"
+  },
+  {
+   "id": 3,
+   "across": 28,
+   "down": 55,
+   "conf": 66,
+   "number_conf": null,
+   "text": "re Brigh ghtline Lindquist"
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 7350,
+  "outputTokens": 118,
+  "totalTokens": 7468
+ },
+ "latency_ms": 3700,
+ "prompt_hash": "4be68320a8"
+}

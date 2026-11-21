@@ -1,0 +1,89 @@
+{
+ "model": "qwen.qwen3-vl-235b-a22b",
+ "prompt": "v2",
+ "mode": "tool",
+ "system_prompt": true,
+ "image_first": false,
+ "entries": [
+  {
+   "lines": [
+    1
+   ],
+   "client": "Harborlight",
+   "cmid": "2201.004",
+   "date": "",
+   "hours_written": "1.0",
+   "narrative": "A-1 exitdocs",
+   "unsure": "",
+   "hours": 1.0
+  },
+  {
+   "lines": [
+    2
+   ],
+   "client": "HarborLightPartners",
+   "cmid": "2201.004",
+   "date": "",
+   "hours_written": ".4 2",
+   "narrative": "Fund II call",
+   "unsure": "\".4 2\" read as 0.42",
+   "hours": 0.42
+  },
+  {
+   "lines": [
+    3,
+    4
+   ],
+   "client": "Halverson",
+   "cmid": "2201.004",
+   "date": "",
+   "hours_written": "0.8",
+   "narrative": "Tamarack disc sched",
+   "unsure": "",
+   "hours": 0.8
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "across": 13,
+   "down": 33,
+   "conf": 81,
+   "number_conf": 97,
+   "text": "-Harborlight 1.0 A-1 exitdocs"
+  },
+  {
+   "id": 2,
+   "across": 16,
+   "down": 40,
+   "conf": 66,
+   "number_conf": null,
+   "text": "- HarborLightPartners Fund II call"
+  },
+  {
+   "id": 3,
+   "across": 19,
+   "down": 56,
+   "conf": 96,
+   "number_conf": 100,
+   "text": "- Halverson 0.8"
+  },
+  {
+   "id": 4,
+   "across": 23,
+   "down": 57,
+   "conf": 100,
+   "number_conf": null,
+   "text": "Tamarack disc sched"
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 7388,
+  "outputTokens": 220,
+  "totalTokens": 7608
+ },
+ "latency_ms": 10086,
+ "prompt_hash": "4be68320a8"
+}

@@ -1,0 +1,268 @@
+{
+ "model": "qwen.qwen3-vl-235b-a22b",
+ "entries": [
+  {
+   "lines": [
+    2,
+    4,
+    5,
+    6
+   ],
+   "client": "Cobalt Ridge Capital",
+   "cmid": "5520.004",
+   "matter": "",
+   "date": "10/26/2026",
+   "hours_written": "0.6",
+   "hours": 0.6,
+   "narrative": "Review capital call notice; call w/ fund admin re wire timing",
+   "billable": true,
+   "unsure": "",
+   "timekeeper": "R. Patel (TK102)"
+  },
+  {
+   "lines": [
+    2,
+    4,
+    7
+   ],
+   "client": "Halvorsen Industrial",
+   "cmid": "3012.004",
+   "matter": "",
+   "date": "10/26/2026",
+   "hours_written": "2.3",
+   "hours": 2.3,
+   "narrative": "Revise disclosure schedules for Brightline acquisition",
+   "billable": true,
+   "unsure": "",
+   "timekeeper": "R. Patel (TK102)"
+  },
+  {
+   "lines": [
+    2,
+    4,
+    8,
+    9
+   ],
+   "client": "Kestrel Foods",
+   "cmid": "6888.002",
+   "matter": "",
+   "date": "10/27/2026",
+   "hours_written": "1.8",
+   "hours": 1.8,
+   "narrative": "Draft APA comments re Copper Kettle working capital adjustment",
+   "billable": true,
+   "unsure": "",
+   "timekeeper": "R. Patel (TK102)"
+  },
+  {
+   "lines": [
+    2,
+    4,
+    10
+   ],
+   "client": "Firm",
+   "cmid": "1111.002",
+   "matter": "",
+   "date": "10/27/2026",
+   "hours_written": "1.0",
+   "hours": 1.0,
+   "narrative": "Business development lunch w/ prospective client",
+   "billable": true,
+   "unsure": "",
+   "timekeeper": "R. Patel (TK102)"
+  },
+  {
+   "lines": [
+    2,
+    4,
+    11
+   ],
+   "client": "Tidewater AI",
+   "cmid": "4590.003",
+   "matter": "",
+   "date": "10/28/2026",
+   "hours_written": "0.9",
+   "hours": 0.9,
+   "narrative": "Prepare Series B closing checklist",
+   "billable": true,
+   "unsure": "",
+   "timekeeper": "R. Patel (TK102)"
+  },
+  {
+   "lines": [
+    2,
+    4,
+    12
+   ],
+   "client": "Aster & Vale",
+   "cmid": "3455.001",
+   "matter": "",
+   "date": "10/28/2026",
+   "hours_written": "1.2",
+   "hours": 1.2,
+   "narrative": "Comment on 10-Q draft",
+   "billable": true,
+   "unsure": "",
+   "timekeeper": "R. Patel (TK102)"
+  },
+  {
+   "lines": [
+    2,
+    14,
+    15
+   ],
+   "client": "Northgate Bank",
+   "cmid": "7215.004",
+   "matter": "",
+   "date": "10/29/2026",
+   "hours_written": "1.5",
+   "hours": 1.5,
+   "narrative": "Review credit agreement markup for Kestrel Foods facility",
+   "billable": true,
+   "unsure": "",
+   "timekeeper": "R. Patel (TK102)"
+  },
+  {
+   "lines": [
+    2,
+    14,
+    16
+   ],
+   "client": "Ironwood Semiconductor",
+   "cmid": "5602.003",
+   "matter": "",
+   "date": "10/29/2026",
+   "hours_written": "0.7",
+   "hours": 0.7,
+   "narrative": "Call w/ Quanta management re diligence requests",
+   "billable": true,
+   "unsure": "",
+   "timekeeper": "R. Patel (TK102)"
+  },
+  {
+   "lines": [
+    2,
+    14,
+    17
+   ],
+   "client": "Juniper Peak Capital",
+   "cmid": "9140.001",
+   "matter": "",
+   "date": "10/30/2026",
+   "hours_written": "0.4",
+   "hours": 0.4,
+   "narrative": "Revise LPA side letter tracker",
+   "billable": true,
+   "unsure": "",
+   "timekeeper": "R. Patel (TK102)"
+  },
+  {
+   "lines": [
+    2,
+    14,
+    18
+   ],
+   "client": "Bluefin Robotics",
+   "cmid": "3120.002",
+   "matter": "",
+   "date": "10/30/2026",
+   "hours_written": "0.8",
+   "hours": 0.8,
+   "narrative": "Review Keel Ventures term sheet comments",
+   "billable": true,
+   "unsure": "",
+   "timekeeper": "R. Patel (TK102)"
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "text": "Time Detail Report"
+  },
+  {
+   "id": 2,
+   "text": "Timekeeper: R. Patel (TK102)"
+  },
+  {
+   "id": 3,
+   "text": "Period: 10/26/2026 - 10/30/2026"
+  },
+  {
+   "id": 4,
+   "text": "Date | Matter No. | Client | Description | Hours"
+  },
+  {
+   "id": 5,
+   "text": "10/26/2026 | 5520.004 | Cobalt Ridge Capital | Review capital call notice; call w/ fund admin re wire | 0.6"
+  },
+  {
+   "id": 6,
+   "text": "timing"
+  },
+  {
+   "id": 7,
+   "text": "10/26/2026 | 3012.004 | Halvorsen Industrial | Revise disclosure schedules for Brightline acquisition | 2.3"
+  },
+  {
+   "id": 8,
+   "text": "10/27/2026 | 6888.002 | Kestrel Foods | Draft APA comments re Copper Kettle working capital | 1.8"
+  },
+  {
+   "id": 9,
+   "text": "adjustment"
+  },
+  {
+   "id": 10,
+   "text": "10/27/2026 | 1111.002 | Firm | Business development lunch w/ prospective client | 1.0"
+  },
+  {
+   "id": 11,
+   "text": "10/28/2026 | 4590.003 | Tidewater AI | Prepare Series B closing checklist | 0.9"
+  },
+  {
+   "id": 12,
+   "text": "10/28/2026 | 3455.001 | Aster & Vale | Comment on 10-Q draft | 1.2"
+  },
+  {
+   "id": 13,
+   "text": "Demo Billing System v7 | Confidential | Page 1 of 2"
+  },
+  {
+   "id": 14,
+   "text": "Date | Matter No. | Client | Description | Hours"
+  },
+  {
+   "id": 15,
+   "text": "10/29/2026 | 7215.004 | Northgate Bank | Review credit agreement markup for Kestrel Foods facility | 1.5"
+  },
+  {
+   "id": 16,
+   "text": "10/29/2026 | 5602.003 | Ironwood Semiconductor | Call w/ Quanta management re diligence requests | 0.7"
+  },
+  {
+   "id": 17,
+   "text": "10/30/2026 | 9140.001 | Juniper Peak Capital | Revise LPA side letter tracker | 0.4"
+  },
+  {
+   "id": 18,
+   "text": "10/30/2026 | 3120.002 | Bluefin Robotics | Review Keel Ventures term sheet comments | 0.8"
+  },
+  {
+   "id": 19,
+   "text": "Total | 11.2"
+  },
+  {
+   "id": 20,
+   "text": "Demo Billing System v7 | Confidential | Page 2 of 2"
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 4615,
+  "outputTokens": 1156,
+  "totalTokens": 5771
+ },
+ "latency_ms": 33080,
+ "prompt_hash": "c83a23abef"
+}

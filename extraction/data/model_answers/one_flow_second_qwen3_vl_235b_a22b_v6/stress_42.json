@@ -1,0 +1,62 @@
+{
+ "model": "qwen.qwen3-vl-235b-a22b",
+ "entries": [
+  {
+   "lines": [
+    1
+   ],
+   "client": "Halvorsen",
+   "cmid": "",
+   "matter": "",
+   "date": "",
+   "hours_written": ".4",
+   "hours": 0.4,
+   "narrative": "lender call",
+   "billable": true,
+   "unsure": ""
+  },
+  {
+   "lines": [
+    1
+   ],
+   "client": "Tidewater",
+   "cmid": "",
+   "matter": "",
+   "date": "",
+   "hours_written": ".3",
+   "hours": 0.3,
+   "narrative": "consent",
+   "billable": true,
+   "unsure": ""
+  },
+  {
+   "lines": [
+    1
+   ],
+   "client": "Bluefin",
+   "cmid": "",
+   "matter": "",
+   "date": "",
+   "hours_written": ".6",
+   "hours": 0.6,
+   "narrative": "option grant",
+   "billable": true,
+   "unsure": ""
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "text": "Halvorsen lender call .4, also Tidewater consent .3, also Bluefin option grant .6"
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 2984,
+  "outputTokens": 208,
+  "totalTokens": 3192
+ },
+ "latency_ms": 6735,
+ "prompt_hash": "15a8fa25f3"
+}

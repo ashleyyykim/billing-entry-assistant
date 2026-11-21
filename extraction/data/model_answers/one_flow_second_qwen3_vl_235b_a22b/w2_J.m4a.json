@@ -1,0 +1,62 @@
+{
+ "model": "qwen.qwen3-vl-235b-a22b",
+ "entries": [
+  {
+   "lines": [
+    1
+   ],
+   "client": "CR Partners",
+   "cmid": "7222.001",
+   "matter": "Fund 4 LPA",
+   "date": "November 9",
+   "hours_written": "0.9 hours",
+   "hours": 0.9,
+   "narrative": "comments",
+   "billable": true,
+   "unsure": ""
+  },
+  {
+   "lines": [
+    1
+   ],
+   "client": "QLV",
+   "cmid": "",
+   "matter": "Fund 3 subscription documents",
+   "date": "November 9",
+   "hours_written": "0.7 hours",
+   "hours": 0.7,
+   "narrative": "",
+   "billable": true,
+   "unsure": ""
+  },
+  {
+   "lines": [
+    1
+   ],
+   "client": "Firm",
+   "cmid": "",
+   "matter": "recruiting",
+   "date": "November 9",
+   "hours_written": "an hour",
+   "hours": 1.0,
+   "narrative": "spend on campus interviews",
+   "billable": true,
+   "unsure": ""
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "text": "Page J. November 9. CRC 1.6 hours. Worked on project run buyer's markup of the purchase agreement. Matter 2. With 7222001, 0.9 hours, fund 4 LPA comments. Matter 3, QLV 0.7 hours, fund 3 subscription documents. Matter 4, firm time recruiting, spend an hour on campus interviews. Make sure to call Dana at 415-555-0134."
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 3241,
+  "outputTokens": 247,
+  "totalTokens": 3488
+ },
+ "latency_ms": 4959,
+ "prompt_hash": "cf314f9ae1"
+}

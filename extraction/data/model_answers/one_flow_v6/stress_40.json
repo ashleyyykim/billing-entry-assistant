@@ -1,0 +1,34 @@
+{
+ "model": "us.amazon.nova-pro-v1:0",
+ "entries": [
+  {
+   "lines": [
+    1
+   ],
+   "client": "Halvorsen",
+   "cmid": "",
+   "matter": "",
+   "date": "",
+   "hours_written": ".4",
+   "hours": 0.4,
+   "narrative": "call w/ CEO",
+   "billable": true,
+   "unsure": ""
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "text": "HALVORSEN//call w/ CEO//.4"
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 3215,
+  "outputTokens": 84,
+  "totalTokens": 3299
+ },
+ "latency_ms": 1362,
+ "prompt_hash": "15a8fa25f3"
+}

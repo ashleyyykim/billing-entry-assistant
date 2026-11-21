@@ -1,0 +1,48 @@
+{
+ "model": "us.amazon.nova-pro-v1:0",
+ "entries": [
+  {
+   "lines": [
+    1
+   ],
+   "client": "Meridian",
+   "cmid": "",
+   "matter": "proxy",
+   "date": "",
+   "hours_written": ".5",
+   "hours": 0.5,
+   "narrative": "Meridian proxy",
+   "billable": true,
+   "unsure": ""
+  },
+  {
+   "lines": [
+    1
+   ],
+   "client": "Kestrel Foods",
+   "cmid": "",
+   "matter": "APA",
+   "date": "",
+   "hours_written": ".3",
+   "hours": 0.3,
+   "narrative": "Kestrel Foods APA",
+   "billable": true,
+   "unsure": ""
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "text": "Spent .5 on Meridian proxy. Then .3 on Kestrel Foods APA."
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 3221,
+  "outputTokens": 153,
+  "totalTokens": 3374
+ },
+ "latency_ms": 1444,
+ "prompt_hash": "15a8fa25f3"
+}

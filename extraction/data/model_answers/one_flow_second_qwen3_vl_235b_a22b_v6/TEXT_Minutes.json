@@ -1,0 +1,34 @@
+{
+ "model": "qwen.qwen3-vl-235b-a22b",
+ "entries": [
+  {
+   "lines": [
+    1
+   ],
+   "client": "Bluefin",
+   "cmid": "",
+   "matter": "",
+   "date": "",
+   "hours_written": "45 min",
+   "hours": 0.75,
+   "narrative": "option grant call",
+   "billable": true,
+   "unsure": ""
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "text": "45 min Bluefin - option grant call"
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 2970,
+  "outputTokens": 84,
+  "totalTokens": 3054
+ },
+ "latency_ms": 2813,
+ "prompt_hash": "15a8fa25f3"
+}

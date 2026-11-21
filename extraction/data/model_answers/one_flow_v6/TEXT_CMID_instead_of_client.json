@@ -1,0 +1,34 @@
+{
+ "model": "us.amazon.nova-pro-v1:0",
+ "entries": [
+  {
+   "lines": [
+    1
+   ],
+   "client": "",
+   "cmid": "5520.001",
+   "matter": "",
+   "date": "",
+   "hours_written": ".6",
+   "hours": 0.6,
+   "narrative": "review purchase agmt",
+   "billable": true,
+   "unsure": ""
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "text": "5520.001 .6 review purchase agmt"
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 3219,
+  "outputTokens": 89,
+  "totalTokens": 3308
+ },
+ "latency_ms": 1077,
+ "prompt_hash": "15a8fa25f3"
+}

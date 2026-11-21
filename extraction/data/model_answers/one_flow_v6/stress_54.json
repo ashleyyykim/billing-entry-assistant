@@ -1,0 +1,34 @@
+{
+ "model": "us.amazon.nova-pro-v1:0",
+ "entries": [
+  {
+   "lines": [
+    1
+   ],
+   "client": "Halvorsen",
+   "cmid": "",
+   "matter": "",
+   "date": "",
+   "hours_written": "Quarter of an hour",
+   "hours": 0.25,
+   "narrative": "on the Halvorsen call",
+   "unsure": "",
+   "billable": true
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "text": "Quarter of an hour on the Halvorsen call"
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 3213,
+  "outputTokens": 87,
+  "totalTokens": 3300
+ },
+ "latency_ms": 935,
+ "prompt_hash": "15a8fa25f3"
+}

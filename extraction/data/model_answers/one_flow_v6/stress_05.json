@@ -1,0 +1,48 @@
+{
+ "model": "us.amazon.nova-pro-v1:0",
+ "entries": [
+  {
+   "lines": [
+    1
+   ],
+   "client": "Meridian",
+   "cmid": "",
+   "matter": "proxy",
+   "date": "",
+   "hours_written": "1.5",
+   "hours": 1.5,
+   "narrative": "",
+   "billable": true,
+   "unsure": ""
+  },
+  {
+   "lines": [
+    1
+   ],
+   "client": "Tidewater",
+   "cmid": "",
+   "matter": "consent",
+   "date": "",
+   "hours_written": ".3",
+   "hours": 0.3,
+   "narrative": "",
+   "billable": true,
+   "unsure": ""
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "text": "1) Meridian proxy 1.5 2) Tidewater consent .3"
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 3221,
+  "outputTokens": 145,
+  "totalTokens": 3366
+ },
+ "latency_ms": 1943,
+ "prompt_hash": "15a8fa25f3"
+}

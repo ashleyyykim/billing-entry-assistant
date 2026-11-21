@@ -1,0 +1,34 @@
+{
+ "model": "qwen.qwen3-vl-235b-a22b",
+ "entries": [
+  {
+   "lines": [
+    1
+   ],
+   "client": "Halvorsen",
+   "cmid": "",
+   "matter": "",
+   "date": "10/27",
+   "hours_written": ".4",
+   "hours": 0.4,
+   "narrative": "call",
+   "billable": true,
+   "unsure": ""
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "text": "Halvorsen call on 10/27 .4"
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 2668,
+  "outputTokens": 87,
+  "totalTokens": 2755
+ },
+ "latency_ms": 7775,
+ "prompt_hash": "8033befe5f"
+}

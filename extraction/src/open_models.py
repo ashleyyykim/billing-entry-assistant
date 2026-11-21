@@ -22,7 +22,8 @@ import json
 import re
 import time
 
-from model_readers import (EXAMPLES, FIELDS, ENTRY_SCHEMA, NOTE_HABITS, NOTE_INTRO, NOVA_PHOTO, OUTPUT_RULES,
+from model_readers import (EXAMPLES, FIELDS, ENTRY_SCHEMA, MAX_OUTPUT_TOKENS, NARRATIVE_RULE, NOTE_HABITS, NOTE_INTRO,
+                           NOVA_PHOTO, OUTPUT_RULES,
                            READER_MISTAKES, TYPED_INTRO, line_table, photo_bytes, system_prompt)
 
 PROMPTS = ["v1", "v2"]
@@ -100,14 +101,15 @@ def example_block(n, example, typed):
     return f"Example {n}:\n{intro}\n{line_table(example['lines'])}\n\nAnswer:\n{json.dumps({'entries': example['entries']})}"
 
 
-def system_prompt_v2(photo=True, typed=False, mode="tool"):
+def system_prompt_v2(photo=True, typed=False, mode="tool", narrative=False):
     """Prompt v2 for a note (photo=True adds how to use the photo) or typed text (typed=True), and how to answer:
-    with the record_entries tool, or as plain JSON (mode="json")."""
+    with the record_entries tool, or as plain JSON (mode="json"). narrative adds model_readers.NARRATIVE_RULE."""
     examples = [TYPED_EXAMPLE] if typed else EXAMPLES + EXTRA_EXAMPLES
     answer = (JSON_CONTRACT if mode == "json" else "Record the entries by calling record_entries once, with every "
               "entry on the note.")
     parts = [INTRO, NOTE_HABITS, MORE_HABITS, READER_MISTAKES if not typed else "",
-             PHOTO_GUIDE if photo and not typed else "", OUTPUT_RULES, CHECKLIST, answer,
+             PHOTO_GUIDE if photo and not typed else "", OUTPUT_RULES + ("\n" + NARRATIVE_RULE if narrative else ""),
+             CHECKLIST, answer,
              "\n\n".join(example_block(n, ex, typed) for n, ex in enumerate(examples, 1))]
     return "\n\n".join(p for p in parts if p)
 
@@ -167,15 +169,15 @@ def pick_models(models, profiles, wanted=WANTED):
 WORKS = {}   # model id -> (mode, system prompt allowed) that worked, so later calls skip the ones that didn't
 
 
-def ask_model(runtime, lines, clients, model_id, photo=None, typed=False, prompt="v2", tries=3, max_tokens=4000,
-              image_first=False):
+def ask_model(runtime, lines, clients, model_id, photo=None, typed=False, prompt="v2", tries=3,
+              max_tokens=MAX_OUTPUT_TOKENS, image_first=False, narrative=False):
     """A model's entries for one note, like model_readers.ask_nova, with prompt v1 or v2 and whichever answer mode the
     model supports. A model that fails every mode, or keeps returning broken answers, gets an answer with no entries
     and an "error", so the note falls back to the rules.
 
     image_first: put the photo before the text in the message, as Amazon's Nova prompting guide recommends (Nova's
     reader so far, model_readers.ask_nova, puts the text first). With prompt v1 and image_first=False the request is
-    the same as ask_nova's."""
+    the same as ask_nova's. narrative: prompt v2 with model_readers.NARRATIVE_RULE."""
     content = [{"text": note_message(lines, clients, typed)}]
     if photo is not None:
         image = {"image": {"format": "jpeg", "source": {"bytes": photo_bytes(photo, *NOVA_PHOTO)}}}
@@ -189,7 +191,7 @@ def ask_model(runtime, lines, clients, model_id, photo=None, typed=False, prompt
     for mode, with_system in plans:
         system = system_prompt() if prompt == "v1" and mode != "json" else (
             system_prompt() + "\n\n" + JSON_CONTRACT if prompt == "v1" else
-            system_prompt_v2(photo is not None, typed, mode))
+            system_prompt_v2(photo is not None, typed, mode, narrative))
         request = {"modelId": model_id, "inferenceConfig": {"temperature": 0, "maxTokens": max_tokens}}
         if with_system:
             message = content

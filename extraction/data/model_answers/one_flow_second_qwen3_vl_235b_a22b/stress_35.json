@@ -1,0 +1,34 @@
+{
+ "model": "qwen.qwen3-vl-235b-a22b",
+ "entries": [
+  {
+   "lines": [
+    1
+   ],
+   "client": "Tidewater",
+   "cmid": "",
+   "matter": "",
+   "date": "",
+   "hours_written": "Half an hour",
+   "hours": 0.5,
+   "narrative": "on the consent",
+   "billable": true,
+   "unsure": ""
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "text": "Half an hour on the Tidewater consent"
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 2663,
+  "outputTokens": 84,
+  "totalTokens": 2747
+ },
+ "latency_ms": 2659,
+ "prompt_hash": "8033befe5f"
+}

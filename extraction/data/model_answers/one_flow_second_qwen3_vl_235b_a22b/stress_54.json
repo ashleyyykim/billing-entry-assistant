@@ -1,0 +1,34 @@
+{
+ "model": "qwen.qwen3-vl-235b-a22b",
+ "entries": [
+  {
+   "lines": [
+    1
+   ],
+   "client": "Halvorsen",
+   "cmid": "",
+   "matter": "",
+   "date": "",
+   "hours_written": "Quarter of an hour",
+   "hours": 0.25,
+   "narrative": "on the call",
+   "billable": true,
+   "unsure": ""
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "text": "Quarter of an hour on the Halvorsen call"
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 2665,
+  "outputTokens": 87,
+  "totalTokens": 2752
+ },
+ "latency_ms": 1410,
+ "prompt_hash": "8033befe5f"
+}

@@ -1,0 +1,47 @@
+{
+ "model": "qwen.qwen3-vl-235b-a22b",
+ "prompt": "v2",
+ "mode": "tool",
+ "system_prompt": true,
+ "entries": [
+  {
+   "date": "",
+   "hours_written": "1:15",
+   "hours": 1.25,
+   "unsure": "1:15 read as 1.25 hours",
+   "narrative": "Ironwood Prism bringdown call",
+   "client": "Ironwood",
+   "cmid": "",
+   "lines": [
+    1,
+    2
+   ]
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "across": 26,
+   "down": 37,
+   "conf": 56,
+   "number_conf": 98,
+   "text": "1:15 tronwood"
+  },
+  {
+   "id": 2,
+   "across": 22,
+   "down": 47,
+   "conf": 18,
+   "number_conf": 18,
+   "text": "$77 Prism bringdown call"
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 7006,
+  "outputTokens": 80,
+  "totalTokens": 7086
+ },
+ "latency_ms": 2350
+}

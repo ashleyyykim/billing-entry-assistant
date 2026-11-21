@@ -1,0 +1,76 @@
+{
+ "model": "qwen.qwen3-vl-235b-a22b",
+ "entries": [
+  {
+   "lines": [
+    1
+   ],
+   "client": "Tidewater",
+   "cmid": "",
+   "matter": "",
+   "date": "",
+   "hours_written": "2.1",
+   "hours": 2.1,
+   "narrative": "red line for Orbis MSA",
+   "billable": true,
+   "unsure": ""
+  },
+  {
+   "lines": [
+    1
+   ],
+   "client": "Tidewater",
+   "cmid": "",
+   "matter": "",
+   "date": "",
+   "hours_written": "0.3",
+   "hours": 0.3,
+   "narrative": "annual consents",
+   "billable": true,
+   "unsure": ""
+  },
+  {
+   "lines": [
+    1
+   ],
+   "client": "",
+   "cmid": "9028.001",
+   "matter": "",
+   "date": "",
+   "hours_written": "0.5",
+   "hours": 0.5,
+   "narrative": "stock issuance question",
+   "billable": true,
+   "unsure": "the CMID and hours ran together in the transcript (90 28.001.5): read as 9028.001 and 0.5"
+  },
+  {
+   "lines": [
+    1
+   ],
+   "client": "Solace Media",
+   "cmid": "",
+   "matter": "",
+   "date": "",
+   "hours_written": "0.2",
+   "hours": 0.2,
+   "narrative": "registered agent change",
+   "billable": true,
+   "unsure": ""
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "text": "Tidewater 2.1 red line for Orbis MSA. Tidewater 0.3 annual consents. Matter 90 28.001.5 stock issuance question. Solace Media 0.2 registered agent change."
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 3411,
+  "outputTokens": 330,
+  "totalTokens": 3741
+ },
+ "latency_ms": 9030,
+ "prompt_hash": "2a8a0d5370"
+}

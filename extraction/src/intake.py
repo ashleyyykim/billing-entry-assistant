@@ -17,7 +17,8 @@ from rapidfuzz import fuzz
 from text_parser import is_blank
 
 MATCH_COLS = ["entry_id", "tk_id", "source_format", "work_date", "cmid", "client", "matter", "narrative", "hours"]
-SOURCE_COLS = ["input_type", "tk_name", "source", "page", "rows", "hours_read", "min_conf"]
+SOURCE_COLS = ["input_type", "tk_name", "source", "page", "rows", "hours_read", "min_conf", "model_id",
+               "prompt_hash"]   # model_id and prompt_hash: which model and prompt read the entry (one_flow's stamp)
 CHECK_COLS = ["check", "check_reasons"]
 ENTRY_COLS = MATCH_COLS + SOURCE_COLS + CHECK_COLS
 
@@ -65,9 +66,13 @@ CHECK_REASONS = {
     "client_gap": "No client or CMID on this entry, though an entry before it in the same upload has one",
     "client_cmid_mismatch": "The client written isn't the client this CMID belongs to",
     "client_ambiguous": "The client as written could be more than one of the firm's clients",
+    "columns_unsure": "The readers mapped the columns differently, or weren't sure which holds the time or client",
     "rows_unread": "The spreadsheet has rows that no entry uses, so an entry may be missing",
     "answer_cut_off": "The model's answer was cut off, so entries may be missing",
     "one_reader": "The second reader gave no answer, so only one model read this",
+    "narrative_from_matter": "The description was read as a matter name, so it was moved to the narrative",
+    "no_narrative": "No description of the work was found",
+    "hours_reused": "The same amount of hours is used by more entries than it is written",
 }
 DAY_MAX = 14
 
@@ -199,19 +204,70 @@ def same_work(a, b, min_score=80):
     return False
 
 
-def add_duplicate_check(entries):
+def unread_hours(hours):
+    return pd.isna(hours) or hours == 0
+
+
+def duplicate_pairs(entries, loose=False):
+    """Index pairs of entries that look like the same time entered twice: the same timekeeper, work date, and hours,
+    with the same CMID or a similar client or narrative. loose: a copy whose hours couldn't be read (missing or 0) can
+    match any hours, since a misread shouldn't hide a repeat (the app's batch check)."""
+    pairs = []
+    keys = ["tk_id", "work_date"] if loose else ["tk_id", "work_date", "hours"]
+    for _, group in entries.dropna(subset=keys).groupby(keys):
+        rows = list(group.iterrows())
+        for n, (i, a) in enumerate(rows):
+            for j, b in rows[n + 1:]:
+                hours_fit = unread_hours(a["hours"]) or unread_hours(b["hours"]) or a["hours"] == b["hours"]
+                if (not loose or hours_fit) and same_work(a, b):
+                    pairs.append((i, j))
+    return pairs
+
+
+def add_duplicate_check(entries, loose=False):
     """Flag entries that look like the same time entered twice (sent by email and written on a note, say): the same
     timekeeper, work date, and hours, with the same CMID or a similar client or narrative. Both copies are flagged,
     so a reviewer keeps one. Run it on everything entered, across uploads.
     """
     dupe = pd.Series(False, index=entries.index)
-    for _, group in entries.dropna(subset=["tk_id", "work_date", "hours"]).groupby(["tk_id", "work_date", "hours"]):
-        rows = list(group.iterrows())
-        for n, (i, a) in enumerate(rows):
-            for j, b in rows[n + 1:]:
-                if same_work(a, b):
-                    dupe[i] = dupe[j] = True
+    for i, j in duplicate_pairs(entries, loose):
+        dupe[i] = dupe[j] = True
     return add_reason(entries, dupe, "possible_duplicate")
+
+
+BATCH_COLS = ["entry_id", "tk_id", "work_date", "hours", "cmid", "client", "narrative"]
+
+
+def batch_table(entries):
+    table = pd.DataFrame(entries).reindex(columns=BATCH_COLS)
+    table["work_date"] = pd.to_datetime(table["work_date"], errors="coerce")
+    table["hours"] = pd.to_numeric(table["hours"], errors="coerce")
+    table["check_reasons"] = ""
+    return table
+
+
+def batch_repeats(entries):
+    """{entry_id: [entry_ids it may repeat]} over everything in a batch (entries as in batch_flags), so the page can
+    drop the question once the other copy is removed."""
+    if not entries:
+        return {}
+    table, out = batch_table(entries), {}
+    for i, j in duplicate_pairs(table, loose=True):
+        a, b = str(table.at[i, "entry_id"]), str(table.at[j, "entry_id"])
+        out.setdefault(a, []).append(b)
+        out.setdefault(b, []).append(a)
+    return out
+
+
+def batch_flags(entries):
+    """{entry_id: [reasons]} for the checks one upload alone can't make, run over everything in a batch: the same time
+    entered twice (possible_duplicate) and a timekeeper's day over DAY_MAX hours (day_over_max). entries: a list of
+    dicts with BATCH_COLS. Entries with no reason are left out."""
+    if not entries:
+        return {}
+    table = add_day_check(add_duplicate_check(batch_table(entries), loose=True))
+    flagged = table[table["check_reasons"] != ""]
+    return {str(i): reasons.split("; ") for i, reasons in zip(flagged["entry_id"], flagged["check_reasons"])}
 
 
 def make_entries(rows, timekeepers, year):

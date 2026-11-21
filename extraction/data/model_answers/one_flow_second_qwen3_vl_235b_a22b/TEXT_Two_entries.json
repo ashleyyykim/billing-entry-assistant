@@ -1,0 +1,52 @@
+{
+ "model": "qwen.qwen3-vl-235b-a22b",
+ "entries": [
+  {
+   "lines": [
+    1
+   ],
+   "client": "Meridian",
+   "cmid": "",
+   "matter": "",
+   "date": "",
+   "hours_written": "1.5",
+   "hours": 1.5,
+   "narrative": "proxy draft",
+   "billable": true,
+   "unsure": ""
+  },
+  {
+   "lines": [
+    2
+   ],
+   "client": "Tidewater",
+   "cmid": "",
+   "matter": "",
+   "date": "",
+   "hours_written": ".3",
+   "hours": 0.3,
+   "narrative": "board consent",
+   "billable": true,
+   "unsure": ""
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "text": "Meridian - proxy draft 1.5"
+  },
+  {
+   "id": 2,
+   "text": "Tidewater - board consent .3"
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 2675,
+  "outputTokens": 145,
+  "totalTokens": 2820
+ },
+ "latency_ms": 3623,
+ "prompt_hash": "8033befe5f"
+}

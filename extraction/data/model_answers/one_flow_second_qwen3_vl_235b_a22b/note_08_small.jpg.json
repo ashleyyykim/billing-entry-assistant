@@ -1,0 +1,49 @@
+{
+ "model": "qwen.qwen3-vl-235b-a22b",
+ "prompt": "v2",
+ "mode": "tool",
+ "system_prompt": true,
+ "image_first": false,
+ "entries": [
+  {
+   "lines": [
+    1,
+    2
+   ],
+   "client": "Ironwood",
+   "cmid": "",
+   "date": "",
+   "hours_written": "1:15",
+   "narrative": "Prism bringdown call",
+   "unsure": "photo shows \"Ironwood\"; reader has \"Iron W\". \"1:15\" read as 1.25 hours (75 minutes).",
+   "hours": 1.25
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "across": 26,
+   "down": 37,
+   "conf": 69,
+   "number_conf": 99,
+   "text": "1:15 Iron W sod"
+  },
+  {
+   "id": 2,
+   "across": 22,
+   "down": 46,
+   "conf": 21,
+   "number_conf": null,
+   "text": "\u65b0 Brism bringdown call"
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 4408,
+  "outputTokens": 100,
+  "totalTokens": 4508
+ },
+ "latency_ms": 4419,
+ "prompt_hash": "4be68320a8"
+}

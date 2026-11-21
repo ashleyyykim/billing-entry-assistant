@@ -1,0 +1,52 @@
+{
+ "model": "qwen.qwen3-vl-235b-a22b",
+ "entries": [
+  {
+   "lines": [
+    1
+   ],
+   "client": "Meridian",
+   "cmid": "",
+   "matter": "",
+   "date": "",
+   "hours_written": ".5",
+   "hours": 0.5,
+   "narrative": "proxy",
+   "billable": true,
+   "unsure": ""
+  },
+  {
+   "lines": [
+    2
+   ],
+   "client": "Firm",
+   "cmid": "",
+   "matter": "",
+   "date": "",
+   "hours_written": ".2",
+   "hours": 0.2,
+   "narrative": "admin",
+   "billable": true,
+   "unsure": ""
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "text": "Meridian proxy .5"
+  },
+  {
+   "id": 2,
+   "text": "Firm admin .2"
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 2667,
+  "outputTokens": 140,
+  "totalTokens": 2807
+ },
+ "latency_ms": 5386,
+ "prompt_hash": "8033befe5f"
+}

@@ -26,13 +26,14 @@ from pathlib import Path
 import pandas as pd
 
 from free_text import CMID_SHAPE, fix_misreads, page_amounts, page_order, spoken_hours, unused_hours
-from grade import align, pick_cutoff, same_cmid, similar
+from grade import align, narrative_ok, pick_cutoff, plain_words, same_cmid, similar
 from intake import add_reason
 from text_parser import find_hours
 from textract import page_lines
 
 NOVA_MODELS = {"Nova Pro": "us.amazon.nova-pro-v1:0", "Nova 2 Lite": "us.amazon.nova-2-lite-v1:0"}
 MAX_HOURS = 12
+MAX_OUTPUT_TOKENS = 8000          # an entry is about 110 output tokens; Nova Pro allows 10K
 LOW_CONF = 80                       # the cutoff the rules use for Textract's confidence
 NOVA_PHOTO = (2048, 3_750_000)      # longest side and bytes for a photo sent to Nova
 BDA_PHOTO = (7680, 5_000_000)       # Data Automation's limits for an image
@@ -131,6 +132,11 @@ EXAMPLES = [
 ]
 EXAMPLE_CLIENTS = ["Saffron", "Kestrel", "Juniper Peak", "Copperline", "Pelican Row"]
 
+NARRATIVE_RULE = ('- "narrative": every word of the entry\'s description as written, from the line it starts on through '
+                  'every line it wraps onto, up to where the next entry\'s client, CMID, hours, "same", or date '
+                  'begins. Before you answer, read each narrative against the note: no words cut off, none left '
+                  'over, and none given to the entry below.')
+
 TIMEKEEPER_FIELD = ("The timekeeper (the lawyer or paralegal whose time it is) when the text names one for this entry, "
                     "like a report's Timekeeper heading or a name column, as written. Empty if none is named.")
 TIMEKEEPER_RULE = ('- "timekeeper": who the time belongs to, only when the text names them for this entry (a '
@@ -166,15 +172,17 @@ def line_table(lines):
     return "\n".join(out)
 
 
-def system_prompt(with_timekeeper=False):
-    """The system prompt (prompt v1). with_timekeeper adds the timekeeper rule; the examples then show it empty."""
+def system_prompt(with_timekeeper=False, narrative=False):
+    """The system prompt (prompt v1). with_timekeeper adds the timekeeper rule; the examples then show it empty.
+    narrative adds NARRATIVE_RULE (one_flow's note_narrative fix)."""
     shown = [{**e, "timekeeper": ""} if with_timekeeper else e for ex in EXAMPLES for e in ex["entries"]]
     examples, start = [], 0
     for n, ex in enumerate(EXAMPLES, 1):
         entries, start = shown[start:start + len(ex["entries"])], start + len(ex["entries"])
         examples.append(f"Example {n}:\n{NOTE_INTRO}\n{line_table(ex['lines'])}\n\nAnswer:\n"
                         f"{json.dumps({'entries': entries})}")
-    rules = OUTPUT_RULES + ("\n" + TIMEKEEPER_RULE if with_timekeeper else "")
+    rules = (OUTPUT_RULES + ("\n" + NARRATIVE_RULE if narrative else "")
+             + ("\n" + TIMEKEEPER_RULE if with_timekeeper else ""))
     return ("You read lawyers' time notes for a law firm's billing team. A text reader has already read the note; "
             "you decide which lines make up each time entry and what each field says, and record them with "
             "record_entries.\n\n"
@@ -235,7 +243,7 @@ def run_all(jobs, workers=4):
 
 
 def ask_nova(runtime, lines, clients, model_id, photo=None, typed=False, tries=3, intro=None, with_timekeeper=False,
-             system=None, schema=None, force_tool=True):
+             system=None, schema=None, force_tool=True, cache=False):
     """Nova's entries for one note, forced into ENTRY_SCHEMA by a tool call. Saves the lines it was shown, how long it
     took, and the tokens used, so the answer can be checked and costed from the saved file alone.
 
@@ -245,6 +253,9 @@ def ask_nova(runtime, lines, clients, model_id, photo=None, typed=False, tries=3
     schema: the tool's input schema in place of entry_schema(with_timekeeper) (prompt v4 adds matter and billable).
     force_tool: False for models that can't be forced to call a tool (Llama 4 Maverick): the tool is offered, and a
     reply with JSON in its text instead is read with open_models.parse_entries.
+    cache: mark the system prompt for Bedrock's prompt cache (Nova models only; the prompt must be at least 1,000
+    tokens). A later call with the same system prompt within 5 minutes reads it from the cache, at about a quarter of
+    the input price; the usage then says how many tokens came from it (cacheReadInputTokens).
     The model sometimes returns a broken tool call (ModelErrorException). It's asked again up to `tries` times; if
     it still fails, the answer has no entries and an "error", so the note falls back to the rules."""
     intro = intro or (TYPED_INTRO if typed else NOTE_INTRO)
@@ -256,12 +267,13 @@ def ask_nova(runtime, lines, clients, model_id, photo=None, typed=False, tries=3
         try:
             response = runtime.converse(
                 modelId=model_id,
-                system=[{"text": system or system_prompt(with_timekeeper)}],
+                system=[{"text": system or system_prompt(with_timekeeper)}] + (
+                    [{"cachePoint": {"type": "default"}}] if cache else []),
                 messages=[{"role": "user", "content": content}],
                 toolConfig={"tools": [{"toolSpec": {"name": "record_entries", "description": "Record the time entries.",
                                                     "inputSchema": {"json": schema or entry_schema(with_timekeeper)}}}],
                             **({"toolChoice": {"tool": {"name": "record_entries"}}} if force_tool else {})},
-                inferenceConfig={"temperature": 0, "maxTokens": 4000},
+                inferenceConfig={"temperature": 0, "maxTokens": MAX_OUTPUT_TOKENS},
             )
             break
         except Exception as error:
@@ -391,11 +403,26 @@ def nova_rows(answer, source, upload_date, cmids, input_type="NOTE", confidence=
                       confidence=confidence, amount_lines=amount_lines)
 
 
-def cross_check(first, second, dates=False):
+NARRATIVE_AGREE = 50   # two readers' narratives this similar (grade.narrative_ok) count as the same. Chosen Nov 20 on
+                       # the samples: the loosest score that flags both narrative errors the two readers' other fields
+                       # agreed on (note_03, note_12), and on these samples it flags nothing else
+
+
+def same_narrative(a, b, min_score=NARRATIVE_AGREE):
+    """True when two readings of one entry describe the same work: both blank, or either narrative (with its matter in
+    front) close to the other's."""
+    if not plain_words(a.get("narrative")) and not plain_words(b.get("narrative")):
+        return True
+    return (narrative_ok(a.get("narrative"), b.get("narrative"), min_score, a.get("matter"))
+            or narrative_ok(b.get("narrative"), a.get("narrative"), min_score, b.get("matter")))
+
+
+def cross_check(first, second, dates=False, narratives=False):
     """The first reader's entries for one note, with the ones the second reader disagrees with flagged
     (readers_disagree), and the second reader's entries the first didn't find added in place (second_reader_only).
 
-    dates: also count two different work dates as a disagreement."""
+    dates: also count two different work dates as a disagreement. narratives: also two narratives that don't describe
+    the same work (same_narrative)."""
     first, second = first.reset_index(drop=True), second.reset_index(drop=True)
     pieces = []
     for i, j in align(first, second):
@@ -410,7 +437,8 @@ def cross_check(first, second, dates=False):
                      and (similar(a["client"], b["client"]) or similar(b["client"], a["client"]))
                      and (pd.isna(a["cmid"]) or pd.isna(b["cmid"]) or same_cmid(a["cmid"], b["cmid"]))
                      and not (dates and pd.notna(a["work_date"]) and pd.notna(b["work_date"])
-                              and pd.Timestamp(a["work_date"]) != pd.Timestamp(b["work_date"])))
+                              and pd.Timestamp(a["work_date"]) != pd.Timestamp(b["work_date"]))
+                     and not (narratives and not same_narrative(a, b)))
         pieces.append(row if agree else add_reason(row, [True], "readers_disagree"))
     return pd.concat(pieces, ignore_index=True) if pieces else first
 

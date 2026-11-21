@@ -1,0 +1,34 @@
+{
+ "model": "us.amazon.nova-pro-v1:0",
+ "entries": [
+  {
+   "lines": [
+    1
+   ],
+   "client": "Kestrel Foods",
+   "cmid": "",
+   "matter": "",
+   "date": "",
+   "hours_written": "1.5 hrs (.8 call +.7 memo)",
+   "hours": 1.5,
+   "narrative": "call + memo",
+   "unsure": "",
+   "billable": true
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "text": "Kestrel Foods 1.5 hrs (.8 call + .7 memo)"
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 3221,
+  "outputTokens": 92,
+  "totalTokens": 3313
+ },
+ "latency_ms": 1213,
+ "prompt_hash": "15a8fa25f3"
+}

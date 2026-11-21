@@ -1,0 +1,34 @@
+{
+ "model": "qwen.qwen3-vl-235b-a22b",
+ "entries": [
+  {
+   "lines": [
+    1
+   ],
+   "client": "Meridian",
+   "cmid": "",
+   "matter": "",
+   "date": "",
+   "hours_written": ".7",
+   "hours": 0.7,
+   "narrative": "Reviewed \u00a7 2.1 of credit agreement",
+   "billable": true,
+   "unsure": ""
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "text": "Reviewed \u00a7 2.1 of credit agreement for Meridian .7"
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 2668,
+  "outputTokens": 87,
+  "totalTokens": 2755
+ },
+ "latency_ms": 2841,
+ "prompt_hash": "8033befe5f"
+}

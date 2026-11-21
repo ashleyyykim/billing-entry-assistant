@@ -1,0 +1,38 @@
+{
+ "model": "qwen.qwen3-vl-235b-a22b",
+ "entries": [
+  {
+   "lines": [
+    2
+   ],
+   "client": "Pelican Row",
+   "cmid": "",
+   "matter": "",
+   "date": "10/30",
+   "hours_written": ".4",
+   "hours": 0.4,
+   "narrative": "call w/ broker re 450 Harbor St.",
+   "billable": true,
+   "unsure": ""
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "text": "My log for the week is attached."
+  },
+  {
+   "id": 2,
+   "text": "Also Pelican Row .4 call w/ broker re 450 Harbor St. on 10/30."
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 3087,
+  "outputTokens": 96,
+  "totalTokens": 3183
+ },
+ "latency_ms": 1608,
+ "prompt_hash": "d35934108c"
+}

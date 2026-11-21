@@ -22,5 +22,16 @@ services:
       # Voice memos: an S3 bucket in AWS_REGION that your credentials can write to. Amazon Transcribe reads each memo from
       # it; the memo and the job are deleted right after. Left unset, voice memos get a message saying they aren't set up.
       TENTH_S3_BUCKET:
+      # The two reading models on Bedrock, and how long one upload may take. Left unset: Nova Pro, Qwen3 VL, and
+      # 300 seconds. GET /health shows whether each model is ACTIVE or LEGACY (being retired).
+      TENTH_MODEL_FIRST:
+      TENTH_MODEL_SECOND:
+      TENTH_UPLOAD_SECONDS:
+      # The operations log (matching/src/ops_log.py): one JSON line per model call and per upload, with no client text.
+      # The lines always go to the container's log; set this (for example /cache/ops.jsonl) to keep them in a file too.
+      TENTH_OPS_LOG:
+      # Set to 1 to name uploads by file name in the container log and show full tracebacks (for debugging). Left unset,
+      # the log names an upload by its id and file type, since a file name can name a client.
+      TENTH_LOG_FILE_NAMES:
     volumes:
       - ${HOME}/.tenth-dev-cache:/cache

@@ -1,0 +1,44 @@
+{
+ "model": "us.amazon.nova-pro-v1:0",
+ "entries": [
+  {
+   "lines": [
+    1,
+    2,
+    3
+   ],
+   "client": "Cobalt Ridge Partners",
+   "cmid": "",
+   "matter": "Fund II",
+   "date": "10/13",
+   "hours_written": "1.2",
+   "hours": 1.2,
+   "narrative": "revise sub docs",
+   "billable": true,
+   "unsure": ""
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "text": "10/13"
+  },
+  {
+   "id": 2,
+   "text": "Cobalt Ridge Partners"
+  },
+  {
+   "id": 3,
+   "text": "revise sub docs for Fund II 1.2"
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 3230,
+  "outputTokens": 102,
+  "totalTokens": 3332
+ },
+ "latency_ms": 1131,
+ "prompt_hash": "15a8fa25f3"
+}

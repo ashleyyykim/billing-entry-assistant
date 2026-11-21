@@ -1,0 +1,34 @@
+{
+ "model": "us.amazon.nova-pro-v1:0",
+ "entries": [
+  {
+   "lines": [
+    1
+   ],
+   "client": "Bluefin",
+   "cmid": "",
+   "matter": "",
+   "date": "",
+   "hours_written": "45 min",
+   "hours": 0.75,
+   "narrative": "option grant call",
+   "billable": true,
+   "unsure": ""
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "text": "45 min Bluefin - option grant call"
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 3213,
+  "outputTokens": 84,
+  "totalTokens": 3297
+ },
+ "latency_ms": 980,
+ "prompt_hash": "15a8fa25f3"
+}

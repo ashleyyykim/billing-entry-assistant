@@ -1,0 +1,34 @@
+{
+ "model": "qwen.qwen3-vl-235b-a22b",
+ "entries": [
+  {
+   "lines": [
+    1
+   ],
+   "client": "Halvorsen",
+   "cmid": "",
+   "matter": "",
+   "date": "",
+   "hours_written": ".4",
+   "hours": 0.4,
+   "narrative": "call w/ CEO",
+   "billable": true,
+   "unsure": ""
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "text": "HALVORSEN//call w/ CEO//.4"
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 2972,
+  "outputTokens": 84,
+  "totalTokens": 3056
+ },
+ "latency_ms": 1261,
+ "prompt_hash": "15a8fa25f3"
+}

@@ -1,0 +1,33 @@
+{
+ "model": "qwen.qwen3-vl-235b-a22b",
+ "entries": [
+  {
+   "lines": [
+    1
+   ],
+   "client": "Saffron Labs",
+   "cmid": "",
+   "matter": "",
+   "date": "",
+   "hours_written": "",
+   "narrative": "review seed docs",
+   "billable": true,
+   "unsure": ""
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "text": "Saffron Labs - review seed docs"
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 2968,
+  "outputTokens": 73,
+  "totalTokens": 3041
+ },
+ "latency_ms": 2267,
+ "prompt_hash": "15a8fa25f3"
+}

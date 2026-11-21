@@ -1,0 +1,67 @@
+{
+ "model": "us.amazon.nova-pro-v1:0",
+ "map": {
+  "unsure": "",
+  "columns": [
+   {
+    "column": 1,
+    "role": "timekeeper"
+   },
+   {
+    "column": 2,
+    "role": "date"
+   },
+   {
+    "column": 3,
+    "role": "client"
+   },
+   {
+    "column": 4,
+    "role": "minutes"
+   },
+   {
+    "column": 5,
+    "role": "narrative"
+   },
+   {
+    "column": 6,
+    "role": "billable"
+   },
+   {
+    "column": 7,
+    "role": "ignore"
+   }
+  ]
+ },
+ "lines": [
+  {
+   "id": 1,
+   "text": "Name | When | Client | Minutes | Notes | Billable | Rate"
+  },
+  {
+   "id": 2,
+   "text": "Brandt, E. | 2026-10-26 | Tidewater AI | 54 | Charter amendment for Project Kite, Series B | Y | 650"
+  },
+  {
+   "id": 3,
+   "text": "Brandt, E. | 2026-10-26 | Halvorsen | 24 | Call w/ CEO re hiring plan | Y | 650"
+  },
+  {
+   "id": 4,
+   "text": "Brandt, E. | 2026-10-27 | Bluefin Robotics | 45 | Option grant call | Y | 650"
+  },
+  {
+   "id": 5,
+   "text": "Brandt, E. | 2026-10-27 | Firm | 30 | Associate training lunch | N | 0"
+  }
+ ],
+ "stop_reason": "tool_use",
+ "usage": {
+  "inputTokens": 1241,
+  "outputTokens": 105,
+  "totalTokens": 1346
+ },
+ "latency_ms": 1586,
+ "entries": [],
+ "prompt_hash": "6f98450c7e"
+}

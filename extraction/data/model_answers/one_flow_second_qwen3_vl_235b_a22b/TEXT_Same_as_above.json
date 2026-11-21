@@ -1,0 +1,52 @@
+{
+ "model": "qwen.qwen3-vl-235b-a22b",
+ "entries": [
+  {
+   "lines": [
+    1
+   ],
+   "client": "Meridian",
+   "cmid": "",
+   "matter": "",
+   "date": "",
+   "hours_written": ".5",
+   "hours": 0.5,
+   "narrative": "proxy",
+   "billable": true,
+   "unsure": ""
+  },
+  {
+   "lines": [
+    2
+   ],
+   "client": "Meridian",
+   "cmid": "",
+   "matter": "",
+   "date": "",
+   "hours_written": ".3",
+   "hours": 0.3,
+   "narrative": "call w/ GC re timing",
+   "billable": true,
+   "unsure": ""
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "text": "Meridian proxy .5"
+  },
+  {
+   "id": 2,
+   "text": "same - call w/ GC re timing .3"
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 2673,
+  "outputTokens": 145,
+  "totalTokens": 2818
+ },
+ "latency_ms": 4679,
+ "prompt_hash": "8033befe5f"
+}

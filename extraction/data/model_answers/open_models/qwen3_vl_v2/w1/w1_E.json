@@ -1,0 +1,130 @@
+{
+ "model": "qwen.qwen3-vl-235b-a22b",
+ "prompt": "v2",
+ "mode": "tool",
+ "system_prompt": true,
+ "entries": [
+  {
+   "date": "11/2",
+   "hours_written": "2.6hs",
+   "hours": 2.6,
+   "unsure": "photo shows \"2.6 hrs\"; reader has \"2.6hs\"",
+   "narrative": "Solace Health (Board prep)",
+   "client": "Solace Health",
+   "cmid": "",
+   "lines": [
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "date": "11/2",
+   "hours_written": "1.3 hvs",
+   "hours": 1.3,
+   "unsure": "photo shows \"1.3 hrs\"; reader has \"1.3 hvs\"",
+   "narrative": "Meridian (underwriter)",
+   "client": "Meridian",
+   "cmid": "",
+   "lines": [
+    1,
+    3,
+    4
+   ]
+  },
+  {
+   "date": "11/2",
+   "hours_written": "0.5 hrs",
+   "hours": 0.5,
+   "unsure": "",
+   "narrative": "CIO Q",
+   "client": "",
+   "cmid": "",
+   "lines": [
+    1,
+    4,
+    5
+   ]
+  },
+  {
+   "date": "11/2",
+   "hours_written": "0.4 hrs",
+   "hours": 0.4,
+   "unsure": "",
+   "narrative": "3455.002 (Charter updates)",
+   "client": "",
+   "cmid": "3455.002",
+   "lines": [
+    1,
+    6,
+    7
+   ]
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "across": 8,
+   "down": 6,
+   "conf": 49,
+   "number_conf": 100,
+   "text": "norday, Na 2 worked"
+  },
+  {
+   "id": 2,
+   "across": 6,
+   "down": 14,
+   "conf": 96,
+   "number_conf": null,
+   "text": "on Solace Health ( Board"
+  },
+  {
+   "id": 3,
+   "across": 6,
+   "down": 19,
+   "conf": 66,
+   "number_conf": 87,
+   "text": "prep) for 2.6hs , Meridian"
+  },
+  {
+   "id": 4,
+   "across": 6,
+   "down": 25,
+   "conf": 61,
+   "number_conf": 100,
+   "text": "(underwriter)for 1.3 hvs and"
+  },
+  {
+   "id": 5,
+   "across": 7,
+   "down": 31,
+   "conf": 53,
+   "number_conf": 74,
+   "text": "CIO Q) for 0.5 hrs,"
+  },
+  {
+   "id": 6,
+   "across": 8,
+   "down": 35,
+   "conf": 91,
+   "number_conf": 91,
+   "text": "3455.002 (Charter updates)"
+  },
+  {
+   "id": 7,
+   "across": 9,
+   "down": 42,
+   "conf": 86,
+   "number_conf": 100,
+   "text": "for 0.4 hrs."
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 7154,
+  "outputTokens": 323,
+  "totalTokens": 7477
+ },
+ "latency_ms": 6861
+}

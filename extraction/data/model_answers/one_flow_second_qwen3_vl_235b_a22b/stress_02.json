@@ -1,0 +1,62 @@
+{
+ "model": "qwen.qwen3-vl-235b-a22b",
+ "entries": [
+  {
+   "lines": [
+    1
+   ],
+   "client": "Halvorsen",
+   "cmid": "",
+   "matter": "",
+   "date": "",
+   "hours_written": ".4",
+   "hours": 0.4,
+   "narrative": "Call with Halvorsen about hiring",
+   "billable": true,
+   "unsure": ""
+  },
+  {
+   "lines": [
+    1
+   ],
+   "client": "Cobalt Ridge Partners",
+   "cmid": "",
+   "matter": "",
+   "date": "",
+   "hours_written": "1.2",
+   "hours": 1.2,
+   "narrative": "revised sub docs",
+   "billable": true,
+   "unsure": ""
+  },
+  {
+   "lines": [
+    1
+   ],
+   "client": "Tidewater",
+   "cmid": "",
+   "matter": "",
+   "date": "",
+   "hours_written": ".3",
+   "hours": 0.3,
+   "narrative": "board consent",
+   "billable": true,
+   "unsure": ""
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "text": "Call with Halvorsen about hiring .4, revised sub docs for Cobalt Ridge Partners 1.2, Tidewater board consent .3"
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 2685,
+  "outputTokens": 220,
+  "totalTokens": 2905
+ },
+ "latency_ms": 6314,
+ "prompt_hash": "8033befe5f"
+}

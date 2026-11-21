@@ -18,21 +18,27 @@ PHOTO_TYPES = {".jpg", ".jpeg", ".png"}
 SIDEWAYS = {5, 6, 7, 8}     # EXIF orientations that turn the photo a quarter turn
 
 
-def saved_answers(reader, source):
-    """The model answers saved for one source, one per piece (a page, or a part of a long file), in order."""
+def saved_answers(reader, source, at_least=0):
+    """The model answers saved for one source, one per piece (a page, or a part of a long file), in order, with None
+    for a piece this reader has no answer for (the other reader's answer was used). at_least: how many pieces to
+    look for even when some are missing."""
+    made = getattr(reader, "made", {}).get(source)
+    if made:
+        return made
     one = reader.path(source, None)
     if one.exists():
         return [json.loads(one.read_text())]
     out = []
-    while reader.path(source, len(out)).exists():
-        out.append(json.loads(reader.path(source, len(out)).read_text()))
+    while len(out) < at_least or reader.path(source, len(out)).exists():
+        path = reader.path(source, len(out))
+        out.append(json.loads(path.read_text()) if path.exists() else None)
     return out
 
 
 def repeats(answers, n):
     """How many lines at the top of piece n repeat piece 0's (a long typed file gives each later piece the same first
     lines for context). Photos and scans have positions and never repeat."""
-    lines, first = answers[n].get("lines") or [], answers[0].get("lines") or []
+    lines, first = (answers[n] or {}).get("lines") or [], (answers[0] or {}).get("lines") or []
     if not n or not lines or "across" in lines[0]:
         return 0
     k = 0
@@ -144,14 +150,18 @@ def locate(entries, name, first, second, path=None, pages_dir=None, kind=None, s
         if pd.isna(source):
             continue
         source = str(source)
-        answers_of[source] = {"first": saved_answers(first, source), "second": saved_answers(second, source)}
-        answers = answers_of[source]["first"] or answers_of[source]["second"]
+        count = int(group["page"].max()) if group["page"].notna().any() else 0
+        ones, twos = saved_answers(first, source, count), saved_answers(second, source, count)
+        count = max(len(ones), len(twos))
+        ones, twos = saved_answers(first, source, count), saved_answers(second, source, count)
+        answers_of[source] = {"first": ones, "second": twos}
+        answers = [one or two for one, two in zip(ones, twos)] if ones and twos else ones or twos
         if not answers:
             continue
         pieces = []
         for n, answer in enumerate(answers):
             skip = repeats(answers, n)
-            pieces.append({"lines": [{"id": line["id"], "text": str(line["text"])} for line in (answer.get("lines") or [])[skip:]],
+            pieces.append({"lines": [{"id": line["id"], "text": str(line["text"])} for line in ((answer or {}).get("lines") or [])[skip:]],
                            "repeat": skip})
         item = {"input_type": str(group["input_type"].iloc[0]), "header": None, "pieces": pieces}
         if spreadsheet is not None and Path(str(source)).name == Path(str(name)).name:
@@ -173,8 +183,10 @@ def locate(entries, name, first, second, path=None, pages_dir=None, kind=None, s
         reasons = str(row["check_reasons"])
         if source not in answers_of or "read_by_rules" in reasons:
             continue
-        found = answers_of[source]["second" if "second_reader_only" in reasons else "first"]
         n = 0 if pd.isna(row["page"]) else int(row["page"]) - 1
+        ones = answers_of[source]["first"]
+        mine = ones[n] if n < len(ones) else None
+        found = answers_of[source]["second" if "second_reader_only" in reasons or mine is None else "first"]
         try:
             entry = found[n]["entries"][int(float(row["rows"])) - 1]
         except (IndexError, ValueError, TypeError, KeyError):

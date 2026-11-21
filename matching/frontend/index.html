@@ -1908,17 +1908,44 @@ async function api(path, opts = {}) {
   catch (err) { throw new Said("Can't reach the service. Check your connection and try again.", `${err.name}: ${err.message}`); }
   if (res.status === 401) throw new Said("You've been signed out. Reload the page to sign in again.", "HTTP 401");
   if (!res.ok) {
-    let detail = "", debug = "";
-    try {
-      const j = await res.json(), d = j.detail;
-      if (d && typeof d === "object" && !Array.isArray(d) && d.message) { detail = d.message; debug = d.debug || ""; }
-      else detail = typeof d === "string" ? d : JSON.stringify(d);
-    } catch { detail = ""; }
-    const err = new Said(detail || `The service returned ${res.status}.`, `${debug || detail || "No details"} (HTTP ${res.status} from ${path})`);
-    if (res.status === 422) err.noRetry = true;
-    throw err;
+    let d = "";
+    try { d = (await res.json()).detail; } catch { d = ""; }
+    throw serviceError(res.status, d, path);
   }
   return res.json();
+}
+function serviceError(status, d, path) {   // what the service said went wrong, in words for the page and for Details
+  let detail = "", debug = "";
+  if (d && typeof d === "object" && !Array.isArray(d) && d.message) { detail = d.message; debug = d.debug || ""; }
+  else detail = typeof d === "string" ? d : (d ? JSON.stringify(d) : "");
+  const err = new Said(detail || `The service returned ${status}.`, `${debug || detail || "No details"} (HTTP ${status} from ${path})`);
+  if (status === 422) err.noRetry = true;
+  return err;
+}
+const JOB_POLL_MS = 1500, JOB_GIVE_UP_MS = 20 * 60 * 1000, JOB_LOST_POLLS = 3;
+async function readInBackground(form, src) {   // submit, then poll: no request stays open while the models read
+  form.append("wait", "false");
+  await api("/extract", { method: "POST", body: form });
+  const began = Date.now(), path = "/extract/progress/" + src.pid;
+  let lost = 0;
+  for (;;) {
+    await new Promise(r => setTimeout(r, JOB_POLL_MS));
+    if (!S.sources.includes(src)) return null;   // the file was removed while it was read
+    const late = Date.now() - began > JOB_GIVE_UP_MS;
+    let p;
+    try { p = await api(path + "?result=true"); }
+    catch (err) { if (late || err.message.startsWith("You've been signed out")) throw err; continue; }   // a dropped poll is tried again
+    if (!p.known) {
+      if (++lost >= JOB_LOST_POLLS) throw new Said("Tenth lost track of this file. Try again.", `No such upload on the service: it restarted, or another copy of it answered (${path})`);
+      continue;
+    }
+    lost = 0;
+    if (p.finished) {
+      if (p.error) throw serviceError(p.error.status, p.error.detail, "/extract");
+      return p.result;
+    }
+    if (late) throw new Said("Tenth is taking too long with this file. Try again.", `Not finished after ${JOB_GIVE_UP_MS / 60000} minutes (${path})`);
+  }
 }
 let TKPICK = "";   // whose time this is: a timekeeper's id, or "*" when each note says
 let gateNew = false, tkWas = "", WAITING = [], askNewFor = null, newTkConfirm = "";   // typing a new name at the start; files waiting for the choice; the question asking for a new name; the typed name awaiting a second Enter
@@ -2055,7 +2082,7 @@ function taskFromLine(l) {
 
 const DATE_CODES = new Set(["no_date", "date_gap", "date_weekday"]);
 const hasty = () => Date.now() - (S.shownAt || 0) < 450;   // Enter this soon after a question appeared is a double tap, not an answer
-const HOURS_CODES = new Set(["hours_10x", "hours_mismatch", "not_on_page", "no_hours", "day_over_max"]);
+const HOURS_CODES = new Set(["hours_10x", "hours_mismatch", "not_on_page", "no_hours", "day_over_max", "hours_reused"]);
 const MATTER_CODES = new Set(["client_unknown", "client_ambiguous", "client_cmid_mismatch", "client_gap", "cmid_unknown", "cmid_shape"]);
 const MATCH_COLS = ["entry_id", "tk_id", "source_format", "work_date", "cmid", "client", "matter", "narrative", "hours"];
 
@@ -2523,7 +2550,7 @@ async function readFile(src) {
     if (src.sendAnyway || (src.sample && src.kind === "photo")) form.append("send_anyway", "true");   // the demo photos are 3 megapixels, under what the check wants for a phone photo
     if (TKPICK && TKPICK !== "*" && TK[TKPICK] && !isNewTk(TKPICK)) form.append("tk_id", TKPICK);   // the timekeeper chosen before the upload
     const ckey = src.key + "|" + (src.tk || ""), kept = src.fresh ? null : EXTRACTED.get(ckey);   // "Try again" and "Read it again" always ask again
-    const out = kept ? structuredClone(kept) : await api("/extract", { method: "POST", body: form });
+    const out = kept ? structuredClone(kept) : await readInBackground(form, src);
     src.fresh = false;
     if (!S.sources.includes(src)) return;
     enterStage(src, "writing"); tickWait();
@@ -2562,8 +2589,50 @@ async function finish(src, ents) {
   if (!S.sources.includes(src)) return;
   src.status = "done"; if (src.t0) src.took = (Date.now() - src.t0) / 1000;
   S.entries.push(...ents); S.entries.sort(byOrder);
+  await batchChecks(ents);
   if (S.arrived) { S.addFilesN = (S.addFilesN || 0) + 1; S.addN = (S.addN || 0) + ents.length; S.notice = `Added ${plural(S.addFilesN, "note", "notes")}: ${plural(S.addN, "new entry", "new entries")}.`; }
   pump(); render();
+}
+/* Checks across every upload in the workspace, which one upload can't make alone: the same time sent twice (an email and a
+   sticky note) and a timekeeper's day over 14 hours. Only the entries just added are asked about, since they are the
+   possible repeat; the entry already there is left alone, so removing the new copy ends the question. Each is raised once
+   per entry, so a question already answered stays answered. */
+const BATCH_SAID = { possible_duplicate: "This may repeat another entry.", day_over_max: "This adds up to over 14 hours in one day." };
+async function batchChecks(added) {
+  const live = S.entries.filter(e => !e.removed && e.tk && e.date);   // hours of 0 too: a misread copy is still a repeat
+  if (live.length < 2) return;
+  let flags = {}, repeats = {};
+  try {
+    const out = await api("/check-batch", { method: "POST", body: JSON.stringify({ entries: live.map(e => ({ entry_id: e.id, tk_id: e.tk, work_date: e.date,
+      hours: hoursOf(e), cmid: e.matterState === "changed" ? e.changed.cmid : e.cmid, client: e.typedClient || null, narrative: e.narr })) }) });
+    flags = out.flags || {}; repeats = out.repeats || {};
+  } catch { return; }   // the page works without these checks
+  for (const e of live.filter(x => added.includes(x))) {
+    const raised = e.batchRaised || (e.batchRaised = []);
+    for (const code of flags[e.id] || []) {
+      if (raised.includes(code) || !BATCH_SAID[code]) continue;
+      raised.push(code);
+      if (code === "possible_duplicate") e.dupOf = repeats[e.id] || [];
+      if (code === "day_over_max") {
+        if (!e.hoursFlag) { e.hoursFlag = { options: [hoursOf(e)], note: BATCH_SAID[code], written: hoursOf(e) }; e.hoursOk = false; }
+      } else if (!e.verify) {
+        e.verify = { text: BATCH_SAID[code], codes: [code], parts: { date: false, matter: false }, debug: "" }; e.verified = false;
+      } else if (!(e.verify.codes || []).includes(code)) {
+        e.verify.codes = [...(e.verify.codes || []), code]; e.verify.text = `${e.verify.text} ${BATCH_SAID[code]}`.trim(); e.verified = false;
+      }
+    }
+  }
+}
+/* A "may repeat another entry" question only stands while the other copy is still there: removing it puts the question
+   away, and Undo brings it back. Runs on every render. */
+const onlyRepeat = v => (v.codes || []).length > 0 && v.codes.every(c => c === "possible_duplicate");
+function settleRepeats() {
+  for (const e of S.entries) {
+    if (!e.dupOf || !e.dupOf.length) continue;
+    const alone = e.dupOf.every(id => { const p = byId(id); return !p || p.removed; });
+    if (alone && e.verify && !e.verified && onlyRepeat(e.verify)) { e.dupVerify = e.verify; e.verify = null; }
+    else if (!alone && !e.verify && e.dupVerify) { e.verify = e.dupVerify; e.dupVerify = null; }
+  }
 }
 function retry(src) { src.fresh = true; src.status = "queued"; src.error = ""; src.debug = ""; src.canForce = false; pump(); render(); }
 const retryBtn = s => (s.canForce
@@ -2978,6 +3047,7 @@ function overrideQ(q) {   // one click, and Undo takes it back: the entry goes o
 /* ================= rendering ================= */
 const stage = $("#stage");
 function render() {
+  settleRepeats();
   if (S.only) { const o = byId(S.only.id); if (!o || o.removed || (!S.only.review && !qsOf(o).length)) { toList(); return; } }   // that entry is settled: back to the list
   const v = view(), cur = v === "ask" && !S.typing ? current() : null;
   if (cur) { if (cur.key !== S.lastKey) { S.cand = 0; S.lastKey = cur.key; S.shownAt = Date.now(); } S.curKey = cur.key; S.arrived = true; }

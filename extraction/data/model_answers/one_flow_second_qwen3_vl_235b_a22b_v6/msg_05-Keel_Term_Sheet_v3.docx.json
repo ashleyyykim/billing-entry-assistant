@@ -1,0 +1,43 @@
+{
+ "model": "qwen.qwen3-vl-235b-a22b",
+ "entries": [],
+ "lines": [
+  {
+   "id": 1,
+   "text": "Keel Ventures - Series A Term Sheet (draft v3)"
+  },
+  {
+   "id": 2,
+   "text": "Issuer: Bluefin Robotics, Inc."
+  },
+  {
+   "id": 3,
+   "text": "Amount: up to $12,000,000 of Series A Preferred at $1.25 per share"
+  },
+  {
+   "id": 4,
+   "text": "Liquidation preference: 1x non-participating"
+  },
+  {
+   "id": 5,
+   "text": "Dividends: 8% non-cumulative, when declared"
+  },
+  {
+   "id": 6,
+   "text": "Board: 2 seats for Series A, 1 independent"
+  },
+  {
+   "id": 7,
+   "text": "Closing: on or before 11/30/2026"
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 4600,
+  "outputTokens": 19,
+  "totalTokens": 4619
+ },
+ "latency_ms": 1594,
+ "prompt_hash": "acd27db3ab"
+}

@@ -1,0 +1,87 @@
+{
+ "model": "qwen.qwen3-vl-235b-a22b",
+ "prompt": "v2",
+ "mode": "tool",
+ "system_prompt": true,
+ "image_first": false,
+ "entries": [
+  {
+   "lines": [
+    1,
+    2,
+    3
+   ],
+   "client": "Tidewater Analytics",
+   "cmid": "",
+   "date": "",
+   "hours_written": "1.2",
+   "narrative": "draft side letter for Series A 880m lead",
+   "unsure": "",
+   "hours": 1.2
+  },
+  {
+   "lines": [
+    4,
+    5
+   ],
+   "client": "Firm",
+   "cmid": "",
+   "date": "",
+   "hours_written": ".3",
+   "narrative": "admin time entries",
+   "unsure": "",
+   "hours": 0.3
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "across": 29,
+   "down": 43,
+   "conf": 97,
+   "number_conf": 100,
+   "text": "Tidewater Analytics 1.2"
+  },
+  {
+   "id": 2,
+   "across": 29,
+   "down": 49,
+   "conf": 100,
+   "number_conf": null,
+   "text": "draft side letter for"
+  },
+  {
+   "id": 3,
+   "across": 29,
+   "down": 54,
+   "conf": 29,
+   "number_conf": 29,
+   "text": "Series A 880m lead"
+  },
+  {
+   "id": 4,
+   "across": 29,
+   "down": 64,
+   "conf": 87,
+   "number_conf": 87,
+   "text": "Firm admin .3 time"
+  },
+  {
+   "id": 5,
+   "across": 30,
+   "down": 68,
+   "conf": 100,
+   "number_conf": null,
+   "text": "entries"
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 7082,
+  "outputTokens": 131,
+  "totalTokens": 7213
+ },
+ "latency_ms": 5569,
+ "prompt_hash": "4be68320a8"
+}

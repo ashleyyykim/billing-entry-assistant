@@ -1,0 +1,76 @@
+{
+ "model": "qwen.qwen3-vl-235b-a22b",
+ "entries": [
+  {
+   "lines": [
+    1
+   ],
+   "client": "Northgate Capital",
+   "cmid": "",
+   "matter": "",
+   "date": "",
+   "hours_written": "0.6",
+   "hours": 0.6,
+   "narrative": "call with the seller's council about the escrow",
+   "billable": true,
+   "unsure": ""
+  },
+  {
+   "lines": [
+    1
+   ],
+   "client": "Northgate Capital",
+   "cmid": "",
+   "matter": "",
+   "date": "",
+   "hours_written": "2.3%",
+   "hours": 2.3,
+   "narrative": "revised disclosure schedules for Summit Ridge",
+   "billable": true,
+   "unsure": "the transcript wrote \"2.3%\"; read as 2.3 hours (likely a stray % from speech-to-text)"
+  },
+  {
+   "lines": [
+    1
+   ],
+   "client": "Lantern Software",
+   "cmid": "",
+   "matter": "",
+   "date": "",
+   "hours_written": "1.4%",
+   "hours": 1.4,
+   "narrative": "review videos, markup for the merger agreement",
+   "billable": true,
+   "unsure": "the transcript wrote \"1.4%\"; read as 1.4 hours (likely a stray % from speech-to-text)"
+  },
+  {
+   "lines": [
+    1
+   ],
+   "client": "Firm",
+   "cmid": "",
+   "matter": "",
+   "date": "",
+   "hours_written": "one hour",
+   "hours": 1.0,
+   "narrative": "business development, lunch with a prospective client",
+   "billable": false,
+   "unsure": ""
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "text": "Northgate Capital, 0.6, call with the seller's council about the escrow. Northgate Capital, 2.3%, revised disclosure schedules for Summit Ridge. Lantern Software, 1.4% review videos, markup for the merger agreement. Firm time, business development, one hour, lunch with a prospective client."
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 3425,
+  "outputTokens": 356,
+  "totalTokens": 3781
+ },
+ "latency_ms": 9618,
+ "prompt_hash": "2a8a0d5370"
+}

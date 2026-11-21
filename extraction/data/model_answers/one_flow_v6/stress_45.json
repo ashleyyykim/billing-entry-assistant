@@ -1,0 +1,48 @@
+{
+ "model": "us.amazon.nova-pro-v1:0",
+ "entries": [
+  {
+   "lines": [
+    1
+   ],
+   "client": "Halvorsen",
+   "cmid": "",
+   "matter": "",
+   "date": "",
+   "hours_written": "1 hr",
+   "hours": 1.0,
+   "narrative": "call",
+   "billable": true,
+   "unsure": ""
+  },
+  {
+   "lines": [
+    1
+   ],
+   "client": "Tidewater",
+   "cmid": "",
+   "matter": "",
+   "date": "",
+   "hours_written": "30 min",
+   "hours": 0.5,
+   "narrative": "consent",
+   "billable": true,
+   "unsure": ""
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "text": "Halvorsen call 1 hr; Tidewater consent 30 min"
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 3218,
+  "outputTokens": 146,
+  "totalTokens": 3364
+ },
+ "latency_ms": 1385,
+ "prompt_hash": "15a8fa25f3"
+}

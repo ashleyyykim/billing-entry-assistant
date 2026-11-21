@@ -1,0 +1,116 @@
+{
+ "model": "qwen.qwen3-vl-235b-a22b",
+ "prompt": "v2",
+ "mode": "tool",
+ "system_prompt": true,
+ "entries": [
+  {
+   "date": "11-2",
+   "hours_written": "3.2",
+   "hours": 3.2,
+   "unsure": "",
+   "narrative": "10Q risk update",
+   "client": "",
+   "cmid": "5602.001",
+   "lines": [
+    1,
+    2
+   ]
+  },
+  {
+   "date": "11-3",
+   "hours_written": "0.5",
+   "hours": 0.5,
+   "unsure": "",
+   "narrative": "8K Draft",
+   "client": "A&V",
+   "cmid": "",
+   "lines": [
+    3,
+    4
+   ]
+  },
+  {
+   "date": "11-3",
+   "hours_written": "0.8",
+   "hours": 0.8,
+   "unsure": "",
+   "narrative": "Board",
+   "client": "Solace Health",
+   "cmid": "",
+   "lines": [
+    5
+   ]
+  },
+  {
+   "date": "11-4",
+   "hours_written": "0.5",
+   "hours": 0.5,
+   "unsure": "0.5 hours for a CFO call is likely correct; the reader has \"U.S\" which is probably \"0.5\" as written in the photo",
+   "narrative": "CFO call",
+   "client": "Firm",
+   "cmid": "",
+   "lines": [
+    6
+   ]
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "across": 12,
+   "down": 12,
+   "conf": 89,
+   "number_conf": 89,
+   "text": "11-2 5602.001 3.2 10Q"
+  },
+  {
+   "id": 2,
+   "across": 61,
+   "down": 18,
+   "conf": 70,
+   "number_conf": null,
+   "text": "lisk update"
+  },
+  {
+   "id": 3,
+   "across": 11,
+   "down": 26,
+   "conf": 79,
+   "number_conf": 79,
+   "text": "11-3 A&V 0.5 8k"
+  },
+  {
+   "id": 4,
+   "across": 67,
+   "down": 32,
+   "conf": 99,
+   "number_conf": null,
+   "text": "Draft"
+  },
+  {
+   "id": 5,
+   "across": 13,
+   "down": 41,
+   "conf": 98,
+   "number_conf": 98,
+   "text": "11-3 Solace Health 0.8 Board"
+  },
+  {
+   "id": 6,
+   "across": 13,
+   "down": 50,
+   "conf": 94,
+   "number_conf": 100,
+   "text": "11-4 U.S CFO call"
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 7138,
+  "outputTokens": 288,
+  "totalTokens": 7426
+ },
+ "latency_ms": 5967
+}

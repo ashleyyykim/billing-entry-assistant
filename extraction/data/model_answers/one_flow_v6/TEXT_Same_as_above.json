@@ -1,0 +1,52 @@
+{
+ "model": "us.amazon.nova-pro-v1:0",
+ "entries": [
+  {
+   "lines": [
+    1
+   ],
+   "client": "Meridian",
+   "cmid": "",
+   "matter": "proxy",
+   "date": "",
+   "hours_written": ".5",
+   "hours": 0.5,
+   "narrative": "",
+   "billable": true,
+   "unsure": ""
+  },
+  {
+   "lines": [
+    2
+   ],
+   "client": "Meridian",
+   "cmid": "",
+   "matter": "",
+   "date": "",
+   "hours_written": ".3",
+   "hours": 0.3,
+   "narrative": "call w/ GC re timing",
+   "billable": true,
+   "unsure": ""
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "text": "Meridian proxy .5"
+  },
+  {
+   "id": 2,
+   "text": "same - call w/ GC re timing .3"
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 3223,
+  "outputTokens": 148,
+  "totalTokens": 3371
+ },
+ "latency_ms": 2104,
+ "prompt_hash": "15a8fa25f3"
+}

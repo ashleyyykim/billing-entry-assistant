@@ -1,0 +1,153 @@
+{
+ "model": "qwen.qwen3-vl-235b-a22b",
+ "entries": [
+  {
+   "lines": [
+    1,
+    2,
+    3
+   ],
+   "client": "Kestrel",
+   "cmid": "",
+   "matter": "",
+   "date": "Monday, November 2",
+   "hours_written": "9:00-9:45am",
+   "hours": 0.75,
+   "narrative": "call w/ CFO re APA schedules",
+   "billable": true,
+   "unsure": "",
+   "timekeeper": ""
+  },
+  {
+   "lines": [
+    1,
+    2,
+    4
+   ],
+   "client": "Saffron",
+   "cmid": "",
+   "matter": "",
+   "date": "Monday, November 2",
+   "hours_written": "30 min",
+   "hours": 0.5,
+   "narrative": "review investor questions",
+   "billable": true,
+   "unsure": "",
+   "timekeeper": ""
+  },
+  {
+   "lines": [
+    1,
+    5,
+    6
+   ],
+   "client": "Ember Grid",
+   "cmid": "",
+   "matter": "",
+   "date": "Tuesday, November 3",
+   "hours_written": "2-3:30pm",
+   "hours": 1.5,
+   "narrative": "board call",
+   "billable": true,
+   "unsure": "",
+   "timekeeper": ""
+  },
+  {
+   "lines": [
+    1,
+    5,
+    6
+   ],
+   "client": "Ember Grid",
+   "cmid": "",
+   "matter": "",
+   "date": "Tuesday, November 3",
+   "hours_written": ".2",
+   "hours": 0.2,
+   "narrative": "follow-up email to GC re minutes",
+   "billable": true,
+   "unsure": "",
+   "timekeeper": ""
+  },
+  {
+   "lines": [
+    1,
+    7,
+    8
+   ],
+   "client": "Lanternfish",
+   "cmid": "",
+   "matter": "",
+   "date": "Wednesday, November 4",
+   "hours_written": "1 hr 15 min",
+   "hours": 1.25,
+   "narrative": "reorg steps memo",
+   "billable": true,
+   "unsure": "",
+   "timekeeper": ""
+  },
+  {
+   "lines": [
+    1,
+    9
+   ],
+   "client": "Firm",
+   "cmid": "",
+   "matter": "",
+   "date": "",
+   "hours_written": "1.0",
+   "hours": 1.0,
+   "narrative": "CLE webinar",
+   "billable": true,
+   "unsure": "",
+   "timekeeper": ""
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "text": "Time \u2014 week of Monday, November 2"
+  },
+  {
+   "id": 2,
+   "text": "Monday, November 2"
+  },
+  {
+   "id": 3,
+   "text": "9:00-9:45am Kestrel - call w/ CFO re APA schedules"
+  },
+  {
+   "id": 4,
+   "text": "Saffron (L120) - review investor questions, 30 min"
+  },
+  {
+   "id": 5,
+   "text": "Tuesday, November 3"
+  },
+  {
+   "id": 6,
+   "text": "2-3:30pm Ember Grid board call; follow-up email to GC re minutes .2"
+  },
+  {
+   "id": 7,
+   "text": "Wednesday, November 4"
+  },
+  {
+   "id": 8,
+   "text": "Lanternfish \u2013 reorg steps memo \u2013 1 hr 15 min"
+  },
+  {
+   "id": 9,
+   "text": "Firm: CLE webinar 1.0"
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 4153,
+  "outputTokens": 528,
+  "totalTokens": 4681
+ },
+ "latency_ms": 7668,
+ "prompt_hash": "1bc0720362"
+}

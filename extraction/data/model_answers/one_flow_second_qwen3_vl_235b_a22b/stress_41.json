@@ -1,0 +1,48 @@
+{
+ "model": "qwen.qwen3-vl-235b-a22b",
+ "entries": [
+  {
+   "lines": [
+    1
+   ],
+   "client": "Meridian",
+   "cmid": "",
+   "matter": "",
+   "date": "",
+   "hours_written": ".5",
+   "hours": 0.5,
+   "narrative": "proxy",
+   "billable": true,
+   "unsure": ""
+  },
+  {
+   "lines": [
+    1
+   ],
+   "client": "Kestrel Foods",
+   "cmid": "",
+   "matter": "",
+   "date": "",
+   "hours_written": ".3",
+   "hours": 0.3,
+   "narrative": "APA",
+   "billable": true,
+   "unsure": ""
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "text": "Spent .5 on Meridian proxy. Then .3 on Kestrel Foods APA."
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 2673,
+  "outputTokens": 142,
+  "totalTokens": 2815
+ },
+ "latency_ms": 10382,
+ "prompt_hash": "8033befe5f"
+}

@@ -1,0 +1,34 @@
+{
+ "model": "qwen.qwen3-vl-235b-a22b",
+ "entries": [
+  {
+   "lines": [
+    1
+   ],
+   "client": "Tidewater AI",
+   "cmid": "",
+   "matter": "",
+   "date": "",
+   "hours_written": "45 minutes",
+   "hours": 0.75,
+   "narrative": "board consent",
+   "billable": true,
+   "unsure": ""
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "text": "Tidewater AI, 45 minutes, board consent"
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 3146,
+  "outputTokens": 85,
+  "totalTokens": 3231
+ },
+ "latency_ms": 4289,
+ "prompt_hash": "cf314f9ae1"
+}

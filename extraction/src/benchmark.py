@@ -70,17 +70,32 @@ def with_ranges(graded, metrics=("right, no flag %", "silent errors %"), unit="p
     return out
 
 
+CACHE_READ_SHARE = 0.25   # input read from Bedrock's prompt cache costs about a quarter of the input price (Nova Pro)
+
+
 def model_cost(answers, prices):
     """Average dollars and seconds per page from saved model answers (usage and latency), given (input, output)
     dollars per million tokens. None for answers without usage."""
     used = [a for a in answers if a and "usage" in a and "error" not in a]
     if not used:
         return {"$ per page": None, "seconds per page": None}
-    tokens_in = sum(a["usage"]["inputTokens"] for a in used) / len(used)
+    tokens_in = sum(a["usage"]["inputTokens"] + a["usage"].get("cacheWriteInputTokens", 0)
+                    + CACHE_READ_SHARE * a["usage"].get("cacheReadInputTokens", 0) for a in used) / len(used)
     tokens_out = sum(a["usage"]["outputTokens"] for a in used) / len(used)
     dollars = (tokens_in * prices[0] + tokens_out * prices[1]) / 1e6 if prices else None
     return {"$ per page": None if dollars is None else round(dollars, 4),
             "seconds per page": round(sum(a.get("latency_ms", 0) for a in used) / len(used) / 1000, 1)}
+
+
+def narratives(graded):
+    """How the narratives of found key entries compare with the key's (grade.narrative_ok): how many were graded,
+    how many were wrong, and how many of those went through with no flag (silent narrative errors)."""
+    if "narrative_ok" not in graded:
+        return {"graded": 0, "wrong": 0, "wrong, no flag": 0}
+    has = graded[graded["narrative_ok"].notna()]
+    wrong = has[~has["narrative_ok"].astype(bool)]
+    return {"graded": len(has), "wrong": len(wrong),
+            "wrong, no flag": int((~wrong["flagged"].fillna(False).astype(bool)).sum())}
 
 
 # ---- Are two readers really different? (McNemar's test, as Dietterich 1998 recommends for one shared test set) ----

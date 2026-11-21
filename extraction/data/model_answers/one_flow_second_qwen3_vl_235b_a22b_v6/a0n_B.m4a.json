@@ -1,0 +1,76 @@
+{
+ "model": "qwen.qwen3-vl-235b-a22b",
+ "entries": [
+  {
+   "lines": [
+    1
+   ],
+   "client": "",
+   "cmid": "5602.001",
+   "matter": "",
+   "date": "Monday",
+   "hours_written": "3.2",
+   "hours": 3.2,
+   "narrative": "drafting the risk factor updates for the 10Q",
+   "billable": true,
+   "unsure": ""
+  },
+  {
+   "lines": [
+    1
+   ],
+   "client": "ANV",
+   "cmid": "",
+   "matter": "",
+   "date": "Yesterday",
+   "hours_written": "half an hour",
+   "hours": 0.5,
+   "narrative": "comments on the 8K draft",
+   "billable": true,
+   "unsure": ""
+  },
+  {
+   "lines": [
+    1
+   ],
+   "client": "Solace Health",
+   "cmid": "",
+   "matter": "",
+   "date": "Yesterday",
+   "hours_written": "0.8",
+   "hours": 0.8,
+   "narrative": "preparing the board consent",
+   "billable": true,
+   "unsure": ""
+  },
+  {
+   "lines": [
+    1
+   ],
+   "client": "",
+   "cmid": "",
+   "matter": "",
+   "date": "today",
+   "hours_written": "18 minutes",
+   "hours": 0.3,
+   "narrative": "call with the CFO about status",
+   "billable": true,
+   "unsure": ""
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "text": "Catching up on the last few days. On Monday, I spent 3.2 on 5602.001, drafting the risk factor updates for the 10Q. Yesterday, half an hour on ANV, comments on the 8K draft, and 0.8 for Solace Health preparing the board consent. And then today 18 minutes on a call with the CFO about status."
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 3445,
+  "outputTokens": 308,
+  "totalTokens": 3753
+ },
+ "latency_ms": 9416,
+ "prompt_hash": "2a8a0d5370"
+}

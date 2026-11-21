@@ -1,0 +1,19 @@
+{
+ "model": "qwen.qwen3-vl-235b-a22b",
+ "entries": [],
+ "lines": [
+  {
+   "id": 1,
+   "text": "Reviewed docs for Halvorsen"
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 2661,
+  "outputTokens": 19,
+  "totalTokens": 2680
+ },
+ "latency_ms": 513,
+ "prompt_hash": "8033befe5f"
+}

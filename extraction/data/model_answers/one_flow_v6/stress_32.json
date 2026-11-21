@@ -1,0 +1,34 @@
+{
+ "model": "us.amazon.nova-pro-v1:0",
+ "entries": [
+  {
+   "lines": [
+    1
+   ],
+   "client": "Halvorsen",
+   "cmid": "",
+   "matter": "",
+   "date": "",
+   "hours_written": "",
+   "hours": 0.0,
+   "narrative": "Reviewed docs",
+   "billable": true,
+   "unsure": ""
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "text": "Reviewed docs for Halvorsen"
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 3209,
+  "outputTokens": 79,
+  "totalTokens": 3288
+ },
+ "latency_ms": 1207,
+ "prompt_hash": "15a8fa25f3"
+}

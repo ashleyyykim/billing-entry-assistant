@@ -1,0 +1,34 @@
+{
+ "model": "qwen.qwen3-vl-235b-a22b",
+ "entries": [
+  {
+   "lines": [
+    1
+   ],
+   "client": "",
+   "cmid": "552.001",
+   "matter": "",
+   "date": "",
+   "hours_written": ".6",
+   "hours": 0.6,
+   "narrative": "review purchase agmt",
+   "billable": true,
+   "unsure": ""
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "text": "552.001 .6 review purchase agmt"
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 2668,
+  "outputTokens": 87,
+  "totalTokens": 2755
+ },
+ "latency_ms": 2533,
+ "prompt_hash": "8033befe5f"
+}

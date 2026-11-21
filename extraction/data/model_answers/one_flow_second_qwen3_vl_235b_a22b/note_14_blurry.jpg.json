@@ -1,0 +1,82 @@
+{
+ "model": "qwen.qwen3-vl-235b-a22b",
+ "prompt": "v2",
+ "mode": "tool",
+ "system_prompt": true,
+ "image_first": false,
+ "entries": [
+  {
+   "lines": [
+    1
+   ],
+   "client": "Ridgewater",
+   "cmid": "",
+   "date": "11/2",
+   "hours_written": "8",
+   "narrative": "revised Fund IV LPA",
+   "unsure": "8 hours for revising an LPA is likely .8 with the point missing; photo shows .8",
+   "hours": 0.8
+  },
+  {
+   "lines": [
+    1,
+    2
+   ],
+   "client": "Quarry Lane",
+   "cmid": "",
+   "date": "11/2",
+   "hours_written": "1.5",
+   "narrative": "Fund III sub docs",
+   "unsure": "",
+   "hours": 1.5
+  },
+  {
+   "lines": [
+    1,
+    3
+   ],
+   "client": "Ridgeview",
+   "cmid": "",
+   "date": "11/2",
+   "hours_written": ".3",
+   "narrative": "call w/ L. Moretti",
+   "unsure": "reader has \"\u308d\" which is likely a misread of \".3\"; photo shows .3",
+   "hours": 0.3
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "across": 6,
+   "down": 29,
+   "conf": 83,
+   "number_conf": 83,
+   "text": "11/2 Ridgewater 8 revised Fund IV LPA , then"
+  },
+  {
+   "id": 2,
+   "across": 6,
+   "down": 35,
+   "conf": 94,
+   "number_conf": 100,
+   "text": "Quarry Lane 1.5 Fund III sub docs and"
+  },
+  {
+   "id": 3,
+   "across": 6,
+   "down": 41,
+   "conf": 78,
+   "number_conf": null,
+   "text": "Ridgeview \u308d call w/ L. Moretti"
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 7047,
+  "outputTokens": 239,
+  "totalTokens": 7286
+ },
+ "latency_ms": 8950,
+ "prompt_hash": "4be68320a8"
+}

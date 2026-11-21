@@ -1,0 +1,34 @@
+{
+ "model": "us.amazon.nova-pro-v1:0",
+ "entries": [
+  {
+   "lines": [
+    1
+   ],
+   "client": "Halvorsen",
+   "cmid": "",
+   "matter": "",
+   "date": "",
+   "hours_written": "1.5h",
+   "hours": 1.5,
+   "narrative": "call",
+   "billable": true,
+   "unsure": ""
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "text": "1.5h Halvorsen call"
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 3212,
+  "outputTokens": 83,
+  "totalTokens": 3295
+ },
+ "latency_ms": 1345,
+ "prompt_hash": "15a8fa25f3"
+}

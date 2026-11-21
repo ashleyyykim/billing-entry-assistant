@@ -1,0 +1,49 @@
+{
+ "model": "qwen.qwen3-vl-235b-a22b",
+ "prompt": "v2",
+ "mode": "tool",
+ "system_prompt": true,
+ "image_first": false,
+ "entries": [
+  {
+   "lines": [
+    1,
+    2
+   ],
+   "client": "Tidewater",
+   "cmid": "",
+   "date": "7/1",
+   "hours_written": "1/2 hr",
+   "narrative": "board consent",
+   "unsure": "",
+   "hours": 0.5
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "across": 12,
+   "down": 34,
+   "conf": 45,
+   "number_conf": 100,
+   "text": "14 7/1 Tidewater"
+  },
+  {
+   "id": 2,
+   "across": 13,
+   "down": 45,
+   "conf": 100,
+   "number_conf": null,
+   "text": "board consent"
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 5832,
+  "outputTokens": 67,
+  "totalTokens": 5899
+ },
+ "latency_ms": 2286,
+ "prompt_hash": "4be68320a8"
+}

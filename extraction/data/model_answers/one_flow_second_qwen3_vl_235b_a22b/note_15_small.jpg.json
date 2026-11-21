@@ -1,0 +1,117 @@
+{
+ "model": "qwen.qwen3-vl-235b-a22b",
+ "prompt": "v2",
+ "mode": "tool",
+ "system_prompt": true,
+ "image_first": false,
+ "entries": [
+  {
+   "lines": [
+    1,
+    2,
+    3
+   ],
+   "client": "Cobalt Ridge",
+   "cmid": "5520.004",
+   "date": "",
+   "hours_written": "2.1",
+   "narrative": "Capital call notice",
+   "unsure": "",
+   "hours": 2.1
+  },
+  {
+   "lines": [
+    1,
+    4
+   ],
+   "client": "Cobalt Ridge",
+   "cmid": "5520.004",
+   "date": "",
+   "hours_written": ".4",
+   "narrative": "call w/admin re wire",
+   "unsure": "photo shows .4; the reader has 4"
+  },
+  {
+   "lines": [
+    5
+   ],
+   "client": "Aster & Vale",
+   "cmid": "",
+   "date": "",
+   "hours_written": "1.0",
+   "narrative": "10-Q comments",
+   "unsure": "photo shows 1.0; the reader has 1.010-Q, which is likely 1.0 for 10-Q comments"
+  },
+  {
+   "lines": [
+    5,
+    6
+   ],
+   "client": "Aster & Vale",
+   "cmid": "",
+   "date": "",
+   "hours_written": ".9",
+   "narrative": "board minutes",
+   "unsure": "photo shows .9; the reader has \u5f71.5, which is likely a ditto mark and .9 for board minutes"
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "across": 19,
+   "down": 32,
+   "conf": 53,
+   "number_conf": 83,
+   "text": "CohaltRidge 5520.004"
+  },
+  {
+   "id": 2,
+   "across": 60,
+   "down": 37,
+   "conf": 99,
+   "number_conf": 99,
+   "text": "2.1"
+  },
+  {
+   "id": 3,
+   "across": 59,
+   "down": 41,
+   "conf": 89,
+   "number_conf": null,
+   "text": "Capital call notice"
+  },
+  {
+   "id": 4,
+   "across": 24,
+   "down": 47,
+   "conf": 79,
+   "number_conf": 100,
+   "text": "4 call w/admin re wire"
+  },
+  {
+   "id": 5,
+   "across": 16,
+   "down": 54,
+   "conf": 61,
+   "number_conf": 98,
+   "text": "Aster of Vale 1.010-Q comments"
+  },
+  {
+   "id": 6,
+   "across": 15,
+   "down": 62,
+   "conf": 34,
+   "number_conf": 34,
+   "text": "same \u5f71.5 board minutes."
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 4524,
+  "outputTokens": 303,
+  "totalTokens": 4827
+ },
+ "latency_ms": 4891,
+ "prompt_hash": "4be68320a8"
+}

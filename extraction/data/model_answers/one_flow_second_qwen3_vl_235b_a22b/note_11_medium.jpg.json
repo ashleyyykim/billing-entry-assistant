@@ -1,0 +1,49 @@
+{
+ "model": "qwen.qwen3-vl-235b-a22b",
+ "prompt": "v2",
+ "mode": "tool",
+ "system_prompt": true,
+ "image_first": false,
+ "entries": [
+  {
+   "lines": [
+    1,
+    2
+   ],
+   "client": "",
+   "cmid": "5602.003",
+   "date": "",
+   "hours_written": "2.0",
+   "narrative": "Quanta disclosure schedules",
+   "unsure": "",
+   "hours": 2.0
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "across": 13,
+   "down": 41,
+   "conf": 97,
+   "number_conf": 97,
+   "text": "5602.003 2.0"
+  },
+  {
+   "id": 2,
+   "across": 12,
+   "down": 47,
+   "conf": 100,
+   "number_conf": null,
+   "text": "Quanta disclosure schedules"
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 5837,
+  "outputTokens": 69,
+  "totalTokens": 5906
+ },
+ "latency_ms": 1824,
+ "prompt_hash": "4be68320a8"
+}

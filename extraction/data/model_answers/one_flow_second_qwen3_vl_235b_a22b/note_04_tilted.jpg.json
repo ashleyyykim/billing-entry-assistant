@@ -1,0 +1,87 @@
+{
+ "model": "qwen.qwen3-vl-235b-a22b",
+ "prompt": "v2",
+ "mode": "tool",
+ "system_prompt": true,
+ "image_first": false,
+ "entries": [
+  {
+   "lines": [
+    1,
+    2,
+    3
+   ],
+   "client": "Tidewater Analytics",
+   "cmid": "",
+   "date": "",
+   "hours_written": "1.2",
+   "narrative": "draft side letter for Series A 8xm lead",
+   "unsure": "photo shows \"8xm lead\"; reader has \"8xm lea d\" - likely \"8xm lead\" is \"8mm lead\" or similar, but keeping as read since unclear",
+   "hours": 1.2
+  },
+  {
+   "lines": [
+    4,
+    5
+   ],
+   "client": "Firm",
+   "cmid": "",
+   "date": "",
+   "hours_written": ".3",
+   "narrative": "admin time entries",
+   "unsure": "",
+   "hours": 0.3
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "across": 32,
+   "down": 41,
+   "conf": 100,
+   "number_conf": 100,
+   "text": "Tidewater Analytics 1.2"
+  },
+  {
+   "id": 2,
+   "across": 33,
+   "down": 47,
+   "conf": 100,
+   "number_conf": null,
+   "text": "draft side letter for"
+  },
+  {
+   "id": 3,
+   "across": 35,
+   "down": 52,
+   "conf": 50,
+   "number_conf": 50,
+   "text": "Series A 8xm lea d"
+  },
+  {
+   "id": 4,
+   "across": 37,
+   "down": 60,
+   "conf": 87,
+   "number_conf": 87,
+   "text": "Firm admin .3 time"
+  },
+  {
+   "id": 5,
+   "across": 39,
+   "down": 67,
+   "conf": 100,
+   "number_conf": null,
+   "text": "entries"
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 7403,
+  "outputTokens": 169,
+  "totalTokens": 7572
+ },
+ "latency_ms": 3925,
+ "prompt_hash": "4be68320a8"
+}

@@ -1,0 +1,75 @@
+{
+ "model": "qwen.qwen3-vl-235b-a22b",
+ "map": {
+  "columns": [
+   {
+    "column": 1,
+    "role": "timekeeper"
+   },
+   {
+    "column": 2,
+    "role": "timekeeper"
+   },
+   {
+    "column": 3,
+    "role": "date"
+   },
+   {
+    "column": 4,
+    "role": "cmid"
+   },
+   {
+    "column": 5,
+    "role": "client"
+   },
+   {
+    "column": 6,
+    "role": "matter"
+   },
+   {
+    "column": 7,
+    "role": "hours"
+   },
+   {
+    "column": 8,
+    "role": "narrative"
+   }
+  ],
+  "unsure": ""
+ },
+ "lines": [
+  {
+   "id": 1,
+   "text": "TK ID | Timekeeper | Date | CMID | Client | Matter | Hours | Narrative"
+  },
+  {
+   "id": 2,
+   "text": "TK102 | R. Patel | 10/26/2026 | 4590.003 | Tidewater AI | Series B Financing | 0.9 | Charter amendment for Project Kite"
+  },
+  {
+   "id": 3,
+   "text": "TK102 | R. Patel | 10/26/2026 |  | Ridgewater Partners | Fund III Formation | 1.4 | LPA comments"
+  },
+  {
+   "id": 4,
+   "text": "TK103 | L. Moreno | 10/27/2026 | 5520.001 |  |  | 0.6 | Review purchase agreement"
+  },
+  {
+   "id": 5,
+   "text": "TK103 | L. Moreno | 10/27/2026 |  | Meridian Therapeutics | Follow-On Offering | 1.5 | Draft prospectus supplement"
+  },
+  {
+   "id": 6,
+   "text": "TK106 | S. Kim | 10/28/2026 |  | Halvorsen Industrial |  | 0.4 | Call w/ CEO re hiring plan"
+  }
+ ],
+ "stop_reason": "tool_use",
+ "usage": {
+  "inputTokens": 1092,
+  "outputTokens": 125,
+  "totalTokens": 1217
+ },
+ "latency_ms": 2543,
+ "entries": [],
+ "prompt_hash": "6f98450c7e"
+}

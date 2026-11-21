@@ -8,10 +8,14 @@ Photos are graded entry by entry after lining each photo's entries up with its a
 that loses an entry doesn't throw off the entries after it. Each key entry gets one outcome: right, wrong but flagged,
 wrong and silent (no check reason), or missing. Found entries with no match in the key are extra.
 """
+import re
+
 import pandas as pd
 from rapidfuzz import fuzz
 
 OUTCOMES = ["right", "wrong, flagged", "wrong, silent", "missing", "extra"]
+NARRATIVE_OK = 70   # a narrative this similar to the key's (0 to 100) counts as right: typos and OCR slips pass; a blank,
+                    # another entry's narrative, two merged, or one cut in half don't (calibrated Nov 20 on 120 pairs)
 
 
 def similar(found, truth, min_score=80):
@@ -27,6 +31,24 @@ def similar(found, truth, min_score=80):
         return False
     found, truth = str(found).lower(), str(truth).lower()
     return fuzz.ratio(found, truth) >= min_score or found.startswith(truth + " ")
+
+
+def plain_words(text):
+    """Lowercase words and numbers only, with a leading "firm" dropped (firm time puts Firm in the client)."""
+    words = re.sub(r"[^a-z0-9]+", " ", str(text).lower()).split() if isinstance(text, str) else []
+    return " ".join(words[1:] if words[:1] == ["firm"] else words)
+
+
+def narrative_ok(found, truth, min_score=NARRATIVE_OK, matter=None):
+    """True when a found narrative says what the key's says: the better of two similarity scores (word order ignored,
+    and not) is at least min_score. matter: the found matter name, which also counts in front of the narrative, since
+    the key keeps a matter name written in the description ("commercial contracts - NDA log") and a reader that puts
+    it in "matter" read it right. A blank narrative with no matter is never right."""
+    truth = plain_words(truth)
+    score = lambda text: max(fuzz.token_sort_ratio(text, truth), fuzz.ratio(text, truth)) if text else 0
+    alone = plain_words(found)
+    with_matter = plain_words(" ".join(t for t in (matter, found) if isinstance(t, str) and t.strip()))
+    return max(score(alone), score(with_matter)) >= min_score
 
 
 def digits(cmids):
@@ -78,6 +100,8 @@ def grade_photos(found, key):
 
     found: extracted entries with a photo column. key: the answer key, one row per entry with photo and entry,
     work_date already filled in. Any other key columns (like batch) are carried along.
+    narrative_ok: whether the narrative says what the key's does (None when the key has none). It doesn't change the
+    outcome, which grades hours, client, CMID, and date; narratives are reported on their own (benchmark.narratives).
     """
     extra_cols = [c for c in key.columns if c not in ("entry", "work_date", "hours", "client", "cmid", "narrative",
                                                        "note")]
@@ -102,9 +126,11 @@ def grade_photos(found, key):
                 wrong = [name for name, ok in right.items() if not ok]
                 flagged = is_flagged(f)
                 outcome = "right" if not wrong else "wrong, flagged" if flagged else "wrong, silent"
+                narrative = (narrative_ok(f["narrative"], k["narrative"], matter=f.get("matter"))
+                             if "narrative" in k and isinstance(k["narrative"], str) and k["narrative"].strip() else None)
                 out.append({**carried, "entry": k["entry"], "outcome": outcome, "wrong": ", ".join(wrong),
                             "found": f"{f['client']} {f['cmid']} {f['hours']}", "check": f["check_reasons"],
-                            "flagged": flagged, "min_conf": f.get("min_conf")})
+                            "flagged": flagged, "min_conf": f.get("min_conf"), "narrative_ok": narrative})
     graded = pd.DataFrame(out)
     if "entry" in graded:
         graded["entry"] = graded["entry"].astype("Int64")

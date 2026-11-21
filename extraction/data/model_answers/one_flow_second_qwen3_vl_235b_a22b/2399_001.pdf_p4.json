@@ -1,0 +1,233 @@
+{
+ "model": "qwen.qwen3-vl-235b-a22b",
+ "entries": [
+  {
+   "lines": [
+    1,
+    3
+   ],
+   "client": "Rat Bio",
+   "cmid": "",
+   "matter": "Series",
+   "date": "",
+   "hours_written": ".3",
+   "hours": 0.3,
+   "narrative": "TCW M. white re new tax plan",
+   "billable": true,
+   "unsure": "",
+   "timekeeper": "A. Chen"
+  },
+  {
+   "lines": [
+    1,
+    4,
+    5
+   ],
+   "client": "Brave Capital",
+   "cmid": "",
+   "matter": "en",
+   "date": "",
+   "hours_written": "4.7",
+   "hours": 4.7,
+   "narrative": "TCW A. stone re amendments to LPA; make edits to LPA; finalize legal opinion; present UA to LPS.",
+   "billable": true,
+   "unsure": "",
+   "timekeeper": "A. Chen"
+  },
+  {
+   "lines": [
+    1,
+    6
+   ],
+   "client": "Firm",
+   "cmid": "",
+   "matter": "admin",
+   "date": "",
+   "hours_written": ".2",
+   "hours": 0.2,
+   "narrative": "attend to genadmin",
+   "billable": true,
+   "unsure": "",
+   "timekeeper": "A. Chen"
+  },
+  {
+   "lines": [
+    1,
+    7
+   ],
+   "client": "Firm",
+   "cmid": "",
+   "matter": "interview",
+   "date": "",
+   "hours_written": ".6",
+   "hours": 0.6,
+   "narrative": "Interview fund / lateral candidate.",
+   "billable": true,
+   "unsure": "",
+   "timekeeper": "A. Chen"
+  },
+  {
+   "lines": [
+    1,
+    8
+   ],
+   "client": "Theories Fund",
+   "cmid": "007",
+   "matter": "",
+   "date": "",
+   "hours_written": ".4",
+   "hours": 0.4,
+   "narrative": "Attend to transfers of GP interest for Wang.",
+   "billable": true,
+   "unsure": "",
+   "timekeeper": "A. Chen"
+  },
+  {
+   "lines": [
+    1,
+    9
+   ],
+   "client": "Labs",
+   "cmid": "",
+   "matter": "Formation",
+   "date": "",
+   "hours_written": ".9",
+   "hours": 0.9,
+   "narrative": "Review agreement; attend to closing matters",
+   "billable": true,
+   "unsure": "",
+   "timekeeper": "A. Chen"
+  },
+  {
+   "lines": [
+    1,
+    10
+   ],
+   "client": "River Ventures",
+   "cmid": "",
+   "matter": "",
+   "date": "",
+   "hours_written": ".2",
+   "hours": 0.2,
+   "narrative": "TCW J. Obberan.",
+   "billable": true,
+   "unsure": "",
+   "timekeeper": "A. Chen"
+  },
+  {
+   "lines": [
+    1,
+    11
+   ],
+   "client": "Firm",
+   "cmid": "",
+   "matter": "BD",
+   "date": "",
+   "hours_written": ".7",
+   "hours": 0.7,
+   "narrative": "attend lunch w/ potential new client.",
+   "billable": true,
+   "unsure": "",
+   "timekeeper": "A. Chen"
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "across": 6,
+   "down": 2,
+   "conf": 99,
+   "number_conf": 99,
+   "text": "Sheet ID: HW-04 Timekeeper: A. Chen Week of: 07/20"
+  },
+  {
+   "id": 2,
+   "across": 7,
+   "down": 8,
+   "conf": 100,
+   "number_conf": null,
+   "text": "Hours Client Description of Work"
+  },
+  {
+   "id": 3,
+   "across": 9,
+   "down": 10,
+   "conf": 60,
+   "number_conf": 92,
+   "text": "3 Rat Bio -Series TCW M. white re new tax plan"
+  },
+  {
+   "id": 4,
+   "across": 7,
+   "down": 14,
+   "conf": 24,
+   "number_conf": 82,
+   "text": "4.7 Brave Capital-en TOW A stone re amendments to LPA; make 2"
+  },
+  {
+   "id": 5,
+   "across": 41,
+   "down": 18,
+   "conf": 82,
+   "number_conf": null,
+   "text": "to LPS."
+  },
+  {
+   "id": 6,
+   "across": 8,
+   "down": 21,
+   "conf": 78,
+   "number_conf": 78,
+   "text": "2 Firm-admin attend to genadmin"
+  },
+  {
+   "id": 7,
+   "across": 9,
+   "down": 24,
+   "conf": 56,
+   "number_conf": 56,
+   "text": "6 Firm-interview Interview fund / lateral candidate."
+  },
+  {
+   "id": 8,
+   "across": 9,
+   "down": 28,
+   "conf": 97,
+   "number_conf": 98,
+   "text": "4 Theories Fund 007 Attend to transfers of GP interest"
+  },
+  {
+   "id": 9,
+   "across": 8,
+   "down": 32,
+   "conf": 51,
+   "number_conf": 51,
+   "text": "9 Labs - - Formation Aeview agreement attend to closing matters"
+  },
+  {
+   "id": 10,
+   "across": 9,
+   "down": 35,
+   "conf": 54,
+   "number_conf": 70,
+   "text": "2 River Ventures TCW J. Obberan."
+  },
+  {
+   "id": 11,
+   "across": 9,
+   "down": 38,
+   "conf": 45,
+   "number_conf": 81,
+   "text": "7 Firm-BD attand lunch w/ potential new client."
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 6143,
+  "outputTokens": 687,
+  "totalTokens": 6830
+ },
+ "latency_ms": 20352,
+ "prompt_hash": "bee1c73086"
+}

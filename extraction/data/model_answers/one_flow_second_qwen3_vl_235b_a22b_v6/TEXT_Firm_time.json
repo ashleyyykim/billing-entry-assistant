@@ -1,0 +1,34 @@
+{
+ "model": "qwen.qwen3-vl-235b-a22b",
+ "entries": [
+  {
+   "lines": [
+    1
+   ],
+   "client": "Firm",
+   "cmid": "",
+   "matter": "",
+   "date": "",
+   "hours_written": ".2",
+   "hours": 0.2,
+   "narrative": "update time entries",
+   "billable": true,
+   "unsure": ""
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "text": "firm admin - update time entries .2"
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 2968,
+  "outputTokens": 81,
+  "totalTokens": 3049
+ },
+ "latency_ms": 2255,
+ "prompt_hash": "15a8fa25f3"
+}

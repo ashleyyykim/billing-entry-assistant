@@ -1,0 +1,19 @@
+{
+ "model": "qwen.qwen3-vl-235b-a22b",
+ "entries": [],
+ "lines": [
+  {
+   "id": 1,
+   "text": "Notes from E. Brandt attached, and the scanned sheets from last week."
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 3289,
+  "outputTokens": 19,
+  "totalTokens": 3308
+ },
+ "latency_ms": 530,
+ "prompt_hash": "fc8d349358"
+}

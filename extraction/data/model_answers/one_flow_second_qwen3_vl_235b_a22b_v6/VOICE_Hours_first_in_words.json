@@ -1,0 +1,34 @@
+{
+ "model": "qwen.qwen3-vl-235b-a22b",
+ "entries": [
+  {
+   "lines": [
+    1
+   ],
+   "client": "Cobalt Ridge Partners",
+   "cmid": "",
+   "matter": "",
+   "date": "",
+   "hours_written": "an hour and a half",
+   "hours": 1.5,
+   "narrative": "revising the Fund II sub docs",
+   "billable": true,
+   "unsure": ""
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "text": "Bill an hour and a half to Cobalt Ridge Partners for revising the Fund II sub docs"
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 3376,
+  "outputTokens": 93,
+  "totalTokens": 3469
+ },
+ "latency_ms": 1338,
+ "prompt_hash": "2a8a0d5370"
+}

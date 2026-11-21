@@ -1,0 +1,33 @@
+{
+ "model": "us.amazon.nova-pro-v1:0",
+ "entries": [
+  {
+   "lines": [
+    1
+   ],
+   "client": "Saffron Labs",
+   "cmid": "",
+   "date": "",
+   "hours_written": "",
+   "narrative": "review seed docs",
+   "unsure": "",
+   "matter": "",
+   "billable": true
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "text": "Saffron Labs - review seed docs"
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 3209,
+  "outputTokens": 71,
+  "totalTokens": 3280
+ },
+ "latency_ms": 822,
+ "prompt_hash": "15a8fa25f3"
+}

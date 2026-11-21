@@ -1,0 +1,62 @@
+{
+ "model": "qwen.qwen3-vl-235b-a22b",
+ "entries": [
+  {
+   "lines": [
+    1
+   ],
+   "client": "CR Partners",
+   "cmid": "",
+   "matter": "",
+   "date": "",
+   "hours_written": "2.0",
+   "hours": 2.0,
+   "narrative": "review LP subscription documents",
+   "billable": true,
+   "unsure": ""
+  },
+  {
+   "lines": [
+    1
+   ],
+   "client": "Harbor Light",
+   "cmid": "",
+   "matter": "",
+   "date": "",
+   "hours_written": "0.6",
+   "hours": 0.6,
+   "narrative": "follow up on investor questionnaires",
+   "billable": true,
+   "unsure": ""
+  },
+  {
+   "lines": [
+    1
+   ],
+   "client": "",
+   "cmid": "8820.001",
+   "matter": "",
+   "date": "",
+   "hours_written": "1.1",
+   "hours": 1.1,
+   "narrative": "update the side letter tracker",
+   "billable": true,
+   "unsure": "the CMID and hours ran together in the transcript (8820.0011.1): read as 8820.001 and 1.1"
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "text": "CR Partners 2.0 review LP subscription documents, Harbor Light 0.6, follow up on investor questionnaires. Matter 8820.0011.1, update the side letter tracker."
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 3402,
+  "outputTokens": 266,
+  "totalTokens": 3668
+ },
+ "latency_ms": 7341,
+ "prompt_hash": "2a8a0d5370"
+}

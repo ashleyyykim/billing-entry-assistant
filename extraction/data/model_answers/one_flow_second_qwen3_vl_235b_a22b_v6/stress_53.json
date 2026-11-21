@@ -1,0 +1,34 @@
+{
+ "model": "qwen.qwen3-vl-235b-a22b",
+ "entries": [
+  {
+   "lines": [
+    1
+   ],
+   "client": "Meridian",
+   "cmid": "",
+   "matter": "",
+   "date": "",
+   "hours_written": "Two hours",
+   "hours": 2.0,
+   "narrative": "on the Meridian proxy",
+   "billable": true,
+   "unsure": ""
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "text": "Two hours on the Meridian proxy"
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 2967,
+  "outputTokens": 84,
+  "totalTokens": 3051
+ },
+ "latency_ms": 2570,
+ "prompt_hash": "15a8fa25f3"
+}

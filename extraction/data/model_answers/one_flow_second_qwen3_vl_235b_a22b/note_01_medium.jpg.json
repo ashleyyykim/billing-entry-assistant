@@ -1,0 +1,67 @@
+{
+ "model": "qwen.qwen3-vl-235b-a22b",
+ "prompt": "v2",
+ "mode": "tool",
+ "system_prompt": true,
+ "image_first": false,
+ "entries": [
+  {
+   "lines": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "client": "Halvorsen",
+   "cmid": "",
+   "date": "",
+   "hours_written": ".4",
+   "narrative": "call w/lender counsel re Brightline closing",
+   "unsure": "",
+   "hours": 0.4
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "across": 31,
+   "down": 40,
+   "conf": 86,
+   "number_conf": 99,
+   "text": "4 Halvorsen -"
+  },
+  {
+   "id": 2,
+   "across": 27,
+   "down": 48,
+   "conf": 99,
+   "number_conf": null,
+   "text": "call w/lender"
+  },
+  {
+   "id": 3,
+   "across": 27,
+   "down": 53,
+   "conf": 96,
+   "number_conf": null,
+   "text": "counselve Brightline"
+  },
+  {
+   "id": 4,
+   "across": 27,
+   "down": 61,
+   "conf": 100,
+   "number_conf": null,
+   "text": "closing"
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 5877,
+  "outputTokens": 74,
+  "totalTokens": 5951
+ },
+ "latency_ms": 5625,
+ "prompt_hash": "4be68320a8"
+}

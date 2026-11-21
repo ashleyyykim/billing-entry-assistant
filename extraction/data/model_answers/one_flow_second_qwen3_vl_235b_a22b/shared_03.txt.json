@@ -1,0 +1,108 @@
+{
+ "model": "qwen.qwen3-vl-235b-a22b",
+ "entries": [
+  {
+   "lines": [
+    1,
+    2,
+    3
+   ],
+   "client": "Bluefin Robotics",
+   "cmid": "",
+   "matter": "",
+   "date": "11/2",
+   "hours_written": "1.2",
+   "hours": 1.2,
+   "narrative": "equity plan grant tracker update",
+   "billable": true,
+   "unsure": "",
+   "timekeeper": "M. Alvarez"
+  },
+  {
+   "lines": [
+    1,
+    2,
+    4
+   ],
+   "client": "Tidewater AI",
+   "cmid": "",
+   "matter": "",
+   "date": "11/2",
+   "hours_written": ".8",
+   "hours": 0.8,
+   "narrative": "board consent signature packets",
+   "billable": true,
+   "unsure": "",
+   "timekeeper": "M. Alvarez"
+  },
+  {
+   "lines": [
+    1,
+    5,
+    6
+   ],
+   "client": "Copperline",
+   "cmid": "",
+   "matter": "exec comp",
+   "date": "11/3",
+   "hours_written": ".5",
+   "hours": 0.5,
+   "narrative": "409A memo cite check",
+   "billable": true,
+   "unsure": "",
+   "timekeeper": "M. Alvarez"
+  },
+  {
+   "lines": [
+    1,
+    5,
+    6
+   ],
+   "client": "Saffron",
+   "cmid": "",
+   "matter": "commercial contracts",
+   "date": "11/3",
+   "hours_written": ".4",
+   "hours": 0.4,
+   "narrative": "NDA log",
+   "billable": true,
+   "unsure": "",
+   "timekeeper": "M. Alvarez"
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "text": "Time - M. Alvarez"
+  },
+  {
+   "id": 2,
+   "text": "11/2"
+  },
+  {
+   "id": 3,
+   "text": "Bluefin Robotics - equity plan grant tracker update 1.2"
+  },
+  {
+   "id": 4,
+   "text": "Tidewater AI board consent signature packets .8"
+  },
+  {
+   "id": 5,
+   "text": "11/3"
+  },
+  {
+   "id": 6,
+   "text": "Copperline exec comp - 409A memo cite check .5; Saffron commercial contracts - NDA log .4"
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 4096,
+  "outputTokens": 368,
+  "totalTokens": 4464
+ },
+ "latency_ms": 9795,
+ "prompt_hash": "1bc0720362"
+}

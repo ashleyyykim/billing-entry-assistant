@@ -1,0 +1,100 @@
+{
+ "model": "qwen.qwen3-vl-235b-a22b",
+ "entries": [
+  {
+   "lines": [
+    1,
+    2
+   ],
+   "client": "Tidewater AI",
+   "cmid": "",
+   "matter": "",
+   "date": "2026-10-26",
+   "hours_written": "54",
+   "hours": 0.9,
+   "narrative": "Charter amendment for Project Kite, Series B",
+   "billable": true,
+   "unsure": "",
+   "timekeeper": "Brandt, E."
+  },
+  {
+   "lines": [
+    1,
+    3
+   ],
+   "client": "Halvorsen",
+   "cmid": "",
+   "matter": "",
+   "date": "2026-10-26",
+   "hours_written": "24",
+   "hours": 0.4,
+   "narrative": "Call w/ CEO re hiring plan",
+   "billable": true,
+   "unsure": "",
+   "timekeeper": "Brandt, E."
+  },
+  {
+   "lines": [
+    1,
+    4
+   ],
+   "client": "Bluefin Robotics",
+   "cmid": "",
+   "matter": "",
+   "date": "2026-10-27",
+   "hours_written": "45",
+   "hours": 0.75,
+   "narrative": "Option grant call",
+   "billable": true,
+   "unsure": "",
+   "timekeeper": "Brandt, E."
+  },
+  {
+   "lines": [
+    1,
+    5
+   ],
+   "client": "Firm",
+   "cmid": "",
+   "matter": "",
+   "date": "2026-10-27",
+   "hours_written": "30",
+   "hours": 0.5,
+   "narrative": "Associate training lunch",
+   "billable": false,
+   "unsure": "",
+   "timekeeper": "Brandt, E."
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "text": "Name | When | Client | Minutes | Notes | Billable | Rate"
+  },
+  {
+   "id": 2,
+   "text": "Brandt, E. | 2026-10-26 | Tidewater AI | 54 | Charter amendment for Project Kite, Series B | Y | 650"
+  },
+  {
+   "id": 3,
+   "text": "Brandt, E. | 2026-10-26 | Halvorsen | 24 | Call w/ CEO re hiring plan | Y | 650"
+  },
+  {
+   "id": 4,
+   "text": "Brandt, E. | 2026-10-27 | Bluefin Robotics | 45 | Option grant call | Y | 650"
+  },
+  {
+   "id": 5,
+   "text": "Brandt, E. | 2026-10-27 | Firm | 30 | Associate training lunch | N | 0"
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 4052,
+  "outputTokens": 387,
+  "totalTokens": 4439
+ },
+ "latency_ms": 8729,
+ "prompt_hash": "fc55caceef"
+}

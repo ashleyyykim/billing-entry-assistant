@@ -1,0 +1,59 @@
+{
+ "model": "qwen.qwen3-vl-235b-a22b",
+ "prompt": "v2",
+ "mode": "tool",
+ "system_prompt": true,
+ "image_first": false,
+ "entries": [
+  {
+   "lines": [
+    1
+   ],
+   "client": "Bluefin",
+   "cmid": "",
+   "date": "",
+   "hours_written": "half an hour",
+   "narrative": "w/ Y.",
+   "unsure": "",
+   "hours": 0.5
+  },
+  {
+   "lines": [
+    2
+   ],
+   "client": "Tanakare",
+   "cmid": "",
+   "date": "",
+   "hours_written": "",
+   "narrative": "Keel term sheet.",
+   "unsure": "client name not in firm's client list; kept as written"
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "across": 8,
+   "down": 38,
+   "conf": 88,
+   "number_conf": null,
+   "text": "Bluefin - half an hour w/ Y."
+  },
+  {
+   "id": 2,
+   "across": 12,
+   "down": 50,
+   "conf": 83,
+   "number_conf": null,
+   "text": "Tanakare Keel herm sheet."
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 5836,
+  "outputTokens": 116,
+  "totalTokens": 5952
+ },
+ "latency_ms": 4355,
+ "prompt_hash": "4be68320a8"
+}

@@ -1,0 +1,34 @@
+{
+ "model": "qwen.qwen3-vl-235b-a22b",
+ "entries": [
+  {
+   "lines": [
+    1
+   ],
+   "client": "Halvorsen",
+   "cmid": "",
+   "matter": "",
+   "date": "",
+   "hours_written": "2.1",
+   "hours": 2.1,
+   "narrative": "call w/ CEO, lender memo, review comments",
+   "billable": true,
+   "unsure": ""
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "text": "Halvorsen: call w/ CEO, lender memo, review comments. Total 2.1"
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 2675,
+  "outputTokens": 92,
+  "totalTokens": 2767
+ },
+ "latency_ms": 2402,
+ "prompt_hash": "8033befe5f"
+}

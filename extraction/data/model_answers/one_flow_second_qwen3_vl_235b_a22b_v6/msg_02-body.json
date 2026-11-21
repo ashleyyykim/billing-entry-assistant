@@ -1,0 +1,38 @@
+{
+ "model": "qwen.qwen3-vl-235b-a22b",
+ "entries": [
+  {
+   "lines": [
+    1
+   ],
+   "client": "Saffron",
+   "cmid": "",
+   "matter": "",
+   "date": "10/27",
+   "hours_written": ".8",
+   "hours": 0.8,
+   "narrative": "SAFE side letter",
+   "billable": true,
+   "unsure": ""
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "text": "Time attached. Also Saffron .8 SAFE side letter on 10/27 in case it's not in the log."
+  },
+  {
+   "id": 2,
+   "text": "Elena's export is attached too."
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 3311,
+  "outputTokens": 88,
+  "totalTokens": 3399
+ },
+ "latency_ms": 2947,
+ "prompt_hash": "fc8d349358"
+}

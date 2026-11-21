@@ -7,7 +7,8 @@ shown to the reviewer as notes and don't send the entry to review on their own. 
 """
 from intake import CHECK_REASONS
 
-NOTE_ONLY = ["client_copied", "date_guessed", "cmid_fixed", "clock_time", "tk_forwarded", "date_relative", "one_reader"]
+NOTE_ONLY = ["client_copied", "date_guessed", "cmid_fixed", "clock_time", "tk_forwarded", "date_relative", "one_reader",
+             "narrative_from_matter"]
 REVIEW_REASONS = {**CHECK_REASONS, "poor_photo": "The photo looked blurry, dark, or too small, and was sent anyway"}
 
 
