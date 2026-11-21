@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00925",
+ "reason": "The narrative mentions reviewing good standing certificates, which is a task commonly associated with the General Corporate matter for Bluefin Robotics (CMID 3120.001). The timekeeper has a significant number of hours logged for this matter, indicating a strong likelihood of association.",
+ "shortlist": [
+  "3120.001"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "3120.001",
+ "usage": {
+  "inputTokens": 193,
+  "outputTokens": 105,
+  "totalTokens": 9934,
+  "cacheReadInputTokens": 9636,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.123,
+ "seconds": 1.776472624973394
+}

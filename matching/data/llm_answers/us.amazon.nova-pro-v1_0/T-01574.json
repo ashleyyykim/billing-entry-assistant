@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01574",
+ "reason": "The narrative describes work on good standing certificates, which aligns with past entries for Harborlight Bio's General Corporate matter (2201.001). The timekeeper's billing history also shows significant hours for this matter.",
+ "shortlist": [
+  "2201.001"
+ ],
+ "confidence": 95,
+ "second_cmid": "",
+ "cmid": "2201.001",
+ "usage": {
+  "inputTokens": 189,
+  "outputTokens": 96,
+  "totalTokens": 9916,
+  "cacheReadInputTokens": 9631,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.093,
+ "seconds": 2.1192509590182453
+}

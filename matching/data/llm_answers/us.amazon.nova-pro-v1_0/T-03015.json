@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-03015",
+ "reason": "The narrative mentions 'Phase I environmental' and 'title exceptions' which are specific to the Acquisition of 450 Harbor St. matter.",
+ "shortlist": [
+  "8340.001",
+  "8340.002",
+  "8340.003"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "8340.001",
+ "usage": {
+  "inputTokens": 232,
+  "outputTokens": 97,
+  "totalTokens": 9954,
+  "cacheReadInputTokens": 9625,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.026,
+ "seconds": 3.0539595419541
+}

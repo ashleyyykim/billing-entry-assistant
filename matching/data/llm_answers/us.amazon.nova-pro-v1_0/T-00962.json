@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00962",
+ "reason": "The narrative 'Conf w/ team' is vague but the typed CMID, client, and matter match an open matter.",
+ "shortlist": [
+  "5520.002"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "5520.002",
+ "usage": {
+  "inputTokens": 195,
+  "outputTokens": 73,
+  "totalTokens": 9902,
+  "cacheReadInputTokens": 9634,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.073,
+ "seconds": 2.360619542072527
+}

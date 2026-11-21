@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-02042",
+ "reason": "The narrative mentions reviewing board minutes, which aligns with the past entries for 7222.002.",
+ "shortlist": [
+  "3455.002",
+  "1111.001",
+  "6110.002"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "7222.002",
+ "usage": {
+  "inputTokens": 215,
+  "outputTokens": 92,
+  "totalTokens": 9935,
+  "cacheReadInputTokens": 9628,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.13,
+ "seconds": 5.607331958017312
+}

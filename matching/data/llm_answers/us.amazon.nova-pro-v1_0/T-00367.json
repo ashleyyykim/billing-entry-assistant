@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-00367",
+ "reason": "The narrative mentions reviewing an offer letter, which is consistent with the equity plan matter for Bluefin Robotics.",
+ "shortlist": [
+  "3120.003",
+  "3120.001",
+  "3120.002"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "3120.003",
+ "usage": {
+  "inputTokens": 189,
+  "outputTokens": 89,
+  "totalTokens": 9912,
+  "cacheReadInputTokens": 9634,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.071,
+ "seconds": 1.1308868339983746
+}

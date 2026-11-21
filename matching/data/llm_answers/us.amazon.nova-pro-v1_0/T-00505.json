@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00505",
+ "reason": "The narrative mentions 'Shah' and 'exclusivity', which aligns with past entries for 4590.004.",
+ "shortlist": [
+  "4590.004"
+ ],
+ "confidence": 95,
+ "second_cmid": "",
+ "cmid": "4590.004",
+ "usage": {
+  "inputTokens": 194,
+  "outputTokens": 77,
+  "totalTokens": 9900,
+  "cacheReadInputTokens": 9629,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.913,
+ "seconds": 3.711396125028841
+}

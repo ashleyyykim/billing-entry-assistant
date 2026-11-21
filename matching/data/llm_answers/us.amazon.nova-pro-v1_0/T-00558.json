@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-00558",
+ "reason": "The narrative mentions discussing a share reserve increase, which is related to equity plans. The timekeeper has previously worked on matter 4590.005, which is Tidewater AI's Equity Plan / 409A.",
+ "shortlist": [
+  "4590.005",
+  "3120.003",
+  "9028.003"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "4590.005",
+ "usage": {
+  "inputTokens": 208,
+  "outputTokens": 118,
+  "totalTokens": 9952,
+  "cacheReadInputTokens": 9626,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.672,
+ "seconds": 3.9421044170157984
+}

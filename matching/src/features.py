@@ -45,13 +45,23 @@ NOT_PEOPLE = {
 
 # ---------------- Pairs ----------------
 
+def entry_hours(entries):
+    """Each entry's hours as a number: the hours read from an email's body first (parsed_hours), else the hours
+    field. Missing hours stay NaN."""
+    hours = pd.to_numeric(entries["hours"], errors="coerce") if "hours" in entries else pd.Series(np.nan, index=entries.index)
+    if "parsed_hours" in entries:
+        hours = pd.to_numeric(entries["parsed_hours"], errors="coerce").fillna(hours)
+    return hours.astype(float)
+
+
 def make_pairs(entries, matters):
     """Clean each entry's typed fields, then pair the entry with every matter in Matter Master.
 
-    entries: entry_id, tk_id, source_format, work_date, cmid, client, matter, narrative
+    entries: entry_id, tk_id, source_format, work_date, cmid, client, matter, narrative, and hours (missing ones
+    already filled in, see entry_hours)
     matters: cmid, client, matter, matter_type, status, open_date, close_date
     """
-    typed = clean_entries(entries)
+    typed = clean_entries(entries, client_numbers={c[:4] for c in matters["cmid"]})
     e = entries[["entry_id", "tk_id", "source_format"]].copy()
     e["work_date"] = pd.to_datetime(entries["work_date"])
     e["typed_cmid"] = typed["typed_cmid"]
@@ -59,6 +69,7 @@ def make_pairs(entries, matters):
     e["typed_matter"] = typed["typed_matter"].map(normalize)
     e["narrative"] = entries["narrative"]
     e["narrative_norm"] = entries["narrative"].map(lambda t: normalize(t, drop_suffixes=False))
+    e["hours"] = pd.to_numeric(entries["hours"], errors="coerce") if "hours" in entries else np.nan
     for field in ["cmid", "client", "matter"]:
         e[f"has_{field}"] = (typed[f"typed_{field}"].fillna("").astype(str).str.strip() != "").astype(int)
     for col in ["client_is_ditto", "client_had_matter", "cmid_from_text"]:
@@ -237,6 +248,7 @@ def add_text_features(pairs, keyterms, cues, client_mentions, min_score):
     cue_hits / cue_share            cues pointing to the candidate's type / as a share of all cues found
     n_types_cued                    matter types with at least one cue
     n_parts                         separate pieces of work in the narrative
+    n_words                         words in the narrative (a long one can cover more than one matter)
     client_in_text                  best score of the candidate's client name in the narrative
     n_clients_named                 clients named in the narrative
     """
@@ -273,6 +285,7 @@ def add_text_features(pairs, keyterms, cues, client_mentions, min_score):
     p[counts] = p[counts].fillna(0).astype(float)
     p["cue_share"] = np.where(p["cue_total"] > 0, p["cue_hits"] / p["cue_total"].clip(lower=1), 0.0)
     p["n_parts"] = p["narrative"].map(count_parts)
+    p["n_words"] = p["narrative"].fillna("").astype(str).str.split().str.len()
     return p.drop(columns="cue_total")
 
 
@@ -288,10 +301,17 @@ def add_date_features(pairs, history_end):
     return pairs
 
 
-def add_history_features(pairs, history):
+def window_weeks(start, end):
+    """Weeks in a history window, counting both end days (Apr 1 to Jun 30 is 13 weeks)."""
+    return ((pd.Timestamp(end) - pd.Timestamp(start)).days + 1) / 7
+
+
+def add_history_features(pairs, history, weeks=None):
     """Hours each timekeeper billed to each matter in the history window.
 
-    history: tk_id, cmid, hours
+    history: tk_id, cmid, hours. weeks: how long the window is (window_weeks). The model reads history_per_week, so
+    adding confirmed entries to the history (pipeline.add_confirmed) doesn't make the numbers grow past what it was
+    trained on. history_hours is kept for the reasons.
     """
     h = history[["tk_id", "cmid", "hours"]].copy()
     h["hours"] = pd.to_numeric(h["hours"], errors="coerce").fillna(0.0)
@@ -302,21 +322,26 @@ def add_history_features(pairs, history):
     p["tk_known"] = p["tk_id"].isin(totals.index).astype(int)
     p["in_history"] = (p["history_hours"] > 0).astype(int)
     p["history_share"] = (p["history_hours"] / p["tk_id"].map(totals)).fillna(0.0)
+    if weeks:
+        p["history_per_week"] = p["history_hours"] / weeks
     return p
 
 
 def past_sim(query_vecs, query_folds, past_vecs, past_folds, past_cmids, cmids, k=3):
     """Average cosine similarity of each query to the k most similar past narratives of each matter (0 if none).
 
-    A query is never compared with past narratives from its own fold (folds are NaN outside TRAIN).
+    A query is never compared with past narratives from its own fold (folds are NaN outside TRAIN). When fewer than k
+    are left, the average is over the ones there are, the same way a matter with few past entries is scored in the app.
     Returns one row per query and one column per cmid.
     """
     sims = query_vecs @ past_vecs.T
-    sims[query_folds[:, None] == past_folds[None, :]] = -1
+    sims[query_folds[:, None] == past_folds[None, :]] = -np.inf
     scores = {}
     for cmid in cmids:
-        cols = sims[:, past_cmids == cmid]
-        scores[cmid] = np.sort(cols, axis=1)[:, -k:].mean(axis=1).clip(min=0) if cols.shape[1] else 0.0
+        best = np.sort(sims[:, past_cmids == cmid], axis=1)[:, -k:]
+        found = np.isfinite(best)
+        total = np.where(found, best, 0).sum(axis=1)
+        scores[cmid] = (total / np.maximum(found.sum(axis=1), 1)).clip(min=0)
     return pd.DataFrame(scores, index=range(len(query_vecs)))
 
 
@@ -466,20 +491,20 @@ def feature_groups(scorers, gap_cols):
         "narrative": ["keyterm_score", "keyterm_hits", "own_keyterm_hits", "n_matters_named", "cue_hits",
                       "cue_share", "n_types_cued", "n_parts", "client_in_text", "n_clients_named"],
         "dates": ["not_open", "opened_after_history"],
-        "history": ["tk_known", "in_history", "history_hours", "history_share"],
+        "history": ["tk_known", "in_history", "history_per_week", "history_share"],
         "gaps": [f"{c}_gap" for c in gap_cols],
     }
 
 
 def build_pairs(entries, matters, history, client_names, matter_names, keyterms, cues, client_mentions,
-                scorers, min_score, gap_cols, history_end):
-    """Run every step above in order."""
+                scorers, min_score, gap_cols, history_end, history_weeks=None):
+    """Run every step above in order. history_weeks: see add_history_features."""
     check_cue_types(cues, matters["matter_type"])
     pairs = make_pairs(entries, matters)
     pairs = add_cmid_features(pairs, set(matters["cmid"]))
     pairs = add_name_scores(pairs, client_names, matter_names, scorers)
     pairs = add_text_features(pairs, keyterms, cues, client_mentions, min_score)
     pairs = add_date_features(pairs, history_end)
-    pairs = add_history_features(pairs, history)
+    pairs = add_history_features(pairs, history, history_weeks)
     pairs = add_gaps(pairs, gap_cols)
     return pairs.sort_values(["entry_id", "cmid"]).reset_index(drop=True)

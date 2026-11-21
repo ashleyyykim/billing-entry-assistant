@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02032",
+ "reason": "The narrative mentions organizing closing deliverables for ATM, which matches the matter 'ATM Program' for Meridian Therapeutics.",
+ "shortlist": [
+  "6103.005"
+ ],
+ "confidence": 95,
+ "second_cmid": "",
+ "cmid": "6103.005",
+ "usage": {
+  "inputTokens": 181,
+  "outputTokens": 69,
+  "totalTokens": 9884,
+  "cacheReadInputTokens": 9634,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.907,
+ "seconds": 12.837192084058188
+}

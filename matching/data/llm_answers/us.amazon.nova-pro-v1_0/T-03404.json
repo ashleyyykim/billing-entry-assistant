@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03404",
+ "reason": "The narrative and past entries indicate work related to rent roll, which aligns with the matter 'Acquisition of 450 Harbor St.' under CMID 8340.001.",
+ "shortlist": [
+  "8340.001"
+ ],
+ "confidence": 95,
+ "second_cmid": "",
+ "cmid": "8340.001",
+ "usage": {
+  "inputTokens": 194,
+  "outputTokens": 90,
+  "totalTokens": 9919,
+  "cacheReadInputTokens": 9635,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.198,
+ "seconds": 2.8990590000757948
+}

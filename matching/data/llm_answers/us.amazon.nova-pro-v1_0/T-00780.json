@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-00780",
+ "reason": "The typed CMID is incorrect and the narrative does not clearly point to another matter. The timekeeper's recent work suggests a focus on Juniper Peak Capital, but the specific matter is unclear.",
+ "shortlist": [
+  "9140.001",
+  "6103.004",
+  "5602.001"
+ ],
+ "confidence": 70,
+ "second_cmid": "",
+ "cmid": "NONE",
+ "usage": {
+  "inputTokens": 197,
+  "outputTokens": 100,
+  "totalTokens": 9931,
+  "cacheReadInputTokens": 9634,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.081,
+ "seconds": 3.8433869580039755
+}

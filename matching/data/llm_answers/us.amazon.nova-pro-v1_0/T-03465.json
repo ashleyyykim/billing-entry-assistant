@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03465",
+ "reason": "The narrative matches the past entries for 1111.001 and the timekeeper's billing history shows hours for this matter.",
+ "shortlist": [
+  "1111.001"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "1111.001",
+ "usage": {
+  "inputTokens": 193,
+  "outputTokens": 78,
+  "totalTokens": 9904,
+  "cacheReadInputTokens": 9633,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.597,
+ "seconds": 6.420059707947075
+}

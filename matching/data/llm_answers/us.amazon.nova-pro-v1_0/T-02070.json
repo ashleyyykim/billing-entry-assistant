@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-02070",
+ "reason": "The narrative mentions exchanging emails with Y. Tanaka re stock plan, which aligns with the past entries for 3120.003 and 3120.001.",
+ "shortlist": [
+  "3120.003",
+  "3120.001",
+  "3120.002"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "1320.001",
+ "usage": {
+  "inputTokens": 194,
+  "outputTokens": 108,
+  "totalTokens": 9938,
+  "cacheReadInputTokens": 9636,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.204,
+ "seconds": 8.062061125063337
+}

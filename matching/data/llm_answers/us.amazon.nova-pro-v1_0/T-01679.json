@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01679",
+ "reason": "The narrative 'Conf w/ MC' is vague but the timekeeper has previously worked on this matter.",
+ "shortlist": [
+  "8340.002"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "8340.002",
+ "usage": {
+  "inputTokens": 189,
+  "outputTokens": 69,
+  "totalTokens": 9893,
+  "cacheReadInputTokens": 9635,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.87,
+ "seconds": 4.483926624991
+}

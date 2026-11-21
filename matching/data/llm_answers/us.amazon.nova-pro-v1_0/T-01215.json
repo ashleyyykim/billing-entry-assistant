@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-01215",
+ "reason": "The narrative mentions 'change of control provisions' and 'contractor classification', which are relevant to the General Corporate matter of Tidewater Analytics. The timekeeper's billing history also shows significant hours spent on 7222.002, which is a related matter.",
+ "shortlist": [
+  "4597.001",
+  "7222.002",
+  "9035.002"
+ ],
+ "confidence": 90,
+ "second_cmid": "7222.002",
+ "cmid": "4597.001",
+ "usage": {
+  "inputTokens": 216,
+  "outputTokens": 134,
+  "totalTokens": 9974,
+  "cacheReadInputTokens": 9624,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 2.579,
+ "seconds": 2.961616749991663
+}

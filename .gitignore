@@ -38,6 +38,9 @@ phase2_model/data/outputs/*
 
 # Extraction
 extraction/_private/
+
+# Matching: research notebooks and their outputs
+matching/_private/
 **/data/copies/
 **/data/textract/copies/
 **/data/model_answers/copies/

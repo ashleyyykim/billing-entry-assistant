@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01448",
+ "reason": "The narrative describes drafting minutes of a board meeting, which aligns with the 'Board & Governance' matter for Aster & Vale. The timekeeper has previously spent a significant amount of time on this matter.",
+ "shortlist": [
+  "3455.002"
+ ],
+ "confidence": 95,
+ "second_cmid": "",
+ "cmid": "3455.002",
+ "usage": {
+  "inputTokens": 191,
+  "outputTokens": 89,
+  "totalTokens": 9911,
+  "cacheReadInputTokens": 9631,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.996,
+ "seconds": 2.024753083009273
+}

@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03876",
+ "reason": "The narrative clearly indicates work on the purchase and sale agreement for 450 Harbor, which matches the matter 8340.001.",
+ "shortlist": [
+  "8340.001"
+ ],
+ "confidence": 95,
+ "second_cmid": "",
+ "cmid": "8340.001",
+ "usage": {
+  "inputTokens": 206,
+  "outputTokens": 80,
+  "totalTokens": 9922,
+  "cacheReadInputTokens": 9636,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.186,
+ "seconds": 1.323414665996097
+}

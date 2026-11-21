@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-00986",
+ "reason": "The narrative describes work related to title exceptions, purchase and sale agreement, and zoning letter, which aligns with the matter 'Acquisition of 450 Harbor St.' for Pelican Row Holdings.",
+ "shortlist": [
+  "8340.001",
+  "8340.002",
+  "8340.003"
+ ],
+ "confidence": 95,
+ "second_cmid": "",
+ "cmid": "8340.001",
+ "usage": {
+  "inputTokens": 237,
+  "outputTokens": 108,
+  "totalTokens": 9971,
+  "cacheReadInputTokens": 9626,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.159,
+ "seconds": 4.726914500002749
+}

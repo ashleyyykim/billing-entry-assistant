@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-03547",
+ "reason": "The narrative mentions revising good standing certificates and discussing hiring questions, which aligns with past entries for 2201.001.",
+ "shortlist": [
+  "2201.001",
+  "1111.001",
+  "9028.003"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "2201.001",
+ "usage": {
+  "inputTokens": 223,
+  "outputTokens": 96,
+  "totalTokens": 9941,
+  "cacheReadInputTokens": 9622,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.139,
+ "seconds": 2.2818995830602944
+}

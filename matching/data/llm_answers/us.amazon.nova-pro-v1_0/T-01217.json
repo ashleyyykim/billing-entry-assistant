@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01217",
+ "reason": "The narrative 'attend to LP matters' aligns with the matter 'Fund III Formation' for Quarry Lane Ventures, and the timekeeper has previously worked on this matter.",
+ "shortlist": [
+  "3388.001"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "3388.001",
+ "usage": {
+  "inputTokens": 187,
+  "outputTokens": 81,
+  "totalTokens": 9906,
+  "cacheReadInputTokens": 9638,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.946,
+ "seconds": 1.1818352909758687
+}

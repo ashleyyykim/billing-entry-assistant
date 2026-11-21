@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02026",
+ "reason": "The narrative and past entries align with the matter 5524.001, which is about Fund II Formation.",
+ "shortlist": [
+  "5524.001"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "5524.001",
+ "usage": {
+  "inputTokens": 211,
+  "outputTokens": 74,
+  "totalTokens": 9916,
+  "cacheReadInputTokens": 9631,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.913,
+ "seconds": 1.4068831250770018
+}

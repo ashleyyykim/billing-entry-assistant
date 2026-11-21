@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-01117",
+ "reason": "The narrative mentions reviewing title objection letters and lien searches, which are typical activities for real estate acquisition matters. The timekeeper has previously worked on 8340.001 (Acquisition of 450 Harbor St.) and 7215.003 (Credit Facility - Asterion Holdings), both of which involve real estate and financing aspects.",
+ "shortlist": [
+  "8340.001",
+  "7215.003",
+  "8012.001"
+ ],
+ "confidence": 90,
+ "second_cmid": "7215.003",
+ "cmid": "8340.001",
+ "usage": {
+  "inputTokens": 219,
+  "outputTokens": 154,
+  "totalTokens": 10000,
+  "cacheReadInputTokens": 9627,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 2.064,
+ "seconds": 2.4180180000839755
+}

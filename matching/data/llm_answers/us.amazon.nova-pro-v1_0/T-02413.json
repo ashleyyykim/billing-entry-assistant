@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-02413",
+ "reason": "The timekeeper has spent the most hours on matter 2960.003, which is related to board matters.",
+ "shortlist": [
+  "2960.003",
+  "3455.001",
+  "6103.002"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "2960.003",
+ "usage": {
+  "inputTokens": 188,
+  "outputTokens": 95,
+  "totalTokens": 9914,
+  "cacheReadInputTokens": 9631,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.061,
+ "seconds": 7.683495000004768
+}

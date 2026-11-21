@@ -1,0 +1,83 @@
+{
+  "model_dir": "us.amazon.nova-pro-v1_0",
+  "entries": 601,
+  "results": {
+    "model (default)": {
+      "auto_share": 0.6589018302828619,
+      "auto_precision": 0.9823232323232324,
+      "silent_errors": 7.0,
+      "review_share": 0.16139767054908485,
+      "multi_caught": 0.8378378378378378,
+      "no_match_precision": 0.8709677419354839,
+      "shortlist_hit": 0.8762886597938144
+    },
+    "LLM, confidence 90 or more": {
+      "auto_share": 0.8302828618968386,
+      "auto_precision": 0.8036072144288577,
+      "silent_errors": 98.0,
+      "review_share": 0.10316139767054909,
+      "multi_caught": 0.5405405405405406,
+      "no_match_precision": null,
+      "shortlist_hit": 0.3064516129032258
+    },
+    "model at the same share (auto_min 0.3)": {
+      "auto_share": 0.8136439267886856,
+      "auto_precision": 0.9243353783231084,
+      "silent_errors": 37.0,
+      "review_share": 0.0066555740432612314,
+      "multi_caught": 0.8378378378378378,
+      "no_match_precision": 0.8709677419354839,
+      "shortlist_hit": 0.75
+    },
+    "LLM, confidence 95 or more": {
+      "auto_share": 0.2961730449251248,
+      "auto_precision": 0.949438202247191,
+      "silent_errors": 9.0,
+      "review_share": 0.6372712146422629,
+      "multi_caught": 0.5405405405405406,
+      "no_match_precision": null,
+      "shortlist_hit": 0.7362924281984334
+    },
+    "model at the same share (auto_min 0.995)": {
+      "auto_share": 0.34775374376039936,
+      "auto_precision": 0.9904306220095693,
+      "silent_errors": 2.0,
+      "review_share": 0.454242928452579,
+      "multi_caught": 0.8378378378378378,
+      "no_match_precision": 0.8709677419354839,
+      "shortlist_hit": 0.9560439560439561
+    }
+  },
+  "first_pick": {
+    "entries": 527.0,
+    "model right": 0.937381404174573,
+    "LLM right": 0.7874762808349146,
+    "only the model right": 84.0,
+    "only the LLM right": 5.0,
+    "difference": 0.14990512333965844,
+    "95% interval, low": 0.11764705882352941,
+    "95% interval, high": 0.18216318785578747
+  },
+  "first_pick_p_value": 1.4238763300826186e-19,
+  "none_answers": {
+    "answers": 47,
+    "right": 28,
+    "new clients": 37,
+    "highest confidence": 80.0
+  },
+  "seconds_per_entry": {
+    "model": 0.0035998675125355085,
+    "llm": 4.4021912951347035
+  },
+  "tokens_per_entry": {
+    "input": 201.76705490848585,
+    "output": 86.42096505823628,
+    "cache_read": 9583.532445923462
+  },
+  "usd_per_1000_entries": 2.354667221297837,
+  "repeat": {
+    "entries": 30,
+    "same_matter": 0.9333333333333333,
+    "confidence_within_10": 0.9333333333333333
+  }
+}

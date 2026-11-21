@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-03402",
+ "reason": "The narrative mentions 'TCW M. Carter', who is associated with Pelican Row Holdings (PRH), and the timekeeper has previously worked on matter 8340.001.",
+ "shortlist": [
+  "8340.001",
+  "8340.002",
+  "8340.003"
+ ],
+ "confidence": 90,
+ "second_cmid": "8340.002",
+ "cmid": "8340.001",
+ "usage": {
+  "inputTokens": 185,
+  "outputTokens": 118,
+  "totalTokens": 9936,
+  "cacheReadInputTokens": 9633,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.841,
+ "seconds": 5.723330459091812
+}

@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-00816",
+ "reason": "The narrative mentions annual meeting materials related to a fund extension, which aligns with past entries for 3388.002.",
+ "shortlist": [
+  "3388.002",
+  "9140.001",
+  "9140.002"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "3388.002",
+ "usage": {
+  "inputTokens": 199,
+  "outputTokens": 96,
+  "totalTokens": 9930,
+  "cacheReadInputTokens": 9635,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.114,
+ "seconds": 7.174125375109725
+}

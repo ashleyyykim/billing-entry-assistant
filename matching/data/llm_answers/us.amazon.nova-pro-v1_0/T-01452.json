@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01452",
+ "reason": "The narrative clearly describes work on the LPAC consent, which is related to the General Fund Matters for Cobalt Ridge Partners.",
+ "shortlist": [
+  "5524.002"
+ ],
+ "confidence": 95,
+ "second_cmid": "",
+ "cmid": "5524.002",
+ "usage": {
+  "inputTokens": 201,
+  "outputTokens": 72,
+  "totalTokens": 9906,
+  "cacheReadInputTokens": 9633,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.984,
+ "seconds": 17.281980708939955
+}

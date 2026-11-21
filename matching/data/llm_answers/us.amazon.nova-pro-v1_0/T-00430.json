@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-00430",
+ "reason": "The narrative mentions managing the 450 Harbor closing, which aligns with the Pelican Row Holdings matter 8340.001. The timekeeper's past hours also show significant time spent on this matter.",
+ "shortlist": [
+  "8340.001",
+  "8340.002",
+  "8340.003"
+ ],
+ "confidence": 90,
+ "second_cmid": "8340.002",
+ "cmid": "8340.001",
+ "usage": {
+  "inputTokens": 228,
+  "outputTokens": 123,
+  "totalTokens": 9975,
+  "cacheReadInputTokens": 9624,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.399,
+ "seconds": 1.4593623749678954
+}

@@ -1,0 +1,20 @@
+{
+ "entry_id": "T-02335",
+ "reason": "The narrative mentions 'Larkspur Controls' which is not the same as 'Pinnacle Dental', but it could be related to 'Add-On Acquisition (Project Larch)' which is a similar type of matter.",
+ "shortlist": [
+  "5520.003",
+  "5520.005"
+ ],
+ "confidence": 80,
+ "second_cmid": "5520.003",
+ "cmid": "5520.005",
+ "usage": {
+  "inputTokens": 222,
+  "outputTokens": 113,
+  "totalTokens": 9965,
+  "cacheReadInputTokens": 9630,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.521,
+ "seconds": 2.246631290996447
+}

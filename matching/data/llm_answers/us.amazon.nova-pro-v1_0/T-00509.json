@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00509",
+ "reason": "The narrative 'Attend to fund formation matters' matches the matter 'Fund II Formation' for CMID 5524.001.",
+ "shortlist": [
+  "5524.001"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "5524.001",
+ "usage": {
+  "inputTokens": 190,
+  "outputTokens": 80,
+  "totalTokens": 9905,
+  "cacheReadInputTokens": 9635,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.95,
+ "seconds": 1.4988480421015993
+}

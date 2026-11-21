@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-01540",
+ "reason": "The narrative clearly indicates work on the equity incentive plan and option agreements, which aligns with the matter 9028.003 (Exec Comp / 409A) and the timekeeper's significant hours on this matter.",
+ "shortlist": [
+  "9028.003",
+  "9028.001",
+  "9028.002"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "9028.004",
+ "usage": {
+  "inputTokens": 215,
+  "outputTokens": 118,
+  "totalTokens": 9966,
+  "cacheReadInputTokens": 9633,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.482,
+ "seconds": 9.290112082962878
+}

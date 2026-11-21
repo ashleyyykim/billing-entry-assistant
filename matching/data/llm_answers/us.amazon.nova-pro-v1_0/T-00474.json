@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00474",
+ "reason": "The narrative clearly indicates administrative matters, which aligns with the matter type for 1111.001.",
+ "shortlist": [
+  "1111.001"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "1111.001",
+ "usage": {
+  "inputTokens": 212,
+  "outputTokens": 72,
+  "totalTokens": 9920,
+  "cacheReadInputTokens": 9636,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.918,
+ "seconds": 15.534418583963998
+}

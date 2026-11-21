@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02899",
+ "reason": "The narrative describes a meeting with lead investor counsel re information rights, which aligns with the Seed Financing matter for Saffron Labs.",
+ "shortlist": [
+  "5750.002"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "5750.002",
+ "usage": {
+  "inputTokens": 192,
+  "outputTokens": 72,
+  "totalTokens": 9893,
+  "cacheReadInputTokens": 9629,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.971,
+ "seconds": 1.2047795839607716
+}

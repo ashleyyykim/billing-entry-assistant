@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00519",
+ "reason": "The narrative and past entries align with the matter 'Acquisition of 450 Harbor St.' for Pelican Row Holdings.",
+ "shortlist": [
+  "8340.001"
+ ],
+ "confidence": 95,
+ "second_cmid": "",
+ "cmid": "8340.001",
+ "usage": {
+  "inputTokens": 230,
+  "outputTokens": 74,
+  "totalTokens": 9929,
+  "cacheReadInputTokens": 9625,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.204,
+ "seconds": 3.7532044579274952
+}

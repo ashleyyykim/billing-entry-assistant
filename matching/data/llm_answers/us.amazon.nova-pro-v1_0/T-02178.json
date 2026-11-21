@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02178",
+ "reason": "The narrative clearly indicates work on the stock purchase agreement for Ridgeline Capital, which aligns with the matter 'Exec Comp' for Copperline Networks.",
+ "shortlist": [
+  "7633.002"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "7633.002",
+ "usage": {
+  "inputTokens": 199,
+  "outputTokens": 77,
+  "totalTokens": 9910,
+  "cacheReadInputTokens": 9634,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.882,
+ "seconds": 1.4521153749665245
+}

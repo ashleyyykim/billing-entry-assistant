@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01957",
+ "reason": "The narrative and past entries align with the matter 7215.003, which is a credit facility for Northgate Bank.",
+ "shortlist": [
+  "7215.003"
+ ],
+ "confidence": 95,
+ "second_cmid": "",
+ "cmid": "7215.003",
+ "usage": {
+  "inputTokens": 208,
+  "outputTokens": 77,
+  "totalTokens": 9916,
+  "cacheReadInputTokens": 9631,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.952,
+ "seconds": 1.5307602919638157
+}

@@ -1,0 +1,20 @@
+{
+ "entry_id": "T-00634",
+ "reason": "The narrative mentions 'gen exchange emails w/ CEO re customer contract question' which aligns with the General Corporate matter for Halverson Industries.",
+ "shortlist": [
+  "3019.001",
+  "3019.002"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "3019.001",
+ "usage": {
+  "inputTokens": 194,
+  "outputTokens": 86,
+  "totalTokens": 9908,
+  "cacheReadInputTokens": 9628,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.983,
+ "seconds": 2.180651874979958
+}

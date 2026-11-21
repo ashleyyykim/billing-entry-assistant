@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03684",
+ "reason": "The narrative 'Attend firm meeting' aligns with the administrative nature of matter 1111.001, and the timekeeper has previously recorded hours for this matter.",
+ "shortlist": [
+  "1111.001"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "1111.001",
+ "usage": {
+  "inputTokens": 185,
+  "outputTokens": 86,
+  "totalTokens": 9908,
+  "cacheReadInputTokens": 9637,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.113,
+ "seconds": 3.056070917053148
+}

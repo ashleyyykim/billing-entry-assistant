@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-00614",
+ "reason": "The narrative mentions editing a title commitment and providing comments on a purchase and sale agreement for 450 Harbor, which aligns with the work done on matter 8340.001.",
+ "shortlist": [
+  "8340.001",
+  "8340.002",
+  "8340.003"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "8340.001",
+ "usage": {
+  "inputTokens": 203,
+  "outputTokens": 109,
+  "totalTokens": 9941,
+  "cacheReadInputTokens": 9629,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.186,
+ "seconds": 22.3861925000092
+}

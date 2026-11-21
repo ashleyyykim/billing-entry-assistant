@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01628",
+ "reason": "The narrative clearly indicates work on the Exec Comp / 409A matter for Lanternfish Software, and the timekeeper has a significant number of hours recorded for this matter.",
+ "shortlist": [
+  "9028.003"
+ ],
+ "confidence": 95,
+ "second_cmid": "",
+ "cmid": "9028.003",
+ "usage": {
+  "inputTokens": 199,
+  "outputTokens": 84,
+  "totalTokens": 9922,
+  "cacheReadInputTokens": 9639,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.012,
+ "seconds": 10.397082207957283
+}

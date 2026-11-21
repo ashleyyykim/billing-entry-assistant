@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03775",
+ "reason": "The narrative mentions a phone call with S. Cole re option grants, which aligns with the matter 'Board & Governance' for Meridian Therapeutics.",
+ "shortlist": [
+  "6103.003"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "6103.003",
+ "usage": {
+  "inputTokens": 199,
+  "outputTokens": 76,
+  "totalTokens": 9906,
+  "cacheReadInputTokens": 9631,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.987,
+ "seconds": 9.93809249997139
+}

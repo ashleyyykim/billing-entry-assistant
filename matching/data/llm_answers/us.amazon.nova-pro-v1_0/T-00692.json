@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-00692",
+ "reason": "The narrative 'Attend to review of Section 16 filings' matches the past entries for matter 3455.001, which involves SEC reporting.",
+ "shortlist": [
+  "3455.001",
+  "6103.002",
+  "3455.002"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "3455.001",
+ "usage": {
+  "inputTokens": 190,
+  "outputTokens": 104,
+  "totalTokens": 9926,
+  "cacheReadInputTokens": 9632,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.218,
+ "seconds": 2.230043707997538
+}

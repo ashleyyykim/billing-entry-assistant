@@ -1,0 +1,20 @@
+{
+ "entry_id": "T-01811",
+ "reason": "The narrative mentions entity maintenance and good standing certificates, which are typical tasks for the General Corporate matter of Kestrel Foods.",
+ "shortlist": [
+  "2201.001",
+  "6888.001"
+ ],
+ "confidence": 90,
+ "second_cmid": "6888.001",
+ "cmid": "2201.001",
+ "usage": {
+  "inputTokens": 216,
+  "outputTokens": 91,
+  "totalTokens": 9936,
+  "cacheReadInputTokens": 9629,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.234,
+ "seconds": 1.3976748749846593
+}

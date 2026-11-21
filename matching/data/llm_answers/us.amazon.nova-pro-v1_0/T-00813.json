@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-00813",
+ "reason": "The narrative matches the work done for Juniper Peak Capital's Fund II Formation, and the timekeeper has spent significant hours on this matter.",
+ "shortlist": [
+  "9140.001",
+  "5524.001",
+  "2215.002"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "9140.001",
+ "usage": {
+  "inputTokens": 199,
+  "outputTokens": 96,
+  "totalTokens": 9925,
+  "cacheReadInputTokens": 9630,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.37,
+ "seconds": 3.4633265419397503
+}

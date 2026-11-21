@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-03024",
+ "reason": "The narrative mentions 'option grants' which aligns with past entries for 3455.002 and the timekeeper's billing history shows significant hours for this matter.",
+ "shortlist": [
+  "3455.002",
+  "1111.001",
+  "6110.002"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "3455.002",
+ "usage": {
+  "inputTokens": 199,
+  "outputTokens": 105,
+  "totalTokens": 9929,
+  "cacheReadInputTokens": 9625,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.168,
+ "seconds": 4.580475624999963
+}

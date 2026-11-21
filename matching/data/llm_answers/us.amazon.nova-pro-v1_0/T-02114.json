@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02114",
+ "reason": "The narrative and past entries align with the work done for matter 2201.001.",
+ "shortlist": [
+  "2201.001"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "2201.001",
+ "usage": {
+  "inputTokens": 211,
+  "outputTokens": 70,
+  "totalTokens": 9910,
+  "cacheReadInputTokens": 9629,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.891,
+ "seconds": 8.468282375019044
+}

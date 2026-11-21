@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-00080",
+ "reason": "The narrative mentions reviewing and commenting on a DPA, which is likely related to licensing or general corporate matters. The client 'Harborview Bio' is not listed, but 'Harborlight Bio' and 'Harborline Biosciences' are similar and have relevant matters. The timekeeper's past work suggests a focus on SEC reporting and general corporate matters.",
+ "shortlist": [
+  "2956.001",
+  "2956.002",
+  "2956.003"
+ ],
+ "confidence": 70,
+ "second_cmid": "",
+ "cmid": "NONE",
+ "usage": {
+  "inputTokens": 192,
+  "outputTokens": 134,
+  "totalTokens": 9958,
+  "cacheReadInputTokens": 9632,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.379,
+ "seconds": 1.4481207500211895
+}

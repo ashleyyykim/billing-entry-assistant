@@ -1,0 +1,17 @@
+{
+ "entry_id": "T-02876",
+ "reason": "The matter 'Acq of Larkspur Controls' does not match any known matter for Cobalt Ridge Capital.",
+ "shortlist": [],
+ "confidence": 0,
+ "second_cmid": "",
+ "cmid": "NONE",
+ "usage": {
+  "inputTokens": 198,
+  "outputTokens": 52,
+  "totalTokens": 9882,
+  "cacheReadInputTokens": 9632,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.753,
+ "seconds": 1.4443324169842526
+}

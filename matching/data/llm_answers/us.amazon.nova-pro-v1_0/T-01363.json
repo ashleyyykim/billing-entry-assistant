@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-01363",
+ "reason": "The narrative indicates work related to contractor classification, which is a common corporate matter. The client is Pelican Row Holdings, and the matter list shows that 8340.002 is a General Corporate matter for this client.",
+ "shortlist": [
+  "8340.001",
+  "8340.002",
+  "8340.003"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "8340.002",
+ "usage": {
+  "inputTokens": 189,
+  "outputTokens": 115,
+  "totalTokens": 9939,
+  "cacheReadInputTokens": 9635,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.31,
+ "seconds": 1.6908979580039158
+}

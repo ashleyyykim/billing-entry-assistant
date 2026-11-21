@@ -40,7 +40,7 @@ The image copies the trained models, so they must exist first:
 
 `POST /extract` reads one upload (a photo, PDF, Word or text file, spreadsheet, `.eml` email, or `text` typed in) and returns its entries with their review reasons, plus matching's decisions for them. The page's **Upload a photo or file** button calls it.
 
-It uses Textract for photos and scans, and Nova Pro with Llama 4 Maverick on Bedrock (us-west-2). Credentials come from your shell when the container starts and are never copied into the image:
+It uses Textract for photos and scans, and Nova Pro with Qwen3 VL on Bedrock (us-west-2). Credentials come from your shell when the container starts and are never copied into the image:
 
 ```
 eval "$(aws configure export-credentials --format env)"
@@ -49,4 +49,8 @@ docker compose -f docker/compose.yaml up --build
 
 Without credentials, `/extract` still works with `use_aws=false`: the rule readers read typed inputs and spreadsheets for free, and every entry is flagged `read_by_rules`. Photos and scans need AWS. Each upload is read in a temporary folder that is deleted afterwards, so nothing from it is kept.
 
-`GET /health` shows whether extraction loaded.
+`GET /health` shows whether extraction loaded and which two models read uploads.
+
+Optional settings (in `compose.yaml`): `TENTH_PASSWORD` adds a sign-in, `TENTH_OPS_LOG` saves the operations log to a file, and `TENTH_LOG_FILE_NAMES=1` shows file names in the log for debugging. Each setting has a one-line note in `compose.yaml`.
+
+**Operations log.** Each upload and model call writes a line starting with `tenth-ops `: time, tokens, and review reasons, with no client information. To watch it: `docker compose -f docker/compose.yaml logs -f tenth | grep tenth-ops`.

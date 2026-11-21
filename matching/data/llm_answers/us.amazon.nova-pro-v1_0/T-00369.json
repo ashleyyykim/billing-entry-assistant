@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-00369",
+ "reason": "The narrative indicates administrative work, which aligns with the 'Admin' matter for the Firm.",
+ "shortlist": [
+  "1111.001",
+  "2201.005",
+  "6230.001"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "1111.001",
+ "usage": {
+  "inputTokens": 194,
+  "outputTokens": 86,
+  "totalTokens": 9906,
+  "cacheReadInputTokens": 9626,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.042,
+ "seconds": 1.106721332995221
+}

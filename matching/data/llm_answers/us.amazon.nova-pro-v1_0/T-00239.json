@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-00239",
+ "reason": "The narrative mentions 'Project Basalt', which is not directly linked to any specific matter in the list. However, the timekeeper has worked on several Harborlight matters, and the narrative suggests work on a new project, possibly related to an existing matter.",
+ "shortlist": [
+  "2201.001",
+  "2201.003",
+  "2201.005"
+ ],
+ "confidence": 70,
+ "second_cmid": "",
+ "cmid": "2201.009",
+ "usage": {
+  "inputTokens": 194,
+  "outputTokens": 120,
+  "totalTokens": 9950,
+  "cacheReadInputTokens": 9636,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.765,
+ "seconds": 1.8766339999856427
+}

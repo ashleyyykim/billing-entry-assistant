@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-03622",
+ "reason": "The typed CMID and client do not match any existing matter. The narrative suggests closing matters, which could relate to several past entries by the timekeeper.",
+ "shortlist": [
+  "6103.001",
+  "6103.002",
+  "6103.003"
+ ],
+ "confidence": 50,
+ "second_cmid": "",
+ "cmid": "NONE",
+ "usage": {
+  "inputTokens": 186,
+  "outputTokens": 92,
+  "totalTokens": 9914,
+  "cacheReadInputTokens": 9636,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.372,
+ "seconds": 2.0304648329038173
+}

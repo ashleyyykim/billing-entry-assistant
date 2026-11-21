@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03394",
+ "reason": "The narrative 'Attend to board matters' matches the matter 'Board & Governance' for Meridian Therapeutics.",
+ "shortlist": [
+  "6103.003"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "6103.003",
+ "usage": {
+  "inputTokens": 186,
+  "outputTokens": 70,
+  "totalTokens": 9886,
+  "cacheReadInputTokens": 9630,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.875,
+ "seconds": 3.3277633750112727
+}

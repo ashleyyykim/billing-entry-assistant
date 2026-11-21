@@ -1,0 +1,20 @@
+{
+ "entry_id": "T-03192",
+ "reason": "The narrative mentions work on the MAC definition for Larkspur, which aligns with the Add-On Acquisition (Project Larch) matter for Cobalt Ridge Capital. The rework of bylaws for Orchard Lane also suggests work on the General Corporate matter for Orchard Lane Health.",
+ "shortlist": [
+  "5520.003",
+  "7410.001"
+ ],
+ "confidence": 90,
+ "second_cmid": "7410.001",
+ "cmid": "5520.003",
+ "usage": {
+  "inputTokens": 223,
+  "outputTokens": 118,
+  "totalTokens": 9963,
+  "cacheReadInputTokens": 9622,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.215,
+ "seconds": 11.17550083308015
+}

@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01111",
+ "reason": "The narrative and past entries align with the matter 9028.003, which is Exec Comp / 409A for Lanternfish Software.",
+ "shortlist": [
+  "9028.003"
+ ],
+ "confidence": 95,
+ "second_cmid": "",
+ "cmid": "9028.003",
+ "usage": {
+  "inputTokens": 212,
+  "outputTokens": 82,
+  "totalTokens": 9926,
+  "cacheReadInputTokens": 9632,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.043,
+ "seconds": 5.424879542086273
+}

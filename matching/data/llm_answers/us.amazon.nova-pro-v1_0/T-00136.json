@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-00136",
+ "reason": "The narrative 'Mark up ALTA survey + send comments to client' matches the past entry for 8340.001: 'Mark up ALTA survey;update issues list (3.4) + rework 450 Harbor zoning report (1.2). / Email exchange with M. Carter re title exceptions. / Update Harbor St. title commitment per client comments for client review.'",
+ "shortlist": [
+  "8340.001",
+  "8340.002",
+  "8347.002"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "8340.001",
+ "usage": {
+  "inputTokens": 191,
+  "outputTokens": 152,
+  "totalTokens": 9975,
+  "cacheReadInputTokens": 9632,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.567,
+ "seconds": 1.6390496660023928
+}

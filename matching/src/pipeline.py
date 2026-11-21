@@ -3,12 +3,12 @@
 This is the code the deployed service runs. In order:
 1. load_reference: once at startup. Matter Master, timekeeper history, settings, models, past narratives, people.
 2. decide: for each batch of new entries (emails already parsed). Clues, both models, cutoffs, and reasons.
-3. add_confirmed: after a reviewer confirms entries, so tomorrow's clues use them (notebook 09).
+3. add_confirmed: after a reviewer confirms entries, so tomorrow's clues use them.
 Retraining is separate (src/train.py). Emails are parsed with extraction/src/text_parser.py, so that folder
 needs to be on the path too.
 
-Notebooks: 05 scores changed copies of VAL (stress tests), 06 runs the final TEST and holdout sets, 09 replays feedback.
-load_entries reads a labeled time-entry file the way notebooks 00 and 02 do; the service gets entries without labels.
+Notebook 02_evaluation runs decide on VAL, TEST, and the holdout file, and score_entries on changed copies (stress tests).
+load_entries reads a labeled time-entry file the way 00_build does; the service gets entries without labels.
 """
 import json
 from pathlib import Path
@@ -20,8 +20,8 @@ import pandas as pd
 from classifier import ACTION_FEATURES, entry_features, explain, route_actions
 from clean import normalize
 from cues import cue_table
-from features import (add_gaps, add_person_features, build_pairs, client_mention_table, find_people, keyterm_table,
-                      known_people, not_people, past_sim)
+from features import (add_gaps, add_person_features, build_pairs, client_mention_table, entry_hours, find_people,
+                      keyterm_table, known_people, not_people, past_sim, window_weeks)
 from fuzzy import client_name_table, matter_name_table
 from rules import RENAMED
 from text_parser import parse_email_entries
@@ -42,7 +42,8 @@ def load_reference(data, results_dir, encoder, setting="default"):
         sheets (same column names), for a service that reads them from the firm's database instead of a file.
     results_dir: the saved files the service needs: 02_config.json, 02_pairs.parquet (past narratives),
         02_people.parquet, 04_config.json, 04_model.joblib.
-    encoder: the SentenceTransformer from notebook 02. setting: "strict", "default", or "balanced" cutoffs from notebook 04.
+    encoder: the SentenceTransformer named in 02_config.json. setting: "strict", "default", "balanced", or a name
+        added with train.repick_cutoffs.
     """
     results_dir = Path(results_dir)
     sheets = data if isinstance(data, dict) else pd.read_excel(data, sheet_name=None, dtype=str)
@@ -53,7 +54,11 @@ def load_reference(data, results_dir, encoder, setting="default"):
     past = pd.read_parquet(results_dir / "02_pairs.parquet", columns=["entry_id", "split", "narrative_norm", "key_true_cmid"])
     past = past.drop_duplicates("entry_id").query("split == 'TRAIN' and key_true_cmid != 'NONE'")
 
+    start, end = feature_config.get("history_start"), feature_config["history_end"]
     return {
+        "history_start": start,
+        "history_last": end,
+        "history_weeks": window_weeks(start, end) if start else None,
         "matters": mm[list(MATTER_COLS)].rename(columns=MATTER_COLS),
         "history": sheets["TK Matter History"][list(HISTORY_COLS)].rename(columns=HISTORY_COLS),
         "client_names": client_name_table(mm, feature_config["acronym_skip"]),
@@ -63,6 +68,7 @@ def load_reference(data, results_dir, encoder, setting="default"):
         "client_mentions": client_mention_table(mm, acronym_skip=feature_config["acronym_skip"]),
         "feature_config": feature_config,
         "features": model_config["features"],
+        "action_features": model_config.get("action_features", ACTION_FEATURES),   # the ones the saved model was trained on
         "cutoffs": model_config["routing"][setting],
         "models": joblib.load(results_dir / "04_model.joblib"),
         "encoder": encoder,
@@ -75,10 +81,10 @@ def load_reference(data, results_dir, encoder, setting="default"):
 
 
 def load_entries(data_path, ref, skip=("Firm",)):
-    """A time-entry file read the way notebooks 00 and 02 read the main one: emails parsed, answer key split off.
+    """A time-entry file read the way 00_build reads the main one: emails parsed, answer key split off.
 
     Returns (entries, answers). answers has the same columns as rules.answer_key (split, tk_id, key_ columns).
-    skip: clients whose name is an ordinary word, as in notebook 00.
+    skip: clients whose name is an ordinary word ("Firm").
     """
     raw = pd.read_excel(data_path, sheet_name="Time Entries", dtype=str)
     entries = raw[list(RAW_ENTRY_COLS)].rename(columns=RAW_ENTRY_COLS)
@@ -90,7 +96,7 @@ def load_entries(data_path, ref, skip=("Firm",)):
 
 
 def mark_true_matters(pairs, answers):
-    """is_true_matter for each pair, as in notebook 02: 1 for the right matter and for the second matter of a
+    """is_true_matter for each pair, as in training: 1 for the right matter and for the second matter of a
     multi-matter entry. Only used for grading the pair model."""
     key = answers.set_index("entry_id")
     first, second = pairs["entry_id"].map(key["key_true_cmid"]), pairs["entry_id"].map(key["key_secondary_cmid"])
@@ -98,7 +104,7 @@ def mark_true_matters(pairs, answers):
 
 
 def add_past_sim(pairs, ref):
-    """past_narrative_sim and its gap: each narrative compared with all past narratives, like VAL in notebook 02."""
+    """past_narrative_sim and its gap: each narrative compared with all past narratives, like VAL in training."""
     cfg = ref["feature_config"]
     text = pairs.drop_duplicates("entry_id")[["entry_id", "narrative_norm"]].reset_index(drop=True)
     vecs = ref["encoder"].encode(text["narrative_norm"].tolist(), normalize_embeddings=True)
@@ -111,17 +117,21 @@ def add_past_sim(pairs, ref):
 
 def add_people(pairs, ref):
     """person_hits and person_conflict: people named in each narrative, checked against all of billing history,
-    like VAL in notebook 02."""
+    like VAL in training."""
     named = find_people(pairs.drop_duplicates("entry_id").set_index("entry_id")["narrative_norm"], ref["people"])
     return add_person_features(pairs, named, ref["person_history"], folds={})
 
 
 def build_entry_pairs(entries, ref):
-    """The pairs table for these entries, with every clue the pair model uses."""
+    """The pairs table for these entries, with every clue the pair model uses. Each entry needs its own entry_id."""
+    repeated = entries["entry_id"][entries["entry_id"].duplicated()].unique()
+    if len(repeated):
+        raise ValueError(f"each entry needs its own entry_id; repeated: {', '.join(map(str, repeated[:5]))}")
     cfg = ref["feature_config"]
-    pairs = build_pairs(entries[ENTRY_COLS], ref["matters"], ref["history"], ref["client_names"], ref["matter_names"],
+    hours = entry_hours(entries).fillna(cfg.get("hours_fill", np.nan))
+    pairs = build_pairs(entries[ENTRY_COLS].assign(hours=hours), ref["matters"], ref["history"], ref["client_names"], ref["matter_names"],
                         ref["keyterms"], ref["cues"], ref["client_mentions"], cfg["scorers"], cfg["phrase_min"],
-                        cfg["gap_cols"], pd.Timestamp(cfg["history_end"]))
+                        cfg["gap_cols"], pd.Timestamp(cfg["history_end"]), ref.get("history_weeks"))
     return add_past_sim(add_people(pairs, ref), ref)
 
 
@@ -133,7 +143,7 @@ def decide_pairs(pairs, ref):
     top = entry_features(pairs, pairs["prob"].to_numpy(), cfg["client_col"], cfg["matter_col"], cfg["phrase_min"])
     narratives = pairs.drop_duplicates("entry_id").set_index("entry_id")["narrative_norm"]
     top["multi_text_score"] = models["text_model"].predict_proba(top["entry_id"].map(narratives))[:, 1]
-    action_probs = pd.DataFrame(models["action_model"].predict_proba(top[ACTION_FEATURES]),
+    action_probs = pd.DataFrame(models["action_model"].predict_proba(top[ref.get("action_features", ACTION_FEATURES)]),
                                 columns=models["action_model"].classes_)
     top = top.join(action_probs.add_prefix("p_"))   # p_auto, p_review, p_multi, p_no_match
     return pairs, top, route_actions(top, action_probs, ref["cutoffs"])
@@ -147,7 +157,8 @@ def score_entries(entries, ref):
 def decide(entries, ref):
     """What the service calls for new entries: score_entries, then a short and full reason for each decision.
 
-    entries: one row per entry with ENTRY_COLS (emails already parsed). Returns (pairs with prob, entry clues,
+    entries: one row per entry with ENTRY_COLS (emails already parsed), plus hours (or parsed_hours) when known;
+    missing hours get the TRAIN median. Returns (pairs with prob, entry clues,
     decisions). decisions has one row per entry: action, pred_cmid ("top | second" for a multi-matter call
     that names the second matter), second_basis, shortlist, top_prob, second_prob, reason_short, and reason_full.
     """
@@ -164,7 +175,8 @@ def add_confirmed(ref, confirmed):
     timekeeper's hours by matter. Returns an updated copy of ref; the models and cutoffs don't change.
 
     confirmed: entry_id, tk_id, narrative, hours, cmid (the one matter a reviewer confirmed, or that was billed
-    without changes). Leave out multi-matter entries until they're split, like notebook 02 does.
+    without changes), and work_date. Leave out multi-matter entries until they're split, as training does.
+    The history window grows to the latest work date, so hours per week stay on the scale the model learned.
     """
     ref = dict(ref)
     text = confirmed["narrative"].map(lambda t: normalize(t, drop_suffixes=False))
@@ -182,4 +194,7 @@ def add_confirmed(ref, confirmed):
     hours = pd.concat([ref["history"], confirmed[["tk_id", "cmid", "hours"]]], ignore_index=True)
     hours["hours"] = pd.to_numeric(hours["hours"], errors="coerce").fillna(0.0)
     ref["history"] = hours.groupby(["tk_id", "cmid"], as_index=False)["hours"].sum()
+    if ref.get("history_start") and "work_date" in confirmed:
+        ref["history_last"] = max(pd.Timestamp(ref["history_last"]), pd.to_datetime(confirmed["work_date"]).max())
+        ref["history_weeks"] = window_weeks(ref["history_start"], ref["history_last"])
     return ref

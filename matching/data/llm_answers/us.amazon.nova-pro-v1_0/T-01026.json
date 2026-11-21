@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-01026",
+ "reason": "The narrative 'Attend to drafting of zoning letter' aligns with the matter 'Acquisition of 450 Harbor St.' under Pelican Row Holdings, which involves zoning and title issues.",
+ "shortlist": [
+  "8340.001",
+  "8340.002",
+  "8340.003"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "8340.001",
+ "usage": {
+  "inputTokens": 189,
+  "outputTokens": 108,
+  "totalTokens": 9928,
+  "cacheReadInputTokens": 9631,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.213,
+ "seconds": 6.515528249903582
+}

@@ -1,0 +1,20 @@
+{
+ "entry_id": "T-01765",
+ "reason": "The narrative mentions work related to Cobalt Ridge Capital and Lantern Software Group, which aligns with the typed CMID and the past entries.",
+ "shortlist": [
+  "5520.001",
+  "9035.001"
+ ],
+ "confidence": 90,
+ "second_cmid": "9035.001",
+ "cmid": "5520.001",
+ "usage": {
+  "inputTokens": 236,
+  "outputTokens": 93,
+  "totalTokens": 9960,
+  "cacheReadInputTokens": 9631,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.041,
+ "seconds": 13.801305332919583
+}

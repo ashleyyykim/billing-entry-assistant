@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-01055",
+ "reason": "The timekeeper has spent the most hours on 3120.001 and the narrative mentions Y. Tanaka, who is associated with this matter.",
+ "shortlist": [
+  "3120.001",
+  "5520.005",
+  "5520.002"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "3120.001",
+ "usage": {
+  "inputTokens": 186,
+  "outputTokens": 101,
+  "totalTokens": 9919,
+  "cacheReadInputTokens": 9632,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.39,
+ "seconds": 5.975465624942444
+}

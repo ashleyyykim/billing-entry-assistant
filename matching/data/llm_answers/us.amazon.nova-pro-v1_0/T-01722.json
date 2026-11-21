@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-01722",
+ "reason": "The narrative 'Scan and save executed documents and circulate revised draft' aligns with the work done for Harborlight Bio's General Corporate matter, which has the highest hours logged by the timekeeper.",
+ "shortlist": [
+  "2201.001",
+  "2201.003",
+  "2201.004"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "2201.001",
+ "usage": {
+  "inputTokens": 191,
+  "outputTokens": 107,
+  "totalTokens": 9927,
+  "cacheReadInputTokens": 9629,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.172,
+ "seconds": 7.101899292087182
+}

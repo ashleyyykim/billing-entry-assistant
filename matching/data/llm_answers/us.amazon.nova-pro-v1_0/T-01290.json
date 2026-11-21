@@ -1,0 +1,17 @@
+{
+ "entry_id": "T-01290",
+ "reason": "The client and matter are not specified, and the narrative does not clearly point to a specific matter from the list.",
+ "shortlist": [],
+ "confidence": 0,
+ "second_cmid": "",
+ "cmid": "NONE",
+ "usage": {
+  "inputTokens": 190,
+  "outputTokens": 54,
+  "totalTokens": 9875,
+  "cacheReadInputTokens": 9631,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.94,
+ "seconds": 6.867038791999221
+}

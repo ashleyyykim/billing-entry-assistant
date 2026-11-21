@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01005",
+ "reason": "The narrative and past entries indicate work on stock plan, which aligns with the matter 3120.001.",
+ "shortlist": [
+  "3120.001"
+ ],
+ "confidence": 95,
+ "second_cmid": "",
+ "cmid": "3120.001",
+ "usage": {
+  "inputTokens": 197,
+  "outputTokens": 74,
+  "totalTokens": 9905,
+  "cacheReadInputTokens": 9634,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.078,
+ "seconds": 6.9180467498954386
+}

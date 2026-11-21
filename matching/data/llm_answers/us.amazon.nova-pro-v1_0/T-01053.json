@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01053",
+ "reason": "The narrative mentions a call with Y. Tanaka regarding employee matters, which aligns with the past entries for 3120.001.",
+ "shortlist": [
+  "3120.001"
+ ],
+ "confidence": 95,
+ "second_cmid": "",
+ "cmid": "3120.001",
+ "usage": {
+  "inputTokens": 195,
+  "outputTokens": 78,
+  "totalTokens": 9912,
+  "cacheReadInputTokens": 9639,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.044,
+ "seconds": 2.175578249967657
+}

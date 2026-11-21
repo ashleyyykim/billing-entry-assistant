@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-00814",
+ "reason": "The narrative mentions reviewing a management company agreement for Fund II, which aligns with the timekeeper's significant hours on matter 9140.001.",
+ "shortlist": [
+  "9140.001",
+  "5524.001",
+  "2215.002"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "9140.001",
+ "usage": {
+  "inputTokens": 202,
+  "outputTokens": 102,
+  "totalTokens": 9937,
+  "cacheReadInputTokens": 9633,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.434,
+ "seconds": 5.231146292062476
+}

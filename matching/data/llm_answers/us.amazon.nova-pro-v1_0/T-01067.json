@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01067",
+ "reason": "The narrative and past entries align with the General Corporate matter for Bluefin Robotics.",
+ "shortlist": [
+  "3120.001"
+ ],
+ "confidence": 95,
+ "second_cmid": "",
+ "cmid": "3120.001",
+ "usage": {
+  "inputTokens": 215,
+  "outputTokens": 64,
+  "totalTokens": 9912,
+  "cacheReadInputTokens": 9633,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.821,
+ "seconds": 3.93834033398889
+}

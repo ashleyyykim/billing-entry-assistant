@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-01468",
+ "reason": "The narrative mentions revising committee charters, which is related to board matters. The timekeeper has spent the most hours on 2960.003, which is a board matter.",
+ "shortlist": [
+  "2960.003",
+  "3455.001",
+  "6103.002"
+ ],
+ "confidence": 50,
+ "second_cmid": "",
+ "cmid": "Zgbo.O03",
+ "usage": {
+  "inputTokens": 203,
+  "outputTokens": 106,
+  "totalTokens": 9940,
+  "cacheReadInputTokens": 9631,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.206,
+ "seconds": 1.6495564579963684
+}

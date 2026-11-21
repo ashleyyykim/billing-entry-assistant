@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03825",
+ "reason": "The narrative mentions discussing 409A approval and revising committee charters, which aligns with the Board Matters for Solace Health.",
+ "shortlist": [
+  "2960.003"
+ ],
+ "confidence": 95,
+ "second_cmid": "",
+ "cmid": "2960.003",
+ "usage": {
+  "inputTokens": 210,
+  "outputTokens": 75,
+  "totalTokens": 9916,
+  "cacheReadInputTokens": 9631,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.916,
+ "seconds": 1.0010277500841767
+}

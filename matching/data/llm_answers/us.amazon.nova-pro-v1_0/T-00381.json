@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-00381",
+ "reason": "The narrative 'Attend to property acquisition' aligns with the matter type 'RE_ACQ' for CMID 8347.001.",
+ "shortlist": [
+  "8347.001",
+  "8340.001",
+  "8340.002"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "8347.001",
+ "usage": {
+  "inputTokens": 189,
+  "outputTokens": 102,
+  "totalTokens": 9926,
+  "cacheReadInputTokens": 9635,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.152,
+ "seconds": 1.2700278750853613
+}

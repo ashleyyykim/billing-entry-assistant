@@ -1,0 +1,17 @@
+{
+ "entry_id": "T-02656",
+ "reason": "The typed CMID 4122.001 does not match any matter in the list, and the narrative does not provide enough information to determine the correct matter.",
+ "shortlist": [],
+ "confidence": 0,
+ "second_cmid": "",
+ "cmid": "NONE",
+ "usage": {
+  "inputTokens": 186,
+  "outputTokens": 67,
+  "totalTokens": 9889,
+  "cacheReadInputTokens": 9636,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.841,
+ "seconds": 3.93065450002905
+}

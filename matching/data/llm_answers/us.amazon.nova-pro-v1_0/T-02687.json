@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02687",
+ "reason": "The narrative mentions 'Asterion', which is related to the matter 'Credit Facility - Asterion Holdings' for Northgate Bank.",
+ "shortlist": [
+  "7215.003"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "7215.003",
+ "usage": {
+  "inputTokens": 195,
+  "outputTokens": 76,
+  "totalTokens": 9903,
+  "cacheReadInputTokens": 9632,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.946,
+ "seconds": 4.303489875048399
+}

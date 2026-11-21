@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00874",
+ "reason": "The narrative 'mark up minutes of board meeting for closing' aligns with the past entries for matter 3455.002, which involves board and governance matters.",
+ "shortlist": [
+  "3455.002"
+ ],
+ "confidence": 95,
+ "second_cmid": "",
+ "cmid": "3455.002",
+ "usage": {
+  "inputTokens": 189,
+  "outputTokens": 84,
+  "totalTokens": 9904,
+  "cacheReadInputTokens": 9631,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.965,
+ "seconds": 1.3789521659491584
+}

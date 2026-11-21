@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02845",
+ "reason": "The narrative and the typed CMID match the matter for Meridian Therapeutics.",
+ "shortlist": [
+  "6103.003"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "6103.003",
+ "usage": {
+  "inputTokens": 191,
+  "outputTokens": 62,
+  "totalTokens": 9888,
+  "cacheReadInputTokens": 9635,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.853,
+ "seconds": 3.759943541022949
+}

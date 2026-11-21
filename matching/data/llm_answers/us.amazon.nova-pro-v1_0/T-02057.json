@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02057",
+ "reason": "The narrative and past entries align with the work done for Ironwood Semiconductor's SEC Reporting matter.",
+ "shortlist": [
+  "5602.001"
+ ],
+ "confidence": 95,
+ "second_cmid": "",
+ "cmid": "5602.001",
+ "usage": {
+  "inputTokens": 248,
+  "outputTokens": 68,
+  "totalTokens": 9943,
+  "cacheReadInputTokens": 9627,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.912,
+ "seconds": 6.076858417014591
+}

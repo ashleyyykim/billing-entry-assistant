@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02631",
+ "reason": "The narrative 'Update time entries for week' matches past entries for 1111.001.",
+ "shortlist": [
+  "1111.001"
+ ],
+ "confidence": 95,
+ "second_cmid": "",
+ "cmid": "1111.001",
+ "usage": {
+  "inputTokens": 186,
+  "outputTokens": 71,
+  "totalTokens": 9886,
+  "cacheReadInputTokens": 9629,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.009,
+ "seconds": 6.490026250015944
+}

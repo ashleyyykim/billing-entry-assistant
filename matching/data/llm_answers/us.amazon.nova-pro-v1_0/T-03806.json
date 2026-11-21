@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03806",
+ "reason": "The narrative mentions 'R&W coverage' which is related to the 'Add-On Acquisition (Project Larch)' matter for Cobalt Ridge Capital.",
+ "shortlist": [
+  "5520.003"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "5520.003",
+ "usage": {
+  "inputTokens": 196,
+  "outputTokens": 78,
+  "totalTokens": 9903,
+  "cacheReadInputTokens": 9629,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.336,
+ "seconds": 3.0404310829471797
+}

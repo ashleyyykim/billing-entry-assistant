@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03976",
+ "reason": "The narrative clearly indicates work related to Fund IV, which matches the matter 4471.004.",
+ "shortlist": [
+  "4471.004"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "4471.004",
+ "usage": {
+  "inputTokens": 195,
+  "outputTokens": 72,
+  "totalTokens": 9904,
+  "cacheReadInputTokens": 9637,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.877,
+ "seconds": 1.1805408330401406
+}

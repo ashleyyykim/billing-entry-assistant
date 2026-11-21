@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02129",
+ "reason": "The narrative describes work on severance terms and equity incentive plans, which aligns with past entries for 9028.003.",
+ "shortlist": [
+  "9028.003"
+ ],
+ "confidence": 95,
+ "second_cmid": "",
+ "cmid": "9028.003",
+ "usage": {
+  "inputTokens": 231,
+  "outputTokens": 76,
+  "totalTokens": 9932,
+  "cacheReadInputTokens": 9625,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.918,
+ "seconds": 7.949712708010338
+}

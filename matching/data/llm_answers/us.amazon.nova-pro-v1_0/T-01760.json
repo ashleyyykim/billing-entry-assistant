@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01760",
+ "reason": "The narrative 'Work on deal' is vague but the typed CMID and client match the matter list, and the timekeeper has worked on a related matter (5602.003) in the past.",
+ "shortlist": [
+  "5602.002"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "5602.002",
+ "usage": {
+  "inputTokens": 186,
+  "outputTokens": 93,
+  "totalTokens": 9914,
+  "cacheReadInputTokens": 9635,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.074,
+ "seconds": 6.818068167078309
+}

@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-03365",
+ "reason": "The typed client 'Solaca Health' does not match any client in the matter list. The narrative 'Emails' is too vague to determine the matter.",
+ "shortlist": [
+  "2960.001",
+  "2960.002",
+  "2960.003"
+ ],
+ "confidence": 50,
+ "second_cmid": "",
+ "cmid": "NONE",
+ "usage": {
+  "inputTokens": 181,
+  "outputTokens": 93,
+  "totalTokens": 9905,
+  "cacheReadInputTokens": 9631,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.122,
+ "seconds": 1.9318055419716984
+}

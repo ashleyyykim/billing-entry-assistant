@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02565",
+ "reason": "The narrative and past entries align with the Fund II Formation matter for Juniper Peak Capital.",
+ "shortlist": [
+  "9140.001"
+ ],
+ "confidence": 95,
+ "second_cmid": "",
+ "cmid": "9140.001",
+ "usage": {
+  "inputTokens": 211,
+  "outputTokens": 65,
+  "totalTokens": 9918,
+  "cacheReadInputTokens": 9642,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.025,
+ "seconds": 6.008814250002615
+}

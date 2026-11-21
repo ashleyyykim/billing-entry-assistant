@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-01315",
+ "reason": "The narrative mentions correspondence with D. Park re option grant mechanics, which aligns with the past entries for 9028.003.",
+ "shortlist": [
+  "9028.003",
+  "2201.001",
+  "1111.001"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "9028.003",
+ "usage": {
+  "inputTokens": 199,
+  "outputTokens": 98,
+  "totalTokens": 9922,
+  "cacheReadInputTokens": 9625,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.114,
+ "seconds": 3.8258077499922365
+}

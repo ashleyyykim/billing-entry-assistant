@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03383",
+ "reason": "The narrative 'Work on deal' is vague but the typed CMID and client match an open matter.",
+ "shortlist": [
+  "6103.005"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "6103.005",
+ "usage": {
+  "inputTokens": 186,
+  "outputTokens": 69,
+  "totalTokens": 9890,
+  "cacheReadInputTokens": 9635,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.937,
+ "seconds": 1.0898076670709997
+}

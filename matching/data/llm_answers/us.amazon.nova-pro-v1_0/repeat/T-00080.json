@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-00080",
+ "reason": "The narrative mentions reviewing and commenting on a DPA, which aligns with past entries for matter 2956.001.",
+ "shortlist": [
+  "2956.001",
+  "2956.002",
+  "2956.003"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "2956.001",
+ "usage": {
+  "inputTokens": 192,
+  "outputTokens": 96,
+  "totalTokens": 9920,
+  "cacheReadInputTokens": 9632,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.125,
+ "seconds": 4.472098957980052
+}

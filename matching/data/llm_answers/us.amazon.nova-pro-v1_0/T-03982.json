@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03982",
+ "reason": "The narrative clearly indicates work on the Fund IV management company agreement for Ridgewater Partners, which matches the matter 4471.004.",
+ "shortlist": [
+  "4471.004"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "4471.004",
+ "usage": {
+  "inputTokens": 195,
+  "outputTokens": 79,
+  "totalTokens": 9916,
+  "cacheReadInputTokens": 9642,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.968,
+ "seconds": 1.9319144589826465
+}

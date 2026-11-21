@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03113",
+ "reason": "The narrative clearly indicates work on Series A Financing for Copperline Networks, which matches the typed CMID and client.",
+ "shortlist": [
+  "7633.002"
+ ],
+ "confidence": 95,
+ "second_cmid": "",
+ "cmid": "7633.002",
+ "usage": {
+  "inputTokens": 199,
+  "outputTokens": 71,
+  "totalTokens": 9903,
+  "cacheReadInputTokens": 9633,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.961,
+ "seconds": 4.5604882090119645
+}

@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01498",
+ "reason": "The narrative 'Emails re same' and the typed matter 'Board & Governance' match the matter 3455.002.",
+ "shortlist": [
+  "3455.002"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "3455.002",
+ "usage": {
+  "inputTokens": 187,
+  "outputTokens": 78,
+  "totalTokens": 9903,
+  "cacheReadInputTokens": 9638,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.367,
+ "seconds": 2.9805562499677762
+}

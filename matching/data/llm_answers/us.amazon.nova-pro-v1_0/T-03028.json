@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03028",
+ "reason": "The narrative 'Attend to loan documents' aligns with the matter 'Credit Facility - Asterion Holdings' for Northgate Bank, and the timekeeper has previously spent significant hours on this matter.",
+ "shortlist": [
+  "7215.003"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "7215.003",
+ "usage": {
+  "inputTokens": 186,
+  "outputTokens": 88,
+  "totalTokens": 9911,
+  "cacheReadInputTokens": 9637,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.059,
+ "seconds": 8.678724749945104
+}

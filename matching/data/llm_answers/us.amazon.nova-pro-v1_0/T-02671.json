@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02671",
+ "reason": "The narrative clearly indicates work on Fund V, which matches the matter 5520.004.",
+ "shortlist": [
+  "5520.004"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "5520.004",
+ "usage": {
+  "inputTokens": 201,
+  "outputTokens": 71,
+  "totalTokens": 9913,
+  "cacheReadInputTokens": 9641,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.932,
+ "seconds": 1.0738639160990715
+}

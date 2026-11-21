@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00967",
+ "reason": "The narrative mentions 'statement of work for Orbis Health' which is related to matter 4590.004.",
+ "shortlist": [
+  "4590.004"
+ ],
+ "confidence": 95,
+ "second_cmid": "",
+ "cmid": "4590.004",
+ "usage": {
+  "inputTokens": 199,
+  "outputTokens": 75,
+  "totalTokens": 9902,
+  "cacheReadInputTokens": 9628,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.906,
+ "seconds": 2.534514124970883
+}

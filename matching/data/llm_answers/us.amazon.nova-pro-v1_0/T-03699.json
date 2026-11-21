@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03699",
+ "reason": "The narrative and past entries align with the typed CMID and client, and the work date is within the matter's open period.",
+ "shortlist": [
+  "3120.001"
+ ],
+ "confidence": 95,
+ "second_cmid": "",
+ "cmid": "3120.001",
+ "usage": {
+  "inputTokens": 245,
+  "outputTokens": 75,
+  "totalTokens": 9945,
+  "cacheReadInputTokens": 9625,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.928,
+ "seconds": 6.2613606250379235
+}

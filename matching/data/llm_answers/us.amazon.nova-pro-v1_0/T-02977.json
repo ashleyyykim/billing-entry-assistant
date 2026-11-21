@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02977",
+ "reason": "The narrative 'Attend to diligence' aligns with the matter 'Add-On Acquisition (Project Lark)' and the timekeeper has previously worked on this matter.",
+ "shortlist": [
+  "5520.001"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "5520.001",
+ "usage": {
+  "inputTokens": 194,
+  "outputTokens": 81,
+  "totalTokens": 9906,
+  "cacheReadInputTokens": 9631,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.961,
+ "seconds": 2.5130320410244167
+}

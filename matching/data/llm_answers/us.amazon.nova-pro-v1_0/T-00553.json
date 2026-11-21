@@ -1,0 +1,17 @@
+{
+ "entry_id": "T-00553",
+ "reason": "The client 'Quuill & Anchor' is not found in the matter list.",
+ "shortlist": [],
+ "confidence": 0,
+ "second_cmid": "",
+ "cmid": "NONE",
+ "usage": {
+  "inputTokens": 196,
+  "outputTokens": 48,
+  "totalTokens": 9875,
+  "cacheReadInputTokens": 9631,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.806,
+ "seconds": 1.2820789590477943
+}

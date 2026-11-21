@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-01451",
+ "reason": "The narrative indicates work on a capital call notice for a fund extension, which aligns with the 'General Fund Matters' matter for Cobalt Ridge Partners.",
+ "shortlist": [
+  "5524.002",
+  "5520.004",
+  "1111.001"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "5524.002",
+ "usage": {
+  "inputTokens": 197,
+  "outputTokens": 97,
+  "totalTokens": 9926,
+  "cacheReadInputTokens": 9632,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.04,
+ "seconds": 5.710513708065264
+}

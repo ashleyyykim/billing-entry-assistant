@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02217",
+ "reason": "The narrative clearly indicates work related to the closing date for 88 Bay, which matches the matter 'Acquisition of 88 Bay Rd.' under Pelican Row Holdings.",
+ "shortlist": [
+  "8340.003"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "8340.003",
+ "usage": {
+  "inputTokens": 178,
+  "outputTokens": 84,
+  "totalTokens": 9898,
+  "cacheReadInputTokens": 9636,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.986,
+ "seconds": 14.198414292070083
+}

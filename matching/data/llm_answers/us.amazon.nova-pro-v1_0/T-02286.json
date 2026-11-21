@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-02286",
+ "reason": "The timekeeper has spent the most hours on 5524.002 and the narrative mentions a call with W. Ochoa, who is associated with 5524.002.",
+ "shortlist": [
+  "5524.002",
+  "5520.004",
+  "1111.001"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "5524.002",
+ "usage": {
+  "inputTokens": 188,
+  "outputTokens": 111,
+  "totalTokens": 9929,
+  "cacheReadInputTokens": 9630,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.255,
+ "seconds": 10.680824458017014
+}

@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-02712",
+ "reason": "The timekeeper's billing history shows significant hours for 7222.002, and the narrative mentions a conversation with V. Kaur, who is associated with Northgate Capital Partners.",
+ "shortlist": [
+  "7222.002",
+  "3120.001",
+  "5520.005"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "7222.002",
+ "usage": {
+  "inputTokens": 194,
+  "outputTokens": 109,
+  "totalTokens": 9933,
+  "cacheReadInputTokens": 9630,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.124,
+ "seconds": 3.8514823749428615
+}

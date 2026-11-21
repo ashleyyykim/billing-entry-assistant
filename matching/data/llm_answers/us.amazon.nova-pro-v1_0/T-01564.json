@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-01564",
+ "reason": "The narrative indicates work related to LPAC approval for Fund II, which matches the matter 'Fund III Formation' under Ridgewater Partners (CMID 4471.002). The timekeeper's billing history also shows significant hours spent on this matter.",
+ "shortlist": [
+  "4471.002",
+  "4471.003",
+  "4471.001"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "4471.002",
+ "usage": {
+  "inputTokens": 194,
+  "outputTokens": 123,
+  "totalTokens": 9950,
+  "cacheReadInputTokens": 9633,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.672,
+ "seconds": 4.902325292001478
+}

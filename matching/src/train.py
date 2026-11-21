@@ -1,15 +1,16 @@
 """Train the matching system from labeled billing history: clues, both models, and the cutoffs, in one place.
 
-The same steps as notebooks 02 and 04, so a firm can retrain on its own entries and set its own targets, and an
-app or a scheduled job can call it. The notebooks keep the step-by-step version with checks and charts, and check
-that these functions give the same result.
+Notebook 00_build runs these steps with checks along the way. A firm can call them to retrain on its own entries and
+set its own targets, from an app or a scheduled job.
 
 - SETTINGS: what a firm sets (precision targets, the margin, how much a missed multi-matter entry costs, ...)
 - GRIDS: the settings each model is tuned over
-- build_training_pairs: the pairs table with every clue (notebook 02)
-- fit_pair_model, fit_action_model: the two models (notebook 04, sections 4 and 7)
-- pick_cutoffs: the cutoffs for each target, fast to rerun when a target changes (notebook 04, section 7)
+- build_training_pairs: the pairs table with every clue
+- fit_pair_model, fit_action_model: the two models
+- pick_cutoffs: the cutoffs for each target, fast to rerun when a target changes
+- fit: both models and the cutoffs on a finished pairs table
 - train, save: everything above, and the files the pipeline loads
+- repick_cutoffs: new targets from the saved TRAIN scores, without retraining
 """
 import itertools
 import json
@@ -22,10 +23,11 @@ from lightgbm import LGBMClassifier
 from sklearn.metrics import fbeta_score
 from sklearn.model_selection import GridSearchCV, PredefinedSplit, cross_val_predict
 
-from classifier import ACTION_FEATURES, action_labels, entry_features, multi_text_model, route_actions
+from classifier import ACTION_FEATURES, action_labels, entry_features, multi_text_model, route_actions, with_correct_min
 from cues import cue_table
 from features import (add_gaps, add_past_narrative_sim, add_person_features, build_pairs, client_mention_table,
-                      feature_groups, find_people, keyterm_table, known_people, not_people, person_history)
+                      entry_hours, feature_groups, find_people, keyterm_table, known_people, not_people,
+                      person_history, window_weeks)
 from fuzzy import client_name_table, matter_name_table
 from pipeline import HISTORY_COLS, MATTER_COLS
 from rules import answer_key, pick_robust, score
@@ -57,36 +59,43 @@ GRIDS = {
 
 
 def assign_folds(answers, n_folds, seed):
-    """TRAIN entry_id -> fold, shuffled with the seed (notebook 02, section 10)."""
+    """TRAIN entry_id -> fold, shuffled with the seed."""
     ids = answers.loc[answers["split"] == "TRAIN", "entry_id"].sample(frac=1, random_state=seed)
     return dict(zip(ids, np.arange(len(ids)) % n_folds))
 
 
 def scorer_columns(choice):
-    """The fuzzy scorers and the typed client and matter columns, from notebook 01's choice (as in notebook 02)."""
+    """The fuzzy scorers and the typed client and matter columns, from the saved choice (01_scorer_choice.json)."""
     scorers = list(dict.fromkeys([choice["client_scorer"], choice["matter_scorer"], choice["client_runner_up"],
                                   choice["matter_runner_up"]]))
     return scorers, f"client_{choice['client_scorer'].lower()}", f"matter_{choice['matter_scorer'].lower()}"
 
 
-def build_training_pairs(entries, answers, sheets, encoder, scorer_choice, acronym_skip, history_end, settings=SETTINGS):
-    """The pairs table with every clue and the label, as notebook 02 saves it.
+def build_training_pairs(entries, answers, sheets, encoder, scorer_choice, acronym_skip, history_start, history_end,
+                         settings=SETTINGS):
+    """The pairs table with every clue and the label, as save() writes it.
 
-    entries: entry_id, tk_id, source_format, work_date, cmid, client, matter, narrative (emails parsed).
+    entries: entry_id, tk_id, source_format, work_date, cmid, client, matter, narrative (emails parsed), hours, and
+    parsed_hours for emails (entry_hours). Missing hours get the TRAIN median (hours_fill in 02_config.json).
     answers: entry_id, split, and the key_ columns (key_true_cmid, key_secondary_cmid, ...). TRAIN entries are the
     billing history; a firm's labeled history is all TRAIN.
-    sheets: the time-entry file's sheets (Matter Master, TK Matter History). scorer_choice: notebook 01's choice.
-    Returns (pairs, features, info) with info: folds, people, person_hist, scorers, client_col, matter_col, gap_cols.
+    sheets: the time-entry file's sheets (Matter Master, TK Matter History). scorer_choice: 01_scorer_choice.json.
+    history_start, history_end: the dates the TK Matter History hours cover.
+    Returns (pairs, features, info) with info: folds, people, person_hist, scorers, client_col, matter_col, gap_cols,
+    acronym_skip, history_start, history_end, hours_fill.
     """
     s = settings
     mm = sheets["Matter Master"]
     matters = mm[list(MATTER_COLS)].rename(columns=MATTER_COLS)
     history = sheets["TK Matter History"][list(HISTORY_COLS)].rename(columns=HISTORY_COLS)
     scorers, client_col, matter_col = scorer_columns(scorer_choice)
+    hours = entry_hours(entries)
+    hours_fill = float(hours[entries["entry_id"].isin(answers.loc[answers["split"] == "TRAIN", "entry_id"])].median())
+    entries = entries.assign(hours=hours.fillna(hours_fill))
     gap_cols = [client_col, matter_col, "keyterm_score", "cue_share", "client_in_text", "history_share", "cmid_similarity"]
     pairs = build_pairs(entries, matters, history, client_name_table(mm, acronym_skip), matter_name_table(mm),
                         keyterm_table(mm), cue_table(), client_mention_table(mm, acronym_skip=acronym_skip), scorers,
-                        s["phrase_min"], gap_cols, history_end)
+                        s["phrase_min"], gap_cols, history_end, window_weeks(history_start, history_end))
     features = feature_groups(scorers, gap_cols)
 
     pairs = pairs.merge(answers, on="entry_id", how="left")
@@ -107,7 +116,9 @@ def build_training_pairs(entries, answers, sheets, encoder, scorer_choice, acron
     pairs = add_person_features(pairs, named, person_hist, folds)
     features["people"] = ["person_hits", "person_conflict"]
     info = {"folds": folds, "people": people, "person_hist": person_hist, "scorers": scorers, "client_col": client_col,
-            "matter_col": matter_col, "gap_cols": gap_cols}
+            "matter_col": matter_col, "gap_cols": gap_cols, "acronym_skip": list(acronym_skip),
+            "history_start": str(pd.Timestamp(history_start).date()), "history_end": str(pd.Timestamp(history_end).date()),
+            "hours_fill": hours_fill}
     return pairs, features, info
 
 
@@ -159,7 +170,7 @@ def pick_cutoffs(entries, action_cv, answers, targets=None, settings=SETTINGS, g
 
     multi_min: the cutoff on P(multi) with the best F-beta (multi_beta). The rest: for each target, the setting with
     the most entries decided with no person among those that reach the target in robust_share of timekeeper
-    resamples (pick_robust). Returns {name: cutoffs}.
+    resamples (pick_robust), then correct_min for that target (pick_correct_min). Returns {name: cutoffs}.
     """
     targets = targets or settings["targets"]
     is_multi = action_labels(entries, answers) == "multi"
@@ -173,15 +184,25 @@ def pick_cutoffs(entries, action_cv, answers, targets=None, settings=SETTINGS, g
     routing = {}
     for name, target in targets.items():
         best = pick_robust(scored, target, settings["robust_share"], settings["resamples"], settings["seed"])
-        routing[name] = {k: float(v) for k, v in zip(grid, best)} | same_for_all
+        cfg = {k: float(v) for k, v in zip(grid, best)} | same_for_all
+        routing[name] = with_correct_min(entries, action_cv, answers, cfg, target, grid["auto_min"],
+                                         settings["robust_share"], settings["resamples"], settings["seed"])
     return routing
 
 
-def train(entries, answers, sheets, encoder, scorer_choice, acronym_skip, history_end, settings=SETTINGS, grids=GRIDS):
-    """Every step above, in order. Returns everything save() writes, plus the TRAIN entries, their out-of-fold action
-    probabilities, and the answer key, so pick_cutoffs can re-pick cutoffs for another target without refitting."""
+def train(entries, answers, sheets, encoder, scorer_choice, acronym_skip, history_start, history_end, settings=SETTINGS,
+          grids=GRIDS):
+    """Every step above, in order: build_training_pairs, then fit. Returns everything save() writes, plus the TRAIN
+    entries, their out-of-fold action probabilities, and the answer key, so pick_cutoffs can re-pick cutoffs for
+    another target without refitting."""
     pairs, features, info = build_training_pairs(entries, answers, sheets, encoder, scorer_choice, acronym_skip,
-                                                 history_end, settings)
+                                                 history_start, history_end, settings)
+    return fit(pairs, features, info, settings, grids)
+
+
+def fit(pairs, features, info, settings=SETTINGS, grids=GRIDS):
+    """Both models and the cutoffs on a finished pairs table (build_training_pairs), and the configs save() writes.
+    Also returns the step-1 out-of-fold probabilities (cv_probs) and the grid searches, for checking the fit."""
     feature_cols = [c for cols in features.values() for c in cols]
     client_col, matter_col = info["client_col"], info["matter_col"]
     labels = answer_key(pairs)
@@ -192,30 +213,57 @@ def train(entries, answers, sheets, encoder, scorer_choice, acronym_skip, histor
                            grids["multi_min"])
     feature_config = {"features": features, "scorers": info["scorers"], "client_col": client_col, "matter_col": matter_col,
                       "phrase_min": settings["phrase_min"], "gap_cols": info["gap_cols"],
-                      "history_end": str(pd.Timestamp(history_end).date()), "folds": settings["folds"],
-                      "seed": settings["seed"], "embedding_model": settings["embedding_model"], "past_k": settings["past_k"],
-                      "acronym_skip": list(acronym_skip), "people": info["people"]}
+                      "history_start": info["history_start"], "history_end": info["history_end"],
+                      "folds": settings["folds"], "seed": settings["seed"], "embedding_model": settings["embedding_model"],
+                      "past_k": settings["past_k"], "acronym_skip": info["acronym_skip"], "people": info["people"],
+                      "hours_fill": info.get("hours_fill")}
     model_config = {"model": "gradient boosting", "model_params": pair_search.best_params_, "features": feature_cols,
                     "action_features": ACTION_FEATURES, "text_model_params": step2["text_search"].best_params_,
                     "action_model_params": step2["action_search"].best_params_, "routing": routing,
                     "multi_beta": settings["multi_beta"], "precision_target": settings["targets"]["strict"],
-                    "default_target": settings["targets"]["default"], "robust_share": settings["robust_share"]}
+                    "default_target": settings["targets"]["default"], "targets": settings["targets"],
+                    "robust_share": settings["robust_share"]}
     return {"pairs": pairs, "person_history": info["person_hist"], "feature_config": feature_config,
             "model_config": model_config,
             "models": {"pair_model": pair_model, "text_model": step2["text_model"], "action_model": step2["action_model"]},
-            "entries": step2["entries"], "action_cv": step2["action_cv"], "answers": labels}
+            "entries": step2["entries"], "action_cv": step2["action_cv"], "answers": labels, "cv_probs": cv_probs,
+            "pair_search": pair_search, "text_search": step2["text_search"], "action_search": step2["action_search"]}
 
 
 def save(trained, results_dir):
-    """The files the pipeline loads (load_reference), under the same names as notebooks 02 and 04 write them."""
+    """The files the pipeline loads (load_reference), plus 04_train_scores.parquet for repick_cutoffs."""
     results_dir = Path(results_dir)
     results_dir.mkdir(parents=True, exist_ok=True)
     features = [c for cols in trained["feature_config"]["features"].values() for c in cols]
     keep = (["entry_id", "tk_id", "source_format", "work_date", "cmid", "client", "matter", "matter_type", "typed_cmid",
              "cmid_clean", "cmid_status", "typed_client", "typed_matter", "narrative_norm", "split", "fold"]
-            + features + ["is_true_matter"] + [c for c in trained["pairs"].columns if c.startswith("key_")])
+            + features + ["hours", "n_words", "is_true_matter"] + [c for c in trained["pairs"].columns if c.startswith("key_")])
     trained["pairs"][keep].to_parquet(results_dir / "02_pairs.parquet", index=False)
     trained["person_history"].to_parquet(results_dir / "02_people.parquet", index=False)
     (results_dir / "02_config.json").write_text(json.dumps(trained["feature_config"], indent=2))
     joblib.dump(trained["models"], results_dir / "04_model.joblib")
     (results_dir / "04_config.json").write_text(json.dumps(trained["model_config"], indent=2, default=str))
+    save_train_scores(trained["entries"], trained["action_cv"], results_dir)
+
+
+def save_train_scores(entries, action_cv, results_dir):
+    """The TRAIN entries with their out-of-fold action probabilities, which is all pick_cutoffs needs."""
+    scores = entries.join(action_cv.add_prefix("p_").set_axis(entries.index))
+    scores.to_parquet(Path(results_dir) / "04_train_scores.parquet", index=False)
+
+
+def repick_cutoffs(results_dir, targets, settings=SETTINGS, grid=GRIDS["cutoffs"], multi_grid=GRIDS["multi_min"]):
+    """New cutoffs for a firm's own targets ({"default": 0.96}), in seconds and without retraining: the saved TRAIN
+    scores go through pick_cutoffs again. The new settings are written into 04_config.json next to the others
+    (same names are replaced) and returned. The app reads them at its next start."""
+    results_dir = Path(results_dir)
+    scores = pd.read_parquet(results_dir / "04_train_scores.parquet")
+    p_cols = [c for c in scores.columns if c.startswith("p_")]
+    action_cv = scores[p_cols].rename(columns=lambda c: c[2:])
+    answers = answer_key(pd.read_parquet(results_dir / "02_pairs.parquet").drop_duplicates("entry_id"))
+    routing = pick_cutoffs(scores.drop(columns=p_cols), action_cv, answers, targets, settings, grid, multi_grid)
+    config = json.loads((results_dir / "04_config.json").read_text())
+    config["routing"] |= routing
+    config["targets"] = config.get("targets", {}) | targets
+    (results_dir / "04_config.json").write_text(json.dumps(config, indent=2, default=str))
+    return routing

@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-02208",
+ "reason": "The narrative describes work on SEC filings, which matches the matter type for Aster & Vale's SEC Reporting matter.",
+ "shortlist": [
+  "3455.001",
+  "3455.002",
+  "6103.002"
+ ],
+ "confidence": 95,
+ "second_cmid": "",
+ "cmid": "3455.001",
+ "usage": {
+  "inputTokens": 194,
+  "outputTokens": 92,
+  "totalTokens": 9918,
+  "cacheReadInputTokens": 9632,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.138,
+ "seconds": 6.507955541019328
+}

@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02924",
+ "reason": "The narrative and past entries indicate work on Fund IV for Ridgewater Partners.",
+ "shortlist": [
+  "4471.004"
+ ],
+ "confidence": 95,
+ "second_cmid": "",
+ "cmid": "4471.004",
+ "usage": {
+  "inputTokens": 214,
+  "outputTokens": 63,
+  "totalTokens": 9907,
+  "cacheReadInputTokens": 9630,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.901,
+ "seconds": 4.467152582947165
+}

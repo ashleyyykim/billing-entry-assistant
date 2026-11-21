@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00601",
+ "reason": "The narrative matches the matter 'General Corporate' for Solace Health.",
+ "shortlist": [
+  "2960.001"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "2960.001",
+ "usage": {
+  "inputTokens": 211,
+  "outputTokens": 62,
+  "totalTokens": 9902,
+  "cacheReadInputTokens": 9629,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.892,
+ "seconds": 5.35597054194659
+}

@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01348",
+ "reason": "The narrative and past entries align with the General Fund Matters for Juniper Peak.",
+ "shortlist": [
+  "9140.002"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "9140.002",
+ "usage": {
+  "inputTokens": 186,
+  "outputTokens": 63,
+  "totalTokens": 9889,
+  "cacheReadInputTokens": 9640,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.847,
+ "seconds": 0.9855624999618158
+}

@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-02249",
+ "reason": "The narrative matches the work done for Lanternfish Software's Exec Comp / 409A matter, and the timekeeper has spent the most hours on this matter.",
+ "shortlist": [
+  "9028.003",
+  "6230.001",
+  "3120.003"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "9028.003",
+ "usage": {
+  "inputTokens": 196,
+  "outputTokens": 103,
+  "totalTokens": 9927,
+  "cacheReadInputTokens": 9628,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.163,
+ "seconds": 1.751691959099844
+}

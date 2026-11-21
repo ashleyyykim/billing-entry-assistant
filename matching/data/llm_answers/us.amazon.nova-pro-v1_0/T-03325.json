@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03325",
+ "reason": "The narrative 'Attend to file' is vague but the timekeeper's billing history shows a significant amount of time spent on 3120.001.",
+ "shortlist": [
+  "3120.001"
+ ],
+ "confidence": 95,
+ "second_cmid": "",
+ "cmid": "3120.001",
+ "usage": {
+  "inputTokens": 185,
+  "outputTokens": 85,
+  "totalTokens": 9908,
+  "cacheReadInputTokens": 9638,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.971,
+ "seconds": 1.0843895830912516
+}

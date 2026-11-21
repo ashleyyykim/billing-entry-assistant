@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-00068",
+ "reason": "The narrative mentions reviewing an ICA, which is likely related to corporate matters, and the client name 'Ember Grid Energy' matches the client for matter 6230.001.",
+ "shortlist": [
+  "6230.001",
+  "6230.002",
+  "6230.003"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "6230.001",
+ "usage": {
+  "inputTokens": 193,
+  "outputTokens": 109,
+  "totalTokens": 9935,
+  "cacheReadInputTokens": 9633,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.327,
+ "seconds": 2.57298133301083
+}

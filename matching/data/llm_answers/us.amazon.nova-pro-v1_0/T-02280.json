@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02280",
+ "reason": "The narrative clearly indicates work on the Summit Ridge matter, which matches the typed CMID and the timekeeper's billing history.",
+ "shortlist": [
+  "7222.002"
+ ],
+ "confidence": 95,
+ "second_cmid": "",
+ "cmid": "7222.002",
+ "usage": {
+  "inputTokens": 193,
+  "outputTokens": 74,
+  "totalTokens": 9901,
+  "cacheReadInputTokens": 9634,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.925,
+ "seconds": 2.318602917017415
+}

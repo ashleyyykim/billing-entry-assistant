@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00102",
+ "reason": "The narrative and past entries indicate work related to the 2026 Annual Meeting, which matches the matter 6103.004.",
+ "shortlist": [
+  "6103.004"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "6103.004",
+ "usage": {
+  "inputTokens": 223,
+  "outputTokens": 80,
+  "totalTokens": 9929,
+  "cacheReadInputTokens": 9626,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.001,
+ "seconds": 1.0658732079900801
+}

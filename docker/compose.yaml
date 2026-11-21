@@ -27,6 +27,8 @@ services:
       TENTH_MODEL_FIRST:
       TENTH_MODEL_SECOND:
       TENTH_UPLOAD_SECONDS:
+      # The longest spreadsheet accepted, in rows. Left unset: 1,000.
+      TENTH_MAX_SHEET_ROWS:
       # The operations log (matching/src/ops_log.py): one JSON line per model call and per upload, with no client text.
       # The lines always go to the container's log; set this (for example /cache/ops.jsonl) to keep them in a file too.
       TENTH_OPS_LOG:

@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01459",
+ "reason": "The narrative 'Handle annual filings; call re other deal' aligns with the General Corporate matter for Bluefin Robotics, and the timekeeper has significant hours logged for this matter.",
+ "shortlist": [
+  "3120.001"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "3120.001",
+ "usage": {
+  "inputTokens": 191,
+  "outputTokens": 83,
+  "totalTokens": 9913,
+  "cacheReadInputTokens": 9639,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.954,
+ "seconds": 3.644670833949931
+}

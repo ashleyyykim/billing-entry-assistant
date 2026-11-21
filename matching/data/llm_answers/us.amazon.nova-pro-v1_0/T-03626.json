@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03626",
+ "reason": "The narrative clearly indicates work on the General Corporate matter for Ember Grid Energy, which matches the typed CMID and client.",
+ "shortlist": [
+  "6230.001"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "6230.001",
+ "usage": {
+  "inputTokens": 199,
+  "outputTokens": 72,
+  "totalTokens": 9906,
+  "cacheReadInputTokens": 9635,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.893,
+ "seconds": 4.294442374957725
+}

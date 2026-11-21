@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03438",
+ "reason": "The narrative mentions preparing subscription documents for Fund IV, which matches the matter 4471.004: Fund IV Formation.",
+ "shortlist": [
+  "4471.004"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "4471.004",
+ "usage": {
+  "inputTokens": 208,
+  "outputTokens": 76,
+  "totalTokens": 9910,
+  "cacheReadInputTokens": 9626,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.982,
+ "seconds": 1.3653161670081317
+}

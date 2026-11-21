@@ -1,0 +1,20 @@
+{
+ "entry_id": "T-02060",
+ "reason": "The narrative clearly indicates work on both the Kestrel Foods credit facility and the Asterion borrowing base certificate, which is related to the Asterion Holdings credit facility.",
+ "shortlist": [
+  "7215.004",
+  "7215.003"
+ ],
+ "confidence": 90,
+ "second_cmid": "7215.003",
+ "cmid": "7215.004",
+ "usage": {
+  "inputTokens": 235,
+  "outputTokens": 99,
+  "totalTokens": 9966,
+  "cacheReadInputTokens": 9632,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.096,
+ "seconds": 2.9723742090864107
+}

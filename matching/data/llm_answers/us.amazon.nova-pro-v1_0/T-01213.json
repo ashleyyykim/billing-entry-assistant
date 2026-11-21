@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-01213",
+ "reason": "The narrative mentions '450 Harbor' which is related to Pelican Row Holdings' matter 8340.001.",
+ "shortlist": [
+  "8340.001",
+  "8340.002",
+  "8340.003"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "8340.001",
+ "usage": {
+  "inputTokens": 202,
+  "outputTokens": 96,
+  "totalTokens": 9928,
+  "cacheReadInputTokens": 9630,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.127,
+ "seconds": 6.022680875030346
+}

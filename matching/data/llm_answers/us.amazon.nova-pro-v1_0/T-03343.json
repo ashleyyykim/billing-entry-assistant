@@ -1,0 +1,20 @@
+{
+ "entry_id": "T-03343",
+ "reason": "The narrative mentions preparing a capital call notice, which is related to fund formation matters. The timekeeper has spent significant hours on matter 9140.001, which is Fund II Formation for Juniper Peak Capital.",
+ "shortlist": [
+  "9140.001",
+  "9140.002"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "9140.001",
+ "usage": {
+  "inputTokens": 207,
+  "outputTokens": 104,
+  "totalTokens": 9948,
+  "cacheReadInputTokens": 9637,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.17,
+ "seconds": 6.4159224580507725
+}

@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02862",
+ "reason": "The narrative and past entries indicate work on the Acquisition of Quanta Photonics.",
+ "shortlist": [
+  "5602.003"
+ ],
+ "confidence": 95,
+ "second_cmid": "",
+ "cmid": "5602.003",
+ "usage": {
+  "inputTokens": 202,
+  "outputTokens": 63,
+  "totalTokens": 9896,
+  "cacheReadInputTokens": 9631,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.026,
+ "seconds": 1.675363542046398
+}

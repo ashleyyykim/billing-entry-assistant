@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-00191",
+ "reason": "The typed client 'Tidewater Robotics' does not match any client in the matter list, and the narrative does not clearly point to another matter.",
+ "shortlist": [
+  "2960.003",
+  "3455.001",
+  "6103.002"
+ ],
+ "confidence": 50,
+ "second_cmid": "",
+ "cmid": "NONE",
+ "usage": {
+  "inputTokens": 202,
+  "outputTokens": 91,
+  "totalTokens": 9921,
+  "cacheReadInputTokens": 9628,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.215,
+ "seconds": 1.606847749906592
+}

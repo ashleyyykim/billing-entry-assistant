@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00564",
+ "reason": "The narrative indicates work on Fund II, which matches the past entries for 9140.001.",
+ "shortlist": [
+  "9140.001"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "9140.001",
+ "usage": {
+  "inputTokens": 203,
+  "outputTokens": 72,
+  "totalTokens": 9905,
+  "cacheReadInputTokens": 9630,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.942,
+ "seconds": 3.9893414590042084
+}

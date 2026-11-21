@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-03596",
+ "reason": "The narrative describes work on Amendment No. 2, which is related to the credit facility for Northgate Bank, and the timekeeper has previously worked on matter 7215.003.",
+ "shortlist": [
+  "7215.003",
+  "7215.004",
+  "7215.005"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "7215.003",
+ "usage": {
+  "inputTokens": 232,
+  "outputTokens": 110,
+  "totalTokens": 9966,
+  "cacheReadInputTokens": 9624,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.25,
+ "seconds": 1.7426488329656422
+}

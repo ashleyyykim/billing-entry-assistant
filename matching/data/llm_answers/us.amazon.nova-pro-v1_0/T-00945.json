@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-00945",
+ "reason": "The narrative mentions work on financing commitment letter, employment agreements, and R&W insurance policy, which aligns with the activities in matter 5520.001.",
+ "shortlist": [
+  "5520.001",
+  "5520.003",
+  "5520.004"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "5520.001",
+ "usage": {
+  "inputTokens": 231,
+  "outputTokens": 104,
+  "totalTokens": 9951,
+  "cacheReadInputTokens": 9616,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.404,
+ "seconds": 3.098154583014548
+}

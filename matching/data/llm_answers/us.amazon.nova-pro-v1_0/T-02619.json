@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02619",
+ "reason": "The narrative 'Call with client' aligns with the 'Board & Governance' matter for Meridian Therapeutics, and the timekeeper has previously worked on similar matters.",
+ "shortlist": [
+  "6103.003"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "6103.003",
+ "usage": {
+  "inputTokens": 185,
+  "outputTokens": 79,
+  "totalTokens": 9894,
+  "cacheReadInputTokens": 9630,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.048,
+ "seconds": 1.714314957964234
+}

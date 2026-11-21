@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03509",
+ "reason": "The narrative mentions review of board minutes, which aligns with the 'Board Matters' matter for Solace Health.",
+ "shortlist": [
+  "2960.003"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "2960.003",
+ "usage": {
+  "inputTokens": 198,
+  "outputTokens": 70,
+  "totalTokens": 9897,
+  "cacheReadInputTokens": 9629,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.928,
+ "seconds": 1.652516167028807
+}

@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-00776",
+ "reason": "The narrative mentions a phone call with T. Smith, who is associated with matter 5524.002, but the CMID provided is incorrect and the client and matter are blank. The timekeeper's billing history shows significant hours on 5524.002, making it the most likely match.",
+ "shortlist": [
+  "5524.002",
+  "5520.004",
+  "1111.001"
+ ],
+ "confidence": 70,
+ "second_cmid": "",
+ "cmid": "NONE",
+ "usage": {
+  "inputTokens": 231,
+  "outputTokens": 130,
+  "totalTokens": 9982,
+  "cacheReadInputTokens": 9621,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.504,
+ "seconds": 1.812053957954049
+}

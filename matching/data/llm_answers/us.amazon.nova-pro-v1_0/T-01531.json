@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01531",
+ "reason": "The narrative clearly indicates work related to the 'License - Calder Pharma' matter for Harborline Biosciences, which matches CMID 2207.003.",
+ "shortlist": [
+  "2207.003"
+ ],
+ "confidence": 95,
+ "second_cmid": "",
+ "cmid": "2207.003",
+ "usage": {
+  "inputTokens": 230,
+  "outputTokens": 82,
+  "totalTokens": 9941,
+  "cacheReadInputTokens": 9629,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.156,
+ "seconds": 1.8106401250697672
+}

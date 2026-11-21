@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00420",
+ "reason": "The narrative 'call re status' is vague but the timekeeper's past hours show a small amount of time spent on 8340.002, which is a lease matter. The confidence is high because the CMID matches and the narrative, though vague, does not contradict the matter.",
+ "shortlist": [
+  "8340.002"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "8340.002",
+ "usage": {
+  "inputTokens": 173,
+  "outputTokens": 111,
+  "totalTokens": 9919,
+  "cacheReadInputTokens": 9635,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.174,
+ "seconds": 1.24270175001584
+}

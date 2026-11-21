@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-01070",
+ "reason": "The narrative indicates work on LP signature pages for Fund II, which matches the past entries and billing history for 9140.001.",
+ "shortlist": [
+  "9140.001",
+  "5524.001",
+  "2215.002"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "9140.001",
+ "usage": {
+  "inputTokens": 190,
+  "outputTokens": 99,
+  "totalTokens": 9920,
+  "cacheReadInputTokens": 9631,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.1,
+ "seconds": 6.93421670794487
+}

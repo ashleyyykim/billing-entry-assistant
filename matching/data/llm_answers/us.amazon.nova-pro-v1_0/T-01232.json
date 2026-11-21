@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-01232",
+ "reason": "The typed CMID is incorrect and the matter is not found in the list.",
+ "shortlist": [
+  "2960.003",
+  "3455.001",
+  "6103.002"
+ ],
+ "confidence": 0,
+ "second_cmid": "",
+ "cmid": "9260.003",
+ "usage": {
+  "inputTokens": 211,
+  "outputTokens": 83,
+  "totalTokens": 9928,
+  "cacheReadInputTokens": 9634,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.97,
+ "seconds": 10.156708749942482
+}

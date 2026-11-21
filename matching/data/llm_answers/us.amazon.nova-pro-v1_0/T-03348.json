@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03348",
+ "reason": "The narrative clearly indicates work on the Fund II management company agreement, which matches the past entries for 9140.001.",
+ "shortlist": [
+  "9140.001"
+ ],
+ "confidence": 95,
+ "second_cmid": "",
+ "cmid": "9140.001",
+ "usage": {
+  "inputTokens": 198,
+  "outputTokens": 77,
+  "totalTokens": 9906,
+  "cacheReadInputTokens": 9631,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.955,
+ "seconds": 8.479372957954183
+}

@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-00779",
+ "reason": "The narrative mentions looking over LP meeting materials, which is consistent with the timekeeper's past work on 5524.002 (General Fund Matters for Cobalt Ridge Partners) and 5520.004 (Fund Administration for Cobalt Ridge Capital). The majority of the timekeeper's hours were spent on 5524.002.",
+ "shortlist": [
+  "5524.002",
+  "5520.004",
+  "1111.001"
+ ],
+ "confidence": 90,
+ "second_cmid": "5520.004",
+ "cmid": "5524.002",
+ "usage": {
+  "inputTokens": 203,
+  "outputTokens": 156,
+  "totalTokens": 9985,
+  "cacheReadInputTokens": 9626,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.983,
+ "seconds": 3.3848193750018254
+}

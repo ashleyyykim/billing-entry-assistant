@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-03536",
+ "reason": "The narrative mentions handling signature packets and managing a closing, which aligns with the activities typically associated with the Add-On Acquisition (Project Lark) matter for Cobalt Ridge Capital.",
+ "shortlist": [
+  "5520.001",
+  "5520.003",
+  "5520.004"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "5520.001",
+ "usage": {
+  "inputTokens": 237,
+  "outputTokens": 102,
+  "totalTokens": 9957,
+  "cacheReadInputTokens": 9618,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.058,
+ "seconds": 8.41935379197821
+}

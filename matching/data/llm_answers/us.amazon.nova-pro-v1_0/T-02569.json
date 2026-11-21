@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-02569",
+ "reason": "The narrative mentions managing investor register updates, which aligns with the work done on 2215.001 (General Fund Matters) and 9140.001 (Fund II Formation). The timekeeper's hours by matter also show significant time spent on these matters.",
+ "shortlist": [
+  "2215.001",
+  "9140.001",
+  "5520.004"
+ ],
+ "confidence": 90,
+ "second_cmid": "9140.001",
+ "cmid": "2215.001",
+ "usage": {
+  "inputTokens": 195,
+  "outputTokens": 138,
+  "totalTokens": 9967,
+  "cacheReadInputTokens": 9634,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.441,
+ "seconds": 12.896631416981108
+}

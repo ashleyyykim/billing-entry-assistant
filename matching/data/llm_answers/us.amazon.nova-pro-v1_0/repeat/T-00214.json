@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00214",
+ "reason": "The narrative describes work on Form 8-K and 10Q, which are typical tasks for an annual meeting matter. The timekeeper has previously worked on the 6103.004 matter, which is the annual meeting for Meridian Therapeutics.",
+ "shortlist": [
+  "6103.004"
+ ],
+ "confidence": 95,
+ "second_cmid": "",
+ "cmid": "6103.004",
+ "usage": {
+  "inputTokens": 212,
+  "outputTokens": 102,
+  "totalTokens": 9944,
+  "cacheReadInputTokens": 9630,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.115,
+ "seconds": 2.5389208749402314
+}

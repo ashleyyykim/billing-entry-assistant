@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00996",
+ "reason": "The narrative clearly indicates work related to LPAC approval and investor register, which aligns with the matter 5524.002.",
+ "shortlist": [
+  "5524.002"
+ ],
+ "confidence": 95,
+ "second_cmid": "",
+ "cmid": "5524.002",
+ "usage": {
+  "inputTokens": 244,
+  "outputTokens": 77,
+  "totalTokens": 9947,
+  "cacheReadInputTokens": 9626,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.136,
+ "seconds": 4.702421208960004
+}

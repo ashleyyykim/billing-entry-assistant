@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03830",
+ "reason": "The narrative 'Review documents' is vague, but the timekeeper has spent a significant amount of time (140.5 hours) on this matter from April 1 to June 30, 2026.",
+ "shortlist": [
+  "2201.001"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "2201.001",
+ "usage": {
+  "inputTokens": 186,
+  "outputTokens": 95,
+  "totalTokens": 9915,
+  "cacheReadInputTokens": 9634,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.093,
+ "seconds": 1.3048891669604927
+}

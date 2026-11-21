@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-00940",
+ "reason": "The narrative mentions audit committee matters and board composition, which align with the 'Board Matters' matter for Solace Health (2960.003). The timekeeper's billing history shows significant hours on 2960.003, and the typed CMID 2960.001 is also relevant.",
+ "shortlist": [
+  "2960.003",
+  "2960.001",
+  "3455.001"
+ ],
+ "confidence": 90,
+ "second_cmid": "2960.001",
+ "cmid": "2960.003",
+ "usage": {
+  "inputTokens": 227,
+  "outputTokens": 149,
+  "totalTokens": 10002,
+  "cacheReadInputTokens": 9626,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.471,
+ "seconds": 1.8098295830423012
+}

@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01980",
+ "reason": "The narrative 'mark up lease agmt; circulate to client' matches the past entries for matter 8340.002, which involves lease matters.",
+ "shortlist": [
+  "8340.002"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "8340.002",
+ "usage": {
+  "inputTokens": 175,
+  "outputTokens": 82,
+  "totalTokens": 9889,
+  "cacheReadInputTokens": 9632,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.966,
+ "seconds": 1.7221000000135973
+}

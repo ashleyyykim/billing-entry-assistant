@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-03624",
+ "reason": "The narrative describes work on an annual S/H consent, which aligns with the General Corporate matter for Solace Health.",
+ "shortlist": [
+  "2960.001",
+  "2960.002",
+  "2960.003"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "2960.001",
+ "usage": {
+  "inputTokens": 199,
+  "outputTokens": 92,
+  "totalTokens": 9927,
+  "cacheReadInputTokens": 9636,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.092,
+ "seconds": 3.217278541997075
+}

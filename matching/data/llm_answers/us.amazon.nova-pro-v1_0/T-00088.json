@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00088",
+ "reason": "The narrative 'Review correspondence' aligns with the matter 'ATM Program' for Meridian Therapeutics, and the timekeeper has previously worked on this matter.",
+ "shortlist": [
+  "6103.005"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "6103.005",
+ "usage": {
+  "inputTokens": 186,
+  "outputTokens": 77,
+  "totalTokens": 9903,
+  "cacheReadInputTokens": 9640,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.037,
+ "seconds": 1.098110374994576
+}

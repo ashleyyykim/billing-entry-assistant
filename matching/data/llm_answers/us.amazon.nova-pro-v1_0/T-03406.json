@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03406",
+ "reason": "The narrative clearly describes work related to the Board & Governance matter for Aster & Vale, and the timekeeper has a significant history of hours on this matter.",
+ "shortlist": [
+  "3455.002"
+ ],
+ "confidence": 95,
+ "second_cmid": "",
+ "cmid": "3455.002",
+ "usage": {
+  "inputTokens": 220,
+  "outputTokens": 80,
+  "totalTokens": 9936,
+  "cacheReadInputTokens": 9636,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.921,
+ "seconds": 1.8051791250472888
+}

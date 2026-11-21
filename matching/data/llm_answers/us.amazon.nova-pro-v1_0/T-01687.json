@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01687",
+ "reason": "The narrative clearly indicates work on equity questions and option grant mechanics, which aligns with the matter 'Equity Plan' under CMID 3120.001.",
+ "shortlist": [
+  "3120.001"
+ ],
+ "confidence": 95,
+ "second_cmid": "",
+ "cmid": "3120.001",
+ "usage": {
+  "inputTokens": 211,
+  "outputTokens": 83,
+  "totalTokens": 9924,
+  "cacheReadInputTokens": 9630,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.688,
+ "seconds": 1.9934626249596477
+}

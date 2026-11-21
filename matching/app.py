@@ -1,7 +1,7 @@
 """Tenth matching service.
 
 Wraps src/pipeline.py's decide() behind a small HTTP API, the same call
-notebook 06 uses. Everything heavy is loaded once at startup: the embedding
+notebook 02_evaluation uses. Everything heavy is loaded once at startup: the embedding
 model and the reference data (Matter Master, billing history, models, cutoffs)
 via load_reference().
 
@@ -267,7 +267,7 @@ def run(entries: pd.DataFrame) -> list[dict]:
 @app.get("/health")
 def health():
     r = state.get("reviewer")
-    return {"status": "ok", "matters": len(state["ref"]["matters"]),
+    return {"status": "ok", "matters": len(state["ref"]["matters"]), "setting": SETTING, "cutoffs": state["ref"]["cutoffs"],
             "narrative_review": r.rewriter_name if r else f"off ({state.get('reviewer_error') or 'not loaded'})",
             "extraction": ", ".join(model_name(m) for m in state["extractor"]["models"].values()) if state.get("extractor")
                           else f"off ({state.get('extractor_error') or 'not loaded'})",
@@ -341,6 +341,8 @@ def decide_entries(batch: Batch):
         return {"decisions": run(entries)}
     except KeyError as err:
         raise HTTPException(422, f"missing or misnamed field {err}; see /schema")
+    except ValueError as err:
+        raise HTTPException(422, str(err))
 
 
 @app.get("/timekeepers")
@@ -978,7 +980,7 @@ def review_entries(batch: ReviewBatch):
 
 @app.post("/selftest")
 def selftest(n: int = 20):
-    """Run the first n baked-in entries. Compare with results/06_decisions.csv to confirm the container matches the notebook."""
+    """Run the first n baked-in entries. Compare with results/eval_decisions.csv to confirm the container matches the notebook."""
     return {"decisions": run(sample_entries().head(n).copy())}
 
 

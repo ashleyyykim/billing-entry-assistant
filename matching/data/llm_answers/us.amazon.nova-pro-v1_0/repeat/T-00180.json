@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00180",
+ "reason": "The narrative and past entries indicate work on general corporate matters for Bluefin Robotics, which matches the typed matter and client. The timekeeper's billing history also shows significant hours on this matter.",
+ "shortlist": [
+  "3120.001"
+ ],
+ "confidence": 95,
+ "second_cmid": "",
+ "cmid": "3120.001",
+ "usage": {
+  "inputTokens": 194,
+  "outputTokens": 87,
+  "totalTokens": 9912,
+  "cacheReadInputTokens": 9631,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.235,
+ "seconds": 6.752793000079691
+}

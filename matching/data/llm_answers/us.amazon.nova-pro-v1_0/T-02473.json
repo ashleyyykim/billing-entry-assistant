@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02473",
+ "reason": "The narrative mentions a conference with S. Cole, who is associated with Meridian Therapeutics' Board & Governance matter.",
+ "shortlist": [
+  "6103.003"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "6103.003",
+ "usage": {
+  "inputTokens": 188,
+  "outputTokens": 70,
+  "totalTokens": 9888,
+  "cacheReadInputTokens": 9630,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.884,
+ "seconds": 4.6882535830372944
+}

@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00974",
+ "reason": "The narrative and past entries align with the typed CMID and matter.",
+ "shortlist": [
+  "8340.001"
+ ],
+ "confidence": 95,
+ "second_cmid": "",
+ "cmid": "8340.001",
+ "usage": {
+  "inputTokens": 220,
+  "outputTokens": 62,
+  "totalTokens": 9912,
+  "cacheReadInputTokens": 9630,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.838,
+ "seconds": 1.7361319579649717
+}

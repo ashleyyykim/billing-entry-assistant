@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03116",
+ "reason": "The narrative clearly indicates work on Fund IV Formation for Ridgewater Partners, which matches CMID 4471.004.",
+ "shortlist": [
+  "4471.004"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "4471.004",
+ "usage": {
+  "inputTokens": 214,
+  "outputTokens": 76,
+  "totalTokens": 9920,
+  "cacheReadInputTokens": 9630,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.946,
+ "seconds": 2.0264394589466974
+}

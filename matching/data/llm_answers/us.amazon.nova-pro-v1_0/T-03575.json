@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03575",
+ "reason": "The narrative 'flag open issues' matches the past entry for 6103.003 which involves reviewing and revising board minutes.",
+ "shortlist": [
+  "6103.003"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "6103.003",
+ "usage": {
+  "inputTokens": 189,
+  "outputTokens": 77,
+  "totalTokens": 9905,
+  "cacheReadInputTokens": 9639,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.934,
+ "seconds": 80.54191129095852
+}

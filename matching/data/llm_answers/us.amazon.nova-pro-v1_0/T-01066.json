@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-01066",
+ "reason": "The narrative mentions reviewing an annual S/H consent, which aligns with the General Corporate matter for Bluefin Robotics. The timekeeper has previously worked on this matter.",
+ "shortlist": [
+  "3120.001",
+  "2207.003",
+  "3388.001"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "3120.001",
+ "usage": {
+  "inputTokens": 195,
+  "outputTokens": 101,
+  "totalTokens": 9929,
+  "cacheReadInputTokens": 9633,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.617,
+ "seconds": 2.185528708039783
+}

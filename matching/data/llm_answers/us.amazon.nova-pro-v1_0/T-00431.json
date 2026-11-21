@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00431",
+ "reason": "The narrative clearly indicates work related to the due diligence period for the acquisition of 450 Harbor St., which matches the typed matter.",
+ "shortlist": [
+  "8340.001"
+ ],
+ "confidence": 95,
+ "second_cmid": "",
+ "cmid": "8340.001",
+ "usage": {
+  "inputTokens": 212,
+  "outputTokens": 76,
+  "totalTokens": 9922,
+  "cacheReadInputTokens": 9634,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.959,
+ "seconds": 1.0237267080228776
+}

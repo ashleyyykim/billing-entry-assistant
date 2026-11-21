@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03075",
+ "reason": "The narrative 'work on deal' aligns with the matter 'Acquisition of 450 Harbor St.' for Pelican Row Holdings, and the timekeeper has previously worked on this matter.",
+ "shortlist": [
+  "8340.001"
+ ],
+ "confidence": 95,
+ "second_cmid": "",
+ "cmid": "8340.001",
+ "usage": {
+  "inputTokens": 175,
+  "outputTokens": 87,
+  "totalTokens": 9895,
+  "cacheReadInputTokens": 9633,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.128,
+ "seconds": 1.4333783749025315
+}

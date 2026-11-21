@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00087",
+ "reason": "The narrative describes work on an annual meeting 10-Q and proxy statement, which aligns with the matter '2026 Annual Meeting' for Meridian Therapeutics (CMID 6103.004). The timekeeper has previously worked on this matter, and the work date is within the matter's open period.",
+ "shortlist": [
+  "6103.004"
+ ],
+ "confidence": 95,
+ "second_cmid": "",
+ "cmid": "6103.004",
+ "usage": {
+  "inputTokens": 235,
+  "outputTokens": 117,
+  "totalTokens": 9978,
+  "cacheReadInputTokens": 9626,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.63,
+ "seconds": 10.618081541964784
+}

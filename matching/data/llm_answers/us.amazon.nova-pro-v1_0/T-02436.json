@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02436",
+ "reason": "The narrative clearly indicates work related to the rent roll for 9 Pine, which is associated with CMID 8012.001.",
+ "shortlist": [
+  "8012.001"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "8012.001",
+ "usage": {
+  "inputTokens": 197,
+  "outputTokens": 79,
+  "totalTokens": 9908,
+  "cacheReadInputTokens": 9632,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.928,
+ "seconds": 4.909164750017226
+}

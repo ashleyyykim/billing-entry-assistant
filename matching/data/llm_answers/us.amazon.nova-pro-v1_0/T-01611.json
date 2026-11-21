@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01611",
+ "reason": "The narrative mentions reviewing a trading policy, which aligns with SEC reporting work for Aster and Vale.",
+ "shortlist": [
+  "3455.001"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "3455.001",
+ "usage": {
+  "inputTokens": 206,
+  "outputTokens": 68,
+  "totalTokens": 9906,
+  "cacheReadInputTokens": 9632,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.855,
+ "seconds": 3.4269957079086453
+}

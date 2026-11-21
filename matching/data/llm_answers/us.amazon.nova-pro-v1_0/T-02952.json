@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02952",
+ "reason": "The narrative describes work on Fund I, which matches the past entries for 2215.001.",
+ "shortlist": [
+  "2215.001"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "2215.001",
+ "usage": {
+  "inputTokens": 222,
+  "outputTokens": 72,
+  "totalTokens": 9933,
+  "cacheReadInputTokens": 9639,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.039,
+ "seconds": 23.21701516606845
+}

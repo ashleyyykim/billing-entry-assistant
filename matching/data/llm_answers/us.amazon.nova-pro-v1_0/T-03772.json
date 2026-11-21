@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03772",
+ "reason": "The narrative 'Track 83(b) filings' aligns with the work done under matter 2201.005, which involves executive compensation and 409A matters.",
+ "shortlist": [
+  "2201.005"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "2201.005",
+ "usage": {
+  "inputTokens": 191,
+  "outputTokens": 89,
+  "totalTokens": 9916,
+  "cacheReadInputTokens": 9636,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.088,
+ "seconds": 3.1698333750246093
+}

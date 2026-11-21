@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-01077",
+ "reason": "The timekeeper has spent the most hours on matter 2960.003, and the narrative mentions a meeting with P. Liu, who is associated with this matter.",
+ "shortlist": [
+  "2960.003",
+  "3455.001",
+  "6103.002"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "2960.003",
+ "usage": {
+  "inputTokens": 192,
+  "outputTokens": 106,
+  "totalTokens": 9927,
+  "cacheReadInputTokens": 9629,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.346,
+ "seconds": 12.307178750052117
+}

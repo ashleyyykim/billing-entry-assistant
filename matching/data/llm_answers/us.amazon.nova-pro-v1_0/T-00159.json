@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00159",
+ "reason": "The narrative matches the work done for the 2026 Annual Meeting of Meridian Therapeutics, and the timekeeper has previously worked on this matter.",
+ "shortlist": [
+  "6103.004"
+ ],
+ "confidence": 95,
+ "second_cmid": "",
+ "cmid": "6103.004",
+ "usage": {
+  "inputTokens": 204,
+  "outputTokens": 78,
+  "totalTokens": 9914,
+  "cacheReadInputTokens": 9632,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.397,
+ "seconds": 1.5039614170091227
+}

@@ -1,0 +1,20 @@
+{
+ "entry_id": "T-00204",
+ "reason": "The narrative mentions 'exchange emails with K.Moss re LPAC approval', which aligns with Ridgeview Partners' General Fund Matters (4478.001) and Fund II Formation (4478.002). Given the context of LPAC approval, 4478.001 is the most likely match.",
+ "shortlist": [
+  "4478.001",
+  "4478.002"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "4478.001",
+ "usage": {
+  "inputTokens": 191,
+  "outputTokens": 132,
+  "totalTokens": 9955,
+  "cacheReadInputTokens": 9632,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.933,
+ "seconds": 5.226534334011376
+}

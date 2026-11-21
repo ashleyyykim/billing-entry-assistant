@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00948",
+ "reason": "The narrative 'Call re status' aligns with the Series B Financing matter for Ember Grid Energy.",
+ "shortlist": [
+  "6230.002"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "6230.002",
+ "usage": {
+  "inputTokens": 187,
+  "outputTokens": 67,
+  "totalTokens": 9892,
+  "cacheReadInputTokens": 9638,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.858,
+ "seconds": 10.579382707946934
+}

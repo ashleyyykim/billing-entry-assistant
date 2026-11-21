@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01510",
+ "reason": "The narrative and typed matter match the matter list.",
+ "shortlist": [
+  "6103.003"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "6103.003",
+ "usage": {
+  "inputTokens": 200,
+  "outputTokens": 58,
+  "totalTokens": 9891,
+  "cacheReadInputTokens": 9633,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.854,
+ "seconds": 2.874646875075996
+}

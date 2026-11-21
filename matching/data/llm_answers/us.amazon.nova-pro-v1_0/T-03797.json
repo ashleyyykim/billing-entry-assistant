@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-03797",
+ "reason": "The narrative 'Attend to file' is vague but the timekeeper's past hours are mostly on 8340.002.",
+ "shortlist": [
+  "8340.002",
+  "8340.001",
+  "8347.002"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "8340.002",
+ "usage": {
+  "inputTokens": 186,
+  "outputTokens": 100,
+  "totalTokens": 9921,
+  "cacheReadInputTokens": 9635,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.21,
+ "seconds": 1.2758029580581933
+}

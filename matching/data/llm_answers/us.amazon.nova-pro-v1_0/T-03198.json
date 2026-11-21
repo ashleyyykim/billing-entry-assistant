@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03198",
+ "reason": "The narrative clearly describes work related to the Investment - Vantage Bio matter for Cobalt Ridge Partners.",
+ "shortlist": [
+  "5524.003"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "5524.003",
+ "usage": {
+  "inputTokens": 242,
+  "outputTokens": 66,
+  "totalTokens": 9942,
+  "cacheReadInputTokens": 9634,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.895,
+ "seconds": 1.5086389580974355
+}

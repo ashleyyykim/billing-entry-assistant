@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02948",
+ "reason": "The narrative describes work on Fund V, which aligns with the 'Fund Administration' matter for Cobalt Ridge Capital.",
+ "shortlist": [
+  "5520.004"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "5520.004",
+ "usage": {
+  "inputTokens": 244,
+  "outputTokens": 70,
+  "totalTokens": 9953,
+  "cacheReadInputTokens": 9639,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.205,
+ "seconds": 5.07319699996151
+}

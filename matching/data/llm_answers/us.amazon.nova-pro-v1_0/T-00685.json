@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00685",
+ "reason": "The narrative mentions a conversation with Y. Tanaka, which aligns with past entries for 3120.001.",
+ "shortlist": [
+  "3120.001"
+ ],
+ "confidence": 95,
+ "second_cmid": "",
+ "cmid": "3120.001",
+ "usage": {
+  "inputTokens": 193,
+  "outputTokens": 74,
+  "totalTokens": 9903,
+  "cacheReadInputTokens": 9636,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.89,
+ "seconds": 1.6486217079218477
+}

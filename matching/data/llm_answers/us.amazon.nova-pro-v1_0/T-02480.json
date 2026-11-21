@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-02480",
+ "reason": "The timekeeper's billing history shows significant hours spent on 3455.002, and the narrative mentions a Zoom meeting with C. Morgan, who is associated with 3455.002.",
+ "shortlist": [
+  "3455.002",
+  "1111.001",
+  "6110.002"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "3455.002",
+ "usage": {
+  "inputTokens": 188,
+  "outputTokens": 116,
+  "totalTokens": 9933,
+  "cacheReadInputTokens": 9629,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.121,
+ "seconds": 2.4078177079791203
+}

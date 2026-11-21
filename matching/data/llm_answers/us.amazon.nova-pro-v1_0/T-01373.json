@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-01373",
+ "reason": "The narrative 'T/c w/ PL' likely refers to a discussion with a client, and the timekeeper's billing history shows significant hours on Solace Health matters.",
+ "shortlist": [
+  "2960.001",
+  "2960.002",
+  "2960.003"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "2960.001",
+ "usage": {
+  "inputTokens": 188,
+  "outputTokens": 104,
+  "totalTokens": 9920,
+  "cacheReadInputTokens": 9628,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.473,
+ "seconds": 9.703262415947393
+}

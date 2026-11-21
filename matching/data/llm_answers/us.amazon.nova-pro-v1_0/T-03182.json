@@ -1,0 +1,20 @@
+{
+ "entry_id": "T-03182",
+ "reason": "The narrative mentions drafting governance guidelines for Meridian Therapeutics, which matches the matter 'Board & Governance' for Meridian Therapeutics (CMID 6103.003). The mention of drafting a master services agreement for Medley Foods suggests work on a second matter, likely related to licensing or commercial contracts, which aligns with Saffron Labs' 'Commercial Contracts' matter (CMID 5750.003).",
+ "shortlist": [
+  "6103.003",
+  "5750.003"
+ ],
+ "confidence": 90,
+ "second_cmid": "5750.003",
+ "cmid": "6103.003",
+ "usage": {
+  "inputTokens": 215,
+  "outputTokens": 153,
+  "totalTokens": 9991,
+  "cacheReadInputTokens": 9623,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.537,
+ "seconds": 3.4408654998987913
+}

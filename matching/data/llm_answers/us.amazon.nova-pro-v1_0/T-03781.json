@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-03781",
+ "reason": "The narrative 'Conf w/S. Cole' likely refers to a discussion with S. Cole, who is associated with matter 6230.001 based on the timekeeper's billing history.",
+ "shortlist": [
+  "6230.001",
+  "2201.005",
+  "2207.001"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "6230.001",
+ "usage": {
+  "inputTokens": 188,
+  "outputTokens": 112,
+  "totalTokens": 9929,
+  "cacheReadInputTokens": 9629,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.651,
+ "seconds": 2.0832795839523897
+}

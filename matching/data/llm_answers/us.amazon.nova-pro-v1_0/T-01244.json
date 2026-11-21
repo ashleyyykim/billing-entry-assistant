@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-01244",
+ "reason": "The narrative 'attend to audit committee mtg' aligns with the matter 'Board & Governance' for Aster & Vale, and the timekeeper has significant hours logged for this matter.",
+ "shortlist": [
+  "3455.002",
+  "1111.001",
+  "6110.002"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "3455.002",
+ "usage": {
+  "inputTokens": 186,
+  "outputTokens": 106,
+  "totalTokens": 9924,
+  "cacheReadInputTokens": 9632,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.275,
+ "seconds": 1.4070454169996083
+}

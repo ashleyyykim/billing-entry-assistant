@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03602",
+ "reason": "The narrative and past entries align with the matter 3120.003, which involves executive compensation and equity plans.",
+ "shortlist": [
+  "3120.003"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "3120.003",
+ "usage": {
+  "inputTokens": 195,
+  "outputTokens": 75,
+  "totalTokens": 9906,
+  "cacheReadInputTokens": 9636,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.903,
+ "seconds": 7.382792084012181
+}

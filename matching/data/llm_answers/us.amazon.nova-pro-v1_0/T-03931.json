@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03931",
+ "reason": "The narrative and past entries clearly indicate work on Exec Comp / 409A for Lanternfish Software.",
+ "shortlist": [
+  "9028.003"
+ ],
+ "confidence": 95,
+ "second_cmid": "",
+ "cmid": "9028.003",
+ "usage": {
+  "inputTokens": 218,
+  "outputTokens": 70,
+  "totalTokens": 9931,
+  "cacheReadInputTokens": 9643,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.149,
+ "seconds": 12.08396208297927
+}

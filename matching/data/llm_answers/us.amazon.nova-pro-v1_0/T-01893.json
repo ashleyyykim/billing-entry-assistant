@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01893",
+ "reason": "The narrative mentions 'FUND V' which matches the 'Fund Administration' matter for Cobalt Ridge Capital.",
+ "shortlist": [
+  "5520.004"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "5520.004",
+ "usage": {
+  "inputTokens": 220,
+  "outputTokens": 68,
+  "totalTokens": 9925,
+  "cacheReadInputTokens": 9637,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.126,
+ "seconds": 1.73575237498153
+}

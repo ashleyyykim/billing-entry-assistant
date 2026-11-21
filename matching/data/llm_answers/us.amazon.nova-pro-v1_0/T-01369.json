@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-01369",
+ "reason": "The narrative mentions '450 Harbor' which is associated with CMID 8340.001.",
+ "shortlist": [
+  "8340.001",
+  "8340.002",
+  "8347.002"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "8340.001",
+ "usage": {
+  "inputTokens": 183,
+  "outputTokens": 93,
+  "totalTokens": 9906,
+  "cacheReadInputTokens": 9630,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.687,
+ "seconds": 1.935386166907847
+}

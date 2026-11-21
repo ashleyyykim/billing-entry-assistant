@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02956",
+ "reason": "The narrative clearly indicates work related to the first close timing for Fund II, which matches the matter 9140.001.",
+ "shortlist": [
+  "9140.001"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "9140.001",
+ "usage": {
+  "inputTokens": 203,
+  "outputTokens": 77,
+  "totalTokens": 9918,
+  "cacheReadInputTokens": 9638,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.534,
+ "seconds": 2.4324537500506267
+}

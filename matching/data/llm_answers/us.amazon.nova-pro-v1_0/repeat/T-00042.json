@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-00042",
+ "reason": "The narrative 'Track annual filings' aligns with the work done under matter 2201.001, which involves coordinating annual filings.",
+ "shortlist": [
+  "2201.001",
+  "2201.003",
+  "2201.005"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "2201.001",
+ "usage": {
+  "inputTokens": 185,
+  "outputTokens": 98,
+  "totalTokens": 9913,
+  "cacheReadInputTokens": 9630,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.405,
+ "seconds": 2.570303749991581
+}

@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01757",
+ "reason": "The narrative describes work related to a board meeting, and the timekeeper has previously spent a significant amount of time on matter 3455.002, which is related to board and governance.",
+ "shortlist": [
+  "3455.002"
+ ],
+ "confidence": 95,
+ "second_cmid": "",
+ "cmid": "3455.002",
+ "usage": {
+  "inputTokens": 196,
+  "outputTokens": 90,
+  "totalTokens": 9914,
+  "cacheReadInputTokens": 9628,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.022,
+ "seconds": 3.073530749999918
+}

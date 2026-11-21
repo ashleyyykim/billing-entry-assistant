@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03760",
+ "reason": "The narrative describes drafting an employee offer letter and reviewing an advisor agreement, which aligns with the General Corporate matter for Solace Health.",
+ "shortlist": [
+  "2960.001"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "2960.001",
+ "usage": {
+  "inputTokens": 210,
+  "outputTokens": 74,
+  "totalTokens": 9907,
+  "cacheReadInputTokens": 9623,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.885,
+ "seconds": 3.720974874915555
+}

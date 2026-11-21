@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-01522",
+ "reason": "The narrative and past entries indicate work related to Northgate Bank's credit facility for Asterion Holdings.",
+ "shortlist": [
+  "7215.003",
+  "7215.004",
+  "7215.002"
+ ],
+ "confidence": 95,
+ "second_cmid": "",
+ "cmid": "7215.003",
+ "usage": {
+  "inputTokens": 224,
+  "outputTokens": 89,
+  "totalTokens": 9939,
+  "cacheReadInputTokens": 9626,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.062,
+ "seconds": 5.126562541932799
+}

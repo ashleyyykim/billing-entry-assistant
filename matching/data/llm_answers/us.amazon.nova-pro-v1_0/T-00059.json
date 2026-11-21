@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00059",
+ "reason": "The narrative and typed matter match the ATM Program for Meridian Therapeutics.",
+ "shortlist": [
+  "6103.005"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "6103.005",
+ "usage": {
+  "inputTokens": 189,
+  "outputTokens": 61,
+  "totalTokens": 9887,
+  "cacheReadInputTokens": 9637,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.959,
+ "seconds": 1.0287808330031112
+}

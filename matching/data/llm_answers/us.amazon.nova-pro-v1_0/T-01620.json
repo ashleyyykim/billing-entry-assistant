@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01620",
+ "reason": "The narrative and past entries indicate work on title reports, which aligns with the matter 'Acquisition of 450 Harbor St.' under CMID 8340.001.",
+ "shortlist": [
+  "8340.001"
+ ],
+ "confidence": 95,
+ "second_cmid": "",
+ "cmid": "8340.001",
+ "usage": {
+  "inputTokens": 182,
+  "outputTokens": 89,
+  "totalTokens": 9903,
+  "cacheReadInputTokens": 9632,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.868,
+ "seconds": 7.331328292028047
+}

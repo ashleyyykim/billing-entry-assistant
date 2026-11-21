@@ -46,7 +46,7 @@
     "history": [
       "tk_known",
       "in_history",
-      "history_hours",
+      "history_per_week",
       "history_share"
     ],
     "gaps": [
@@ -84,6 +84,7 @@
     "history_share",
     "cmid_similarity"
   ],
+  "history_start": "2026-04-01",
   "history_end": "2026-06-30",
   "folds": 5,
   "seed": 210,
@@ -224,5 +225,6 @@
     "y abe",
     "y tanaka",
     "z kemp"
-  ]
+  ],
+  "hours_fill": 1.3
 }

@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00846",
+ "reason": "The narrative 'track annual filings' aligns with the General Corporate matter for Solace Health, and the CMID matches.",
+ "shortlist": [
+  "2960.001"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "2960.001",
+ "usage": {
+  "inputTokens": 183,
+  "outputTokens": 72,
+  "totalTokens": 9889,
+  "cacheReadInputTokens": 9634,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.282,
+ "seconds": 1.4466836251085624
+}

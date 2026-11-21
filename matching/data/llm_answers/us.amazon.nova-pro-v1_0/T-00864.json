@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-00864",
+ "reason": "The narrative mentions coordinating closing deliverables, which aligns with the Series A Financing matter (2201.003) but the timekeeper's hours are more aligned with 2201.005.",
+ "shortlist": [
+  "2201.005",
+  "6230.001",
+  "2207.001"
+ ],
+ "confidence": 80,
+ "second_cmid": "",
+ "cmid": "2201.001",
+ "usage": {
+  "inputTokens": 200,
+  "outputTokens": 114,
+  "totalTokens": 9945,
+  "cacheReadInputTokens": 9631,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.424,
+ "seconds": 4.171610999968834
+}

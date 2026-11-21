@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-02011",
+ "reason": "The narrative mentions 'Asterion' which is associated with CMID 7215.003, and the timekeeper has spent significant hours on this matter.",
+ "shortlist": [
+  "7215.003",
+  "7215.004",
+  "7215.002"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "7215.003",
+ "usage": {
+  "inputTokens": 198,
+  "outputTokens": 104,
+  "totalTokens": 9930,
+  "cacheReadInputTokens": 9628,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.199,
+ "seconds": 2.5957531250314787
+}

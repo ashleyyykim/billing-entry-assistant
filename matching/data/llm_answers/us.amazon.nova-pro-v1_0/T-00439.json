@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-00439",
+ "reason": "The narrative describes work on Section 16 filings and XBRL tagging, which aligns with the past entries for matter 6103.004. The timekeeper has previously spent significant hours on this matter.",
+ "shortlist": [
+  "6103.004",
+  "5602.001",
+  "3455.001"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "6103.004",
+ "usage": {
+  "inputTokens": 214,
+  "outputTokens": 113,
+  "totalTokens": 9957,
+  "cacheReadInputTokens": 9630,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.249,
+ "seconds": 2.0320684590842575
+}

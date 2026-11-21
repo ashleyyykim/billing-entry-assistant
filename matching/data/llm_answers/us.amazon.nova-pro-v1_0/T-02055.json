@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-02055",
+ "reason": "The narrative clearly indicates work on Fund III Formation, which matches the matter 3388.001.",
+ "shortlist": [
+  "3388.001",
+  "5524.002",
+  "5520.004"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "3388.001",
+ "usage": {
+  "inputTokens": 225,
+  "outputTokens": 92,
+  "totalTokens": 9940,
+  "cacheReadInputTokens": 9623,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.03,
+ "seconds": 2.1199541670503095
+}

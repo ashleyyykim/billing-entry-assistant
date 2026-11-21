@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01524",
+ "reason": "The narrative and past entries align with the General Corporate matter for Harborlight Bio.",
+ "shortlist": [
+  "2201.001"
+ ],
+ "confidence": 95,
+ "second_cmid": "",
+ "cmid": "2201.001",
+ "usage": {
+  "inputTokens": 194,
+  "outputTokens": 64,
+  "totalTokens": 9893,
+  "cacheReadInputTokens": 9635,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.854,
+ "seconds": 13.451051666983403
+}

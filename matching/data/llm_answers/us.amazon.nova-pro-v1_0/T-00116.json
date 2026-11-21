@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00116",
+ "reason": "The narrative mentions 'series SPA for Summit Growth' which aligns with the Series B Financing matter for Tidewater AI.",
+ "shortlist": [
+  "4590.003"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "4590.003",
+ "usage": {
+  "inputTokens": 214,
+  "outputTokens": 71,
+  "totalTokens": 9908,
+  "cacheReadInputTokens": 9623,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.893,
+ "seconds": 1.1253390000201762
+}

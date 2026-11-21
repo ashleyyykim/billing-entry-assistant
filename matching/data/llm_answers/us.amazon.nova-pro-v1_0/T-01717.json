@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01717",
+ "reason": "The narrative mentions 'Larkspur Controls' which is likely a reference to 'Project Lark' under Cobalt Ridge Capital, CMID 5520.001.",
+ "shortlist": [
+  "5520.001"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "5520.001",
+ "usage": {
+  "inputTokens": 192,
+  "outputTokens": 84,
+  "totalTokens": 9905,
+  "cacheReadInputTokens": 9629,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.993,
+ "seconds": 3.061236083973199
+}

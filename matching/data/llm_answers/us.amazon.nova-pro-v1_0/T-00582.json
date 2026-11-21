@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00582",
+ "reason": "The narrative 'Attend to SEC matters' matches the matter 'SEC Reporting' for Ironwood Semiconductor.",
+ "shortlist": [
+  "5602.001"
+ ],
+ "confidence": 95,
+ "second_cmid": "",
+ "cmid": "5602.001",
+ "usage": {
+  "inputTokens": 185,
+  "outputTokens": 70,
+  "totalTokens": 9895,
+  "cacheReadInputTokens": 9640,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.929,
+ "seconds": 6.858133542002179
+}

@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00413",
+ "reason": "The narrative 'Call re status' is consistent with the matter 'General Fund Matters' for Juniper Peak Capital.",
+ "shortlist": [
+  "9140.002"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "9140.002",
+ "usage": {
+  "inputTokens": 186,
+  "outputTokens": 70,
+  "totalTokens": 9895,
+  "cacheReadInputTokens": 9639,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.892,
+ "seconds": 1.1224950000178069
+}

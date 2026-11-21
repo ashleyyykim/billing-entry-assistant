@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-03939",
+ "reason": "The timekeeper has spent the most hours on 8340.001 and also has hours on 8340.002, which are both Pelican Row Holdings matters.",
+ "shortlist": [
+  "8340.001",
+  "8340.002",
+  "8340.003"
+ ],
+ "confidence": 90,
+ "second_cmid": "8340.002",
+ "cmid": "8340.001",
+ "usage": {
+  "inputTokens": 185,
+  "outputTokens": 118,
+  "totalTokens": 9934,
+  "cacheReadInputTokens": 9631,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.263,
+ "seconds": 1.4850644159596413
+}

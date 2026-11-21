@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00087",
+ "reason": "The narrative and past entries indicate work related to the annual meeting, which aligns with the 10-Q and proxy statement tasks.",
+ "shortlist": [
+  "6103.004"
+ ],
+ "confidence": 95,
+ "second_cmid": "",
+ "cmid": "6103.004",
+ "usage": {
+  "inputTokens": 235,
+  "outputTokens": 75,
+  "totalTokens": 9936,
+  "cacheReadInputTokens": 9626,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.887,
+ "seconds": 1.008181791054085
+}

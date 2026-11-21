@@ -1,0 +1,17 @@
+{
+ "entry_id": "T-01669",
+ "reason": "The typed client and matter do not match any known client or matter in the list.",
+ "shortlist": [],
+ "confidence": 0,
+ "second_cmid": "",
+ "cmid": "NONE",
+ "usage": {
+  "inputTokens": 183,
+  "outputTokens": 48,
+  "totalTokens": 9865,
+  "cacheReadInputTokens": 9634,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.725,
+ "seconds": 16.485290708951652
+}

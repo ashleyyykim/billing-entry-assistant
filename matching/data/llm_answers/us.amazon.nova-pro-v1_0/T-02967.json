@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-02967",
+ "reason": "The narrative describes drafting board consent and editing audit committee charter, which aligns with the 'Board Matters' matter for Solace Health (2960.003). The timekeeper has a significant number of hours logged for this matter.",
+ "shortlist": [
+  "2960.003",
+  "3455.002",
+  "6103.002"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "2960.003",
+ "usage": {
+  "inputTokens": 214,
+  "outputTokens": 117,
+  "totalTokens": 9958,
+  "cacheReadInputTokens": 9627,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.245,
+ "seconds": 1.6358153750188649
+}

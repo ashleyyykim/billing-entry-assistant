@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-01212",
+ "reason": "The narrative mentions 'Harbor St. estoppels' which matches with the matter 'Acquisition of 450 Harbor St.' under CMID 8340.001.",
+ "shortlist": [
+  "8340.001",
+  "8340.002",
+  "8340.003"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "8340.001",
+ "usage": {
+  "inputTokens": 195,
+  "outputTokens": 110,
+  "totalTokens": 9942,
+  "cacheReadInputTokens": 9637,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.449,
+ "seconds": 14.343441082979552
+}

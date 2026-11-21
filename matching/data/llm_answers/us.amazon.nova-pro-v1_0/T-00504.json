@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00504",
+ "reason": "The narrative 'Track annual filings' aligns with the past entries for 3120.001, and the timekeeper has spent significant hours on this matter.",
+ "shortlist": [
+  "3120.001"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "3120.001",
+ "usage": {
+  "inputTokens": 187,
+  "outputTokens": 83,
+  "totalTokens": 9906,
+  "cacheReadInputTokens": 9636,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.002,
+ "seconds": 3.228460415964946
+}

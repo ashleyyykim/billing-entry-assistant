@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03629",
+ "reason": "The narrative describes work related to director signatures and closing checklist, which aligns with the Board & Governance matter for Meridian Therapeutics.",
+ "shortlist": [
+  "6103.003"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "6103.003",
+ "usage": {
+  "inputTokens": 202,
+  "outputTokens": 72,
+  "totalTokens": 9909,
+  "cacheReadInputTokens": 9635,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.886,
+ "seconds": 2.5546547500416636
+}

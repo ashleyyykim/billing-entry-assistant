@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01726",
+ "reason": "The narrative 'Work on docs' aligns with the matter 'Commercial - Enterprise MSAs' for Tidewater AI, and the timekeeper has previously spent significant hours on this matter.",
+ "shortlist": [
+  "4590.004"
+ ],
+ "confidence": 95,
+ "second_cmid": "",
+ "cmid": "4590.004",
+ "usage": {
+  "inputTokens": 186,
+  "outputTokens": 84,
+  "totalTokens": 9908,
+  "cacheReadInputTokens": 9638,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.088,
+ "seconds": 3.2303080830024555
+}

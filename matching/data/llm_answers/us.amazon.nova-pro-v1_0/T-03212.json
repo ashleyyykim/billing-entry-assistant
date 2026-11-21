@@ -1,0 +1,17 @@
+{
+ "entry_id": "T-03212",
+ "reason": "The narrative does not provide enough information to determine the specific matter, and the typed CMID, client, and matter are blank.",
+ "shortlist": [],
+ "confidence": 0,
+ "second_cmid": "",
+ "cmid": "NONE",
+ "usage": {
+  "inputTokens": 198,
+  "outputTokens": 57,
+  "totalTokens": 9882,
+  "cacheReadInputTokens": 9627,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.281,
+ "seconds": 5.840222499915399
+}

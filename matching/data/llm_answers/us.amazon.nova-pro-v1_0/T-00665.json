@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00665",
+ "reason": "The narrative 'Attend to corporate matters' aligns with the past entries for 6230.001, and the timekeeper has previously worked on this matter.",
+ "shortlist": [
+  "6230.001"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "6230.001",
+ "usage": {
+  "inputTokens": 189,
+  "outputTokens": 85,
+  "totalTokens": 9907,
+  "cacheReadInputTokens": 9633,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.029,
+ "seconds": 1.4746761659625918
+}

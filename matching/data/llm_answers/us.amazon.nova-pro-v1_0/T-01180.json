@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01180",
+ "reason": "The narrative indicates administrative matters, which aligns with the 'Admin' matter for the Firm.",
+ "shortlist": [
+  "1111.001"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "1111.001",
+ "usage": {
+  "inputTokens": 188,
+  "outputTokens": 66,
+  "totalTokens": 9883,
+  "cacheReadInputTokens": 9629,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.003,
+ "seconds": 2.868214042042382
+}

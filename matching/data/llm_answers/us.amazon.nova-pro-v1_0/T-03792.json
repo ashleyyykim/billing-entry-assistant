@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-03792",
+ "reason": "The narrative 'Rework title commitment' aligns with the matter 'Acquisition of 450 Harbor St.' under Pelican Row Holdings, which involves title commitments.",
+ "shortlist": [
+  "8340.001",
+  "8340.002",
+  "8340.003"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "8340.001",
+ "usage": {
+  "inputTokens": 190,
+  "outputTokens": 102,
+  "totalTokens": 9926,
+  "cacheReadInputTokens": 9634,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.235,
+ "seconds": 11.111771458992735
+}

@@ -1,0 +1,17 @@
+{
+ "entry_id": "T-02522",
+ "reason": "The typed client 'Meridian Labs' does not match any client in the matter list.",
+ "shortlist": [],
+ "confidence": 0,
+ "second_cmid": "",
+ "cmid": "NONE",
+ "usage": {
+  "inputTokens": 204,
+  "outputTokens": 49,
+  "totalTokens": 9880,
+  "cacheReadInputTokens": 9627,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.779,
+ "seconds": 4.570392915979028
+}

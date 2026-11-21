@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00548",
+ "reason": "The narrative 'Emails' is vague but the typed CMID, client, and matter match exactly with an open matter.",
+ "shortlist": [
+  "2201.005"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "2201.005",
+ "usage": {
+  "inputTokens": 186,
+  "outputTokens": 73,
+  "totalTokens": 9900,
+  "cacheReadInputTokens": 9641,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.414,
+ "seconds": 6.723692083032802
+}

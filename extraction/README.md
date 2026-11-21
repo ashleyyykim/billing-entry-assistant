@@ -9,15 +9,15 @@ Lawyers record time anywhere. Each input type is turned into text first:
 | Note photos, scanned time sheets, screenshots | Textract, and the models also see the image |
 | Emails, typed notes, texts | The text itself; each attachment is read as its own input |
 | PDFs and Word files | The document's text, with table cells kept apart |
-| Spreadsheets | The rows, header first |
+| Spreadsheets | The models say what each column holds; code reads the rows |
 | Voice memos | Transcribe |
 
 ## How it works
 
 1. **Photo check.** A blurry, dark, or small photo gets a retake prompt before anything is read.
-2. **Two models read it.** Nova Pro and Llama 4 Maverick on Bedrock each fill the same entry fields and cite the lines each entry came from. Long inputs are read in pieces.
+2. **Two models read it.** Nova Pro and Qwen3 VL on Bedrock each fill the same entry fields and cite the lines each entry came from. Long inputs are read in pieces.
 3. **Clean-up.** Code works out dates like "Tues" or "yesterday", fixes CMID formats, keeps matter names apart from CMIDs, and converts units.
-4. **Checks.** An entry is flagged when its hours aren't on the cited lines, a decimal point looks lost, the client is unknown or could be more than one client, the CMID belongs to a different client, the date is missing, hours on the page go unused, or the two models disagree.
+4. **Checks.** An entry is flagged when its hours, client, CMID, date, or description look wrong or missing, or the two models read it differently.
 5. **Review or matching.** Flagged entries go to a person, and the rest go to matching. If a model call fails, the rule readers read the upload instead and a person checks it.
 
 ## Notebooks
@@ -38,7 +38,7 @@ Lawyers record time anywhere. Each input type is turned into text first:
 
 Key files in `src/`:
 - `one_flow.py`: runs the flow on one upload (what the app uses)
-- `prompts.py`, `model_readers.py`, `open_models.py`: what the models are told, and the calls to Bedrock
+- `prompts_v6.py`, `prompts.py`, `model_readers.py`, `open_models.py`, `column_map.py`: what the models are told, and the calls to Bedrock
 - `intake.py`, `review.py`, `upload_check.py`: the entry table, the checks, and the photo check
 - `extract.py`, `free_text.py`, `tables.py`, `documents.py`, `spreadsheets.py`: the rule readers, used when a model call fails
 - `textract.py`, `messages.py`, `voice.py`: Textract, emails with attachments, and Transcribe
@@ -65,4 +65,4 @@ Photos and voice memos aren't in the repository, since photos carry location dat
 
 - The samples are made up and the flow was built on them, so real entries will do worse.
 - Long documents, a real firm's client list, real audio, and natural handwriting aren't tested.
-- Narratives and timekeepers aren't graded.
+- Timekeepers aren't graded.

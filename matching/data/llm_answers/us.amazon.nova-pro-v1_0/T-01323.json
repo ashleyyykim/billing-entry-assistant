@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01323",
+ "reason": "The narrative 'Organize good standing requests' aligns with past entries for Bluefin Robotics' General Corporate matter (3120.001), and the timekeeper has a significant history with this matter.",
+ "shortlist": [
+  "3120.001"
+ ],
+ "confidence": 95,
+ "second_cmid": "",
+ "cmid": "3120.001",
+ "usage": {
+  "inputTokens": 185,
+  "outputTokens": 91,
+  "totalTokens": 9910,
+  "cacheReadInputTokens": 9634,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.031,
+ "seconds": 7.42676591698546
+}

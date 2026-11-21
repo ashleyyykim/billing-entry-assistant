@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02183",
+ "reason": "The narrative 'Review documents' aligns with the Series A Financing matter for Copperline Networks.",
+ "shortlist": [
+  "7633.002"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "7633.002",
+ "usage": {
+  "inputTokens": 182,
+  "outputTokens": 66,
+  "totalTokens": 9879,
+  "cacheReadInputTokens": 9631,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.858,
+ "seconds": 4.161824541981332
+}

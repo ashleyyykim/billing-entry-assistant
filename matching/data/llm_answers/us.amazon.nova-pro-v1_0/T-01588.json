@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01588",
+ "reason": "The narrative mentions 'Orbis Health' which is related to the matter 'Commercial - Enterprise MSAs' for Tidewater AI, and the timekeeper has previously worked on this matter.",
+ "shortlist": [
+  "4590.004"
+ ],
+ "confidence": 95,
+ "second_cmid": "",
+ "cmid": "4590.004",
+ "usage": {
+  "inputTokens": 198,
+  "outputTokens": 85,
+  "totalTokens": 9915,
+  "cacheReadInputTokens": 9632,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.366,
+ "seconds": 8.130378625006415
+}

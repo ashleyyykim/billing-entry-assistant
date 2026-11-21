@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-00243",
+ "reason": "The narrative mentions annual filings, which are likely related to the General Corporate matter for Bluefin Robotics (3120.001). The timekeeper's hours also show significant time spent on this matter.",
+ "shortlist": [
+  "3120.001",
+  "5520.005",
+  "5520.002"
+ ],
+ "confidence": 90,
+ "second_cmid": "5520.005",
+ "cmid": "3120.001",
+ "usage": {
+  "inputTokens": 195,
+  "outputTokens": 121,
+  "totalTokens": 9944,
+  "cacheReadInputTokens": 9628,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.378,
+ "seconds": 1.4416445419192314
+}

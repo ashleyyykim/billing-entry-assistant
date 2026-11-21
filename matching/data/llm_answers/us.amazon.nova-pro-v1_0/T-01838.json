@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01838",
+ "reason": "The narrative and typed matter match the SEC Reporting matter for Aster & Vale.",
+ "shortlist": [
+  "3455.001"
+ ],
+ "confidence": 95,
+ "second_cmid": "",
+ "cmid": "3455.001",
+ "usage": {
+  "inputTokens": 198,
+  "outputTokens": 64,
+  "totalTokens": 9899,
+  "cacheReadInputTokens": 9637,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.86,
+ "seconds": 1.5183485830202699
+}

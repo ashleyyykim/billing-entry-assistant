@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-02033",
+ "reason": "The narrative mentions '450 Harbor' which is related to matter 8340.001.",
+ "shortlist": [
+  "8340.001",
+  "8340.002",
+  "8340.003"
+ ],
+ "confidence": 95,
+ "second_cmid": "",
+ "cmid": "8340.001",
+ "usage": {
+  "inputTokens": 215,
+  "outputTokens": 92,
+  "totalTokens": 9930,
+  "cacheReadInputTokens": 9623,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.066,
+ "seconds": 4.225368208019063
+}

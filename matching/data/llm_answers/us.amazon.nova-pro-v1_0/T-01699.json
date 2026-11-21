@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01699",
+ "reason": "The narrative mentions 83(b) filings and financing, which aligns with the matter 'Exec Comp / 409A' for Lanternfish Software.",
+ "shortlist": [
+  "9028.003"
+ ],
+ "confidence": 95,
+ "second_cmid": "",
+ "cmid": "9028.003",
+ "usage": {
+  "inputTokens": 205,
+  "outputTokens": 81,
+  "totalTokens": 9921,
+  "cacheReadInputTokens": 9635,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.057,
+ "seconds": 6.036293042008765
+}

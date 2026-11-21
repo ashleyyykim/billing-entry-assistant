@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01004",
+ "reason": "The narrative and past entries align with the General Corporate matter for Halvorsen Industrial.",
+ "shortlist": [
+  "3012.001"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "3012.001",
+ "usage": {
+  "inputTokens": 203,
+  "outputTokens": 65,
+  "totalTokens": 9904,
+  "cacheReadInputTokens": 9636,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.763,
+ "seconds": 4.138568333000876
+}

@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03503",
+ "reason": "The narrative 'Attend to matter' is vague but the timekeeper's billing history shows significant hours on 9140.001 and some on 9140.002, indicating a high likelihood that the entry is for 9140.002.",
+ "shortlist": [
+  "9140.002"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "9140.002",
+ "usage": {
+  "inputTokens": 186,
+  "outputTokens": 112,
+  "totalTokens": 9935,
+  "cacheReadInputTokens": 9637,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.383,
+ "seconds": 9.621661207987927
+}

@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02893",
+ "reason": "The narrative clearly indicates work related to Asterion, which matches the matter 7215.005.",
+ "shortlist": [
+  "7215.005"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "7215.005",
+ "usage": {
+  "inputTokens": 195,
+  "outputTokens": 72,
+  "totalTokens": 9904,
+  "cacheReadInputTokens": 9637,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.9,
+ "seconds": 6.783738625003025
+}

@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03399",
+ "reason": "The narrative mentions a Zoom meeting with M. Carter, who is associated with Pelican Row Holdings, and the timekeeper has previously worked on matter 8340.003.",
+ "shortlist": [
+  "8340.003"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "8340.003",
+ "usage": {
+  "inputTokens": 191,
+  "outputTokens": 86,
+  "totalTokens": 9912,
+  "cacheReadInputTokens": 9635,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.936,
+ "seconds": 2.6688322499394417
+}

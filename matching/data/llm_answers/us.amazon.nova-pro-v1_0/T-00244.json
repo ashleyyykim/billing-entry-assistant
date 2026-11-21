@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00244",
+ "reason": "The narrative clearly indicates work related to IP ownership, which aligns with the matter 'License - Calder Pharma' under CMID 2207.003.",
+ "shortlist": [
+  "2207.003"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "2207.003",
+ "usage": {
+  "inputTokens": 201,
+  "outputTokens": 82,
+  "totalTokens": 9917,
+  "cacheReadInputTokens": 9634,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.336,
+ "seconds": 1.4206193750724196
+}

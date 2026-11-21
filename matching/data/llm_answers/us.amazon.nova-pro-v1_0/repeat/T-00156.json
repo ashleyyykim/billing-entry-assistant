@@ -1,0 +1,17 @@
+{
+ "entry_id": "T-00156",
+ "reason": "The client 'Halcyon Data' is not found in the matter list.",
+ "shortlist": [],
+ "confidence": 0,
+ "second_cmid": "",
+ "cmid": "NONE",
+ "usage": {
+  "inputTokens": 189,
+  "outputTokens": 46,
+  "totalTokens": 9869,
+  "cacheReadInputTokens": 9634,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.767,
+ "seconds": 5.83310225000605
+}

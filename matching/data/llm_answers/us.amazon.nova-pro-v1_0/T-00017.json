@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-00017",
+ "reason": "The narrative describes drafting a proxy statement related to MD&A, which aligns with the 'SEC Reporting' matter for Meridian Therapeutics. The timekeeper's billing history also shows significant hours spent on this matter.",
+ "shortlist": [
+  "6103.004",
+  "6103.001",
+  "6103.002"
+ ],
+ "confidence": 95,
+ "second_cmid": "",
+ "cmid": "6103.004",
+ "usage": {
+  "inputTokens": 192,
+  "outputTokens": 110,
+  "totalTokens": 9934,
+  "cacheReadInputTokens": 0,
+  "cacheWriteInputTokens": 9632
+ },
+ "latency_s": 1.607,
+ "seconds": 1.9381185839883983
+}

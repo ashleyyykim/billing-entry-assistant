@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01168",
+ "reason": "The narrative describes 'Matter list cleanup regarding open issues,' which aligns with the administrative tasks typically associated with the Firm's Admin matter (1111.001). The timekeeper has a significant history of working on this matter.",
+ "shortlist": [
+  "1111.001"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "1111.001",
+ "usage": {
+  "inputTokens": 190,
+  "outputTokens": 98,
+  "totalTokens": 9913,
+  "cacheReadInputTokens": 9625,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.14,
+ "seconds": 6.959817750030197
+}

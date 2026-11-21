@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-02847",
+ "reason": "The narrative mentions board composition, which aligns with BOARD matters. The timekeeper's past work includes BOARD matters for clients like Meridian Therapeutics and Tidewater AI.",
+ "shortlist": [
+  "6103.003",
+  "4590.002",
+  "2960.003"
+ ],
+ "confidence": 80,
+ "second_cmid": "",
+ "cmid": "NONE",
+ "usage": {
+  "inputTokens": 198,
+  "outputTokens": 93,
+  "totalTokens": 9919,
+  "cacheReadInputTokens": 9628,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.044,
+ "seconds": 1.5995566670317203
+}

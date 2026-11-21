@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-03274",
+ "reason": "The narrative mentions a zoom with T. Smith re LP inquiry, which aligns with the past entries for 5524.002.",
+ "shortlist": [
+  "5524.002",
+  "5520.004",
+  "1111.001"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "5524.002",
+ "usage": {
+  "inputTokens": 202,
+  "outputTokens": 98,
+  "totalTokens": 9927,
+  "cacheReadInputTokens": 9627,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.106,
+ "seconds": 1.7235093750059605
+}

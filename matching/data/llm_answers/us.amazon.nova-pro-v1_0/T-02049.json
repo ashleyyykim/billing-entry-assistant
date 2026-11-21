@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02049",
+ "reason": "The narrative clearly indicates work on Project Lark, which matches the Add-On Acquisition (Project Lark) matter for Cobalt Ridge Capital.",
+ "shortlist": [
+  "5520.001"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "5520.001",
+ "usage": {
+  "inputTokens": 220,
+  "outputTokens": 74,
+  "totalTokens": 9921,
+  "cacheReadInputTokens": 9627,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.073,
+ "seconds": 1.2286264579743147
+}

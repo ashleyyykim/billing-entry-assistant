@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-02665",
+ "reason": "The narrative describes work on the LP side letter and LPA for Fund III, which matches the matter 4471.003: Fund III Co-Invest Vehicle.",
+ "shortlist": [
+  "4471.003",
+  "4471.002",
+  "4471.001"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "4471.003",
+ "usage": {
+  "inputTokens": 223,
+  "outputTokens": 105,
+  "totalTokens": 9950,
+  "cacheReadInputTokens": 9622,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.359,
+ "seconds": 5.573562083067372
+}

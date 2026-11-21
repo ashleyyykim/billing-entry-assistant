@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-00136",
+ "reason": "The narrative 'Mark up ALTA survey + send comments to client' matches the past entry for matter 8340.001, which involves updating issues list and reworking zoning reports.",
+ "shortlist": [
+  "8340.001",
+  "8340.002",
+  "8347.002"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "8340.001",
+ "usage": {
+  "inputTokens": 191,
+  "outputTokens": 108,
+  "totalTokens": 9931,
+  "cacheReadInputTokens": 9632,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.613,
+ "seconds": 2.9561608330113813
+}

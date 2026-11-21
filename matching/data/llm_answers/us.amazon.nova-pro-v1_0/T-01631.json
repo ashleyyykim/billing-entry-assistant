@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01631",
+ "reason": "The narrative and past entries indicate work on executive compensation and 409A for Lanternfish Software, matching CMID 9028.003.",
+ "shortlist": [
+  "9028.003"
+ ],
+ "confidence": 95,
+ "second_cmid": "",
+ "cmid": "9028.003",
+ "usage": {
+  "inputTokens": 203,
+  "outputTokens": 82,
+  "totalTokens": 9918,
+  "cacheReadInputTokens": 9633,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.348,
+ "seconds": 1.767630874994211
+}

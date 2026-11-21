@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-02481",
+ "reason": "The narrative mentions 'Larkspur Controls' which is likely related to the 'Add-On Acquisition (Project Lark)' matter for Cobalt Ridge Capital.",
+ "shortlist": [
+  "5520.001",
+  "5520.002",
+  "5520.003"
+ ],
+ "confidence": 90,
+ "second_cmid": "5520.002",
+ "cmid": "5520.001",
+ "usage": {
+  "inputTokens": 245,
+  "outputTokens": 107,
+  "totalTokens": 9976,
+  "cacheReadInputTokens": 9624,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.151,
+ "seconds": 3.8915664160158485
+}

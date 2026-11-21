@@ -1,0 +1,20 @@
+{
+ "entry_id": "T-00653",
+ "reason": "The narrative indicates work on the PPM for Fund II, which matches the past entries for 9140.001.",
+ "shortlist": [
+  "9140.001",
+  "9140.002"
+ ],
+ "confidence": 95,
+ "second_cmid": "",
+ "cmid": "9140.001",
+ "usage": {
+  "inputTokens": 190,
+  "outputTokens": 85,
+  "totalTokens": 9909,
+  "cacheReadInputTokens": 9634,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.012,
+ "seconds": 1.9167834999971092
+}

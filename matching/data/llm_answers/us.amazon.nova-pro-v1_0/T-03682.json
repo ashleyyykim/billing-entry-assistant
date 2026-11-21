@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-03682",
+ "reason": "The narrative 'Attend to call with founder re entity maintenance' aligns with the work done for Harborlight Bio's General Corporate matter, and the timekeeper has spent significant hours on this matter in the past.",
+ "shortlist": [
+  "2201.001",
+  "2207.001",
+  "2215.001"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "2201.001",
+ "usage": {
+  "inputTokens": 190,
+  "outputTokens": 112,
+  "totalTokens": 9930,
+  "cacheReadInputTokens": 9628,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.656,
+ "seconds": 2.737958166981116
+}

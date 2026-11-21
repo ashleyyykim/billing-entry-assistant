@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02277",
+ "reason": "The narrative 'Draft diligence report' aligns with the matter 'Add-On Acquisition (Project Lark)' for Cobalt Ridge Capital.",
+ "shortlist": [
+  "5520.001"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "5520.001",
+ "usage": {
+  "inputTokens": 184,
+  "outputTokens": 73,
+  "totalTokens": 9887,
+  "cacheReadInputTokens": 9630,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.979,
+ "seconds": 13.419636541977525
+}

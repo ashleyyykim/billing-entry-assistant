@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02937",
+ "reason": "The narrative clearly indicates work on the Fund II management company agreement, which matches the matter 9140.001.",
+ "shortlist": [
+  "9140.001"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "9140.001",
+ "usage": {
+  "inputTokens": 191,
+  "outputTokens": 75,
+  "totalTokens": 9906,
+  "cacheReadInputTokens": 9640,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.923,
+ "seconds": 4.373619915917516
+}

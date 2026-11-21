@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03744",
+ "reason": "The narrative clearly indicates work on the acquisition of 450 Harbor St., which matches the typed matter.",
+ "shortlist": [
+  "8340.001"
+ ],
+ "confidence": 95,
+ "second_cmid": "",
+ "cmid": "8340.001",
+ "usage": {
+  "inputTokens": 181,
+  "outputTokens": 70,
+  "totalTokens": 9890,
+  "cacheReadInputTokens": 9639,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.917,
+ "seconds": 2.55807929194998
+}

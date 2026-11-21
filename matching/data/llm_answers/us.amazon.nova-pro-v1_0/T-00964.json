@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00964",
+ "reason": "The narrative and typed information match the matter 2207.001 - General Corporate for Harborline Biosciences.",
+ "shortlist": [
+  "2207.001"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "2207.001",
+ "usage": {
+  "inputTokens": 186,
+  "outputTokens": 73,
+  "totalTokens": 9896,
+  "cacheReadInputTokens": 9637,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.961,
+ "seconds": 2.394425083999522
+}

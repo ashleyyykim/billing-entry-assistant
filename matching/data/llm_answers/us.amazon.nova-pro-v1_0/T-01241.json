@@ -1,0 +1,17 @@
+{
+ "entry_id": "T-01241",
+ "reason": "The typed CMID and client do not match any known matters.",
+ "shortlist": [],
+ "confidence": 0,
+ "second_cmid": "",
+ "cmid": "NONE",
+ "usage": {
+  "inputTokens": 206,
+  "outputTokens": 44,
+  "totalTokens": 9884,
+  "cacheReadInputTokens": 9634,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.638,
+ "seconds": 1.0491097080521286
+}

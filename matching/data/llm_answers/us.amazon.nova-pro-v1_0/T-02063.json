@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02063",
+ "reason": "The narrative 'Update bylaws amendment' matches the matter 'General Corporate' for Meridian Thermal Systems.",
+ "shortlist": [
+  "6110.001"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "6110.001",
+ "usage": {
+  "inputTokens": 182,
+  "outputTokens": 67,
+  "totalTokens": 9881,
+  "cacheReadInputTokens": 9632,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.138,
+ "seconds": 2.503585207974538
+}

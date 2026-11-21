@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01563",
+ "reason": "The narrative 'Complete conflicts training' aligns with the administrative nature of the matter 1111.001, which is for Firm Admin.",
+ "shortlist": [
+  "1111.001"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "1111.001",
+ "usage": {
+  "inputTokens": 185,
+  "outputTokens": 79,
+  "totalTokens": 9898,
+  "cacheReadInputTokens": 9634,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.94,
+ "seconds": 1.0048605829942971
+}

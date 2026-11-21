@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-03778",
+ "reason": "The narrative mentions reviewing committee charters, which is likely related to governance guidelines, a task associated with matter 6103.003.",
+ "shortlist": [
+  "6103.003",
+  "6103.001",
+  "6103.002"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "6103.003",
+ "usage": {
+  "inputTokens": 185,
+  "outputTokens": 99,
+  "totalTokens": 9915,
+  "cacheReadInputTokens": 9631,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.407,
+ "seconds": 3.3357517919503152
+}

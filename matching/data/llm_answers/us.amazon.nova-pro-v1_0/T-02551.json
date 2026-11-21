@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-02551",
+ "reason": "The narrative 'Attend to LP matters' aligns with the work done for Ridgewater Partners' General Fund Matters (4471.001) and Fund III Formation (4471.002), but the past entries and billing history suggest 4471.001 is the most likely match.",
+ "shortlist": [
+  "4471.001",
+  "4471.002",
+  "4471.003"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "4471.001",
+ "usage": {
+  "inputTokens": 185,
+  "outputTokens": 138,
+  "totalTokens": 9953,
+  "cacheReadInputTokens": 9630,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.39,
+ "seconds": 1.5980447919573635
+}

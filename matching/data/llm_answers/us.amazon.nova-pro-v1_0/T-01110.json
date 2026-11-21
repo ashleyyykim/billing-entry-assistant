@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01110",
+ "reason": "The narrative and past entries indicate work on equity refresh grants, which aligns with the Exec Comp / 409A matter for Lantarnfish Software.",
+ "shortlist": [
+  "9028.003"
+ ],
+ "confidence": 95,
+ "second_cmid": "",
+ "cmid": "9028.003",
+ "usage": {
+  "inputTokens": 208,
+  "outputTokens": 80,
+  "totalTokens": 9921,
+  "cacheReadInputTokens": 9633,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.024,
+ "seconds": 5.175470749964006
+}

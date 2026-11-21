@@ -1,0 +1,17 @@
+{
+ "entry_id": "T-01788",
+ "reason": "The typed client 'Nortgote Credif' does not match any client in the matter list.",
+ "shortlist": [],
+ "confidence": 0,
+ "second_cmid": "",
+ "cmid": "NONE",
+ "usage": {
+  "inputTokens": 204,
+  "outputTokens": 53,
+  "totalTokens": 9887,
+  "cacheReadInputTokens": 9630,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.812,
+ "seconds": 8.675027458928525
+}

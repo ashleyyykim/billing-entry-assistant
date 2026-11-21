@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01640",
+ "reason": "The narrative mentions '409A approval' and 'annual filings', which are consistent with the work done for Saffron Labs' Commercial Contracts matter (5750.003).",
+ "shortlist": [
+  "5750.003"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "5750.003",
+ "usage": {
+  "inputTokens": 210,
+  "outputTokens": 89,
+  "totalTokens": 9925,
+  "cacheReadInputTokens": 9626,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.032,
+ "seconds": 5.302181624923833
+}

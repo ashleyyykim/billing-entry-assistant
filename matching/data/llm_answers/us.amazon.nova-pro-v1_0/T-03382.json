@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-03382",
+ "reason": "The narrative mentions 'Board & Governnace' which matches the matter type of 'BOARD' for CMID 4590.002.",
+ "shortlist": [
+  "4590.002",
+  "6103.003",
+  "3455.002"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "4590.002",
+ "usage": {
+  "inputTokens": 190,
+  "outputTokens": 100,
+  "totalTokens": 9920,
+  "cacheReadInputTokens": 9630,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.702,
+ "seconds": 23.18246799998451
+}

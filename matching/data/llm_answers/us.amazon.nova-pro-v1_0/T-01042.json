@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-01042",
+ "reason": "The narrative mentions discussing co-invest rights with C. Abbott, which aligns with the work done on the Co-Invest Vehicle matter for Ridgewater Partners.",
+ "shortlist": [
+  "4471.003",
+  "4471.002",
+  "4471.001"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "4471.003",
+ "usage": {
+  "inputTokens": 211,
+  "outputTokens": 99,
+  "totalTokens": 9939,
+  "cacheReadInputTokens": 9629,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.446,
+ "seconds": 7.339417790994048
+}

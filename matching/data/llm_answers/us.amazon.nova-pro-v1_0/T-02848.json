@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02848",
+ "reason": "The narrative describes work related to board governance, which matches the matter 'Board & Governance' for Meridian Therapeutics.",
+ "shortlist": [
+  "6103.003"
+ ],
+ "confidence": 95,
+ "second_cmid": "",
+ "cmid": "6103.003",
+ "usage": {
+  "inputTokens": 199,
+  "outputTokens": 70,
+  "totalTokens": 9896,
+  "cacheReadInputTokens": 9627,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.9,
+ "seconds": 2.1795243329834193
+}

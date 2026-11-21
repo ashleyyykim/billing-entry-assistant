@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03943",
+ "reason": "The narrative describes work on D&O questionnaires and board materials, which aligns with the 'Board & Governance' matter for Aster & Vale.",
+ "shortlist": [
+  "3455.002"
+ ],
+ "confidence": 95,
+ "second_cmid": "",
+ "cmid": "3455.002",
+ "usage": {
+  "inputTokens": 245,
+  "outputTokens": 77,
+  "totalTokens": 9938,
+  "cacheReadInputTokens": 9616,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.964,
+ "seconds": 1.3011468750191852
+}

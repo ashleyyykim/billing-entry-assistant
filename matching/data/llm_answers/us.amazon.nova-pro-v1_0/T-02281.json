@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-02281",
+ "reason": "The narrative mentions 'T/c w/ client re hiring q's; confirmed timeline for signing and revise bylaws amdt' which aligns with the 'General Corporate' matter for Tidewater AI.",
+ "shortlist": [
+  "4590.001",
+  "4590.002",
+  "4590.003"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "4590.001",
+ "usage": {
+  "inputTokens": 206,
+  "outputTokens": 109,
+  "totalTokens": 9942,
+  "cacheReadInputTokens": 9627,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.084,
+ "seconds": 2.4659408750012517
+}

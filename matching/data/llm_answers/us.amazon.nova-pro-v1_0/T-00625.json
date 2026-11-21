@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00625",
+ "reason": "The narrative and past entries align with the matter 7222.002, which is the acquisition of Summit Ridge Software.",
+ "shortlist": [
+  "7222.002"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "7222.002",
+ "usage": {
+  "inputTokens": 214,
+  "outputTokens": 76,
+  "totalTokens": 9920,
+  "cacheReadInputTokens": 9630,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.994,
+ "seconds": 2.5547593749361113
+}

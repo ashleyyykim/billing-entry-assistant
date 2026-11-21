@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-03933",
+ "reason": "The narrative mentions handling option grant paperwork, which aligns with the work done on matter 2201.005. The mention of 'other deal' suggests additional work on another matter, likely 6230.001, given the timekeeper's past hours on these matters.",
+ "shortlist": [
+  "2201.005",
+  "6230.001",
+  "2207.001"
+ ],
+ "confidence": 90,
+ "second_cmid": "6230.001",
+ "cmid": "2201.005",
+ "usage": {
+  "inputTokens": 203,
+  "outputTokens": 140,
+  "totalTokens": 9969,
+  "cacheReadInputTokens": 9626,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.435,
+ "seconds": 3.4174533339682966
+}

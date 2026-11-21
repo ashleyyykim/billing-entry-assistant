@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-00726",
+ "reason": "The narrative 'Meeting with controller re say-on-pay' aligns with the matter 'Board & Governance' for Aster & Vale, which is CMID 3455.002.",
+ "shortlist": [
+  "3455.002",
+  "3455.001",
+  "6103.002"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "3455.002",
+ "usage": {
+  "inputTokens": 194,
+  "outputTokens": 110,
+  "totalTokens": 9935,
+  "cacheReadInputTokens": 9631,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.196,
+ "seconds": 1.4556650000158697
+}

@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-00535",
+ "reason": "The timekeeper's billing history shows significant hours on 5524.002 and 5520.004, and the narrative 'Attend to file' is a generic task that could apply to either.",
+ "shortlist": [
+  "5524.002",
+  "5520.004",
+  "1111.001"
+ ],
+ "confidence": 90,
+ "second_cmid": "5520.004",
+ "cmid": "5524.002",
+ "usage": {
+  "inputTokens": 186,
+  "outputTokens": 128,
+  "totalTokens": 9943,
+  "cacheReadInputTokens": 9629,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.286,
+ "seconds": 7.683048374950886
+}

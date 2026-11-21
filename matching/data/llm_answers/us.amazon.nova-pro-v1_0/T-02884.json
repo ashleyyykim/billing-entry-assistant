@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-02884",
+ "reason": "The narrative mentions a meeting with T. Smith about a fund extension, which aligns with the past entries for 5524.002.",
+ "shortlist": [
+  "5524.002",
+  "5520.004",
+  "1111.001"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "5524.002",
+ "usage": {
+  "inputTokens": 206,
+  "outputTokens": 99,
+  "totalTokens": 9933,
+  "cacheReadInputTokens": 9628,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.128,
+ "seconds": 3.8204147500218824
+}

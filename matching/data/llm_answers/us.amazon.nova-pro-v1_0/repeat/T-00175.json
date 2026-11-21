@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00175",
+ "reason": "The narrative and past entries indicate work related to the 2026 Annual Meeting for Meridian Therapeutics.",
+ "shortlist": [
+  "6103.004"
+ ],
+ "confidence": 95,
+ "second_cmid": "",
+ "cmid": "6103.004",
+ "usage": {
+  "inputTokens": 199,
+  "outputTokens": 69,
+  "totalTokens": 9900,
+  "cacheReadInputTokens": 9632,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.884,
+ "seconds": 4.285811458015814
+}

@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-01125",
+ "reason": "The narrative indicates work on title objections for closing, which aligns with the 'Acquisition of 450 Harbor St.' matter under Pelican Row Holdings.",
+ "shortlist": [
+  "8340.001",
+  "8340.002",
+  "8340.003"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "8340.001",
+ "usage": {
+  "inputTokens": 195,
+  "outputTokens": 100,
+  "totalTokens": 9927,
+  "cacheReadInputTokens": 9632,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.115,
+ "seconds": 7.337758500012569
+}

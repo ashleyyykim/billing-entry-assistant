@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01327",
+ "reason": "The narrative mentions reviewing a 409A valuation report, which is related to executive compensation, and Tidewater AI has a matter for Equity Plan / 409A.",
+ "shortlist": [
+  "4590.005"
+ ],
+ "confidence": 95,
+ "second_cmid": "",
+ "cmid": "4590.005",
+ "usage": {
+  "inputTokens": 206,
+  "outputTokens": 85,
+  "totalTokens": 9921,
+  "cacheReadInputTokens": 9630,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.575,
+ "seconds": 1.683044834062457
+}

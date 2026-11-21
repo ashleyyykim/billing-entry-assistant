@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03507",
+ "reason": "The narrative and past entries indicate work on board matters for Solace Health, which matches CMID 2960.003.",
+ "shortlist": [
+  "2960.003"
+ ],
+ "confidence": 95,
+ "second_cmid": "",
+ "cmid": "2960.003",
+ "usage": {
+  "inputTokens": 192,
+  "outputTokens": 77,
+  "totalTokens": 9901,
+  "cacheReadInputTokens": 9632,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.255,
+ "seconds": 2.487767249927856
+}

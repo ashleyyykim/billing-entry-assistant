@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02379",
+ "reason": "The narrative describes work on disclosure schedules and debt commitment letter, which aligns with the Add-On Acquisition (Project Lark) matter.",
+ "shortlist": [
+  "5520.001"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "5520.001",
+ "usage": {
+  "inputTokens": 224,
+  "outputTokens": 74,
+  "totalTokens": 9922,
+  "cacheReadInputTokens": 9624,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.85,
+ "seconds": 9.51290924998466
+}

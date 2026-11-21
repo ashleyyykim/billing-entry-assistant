@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00516",
+ "reason": "The narrative 'Emails re same' suggests ongoing work on a matter, and the timekeeper's recent hours on 2960.003 indicate it is likely the correct matter.",
+ "shortlist": [
+  "2960.003"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "2960.003",
+ "usage": {
+  "inputTokens": 186,
+  "outputTokens": 89,
+  "totalTokens": 9908,
+  "cacheReadInputTokens": 9633,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.031,
+ "seconds": 22.79582808399573
+}

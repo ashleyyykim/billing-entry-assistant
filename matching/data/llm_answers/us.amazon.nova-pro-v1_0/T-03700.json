@@ -1,0 +1,17 @@
+{
+ "entry_id": "T-03700",
+ "reason": "The matter 'Project Osprey' for Ridgewater Partners is not found in the matter list.",
+ "shortlist": [],
+ "confidence": 0,
+ "second_cmid": "",
+ "cmid": "NONE",
+ "usage": {
+  "inputTokens": 187,
+  "outputTokens": 49,
+  "totalTokens": 9872,
+  "cacheReadInputTokens": 9636,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.726,
+ "seconds": 4.589207916986197
+}

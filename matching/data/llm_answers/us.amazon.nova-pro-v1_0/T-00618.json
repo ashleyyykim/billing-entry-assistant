@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-00618",
+ "reason": "The narrative mentions 'Asterion' which is associated with CMID 7215.003.",
+ "shortlist": [
+  "7215.003",
+  "8340.001",
+  "8012.001"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "7215.003",
+ "usage": {
+  "inputTokens": 236,
+  "outputTokens": 92,
+  "totalTokens": 9952,
+  "cacheReadInputTokens": 9624,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.311,
+ "seconds": 12.188322750036605
+}

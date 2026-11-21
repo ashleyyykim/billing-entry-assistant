@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-03408",
+ "reason": "The narrative does not specify a matter, but the timekeeper's billing history shows significant hours on 3455.002, which is a related matter.",
+ "shortlist": [
+  "3455.002",
+  "1111.001",
+  "6110.002"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "3455.003",
+ "usage": {
+  "inputTokens": 190,
+  "outputTokens": 104,
+  "totalTokens": 9928,
+  "cacheReadInputTokens": 9634,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.2,
+ "seconds": 5.777887542033568
+}

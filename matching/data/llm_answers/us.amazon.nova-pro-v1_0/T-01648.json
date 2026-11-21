@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01648",
+ "reason": "The narrative clearly describes work related to lease matters, which matches the matter type for CMID 8347.002.",
+ "shortlist": [
+  "8347.002"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "8347.002",
+ "usage": {
+  "inputTokens": 208,
+  "outputTokens": 76,
+  "totalTokens": 9917,
+  "cacheReadInputTokens": 9633,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.938,
+ "seconds": 8.069255582988262
+}

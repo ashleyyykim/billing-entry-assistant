@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-03816",
+ "reason": "The narrative mentions 'Summit Ridge signing call' which aligns with the matter 'Acquisition of Summit Ridge Software' under CMID 7222.002.",
+ "shortlist": [
+  "7222.002",
+  "9035.002",
+  "1111.001"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "7222.002",
+ "usage": {
+  "inputTokens": 206,
+  "outputTokens": 103,
+  "totalTokens": 9936,
+  "cacheReadInputTokens": 9627,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.618,
+ "seconds": 4.226507249986753
+}

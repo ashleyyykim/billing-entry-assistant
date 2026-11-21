@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02908",
+ "reason": "The narrative 'Track annual filings' aligns with the General Corporate matter for Bluefin Robotics, and the timekeeper has a significant number of hours logged for this matter.",
+ "shortlist": [
+  "3120.001"
+ ],
+ "confidence": 95,
+ "second_cmid": "",
+ "cmid": "3120.001",
+ "usage": {
+  "inputTokens": 187,
+  "outputTokens": 81,
+  "totalTokens": 9907,
+  "cacheReadInputTokens": 9639,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.951,
+ "seconds": 5.3178261249559
+}

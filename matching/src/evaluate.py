@@ -16,7 +16,7 @@ from fuzzy import match
 from rules import ACTIONS, OUTCOMES, precision_ci, summarize
 
 
-# Gates, set before the final run (notebook 05, section 9). Each: (metric, operator, line, where the line comes from, why).
+# Gates, set before the final run on TEST and the holdout file. Each: (metric, operator, line, where the line comes from, why).
 # Blockers have to pass; tracked lines are reported but don't fail the run.
 GATES = {
     "decided precision, low end of range": ("ci_low", ">=", 0.95, "97% target", "the 97% target, allowing for about 600 entries"),
@@ -49,7 +49,8 @@ def calibration_error(y, p, bins=10):
 
 def parse_metrics(parsed, answers, client_names, min_score=80):
     """Extraction (emails): share with hours, share with a client filled in, and whether that client points to the
-    right one (same fuzzy match as notebook 01). parsed: notebook 00's email rows (client, parsed_hours)."""
+    right one (the same fuzzy match as a typed client). parsed: email rows after parse_email_entries (client,
+    parsed_hours)."""
     df = parsed.merge(answers[["entry_id", "key_true_client", "key_true_cmid"]], on="entry_id")
     top = df["client"].map(lambda c: match(c, client_names, k=1) if not is_blank(c) else [])
     pick = top.map(lambda t: t[0][0] if t and t[0][1] >= min_score else None)
@@ -112,13 +113,16 @@ def action_table(scored):
 
 
 def headline(scored):
-    """The numbers every slice, stress test, and gate uses."""
+    """The numbers every slice, stress test, and gate uses. straight_through counts AUTO_MATCH and NO_MATCH together;
+    auto_share is the part matched with nobody looking, no_match_share the part sent to intake as a new client."""
     s = summarize(scored)
     decided = scored["action"].isin(["AUTO_MATCH", "NO_MATCH"])
     low, high = precision_ci(scored) if decided.sum() >= 2 else (np.nan, np.nan)
     auto = scored["action"] == "AUTO_MATCH"
-    return {"entries": s["entries"], "decided_precision": s["decided_precision"], "ci_low": float(low), "ci_high": float(high),
-            "straight_through": s["straight_through"], "review_share": s["review_share"],
+    return {"entries": s["entries"], "auto_precision": s["auto_precision"], "decided_precision": s["decided_precision"],
+            "ci_low": float(low), "ci_high": float(high),
+            "straight_through": s["straight_through"], "auto_share": s["auto_share"],
+            "no_match_share": s["no_match_share"], "review_share": s["review_share"],
             "matter_accuracy": float(scored["matter_right"].mean()), "action_accuracy": s["action_accuracy"],
             "silent_errors": s["silent_errors"], "silent_rate": s["silent_errors"] / auto.sum() if auto.any() else np.nan,
             "multi_caught": s["multi_caught"], "no_match_precision": s["no_match_precision"],

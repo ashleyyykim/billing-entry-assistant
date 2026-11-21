@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02710",
+ "reason": "The narrative and past entries indicate work on Amendment No. 2 for Northgate Bank, which matches the typed CMID.",
+ "shortlist": [
+  "7215.005"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "7215.005",
+ "usage": {
+  "inputTokens": 201,
+  "outputTokens": 73,
+  "totalTokens": 9910,
+  "cacheReadInputTokens": 9636,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.919,
+ "seconds": 1.108555999933742
+}

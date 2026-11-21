@@ -1,0 +1,20 @@
+{
+ "entry_id": "T-01259",
+ "reason": "The narrative mentions 'equity questions' and 'employment agrmts for Fieldstone', which align with the past entries for 3120.003 and 5531.001.",
+ "shortlist": [
+  "3120.003",
+  "5531.001"
+ ],
+ "confidence": 90,
+ "second_cmid": "5531.001",
+ "cmid": "3120.003",
+ "usage": {
+  "inputTokens": 204,
+  "outputTokens": 114,
+  "totalTokens": 9952,
+  "cacheReadInputTokens": 9634,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.282,
+ "seconds": 1.4953241660259664
+}

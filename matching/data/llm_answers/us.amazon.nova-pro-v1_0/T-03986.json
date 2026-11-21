@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03986",
+ "reason": "The narrative describes work related to board matters, which aligns with the 'Board Matters' matter for Solace Health (CMID 2960.003). The timekeeper's past hours also show significant time spent on this matter.",
+ "shortlist": [
+  "2960.003"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "2960.003",
+ "usage": {
+  "inputTokens": 202,
+  "outputTokens": 99,
+  "totalTokens": 9932,
+  "cacheReadInputTokens": 9631,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.099,
+ "seconds": 2.606278332998045
+}

@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-00591",
+ "reason": "The narrative mentions 'due diligence period' which is commonly associated with acquisition matters. The timekeeper has spent the most hours on 8340.001, which is an acquisition matter.",
+ "shortlist": [
+  "8340.001",
+  "7215.002",
+  "8347.002"
+ ],
+ "confidence": 90,
+ "second_cmid": "7215.002",
+ "cmid": "8340.001",
+ "usage": {
+  "inputTokens": 178,
+  "outputTokens": 118,
+  "totalTokens": 9926,
+  "cacheReadInputTokens": 9630,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.278,
+ "seconds": 4.035795000032522
+}

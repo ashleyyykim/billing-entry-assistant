@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-03103",
+ "reason": "The narrative 'Rework guaranty' aligns with the matter 'Asterion - Amendment No. 2' for Northgate Bank, which involves amendments and guarantees.",
+ "shortlist": [
+  "7215.003",
+  "7215.004",
+  "7215.002"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "7215.005",
+ "usage": {
+  "inputTokens": 186,
+  "outputTokens": 103,
+  "totalTokens": 9928,
+  "cacheReadInputTokens": 9639,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.114,
+ "seconds": 13.63969816698227
+}

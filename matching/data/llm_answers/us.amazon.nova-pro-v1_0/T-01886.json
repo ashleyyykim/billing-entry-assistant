@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01886",
+ "reason": "The narrative describes work related to coordinating LP signature pages and following up on open items, which aligns with the 'General Fund Matters' matter for Juniper Peak Capital.",
+ "shortlist": [
+  "9140.001"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "9140.001",
+ "usage": {
+  "inputTokens": 201,
+  "outputTokens": 80,
+  "totalTokens": 9914,
+  "cacheReadInputTokens": 9633,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.055,
+ "seconds": 6.562330625019968
+}

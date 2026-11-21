@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02851",
+ "reason": "The narrative mentions 'Summit Ridge', which is related to matter 7222.002, and the timekeeper has spent significant hours on this matter.",
+ "shortlist": [
+  "7222.002"
+ ],
+ "confidence": 95,
+ "second_cmid": "",
+ "cmid": "7222.002",
+ "usage": {
+  "inputTokens": 196,
+  "outputTokens": 83,
+  "totalTokens": 9909,
+  "cacheReadInputTokens": 9630,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.451,
+ "seconds": 8.805326167028397
+}

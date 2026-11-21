@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03766",
+ "reason": "The narrative 'Emails' is vague, but the timekeeper's billing history shows significant hours on 6230.001.",
+ "shortlist": [
+  "6230.001"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "6230.001",
+ "usage": {
+  "inputTokens": 185,
+  "outputTokens": 79,
+  "totalTokens": 9902,
+  "cacheReadInputTokens": 9638,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.955,
+ "seconds": 4.585977124981582
+}

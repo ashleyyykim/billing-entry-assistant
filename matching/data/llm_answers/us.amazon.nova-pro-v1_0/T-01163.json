@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-01163",
+ "reason": "The narrative mentions 'FUND V' and 'GP INTEREST', which aligns with the work done on 'Fund Administration' for Cobalt Ridge Capital (5520.004). The timekeeper has previously worked on this matter.",
+ "shortlist": [
+  "5520.004",
+  "9140.001",
+  "2215.001"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "5520.004",
+ "usage": {
+  "inputTokens": 234,
+  "outputTokens": 116,
+  "totalTokens": 9984,
+  "cacheReadInputTokens": 9634,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.863,
+ "seconds": 5.1041704579256475
+}

@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-03491",
+ "reason": "The timekeeper has spent the most hours on matter 3120.001, which involves general corporate work, and organizing good standing requests is a typical task for such matters.",
+ "shortlist": [
+  "3120.001",
+  "5520.005",
+  "5520.002"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "3120.001",
+ "usage": {
+  "inputTokens": 187,
+  "outputTokens": 107,
+  "totalTokens": 9924,
+  "cacheReadInputTokens": 9630,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.396,
+ "seconds": 1.618095749989152
+}

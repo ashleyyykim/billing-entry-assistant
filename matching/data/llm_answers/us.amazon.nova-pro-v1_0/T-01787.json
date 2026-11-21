@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01787",
+ "reason": "The narrative clearly indicates work related to the earnout for Larchmont Sensors, which is part of the Investment - Vantage Bio matter for Cobalt Ridge Partners.",
+ "shortlist": [
+  "5524.003"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "5524.003",
+ "usage": {
+  "inputTokens": 195,
+  "outputTokens": 79,
+  "totalTokens": 9909,
+  "cacheReadInputTokens": 9635,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.984,
+ "seconds": 4.243934749974869
+}

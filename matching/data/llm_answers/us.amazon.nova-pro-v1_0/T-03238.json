@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-03238",
+ "reason": "The narrative mentions equity questions and Delaware franchise tax, which are relevant to matters 9028.001, 9035.002, and 5531.002. However, the client name 'Coppeerlin' does not match any known client, so the entry is likely for a new or unlisted matter.",
+ "shortlist": [
+  "9028.001",
+  "9035.002",
+  "5531.002"
+ ],
+ "confidence": 70,
+ "second_cmid": "",
+ "cmid": "NONE",
+ "usage": {
+  "inputTokens": 232,
+  "outputTokens": 137,
+  "totalTokens": 9993,
+  "cacheReadInputTokens": 9624,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.377,
+ "seconds": 1.7054718330036849
+}

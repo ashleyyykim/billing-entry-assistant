@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-01176",
+ "reason": "The narrative clearly points to the 450 Harbor matter, which matches the past entries for 8340.001.",
+ "shortlist": [
+  "8340.001",
+  "8340.002",
+  "8340.003"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "B340.0o1",
+ "usage": {
+  "inputTokens": 204,
+  "outputTokens": 97,
+  "totalTokens": 9933,
+  "cacheReadInputTokens": 9632,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.06,
+ "seconds": 1.4612410409608856
+}

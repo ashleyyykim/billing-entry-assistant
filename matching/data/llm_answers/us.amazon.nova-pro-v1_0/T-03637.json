@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03637",
+ "reason": "The narrative clearly indicates work on the acquisition of Vireo, which matches the matter 'Sale to Vireo Systems' under CMID 9035.002.",
+ "shortlist": [
+  "9035.002"
+ ],
+ "confidence": 95,
+ "second_cmid": "",
+ "cmid": "9035.002",
+ "usage": {
+  "inputTokens": 194,
+  "outputTokens": 84,
+  "totalTokens": 9910,
+  "cacheReadInputTokens": 9632,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.373,
+ "seconds": 6.360551082994789
+}

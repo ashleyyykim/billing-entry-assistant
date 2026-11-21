@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-01656",
+ "reason": "The narrative mentions work on board composition, which aligns with past entries for matter 3455.002.",
+ "shortlist": [
+  "3455.002",
+  "6103.003",
+  "1111.001"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "3455.002",
+ "usage": {
+  "inputTokens": 217,
+  "outputTokens": 93,
+  "totalTokens": 9932,
+  "cacheReadInputTokens": 9622,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.275,
+ "seconds": 1.3930073749506846
+}

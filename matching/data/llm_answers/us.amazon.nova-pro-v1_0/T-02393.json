@@ -1,0 +1,20 @@
+{
+ "entry_id": "T-02393",
+ "reason": "The narrative mentions correspondence with a broker regarding closing prorations, which aligns with the matter 'Acquisition of 9 Pine St.' for Silverleaf Holdings.",
+ "shortlist": [
+  "8012.001",
+  "8012.002"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "8012.001",
+ "usage": {
+  "inputTokens": 189,
+  "outputTokens": 91,
+  "totalTokens": 9912,
+  "cacheReadInputTokens": 9632,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.4,
+ "seconds": 3.6640964170219377
+}

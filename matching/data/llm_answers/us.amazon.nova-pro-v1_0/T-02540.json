@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-02540",
+ "reason": "The narrative describes work on Fund III Formation, which matches the matter 3388.001 for Quarry Lane Ventures.",
+ "shortlist": [
+  "3388.001",
+  "7222.001",
+  "5524.001"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "3388.001",
+ "usage": {
+  "inputTokens": 218,
+  "outputTokens": 95,
+  "totalTokens": 9935,
+  "cacheReadInputTokens": 9622,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.349,
+ "seconds": 5.819638750050217
+}

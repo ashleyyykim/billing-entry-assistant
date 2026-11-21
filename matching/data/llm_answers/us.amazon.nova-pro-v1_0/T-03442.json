@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-03442",
+ "reason": "The narrative 'Emails re same' is vague, but the timekeeper's billing history shows the most hours were spent on 9140.001.",
+ "shortlist": [
+  "9140.001",
+  "5524.001",
+  "2215.002"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "9140.001",
+ "usage": {
+  "inputTokens": 186,
+  "outputTokens": 104,
+  "totalTokens": 9921,
+  "cacheReadInputTokens": 9631,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.334,
+ "seconds": 1.4677301249466836
+}

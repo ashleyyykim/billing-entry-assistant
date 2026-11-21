@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-00184",
+ "reason": "The narrative describes work on bylaws and foreign qualification filings, which aligns with the past entries for 3120.001.",
+ "shortlist": [
+  "3120.001",
+  "2207.003",
+  "3388.001"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "3120.001",
+ "usage": {
+  "inputTokens": 239,
+  "outputTokens": 96,
+  "totalTokens": 9951,
+  "cacheReadInputTokens": 9616,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.625,
+ "seconds": 1.7331645829835907
+}

@@ -1,0 +1,17 @@
+{
+ "entry_id": "T-03429",
+ "reason": "The typed client 'Lmuen Oak Health' does not match any client in the matter list.",
+ "shortlist": [],
+ "confidence": 0,
+ "second_cmid": "",
+ "cmid": "NONE",
+ "usage": {
+  "inputTokens": 196,
+  "outputTokens": 51,
+  "totalTokens": 9878,
+  "cacheReadInputTokens": 9631,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.824,
+ "seconds": 1.6560456668958068
+}

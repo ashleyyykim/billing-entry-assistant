@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02932",
+ "reason": "The narrative mentions T/c w/ J.Black, which aligns with past entries for 4590.003.",
+ "shortlist": [
+  "4590.003"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "4590.003",
+ "usage": {
+  "inputTokens": 190,
+  "outputTokens": 76,
+  "totalTokens": 9902,
+  "cacheReadInputTokens": 9636,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.992,
+ "seconds": 2.479246167000383
+}

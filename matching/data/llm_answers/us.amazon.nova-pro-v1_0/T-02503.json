@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02503",
+ "reason": "The narrative matches the work done on the investor register updates and follow up on open items for Cobalt Ridge Partners.",
+ "shortlist": [
+  "5524.002"
+ ],
+ "confidence": 95,
+ "second_cmid": "",
+ "cmid": "5524.002",
+ "usage": {
+  "inputTokens": 195,
+  "outputTokens": 70,
+  "totalTokens": 9902,
+  "cacheReadInputTokens": 9637,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.912,
+ "seconds": 13.582850249949843
+}

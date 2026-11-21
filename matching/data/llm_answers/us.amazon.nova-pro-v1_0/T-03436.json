@@ -1,0 +1,22 @@
+{
+ "entry_id": "T-03436",
+ "reason": "The typed CMID 4471.009 does not match any matter in the list.",
+ "shortlist": [
+  "4471.001",
+  "4471.002",
+  "4471.003",
+  "4471.004"
+ ],
+ "confidence": 0,
+ "second_cmid": "",
+ "cmid": "4471.009",
+ "usage": {
+  "inputTokens": 215,
+  "outputTokens": 99,
+  "totalTokens": 9947,
+  "cacheReadInputTokens": 9633,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.338,
+ "seconds": 10.616577374981716
+}

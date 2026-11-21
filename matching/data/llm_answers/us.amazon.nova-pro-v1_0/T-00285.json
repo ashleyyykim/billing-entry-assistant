@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00285",
+ "reason": "The narrative describes work related to the annual meeting, which matches the matter '2026 Annual Meeting' for Meridian Therapeutics (CMID 6103.004). The timekeeper's past hours also show significant time spent on this matter.",
+ "shortlist": [
+  "6103.004"
+ ],
+ "confidence": 95,
+ "second_cmid": "",
+ "cmid": "6103.004",
+ "usage": {
+  "inputTokens": 227,
+  "outputTokens": 102,
+  "totalTokens": 9953,
+  "cacheReadInputTokens": 9624,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.659,
+ "seconds": 1.7276330419117585
+}

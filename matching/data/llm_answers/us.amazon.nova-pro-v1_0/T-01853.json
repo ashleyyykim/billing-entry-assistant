@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01853",
+ "reason": "The narrative mentions a Zoom meeting with V.Kaur, which aligns with the past entries for 7222.001.",
+ "shortlist": [
+  "7222.001"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "7222.001",
+ "usage": {
+  "inputTokens": 191,
+  "outputTokens": 77,
+  "totalTokens": 9903,
+  "cacheReadInputTokens": 9635,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.113,
+ "seconds": 2.497159708989784
+}

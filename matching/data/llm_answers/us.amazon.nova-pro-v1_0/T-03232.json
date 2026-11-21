@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-03232",
+ "reason": "The timekeeper has spent the most hours on 8340.001 and the narrative 'Call re status' is vague but could relate to ongoing matters.",
+ "shortlist": [
+  "8340.001",
+  "8340.002",
+  "7215.002"
+ ],
+ "confidence": 90,
+ "second_cmid": "8340.002",
+ "cmid": "8340.001",
+ "usage": {
+  "inputTokens": 170,
+  "outputTokens": 112,
+  "totalTokens": 9913,
+  "cacheReadInputTokens": 9631,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.168,
+ "seconds": 10.598494415986352
+}

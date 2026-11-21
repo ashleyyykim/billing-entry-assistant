@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01469",
+ "reason": "The narrative 'Attend to matter' is vague but the timekeeper's billing history shows a significant amount of time (124.2 hours) spent on 2960.003, making it the most likely match.",
+ "shortlist": [
+  "2960.003"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "2960.003",
+ "usage": {
+  "inputTokens": 187,
+  "outputTokens": 100,
+  "totalTokens": 9923,
+  "cacheReadInputTokens": 9636,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.153,
+ "seconds": 1.553309915936552
+}

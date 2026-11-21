@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-00378",
+ "reason": "The narrative 'Attend to property acquisition' aligns with the matter 'Acquisition of 450 Harbor St.' under CMID 8340.001, and the timekeeper has spent significant hours on this matter previously.",
+ "shortlist": [
+  "8340.001",
+  "8012.001",
+  "8347.002"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "8340.001",
+ "usage": {
+  "inputTokens": 187,
+  "outputTokens": 120,
+  "totalTokens": 9937,
+  "cacheReadInputTokens": 9630,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.352,
+ "seconds": 1.4254834589082748
+}

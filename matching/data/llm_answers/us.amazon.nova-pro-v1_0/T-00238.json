@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-00238",
+ "reason": "The narrative describes work on annual S/H consent, which aligns with the General Corporate matter for Harborlight Bio.",
+ "shortlist": [
+  "2201.001",
+  "2201.003",
+  "2201.005"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "2201.001",
+ "usage": {
+  "inputTokens": 199,
+  "outputTokens": 91,
+  "totalTokens": 9923,
+  "cacheReadInputTokens": 9633,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.058,
+ "seconds": 1.1339538330212235
+}

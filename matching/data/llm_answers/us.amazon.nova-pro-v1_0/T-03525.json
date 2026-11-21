@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03525",
+ "reason": "The narrative 'attend firm mtg' is vague but the timekeeper has previously worked on 6110.002.",
+ "shortlist": [
+  "6110.002"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "6110.002",
+ "usage": {
+  "inputTokens": 186,
+  "outputTokens": 77,
+  "totalTokens": 9902,
+  "cacheReadInputTokens": 9639,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.999,
+ "seconds": 4.970951708033681
+}

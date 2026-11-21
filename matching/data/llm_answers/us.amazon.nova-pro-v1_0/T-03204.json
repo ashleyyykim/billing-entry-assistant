@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-03204",
+ "reason": "The timekeeper has spent the most hours on 2201.001 and the narrative 'Attend to file' is consistent with general corporate work.",
+ "shortlist": [
+  "2201.001",
+  "9028.003",
+  "2201.003"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "2201.001",
+ "usage": {
+  "inputTokens": 184,
+  "outputTokens": 103,
+  "totalTokens": 9917,
+  "cacheReadInputTokens": 9630,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.398,
+ "seconds": 1.7378242500126362
+}

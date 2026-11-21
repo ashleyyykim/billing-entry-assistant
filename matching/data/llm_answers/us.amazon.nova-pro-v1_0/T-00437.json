@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00437",
+ "reason": "The narrative clearly indicates work on the Quanta Photonics transition services agreement, which is related to the Acquisition of Quanta Photonics matter.",
+ "shortlist": [
+  "5602.003"
+ ],
+ "confidence": 95,
+ "second_cmid": "",
+ "cmid": "5602.003",
+ "usage": {
+  "inputTokens": 236,
+  "outputTokens": 74,
+  "totalTokens": 9942,
+  "cacheReadInputTokens": 9632,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.087,
+ "seconds": 1.1552065829746425
+}

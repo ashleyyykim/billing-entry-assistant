@@ -1,0 +1,17 @@
+{
+ "entry_id": "T-02546",
+ "reason": "The client 'Brightwave Robotics' is not found in the matter list.",
+ "shortlist": [],
+ "confidence": 0,
+ "second_cmid": "",
+ "cmid": "NONE",
+ "usage": {
+  "inputTokens": 187,
+  "outputTokens": 46,
+  "totalTokens": 9864,
+  "cacheReadInputTokens": 9631,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.688,
+ "seconds": 8.653880666010082
+}

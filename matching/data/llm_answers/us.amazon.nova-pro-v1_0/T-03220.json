@@ -1,0 +1,20 @@
+{
+ "entry_id": "T-03220",
+ "reason": "The narrative mentions drafting an employee offer letter, which aligns with past entries for 3120.001. The side letter for board composition is likely related to 2207.003.",
+ "shortlist": [
+  "3120.001",
+  "2207.003"
+ ],
+ "confidence": 90,
+ "second_cmid": "2207.003",
+ "cmid": "3120.001",
+ "usage": {
+  "inputTokens": 219,
+  "outputTokens": 112,
+  "totalTokens": 9959,
+  "cacheReadInputTokens": 9628,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.162,
+ "seconds": 7.220411833026446
+}

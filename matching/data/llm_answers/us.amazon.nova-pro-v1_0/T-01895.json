@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01895",
+ "reason": "The narrative clearly indicates work on Fund I transfer documents, which aligns with the typed matter and past entries for 2215.001.",
+ "shortlist": [
+  "2215.001"
+ ],
+ "confidence": 95,
+ "second_cmid": "",
+ "cmid": "2215.001",
+ "usage": {
+  "inputTokens": 206,
+  "outputTokens": 79,
+  "totalTokens": 9925,
+  "cacheReadInputTokens": 9640,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.995,
+ "seconds": 4.796429208945483
+}

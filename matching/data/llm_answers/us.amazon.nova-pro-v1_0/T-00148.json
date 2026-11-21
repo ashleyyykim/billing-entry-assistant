@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-00148",
+ "reason": "The narrative 'TCW S. Cole' and the timekeeper's billing history indicate significant time spent on matter 6103.004.",
+ "shortlist": [
+  "6103.004",
+  "5602.001",
+  "2960.003"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "6103.004",
+ "usage": {
+  "inputTokens": 185,
+  "outputTokens": 101,
+  "totalTokens": 9918,
+  "cacheReadInputTokens": 9632,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.157,
+ "seconds": 1.231353042065166
+}

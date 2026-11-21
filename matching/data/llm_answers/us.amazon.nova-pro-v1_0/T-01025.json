@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01025",
+ "reason": "The narrative clearly describes work on the Asterion compliance certificate and commitment letter, which aligns with the typed CMID and matter.",
+ "shortlist": [
+  "7215.003"
+ ],
+ "confidence": 95,
+ "second_cmid": "",
+ "cmid": "7215.003",
+ "usage": {
+  "inputTokens": 220,
+  "outputTokens": 73,
+  "totalTokens": 9927,
+  "cacheReadInputTokens": 9634,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.942,
+ "seconds": 2.9858444170095026
+}

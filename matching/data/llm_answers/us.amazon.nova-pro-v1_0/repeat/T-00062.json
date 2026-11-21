@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-00062",
+ "reason": "The narrative 'Attend practice group meeting' aligns with past entries for 1111.001, which involves administrative tasks.",
+ "shortlist": [
+  "1111.001",
+  "1111.002",
+  "1111.003"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "1111.001",
+ "usage": {
+  "inputTokens": 167,
+  "outputTokens": 98,
+  "totalTokens": 9898,
+  "cacheReadInputTokens": 9633,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.361,
+ "seconds": 11.75114249996841
+}

@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01003",
+ "reason": "The narrative clearly indicates work on entity maintenance and revising good standing certificates, which aligns with the General Corporate matter for Harborlight Bio.",
+ "shortlist": [
+  "2201.001"
+ ],
+ "confidence": 95,
+ "second_cmid": "",
+ "cmid": "2201.001",
+ "usage": {
+  "inputTokens": 204,
+  "outputTokens": 74,
+  "totalTokens": 9912,
+  "cacheReadInputTokens": 9634,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.92,
+ "seconds": 2.9157985830679536
+}

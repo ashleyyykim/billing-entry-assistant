@@ -1,0 +1,20 @@
+{
+ "entry_id": "T-01693",
+ "reason": "The narrative 'Review documents' is vague, but the timekeeper's past hours suggest a strong association with 8347.001 and 8347.002.",
+ "shortlist": [
+  "8347.001",
+  "8347.002"
+ ],
+ "confidence": 90,
+ "second_cmid": "8347.002",
+ "cmid": "8347.001",
+ "usage": {
+  "inputTokens": 173,
+  "outputTokens": 109,
+  "totalTokens": 9916,
+  "cacheReadInputTokens": 9634,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.347,
+ "seconds": 4.954099792055786
+}

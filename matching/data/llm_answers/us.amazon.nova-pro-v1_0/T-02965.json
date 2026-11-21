@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02965",
+ "reason": "The narrative mentions audit committee matters, which aligns with the past entries for 2960.003 (Board Matters).",
+ "shortlist": [
+  "2960.003"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "2960.003",
+ "usage": {
+  "inputTokens": 194,
+  "outputTokens": 76,
+  "totalTokens": 9900,
+  "cacheReadInputTokens": 9630,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.992,
+ "seconds": 1.3313911249861121
+}

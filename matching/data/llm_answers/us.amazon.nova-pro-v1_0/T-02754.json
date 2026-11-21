@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02754",
+ "reason": "The narrative 'zoom w/ W.Hale' and the client 'CRC' match the matter 'Add-On Acquisition (Project Lark)' for Cobalt Ridge Capital.",
+ "shortlist": [
+  "5520.003"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "5520.003",
+ "usage": {
+  "inputTokens": 185,
+  "outputTokens": 82,
+  "totalTokens": 9897,
+  "cacheReadInputTokens": 9630,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.126,
+ "seconds": 1.2510923750232905
+}

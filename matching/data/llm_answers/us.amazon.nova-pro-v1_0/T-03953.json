@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-03953",
+ "reason": "The narrative describes work related to the acquisition of Larkspur Controls, which aligns with the 'Add-On Acquisition (Project Lark)' matter for Cobalt Ridge Capital.",
+ "shortlist": [
+  "5520.001",
+  "5520.003",
+  "5520.005"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "5520.001",
+ "usage": {
+  "inputTokens": 210,
+  "outputTokens": 100,
+  "totalTokens": 9943,
+  "cacheReadInputTokens": 9633,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.471,
+ "seconds": 1.5686552909901366
+}

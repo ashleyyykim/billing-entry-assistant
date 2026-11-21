@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-03802",
+ "reason": "The narrative mentions 'Asterion', which is related to matter 7215.003, and the timekeeper has spent significant hours on this matter.",
+ "shortlist": [
+  "7215.003",
+  "7215.004",
+  "8012.001"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "7215.003",
+ "usage": {
+  "inputTokens": 208,
+  "outputTokens": 104,
+  "totalTokens": 9941,
+  "cacheReadInputTokens": 9629,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.389,
+ "seconds": 1.9058646670309827
+}

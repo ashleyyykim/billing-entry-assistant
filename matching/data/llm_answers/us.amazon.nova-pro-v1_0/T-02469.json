@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02469",
+ "reason": "The narrative and past entries align with the matter 9028.003, which involves executive compensation and 409A matters.",
+ "shortlist": [
+  "9028.003"
+ ],
+ "confidence": 95,
+ "second_cmid": "",
+ "cmid": "9028.003",
+ "usage": {
+  "inputTokens": 218,
+  "outputTokens": 79,
+  "totalTokens": 9931,
+  "cacheReadInputTokens": 9634,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.924,
+ "seconds": 9.56333054206334
+}

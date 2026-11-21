@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02834",
+ "reason": "The narrative 'UPDATE TIME ENTRIES FOR WEEK' matches past entries for 1111.001 and the timekeeper has billed hours to this matter previously.",
+ "shortlist": [
+  "1111.001"
+ ],
+ "confidence": 95,
+ "second_cmid": "",
+ "cmid": "1111.001",
+ "usage": {
+  "inputTokens": 186,
+  "outputTokens": 83,
+  "totalTokens": 9901,
+  "cacheReadInputTokens": 9632,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.97,
+ "seconds": 1.2018496660748497
+}

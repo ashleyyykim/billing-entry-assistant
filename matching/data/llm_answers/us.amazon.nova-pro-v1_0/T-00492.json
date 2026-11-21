@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00492",
+ "reason": "The narrative 'attend to corporate matters' aligns with the General Corporate matter for Halvorsen Industrial, and the timekeeper has previously worked on this matter.",
+ "shortlist": [
+  "3012.001"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "3012.001",
+ "usage": {
+  "inputTokens": 183,
+  "outputTokens": 79,
+  "totalTokens": 9896,
+  "cacheReadInputTokens": 9634,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.788,
+ "seconds": 4.733300207997672
+}

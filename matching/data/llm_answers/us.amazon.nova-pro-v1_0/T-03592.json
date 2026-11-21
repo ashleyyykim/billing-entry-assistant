@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03592",
+ "reason": "The narrative clearly indicates work on the Asterion intercreditor agreement, which matches the matter 7215.003.",
+ "shortlist": [
+  "7215.003"
+ ],
+ "confidence": 95,
+ "second_cmid": "",
+ "cmid": "7215.003",
+ "usage": {
+  "inputTokens": 195,
+  "outputTokens": 76,
+  "totalTokens": 9907,
+  "cacheReadInputTokens": 9636,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.874,
+ "seconds": 2.4001445829635486
+}

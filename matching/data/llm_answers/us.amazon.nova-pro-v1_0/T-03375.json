@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03375",
+ "reason": "The narrative mentions drafting an RSU agreement related to 409A timing, which aligns with the matter 'Exec Comp / 409A' for Lanternfish Software.",
+ "shortlist": [
+  "9028.003"
+ ],
+ "confidence": 95,
+ "second_cmid": "",
+ "cmid": "9028.003",
+ "usage": {
+  "inputTokens": 203,
+  "outputTokens": 85,
+  "totalTokens": 9920,
+  "cacheReadInputTokens": 9632,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.796,
+ "seconds": 5.66131450003013
+}

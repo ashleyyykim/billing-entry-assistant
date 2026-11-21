@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-01567",
+ "reason": "The narrative describes work related to fund administration, which aligns with the 'General Fund Matters' matter for Cobalt Rock Partners.",
+ "shortlist": [
+  "5524.002",
+  "5520.004",
+  "1111.001"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "5524.002",
+ "usage": {
+  "inputTokens": 218,
+  "outputTokens": 92,
+  "totalTokens": 9934,
+  "cacheReadInputTokens": 9624,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.224,
+ "seconds": 18.940695749945007
+}

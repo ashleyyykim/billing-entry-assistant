@@ -1,0 +1,17 @@
+{
+ "entry_id": "T-03017",
+ "reason": "The typed CMID 3879.001 does not match any matter in the list.",
+ "shortlist": [],
+ "confidence": 0,
+ "second_cmid": "",
+ "cmid": "NONE",
+ "usage": {
+  "inputTokens": 215,
+  "outputTokens": 53,
+  "totalTokens": 9897,
+  "cacheReadInputTokens": 9629,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.782,
+ "seconds": 1.6489523749332875
+}

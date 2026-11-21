@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-03683",
+ "reason": "The narrative mentions 'Series A Financing' and the timekeeper has previously worked on matter 2201.003, which is a Series A Financing for Harborlight Bio.",
+ "shortlist": [
+  "2201.003",
+  "2960.002",
+  "5750.002"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "2201.003",
+ "usage": {
+  "inputTokens": 195,
+  "outputTokens": 106,
+  "totalTokens": 9931,
+  "cacheReadInputTokens": 9630,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.263,
+ "seconds": 3.821005207952112
+}

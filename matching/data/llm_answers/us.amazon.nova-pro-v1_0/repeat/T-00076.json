@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00076",
+ "reason": "The narrative clearly indicates work on a trading policy, which aligns with the ATM Program matter for Meridian Therapeutics.",
+ "shortlist": [
+  "6103.005"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "6103.005",
+ "usage": {
+  "inputTokens": 199,
+  "outputTokens": 69,
+  "totalTokens": 9902,
+  "cacheReadInputTokens": 9634,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.908,
+ "seconds": 1.793676249915734
+}

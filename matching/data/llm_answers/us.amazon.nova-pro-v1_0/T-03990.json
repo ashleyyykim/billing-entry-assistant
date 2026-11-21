@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03990",
+ "reason": "The narrative mentions reviewing an equity incentive plan, which aligns with the matter 'Exec Comp / 409A' for Lanternfish Software.",
+ "shortlist": [
+  "9028.003"
+ ],
+ "confidence": 95,
+ "second_cmid": "",
+ "cmid": "9028.003",
+ "usage": {
+  "inputTokens": 197,
+  "outputTokens": 77,
+  "totalTokens": 9906,
+  "cacheReadInputTokens": 9632,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.006,
+ "seconds": 2.467166875023395
+}

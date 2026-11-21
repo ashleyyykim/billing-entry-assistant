@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03313",
+ "reason": "The narrative 'Attend to good standing requests' matches past entries for Bluefin Robotics' General Corporate matter (3120.001) and the timekeeper has significant hours logged for this matter.",
+ "shortlist": [
+  "3120.001"
+ ],
+ "confidence": 95,
+ "second_cmid": "",
+ "cmid": "3120.001",
+ "usage": {
+  "inputTokens": 186,
+  "outputTokens": 92,
+  "totalTokens": 9911,
+  "cacheReadInputTokens": 9633,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.244,
+ "seconds": 6.9233967079781
+}

@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03924",
+ "reason": "The narrative indicates a telephone conference with M. Carter re rent roll, which is related to lease matters. The timekeeper's past hours show significant time spent on 8340.002, which is a lease matter for Pelican Row Holdings.",
+ "shortlist": [
+  "8340.002"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "8340.002",
+ "usage": {
+  "inputTokens": 180,
+  "outputTokens": 101,
+  "totalTokens": 9909,
+  "cacheReadInputTokens": 9628,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.056,
+ "seconds": 3.2283077919855714
+}

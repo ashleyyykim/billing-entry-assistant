@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03510",
+ "reason": "The narrative and past entries indicate work on Board Matters for Solace Health.",
+ "shortlist": [
+  "2960.003"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "2960.003",
+ "usage": {
+  "inputTokens": 198,
+  "outputTokens": 63,
+  "totalTokens": 9896,
+  "cacheReadInputTokens": 9635,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.889,
+ "seconds": 3.2100269170477986
+}

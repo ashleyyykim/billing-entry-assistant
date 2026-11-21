@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00615",
+ "reason": "The narrative 'Start drafting estoppels' matches the matter 'Acquisition of 450 Harbor St.' under CMID 8340.001, and the timekeeper has spent a significant amount of time on this matter previously.",
+ "shortlist": [
+  "8340.001"
+ ],
+ "confidence": 95,
+ "second_cmid": "",
+ "cmid": "8340.001",
+ "usage": {
+  "inputTokens": 185,
+  "outputTokens": 101,
+  "totalTokens": 9926,
+  "cacheReadInputTokens": 9640,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.262,
+ "seconds": 2.361253166105598
+}

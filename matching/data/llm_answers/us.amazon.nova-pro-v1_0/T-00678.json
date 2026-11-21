@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00678",
+ "reason": "The narrative 'Complete conflicts training' aligns with the 'Admin' matter for the Firm.",
+ "shortlist": [
+  "1111.001"
+ ],
+ "confidence": 95,
+ "second_cmid": "",
+ "cmid": "1111.001",
+ "usage": {
+  "inputTokens": 182,
+  "outputTokens": 66,
+  "totalTokens": 9881,
+  "cacheReadInputTokens": 9633,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.872,
+ "seconds": 3.4254280830500647
+}

@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-01632",
+ "reason": "The narrative 'Start drafting Form S-8; flag open issues.' matches the past entries for 9028.003, and the timekeeper has spent the most hours on this matter.",
+ "shortlist": [
+  "9028.003",
+  "6230.001",
+  "3120.003"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "9028.003",
+ "usage": {
+  "inputTokens": 192,
+  "outputTokens": 111,
+  "totalTokens": 9934,
+  "cacheReadInputTokens": 9631,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.341,
+ "seconds": 2.334433582960628
+}

@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03459",
+ "reason": "The narrative and past entries align with the General Corporate matter for Copperline Networks.",
+ "shortlist": [
+  "7633.001"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "7633.001",
+ "usage": {
+  "inputTokens": 193,
+  "outputTokens": 64,
+  "totalTokens": 9891,
+  "cacheReadInputTokens": 9634,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.879,
+ "seconds": 1.5740345000522211
+}

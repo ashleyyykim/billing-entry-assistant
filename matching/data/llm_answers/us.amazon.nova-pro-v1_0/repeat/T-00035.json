@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00035",
+ "reason": "The narrative 'Attend to filing' aligns with the matter '2026 Annual Meeting' and the timekeeper has spent a significant amount of time on this matter previously.",
+ "shortlist": [
+  "6103.004"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "6103.004",
+ "usage": {
+  "inputTokens": 187,
+  "outputTokens": 85,
+  "totalTokens": 9908,
+  "cacheReadInputTokens": 9636,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.208,
+ "seconds": 3.6863297909731045
+}

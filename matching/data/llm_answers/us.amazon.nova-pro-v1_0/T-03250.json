@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03250",
+ "reason": "The narrative describes managing lock-up agreement signatures and updating the closing checklist, which aligns with the matter 'Convertible Notes Offering' for Ironwood Semiconductor.",
+ "shortlist": [
+  "5602.002"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "5602.002",
+ "usage": {
+  "inputTokens": 196,
+  "outputTokens": 79,
+  "totalTokens": 9907,
+  "cacheReadInputTokens": 9632,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.939,
+ "seconds": 1.849551625084132
+}

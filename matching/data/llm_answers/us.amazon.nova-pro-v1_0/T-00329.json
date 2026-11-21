@@ -1,0 +1,20 @@
+{
+ "entry_id": "T-00329",
+ "reason": "The narrative mentions 'Market St' which is associated with Pelican Bay Holdings and their acquisition of 1200 Market St.",
+ "shortlist": [
+  "8347.001",
+  "8347.002"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "8347.001",
+ "usage": {
+  "inputTokens": 198,
+  "outputTokens": 84,
+  "totalTokens": 9911,
+  "cacheReadInputTokens": 9629,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.047,
+ "seconds": 1.1155720830429345
+}

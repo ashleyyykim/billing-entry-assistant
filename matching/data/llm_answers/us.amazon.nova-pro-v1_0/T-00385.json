@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-00385",
+ "reason": "The narrative describes work on board and governance matters, which aligns with the 'Board & Governance' matter for Aster & Vale (3455.002). The timekeeper's billing history also shows significant hours spent on this matter.",
+ "shortlist": [
+  "3455.002",
+  "6103.003",
+  "1111.001"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "3455.002",
+ "usage": {
+  "inputTokens": 253,
+  "outputTokens": 119,
+  "totalTokens": 9993,
+  "cacheReadInputTokens": 9621,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.328,
+ "seconds": 1.3933480000123382
+}

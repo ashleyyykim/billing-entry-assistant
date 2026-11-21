@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00856",
+ "reason": "The narrative and past entries indicate work related to executive compensation and early exercise, which aligns with the matter 9028.003.",
+ "shortlist": [
+  "9028.003"
+ ],
+ "confidence": 95,
+ "second_cmid": "",
+ "cmid": "9028.003",
+ "usage": {
+  "inputTokens": 194,
+  "outputTokens": 78,
+  "totalTokens": 9908,
+  "cacheReadInputTokens": 9636,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.154,
+ "seconds": 43.248193499981426
+}

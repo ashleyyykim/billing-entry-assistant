@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03636",
+ "reason": "The narrative 'Work on documents' is vague but the typed CMID, client, and matter match the matter list and the timekeeper has worked on a related matter (6110.002) in the past.",
+ "shortlist": [
+  "6110.001"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "6110.001",
+ "usage": {
+  "inputTokens": 186,
+  "outputTokens": 95,
+  "totalTokens": 9917,
+  "cacheReadInputTokens": 9636,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.057,
+ "seconds": 4.195160249946639
+}

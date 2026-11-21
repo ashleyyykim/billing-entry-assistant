@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-01398",
+ "reason": "The narrative mentions correspondence with C. Morgan, who is associated with Aster and Vale, and the timekeeper has spent significant hours on matter 3455.002.",
+ "shortlist": [
+  "3455.002",
+  "3455.001",
+  "3455.003"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "3455.002",
+ "usage": {
+  "inputTokens": 192,
+  "outputTokens": 106,
+  "totalTokens": 9927,
+  "cacheReadInputTokens": 9629,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.182,
+ "seconds": 1.6895354998996481
+}

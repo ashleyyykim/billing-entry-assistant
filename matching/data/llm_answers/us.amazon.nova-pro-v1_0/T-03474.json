@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-03474",
+ "reason": "The narrative 'Organize closing documents and follow up regarding same' aligns with the activities typically associated with closing documents, which is a common task in the context of acquisitions. The timekeeper's past work on similar matters (e.g., 5602.003, 3012.004) supports this assignment.",
+ "shortlist": [
+  "5520.001",
+  "5520.003",
+  "5520.004"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "5520.001",
+ "usage": {
+  "inputTokens": 192,
+  "outputTokens": 141,
+  "totalTokens": 9960,
+  "cacheReadInputTokens": 9627,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.482,
+ "seconds": 6.8823198329191655
+}

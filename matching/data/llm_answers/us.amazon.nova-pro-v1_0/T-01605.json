@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01605",
+ "reason": "The narrative 'CONF W/ H. QUAN.' does not provide specific details about the matter, but the timekeeper's billing history shows a significant amount of time (162.5 hours) spent on 9140.001, indicating a high likelihood that this entry belongs to that matter.",
+ "shortlist": [
+  "9140.001"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "9140.001",
+ "usage": {
+  "inputTokens": 191,
+  "outputTokens": 115,
+  "totalTokens": 9943,
+  "cacheReadInputTokens": 9637,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.195,
+ "seconds": 2.2792045410024
+}

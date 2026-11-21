@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02278",
+ "reason": "The narrative clearly indicates work on Amendment No. 2, which is related to the Asterion guarantee, matching the matter 7215.005.",
+ "shortlist": [
+  "7215.005"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "7215.005",
+ "usage": {
+  "inputTokens": 228,
+  "outputTokens": 82,
+  "totalTokens": 9939,
+  "cacheReadInputTokens": 9629,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.019,
+ "seconds": 2.468643083004281
+}

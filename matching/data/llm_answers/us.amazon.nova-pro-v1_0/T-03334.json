@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-03334",
+ "reason": "C. Abbott is associated with Ridgewater Partners, and the call likely pertains to General Fund Matters.",
+ "shortlist": [
+  "4471.001",
+  "4471.002",
+  "4471.003"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "4471.001",
+ "usage": {
+  "inputTokens": 188,
+  "outputTokens": 88,
+  "totalTokens": 9906,
+  "cacheReadInputTokens": 9630,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.06,
+ "seconds": 6.307084208005108
+}

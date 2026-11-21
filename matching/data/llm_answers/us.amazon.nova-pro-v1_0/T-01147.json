@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01147",
+ "reason": "The narrative clearly indicates work related to Cobalt Ridge Partners, and the matter aligns with the timekeeper's billing history.",
+ "shortlist": [
+  "5524.002"
+ ],
+ "confidence": 95,
+ "second_cmid": "",
+ "cmid": "5524.002",
+ "usage": {
+  "inputTokens": 206,
+  "outputTokens": 72,
+  "totalTokens": 9909,
+  "cacheReadInputTokens": 9631,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.118,
+ "seconds": 5.878738750005141
+}

@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03452",
+ "reason": "The narrative 'Attend to board matters' matches the matter 'Board Matters' for Solace Health, and the timekeeper has previously worked on this matter.",
+ "shortlist": [
+  "2960.003"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "2960.003",
+ "usage": {
+  "inputTokens": 185,
+  "outputTokens": 81,
+  "totalTokens": 9899,
+  "cacheReadInputTokens": 9633,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.303,
+ "seconds": 1.7196985420305282
+}

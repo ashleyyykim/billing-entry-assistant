@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-01706",
+ "reason": "The narrative clearly indicates work related to the title objection letter for 450 Harbor, which matches the matter 'Acquisition of 450 Harbor St.' under CMID 8340.001.",
+ "shortlist": [
+  "8340.001",
+  "8340.002",
+  "8340.003"
+ ],
+ "confidence": 95,
+ "second_cmid": "",
+ "cmid": "8340.001",
+ "usage": {
+  "inputTokens": 251,
+  "outputTokens": 115,
+  "totalTokens": 9988,
+  "cacheReadInputTokens": 9622,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.487,
+ "seconds": 4.275685416068882
+}

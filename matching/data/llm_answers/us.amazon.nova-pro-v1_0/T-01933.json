@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-01933",
+ "reason": "The narrative 'Revw documents' is vague, but the timekeeper's billing history shows significant hours on 8340.001, 7215.003, and 8012.001, making them likely candidates.",
+ "shortlist": [
+  "8340.001",
+  "7215.003",
+  "8012.001"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "7215.004",
+ "usage": {
+  "inputTokens": 186,
+  "outputTokens": 126,
+  "totalTokens": 9949,
+  "cacheReadInputTokens": 9637,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.282,
+ "seconds": 6.575787957990542
+}

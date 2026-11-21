@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-02082",
+ "reason": "The narrative describes work on a zoning report for the acquisition of 450 Harbor St., which matches the matter 'Acquisition of 450 Harbor St.' under Pelican Row Holdings.",
+ "shortlist": [
+  "8340.001",
+  "8340.002",
+  "8340.003"
+ ],
+ "confidence": 95,
+ "second_cmid": "",
+ "cmid": "8340.001",
+ "usage": {
+  "inputTokens": 184,
+  "outputTokens": 108,
+  "totalTokens": 9922,
+  "cacheReadInputTokens": 9630,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.578,
+ "seconds": 3.0858401670120656
+}

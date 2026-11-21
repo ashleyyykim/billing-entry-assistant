@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-01418",
+ "reason": "The timekeeper has spent the most hours on 5524.002 and the narrative 'Attend to file' is a generic task that could apply to any matter.",
+ "shortlist": [
+  "5524.002",
+  "5520.004",
+  "1111.001"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "5524.002",
+ "usage": {
+  "inputTokens": 185,
+  "outputTokens": 107,
+  "totalTokens": 9923,
+  "cacheReadInputTokens": 9631,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.541,
+ "seconds": 2.0839008330367506
+}

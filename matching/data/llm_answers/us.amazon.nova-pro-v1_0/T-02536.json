@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02536",
+ "reason": "The narrative clearly indicates work related to entity maintenance for Lanternfish Software, which matches the matter 9028.001.",
+ "shortlist": [
+  "9028.001"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "9028.001",
+ "usage": {
+  "inputTokens": 199,
+  "outputTokens": 76,
+  "totalTokens": 9909,
+  "cacheReadInputTokens": 9634,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.915,
+ "seconds": 1.352057500043884
+}

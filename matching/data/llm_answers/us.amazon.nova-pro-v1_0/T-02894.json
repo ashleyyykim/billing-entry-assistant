@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-02894",
+ "reason": "The narrative clearly points to the Credit Facility - Asterion Holdings matter, and the timekeeper has previously worked on this matter.",
+ "shortlist": [
+  "7215.003",
+  "7215.004",
+  "7215.005"
+ ],
+ "confidence": 95,
+ "second_cmid": "",
+ "cmid": "7215.003",
+ "usage": {
+  "inputTokens": 222,
+  "outputTokens": 93,
+  "totalTokens": 9938,
+  "cacheReadInputTokens": 9623,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.323,
+ "seconds": 4.018878666916862
+}

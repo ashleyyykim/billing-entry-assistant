@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-02211",
+ "reason": "The narrative 'Conf w/ team' is vague, but the timekeeper's billing history shows significant hours on 3455.001 (SEC Reporting) for Aster & Vale.",
+ "shortlist": [
+  "3455.001",
+  "3455.002",
+  "6103.002"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "3455.001",
+ "usage": {
+  "inputTokens": 183,
+  "outputTokens": 110,
+  "totalTokens": 9928,
+  "cacheReadInputTokens": 9635,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.507,
+ "seconds": 7.842281166929752
+}

@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00680",
+ "reason": "The narrative mentions '12 Mission' which is part of the matter 'Lease - 12 Mission Ave.' for Pelican Row Holdings.",
+ "shortlist": [
+  "8340.002"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "8340.002",
+ "usage": {
+  "inputTokens": 228,
+  "outputTokens": 77,
+  "totalTokens": 9929,
+  "cacheReadInputTokens": 9624,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.986,
+ "seconds": 1.9023235000204295
+}

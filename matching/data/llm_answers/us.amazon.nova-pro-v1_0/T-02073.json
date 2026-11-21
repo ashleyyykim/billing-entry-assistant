@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02073",
+ "reason": "The narrative and the typed matter match the Series A Financing matter for Copperline Networks.",
+ "shortlist": [
+  "7633.002"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "7633.002",
+ "usage": {
+  "inputTokens": 202,
+  "outputTokens": 65,
+  "totalTokens": 9894,
+  "cacheReadInputTokens": 9627,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.841,
+ "seconds": 4.701026708004065
+}

@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00574",
+ "reason": "The narrative and past entries align with the matter 'General Fund Matters' for Harbor Light Partners.",
+ "shortlist": [
+  "2215.001"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "2215.001",
+ "usage": {
+  "inputTokens": 206,
+  "outputTokens": 67,
+  "totalTokens": 9910,
+  "cacheReadInputTokens": 9637,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.865,
+ "seconds": 0.9681300829397514
+}

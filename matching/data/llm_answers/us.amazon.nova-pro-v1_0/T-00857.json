@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00857",
+ "reason": "The narrative describes work on corporate matters, which aligns with the General Corporate matter for Ember Grid Energy.",
+ "shortlist": [
+  "6230.001"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "6230.001",
+ "usage": {
+  "inputTokens": 212,
+  "outputTokens": 68,
+  "totalTokens": 9906,
+  "cacheReadInputTokens": 9626,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.118,
+ "seconds": 8.065953625016846
+}

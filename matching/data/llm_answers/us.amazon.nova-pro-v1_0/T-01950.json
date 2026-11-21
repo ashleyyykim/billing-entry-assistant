@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-01950",
+ "reason": "The narrative mentions revisions to a closing checklist, which is a task typically associated with the acquisition of Summit Ridge Software, a matter under Northgate Capital Partners.",
+ "shortlist": [
+  "7222.002",
+  "9035.002",
+  "1111.001"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "7222.002",
+ "usage": {
+  "inputTokens": 203,
+  "outputTokens": 99,
+  "totalTokens": 9928,
+  "cacheReadInputTokens": 9626,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.07,
+ "seconds": 1.6051717909285799
+}

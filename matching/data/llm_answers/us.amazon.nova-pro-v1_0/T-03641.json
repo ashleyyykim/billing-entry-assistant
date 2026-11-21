@@ -1,0 +1,20 @@
+{
+ "entry_id": "T-03641",
+ "reason": "The narrative mentions work on both Cobalt Ridge Capital and Ember Grid Energy, but the majority of the work is for Cobalt Ridge Capital.",
+ "shortlist": [
+  "5520.001",
+  "6230.001"
+ ],
+ "confidence": 80,
+ "second_cmid": "6230.001",
+ "cmid": "5520.001",
+ "usage": {
+  "inputTokens": 223,
+  "outputTokens": 93,
+  "totalTokens": 9945,
+  "cacheReadInputTokens": 9629,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.058,
+ "seconds": 1.7242204579524696
+}

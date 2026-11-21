@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-00540",
+ "reason": "The narrative mentions LPAC approval and transfer of GP interest, which are related to fund matters. The timekeeper's billing history shows significant hours on 5524.002 (Fund II Formation) and 5520.004 (Fund Administration).",
+ "shortlist": [
+  "5524.002",
+  "5520.004",
+  "1111.001"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "5524.002",
+ "usage": {
+  "inputTokens": 233,
+  "outputTokens": 127,
+  "totalTokens": 9983,
+  "cacheReadInputTokens": 9623,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.262,
+ "seconds": 1.3749135000398383
+}

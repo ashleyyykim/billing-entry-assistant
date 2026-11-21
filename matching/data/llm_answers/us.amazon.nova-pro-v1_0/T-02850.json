@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02850",
+ "reason": "The narrative and past entries indicate work related to the acquisition of Summit Ridge, which matches the matter 7222.002.",
+ "shortlist": [
+  "7222.002"
+ ],
+ "confidence": 95,
+ "second_cmid": "",
+ "cmid": "7222.002",
+ "usage": {
+  "inputTokens": 224,
+  "outputTokens": 77,
+  "totalTokens": 9925,
+  "cacheReadInputTokens": 9624,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.935,
+ "seconds": 3.752298834035173
+}

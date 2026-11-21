@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03138",
+ "reason": "The narrative clearly indicates work related to indemnification for Halvorsen Industrial, which matches the matter 'Acquisition of Corvid Valves'.",
+ "shortlist": [
+  "3012.005"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "3012.005",
+ "usage": {
+  "inputTokens": 194,
+  "outputTokens": 76,
+  "totalTokens": 9906,
+  "cacheReadInputTokens": 9636,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.86,
+ "seconds": 8.013647416955791
+}

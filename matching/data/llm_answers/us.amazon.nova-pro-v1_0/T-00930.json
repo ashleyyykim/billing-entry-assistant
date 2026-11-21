@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00930",
+ "reason": "The narrative clearly indicates work on the Calder Pharma matter, which is associated with Harborline Biosciences under CMID 2207.003.",
+ "shortlist": [
+  "2207.003"
+ ],
+ "confidence": 95,
+ "second_cmid": "",
+ "cmid": "2207.003",
+ "usage": {
+  "inputTokens": 194,
+  "outputTokens": 79,
+  "totalTokens": 9902,
+  "cacheReadInputTokens": 9629,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.2,
+ "seconds": 4.222026459057815
+}

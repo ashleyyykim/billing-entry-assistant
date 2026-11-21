@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-01585",
+ "reason": "The narrative mentions 'Project Marlin', which is likely related to Copperline Networks' General Corporate matter.",
+ "shortlist": [
+  "7633.001",
+  "7633.002",
+  "7633.003"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "7633.001",
+ "usage": {
+  "inputTokens": 192,
+  "outputTokens": 89,
+  "totalTokens": 9911,
+  "cacheReadInputTokens": 9630,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.064,
+ "seconds": 3.417239416972734
+}

@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-00299",
+ "reason": "The narrative mentions updating an insider trading policy, which is related to SEC filings, and attending to a separate financing, which aligns with the past entries for 6103.004 and 5602.002.",
+ "shortlist": [
+  "6103.004",
+  "5602.002",
+  "6103.001"
+ ],
+ "confidence": 90,
+ "second_cmid": "5602.002",
+ "cmid": "6103.004",
+ "usage": {
+  "inputTokens": 196,
+  "outputTokens": 127,
+  "totalTokens": 9953,
+  "cacheReadInputTokens": 9630,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.387,
+ "seconds": 1.4609432920115069
+}

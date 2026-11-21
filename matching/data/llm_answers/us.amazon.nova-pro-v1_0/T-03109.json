@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03109",
+ "reason": "The narrative matches the past entries for 2201.001 and the timekeeper has spent significant hours on this matter.",
+ "shortlist": [
+  "2201.001"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "2201.001",
+ "usage": {
+  "inputTokens": 194,
+  "outputTokens": 76,
+  "totalTokens": 9902,
+  "cacheReadInputTokens": 9632,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.96,
+ "seconds": 1.1764645839575678
+}

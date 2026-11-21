@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-03184",
+ "reason": "The narrative mentions 'Cobalt Ridge Ventures' and the work done aligns with the activities typically associated with fund administration and investor relations, which is covered under CMID 5520.004.",
+ "shortlist": [
+  "5520.004",
+  "5520.003",
+  "5520.002"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "5520.004",
+ "usage": {
+  "inputTokens": 229,
+  "outputTokens": 111,
+  "totalTokens": 9964,
+  "cacheReadInputTokens": 9624,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.516,
+ "seconds": 2.5682665000203997
+}

@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-01347",
+ "reason": "The narrative does not clearly point to a specific matter, but the timekeeper's billing history suggests a likely match with 9140.001, 2215.001, or 5520.004.",
+ "shortlist": [
+  "9140.001",
+  "2215.001",
+  "5520.004"
+ ],
+ "confidence": 70,
+ "second_cmid": "",
+ "cmid": "NONE",
+ "usage": {
+  "inputTokens": 229,
+  "outputTokens": 116,
+  "totalTokens": 9990,
+  "cacheReadInputTokens": 9645,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.374,
+ "seconds": 1.4928205829346552
+}

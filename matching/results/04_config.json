@@ -1,8 +1,8 @@
 {
   "model": "gradient boosting",
   "model_params": {
-    "min_child_samples": 200,
-    "n_estimators": 400,
+    "min_child_samples": 100,
+    "n_estimators": 200,
     "num_leaves": 31
   },
   "features": [
@@ -41,7 +41,7 @@
     "opened_after_history",
     "tk_known",
     "in_history",
-    "history_hours",
+    "history_per_week",
     "history_share",
     "client_ratio_gap",
     "matter_token_sort_ratio_gap",
@@ -81,6 +81,8 @@
     "n_clients_named",
     "is_email",
     "n_other_sources",
+    "hours",
+    "n_words",
     "multi_text_score"
   ],
   "text_model_params": {
@@ -92,32 +94,34 @@
     "num_leaves": 7
   },
   "routing": {
-    "one_step": {
-      "auto_min": 0.999,
-      "multi_min": 0.9,
-      "no_match_max": 0.02
-    },
     "strict": {
-      "auto_min": 0.97,
-      "no_match_min": 0.9,
+      "auto_min": 0.95,
+      "no_match_min": 0.7,
       "multi_min": 0.15,
-      "correct_typed_cmid": true
+      "correct_typed_cmid": false
     },
     "default": {
       "auto_min": 0.9,
-      "no_match_min": 0.9,
+      "no_match_min": 0.7,
       "multi_min": 0.15,
-      "correct_typed_cmid": true
+      "correct_typed_cmid": true,
+      "correct_min": 0.97
     },
     "balanced": {
       "auto_min": 0.5,
       "no_match_min": 0.3,
       "multi_min": 0.15,
-      "correct_typed_cmid": true
+      "correct_typed_cmid": true,
+      "correct_min": 0.8
     }
   },
   "multi_beta": 2,
   "precision_target": 0.98,
   "default_target": 0.97,
+  "targets": {
+    "strict": 0.98,
+    "default": 0.97,
+    "balanced": 0.8609946075494308
+  },
   "robust_share": 0.9
 }

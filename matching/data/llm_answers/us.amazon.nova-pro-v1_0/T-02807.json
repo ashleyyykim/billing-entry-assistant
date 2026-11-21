@@ -1,0 +1,17 @@
+{
+ "entry_id": "T-02807",
+ "reason": "The typed CMID 1595.001 does not match any known CMID in the matter list.",
+ "shortlist": [],
+ "confidence": 0,
+ "second_cmid": "",
+ "cmid": "NONE",
+ "usage": {
+  "inputTokens": 189,
+  "outputTokens": 56,
+  "totalTokens": 9878,
+  "cacheReadInputTokens": 9633,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.771,
+ "seconds": 3.436133458977565
+}

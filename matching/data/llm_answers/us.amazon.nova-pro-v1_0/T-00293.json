@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00293",
+ "reason": "The narrative clearly indicates work related to the annual meeting, which aligns with the matter 6103.004.",
+ "shortlist": [
+  "6103.004"
+ ],
+ "confidence": 95,
+ "second_cmid": "",
+ "cmid": "6103.004",
+ "usage": {
+  "inputTokens": 203,
+  "outputTokens": 74,
+  "totalTokens": 9914,
+  "cacheReadInputTokens": 9637,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.939,
+ "seconds": 1.0190794590162113
+}

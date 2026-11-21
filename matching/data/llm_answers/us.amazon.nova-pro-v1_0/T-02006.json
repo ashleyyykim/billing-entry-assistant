@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-02006",
+ "reason": "The narrative 'attend to deal matters' is vague and could apply to multiple matters. The timekeeper's recent hours suggest a focus on 7222.002 and 9035.002, but without more specific details, a definitive match cannot be made.",
+ "shortlist": [
+  "7222.002",
+  "9035.002",
+  "1111.001"
+ ],
+ "confidence": 50,
+ "second_cmid": "",
+ "cmid": "NONE",
+ "usage": {
+  "inputTokens": 185,
+  "outputTokens": 122,
+  "totalTokens": 9937,
+  "cacheReadInputTokens": 9630,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.836,
+ "seconds": 6.838460416067392
+}

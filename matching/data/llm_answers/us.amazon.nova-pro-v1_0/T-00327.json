@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00327",
+ "reason": "The narrative 'Review documents' aligns with the matter 'Fund I Formation' for Mosaic Health Partners.",
+ "shortlist": [
+  "8820.001"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "8820.001",
+ "usage": {
+  "inputTokens": 185,
+  "outputTokens": 68,
+  "totalTokens": 9894,
+  "cacheReadInputTokens": 9641,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.916,
+ "seconds": 0.9788808750454336
+}

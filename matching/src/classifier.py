@@ -1,10 +1,11 @@
 """Classifier: turn match probabilities into one decision per entry, with a reason for each.
 
-Step 1 scores every (entry, candidate matter) pair in the pairs table from notebook 02.
+Step 1 scores every (entry, candidate matter) pair in the pairs table (features.build_pairs).
 - route: the one-step version, cutoffs on the top two probabilities
 - entry_features, action_labels, route_actions: step 2, an action model on entry-level clues
 - multi_text_model: a narrative score for wording that mentions other work
-- two_step: step 2 on top of any step-1 model, for comparing models (notebook 07)
+- pick_correct_min, with_correct_min: how sure step 2 has to be to overrule a typed CMID
+- two_step: step 2 on top of any step-1 model, for comparing step-1 models end to end
 - explain, suggest_split: plain-language reasons and a suggested split for multi-matter entries
 """
 import itertools
@@ -19,9 +20,9 @@ from sklearn.metrics import fbeta_score
 from sklearn.model_selection import GridSearchCV, PredefinedSplit, cross_val_predict
 from sklearn.pipeline import make_pipeline
 
-from rules import pick_robust, score
+from rules import OUTCOMES, group_positions, pick_robust, resample, score
 
-# Settings are explained in notebook 04, section 6
+# Cutoffs for route, the one-step version
 DEFAULTS = {"auto_min": 0.8, "multi_min": 0.5, "no_match_max": 0.1}
 
 
@@ -98,7 +99,8 @@ def top_k_accuracy(pairs, probs, k=1):
 ENTRY_FEATURES = ["top_prob", "second_prob", "third_prob", "prob_total", "top_share", "same_client_top2", "typed_is_top",
                   "typed_prob", "top_not_open", "top_in_history", "top_past_sim", "second_past_sim", "best_client_score",
                   "best_matter_score", "has_cmid", "cmid_valid", "cmid_client_known", "has_client", "has_matter",
-                  "n_parts", "n_types_cued", "n_matters_named", "n_clients_named", "is_email", "n_other_sources"]
+                  "n_parts", "n_types_cued", "n_matters_named", "n_clients_named", "is_email", "n_other_sources",
+                  "hours", "n_words"]
 ACTION_FEATURES = ENTRY_FEATURES + ["multi_text_score"]
 
 # Evidence in the narrative that points away from the top pick, in the order it's trusted to name the second matter.
@@ -137,7 +139,7 @@ def other_evidence(df, first, min_score=90):
 
 def entry_features(pairs, probs, client_col, matter_col, min_score=90):
     """One row per entry for the action model: how the top candidates score, plus clues about the whole entry.
-    min_score: the phrase cutoff from notebook 02, for a client named in the narrative."""
+    min_score: the phrase cutoff (phrase_min in 02_config.json), for a client named in the narrative."""
     top = top_candidates(pairs, probs)
     df = pairs.assign(prob=probs).sort_values(["entry_id", "prob"], ascending=[True, False])
     g = df.groupby("entry_id")
@@ -154,7 +156,7 @@ def entry_features(pairs, probs, client_col, matter_col, min_score=90):
         "best_matter_score": g[matter_col].max(),
     })
     for col in ["has_cmid", "cmid_valid", "cmid_client_known", "has_client", "has_matter", "n_parts", "n_types_cued",
-                "n_matters_named", "n_clients_named", "is_email"]:
+                "n_matters_named", "n_clients_named", "is_email", "hours", "n_words"]:
         e[col] = first[col]
 
     e = e.join(other_evidence(df, first, min_score))
@@ -183,7 +185,7 @@ def route_actions(top, action_probs, cfg):
                                                       narrative points to (other_evidence), else the second pick
                                                       if it's likely on its own)
     3. correct_typed_cmid is on, a valid typed CMID
-       isn't the top pick, P(auto) >= auto_min,
+       isn't the top pick, P(auto) >= correct_min,
        and the top pick was open                   -> AUTO_MATCH to the top pick (typed CMID corrected)
     4. A valid typed CMID isn't the top pick,
        or the typed matter wasn't open             -> FLAG_MISMATCH (suggest the top pick)
@@ -192,14 +194,17 @@ def route_actions(top, action_probs, cfg):
     6. P(auto) >= auto_min                         -> AUTO_MATCH
     7. Otherwise                                   -> NEEDS_REVIEW with the shortlist
     action_probs: DataFrame with columns auto, review, multi, no_match (one row per entry, same order as top).
-    cfg: the cutoffs, plus correct_typed_cmid (True or False, off if missing).
+    cfg: the cutoffs, plus correct_typed_cmid (True or False, off if missing) and correct_min (the P(auto) needed to
+    overrule a typed CMID, auto_min if missing; train.pick_correct_min). Each decision keeps p_auto, the score it was
+    decided on, for the page to show as how sure Tenth is.
     """
     p = action_probs.set_axis(top.index)
     has_typed = top["typed_cmid"].notna()
     typed_disagrees = has_typed & ((top["top_cmid"] != top["typed_cmid"]) | (top["typed_not_open"] == 1))
     confident = p["auto"] >= cfg["auto_min"]
+    sure_enough_to_correct = confident & (p["auto"] >= cfg.get("correct_min", cfg["auto_min"]))
     correctable = (cfg.get("correct_typed_cmid", False) & has_typed & (top["top_cmid"] != top["typed_cmid"])
-                   & confident & (top["top_not_open"] == 0))
+                   & sure_enough_to_correct & (top["top_not_open"] == 0))
 
     checks = [p["no_match"] >= cfg["no_match_min"],
               p["multi"] >= cfg["multi_min"],
@@ -212,6 +217,7 @@ def route_actions(top, action_probs, cfg):
                "typed CMID disagrees with the model", "matter not open on the work date", "top pick very likely right"]
 
     out = top[["entry_id", "shortlist", "top_prob", "second_prob"]].copy()
+    out["p_auto"] = p["auto"]
     out["action"] = np.select(checks, actions, "NEEDS_REVIEW")
     out["reason"] = np.select(checks, reasons, "not confident enough (shortlist only)")
     likely_second = (top["second_prob"] >= 0.5) & top["evidence_cmid"].isna()
@@ -224,6 +230,39 @@ def route_actions(top, action_probs, cfg):
     return out
 
 
+def pick_correct_min(entries, action_probs, answers, cfg, target, grid, robust_share=0.9, resamples=200, seed=210):
+    """How sure the action model has to be to overrule a typed CMID: the lowest cutoff on P(auto) in grid, at or above
+    auto_min, where the corrections on their own reach the target in robust_share of timekeeper resamples.
+
+    A correction goes against what someone typed, so it has to be as safe as the target by itself, not only on
+    average with the other automatic matches. Corrections under the cutoff are flagged instead. None if no cutoff
+    is safe (then nothing is corrected). entries and action_probs: out-of-fold, as for pick_robust.
+    """
+    scored = score(route_actions(entries, action_probs, cfg | {"correct_min": cfg["auto_min"]}), answers)
+    corrected = ((scored["action"] == "AUTO_MATCH").to_numpy() & entries["typed_cmid"].notna().to_numpy()
+                 & (entries["typed_cmid"] != entries["top_cmid"]).to_numpy())
+    right = (scored["outcome"] == OUTCOMES[0]).to_numpy()
+    p_auto, tk = action_probs["auto"].to_numpy(), scored["tk_id"].to_numpy()
+    rng = np.random.default_rng(seed)
+    for cutoff in sorted(c for c in grid if c >= cfg["auto_min"]):
+        rows = corrected & (p_auto >= cutoff)
+        if not rows.any():
+            return float(cutoff)
+        positions, rows_right = group_positions(tk[rows]), right[rows]
+        reached = np.mean([rows_right[resample(positions, rng)].mean() >= target for _ in range(resamples)])
+        if reached >= robust_share:
+            return float(cutoff)
+    return None
+
+
+def with_correct_min(entries, action_probs, answers, cfg, target, grid, robust_share=0.9, resamples=200, seed=210):
+    """cfg plus its correct_min (pick_correct_min), or with correcting turned off if no cutoff is safe."""
+    if not cfg.get("correct_typed_cmid"):
+        return cfg
+    correct_min = pick_correct_min(entries, action_probs, answers, cfg, target, grid, robust_share, resamples, seed)
+    return cfg | ({"correct_min": correct_min} if correct_min is not None else {"correct_typed_cmid": False})
+
+
 def multi_text_model(C=1.0):
     """Reads the narrative alone and scores how likely the entry covers more than one matter,
     from wording like "misc. calls for other client" or "plus time on other deal"."""
@@ -234,14 +273,14 @@ def multi_text_model(C=1.0):
 def two_step(train_pairs, train_probs, val_pairs, val_probs, answers, narratives, text_model, client_col, matter_col,
              target, action_grid, cutoff_grid, multi_grid, multi_beta=2, correct_typed_cmid=True, seed=210,
              robust_share=0.9, refit_text=False):
-    """Step 2 on top of any step-1 model, the same way notebook 04 builds it, so step-1 models can be compared end to end.
+    """Step 2 on top of any step-1 model, the same way train.fit builds it, so step-1 models can be compared end to end.
 
     train_probs: cross-validated step-1 probabilities for the TRAIN pairs. val_probs: from the step-1 model refit on TRAIN.
-    text_model: the narrative model from notebook 04, already fit on TRAIN (it doesn't use step-1 probabilities).
+    text_model: the narrative model, already fit on TRAIN (it doesn't use step-1 probabilities).
     refit_text: refit it on these TRAIN entries first (when train_pairs is only part of TRAIN).
     The action model is tuned on the same entry folds, multi_min is picked by F-beta, and the other cutoffs by
-    pick_robust at the target, all on TRAIN. Returns the scored VAL decisions, the cutoffs, and the action model's
-    grid search.
+    pick_robust at the target, then correct_min (pick_correct_min), all on TRAIN. Returns the scored VAL decisions,
+    the cutoffs, and the action model's grid search.
     """
     entries_train = entry_features(train_pairs, train_probs, client_col, matter_col)
     labels = action_labels(entries_train, answers)
@@ -268,6 +307,8 @@ def two_step(train_pairs, train_probs, val_pairs, val_probs, answers, narratives
         scored[settings] = score(route_actions(entries_train, action_cv, cfg), answers)
     best = pick_robust(scored, target, robust_share, seed=seed)
     cfg = {k: float(v) for k, v in zip(cutoff_grid, best)} | same_for_all
+    cfg = with_correct_min(entries_train, action_cv, answers, cfg, target, cutoff_grid["auto_min"], robust_share,
+                           seed=seed)
 
     entries_val = entry_features(val_pairs, val_probs, client_col, matter_col)
     entries_val["multi_text_score"] = text_model.predict_proba(entries_val["entry_id"].map(narratives))[:, 1]
@@ -325,6 +366,7 @@ def clue_weights(model, pick_rows, features):
 
 
 SECOND_BASIS = OTHER_EVIDENCE | {"score": "it scores high on its own"}
+LONG_ENTRY_HOURS = 2   # a multi-matter call on an entry this long, with 2+ tasks, says so in its reason
 
 
 def confidence(prob):
@@ -423,6 +465,8 @@ def reasons_for(row, split=None):
             short = "Names two clients"
         elif row["n_matters_named"] >= 2:
             short = "Names two matters"
+        elif row.get("hours", 0) >= LONG_ENTRY_HOURS and row.get("n_parts", 0) >= 2:
+            short = "Long entry with several tasks"
         else:
             short = "May cover two matters"
         preds = row["pred_cmid"]
@@ -449,11 +493,11 @@ def explain(decisions, top, pairs, client_col, matter_col, phrase_min=90, parts=
     """
     cols = ["entry_id", "cmid", "client", "matter", "matter_type", "is_typed_cmid", "cmid_valid", "past_narrative_sim",
             "in_history", "history_hours", "own_keyterm_hits", "client_in_text", client_col, matter_col, "cue_share",
-            "person_hits"]
+            "person_hits", "n_parts"]
     entry_cols = ["entry_id", "top_cmid", "typed_cmid", "typed_not_open", "n_clients_named", "n_matters_named"]
     keep = list(dict.fromkeys(cols + [f for f in features or [] if f not in entry_cols]))
     clues = pairs[keep].rename(columns={"cmid": "top_cmid", client_col: "client_score", matter_col: "matter_score"})
-    rows = top[entry_cols + (["multi_text_score"] if "multi_text_score" in top else [])].merge(clues, on=["entry_id", "top_cmid"], how="left")
+    rows = top[entry_cols + [c for c in ["multi_text_score", "hours"] if c in top]].merge(clues, on=["entry_id", "top_cmid"], how="left")
     rows["client_named"] = rows["client_in_text"] >= phrase_min
     rows["matter_type"] = rows["matter_type"].astype(str).map(lambda t: MATTER_TYPE_WORDS.get(t, f"a {t.lower()}"))
     if model is not None:

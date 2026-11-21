@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03537",
+ "reason": "The narrative clearly indicates work on the acquisition of Fieldstone Foods, which matches the matter 5531.001.",
+ "shortlist": [
+  "5531.001"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "5531.001",
+ "usage": {
+  "inputTokens": 222,
+  "outputTokens": 75,
+  "totalTokens": 9921,
+  "cacheReadInputTokens": 9624,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.051,
+ "seconds": 12.500806084019132
+}

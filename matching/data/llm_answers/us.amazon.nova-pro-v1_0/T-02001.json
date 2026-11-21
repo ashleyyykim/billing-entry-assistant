@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02001",
+ "reason": "The narrative 'Attend to board matters' matches the matter type 'BOARD' for CMID 3455.002, and the timekeeper has a significant number of hours logged for this matter.",
+ "shortlist": [
+  "3455.002"
+ ],
+ "confidence": 95,
+ "second_cmid": "",
+ "cmid": "3455.002",
+ "usage": {
+  "inputTokens": 189,
+  "outputTokens": 93,
+  "totalTokens": 9915,
+  "cacheReadInputTokens": 9633,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.286,
+ "seconds": 1.5926664170110598
+}

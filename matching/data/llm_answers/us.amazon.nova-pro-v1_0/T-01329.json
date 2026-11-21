@@ -1,0 +1,20 @@
+{
+ "entry_id": "T-01329",
+ "reason": "The narrative mentions work on option pool increase and protective provisions, which aligns with the Exec Comp matter for Copperline Networks and the Investment - Vantage Bio matter for Ridgeline Capital.",
+ "shortlist": [
+  "7633.003",
+  "5524.003"
+ ],
+ "confidence": 90,
+ "second_cmid": "5524.003",
+ "cmid": "7633.003",
+ "usage": {
+  "inputTokens": 227,
+  "outputTokens": 102,
+  "totalTokens": 9954,
+  "cacheReadInputTokens": 9625,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.386,
+ "seconds": 17.088761083083227
+}

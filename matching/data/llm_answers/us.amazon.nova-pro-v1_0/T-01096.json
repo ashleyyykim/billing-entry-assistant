@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-01096",
+ "reason": "The narrative describes work on a general corporate matter, but the specific client and matter are not identified. The timekeeper's recent work history includes several general corporate matters, but none match the narrative exactly.",
+ "shortlist": [
+  "9028.001",
+  "5531.002",
+  "3019.002"
+ ],
+ "confidence": 70,
+ "second_cmid": "",
+ "cmid": "NONE",
+ "usage": {
+  "inputTokens": 225,
+  "outputTokens": 102,
+  "totalTokens": 9947,
+  "cacheReadInputTokens": 9620,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.135,
+ "seconds": 1.6706888750195503
+}

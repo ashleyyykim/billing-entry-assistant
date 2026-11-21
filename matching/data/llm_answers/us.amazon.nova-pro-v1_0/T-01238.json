@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-01238",
+ "reason": "The narrative mentions equity questions and third-party consents, which align with the activities of both 2960.001 and 5520.001.",
+ "shortlist": [
+  "2960.001",
+  "5520.001",
+  "9035.002"
+ ],
+ "confidence": 90,
+ "second_cmid": "5520.001",
+ "cmid": "2960.001",
+ "usage": {
+  "inputTokens": 219,
+  "outputTokens": 116,
+  "totalTokens": 9960,
+  "cacheReadInputTokens": 9625,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.544,
+ "seconds": 4.607442041975446
+}

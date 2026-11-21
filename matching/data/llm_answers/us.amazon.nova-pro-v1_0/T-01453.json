@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-01453",
+ "reason": "The narrative 'Work on documents' is vague, but the timekeeper's billing history shows significant hours on 3455.001 (SEC Reporting) and 3455.002 (Board & Governance). Given the client name 'Astar & Vale' matches the client for these matters, and the work date is within the open period for both, 3455.001 is the most likely match.",
+ "shortlist": [
+  "3455.001",
+  "3455.002",
+  "3455.003"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "3455.001",
+ "usage": {
+  "inputTokens": 186,
+  "outputTokens": 162,
+  "totalTokens": 9980,
+  "cacheReadInputTokens": 9632,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.611,
+ "seconds": 2.0469655410852283
+}

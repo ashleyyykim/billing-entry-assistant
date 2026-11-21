@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-02817",
+ "reason": "The narrative describes work on contractor classification and option grant mechanics, which aligns with the General Corporate matter for Harborlight Bio.",
+ "shortlist": [
+  "2201.001",
+  "2201.002",
+  "2201.003"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "2201.001",
+ "usage": {
+  "inputTokens": 244,
+  "outputTokens": 92,
+  "totalTokens": 9954,
+  "cacheReadInputTokens": 9618,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.047,
+ "seconds": 5.297440457972698
+}

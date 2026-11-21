@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00669",
+ "reason": "The narrative clearly indicates work related to the Phase I environmental for 450 Harbor, which matches the matter 8340.001.",
+ "shortlist": [
+  "8340.001"
+ ],
+ "confidence": 95,
+ "second_cmid": "",
+ "cmid": "8340.001",
+ "usage": {
+  "inputTokens": 234,
+  "outputTokens": 80,
+  "totalTokens": 9946,
+  "cacheReadInputTokens": 9632,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.004,
+ "seconds": 1.6269967500120401
+}

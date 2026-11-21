@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-00068",
+ "reason": "The narrative mentions reviewing an ICA, which is likely related to corporate matters for Ember Grid Energy.",
+ "shortlist": [
+  "6230.001",
+  "6230.002",
+  "6230.003"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "6230.001",
+ "usage": {
+  "inputTokens": 193,
+  "outputTokens": 88,
+  "totalTokens": 9914,
+  "cacheReadInputTokens": 9633,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.001,
+ "seconds": 1.0564725829754025
+}

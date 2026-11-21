@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02940",
+ "reason": "The narrative 'Call re status' aligns with the matter 'Fund III Formation' for Ridgewater Partners.",
+ "shortlist": [
+  "4471.002"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "4471.002",
+ "usage": {
+  "inputTokens": 186,
+  "outputTokens": 69,
+  "totalTokens": 9894,
+  "cacheReadInputTokens": 9639,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.882,
+ "seconds": 10.140374958980829
+}

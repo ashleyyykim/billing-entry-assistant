@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-03107",
+ "reason": "The narrative describes work on foreign qualification filings, which aligns with the General Corporate matter for Harborlight Bio. The timekeeper's billing history also shows significant hours for this matter.",
+ "shortlist": [
+  "2201.001",
+  "2207.001",
+  "2960.001"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "2201.001",
+ "usage": {
+  "inputTokens": 219,
+  "outputTokens": 104,
+  "totalTokens": 9953,
+  "cacheReadInputTokens": 9630,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.987,
+ "seconds": 7.106452750042081
+}

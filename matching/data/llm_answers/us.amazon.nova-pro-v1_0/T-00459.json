@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00459",
+ "reason": "The narrative mentions 409A timing, which is related to executive compensation, and the timekeeper has spent significant hours on matter 2201.005, which is about executive compensation.",
+ "shortlist": [
+  "2201.005"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "2201.005",
+ "usage": {
+  "inputTokens": 204,
+  "outputTokens": 91,
+  "totalTokens": 9928,
+  "cacheReadInputTokens": 9633,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.399,
+ "seconds": 2.350900916964747
+}

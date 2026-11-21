@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03193",
+ "reason": "The narrative clearly indicates work related to escrow amount for Larkspur, which aligns with the matter 'Add-On Acquisition (Project Lark)' under Cobalt Ridge Capital.",
+ "shortlist": [
+  "5520.001"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "5520.001",
+ "usage": {
+  "inputTokens": 198,
+  "outputTokens": 80,
+  "totalTokens": 9911,
+  "cacheReadInputTokens": 9633,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.216,
+ "seconds": 1.7050347500480711
+}

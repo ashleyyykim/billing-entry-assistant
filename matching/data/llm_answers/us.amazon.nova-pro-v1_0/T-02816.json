@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02816",
+ "reason": "The narrative clearly indicates work on the advisor agreement and foreign qualification related to stock plan, which aligns with the matter 6110.002.",
+ "shortlist": [
+  "6110.002"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "6110.002",
+ "usage": {
+  "inputTokens": 219,
+  "outputTokens": 80,
+  "totalTokens": 9925,
+  "cacheReadInputTokens": 9626,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.155,
+ "seconds": 1.7697404590435326
+}

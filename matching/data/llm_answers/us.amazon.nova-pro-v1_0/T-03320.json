@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03320",
+ "reason": "The narrative describes work on a license agreement, which matches the 'Licensing - Podcast Network' matter for Solace Media.",
+ "shortlist": [
+  "2956.003"
+ ],
+ "confidence": 95,
+ "second_cmid": "",
+ "cmid": "2956.003",
+ "usage": {
+  "inputTokens": 216,
+  "outputTokens": 75,
+  "totalTokens": 9919,
+  "cacheReadInputTokens": 9628,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.01,
+ "seconds": 1.5995770000154153
+}

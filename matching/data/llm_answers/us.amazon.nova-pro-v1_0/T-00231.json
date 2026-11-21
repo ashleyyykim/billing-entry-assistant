@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00231",
+ "reason": "The narrative and past entries align with the matter 6103.002, which involves SEC filings and disclosures.",
+ "shortlist": [
+  "6103.002"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "6103.002",
+ "usage": {
+  "inputTokens": 228,
+  "outputTokens": 74,
+  "totalTokens": 9934,
+  "cacheReadInputTokens": 9632,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.334,
+ "seconds": 1.3911421250086278
+}

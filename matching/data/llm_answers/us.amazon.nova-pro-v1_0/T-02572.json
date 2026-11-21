@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-02572",
+ "reason": "The narrative mentions work on board matters and option grants, which aligns with the past entries for 2960.003 and 3455.002.",
+ "shortlist": [
+  "2960.003",
+  "3455.002",
+  "6103.002"
+ ],
+ "confidence": 90,
+ "second_cmid": "3455.002",
+ "cmid": "2960.003",
+ "usage": {
+  "inputTokens": 219,
+  "outputTokens": 115,
+  "totalTokens": 9960,
+  "cacheReadInputTokens": 9626,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.174,
+ "seconds": 1.471188124967739
+}

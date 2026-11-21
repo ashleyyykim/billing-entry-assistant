@@ -1,0 +1,20 @@
+{
+ "entry_id": "T-01058",
+ "reason": "The narrative clearly indicates work on the Series A Financing for Copperline Networks, which matches the typed CMID. The mention of Ridgeline Capital suggests a secondary matter, but the primary focus is on the Series A Financing.",
+ "shortlist": [
+  "7633.002",
+  "4590.004"
+ ],
+ "confidence": 90,
+ "second_cmid": "4590.004",
+ "cmid": "7633.002",
+ "usage": {
+  "inputTokens": 214,
+  "outputTokens": 111,
+  "totalTokens": 9955,
+  "cacheReadInputTokens": 9630,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.247,
+ "seconds": 6.276067792088725
+}

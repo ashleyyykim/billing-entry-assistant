@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-02396",
+ "reason": "The timekeeper has spent the most hours on 3120.001 and the narrative mentions a conference with Y. Tanaka, who is associated with Bluefin Robotics.",
+ "shortlist": [
+  "3120.001",
+  "3120.002",
+  "3120.003"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "3120.001",
+ "usage": {
+  "inputTokens": 189,
+  "outputTokens": 105,
+  "totalTokens": 9927,
+  "cacheReadInputTokens": 9633,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.549,
+ "seconds": 2.295679915929213
+}

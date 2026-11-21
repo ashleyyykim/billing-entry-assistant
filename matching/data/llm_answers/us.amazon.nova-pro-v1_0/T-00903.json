@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00903",
+ "reason": "The narrative and past entries align with the matter 2960.003, and the timekeeper has a significant number of hours recorded for this matter.",
+ "shortlist": [
+  "2960.003"
+ ],
+ "confidence": 95,
+ "second_cmid": "",
+ "cmid": "2960.003",
+ "usage": {
+  "inputTokens": 193,
+  "outputTokens": 82,
+  "totalTokens": 9913,
+  "cacheReadInputTokens": 9638,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.001,
+ "seconds": 9.420216582948342
+}

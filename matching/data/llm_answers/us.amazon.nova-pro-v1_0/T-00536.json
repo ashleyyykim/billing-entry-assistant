@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00536",
+ "reason": "The narrative clearly indicates work related to fund extension and annual meeting materials, which aligns with the matter 5520.004 - Fund Administration.",
+ "shortlist": [
+  "5520.004"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "5520.004",
+ "usage": {
+  "inputTokens": 210,
+  "outputTokens": 80,
+  "totalTokens": 9921,
+  "cacheReadInputTokens": 9631,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.863,
+ "seconds": 3.4256853330880404
+}

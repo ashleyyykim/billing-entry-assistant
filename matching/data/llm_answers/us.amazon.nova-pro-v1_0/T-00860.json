@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-00860",
+ "reason": "The narrative mentions coordinating option grant paperwork, which aligns with the past entries for 2201.005.",
+ "shortlist": [
+  "2201.005",
+  "2207.001",
+  "2207.003"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "2201.005",
+ "usage": {
+  "inputTokens": 203,
+  "outputTokens": 93,
+  "totalTokens": 9923,
+  "cacheReadInputTokens": 9627,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.598,
+ "seconds": 1.7641510830726475
+}

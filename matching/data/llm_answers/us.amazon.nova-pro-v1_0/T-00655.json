@@ -1,0 +1,17 @@
+{
+ "entry_id": "T-00655",
+ "reason": "The typed CMID is incorrect and the narrative does not clearly point to an existing matter.",
+ "shortlist": [],
+ "confidence": 0,
+ "second_cmid": "",
+ "cmid": "NONE",
+ "usage": {
+  "inputTokens": 211,
+  "outputTokens": 49,
+  "totalTokens": 9892,
+  "cacheReadInputTokens": 9632,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.732,
+ "seconds": 28.264986249967478
+}

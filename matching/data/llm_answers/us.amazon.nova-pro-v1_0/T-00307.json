@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-00307",
+ "reason": "The narrative mentions work related to the annual meeting, which is consistent with the matter 6103.004 (2026 Annual Meeting) and the timekeeper's billing history shows significant hours on this matter.",
+ "shortlist": [
+  "6103.004",
+  "6103.001",
+  "6103.002"
+ ],
+ "confidence": 95,
+ "second_cmid": "",
+ "cmid": "6103.004",
+ "usage": {
+  "inputTokens": 214,
+  "outputTokens": 116,
+  "totalTokens": 9959,
+  "cacheReadInputTokens": 9629,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 2.082,
+ "seconds": 2.136378917028196
+}

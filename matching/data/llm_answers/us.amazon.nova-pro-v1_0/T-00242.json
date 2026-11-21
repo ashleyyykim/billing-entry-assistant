@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00242",
+ "reason": "The narrative and past entries indicate work on employment agreements, which aligns with the General Corporate matter for Bluefin Robotics.",
+ "shortlist": [
+  "3120.001"
+ ],
+ "confidence": 95,
+ "second_cmid": "",
+ "cmid": "3120.001",
+ "usage": {
+  "inputTokens": 195,
+  "outputTokens": 71,
+  "totalTokens": 9903,
+  "cacheReadInputTokens": 9637,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.059,
+ "seconds": 1.1203982500592247
+}

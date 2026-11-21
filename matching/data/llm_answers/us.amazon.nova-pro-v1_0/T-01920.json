@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01920",
+ "reason": "The narrative and past entries align with the Exec Comp / 409A matter for Lanternfish Software.",
+ "shortlist": [
+  "9028.003"
+ ],
+ "confidence": 95,
+ "second_cmid": "",
+ "cmid": "9028.003",
+ "usage": {
+  "inputTokens": 220,
+  "outputTokens": 70,
+  "totalTokens": 9921,
+  "cacheReadInputTokens": 9631,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.014,
+ "seconds": 2.9135798749048263
+}

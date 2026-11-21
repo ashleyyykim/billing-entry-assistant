@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01661",
+ "reason": "The narrative 'Attend to matter' is vague but the typed CMID and client match a known matter.",
+ "shortlist": [
+  "5524.001"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "5524.001",
+ "usage": {
+  "inputTokens": 187,
+  "outputTokens": 71,
+  "totalTokens": 9892,
+  "cacheReadInputTokens": 9634,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.888,
+ "seconds": 0.9624429999385029
+}

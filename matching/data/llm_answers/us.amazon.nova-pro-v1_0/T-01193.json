@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01193",
+ "reason": "The narrative and past entries indicate work on Enterprise MSAs, which matches the matter 'Commercial - Enterprise MSAs' for Tidewater AI.",
+ "shortlist": [
+  "4590.004"
+ ],
+ "confidence": 95,
+ "second_cmid": "",
+ "cmid": "4590.004",
+ "usage": {
+  "inputTokens": 186,
+  "outputTokens": 76,
+  "totalTokens": 9897,
+  "cacheReadInputTokens": 9635,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.181,
+ "seconds": 2.272240415913984
+}

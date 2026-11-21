@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-03922",
+ "reason": "The narrative 'Attend to board matters' aligns with the past entries for 2960.003, which involve board-related work.",
+ "shortlist": [
+  "2960.003",
+  "3455.002",
+  "6103.002"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "2960.003",
+ "usage": {
+  "inputTokens": 186,
+  "outputTokens": 101,
+  "totalTokens": 9918,
+  "cacheReadInputTokens": 9631,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.086,
+ "seconds": 1.8288746670586988
+}

@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-01455",
+ "reason": "The narrative 'Call re status' is vague, but the timekeeper's billing history shows significant hours on 2201.001, which is a General Corporate matter for Harborlight Bio.",
+ "shortlist": [
+  "2201.001",
+  "2201.003",
+  "2960.002"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "2201.001",
+ "usage": {
+  "inputTokens": 182,
+  "outputTokens": 111,
+  "totalTokens": 9925,
+  "cacheReadInputTokens": 9632,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.345,
+ "seconds": 2.095837208093144
+}

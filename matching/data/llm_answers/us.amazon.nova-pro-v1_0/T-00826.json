@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-00826",
+ "reason": "The narrative describes work on management company agreement and investor register, which aligns with past entries for Fund II Formation and General Fund Matters.",
+ "shortlist": [
+  "9140.001",
+  "2215.001",
+  "9140.002"
+ ],
+ "confidence": 90,
+ "second_cmid": "2215.001",
+ "cmid": "9140.001",
+ "usage": {
+  "inputTokens": 219,
+  "outputTokens": 103,
+  "totalTokens": 9960,
+  "cacheReadInputTokens": 9638,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.194,
+ "seconds": 5.930472624953836
+}

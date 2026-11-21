@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-02003",
+ "reason": "The narrative mentions 'emails re same - Roobtics' which likely refers to Bluefin Robotics, and the past entries for 3120.001 include 'Manage good standing requests' which aligns with the narrative.",
+ "shortlist": [
+  "3120.001",
+  "3120.002",
+  "3120.003"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "3120.001",
+ "usage": {
+  "inputTokens": 185,
+  "outputTokens": 116,
+  "totalTokens": 9934,
+  "cacheReadInputTokens": 9633,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.341,
+ "seconds": 1.782747083925642
+}

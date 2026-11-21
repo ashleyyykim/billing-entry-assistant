@@ -1,0 +1,17 @@
+{
+ "entry_id": "T-00621",
+ "reason": "The client 'Arbor & Finch' is not found in the matter list.",
+ "shortlist": [],
+ "confidence": 0,
+ "second_cmid": "",
+ "cmid": "NONE",
+ "usage": {
+  "inputTokens": 187,
+  "outputTokens": 47,
+  "totalTokens": 9863,
+  "cacheReadInputTokens": 9629,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.724,
+ "seconds": 2.2425781250931323
+}

@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-03577",
+ "reason": "The timekeeper's billing history shows significant hours on 7215.003 and the narrative mentions TCW M. Cruz, who is associated with Northgate Bank.",
+ "shortlist": [
+  "7215.003",
+  "8340.001",
+  "8012.001"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "7215.003",
+ "usage": {
+  "inputTokens": 186,
+  "outputTokens": 106,
+  "totalTokens": 9925,
+  "cacheReadInputTokens": 9633,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.133,
+ "seconds": 3.220724666956812
+}

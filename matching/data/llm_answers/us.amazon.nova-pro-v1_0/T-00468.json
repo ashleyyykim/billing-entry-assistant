@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00468",
+ "reason": "The narrative and past entries align with the Board & Governance matter for Aster and Vale.",
+ "shortlist": [
+  "3455.002"
+ ],
+ "confidence": 95,
+ "second_cmid": "",
+ "cmid": "3455.002",
+ "usage": {
+  "inputTokens": 216,
+  "outputTokens": 66,
+  "totalTokens": 9912,
+  "cacheReadInputTokens": 9630,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.942,
+ "seconds": 4.878420833032578
+}

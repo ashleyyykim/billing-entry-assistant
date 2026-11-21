@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03317",
+ "reason": "The narrative 'f/u on open items' is vague but the timekeeper's recent hours are mostly on 4590.004, which is not related to 7633.002. However, the typed CMID is 7633.002 and there is no clear indication of another matter, so I will assign it to 7633.002 with high confidence.",
+ "shortlist": [
+  "7633.002"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "7633.002",
+ "usage": {
+  "inputTokens": 191,
+  "outputTokens": 141,
+  "totalTokens": 9964,
+  "cacheReadInputTokens": 9632,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.64,
+ "seconds": 6.758908499963582
+}

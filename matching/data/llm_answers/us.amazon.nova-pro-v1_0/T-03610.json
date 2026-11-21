@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-03610",
+ "reason": "The narrative indicates follow-up with the CFO, which is consistent with the past entries for Ridgewater Partners' General Fund Matters.",
+ "shortlist": [
+  "4471.001",
+  "4471.002",
+  "4471.003"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "4471.001",
+ "usage": {
+  "inputTokens": 191,
+  "outputTokens": 94,
+  "totalTokens": 9914,
+  "cacheReadInputTokens": 9629,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.071,
+ "seconds": 5.612431166926399
+}

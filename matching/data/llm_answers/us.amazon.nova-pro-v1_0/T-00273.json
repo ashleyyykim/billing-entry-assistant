@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00273",
+ "reason": "The narrative 'Attend to SEC matters' aligns with the matter 'ATM Program' for Meridian Therapeutics, and the timekeeper has previously worked on related matters for the same client.",
+ "shortlist": [
+  "6103.005"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "6103.005",
+ "usage": {
+  "inputTokens": 186,
+  "outputTokens": 85,
+  "totalTokens": 9909,
+  "cacheReadInputTokens": 9638,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.985,
+ "seconds": 1.04880912497174
+}

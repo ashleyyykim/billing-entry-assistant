@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01527",
+ "reason": "The narrative matches the typed CMID and matter, and the timekeeper has a significant history with this matter.",
+ "shortlist": [
+  "3120.001"
+ ],
+ "confidence": 95,
+ "second_cmid": "",
+ "cmid": "3120.001",
+ "usage": {
+  "inputTokens": 194,
+  "outputTokens": 70,
+  "totalTokens": 9902,
+  "cacheReadInputTokens": 9638,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.904,
+ "seconds": 5.94081741606351
+}

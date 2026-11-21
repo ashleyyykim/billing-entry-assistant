@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01442",
+ "reason": "The narrative clearly indicates work on a zoning report, which aligns with the matter 'Acquisition of 450 Harbor St.' under CMID 8340.001.",
+ "shortlist": [
+  "8340.001"
+ ],
+ "confidence": 95,
+ "second_cmid": "",
+ "cmid": "8340.001",
+ "usage": {
+  "inputTokens": 204,
+  "outputTokens": 88,
+  "totalTokens": 9925,
+  "cacheReadInputTokens": 9633,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.07,
+ "seconds": 2.5787107090000063
+}

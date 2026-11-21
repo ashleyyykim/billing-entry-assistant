@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-02861",
+ "reason": "The narrative mentions updating time entries for the week in connection with financing, which aligns with the Admin matter for the Firm.",
+ "shortlist": [
+  "1111.001",
+  "1111.002",
+  "1111.003"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "1111.001",
+ "usage": {
+  "inputTokens": 191,
+  "outputTokens": 92,
+  "totalTokens": 9910,
+  "cacheReadInputTokens": 9627,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.024,
+ "seconds": 6.284944457933307
+}

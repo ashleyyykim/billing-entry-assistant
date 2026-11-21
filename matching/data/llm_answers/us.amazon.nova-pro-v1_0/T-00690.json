@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-00690",
+ "reason": "The narrative mentions calls with T. Smith and R. Dale, which align with past entries for 9140.001 and 2215.001.",
+ "shortlist": [
+  "9140.001",
+  "2215.001",
+  "5524.002"
+ ],
+ "confidence": 90,
+ "second_cmid": "2215.001",
+ "cmid": "9140.001",
+ "usage": {
+  "inputTokens": 209,
+  "outputTokens": 116,
+  "totalTokens": 9960,
+  "cacheReadInputTokens": 9635,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.387,
+ "seconds": 12.519341874984093
+}

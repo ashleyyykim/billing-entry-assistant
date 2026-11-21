@@ -47,12 +47,18 @@ def split_client_field(value):
     return str(value).strip(), None
 
 
-def find_cmid_in_text(text):
-    """First CMID-shaped number in a narrative ("7215/003" in an email body), or None."""
+def find_cmid_in_text(text, client_numbers=None):
+    """First CMID-shaped number in a narrative ("7215/003" in an email body), or None.
+
+    client_numbers: the firm's 4-digit client numbers. When given, a number only counts if it starts with one of
+    them, so amounts and years ("wire of 1250000", "2025 100 pages") aren't read as CMIDs.
+    """
     if is_blank(text):
         return None
-    found = CMID_IN_TEXT.search(str(text))
-    return f"{found.group(1)}.{found.group(2)}" if found else None
+    for found in CMID_IN_TEXT.finditer(str(text)):
+        if client_numbers is None or found.group(1) in client_numbers:
+            return f"{found.group(1)}.{found.group(2)}"
+    return None
 
 
 def _parse_cmid(text):
@@ -97,17 +103,17 @@ def cmid_similarity(a, b):
     return OSA.normalized_similarity(re.sub(r"\D", "", a), re.sub(r"\D", "", b)) * 100
 
 
-def clean_entries(entries):
+def clean_entries(entries, client_numbers=None):
     """The typed fields after cleanup. A ditto counts as blank, a one-field entry is split,
     and a CMID found in the narrative fills a blank CMID field.
 
-    entries needs columns: cmid, client, matter, narrative.
+    entries needs columns: cmid, client, matter, narrative. client_numbers: see find_cmid_in_text.
     """
     ditto = entries["client"].map(is_ditto)
     split = entries["client"].where(~ditto).map(split_client_field)
     matter_blank = entries["matter"].map(is_blank)
     cmid_blank = entries["cmid"].map(is_blank)
-    cmid_in_text = entries["narrative"].map(find_cmid_in_text)
+    cmid_in_text = entries["narrative"].map(lambda t: find_cmid_in_text(t, client_numbers))
 
     return pd.DataFrame({
         "typed_cmid": entries["cmid"].where(~cmid_blank, cmid_in_text),

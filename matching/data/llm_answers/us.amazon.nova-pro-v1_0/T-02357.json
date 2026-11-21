@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02357",
+ "reason": "The narrative 'Review and comment on credit agreement' matches the matter 'Revolver Amendment No. 3' under CMID 3455.003.",
+ "shortlist": [
+  "3455.003"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "3455.003",
+ "usage": {
+  "inputTokens": 178,
+  "outputTokens": 84,
+  "totalTokens": 9896,
+  "cacheReadInputTokens": 9634,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.963,
+ "seconds": 2.0717136249877512
+}

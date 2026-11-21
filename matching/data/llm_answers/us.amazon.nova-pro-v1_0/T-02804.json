@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02804",
+ "reason": "The narrative 'Call re status' is vague but the timekeeper's past entries and the matter list suggest that 3019.002 is the most likely match.",
+ "shortlist": [
+  "3019.002"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "3019.002",
+ "usage": {
+  "inputTokens": 187,
+  "outputTokens": 86,
+  "totalTokens": 9907,
+  "cacheReadInputTokens": 9634,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.019,
+ "seconds": 1.7641727499431
+}

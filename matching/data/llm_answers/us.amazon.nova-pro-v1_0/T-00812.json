@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00812",
+ "reason": "The narrative does not provide specific details about the matter, but the timekeeper's billing history shows a significant amount of time spent on 9140.001.",
+ "shortlist": [
+  "9140.001"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "9140.001",
+ "usage": {
+  "inputTokens": 194,
+  "outputTokens": 85,
+  "totalTokens": 9913,
+  "cacheReadInputTokens": 9634,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.211,
+ "seconds": 7.804167250054888
+}

@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02784",
+ "reason": "The narrative mentions updating D&O questionnaires, which is related to board composition, and the timekeeper has previously worked on matter 2960.003, which involves board matters.",
+ "shortlist": [
+  "2960.003"
+ ],
+ "confidence": 95,
+ "second_cmid": "",
+ "cmid": "2960.003",
+ "usage": {
+  "inputTokens": 203,
+  "outputTokens": 88,
+  "totalTokens": 9919,
+  "cacheReadInputTokens": 9628,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.236,
+ "seconds": 3.5756157090654597
+}

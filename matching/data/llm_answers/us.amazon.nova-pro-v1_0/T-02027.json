@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02027",
+ "reason": "The narrative describes work related to Fund II Formation for Juniper Peak Capital, which matches the matter 9140.001.",
+ "shortlist": [
+  "9140.001"
+ ],
+ "confidence": 95,
+ "second_cmid": "",
+ "cmid": "9140.001",
+ "usage": {
+  "inputTokens": 199,
+  "outputTokens": 76,
+  "totalTokens": 9905,
+  "cacheReadInputTokens": 9630,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.962,
+ "seconds": 5.490771707962267
+}

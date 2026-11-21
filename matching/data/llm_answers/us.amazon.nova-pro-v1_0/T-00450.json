@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-00450",
+ "reason": "The timekeeper has spent the most hours on matter 2960.003, which involves reviewing and commenting on documents, making it the most likely match for this entry.",
+ "shortlist": [
+  "2960.003",
+  "3455.001",
+  "6103.002"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "2960.003",
+ "usage": {
+  "inputTokens": 198,
+  "outputTokens": 106,
+  "totalTokens": 9931,
+  "cacheReadInputTokens": 9627,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.214,
+ "seconds": 5.405371083994396
+}

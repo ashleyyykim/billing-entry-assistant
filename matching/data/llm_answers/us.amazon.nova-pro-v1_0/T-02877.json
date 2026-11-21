@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-02877",
+ "reason": "The narrative mentions 'Larkspur' which is likely a reference to 'Larch' in the matter list, and the work involves confirming a timeline for signing, which aligns with the 'Add-On Acquisition (Project Larch)' matter.",
+ "shortlist": [
+  "5520.003",
+  "5520.001",
+  "5520.002"
+ ],
+ "confidence": 80,
+ "second_cmid": "(blank)",
+ "cmid": "(blank)",
+ "usage": {
+  "inputTokens": 207,
+  "outputTokens": 112,
+  "totalTokens": 9944,
+  "cacheReadInputTokens": 9625,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.222,
+ "seconds": 11.846742250025272
+}

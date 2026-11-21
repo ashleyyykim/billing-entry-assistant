@@ -1,0 +1,28 @@
+{
+ "entry_id": "T-03042",
+ "reason": "The typed client 'Cobalt' matches multiple matters, and the narrative does not provide specific details to narrow it down.",
+ "shortlist": [
+  "5520.001",
+  "5520.002",
+  "5520.003",
+  "5520.004",
+  "5520.005",
+  "5524.001",
+  "5524.002",
+  "5524.003",
+  "5531.001",
+  "5531.002"
+ ],
+ "confidence": 0,
+ "second_cmid": "(blank)",
+ "cmid": "(blank)",
+ "usage": {
+  "inputTokens": 184,
+  "outputTokens": 157,
+  "totalTokens": 9971,
+  "cacheReadInputTokens": 9630,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.794,
+ "seconds": 2.16855574992951
+}

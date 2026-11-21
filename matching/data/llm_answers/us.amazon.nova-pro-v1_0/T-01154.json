@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01154",
+ "reason": "The narrative describes drafting documents related to investors' rights and opinions, which aligns with the Series A Financing matter for Copperline Networks.",
+ "shortlist": [
+  "7633.002"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "7633.002",
+ "usage": {
+  "inputTokens": 244,
+  "outputTokens": 74,
+  "totalTokens": 9939,
+  "cacheReadInputTokens": 9621,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 2.505,
+ "seconds": 16.365371666965075
+}

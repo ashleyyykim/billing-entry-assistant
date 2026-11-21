@@ -1,0 +1,20 @@
+{
+ "entry_id": "T-02482",
+ "reason": "The narrative mentions Summit Ridge TSA, which is related to the acquisition of Summit Ridge Software under CMID 7222.002. The mention of Kestrel is likely related to the acquisition of Kestrel Foods under CMID 6888.002.",
+ "shortlist": [
+  "7222.002",
+  "6888.001"
+ ],
+ "confidence": 90,
+ "second_cmid": "6888.001",
+ "cmid": "7222.002",
+ "usage": {
+  "inputTokens": 229,
+  "outputTokens": 125,
+  "totalTokens": 9976,
+  "cacheReadInputTokens": 9622,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.372,
+ "seconds": 7.760441082995385
+}

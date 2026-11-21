@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-03422",
+ "reason": "The typed client 'Tidewater Robotics' does not match any client in the matter list. The narrative 'Attend to closing matters' is vague and could apply to multiple matters, but the timekeeper's recent hours suggest a focus on matters related to 'Tidewater Analytics' (4597.001), 'Ironwood Semiconductor' (5602.003), and 'Halvorsen Industrial' (3012.004).",
+ "shortlist": [
+  "4597.001",
+  "5602.003",
+  "3012.004"
+ ],
+ "confidence": 50,
+ "second_cmid": "",
+ "cmid": "NONE",
+ "usage": {
+  "inputTokens": 186,
+  "outputTokens": 163,
+  "totalTokens": 9978,
+  "cacheReadInputTokens": 9629,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 2.018,
+ "seconds": 3.113210874958895
+}

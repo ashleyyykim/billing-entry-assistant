@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02322",
+ "reason": "The narrative describes attending a board meeting and following up on action items, which aligns with the 'Board & Governance' matter for Meridian Therapeutics.",
+ "shortlist": [
+  "6103.003"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "6103.003",
+ "usage": {
+  "inputTokens": 196,
+  "outputTokens": 76,
+  "totalTokens": 9899,
+  "cacheReadInputTokens": 9627,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.156,
+ "seconds": 1.8992583339568228
+}

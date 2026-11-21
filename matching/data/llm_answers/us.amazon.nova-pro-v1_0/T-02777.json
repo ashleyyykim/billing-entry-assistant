@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-02777",
+ "reason": "The narrative does not clearly point to a specific matter, and the client and matter are blank. The timekeeper's billing history suggests some potential matches, but none are definitive.",
+ "shortlist": [
+  "3120.001",
+  "2207.003",
+  "3388.001"
+ ],
+ "confidence": 50,
+ "second_cmid": "",
+ "cmid": "NONE",
+ "usage": {
+  "inputTokens": 188,
+  "outputTokens": 97,
+  "totalTokens": 9914,
+  "cacheReadInputTokens": 9629,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.093,
+ "seconds": 3.1411382079822943
+}

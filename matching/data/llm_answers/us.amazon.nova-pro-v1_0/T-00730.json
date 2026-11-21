@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-00730",
+ "reason": "The narrative 'Attend to file' is vague, but the timekeeper's recent hours are mostly on 2201.005.",
+ "shortlist": [
+  "2201.005",
+  "6230.001",
+  "2207.001"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "2201.005",
+ "usage": {
+  "inputTokens": 183,
+  "outputTokens": 101,
+  "totalTokens": 9915,
+  "cacheReadInputTokens": 9631,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.092,
+ "seconds": 2.1686699169222265
+}

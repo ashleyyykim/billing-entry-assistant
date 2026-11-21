@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-02591",
+ "reason": "The narrative mentions equity questions and NDA preparation, which aligns with the Board Matters matter for Solace Health.",
+ "shortlist": [
+  "2960.003",
+  "2960.001",
+  "2960.002"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "2960.003",
+ "usage": {
+  "inputTokens": 249,
+  "outputTokens": 89,
+  "totalTokens": 9953,
+  "cacheReadInputTokens": 9615,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.991,
+ "seconds": 5.153866291977465
+}

@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-03173",
+ "reason": "The narrative describes work related to title exceptions and environmental issues, which are typical for real estate acquisition matters.",
+ "shortlist": [
+  "8340.001",
+  "8340.002",
+  "8340.003"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "8340.001",
+ "usage": {
+  "inputTokens": 220,
+  "outputTokens": 89,
+  "totalTokens": 9933,
+  "cacheReadInputTokens": 9624,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.079,
+ "seconds": 11.16355699999258
+}

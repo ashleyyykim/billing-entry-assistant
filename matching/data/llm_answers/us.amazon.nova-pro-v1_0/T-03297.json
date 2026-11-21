@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-03297",
+ "reason": "The narrative mentions a phone call with K. Osei re liquidation preference, which aligns with the work done on matter 2201.003 (Series A Financing for Harborlight Bio).",
+ "shortlist": [
+  "2201.003",
+  "2201.001",
+  "9028.003"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "2201.003",
+ "usage": {
+  "inputTokens": 220,
+  "outputTokens": 110,
+  "totalTokens": 9952,
+  "cacheReadInputTokens": 9622,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.229,
+ "seconds": 2.7514614580431953
+}

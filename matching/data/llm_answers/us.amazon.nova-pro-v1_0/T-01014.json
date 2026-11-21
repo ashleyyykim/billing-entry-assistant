@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01014",
+ "reason": "The narrative clearly indicates work on the LP side letter for Calpine Pension, which aligns with the matter 'Fund III Formation' for Ridgewater Partners.",
+ "shortlist": [
+  "4471.002"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "4471.002",
+ "usage": {
+  "inputTokens": 215,
+  "outputTokens": 78,
+  "totalTokens": 9939,
+  "cacheReadInputTokens": 9646,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.961,
+ "seconds": 1.0327482090797275
+}

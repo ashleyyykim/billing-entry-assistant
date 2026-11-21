@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03492",
+ "reason": "The narrative describes work related to option grant mechanics, which aligns with the General Corporate matter for Bluefin Robotics.",
+ "shortlist": [
+  "3120.001"
+ ],
+ "confidence": 95,
+ "second_cmid": "",
+ "cmid": "3120.001",
+ "usage": {
+  "inputTokens": 191,
+  "outputTokens": 70,
+  "totalTokens": 9899,
+  "cacheReadInputTokens": 9638,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.185,
+ "seconds": 8.448290874948725
+}

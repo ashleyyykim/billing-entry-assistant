@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-02601",
+ "reason": "The narrative mentions discussing early exercise, which is related to equity compensation, and the timekeeper has spent significant hours on 9028.003 (Exec Comp / 409A) and 6230.001 (General Corporate) in the past.",
+ "shortlist": [
+  "6230.001",
+  "9028.003",
+  "3120.003"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "6230.001",
+ "usage": {
+  "inputTokens": 194,
+  "outputTokens": 128,
+  "totalTokens": 9956,
+  "cacheReadInputTokens": 9634,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.646,
+ "seconds": 8.210063542006537
+}

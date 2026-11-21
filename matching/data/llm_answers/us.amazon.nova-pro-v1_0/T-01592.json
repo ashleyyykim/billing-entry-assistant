@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01592",
+ "reason": "The narrative describes work on an advisor agreement, which aligns with the General Corporate matter for Bluefin Robotics. The timekeeper's billing history also shows significant hours spent on this matter.",
+ "shortlist": [
+  "3120.001"
+ ],
+ "confidence": 95,
+ "second_cmid": "",
+ "cmid": "3120.001",
+ "usage": {
+  "inputTokens": 190,
+  "outputTokens": 85,
+  "totalTokens": 9911,
+  "cacheReadInputTokens": 9636,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.1,
+ "seconds": 3.164627250051126
+}

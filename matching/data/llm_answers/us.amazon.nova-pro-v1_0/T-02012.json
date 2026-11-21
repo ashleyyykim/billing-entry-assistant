@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02012",
+ "reason": "The narrative mentions a call with D. Park about a customer contract question, which aligns with the work done under CMID 2201.001.",
+ "shortlist": [
+  "2201.001"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "2201.001",
+ "usage": {
+  "inputTokens": 206,
+  "outputTokens": 82,
+  "totalTokens": 9917,
+  "cacheReadInputTokens": 9629,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.783,
+ "seconds": 7.271678167046048
+}

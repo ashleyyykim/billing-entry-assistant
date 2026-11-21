@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02763",
+ "reason": "The narrative and past entries align with the typed CMID and client.",
+ "shortlist": [
+  "2201.001"
+ ],
+ "confidence": 95,
+ "second_cmid": "",
+ "cmid": "2201.001",
+ "usage": {
+  "inputTokens": 212,
+  "outputTokens": 62,
+  "totalTokens": 9905,
+  "cacheReadInputTokens": 9631,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.796,
+ "seconds": 0.8711192499613389
+}

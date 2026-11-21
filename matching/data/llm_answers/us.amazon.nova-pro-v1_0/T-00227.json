@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00227",
+ "reason": "The narrative clearly indicates work related to the annual meeting and Section 16 filings, which aligns with the matter 6103.004.",
+ "shortlist": [
+  "6103.004"
+ ],
+ "confidence": 95,
+ "second_cmid": "",
+ "cmid": "6103.004",
+ "usage": {
+  "inputTokens": 259,
+  "outputTokens": 80,
+  "totalTokens": 9965,
+  "cacheReadInputTokens": 9626,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.982,
+ "seconds": 1.0560957089764997
+}

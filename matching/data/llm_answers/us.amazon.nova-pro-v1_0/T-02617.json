@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02617",
+ "reason": "The narrative 'Look over comp committee charter' matches the matter 'Board & Governance' for Meridian Therapeutics.",
+ "shortlist": [
+  "6103.003"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "6103.003",
+ "usage": {
+  "inputTokens": 185,
+  "outputTokens": 69,
+  "totalTokens": 9885,
+  "cacheReadInputTokens": 9631,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.948,
+ "seconds": 1.7201166249578819
+}

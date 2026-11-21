@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03219",
+ "reason": "The narrative clearly indicates work on Fund IV, which matches the matter 4471.004 for Ridgewater Partners.",
+ "shortlist": [
+  "4471.004"
+ ],
+ "confidence": 95,
+ "second_cmid": "",
+ "cmid": "4471.004",
+ "usage": {
+  "inputTokens": 221,
+  "outputTokens": 75,
+  "totalTokens": 9919,
+  "cacheReadInputTokens": 9623,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.865,
+ "seconds": 1.182137707946822
+}

@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00494",
+ "reason": "The narrative and past entries align with the work done for this matter.",
+ "shortlist": [
+  "5520.004"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "5520.004",
+ "usage": {
+  "inputTokens": 194,
+  "outputTokens": 62,
+  "totalTokens": 9890,
+  "cacheReadInputTokens": 9634,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.141,
+ "seconds": 3.3094389999751
+}

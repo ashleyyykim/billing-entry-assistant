@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00085",
+ "reason": "The narrative and past entries align with the 2026 Annual Meeting matter.",
+ "shortlist": [
+  "6103.004"
+ ],
+ "confidence": 95,
+ "second_cmid": "",
+ "cmid": "6103.004",
+ "usage": {
+  "inputTokens": 189,
+  "outputTokens": 65,
+  "totalTokens": 9896,
+  "cacheReadInputTokens": 9642,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.917,
+ "seconds": 2.8847245420329273
+}

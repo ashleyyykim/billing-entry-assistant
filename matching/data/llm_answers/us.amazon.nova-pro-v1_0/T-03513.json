@@ -1,0 +1,20 @@
+{
+ "entry_id": "T-03513",
+ "reason": "The narrative clearly indicates work on tenant estoppels related to Phase I environmental, which aligns with the matter 8012.001. The mention of 'separate financing' suggests additional work on another matter, likely 8340.001, given the timekeeper's past hours on this matter.",
+ "shortlist": [
+  "8012.001",
+  "8340.001"
+ ],
+ "confidence": 90,
+ "second_cmid": "8340.001",
+ "cmid": "8012.001",
+ "usage": {
+  "inputTokens": 191,
+  "outputTokens": 135,
+  "totalTokens": 9960,
+  "cacheReadInputTokens": 9634,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.383,
+ "seconds": 1.7739926659269258
+}

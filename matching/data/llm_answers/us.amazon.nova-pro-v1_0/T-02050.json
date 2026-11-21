@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02050",
+ "reason": "The narrative matches the work done for the General Corporate matter of Meridian Thermal Systems.",
+ "shortlist": [
+  "6110.001"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "6110.001",
+ "usage": {
+  "inputTokens": 194,
+  "outputTokens": 64,
+  "totalTokens": 9892,
+  "cacheReadInputTokens": 9634,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.83,
+ "seconds": 1.6614959170110524
+}

@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-01127",
+ "reason": "The narrative matches the matter 'Credit Facility - Pinecrest Mfg.' and the timekeeper has worked on similar matters in the past.",
+ "shortlist": [
+  "7215.003",
+  "8340.001",
+  "8012.001"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "7215.002",
+ "usage": {
+  "inputTokens": 207,
+  "outputTokens": 95,
+  "totalTokens": 9941,
+  "cacheReadInputTokens": 9639,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.05,
+ "seconds": 1.6223366250051185
+}

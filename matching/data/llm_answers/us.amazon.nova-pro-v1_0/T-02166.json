@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02166",
+ "reason": "The narrative clearly describes work on the Asterion - Amendment No. 2 matter, which matches the typed CMID and client.",
+ "shortlist": [
+  "7215.005"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "7215.005",
+ "usage": {
+  "inputTokens": 210,
+  "outputTokens": 74,
+  "totalTokens": 9918,
+  "cacheReadInputTokens": 9634,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.853,
+ "seconds": 1.028745291987434
+}

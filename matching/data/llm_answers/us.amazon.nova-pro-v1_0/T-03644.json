@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03644",
+ "reason": "The narrative and typed information match the matter 'General Corporate' for Lantern Software Group.",
+ "shortlist": [
+  "9035.001"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "9035.001",
+ "usage": {
+  "inputTokens": 220,
+  "outputTokens": 65,
+  "totalTokens": 9917,
+  "cacheReadInputTokens": 9632,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.9,
+ "seconds": 1.0065842499025166
+}

@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03720",
+ "reason": "The narrative clearly indicates work related to LPAC composition, which aligns with the matter 'Fund II Formation' for Juniper Peak Capital.",
+ "shortlist": [
+  "9140.001"
+ ],
+ "confidence": 95,
+ "second_cmid": "",
+ "cmid": "9140.001",
+ "usage": {
+  "inputTokens": 194,
+  "outputTokens": 74,
+  "totalTokens": 9904,
+  "cacheReadInputTokens": 9636,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.064,
+ "seconds": 1.2428302089683712
+}

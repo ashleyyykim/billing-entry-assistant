@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01454",
+ "reason": "The narrative 'TCW K. Osei' and the timekeeper's hours by matter indicate work on 2201.003.",
+ "shortlist": [
+  "2201.003"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "2201.003",
+ "usage": {
+  "inputTokens": 186,
+  "outputTokens": 80,
+  "totalTokens": 9903,
+  "cacheReadInputTokens": 9637,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.105,
+ "seconds": 8.770566458930261
+}

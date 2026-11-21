@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-02887",
+ "reason": "The typed CMID is incorrect and the narrative does not clearly point to a specific matter from the list.",
+ "shortlist": [
+  "7215.003",
+  "8012.001",
+  "8340.002"
+ ],
+ "confidence": 50,
+ "second_cmid": "",
+ "cmid": "NONE",
+ "usage": {
+  "inputTokens": 211,
+  "outputTokens": 82,
+  "totalTokens": 9920,
+  "cacheReadInputTokens": 9627,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.955,
+ "seconds": 3.9614532080013305
+}

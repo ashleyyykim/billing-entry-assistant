@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03413",
+ "reason": "The narrative 'update material contracts' aligns with the matter 'Acquisition of Summit Ridge Software' under CMID 7222.002, and the timekeeper has a significant number of hours recorded for this matter.",
+ "shortlist": [
+  "7222.002"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "7222.002",
+ "usage": {
+  "inputTokens": 186,
+  "outputTokens": 95,
+  "totalTokens": 9916,
+  "cacheReadInputTokens": 9635,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.032,
+ "seconds": 1.4907614999683574
+}

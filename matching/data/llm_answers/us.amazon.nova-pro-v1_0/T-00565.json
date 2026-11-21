@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-00565",
+ "reason": "The timekeeper has spent the most hours on 9140.001 and the narrative is vague, suggesting follow-up on open items which is typical for ongoing matters.",
+ "shortlist": [
+  "9140.001",
+  "5524.001",
+  "2215.002"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "9140.001",
+ "usage": {
+  "inputTokens": 188,
+  "outputTokens": 106,
+  "totalTokens": 9925,
+  "cacheReadInputTokens": 9631,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.206,
+ "seconds": 1.367153082974255
+}

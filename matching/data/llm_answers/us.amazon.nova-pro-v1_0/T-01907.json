@@ -1,0 +1,17 @@
+{
+ "entry_id": "T-01907",
+ "reason": "The client 'Quill & Anchor' is not found in the matter list.",
+ "shortlist": [],
+ "confidence": 0,
+ "second_cmid": "",
+ "cmid": "NONE",
+ "usage": {
+  "inputTokens": 183,
+  "outputTokens": 47,
+  "totalTokens": 9857,
+  "cacheReadInputTokens": 9627,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.737,
+ "seconds": 4.3934695000061765
+}

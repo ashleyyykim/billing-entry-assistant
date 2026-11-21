@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01346",
+ "reason": "The narrative describes work on Fund I LPAC consent and transfer documents, which aligns with the General Fund Matters for Ridgeview Partners.",
+ "shortlist": [
+  "4478.001"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "4478.001",
+ "usage": {
+  "inputTokens": 245,
+  "outputTokens": 74,
+  "totalTokens": 9959,
+  "cacheReadInputTokens": 9640,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.926,
+ "seconds": 1.4075711669865996
+}

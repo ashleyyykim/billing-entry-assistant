@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-03450",
+ "reason": "The narrative describes work related to board matters, which aligns with the 'Board Matters' matter for Solace Health (2960.003). The timekeeper's past hours also show a significant amount of time spent on this matter.",
+ "shortlist": [
+  "2960.003",
+  "3455.002",
+  "6103.003"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "2960.003",
+ "usage": {
+  "inputTokens": 239,
+  "outputTokens": 119,
+  "totalTokens": 9984,
+  "cacheReadInputTokens": 9626,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.445,
+ "seconds": 4.128113333019428
+}

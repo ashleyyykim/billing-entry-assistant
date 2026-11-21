@@ -1,0 +1,17 @@
+{
+ "entry_id": "T-02697",
+ "reason": "The narrative does not provide enough information to assign the entry to a specific matter.",
+ "shortlist": [],
+ "confidence": 0,
+ "second_cmid": "",
+ "cmid": "NONE",
+ "usage": {
+  "inputTokens": 195,
+  "outputTokens": 47,
+  "totalTokens": 9868,
+  "cacheReadInputTokens": 9626,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.739,
+ "seconds": 19.522344500059262
+}

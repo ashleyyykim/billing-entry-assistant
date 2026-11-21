@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-01688",
+ "reason": "The timekeeper has spent the most hours on matter 9140.001 and the client name matches.",
+ "shortlist": [
+  "9140.001",
+  "5524.001",
+  "2215.002"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "9140.001",
+ "usage": {
+  "inputTokens": 190,
+  "outputTokens": 93,
+  "totalTokens": 9915,
+  "cacheReadInputTokens": 9632,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.058,
+ "seconds": 4.309549500001594
+}

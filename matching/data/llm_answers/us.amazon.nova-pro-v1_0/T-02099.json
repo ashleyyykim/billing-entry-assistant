@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-02099",
+ "reason": "The narrative 'attend to diligence' is vague and could apply to multiple matters. The timekeeper's recent hours suggest a focus on 7222.002, 9035.002, and 3012.001, but without more specific details, a definitive match cannot be made.",
+ "shortlist": [
+  "7222.002",
+  "9035.002",
+  "3012.001"
+ ],
+ "confidence": 50,
+ "second_cmid": "",
+ "cmid": "NONE",
+ "usage": {
+  "inputTokens": 184,
+  "outputTokens": 132,
+  "totalTokens": 9946,
+  "cacheReadInputTokens": 9630,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.65,
+ "seconds": 6.073251332971267
+}

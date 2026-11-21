@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-02285",
+ "reason": "The narrative discusses fund extension and capital call notices, which are activities related to fund management. The timekeeper's billing history shows significant hours on 5524.002 (Fund II Formation) and 5520.004 (Fund Administration), making them the most likely matches.",
+ "shortlist": [
+  "5524.002",
+  "5520.004",
+  "1111.001"
+ ],
+ "confidence": 90,
+ "second_cmid": "5520.004",
+ "cmid": "5524.002",
+ "usage": {
+  "inputTokens": 233,
+  "outputTokens": 141,
+  "totalTokens": 9995,
+  "cacheReadInputTokens": 9621,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.349,
+ "seconds": 2.456044333986938
+}

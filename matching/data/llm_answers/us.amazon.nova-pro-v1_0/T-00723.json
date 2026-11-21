@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00723",
+ "reason": "The narrative matches the matter 'Admin' for CMID 1111.001.",
+ "shortlist": [
+  "1111.001"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "1111.001",
+ "usage": {
+  "inputTokens": 185,
+  "outputTokens": 69,
+  "totalTokens": 9892,
+  "cacheReadInputTokens": 9638,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.871,
+ "seconds": 3.6775745840277523
+}

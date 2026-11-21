@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-03231",
+ "reason": "The narrative mentions reviewing a comp committee charter, which is most closely related to the 'Board Matters' matter for Solace Health (2960.003). The timekeeper has previously spent a significant amount of time on this matter.",
+ "shortlist": [
+  "2960.003",
+  "3455.002",
+  "6103.003"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "2960.003",
+ "usage": {
+  "inputTokens": 192,
+  "outputTokens": 118,
+  "totalTokens": 9940,
+  "cacheReadInputTokens": 9630,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.254,
+ "seconds": 6.324442583019845
+}

@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02273",
+ "reason": "The narrative clearly describes work on corporate governance guidelines and officer appointments, which aligns with the Board & Governance matter for Aster & Vale.",
+ "shortlist": [
+  "3455.002"
+ ],
+ "confidence": 95,
+ "second_cmid": "",
+ "cmid": "3455.002",
+ "usage": {
+  "inputTokens": 212,
+  "outputTokens": 75,
+  "totalTokens": 9920,
+  "cacheReadInputTokens": 9633,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.988,
+ "seconds": 2.2994502499932423
+}

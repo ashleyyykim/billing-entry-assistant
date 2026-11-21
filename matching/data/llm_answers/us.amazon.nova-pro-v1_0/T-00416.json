@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00416",
+ "reason": "The narrative clearly indicates work on drafting management company agreement and GP operating agreement, which aligns with the matter 9140.001.",
+ "shortlist": [
+  "9140.001"
+ ],
+ "confidence": 95,
+ "second_cmid": "",
+ "cmid": "9140.001",
+ "usage": {
+  "inputTokens": 223,
+  "outputTokens": 78,
+  "totalTokens": 9942,
+  "cacheReadInputTokens": 9641,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.943,
+ "seconds": 1.0167103330604732
+}

@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-01747",
+ "reason": "The narrative mentions updating a 409A valuation report, which is related to executive compensation, and the timekeeper has previously worked on matter 9028.003, which is also related to executive compensation.",
+ "shortlist": [
+  "9028.003",
+  "6230.001",
+  "3120.003"
+ ],
+ "confidence": 80,
+ "second_cmid": "",
+ "cmid": "5750.003",
+ "usage": {
+  "inputTokens": 227,
+  "outputTokens": 115,
+  "totalTokens": 9975,
+  "cacheReadInputTokens": 9633,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.215,
+ "seconds": 6.175478250021115
+}

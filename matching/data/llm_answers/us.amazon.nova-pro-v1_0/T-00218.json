@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00218",
+ "reason": "The narrative and past entries indicate work on D&O questionnaires, which aligns with the typed CMID and the timekeeper's billing history.",
+ "shortlist": [
+  "6103.004"
+ ],
+ "confidence": 95,
+ "second_cmid": "",
+ "cmid": "6103.004",
+ "usage": {
+  "inputTokens": 198,
+  "outputTokens": 77,
+  "totalTokens": 9915,
+  "cacheReadInputTokens": 9640,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.048,
+ "seconds": 1.1198472500545904
+}

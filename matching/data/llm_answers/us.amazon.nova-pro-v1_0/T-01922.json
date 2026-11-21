@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01922",
+ "reason": "The narrative 'Start drafting minutes' aligns with the 'Board & Governance' matter for Meridian Therapeutics.",
+ "shortlist": [
+  "6103.003"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "6103.003",
+ "usage": {
+  "inputTokens": 182,
+  "outputTokens": 68,
+  "totalTokens": 9882,
+  "cacheReadInputTokens": 9632,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.251,
+ "seconds": 8.987052459036931
+}

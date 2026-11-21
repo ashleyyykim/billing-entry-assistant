@@ -1,0 +1,17 @@
+{
+ "entry_id": "T-03157",
+ "reason": "The typed client 'Ridgewaer Partners' does not match any client in the matter list.",
+ "shortlist": [],
+ "confidence": 0,
+ "second_cmid": "",
+ "cmid": "NONE",
+ "usage": {
+  "inputTokens": 200,
+  "outputTokens": 50,
+  "totalTokens": 9879,
+  "cacheReadInputTokens": 9629,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.79,
+ "seconds": 8.33893462503329
+}

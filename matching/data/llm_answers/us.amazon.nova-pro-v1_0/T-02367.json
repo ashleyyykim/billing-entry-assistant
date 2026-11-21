@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02367",
+ "reason": "The narrative 'Tcw T. Walsh' and the typed CMID '6230.001' match the matter 'Ember Grid Energy | General Corporate'.",
+ "shortlist": [
+  "6230.001"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "6230.001",
+ "usage": {
+  "inputTokens": 186,
+  "outputTokens": 85,
+  "totalTokens": 9908,
+  "cacheReadInputTokens": 9637,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.029,
+ "seconds": 9.325263333041221
+}

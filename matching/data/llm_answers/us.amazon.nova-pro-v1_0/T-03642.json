@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-03642",
+ "reason": "The typed CMID 5520.009 does not exist in the matter list.",
+ "shortlist": [
+  "5520.001",
+  "5520.003",
+  "5520.004"
+ ],
+ "confidence": 0,
+ "second_cmid": "",
+ "cmid": "5520.009",
+ "usage": {
+  "inputTokens": 202,
+  "outputTokens": 88,
+  "totalTokens": 9923,
+  "cacheReadInputTokens": 9633,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.998,
+ "seconds": 4.560004917089827
+}

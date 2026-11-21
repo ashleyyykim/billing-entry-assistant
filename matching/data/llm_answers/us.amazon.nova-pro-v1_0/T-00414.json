@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00414",
+ "reason": "The narrative mentions 'Fund II' and the timekeeper has spent significant hours on matter 9140.001, which is related to Fund II Formation.",
+ "shortlist": [
+  "9140.001"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "9140.001",
+ "usage": {
+  "inputTokens": 207,
+  "outputTokens": 83,
+  "totalTokens": 9921,
+  "cacheReadInputTokens": 9631,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.994,
+ "seconds": 1.0652000410482287
+}

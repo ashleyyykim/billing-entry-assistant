@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03266",
+ "reason": "The narrative mentions reviewing and commenting on an escrow agreement, which aligns with the work done for the 'Acquisition of Corvid Valves' matter under Halvorsen Industrial.",
+ "shortlist": [
+  "3012.005"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "3012.005",
+ "usage": {
+  "inputTokens": 191,
+  "outputTokens": 83,
+  "totalTokens": 9906,
+  "cacheReadInputTokens": 9632,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.408,
+ "seconds": 11.987371292081662
+}

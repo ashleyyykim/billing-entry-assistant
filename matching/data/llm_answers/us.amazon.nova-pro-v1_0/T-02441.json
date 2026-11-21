@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02441",
+ "reason": "The narrative mentions drafting a license agreement, which aligns with the work done on matter 4590.004 in the past.",
+ "shortlist": [
+  "4590.004"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "4590.004",
+ "usage": {
+  "inputTokens": 198,
+  "outputTokens": 77,
+  "totalTokens": 9901,
+  "cacheReadInputTokens": 9626,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.128,
+ "seconds": 4.870511666988023
+}

@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00035",
+ "reason": "The narrative 'Attend to filing' aligns with the matter '6103.004' which is related to SEC filings.",
+ "shortlist": [
+  "6103.004"
+ ],
+ "confidence": 95,
+ "second_cmid": "",
+ "cmid": "6103.004",
+ "usage": {
+  "inputTokens": 187,
+  "outputTokens": 78,
+  "totalTokens": 9901,
+  "cacheReadInputTokens": 9636,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.79,
+ "seconds": 2.1193207079777494
+}

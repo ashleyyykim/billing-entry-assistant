@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02820",
+ "reason": "The narrative clearly indicates work on drafting bylaws for entity maintenance, which aligns with the General Corporate matter for Meridian Thermal Systems.",
+ "shortlist": [
+  "6110.001"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "6110.001",
+ "usage": {
+  "inputTokens": 194,
+  "outputTokens": 72,
+  "totalTokens": 9901,
+  "cacheReadInputTokens": 9635,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.922,
+ "seconds": 3.059921665932052
+}

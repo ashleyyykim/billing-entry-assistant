@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00884",
+ "reason": "The narrative and past entries align with the matter 5602.003.",
+ "shortlist": [
+  "5602.003"
+ ],
+ "confidence": 95,
+ "second_cmid": "",
+ "cmid": "5602.003",
+ "usage": {
+  "inputTokens": 219,
+  "outputTokens": 67,
+  "totalTokens": 9918,
+  "cacheReadInputTokens": 9632,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.89,
+ "seconds": 4.257905832957476
+}

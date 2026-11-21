@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-00442",
+ "reason": "The timekeeper has spent the most hours on matter 2201.001 and the narrative does not provide specific details to suggest another matter.",
+ "shortlist": [
+  "2201.001",
+  "9028.003",
+  "2201.003"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "2201.001",
+ "usage": {
+  "inputTokens": 188,
+  "outputTokens": 100,
+  "totalTokens": 9919,
+  "cacheReadInputTokens": 9631,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.153,
+ "seconds": 4.217189416056499
+}

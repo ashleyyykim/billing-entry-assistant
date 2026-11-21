@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02392",
+ "reason": "The narrative 'Interview fund / lateral candidate' aligns with past entries for 1111.003, which involve recruiting activities.",
+ "shortlist": [
+  "1111.003"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "1111.003",
+ "usage": {
+  "inputTokens": 186,
+  "outputTokens": 77,
+  "totalTokens": 9892,
+  "cacheReadInputTokens": 9629,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.897,
+ "seconds": 1.5296354999300092
+}

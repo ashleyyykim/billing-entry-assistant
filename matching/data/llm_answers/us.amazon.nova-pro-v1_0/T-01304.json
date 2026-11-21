@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01304",
+ "reason": "The narrative clearly indicates work related to fund expenses, which aligns with the matter 'Fund Administration' for Cobalt Ridge Capital.",
+ "shortlist": [
+  "5520.004"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "5520.004",
+ "usage": {
+  "inputTokens": 200,
+  "outputTokens": 72,
+  "totalTokens": 9905,
+  "cacheReadInputTokens": 9633,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.951,
+ "seconds": 2.261773334001191
+}

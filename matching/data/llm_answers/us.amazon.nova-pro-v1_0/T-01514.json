@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01514",
+ "reason": "The narrative clearly describes work related to board governance for Aster & Vale, which matches the typed CMID and matter.",
+ "shortlist": [
+  "3455.002"
+ ],
+ "confidence": 95,
+ "second_cmid": "",
+ "cmid": "3455.002",
+ "usage": {
+  "inputTokens": 231,
+  "outputTokens": 72,
+  "totalTokens": 9931,
+  "cacheReadInputTokens": 9628,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.935,
+ "seconds": 3.18333775002975
+}

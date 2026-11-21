@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02151",
+ "reason": "The narrative 'Attend CLE' aligns with the 'Admin' matter for the Firm.",
+ "shortlist": [
+  "1111.001"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "1111.001",
+ "usage": {
+  "inputTokens": 182,
+  "outputTokens": 67,
+  "totalTokens": 9880,
+  "cacheReadInputTokens": 9631,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.034,
+ "seconds": 1.6866102080093697
+}

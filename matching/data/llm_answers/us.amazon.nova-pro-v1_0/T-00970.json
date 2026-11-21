@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00970",
+ "reason": "The narrative clearly indicates work on the Fund II Formation matter for Juniper Peak Capital, which matches the matter list and the timekeeper's billing history.",
+ "shortlist": [
+  "9140.001"
+ ],
+ "confidence": 95,
+ "second_cmid": "",
+ "cmid": "9140.001",
+ "usage": {
+  "inputTokens": 211,
+  "outputTokens": 78,
+  "totalTokens": 9916,
+  "cacheReadInputTokens": 9627,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.134,
+ "seconds": 2.877669290988706
+}

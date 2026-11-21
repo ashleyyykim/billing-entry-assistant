@@ -1,6 +1,6 @@
 """Rule baseline: route each entry to AUTO_MATCH, FLAG_MISMATCH, NEEDS_REVIEW, MULTI_MATTER, or NO_MATCH.
 
-Works on the pairs table from notebook 02. Each entry is decided from its own rows only (g below).
+Works on the pairs table (features.build_pairs). Each entry is decided from its own rows only (g below).
 """
 import numpy as np
 import pandas as pd
@@ -8,7 +8,7 @@ import pandas as pd
 ACTIONS = ["AUTO_MATCH", "FLAG_MISMATCH", "NEEDS_REVIEW", "MULTI_MATTER", "NO_MATCH"]
 OUTCOMES = ["Accepted, right", "Accepted, wrong", "Flagged", "Sent to review", "Multi-matter", "No match"]
 
-# Settings are explained in notebook 03, section 3
+# Starting settings; the tuned ones are saved in results/03_config.json
 DEFAULTS = {
     "client_col": "client_ratio",
     "matter_col": "matter_token_sort_ratio",

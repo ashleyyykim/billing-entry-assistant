@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01786",
+ "reason": "The narrative mentions employee matters and annual filings, which align with the General Corporate matter for Solace Health.",
+ "shortlist": [
+  "2960.001"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "2960.001",
+ "usage": {
+  "inputTokens": 203,
+  "outputTokens": 69,
+  "totalTokens": 9902,
+  "cacheReadInputTokens": 9630,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.806,
+ "seconds": 1.0128947499906644
+}

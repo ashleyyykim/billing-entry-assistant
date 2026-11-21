@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-03154",
+ "reason": "The timekeeper has spent the most hours on 3120.001, making it the most likely matter for this entry.",
+ "shortlist": [
+  "3120.001",
+  "5520.005",
+  "5520.002"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "3120.001",
+ "usage": {
+  "inputTokens": 187,
+  "outputTokens": 97,
+  "totalTokens": 9914,
+  "cacheReadInputTokens": 9630,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.339,
+ "seconds": 2.1287530000554398
+}

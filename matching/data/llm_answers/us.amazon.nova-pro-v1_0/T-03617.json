@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03617",
+ "reason": "The narrative clearly indicates work related to board composition, which aligns with the matter type 'BOARD' for CMID 2960.003.",
+ "shortlist": [
+  "2960.003"
+ ],
+ "confidence": 95,
+ "second_cmid": "",
+ "cmid": "2960.003",
+ "usage": {
+  "inputTokens": 193,
+  "outputTokens": 80,
+  "totalTokens": 9909,
+  "cacheReadInputTokens": 9636,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.962,
+ "seconds": 1.2416214169934392
+}

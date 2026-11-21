@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-03475",
+ "reason": "The narrative mentions analyzing customer contracts, which aligns with the 'Add-On Acquisition (Project Lark)' matter for Cobalt Ridge Capital.",
+ "shortlist": [
+  "5520.001",
+  "5520.002",
+  "5520.003"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "5520.001",
+ "usage": {
+  "inputTokens": 198,
+  "outputTokens": 94,
+  "totalTokens": 9926,
+  "cacheReadInputTokens": 9634,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 2.113,
+ "seconds": 2.489428333938122
+}

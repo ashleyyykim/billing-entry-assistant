@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-00869",
+ "reason": "The narrative describes work on UCC-1s and intercreditor agreements, which are typical for debt matters. The timekeeper has previously worked on Northgate Bank's credit facility for Asterion Holdings (7215.003).",
+ "shortlist": [
+  "7215.003",
+  "8340.001",
+  "8012.001"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "7215.003",
+ "usage": {
+  "inputTokens": 212,
+  "outputTokens": 120,
+  "totalTokens": 9965,
+  "cacheReadInputTokens": 9633,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 2.259,
+ "seconds": 2.4439838329562917
+}

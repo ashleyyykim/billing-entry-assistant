@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-03955",
+ "reason": "The narrative 'revise diligence memo' aligns with the nature of work typically done for the 'Add-On Acquisition (Project Lark)' matter, and the client name 'Cobalt Ridga Capital' is likely a misspelling of 'Cobalt Ridge Capital'.",
+ "shortlist": [
+  "5520.001",
+  "5520.002",
+  "5520.003"
+ ],
+ "confidence": 80,
+ "second_cmid": "",
+ "cmid": "5520.001",
+ "usage": {
+  "inputTokens": 185,
+  "outputTokens": 122,
+  "totalTokens": 9937,
+  "cacheReadInputTokens": 9630,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.36,
+ "seconds": 10.319443250074983
+}

@@ -2092,9 +2092,10 @@ function decisionFields(d) {
   const listed = Array.isArray(d.shortlist) ? d.shortlist.map(x => String(x.cmid ?? x)) : String(d.shortlist ?? "").split("|").map(x => x.trim());
   const first = d.reason_short || "";
   const shortlist = [...new Set([cmid, ...listed].filter(Boolean))].map((c, i) => ({ cmid: c, note: i === 0 ? first : "Also on Tenth's shortlist." }));
-  const prob = d.top_prob == null || d.top_prob === "" || isNaN(+d.top_prob) ? null : +d.top_prob;
-  const prob2 = d.second_prob == null || d.second_prob === "" || isNaN(+d.second_prob) ? null : +d.second_prob;
-  return { action, cmid, shortlist, whyShort: first, prob, prob2, points: Array.isArray(d.reason_points) ? d.reason_points.slice(0, 3) : [], matterState: action === "AUTO_MATCH" ? "auto" : "pending" };
+  const num = v => v == null || v === "" || isNaN(+v) ? null : +v;
+  const probTop = num(d.top_prob), prob2 = num(d.second_prob);
+  const prob = num(d.p_auto) ?? probTop;   // how sure Tenth is that it can accept the matter: the score it decided on
+  return { action, cmid, shortlist, whyShort: first, prob, probTop, prob2, points: Array.isArray(d.reason_points) ? d.reason_points.slice(0, 3) : [], matterState: action === "AUTO_MATCH" ? "auto" : "pending" };
 }
 
 /* What Tenth says about an entry it wasn't sure of. It names the part it doubts, never how many passes it made or which model did them. */
@@ -2837,8 +2838,8 @@ function matterLines(e, c) {   // why Tenth asks: how sure it is, who comes next
   const pct = e.prob != null ? `${Math.round(e.prob * 100)}% sure.` : "", next = matterCands(e)[1];
   let first;
   if (e.whyShort === "Close call between matters" && next && e.prob2 != null) {
-    const a = mi(c.cmid), b = mi(next.cmid), name = a.client === b.client && b.name ? b.name : matterLabel(b);
-    first = [pct, `Next closest is ${name}, at ${Math.round(e.prob2 * 100)}%.`].filter(Boolean).join(" ");
+    const a = mi(c.cmid), b = mi(next.cmid), name = a.client === b.client && b.name ? b.name : matterLabel(b), top = e.probTop ?? e.prob;
+    first = [top != null ? `${Math.round(top * 100)}% sure.` : "", `Next closest is ${name}, at ${Math.round(e.prob2 * 100)}%.`].filter(Boolean).join(" ");
   } else first = [MATTER_WHY[e.whyShort] || (e.whyShort ? e.whyShort.replace(/\.?$/, ".") : ""), pct].filter(Boolean).join(" ");
   return [first, file].filter(Boolean);
 }
@@ -3576,7 +3577,7 @@ function openPicker(e) { S.picker = e.id; S.qSig = null; render(); }
 function closePicker() { S.picker = null; S.qSig = null; render(); const n = $("#noBtn"); if (n) n.focus(); }
 function matterPicker(e) {
   const cands = matterCands(e).map(c => c.cmid), turned = cands[S.cand], near = cands.filter(k => k !== turned && MATTERS[k]);
-  const sure = k => { const i = cands.indexOf(k), p = i === 0 ? e.prob : i === 1 ? e.prob2 : null; return p != null ? `${Math.round(p * 100)}%` : ""; };
+  const sure = k => { const i = cands.indexOf(k), p = i === 0 ? e.probTop ?? e.prob : i === 1 ? e.prob2 : null; return p != null ? `${Math.round(p * 100)}%` : ""; };
   const recent = recentFor(e.tk).filter(k => !near.includes(k) && k !== turned).slice(0, 5);
   const inp = el("input", { type: "search", class: "ws-inp", id: "wsMp", autocomplete: "off", placeholder: "Which matter? Search client, matter or number", "aria-label": "Which matter is it?", role: "combobox", "aria-expanded": "true", "aria-controls": "wsMpList", "aria-autocomplete": "list" });
   const list = el("div", { class: "ws-plist", id: "wsMpList", role: "listbox", "aria-label": "Matters" });

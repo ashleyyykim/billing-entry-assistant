@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02966",
+ "reason": "The narrative aligns with the matter type and the timekeeper has previous hours recorded for this matter.",
+ "shortlist": [
+  "1111.002"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "1111.002",
+ "usage": {
+  "inputTokens": 190,
+  "outputTokens": 67,
+  "totalTokens": 9894,
+  "cacheReadInputTokens": 9637,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.873,
+ "seconds": 8.600473041995429
+}

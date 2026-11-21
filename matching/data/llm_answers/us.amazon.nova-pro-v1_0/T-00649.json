@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00649",
+ "reason": "The narrative 'track clsg deliverables' aligns with the matter '7633.002' for Copperline Networks, which is about Series A Financing.",
+ "shortlist": [
+  "7633.002"
+ ],
+ "confidence": 90,
+ "second_cmid": "7633.002",
+ "cmid": "(blank)",
+ "usage": {
+  "inputTokens": 183,
+  "outputTokens": 85,
+  "totalTokens": 9907,
+  "cacheReadInputTokens": 9639,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.046,
+ "seconds": 3.726282124989666
+}

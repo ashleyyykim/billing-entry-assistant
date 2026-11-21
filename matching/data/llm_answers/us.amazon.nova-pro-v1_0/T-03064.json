@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03064",
+ "reason": "The narrative matches the past entries for 9140.001 and the timekeeper has a significant number of hours recorded for this matter.",
+ "shortlist": [
+  "9140.001"
+ ],
+ "confidence": 90,
+ "second_cmid": "",
+ "cmid": "9140.001",
+ "usage": {
+  "inputTokens": 193,
+  "outputTokens": 79,
+  "totalTokens": 9909,
+  "cacheReadInputTokens": 9637,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.235,
+ "seconds": 3.5491081250365824
+}

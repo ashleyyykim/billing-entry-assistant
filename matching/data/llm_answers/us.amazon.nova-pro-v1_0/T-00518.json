@@ -1,0 +1,17 @@
+{
+ "entry_id": "T-00518",
+ "reason": "The matter 'Project Heron' for client 'LFS' is not found in the matter list.",
+ "shortlist": [],
+ "confidence": 0,
+ "second_cmid": "",
+ "cmid": "NONE",
+ "usage": {
+  "inputTokens": 208,
+  "outputTokens": 51,
+  "totalTokens": 9889,
+  "cacheReadInputTokens": 9630,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 0.757,
+ "seconds": 2.29504579200875
+}

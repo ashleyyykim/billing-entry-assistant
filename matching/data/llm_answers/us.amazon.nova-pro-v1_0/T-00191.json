@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-00191",
+ "reason": "The narrative mentions 'Tidewater Robotics' which is not listed in the matter list. The closest matches are Tidewater AI and Tidewater Analytics, but the narrative does not specify which one. Therefore, the entry is assigned to NONE.",
+ "shortlist": [
+  "4590.001",
+  "4590.002",
+  "4590.003"
+ ],
+ "confidence": 70,
+ "second_cmid": "",
+ "cmid": "NONE",
+ "usage": {
+  "inputTokens": 202,
+  "outputTokens": 110,
+  "totalTokens": 9940,
+  "cacheReadInputTokens": 9628,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_s": 1.734,
+ "seconds": 1.8084148339694366
+}
