@@ -1,0 +1,65 @@
+{
+ "model": "us.amazon.nova-pro-v1:0",
+ "entries": [
+  {
+   "lines": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "client": "",
+   "cmid": "5602.003",
+   "date": "10/27",
+   "hours_written": "1.6",
+   "hours": 1.6,
+   "narrative": "review Quanta disclosure schedules",
+   "unsure": ""
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "across": 29,
+   "down": 39,
+   "conf": 93,
+   "number_conf": 93,
+   "text": "10/27"
+  },
+  {
+   "id": 2,
+   "across": 26,
+   "down": 45,
+   "conf": 73,
+   "number_conf": 73,
+   "text": "5602.003 1.6"
+  },
+  {
+   "id": 3,
+   "across": 26,
+   "down": 52,
+   "conf": 100,
+   "number_conf": null,
+   "text": "review Quanta"
+  },
+  {
+   "id": 4,
+   "across": 26,
+   "down": 58,
+   "conf": 100,
+   "number_conf": null,
+   "text": "disclosure schedules"
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 817,
+  "outputTokens": 96,
+  "totalTokens": 4975,
+  "cacheReadInputTokens": 4062,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_ms": 1353,
+ "prompt_hash": "b81c84d10e"
+}

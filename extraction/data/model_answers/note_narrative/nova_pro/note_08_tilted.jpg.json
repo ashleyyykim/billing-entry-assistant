@@ -1,0 +1,47 @@
+{
+ "model": "us.amazon.nova-pro-v1:0",
+ "entries": [
+  {
+   "lines": [
+    1,
+    2
+   ],
+   "client": "Ironwood",
+   "cmid": "",
+   "date": "",
+   "hours_written": "1:15",
+   "hours": 1.25,
+   "narrative": "Prism bringdown call",
+   "unsure": "1:15 read as 1.25 hours"
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "across": 29,
+   "down": 37,
+   "conf": 79,
+   "number_conf": 99,
+   "text": "1:15 Iron W ood"
+  },
+  {
+   "id": 2,
+   "across": 28,
+   "down": 45,
+   "conf": 24,
+   "number_conf": null,
+   "text": "\u65b0 Prism bringdown call"
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 722,
+  "outputTokens": 91,
+  "totalTokens": 4784,
+  "cacheReadInputTokens": 3971,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_ms": 1461,
+ "prompt_hash": "b81c84d10e"
+}

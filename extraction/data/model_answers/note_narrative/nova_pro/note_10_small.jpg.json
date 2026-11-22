@@ -1,0 +1,68 @@
+{
+ "model": "us.amazon.nova-pro-v1:0",
+ "entries": [
+  {
+   "lines": [
+    1,
+    2,
+    3
+   ],
+   "client": "",
+   "cmid": "4471-002",
+   "date": "",
+   "hours_written": "1.2",
+   "hours": 1.2,
+   "narrative": "review Calpine side letter",
+   "unsure": "CMID format fixed from 4471-002 to 4471.002"
+  },
+  {
+   "lines": [
+    1
+   ],
+   "client": "",
+   "cmid": "",
+   "date": "",
+   "hours_written": "1/3",
+   "hours": 0.3,
+   "narrative": "",
+   "unsure": "1/3 read as 0.3, likely a lost decimal point"
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "across": 27,
+   "down": 33,
+   "conf": 99,
+   "number_conf": 99,
+   "text": "4471-002 1.2"
+  },
+  {
+   "id": 2,
+   "across": 19,
+   "down": 45,
+   "conf": 98,
+   "number_conf": null,
+   "text": "review Calpine side"
+  },
+  {
+   "id": 3,
+   "across": 17,
+   "down": 54,
+   "conf": 100,
+   "number_conf": null,
+   "text": "letter"
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 777,
+  "outputTokens": 174,
+  "totalTokens": 5025,
+  "cacheReadInputTokens": 4074,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_ms": 1789,
+ "prompt_hash": "b81c84d10e"
+}

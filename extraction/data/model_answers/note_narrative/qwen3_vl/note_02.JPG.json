@@ -1,0 +1,67 @@
+{
+ "model": "qwen.qwen3-vl-235b-a22b",
+ "prompt": "v2",
+ "mode": "tool",
+ "system_prompt": true,
+ "image_first": false,
+ "entries": [
+  {
+   "lines": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "client": "",
+   "cmid": "5602.003",
+   "date": "10/27",
+   "hours_written": "1.6",
+   "narrative": "review Quanta disclosure schedules",
+   "unsure": "",
+   "hours": 1.6
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "across": 29,
+   "down": 39,
+   "conf": 81,
+   "number_conf": 81,
+   "text": "10127"
+  },
+  {
+   "id": 2,
+   "across": 27,
+   "down": 45,
+   "conf": 96,
+   "number_conf": 96,
+   "text": "5602.003 1.6"
+  },
+  {
+   "id": 3,
+   "across": 26,
+   "down": 52,
+   "conf": 87,
+   "number_conf": null,
+   "text": "review Quanta"
+  },
+  {
+   "id": 4,
+   "across": 26,
+   "down": 58,
+   "conf": 94,
+   "number_conf": null,
+   "text": "disclosure schedules"
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 7135,
+  "outputTokens": 82,
+  "totalTokens": 7217
+ },
+ "latency_ms": 6759,
+ "prompt_hash": "2112cd0c6e"
+}

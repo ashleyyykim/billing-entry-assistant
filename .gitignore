@@ -31,6 +31,10 @@ phase2_model/data/outputs/*
 *.caf
 *.amr
 !extraction/data/dev_typed/messages/IMG_2041.HEIC
+!matching/data/samples/voice-memo.m4a
+!matching/data/samples/notebook.jpg
+!matching/data/samples/sticky-note.jpg
+!matching/data/samples/napkin.jpg
 **/data/dev_photos/
 **/data/held_out/photos/
 **/data/held_out/voice/

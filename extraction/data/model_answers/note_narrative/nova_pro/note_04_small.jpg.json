@@ -1,0 +1,85 @@
+{
+ "model": "us.amazon.nova-pro-v1:0",
+ "entries": [
+  {
+   "lines": [
+    1,
+    2,
+    3
+   ],
+   "client": "Tidewater Analytics",
+   "cmid": "",
+   "date": "",
+   "hours_written": "1.2",
+   "hours": 1.2,
+   "narrative": "draft side letter for Series A 880m lead",
+   "unsure": ""
+  },
+  {
+   "lines": [
+    4,
+    5
+   ],
+   "client": "Firm",
+   "cmid": "",
+   "date": "",
+   "hours_written": ".3",
+   "hours": 0.3,
+   "narrative": "admin time entries",
+   "unsure": ""
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "across": 29,
+   "down": 43,
+   "conf": 99,
+   "number_conf": 100,
+   "text": "Tidewater Analytics 1.2"
+  },
+  {
+   "id": 2,
+   "across": 29,
+   "down": 49,
+   "conf": 100,
+   "number_conf": null,
+   "text": "draft side letter for"
+  },
+  {
+   "id": 3,
+   "across": 29,
+   "down": 54,
+   "conf": 26,
+   "number_conf": 26,
+   "text": "Series A 880m lead"
+  },
+  {
+   "id": 4,
+   "across": 29,
+   "down": 64,
+   "conf": 59,
+   "number_conf": 59,
+   "text": "Firm admin .3 time"
+  },
+  {
+   "id": 5,
+   "across": 30,
+   "down": 68,
+   "conf": 99,
+   "number_conf": null,
+   "text": "entries"
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 860,
+  "outputTokens": 147,
+  "totalTokens": 5048,
+  "cacheReadInputTokens": 4041,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_ms": 1837,
+ "prompt_hash": "b81c84d10e"
+}

@@ -1,0 +1,94 @@
+{
+ "model": "us.amazon.nova-pro-v1:0",
+ "entries": [
+  {
+   "lines": [
+    1,
+    2,
+    3
+   ],
+   "client": "Orchard Lane",
+   "cmid": "",
+   "date": "10/26",
+   "hours_written": ".9",
+   "hours": 0.9,
+   "narrative": "review Vendor contract",
+   "unsure": "10126 read as 10/26"
+  },
+  {
+   "lines": [
+    4,
+    5,
+    6
+   ],
+   "client": "Solace Health",
+   "cmid": "",
+   "date": "10/27",
+   "hours_written": "1.1",
+   "hours": 1.1,
+   "narrative": "board minutes",
+   "unsure": ""
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "across": 31,
+   "down": 26,
+   "conf": 79,
+   "number_conf": 79,
+   "text": "Mon 10126"
+  },
+  {
+   "id": 2,
+   "across": 30,
+   "down": 29,
+   "conf": 86,
+   "number_conf": 86,
+   "text": "Orchard Lane .9"
+  },
+  {
+   "id": 3,
+   "across": 30,
+   "down": 31,
+   "conf": 99,
+   "number_conf": null,
+   "text": "review Vendor contract"
+  },
+  {
+   "id": 4,
+   "across": 34,
+   "down": 39,
+   "conf": 79,
+   "number_conf": 79,
+   "text": "Tues 10/27"
+  },
+  {
+   "id": 5,
+   "across": 35,
+   "down": 41,
+   "conf": 90,
+   "number_conf": 90,
+   "text": "solace Health 1.1"
+  },
+  {
+   "id": 6,
+   "across": 34,
+   "down": 44,
+   "conf": 100,
+   "number_conf": null,
+   "text": "board minutes"
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 871,
+  "outputTokens": 166,
+  "totalTokens": 4961,
+  "cacheReadInputTokens": 3924,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_ms": 1817,
+ "prompt_hash": "b81c84d10e"
+}

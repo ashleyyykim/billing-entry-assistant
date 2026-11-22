@@ -1,0 +1,49 @@
+{
+ "model": "qwen.qwen3-vl-235b-a22b",
+ "prompt": "v2",
+ "mode": "tool",
+ "system_prompt": true,
+ "image_first": false,
+ "entries": [
+  {
+   "lines": [
+    1,
+    2
+   ],
+   "client": "",
+   "cmid": "4471.002",
+   "date": "11/3",
+   "hours_written": "1.2",
+   "narrative": "review Calpine side letter",
+   "unsure": "photo shows 4471-002 with a hyphen; changed to dot for CMID format. Photo shows 11/3 as date, not in reader's lines.",
+   "hours": 1.2
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "across": 30,
+   "down": 38,
+   "conf": 77,
+   "number_conf": 77,
+   "text": "4471-002 1.2 \u5ddd3"
+  },
+  {
+   "id": 2,
+   "across": 26,
+   "down": 49,
+   "conf": 99,
+   "number_conf": null,
+   "text": "review Calpine side"
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 7409,
+  "outputTokens": 115,
+  "totalTokens": 7524
+ },
+ "latency_ms": 3017,
+ "prompt_hash": "2112cd0c6e"
+}

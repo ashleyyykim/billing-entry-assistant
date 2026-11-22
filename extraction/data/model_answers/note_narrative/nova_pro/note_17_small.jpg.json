@@ -1,0 +1,87 @@
+{
+ "model": "us.amazon.nova-pro-v1:0",
+ "entries": [
+  {
+   "lines": [
+    1,
+    2
+   ],
+   "client": "Northgate",
+   "cmid": "",
+   "date": "",
+   "hours_written": "two hours",
+   "hours": 2.0,
+   "narrative": "Summit Ridge SPA",
+   "unsure": ""
+  },
+  {
+   "lines": [
+    3
+   ],
+   "client": "Firm",
+   "cmid": "",
+   "date": "",
+   "hours_written": ".5",
+   "hours": 0.5,
+   "narrative": "admin",
+   "unsure": ""
+  },
+  {
+   "lines": [
+    4
+   ],
+   "client": "Orchard Lane",
+   "cmid": "",
+   "date": "",
+   "hours_written": ".3",
+   "hours": 0.3,
+   "narrative": "email to client re consent",
+   "unsure": ".3 read as 0.3, not 3 hours"
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "across": 16,
+   "down": 32,
+   "conf": 100,
+   "number_conf": null,
+   "text": "Northgate two hours"
+  },
+  {
+   "id": 2,
+   "across": 16,
+   "down": 41,
+   "conf": 100,
+   "number_conf": null,
+   "text": "Summit Ridge SPA"
+  },
+  {
+   "id": 3,
+   "across": 14,
+   "down": 53,
+   "conf": 87,
+   "number_conf": 87,
+   "text": "firm admin .5"
+  },
+  {
+   "id": 4,
+   "across": 14,
+   "down": 72,
+   "conf": 51,
+   "number_conf": 94,
+   "text": "orchard Lane, 3 email to clientre consent."
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 826,
+  "outputTokens": 197,
+  "totalTokens": 5075,
+  "cacheReadInputTokens": 4052,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_ms": 2039,
+ "prompt_hash": "b81c84d10e"
+}

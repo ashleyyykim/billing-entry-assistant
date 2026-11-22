@@ -1,0 +1,58 @@
+{
+ "model": "qwen.qwen3-vl-235b-a22b",
+ "prompt": "v2",
+ "mode": "tool",
+ "system_prompt": true,
+ "image_first": false,
+ "entries": [
+  {
+   "lines": [
+    1,
+    2,
+    3
+   ],
+   "client": "",
+   "cmid": "4471.002",
+   "date": "11/3",
+   "hours_written": "1.2",
+   "narrative": "review Calpine side letter",
+   "unsure": "photo shows 4471.002 and 11/3; the reader has 4471-002 and \u5ddd3",
+   "hours": 1.2
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "across": 27,
+   "down": 33,
+   "conf": 86,
+   "number_conf": 86,
+   "text": "4471-002 1.2 \u5ddd3"
+  },
+  {
+   "id": 2,
+   "across": 19,
+   "down": 45,
+   "conf": 98,
+   "number_conf": null,
+   "text": "review Calpine side"
+  },
+  {
+   "id": 3,
+   "across": 17,
+   "down": 54,
+   "conf": 100,
+   "number_conf": null,
+   "text": "letter"
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 7112,
+  "outputTokens": 113,
+  "totalTokens": 7225
+ },
+ "latency_ms": 4636,
+ "prompt_hash": "2112cd0c6e"
+}

@@ -438,10 +438,10 @@ def reasons_for(row, split=None):
         return short, f"Auto-match to {pick}: {why or 'strong overall match'}."
 
     if action == "FLAG_MISMATCH":
-        if isinstance(row["typed_cmid"], str) and row["typed_cmid"] != row["top_cmid"]:
-            short = "Typed CMID doesn't fit narrative"
-        elif row["typed_not_open"] == 1:
+        if row["typed_not_open"] == 1:   # a closed (or not yet open) matter says so, even when the narrative points elsewhere too
             short = "Typed matter wasn't open"
+        elif isinstance(row["typed_cmid"], str) and row["typed_cmid"] != row["top_cmid"]:
+            short = "Typed CMID doesn't fit narrative"
         else:
             short = "Matter wasn't open on that date"
         return short, f"Flag: {short}. Suggested {pick}" + (f": {why}." if why else ".")

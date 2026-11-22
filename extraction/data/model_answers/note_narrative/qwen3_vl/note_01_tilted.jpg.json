@@ -1,0 +1,67 @@
+{
+ "model": "qwen.qwen3-vl-235b-a22b",
+ "prompt": "v2",
+ "mode": "tool",
+ "system_prompt": true,
+ "image_first": false,
+ "entries": [
+  {
+   "lines": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "client": "Halvorsen",
+   "cmid": "",
+   "date": "",
+   "hours_written": "4",
+   "narrative": "call w/lender counsel re Brightline closing",
+   "unsure": "photo shows \".4\"; the reader has \"4\". 4 hours for a call is unlikely, so this is likely .4 with the point missing.",
+   "hours": 0.4
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "across": 31,
+   "down": 39,
+   "conf": 37,
+   "number_conf": 37,
+   "text": "4 Halvorsen -"
+  },
+  {
+   "id": 2,
+   "across": 32,
+   "down": 46,
+   "conf": 100,
+   "number_conf": null,
+   "text": "call w/lender"
+  },
+  {
+   "id": 3,
+   "across": 33,
+   "down": 49,
+   "conf": 91,
+   "number_conf": null,
+   "text": "counsel re Brightline"
+  },
+  {
+   "id": 4,
+   "across": 34,
+   "down": 60,
+   "conf": 100,
+   "number_conf": null,
+   "text": "closing"
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 7448,
+  "outputTokens": 108,
+  "totalTokens": 7556
+ },
+ "latency_ms": 7721,
+ "prompt_hash": "2112cd0c6e"
+}

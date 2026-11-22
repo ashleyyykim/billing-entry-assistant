@@ -1,0 +1,79 @@
+{
+ "model": "us.amazon.nova-pro-v1:0",
+ "entries": [
+  {
+   "lines": [
+    1
+   ],
+   "client": "Ironwood",
+   "cmid": "",
+   "date": "",
+   "hours_written": "2.5",
+   "hours": 2.5,
+   "narrative": "diligence",
+   "unsure": ""
+  },
+  {
+   "lines": [
+    1,
+    2
+   ],
+   "client": "Ironwood",
+   "cmid": "",
+   "date": "",
+   "hours_written": "",
+   "narrative": "calls w/ Quanta mgmt",
+   "unsure": ""
+  },
+  {
+   "lines": [
+    1,
+    3
+   ],
+   "client": "Ironwood",
+   "cmid": "",
+   "date": "",
+   "hours_written": ", 8",
+   "hours": 0.8,
+   "narrative": "markup SPA",
+   "unsure": "\", 8\" read as.8"
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "across": 30,
+   "down": 43,
+   "conf": 100,
+   "number_conf": 100,
+   "text": "Ironwood 2.5 diligence"
+  },
+  {
+   "id": 2,
+   "across": 31,
+   "down": 48,
+   "conf": 100,
+   "number_conf": null,
+   "text": "calls w/ Quanta mgmt"
+  },
+  {
+   "id": 3,
+   "across": 34,
+   "down": 57,
+   "conf": 58,
+   "number_conf": 99,
+   "text": "same - markup SPA , 8"
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 766,
+  "outputTokens": 190,
+  "totalTokens": 4913,
+  "cacheReadInputTokens": 3957,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_ms": 2137,
+ "prompt_hash": "b81c84d10e"
+}

@@ -1,0 +1,96 @@
+{
+ "model": "qwen.qwen3-vl-235b-a22b",
+ "prompt": "v2",
+ "mode": "tool",
+ "system_prompt": true,
+ "image_first": false,
+ "entries": [
+  {
+   "lines": [
+    1,
+    2,
+    3
+   ],
+   "client": "",
+   "cmid": "3012.005",
+   "date": "",
+   "hours_written": "1.3",
+   "narrative": "corvid NDA Markup",
+   "unsure": "photo shows 3012.0055; the reader has 3012.0055, but CMID should be 4 digits, a dot, 3 digits, so 3012.005",
+   "hours": 1.3
+  },
+  {
+   "lines": [
+    4,
+    5,
+    6
+   ],
+   "client": "Harborline",
+   "cmid": "2207.003",
+   "date": "",
+   "hours_written": "9",
+   "narrative": "Calder license redline",
+   "unsure": "9 hours for a redline is likely .9 with the point missing",
+   "hours": 0.9
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "across": 19,
+   "down": 32,
+   "conf": 77,
+   "number_conf": 77,
+   "text": "3012.0055"
+  },
+  {
+   "id": 2,
+   "across": 37,
+   "down": 36,
+   "conf": 93,
+   "number_conf": null,
+   "text": "corvid NDA Markup"
+  },
+  {
+   "id": 3,
+   "across": 72,
+   "down": 41,
+   "conf": 100,
+   "number_conf": 100,
+   "text": "1.3"
+  },
+  {
+   "id": 4,
+   "across": 18,
+   "down": 52,
+   "conf": 100,
+   "number_conf": 100,
+   "text": "Harborline 2207.003"
+  },
+  {
+   "id": 5,
+   "across": 39,
+   "down": 60,
+   "conf": 95,
+   "number_conf": 95,
+   "text": "9"
+  },
+  {
+   "id": 6,
+   "across": 44,
+   "down": 62,
+   "conf": 85,
+   "number_conf": null,
+   "text": "Calder license redline"
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 7191,
+  "outputTokens": 212,
+  "totalTokens": 7403
+ },
+ "latency_ms": 4460,
+ "prompt_hash": "2112cd0c6e"
+}

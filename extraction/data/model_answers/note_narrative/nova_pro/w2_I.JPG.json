@@ -1,0 +1,161 @@
+{
+ "model": "us.amazon.nova-pro-v1:0",
+ "entries": [
+  {
+   "lines": [
+    1,
+    2,
+    4,
+    5
+   ],
+   "client": "Meridian",
+   "cmid": "",
+   "date": "11/12",
+   "hours_written": "1.1",
+   "hours": 1.1,
+   "narrative": "comments from Anjor Security on the ATM sales agreement",
+   "unsure": ""
+  },
+  {
+   "lines": [
+    6,
+    7
+   ],
+   "client": "Meridian Thermal",
+   "cmid": "",
+   "date": "11/12",
+   "hours_written": "1.5.0.8",
+   "hours": 1.5,
+   "narrative": "coldline HVAC diligence",
+   "unsure": "0.8 is likely a lost decimal point"
+  },
+  {
+   "lines": [
+    7,
+    8
+   ],
+   "client": "Mosaic Health",
+   "cmid": "",
+   "date": "11/12",
+   "hours_written": "2.2",
+   "hours": 2.2,
+   "narrative": "review Brightview clinics purchase agreement and disclosure sched.",
+   "unsure": ""
+  },
+  {
+   "lines": [
+    9,
+    10,
+    11
+   ],
+   "client": "Orchard Lane",
+   "cmid": "",
+   "date": "11/12",
+   "hours_written": "0.3",
+   "hours": 0.3,
+   "narrative": "send work nexts to client Board minutes; NPA for Cobalt Rock 0.4 Fieldstone Foods.",
+   "unsure": ""
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "across": 6,
+   "down": 16,
+   "conf": 70,
+   "number_conf": null,
+   "text": "Page / To Do : send Coldline comments"
+  },
+  {
+   "id": 2,
+   "across": 61,
+   "down": 25,
+   "conf": 68,
+   "number_conf": 68,
+   "text": "by 3PM."
+  },
+  {
+   "id": 3,
+   "across": 12,
+   "down": 29,
+   "conf": 46,
+   "number_conf": null,
+   "text": "# Date chent Hours what you Did."
+  },
+  {
+   "id": 4,
+   "across": 11,
+   "down": 37,
+   "conf": 33,
+   "number_conf": 33,
+   "text": "/ Thurs 11/12 Mendian 7x 1.1 comments from Anjor Security"
+  },
+  {
+   "id": 5,
+   "across": 58,
+   "down": 41,
+   "conf": 63,
+   "number_conf": null,
+   "text": "on the ATM sales agreement"
+  },
+  {
+   "id": 6,
+   "across": 10,
+   "down": 43,
+   "conf": 30,
+   "number_conf": 30,
+   "text": "2 Thers 11/12 Meridian Theemal 1.5.0.8 coldline HVAC diligence"
+  },
+  {
+   "id": 7,
+   "across": 11,
+   "down": 50,
+   "conf": 51,
+   "number_conf": 93,
+   "text": "3 Thes 11/12 Mosaic Health 2.2 purchase Brightview agreement clinics and"
+  },
+  {
+   "id": 8,
+   "across": 58,
+   "down": 59,
+   "conf": 88,
+   "number_conf": null,
+   "text": "disclosure sched and."
+  },
+  {
+   "id": 9,
+   "across": 10,
+   "down": 62,
+   "conf": 21,
+   "number_conf": 100,
+   "text": "4 Theirs 11/12 orchard Lane; 0.3; send work nexts to dieat."
+  },
+  {
+   "id": 10,
+   "across": 57,
+   "down": 67,
+   "conf": 59,
+   "number_conf": null,
+   "text": "Board minutes: NPA for"
+  },
+  {
+   "id": 11,
+   "across": 31,
+   "down": 70,
+   "conf": 76,
+   "number_conf": 100,
+   "text": "lobaH Rock 0.4 Fieldstone Foody."
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 1225,
+  "outputTokens": 338,
+  "totalTokens": 5473,
+  "cacheReadInputTokens": 3910,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_ms": 3061,
+ "prompt_hash": "b81c84d10e"
+}

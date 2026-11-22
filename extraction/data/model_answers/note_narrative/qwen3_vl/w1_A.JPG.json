@@ -1,0 +1,154 @@
+{
+ "model": "qwen.qwen3-vl-235b-a22b",
+ "prompt": "v2",
+ "mode": "tool",
+ "system_prompt": true,
+ "image_first": false,
+ "entries": [
+  {
+   "lines": [
+    1,
+    2,
+    3
+   ],
+   "client": "Northgate",
+   "cmid": "",
+   "date": "11-3",
+   "hours_written": "0.6",
+   "narrative": "Escrow Call w/ sellers Course",
+   "unsure": "",
+   "hours": 0.6
+  },
+  {
+   "lines": [
+    4,
+    5,
+    6
+   ],
+   "client": "Northgate",
+   "cmid": "",
+   "date": "11-3",
+   "hours_written": "2.3",
+   "narrative": "Disclosure Schedule Summit Ridge",
+   "unsure": "reader has \"Northgarte\"; photo shows \"Northgate\"",
+   "hours": 2.3
+  },
+  {
+   "lines": [
+    7,
+    8
+   ],
+   "client": "Lantern",
+   "cmid": "",
+   "date": "11-3",
+   "hours_written": "1.4",
+   "narrative": "Vireo Merger Agreement",
+   "unsure": "",
+   "hours": 1.4
+  },
+  {
+   "lines": [
+    9,
+    10
+   ],
+   "client": "New3D",
+   "cmid": "",
+   "date": "11-3",
+   "hours_written": "1.0",
+   "narrative": "Lunch Client",
+   "unsure": "",
+   "hours": 1.0
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "across": 16,
+   "down": 4,
+   "conf": 70,
+   "number_conf": 94,
+   "text": "11-3 Northgate 0.6 Escrow"
+  },
+  {
+   "id": 2,
+   "across": 61,
+   "down": 11,
+   "conf": 50,
+   "number_conf": null,
+   "text": "Call.w/"
+  },
+  {
+   "id": 3,
+   "across": 59,
+   "down": 15,
+   "conf": 71,
+   "number_conf": null,
+   "text": "sellers Course"
+  },
+  {
+   "id": 4,
+   "across": 14,
+   "down": 23,
+   "conf": 39,
+   "number_conf": 84,
+   "text": "11-3 Northgarte 2.3 Disclousne"
+  },
+  {
+   "id": 5,
+   "across": 53,
+   "down": 28,
+   "conf": 99,
+   "number_conf": null,
+   "text": "Schedule Summit"
+  },
+  {
+   "id": 6,
+   "across": 53,
+   "down": 32,
+   "conf": 73,
+   "number_conf": null,
+   "text": "Ridge"
+  },
+  {
+   "id": 7,
+   "across": 16,
+   "down": 39,
+   "conf": 95,
+   "number_conf": 99,
+   "text": "11-3 Lantern 1.4 Vireo"
+  },
+  {
+   "id": 8,
+   "across": 55,
+   "down": 44,
+   "conf": 100,
+   "number_conf": null,
+   "text": "Merger Agreement"
+  },
+  {
+   "id": 9,
+   "across": 16,
+   "down": 51,
+   "conf": 93,
+   "number_conf": 93,
+   "text": "11-3 New3D 1.0 Lunch"
+  },
+  {
+   "id": 10,
+   "across": 59,
+   "down": 56,
+   "conf": 100,
+   "number_conf": null,
+   "text": "Client"
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 7305,
+  "outputTokens": 284,
+  "totalTokens": 7589
+ },
+ "latency_ms": 10121,
+ "prompt_hash": "2112cd0c6e"
+}

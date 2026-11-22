@@ -1,0 +1,116 @@
+{
+ "model": "us.amazon.nova-pro-v1:0",
+ "entries": [
+  {
+   "lines": [
+    1,
+    2,
+    3
+   ],
+   "client": "Cobalt Ridge Capital",
+   "cmid": "5520.004",
+   "date": "",
+   "hours_written": "2.1",
+   "hours": 2.1,
+   "narrative": "capital call notice",
+   "unsure": ""
+  },
+  {
+   "lines": [
+    4
+   ],
+   "client": "Firm",
+   "cmid": "",
+   "date": "",
+   "hours_written": ".4",
+   "hours": 0.4,
+   "narrative": "call w/ admin re wire",
+   "unsure": ""
+  },
+  {
+   "lines": [
+    5
+   ],
+   "client": "Aster & Vale",
+   "cmid": "",
+   "date": "",
+   "hours_written": "1.010-Q",
+   "hours": 1.0,
+   "narrative": "comments",
+   "unsure": "1.010-Q read as 1.0"
+  },
+  {
+   "lines": [
+    6
+   ],
+   "client": "Aster & Vale",
+   "cmid": "",
+   "date": "",
+   "hours_written": ".5",
+   "hours": 0.5,
+   "narrative": "board minutes.",
+   "unsure": ""
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "across": 19,
+   "down": 32,
+   "conf": 40,
+   "number_conf": 90,
+   "text": "Cohalt Ridge 5520.004"
+  },
+  {
+   "id": 2,
+   "across": 60,
+   "down": 37,
+   "conf": 93,
+   "number_conf": 93,
+   "text": "2.1"
+  },
+  {
+   "id": 3,
+   "across": 59,
+   "down": 41,
+   "conf": 65,
+   "number_conf": null,
+   "text": "capital Call notice"
+  },
+  {
+   "id": 4,
+   "across": 22,
+   "down": 47,
+   "conf": 56,
+   "number_conf": 56,
+   "text": ".4 call w/ admin re wire"
+  },
+  {
+   "id": 5,
+   "across": 16,
+   "down": 54,
+   "conf": 89,
+   "number_conf": 92,
+   "text": "Aster & Vale 1.010-Q comments"
+  },
+  {
+   "id": 6,
+   "across": 15,
+   "down": 63,
+   "conf": 69,
+   "number_conf": 86,
+   "text": "same .5 board minutes."
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 924,
+  "outputTokens": 277,
+  "totalTokens": 5220,
+  "cacheReadInputTokens": 4019,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_ms": 2737,
+ "prompt_hash": "b81c84d10e"
+}

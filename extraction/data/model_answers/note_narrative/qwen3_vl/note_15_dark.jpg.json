@@ -1,0 +1,117 @@
+{
+ "model": "qwen.qwen3-vl-235b-a22b",
+ "prompt": "v2",
+ "mode": "tool",
+ "system_prompt": true,
+ "image_first": false,
+ "entries": [
+  {
+   "lines": [
+    1,
+    2,
+    3
+   ],
+   "client": "Cobalt Ridge",
+   "cmid": "9520.004",
+   "date": "",
+   "hours_written": "2.1",
+   "narrative": "Capital call notice",
+   "unsure": "",
+   "hours": 2.1
+  },
+  {
+   "lines": [
+    1,
+    4
+   ],
+   "client": "Cobalt Ridge",
+   "cmid": "9520.004",
+   "date": "",
+   "hours_written": ".4",
+   "narrative": "call w/ admin re wire",
+   "unsure": "arrow: same client and CMID as the entry above"
+  },
+  {
+   "lines": [
+    5
+   ],
+   "client": "Aster & Vale",
+   "cmid": "",
+   "date": "",
+   "hours_written": "1.0",
+   "narrative": "10-Q comments",
+   "unsure": ""
+  },
+  {
+   "lines": [
+    5,
+    6
+   ],
+   "client": "Aster & Vale",
+   "cmid": "",
+   "date": "",
+   "hours_written": ".5",
+   "narrative": "board minutes",
+   "unsure": "ditto mark: same client as the entry above"
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "across": 19,
+   "down": 32,
+   "conf": 55,
+   "number_conf": 55,
+   "text": "Cobalt Ridge 9520.004"
+  },
+  {
+   "id": 2,
+   "across": 60,
+   "down": 37,
+   "conf": 100,
+   "number_conf": 100,
+   "text": "2.1"
+  },
+  {
+   "id": 3,
+   "across": 59,
+   "down": 41,
+   "conf": 76,
+   "number_conf": null,
+   "text": "Capital call notice"
+  },
+  {
+   "id": 4,
+   "across": 22,
+   "down": 47,
+   "conf": 87,
+   "number_conf": 87,
+   "text": ".4 call w/ admin re wire"
+  },
+  {
+   "id": 5,
+   "across": 16,
+   "down": 54,
+   "conf": 86,
+   "number_conf": 99,
+   "text": "Aster & Vale 1.010-Q comments"
+  },
+  {
+   "id": 6,
+   "across": 15,
+   "down": 62,
+   "conf": 93,
+   "number_conf": 94,
+   "text": "same \u52a1 5 board minutes."
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 7200,
+  "outputTokens": 258,
+  "totalTokens": 7458
+ },
+ "latency_ms": 12644,
+ "prompt_hash": "2112cd0c6e"
+}

@@ -1,0 +1,85 @@
+{
+ "model": "us.amazon.nova-pro-v1:0",
+ "entries": [
+  {
+   "lines": [
+    1
+   ],
+   "client": "Ridgewater",
+   "cmid": "",
+   "date": "11/2",
+   "hours_written": ".8",
+   "hours": 0.8,
+   "narrative": "revised Fund IV LPA",
+   "unsure": ""
+  },
+  {
+   "lines": [
+    1,
+    2
+   ],
+   "client": "Ridgeview",
+   "cmid": "",
+   "date": "11/2",
+   "hours_written": ".3",
+   "hours": 0.3,
+   "narrative": "call w/L. Moretti",
+   "unsure": ""
+  },
+  {
+   "lines": [
+    1,
+    3
+   ],
+   "client": "Quarry Lane",
+   "cmid": "",
+   "date": "11/2",
+   "hours_written": "1.5",
+   "hours": 1.5,
+   "narrative": "Fund III sub docs and",
+   "unsure": ""
+  },
+  {
+   "lines": [
+    1,
+    4
+   ],
+   "client": "Ridgeview",
+   "cmid": "",
+   "date": "11/2",
+   "hours_written": "",
+   "hours": 0.3,
+   "narrative": "call w/L. Moretti",
+   "unsure": "0.3 hours from previous entry applied here as it is a continuation of the same task"
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "across": 11,
+   "down": 27,
+   "conf": 84,
+   "number_conf": 95,
+   "text": "11/2 Ridgewater .8 revised Fund IV LPA , then"
+  },
+  {
+   "id": 2,
+   "across": 14,
+   "down": 40,
+   "conf": 58,
+   "number_conf": 82,
+   "text": "Ridgeview .3 call w/L. Moretti"
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 745,
+  "outputTokens": 295,
+  "totalTokens": 5003,
+  "cacheReadInputTokens": 3963,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_ms": 3099,
+ "prompt_hash": "b81c84d10e"
+}

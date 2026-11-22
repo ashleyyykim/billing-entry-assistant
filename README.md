@@ -20,7 +20,7 @@ Then open http://localhost:8080. See `docker/README.md` for what has to exist be
 
 ## Data
 
-- **Extraction:** made-up samples of every input type, plus a few real handwritten notes. Photos and voice memos stay out of git, since photos carry location data.
+- **Extraction:** made-up samples of every input type, plus a few real handwritten notes.
 - **Matching:** synthetic time entries modeled on a corporate and transactional practice, with the correct matter for each entry. Real client time records are confidential, so this stage uses synthetic data. `time_entries/` has the generator and its evaluation.
 - **Narrative check:** real time entries and fee examiner reports from public bankruptcy fee filings on [CourtListener](https://www.courtlistener.com/).
 

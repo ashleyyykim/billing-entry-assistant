@@ -1,0 +1,68 @@
+{
+ "model": "qwen.qwen3-vl-235b-a22b",
+ "prompt": "v2",
+ "mode": "tool",
+ "system_prompt": true,
+ "image_first": false,
+ "entries": [
+  {
+   "lines": [
+    1
+   ],
+   "client": "Ridgeview",
+   "cmid": "",
+   "date": "",
+   "hours_written": "05",
+   "narrative": "call re capital call",
+   "unsure": "photo shows .5; the reader has 05",
+   "hours": 0.5
+  },
+  {
+   "lines": [
+    2,
+    3
+   ],
+   "client": "Firm",
+   "cmid": "",
+   "date": "",
+   "hours_written": "1.0",
+   "narrative": "BD lunch w/ prospective client",
+   "unsure": ""
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "across": 23,
+   "down": 37,
+   "conf": 63,
+   "number_conf": 83,
+   "text": "Ridgeview 05 call re capital call"
+  },
+  {
+   "id": 2,
+   "across": 22,
+   "down": 45,
+   "conf": 95,
+   "number_conf": 99,
+   "text": "Firm BD 1.0 lunch w/ prospective"
+  },
+  {
+   "id": 3,
+   "across": 23,
+   "down": 50,
+   "conf": 83,
+   "number_conf": null,
+   "text": "client"
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 7110,
+  "outputTokens": 125,
+  "totalTokens": 7235
+ },
+ "latency_ms": 5124,
+ "prompt_hash": "2112cd0c6e"
+}

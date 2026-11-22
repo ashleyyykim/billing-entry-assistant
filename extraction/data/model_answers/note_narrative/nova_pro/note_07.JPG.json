@@ -1,0 +1,97 @@
+{
+ "model": "us.amazon.nova-pro-v1:0",
+ "entries": [
+  {
+   "lines": [
+    1,
+    2
+   ],
+   "client": "Brightline",
+   "cmid": "3012.004",
+   "date": "10/28",
+   "hours_written": "1.4",
+   "hours": 1.4,
+   "narrative": "revise disclosure schedules",
+   "unsure": ""
+  },
+  {
+   "lines": [
+    2,
+    3
+   ],
+   "client": "Halvorsen",
+   "cmid": "",
+   "date": "10/28",
+   "hours_written": "2.0",
+   "hours": 2.0,
+   "narrative": "TCW buyer counsel re escrow",
+   "unsure": ""
+  },
+  {
+   "lines": [
+    4,
+    5
+   ],
+   "client": "Firm",
+   "cmid": "1111.001",
+   "date": "",
+   "hours_written": ".7",
+   "hours": 0.7,
+   "narrative": "update time entries",
+   "unsure": ""
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "across": 39,
+   "down": 34,
+   "conf": 74,
+   "number_conf": 91,
+   "text": "3012.004 ravise disclosure"
+  },
+  {
+   "id": 2,
+   "across": 19,
+   "down": 37,
+   "conf": 86,
+   "number_conf": 98,
+   "text": "Wed 10/28 1.4 schedules for"
+  },
+  {
+   "id": 3,
+   "across": 18,
+   "down": 43,
+   "conf": 80,
+   "number_conf": 99,
+   "text": "Halvorsen 2.0 TCW buyer counsel"
+  },
+  {
+   "id": 4,
+   "across": 39,
+   "down": 50,
+   "conf": 71,
+   "number_conf": 71,
+   "text": "1111.001 update time entries"
+  },
+  {
+   "id": 5,
+   "across": 19,
+   "down": 53,
+   "conf": 91,
+   "number_conf": null,
+   "text": "Firm Admin in"
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 887,
+  "outputTokens": 227,
+  "totalTokens": 5153,
+  "cacheReadInputTokens": 4039,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_ms": 2567,
+ "prompt_hash": "b81c84d10e"
+}

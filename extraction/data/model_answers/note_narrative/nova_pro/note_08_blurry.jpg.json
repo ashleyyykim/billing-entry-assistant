@@ -1,0 +1,47 @@
+{
+ "model": "us.amazon.nova-pro-v1:0",
+ "entries": [
+  {
+   "lines": [
+    1,
+    2
+   ],
+   "client": "Ironwood",
+   "cmid": "",
+   "date": "",
+   "hours_written": "1.15",
+   "hours": 1.15,
+   "narrative": "bringdown call",
+   "unsure": "poo M UNIT St:1 is unclear, but 1.15 hours for Ironwood is likely correct based on the context."
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "across": 26,
+   "down": 37,
+   "conf": 43,
+   "number_conf": 52,
+   "text": "poo M UNIT St:1"
+  },
+  {
+   "id": 2,
+   "across": 28,
+   "down": 47,
+   "conf": 30,
+   "number_conf": 30,
+   "text": "1100 willd"
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 740,
+  "outputTokens": 105,
+  "totalTokens": 4929,
+  "cacheReadInputTokens": 4084,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_ms": 1650,
+ "prompt_hash": "b81c84d10e"
+}

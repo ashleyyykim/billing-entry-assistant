@@ -21,6 +21,7 @@ import importlib.util
 import io
 import json
 import logging
+import mimetypes
 import os
 import re
 import secrets
@@ -60,6 +61,14 @@ EXTRACTION_DIR = Path(os.getenv("EXTRACTION_DIR", _REPO_EXTRACTION / "src"))
 TIMEKEEPERS_PATH = Path(os.getenv("TIMEKEEPERS_PATH", _REPO_EXTRACTION / "data" / "timekeepers.csv"))
 AWS_REGION = os.getenv("AWS_REGION", "us-west-2")   # Textract and Bedrock
 BILLING_INCREMENT = float(os.getenv("TENTH_INCREMENT", "0.1"))   # the firm bills in tenths of an hour unless set otherwise
+PRE_RETENTION = os.getenv("TENTH_PRE_RETENTION", "1111.900")   # the number a new client's time goes under until its matter is opened (the demo firm's; set it per firm)
+# Extraction fixes the app turns on beyond the defaults (one_flow.OPTIONAL_FIXES), for trying one out in the app before
+# the extraction test decides on it. None by default: the app reads as the test does. note_narrative (both photo prompts
+# asked for every word of an entry through the lines it wraps onto) was tried here and left out on Nov 20: on the
+# extraction test it gave 185 entries right with no flag against 196, 99 to review against 87, and the same 3 silent
+# errors (01_evaluation, NOTE_NARRATIVE). A wrapped line is asked about instead ("Is this part of ...?", the page's
+# mergeCand). header_roles started here and is a default since the test held with it.
+APP_FIXES = tuple(f for f in os.getenv("TENTH_APP_FIXES", "").split(",") if f.strip())
 # Testing only: a folder where each upload's Textract and model answers are kept, keyed by the file's contents, so
 # uploading the same file again costs nothing. Unset (the default), every upload is read in a temporary folder that is
 # deleted after, and nothing from it is kept.
@@ -67,6 +76,9 @@ DEV_CACHE = os.getenv("TENTH_DEV_CACHE", "")
 VOICE_BUCKET = os.getenv("TENTH_S3_BUCKET", "")   # voice memos: Amazon Transcribe reads the recording from S3, so it goes here for the job and is deleted after
 sys.path.append(str(EXTRACTION_DIR))   # last, so phase2's review.py keeps its name (see extraction_module)
 log = logging.getLogger("tenth")
+# The slim image has no system list of file types, and Python's own has no .m4a, so the sample memo went out as
+# text/plain and Safari wouldn't play it (Chrome looks inside the file).
+mimetypes.add_type("audio/mp4", ".m4a")
 
 DATA_PATH = Path(os.getenv("DATA_PATH", "data/synthetic_time_entries_v3.xlsx"))
 RESULTS_DIR = Path(os.getenv("RESULTS_DIR", "results"))
@@ -181,8 +193,10 @@ def load_extractor():
 
 def prompt_fingerprint(models):
     """A short fingerprint of the reading models and the files that hold their prompts. TENTH_DEV_CACHE keeps answers
-    under it, so a new model or prompt is never handed an old answer."""
-    text = "|".join(models.values()) + "".join((EXTRACTION_DIR / name).read_text()
+    under it, so a new model or prompt is never handed an old answer. The fixes the readers run with change their
+    prompts too (note_narrative rewrites the photo prompt), so they count."""
+    from one_flow import NOV15_FIXES, NOV20_FIXES
+    text = "|".join(models.values()) + "|".join(sorted(set(NOV15_FIXES + NOV20_FIXES + APP_FIXES))) + "".join((EXTRACTION_DIR / name).read_text()
                                                for name in ("prompts.py", "prompts_v6.py", "column_map.py",
                                                             "model_readers.py", "open_models.py"))
     return hashlib.sha256(text.encode()).hexdigest()[:8]
@@ -298,10 +312,12 @@ def health_models():
 @app.get("/samples")
 def samples():
     """The demo files for the page's "Try a sample" buttons, in a fixed order: name, what to call it, and what kind of file."""
-    kinds = {"notebook.jpg": ("Handwritten notebook page", "photo"), "sticky-note.jpg": ("Sticky note photo", "photo"),
+    kinds = {"notebook.jpg": ("Handwritten notebook page", "photo"), "sticky-note.jpg": ("Sticky note photo", "photo"), "napkin.jpg": ("Napkin", "photo"),
              "typed-note.txt": ("Typed note", "doc"), "excel-sheet.xlsx": ("Excel sheet", "sheet"), "csv-export.csv": ("CSV export", "sheet"),
-             "word-log.docx": ("Word time log", "doc"), "pdf-report.pdf": ("PDF report", "doc"), "forwarded-email.eml": ("Forwarded email", "email")}
-    return {"samples": [{"name": n, "label": kinds[n][0], "kind": kinds[n][1]} for n in kinds if (SAMPLES_DIR / n).is_file()]}
+             "word-log.docx": ("Word time log", "doc"), "pdf-report.pdf": ("PDF report", "doc"), "forwarded-email.eml": ("Forwarded email", "email"),
+             "voice-memo.m4a": ("Voice memo", "voice")}
+    ready = [n for n in kinds if (SAMPLES_DIR / n).is_file() and (kinds[n][1] != "voice" or VOICE_BUCKET)]   # the memo needs Transcribe, so it shows only where the bucket is set
+    return {"samples": [{"name": n, "label": kinds[n][0], "kind": kinds[n][1]} for n in ready]}
 
 
 @app.get("/samples/{name}")
@@ -431,7 +447,8 @@ def export_xlsx(body: ExportRows):
 def matters():
     """The firm's matters, for the page's matter picker and to check a matter number someone types."""
     m = state["ref"]["matters"]
-    return {"matters": [{"cmid": str(c), "client": cl, "matter": mt} for c, cl, mt in zip(m["cmid"], m["client"], m["matter"])]}
+    return {"matters": [{"cmid": str(c), "client": cl, "matter": mt} for c, cl, mt in zip(m["cmid"], m["client"], m["matter"])],
+            "pre_retention": PRE_RETENTION}
 
 
 # What Tenth noticed about an entry (shown under Why?) and how to fix it where the page has a way (shown in amber).
@@ -439,36 +456,36 @@ def matters():
 FIX_HOURS = "You can fix the hours in the next step."
 FIX_MATTER = "Use Change matter if it's wrong."
 IN_WORDS = {
-    "model_unsure": ("Part of the note was unclear.", ""),
-    "readers_disagree": ("Tenth wasn't sure it read this entry right.", ""),
+    "model_unsure": ("Part of the note was hard to read.", ""),
+    "readers_disagree": ("Tenth isn't sure it read this right.", ""),
     "low_conf": ("Part of the note was hard to read.", ""),
     "poor_photo": ("The photo was blurry, dark, or small.", ""),
-    "read_by_rules": ("Tenth couldn't read this note the usual way, so it used a simpler method. Check it against the note.", ""),
+    "read_by_rules": ("Tenth read this note line by line, so check it against the note.", ""),
     "second_reader_only": ("Tenth isn't sure this is its own entry. It may repeat another one.", ""),
     "multiple_entries": ("This may be more than one entry.", ""),
-    "hours_10x": ("The hours may be missing a decimal point.", FIX_HOURS),
+    "hours_10x": ("The time has no decimal point.", FIX_HOURS),
     "hours_mismatch": ("The hours may be misread.", FIX_HOURS),
-    "not_on_page": ("The hours weren't where expected on the note.", FIX_HOURS),
-    "no_hours": ("No hours were found.", FIX_HOURS),
-    "day_over_max": ("This adds up to over 14 hours in one day.", FIX_HOURS),
-    "no_date": ("No date was found.", ""),
-    "date_gap": ("This entry has no date, though the ones before it do.", ""),
-    "date_weekday": ("The weekday doesn't match the date.", ""),
-    "client_unknown": ("The client isn't one of the firm's clients.", FIX_MATTER),
-    "client_ambiguous": ("The client name could mean more than one client.", FIX_MATTER),
-    "client_cmid_mismatch": ("The client and the matter number don't go together.", FIX_MATTER),
-    "client_gap": ("No client is written; it may belong to the client above it.", FIX_MATTER),
-    "cmid_unknown": ("The matter number written isn't one of the firm's.", FIX_MATTER),
+    "not_on_page": ("Tenth couldn't find this time on the note.", FIX_HOURS),
+    "no_hours": ("The note gives no time for this.", FIX_HOURS),
+    "day_over_max": ("This day adds up to over 14 hours.", FIX_HOURS),
+    "no_date": ("The note gives no date for this.", ""),
+    "date_gap": ("No date here, though the lines above have one.", ""),
+    "date_weekday": ("The weekday written doesn't match the date.", ""),
+    "client_unknown": ("This client isn't on the firm's list.", FIX_MATTER),
+    "client_ambiguous": ("This name fits more than one client.", FIX_MATTER),
+    "client_cmid_mismatch": ("The client and matter number don't match.", FIX_MATTER),
+    "client_gap": ("No client is written, so it may be the one above.", FIX_MATTER),
+    "cmid_unknown": ("The matter number written isn't on the firm's list.", FIX_MATTER),
     "cmid_shape": ("The matter number has the wrong number of digits.", FIX_MATTER),
     "unknown_tk": ("No timekeeper was found.", ""),   # the page asks once for the whole upload (missing_tk), not per entry
-    "unused_hours": ("The note has hours that no entry uses.", ""),
-    "rows_unread": ("The spreadsheet has rows that no entry uses.", ""),
-    "columns_unsure": ("Tenth wasn't sure which column of the spreadsheet holds what.", ""),
-    "answer_cut_off": ("The note was too long to read in one go.", ""),
+    "unused_hours": ("The note has a time that isn't on any entry.", ""),
+    "rows_unread": ("Some rows in the sheet didn't become entries.", ""),
+    "columns_unsure": ("Tenth wasn't sure which column is which.", ""),
+    "answer_cut_off": ("The note was long, so an entry may be cut off.", ""),
     "possible_duplicate": ("This may repeat another entry.", ""),
     "not_billable": ("It's marked not billable or no charge.", ""),
-    "hours_reused": ("The same hours were given to more than one entry.", FIX_HOURS),
-    "no_narrative": ("No description of the work was found.", ""),
+    "hours_reused": ("Another entry has this same time.", FIX_HOURS),
+    "no_narrative": ("The note doesn't say what the work was.", ""),
 }
 # What part of the entry each reason is about, for the amber "Check ..." line
 SOME_PART = "the hours, date, and client against the note"
@@ -538,9 +555,10 @@ def what_was_noticed(reasons, fallback, diffs=()):
     """The Why? text: what Tenth noticed about the entry, one sentence per reason, each said once."""
     said = []
     for r in reasons:
-        if r == "readers_disagree" and diffs:
-            said.append("Tenth wasn't sure about " + " and ".join(
-                f"the {f} ({shown(f, a)} or {shown(f, b)})" for f, a, b in diffs) + ".")
+        if r == "readers_disagree" and diffs:   # "Tenth read the hours two ways: 3.2 or none."
+            two = [(f, shown(f, a).replace("nothing", "none"), shown(f, b).replace("nothing", "none")) for f, a, b in diffs]
+            said.append(f"Tenth read the {two[0][0]} two ways: {two[0][1]} or {two[0][2]}." if len(two) == 1
+                        else "Tenth read this two ways: " + ", ".join(f"{f} {a} or {b}" for f, a, b in two) + ".")
         else:
             said.append(IN_WORDS.get(r, (fallback.get(r, r) + ".", ""))[0])
     return " ".join(dict.fromkeys(said))
@@ -641,9 +659,10 @@ def new_readers(folder: Path, use_aws: bool):
     as extraction notebook 01 sets them up but given to one_flow.read_pair apart, so the app can see where they disagree.
     Their answers and page images go in this request's folder, which is deleted after, so nothing from an upload is kept.
     use_aws=False: no Bedrock calls, so the rule readers read the upload (every entry gets read_by_rules)."""
-    from one_flow import ModelReader
+    from one_flow import NOV15_FIXES, NOV20_FIXES, ModelReader
     x = state["extractor"]
-    common = dict(**x["firm"], runtime=x["runtime"] if use_aws else None, catch_errors=True)
+    common = dict(**x["firm"], runtime=x["runtime"] if use_aws else None, catch_errors=True,
+                  fixes=NOV15_FIXES + NOV20_FIXES + APP_FIXES)
     first = ModelReader(**common, answers_dir=folder / "first", images_dir=folder / "pages_first",
                         model_id=x["models"]["first"])
     second = ModelReader(**common, answers_dir=folder / "second", images_dir=folder / "pages_second",
@@ -665,6 +684,11 @@ def read_both(content, kind, first, second, disagreements, image=None, **kw):
                 found = differences(ones.iloc[i], twos.iloc[j], "narrative_agree" in (first.fixes or ()))
                 if found:
                     disagreements[ones.iloc[i]["entry_id"]] = found
+                    if DEV_CACHE:   # testing only (TENTH_DEV_CACHE set): what each reading had, in the container log. Off by default, since it would put upload text in the log
+                      print(f"/extract readings differ on {ones.iloc[i]['entry_id']}: "
+                          + "; ".join(f"{f}: {p!r} vs {q!r}" for f, p, q in found)
+                          + f" | first {str(ones.iloc[i]['narrative'])[:60]!r} | second {str(twos.iloc[j]['narrative'])[:60]!r}"
+                          + f" | {len(ones)} and {len(twos)} entries", flush=True)
     return entries
 
 
@@ -864,7 +888,7 @@ def extract_one(file, text, input_type, tk_id, upload_date, use_aws, send_anyway
         deadline = time.monotonic() + UPLOAD_SECONDS
         watch_reader(first, model_name(first.model_id), read_errors, name, prog, "first", deadline, upload)
         watch_reader(second, model_name(second.model_id), read_errors, name, prog, "second", deadline, upload)
-        disagreements, seen, path = {}, {}, None
+        disagreements, seen, path, spoken = {}, {}, None, None
 
         def reader(content, kind, image=None, **kw):
             seen.update(content=content, kind=kind)   # kept for source_lines, which marks where each entry came from
@@ -881,6 +905,7 @@ def extract_one(file, text, input_type, tk_id, upload_date, use_aws, send_anyway
                 path.write_bytes(data)
                 entries, check, parts = read_upload(path, input_type, reader, folder, {**common, "source": name},
                                                     use_aws, send_anyway, timing, prog)
+                spoken = spoken_words(folder / "transcript.json")
         except HTTPException:
             raise
         except ValueError as err:   # written for people: an encrypted email, a photo type Textract doesn't take
@@ -919,7 +944,19 @@ def extract_one(file, text, input_type, tk_id, upload_date, use_aws, send_anyway
         d["extraction_reasons"] = what_was_noticed(reasons, review.REVIEW_REASONS, diffs)
     print(f"/extract {logged(name, upload)}: " + ", ".join(f"{k[:-2]} {v}s" for k, v in timing.items()), flush=True)   # shows in the container log
     return {"photo_check": check, "entries": json.loads(entries.to_json(orient="records", date_format="iso")),
-            "parts": parts, "decisions": decisions, "layout": layout, "read_errors": read_errors, "timing": timing}
+            "parts": parts, "decisions": decisions, "layout": layout, "read_errors": read_errors, "timing": timing,
+            "words": spoken}
+
+
+def spoken_words(path: Path):
+    """A memo's words, each with the second it starts, for the page to light up as the memo plays and to play from a
+    clicked word. None for anything that isn't a memo, or a transcript saved before the times were kept."""
+    if not path.exists():
+        return None
+    heard = json.loads(path.read_text())
+    if not heard.get("times"):
+        return None
+    return [[word, round(start, 2)] for (word, _), (start, _) in zip(heard["words"], heard["times"])]
 
 
 class ReviewBatch(BaseModel):

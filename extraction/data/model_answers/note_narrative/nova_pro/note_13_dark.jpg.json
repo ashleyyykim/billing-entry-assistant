@@ -1,0 +1,68 @@
+{
+ "model": "us.amazon.nova-pro-v1:0",
+ "entries": [
+  {
+   "lines": [
+    2,
+    3
+   ],
+   "client": "Tidewater",
+   "cmid": "",
+   "date": "",
+   "hours_written": "1/2 hr",
+   "hours": 0.5,
+   "narrative": "board consent",
+   "unsure": ""
+  },
+  {
+   "lines": [
+    2,
+    3
+   ],
+   "client": "Tidewater",
+   "cmid": "",
+   "date": "",
+   "hours_written": "1/2 hr",
+   "hours": 0.5,
+   "narrative": "board consent",
+   "unsure": "Duplicate entry, likely a misreading of the same entry. Keeping both for accuracy."
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "across": 25,
+   "down": 1,
+   "conf": 57,
+   "number_conf": null,
+   "text": "I"
+  },
+  {
+   "id": 2,
+   "across": 12,
+   "down": 34,
+   "conf": 99,
+   "number_conf": 99,
+   "text": "Tidewater 1/2 hr"
+  },
+  {
+   "id": 3,
+   "across": 13,
+   "down": 45,
+   "conf": 100,
+   "number_conf": null,
+   "text": "board consent"
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 770,
+  "outputTokens": 154,
+  "totalTokens": 4996,
+  "cacheReadInputTokens": 4072,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_ms": 1912,
+ "prompt_hash": "b81c84d10e"
+}

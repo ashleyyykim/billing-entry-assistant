@@ -1,0 +1,58 @@
+{
+ "model": "us.amazon.nova-pro-v1:0",
+ "entries": [
+  {
+   "lines": [
+    1
+   ],
+   "client": "Bluefin",
+   "cmid": "",
+   "date": "",
+   "hours_written": "half an hour",
+   "hours": 0.5,
+   "narrative": "w/ y.",
+   "unsure": ""
+  },
+  {
+   "lines": [
+    2
+   ],
+   "client": "Tanakare Keel",
+   "cmid": "",
+   "date": "",
+   "hours_written": "",
+   "hours": 0.0,
+   "narrative": "term sheet.",
+   "unsure": "The client name 'Tanakare Keel' is not in the firm's client list, but it is used as written. The hours are not specified, so they are recorded as 0.0."
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "across": 15,
+   "down": 36,
+   "conf": 63,
+   "number_conf": null,
+   "text": "Bluefin - half an hour w/ y."
+  },
+  {
+   "id": 2,
+   "across": 20,
+   "down": 46,
+   "conf": 73,
+   "number_conf": null,
+   "text": "Tanakare Keel term sheet."
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 730,
+  "outputTokens": 168,
+  "totalTokens": 4862,
+  "cacheReadInputTokens": 3964,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_ms": 2294,
+ "prompt_hash": "b81c84d10e"
+}

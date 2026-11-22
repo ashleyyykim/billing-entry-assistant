@@ -1,0 +1,75 @@
+{
+ "model": "us.amazon.nova-pro-v1:0",
+ "entries": [
+  {
+   "lines": [
+    1,
+    2,
+    4
+   ],
+   "client": "Halvorsen",
+   "cmid": "",
+   "date": "",
+   "hours_written": ".6",
+   "hours": 0.6,
+   "narrative": "call w/ E. Lindquist re Brightline",
+   "unsure": ""
+  },
+  {
+   "lines": [
+    3
+   ],
+   "client": "Firm",
+   "cmid": "",
+   "date": "",
+   "hours_written": "",
+   "narrative": "11b",
+   "unsure": ""
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "across": 15,
+   "down": 31,
+   "conf": 100,
+   "number_conf": null,
+   "text": "Halvorsen"
+  },
+  {
+   "id": 2,
+   "across": 65,
+   "down": 40,
+   "conf": 83,
+   "number_conf": 83,
+   "text": ".6"
+  },
+  {
+   "id": 3,
+   "across": 17,
+   "down": 50,
+   "conf": 37,
+   "number_conf": 37,
+   "text": "F/M 11b,"
+  },
+  {
+   "id": 4,
+   "across": 18,
+   "down": 59,
+   "conf": 55,
+   "number_conf": null,
+   "text": "re Brightline Lindquist"
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 812,
+  "outputTokens": 129,
+  "totalTokens": 5001,
+  "cacheReadInputTokens": 4060,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_ms": 1850,
+ "prompt_hash": "b81c84d10e"
+}

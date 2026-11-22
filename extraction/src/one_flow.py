@@ -55,15 +55,15 @@ from rapidfuzz import fuzz, process
 from extract import TEXT_TYPES, extract
 from free_text import WEEKDAY_NUMBER, is_date_line, original_sender, page_amounts, page_order, weekday_mismatch
 from intake import ENTRY_COLS, FORMAT_FOR_INPUT, add_day_check, add_reason, entry_ids, find_timekeeper, make_entries, \
-    to_date
+    name_parts, to_date
 from model_first import drop_reasons
 import prompts
 import prompts_v6
-from column_map import SAMPLE_ROWS, ask_columns, cell_text, column_text, prompt_hash as column_prompt_hash, roles_of, \
+from column_map import ROLES as COLUMN_ROLES, SAMPLE_ROWS, ask_columns, cell_text, column_text, prompt_hash as column_prompt_hash, roles_of, \
     row_entry, usable as usable_map
 from model_readers import (NOVA_MODELS, ask_nova, blank, cross_check, entry_schema, nova_rows, page_text_lines, saved,
                            system_prompt)
-from spreadsheets import find_header
+from spreadsheets import find_header, role_of_header
 from textract import page_lines
 from upload_check import add_photo_check, check_photo
 
@@ -157,13 +157,31 @@ NOV15_FIXES = ("dates", "date_gap", "client_gap", "date_agree", "client_cmid", "
 #   NARRATIVE_AGREE), or the entry goes to review as readers_disagree. On the samples it flags exactly the 2 entries
 #   whose narrative was wrong with nothing else flagged (Nova split the description of note_03 and cut note_12's short;
 #   Qwen3 VL read both right), so silent narrative errors go from 2 to 0 and right with no flag from 198 to 196.
+# - writer: a note photo, memo, or text that says whose it is gets that timekeeper (note_writer) when the upload has
+#   none: a name or initials on a line of their own at the top or bottom of the photo ("C. Dunn", "- B. Quinn",
+#   "FC 9/22"), or a memo that opens "this is Sato". The readers aren't asked for a timekeeper on these inputs, since
+#   a note names other people too ("call w/ O. Grant"); this reads only the signature, with code, and only names on
+#   the firm's list. An entry a reader made of the signature alone (no hours, nothing but the name) is dropped, its
+#   matter number going to the entry before it (drop_signature). Added by Ashley's request on Nov 20 after the app's
+#   sample notes asked "Whose time is this?" on all three photos and the memo. The extraction test is unchanged with it
+#   (every test upload comes with its timekeeper, so it never runs there); on the app's samples it named C. Dunn,
+#   F. Castillo and H. Sato.
+# - header_roles: a column a reader's column map leaves out ("ignore") gets the role its header names, when the header
+#   is a known one ("CMID", "Matter No."; spreadsheets.role_of_header). On the app's samples (Nov 20) Nova left out the
+#   CMID column of the Excel sheet and the CSV, whose first rows hold blanks and typos ("Zgbo.O03", "9O2B.003"), while
+#   Qwen3 VL read it, so every row with a CMID was read differently and got columns_unsure: 34 of 54 Excel rows and 3
+#   of 6 CSV rows; with it, none. The extraction test is unchanged with it (Nov 20, run by Ashley: 196 right with no
+#   flag, 87 to review, 3 silent errors), since both readers map the test's spreadsheets the same way. On by default since.
 NOV20_FIXES = ("long_pieces", "piece_fallback", "parallel_pieces", "stamp", "matter_narrative", "no_narrative",
-               "hours_reused", "column_map", "line_order", "prompt_cache", "narrative_agree")
+               "hours_reused", "column_map", "line_order", "prompt_cache", "narrative_agree", "writer", "header_roles")
 # Off by default (OPTIONAL_FIXES):
 # - note_narrative: both photo prompts (model_readers.system_prompt for Nova, open_models.system_prompt_v2 for Qwen3 VL)
 #   get model_readers.NARRATIVE_RULE: every word of the description through the lines it wraps onto, up to the next
 #   entry, and a check that none is cut off, left over, or given to the entry below. For the 2 silent narrative errors
 #   left on note photos (note_03, note_12). Needs new answers for every note photo.
+#   Measured Nov 20 (01_evaluation, NOTE_NARRATIVE, new answers in data/model_answers/note_narrative): 185 right with no
+#   flag against 196, 99 to review against 87, the same 3 silent errors. Most of the extra review is on our own note
+#   photos (17 to 27). Left off.
 # - client_shortlist: every input but note photos gets the SHORTLIST firm names closest to its own text instead of the
 #   whole client list. A real firm has thousands of clients; the list is in every call. Note photos keep the whole
 #   list, since the model uses it to read handwritten names. Measured Nov 20 with Qwen3 VL, which answers identical
@@ -464,6 +482,31 @@ def mapped_answers(raw, parts, answer, model):
     return out
 
 
+def header_roles(answer, raw):
+    """A column map answer with each column it left out given the role its header names, if the header is a known one
+    (the header_roles fix)."""
+    if not answer or "error" in answer or not isinstance(answer.get("map"), dict):
+        return answer
+    try:
+        header = raw.iloc[find_header(raw)]
+    except ValueError:
+        return answer
+    columns = []
+    for item in answer["map"].get("columns") or []:
+        item = dict(item)
+        try:
+            n = int(item.get("column")) - 1
+        except (TypeError, ValueError):
+            n = -1
+        if item.get("role") == "ignore" and 0 <= n < len(header):
+            role = role_of_header(cell_text(header.iloc[n]))[0]
+            role = "timekeeper" if role == "tk" else role
+            if role in COLUMN_ROLES and role != "ignore":
+                item["role"] = role
+        columns.append(item)
+    return {**answer, "map": {**answer["map"], "columns": columns}}
+
+
 def mark_unsure(made, unsure):
     """columns_unsure on every entry when a reader was unsure, else on the rows the two readers read differently."""
     read = [answers for answers in made if answers[0] is not None]
@@ -488,6 +531,8 @@ def by_columns(raw, parts, first, second, source, deadline=None):
     jobs = [pool.submit(model.answer, piece, source, "columns") for model in readers]
     answers = [wait_for(job, deadline) for job in jobs]
     pool.shutdown(wait=False, cancel_futures=True)
+    if "header_roles" in (first.fixes or ()):
+        answers = [header_roles(a, raw) for a in answers]
     _, body = spreadsheet_indexes(raw)
     good = [a if a and "error" not in a and usable_map(roles_of(a, raw.shape[1]), raw, body) else None for a in answers]
     if all(a is None for a in good):
@@ -1077,8 +1122,68 @@ def piece_rules(content, parts, n, input_type, ref, timekeepers, rules_content=N
     return by_rules(found, stamp=True)
 
 
-def read_pair(content, input_type, ref, timekeepers, first, second=None, tk_id=None, tk_name=None, upload_date=None,
-              source=None, year=None, image=None, rules_content=None, deadline=None):
+WRITER_TYPES = {"NOTE", "VOICE", "TEXT"}   # one person's own note: no timekeeper field, but it may say whose it is
+SPOKEN_NAME = re.compile(r"\b(?i:this is|it's|it is|i'm|i am)\s+((?:[A-Z]\.\s?)?[A-Z][\w'\u2019-]+(?:\s+[A-Z][\w'\u2019-]+)?)|\b([A-Z][\w'\u2019-]+)\s+here\b")
+NOT_A_NAME = re.compile(r"\b\d{1,2}/\d{1,2}(?:/\d{2,4})?\b|\b(?:mon|tues?|wed|thu|thurs?|fri|sat|sun)(?:day)?\b\.?|\b(?:time|by|from)\b|[-–—~:,]", re.I)
+NAME_LIKE = re.compile(r"[A-Z]{2,3}|[A-Za-z]\.\s?[A-Za-z'’-]{2,}|[A-Z][a-z'’-]+(?:\s+[A-Z][a-z'’-]+)?")
+
+
+def writer_id(name, timekeepers):
+    """A timekeeper for a name written as a note's signature: as find_timekeeper reads it, or by the last name alone
+    when it's written "X. Last" and the initial was misread ("O. Dunn" for "C. Dunn"), if only one timekeeper has it."""
+    tk = find_timekeeper(name, timekeepers)
+    if tk or not re.fullmatch(r"[A-Za-z]\.\s?[A-Za-z'’-]{2,}", name):
+        return tk
+    return find_timekeeper(name_parts(name)[1], timekeepers, min_score=90)
+
+
+def note_writer(content, input_type, timekeepers):
+    """The firm's name for whoever a note says it's from, or None (the writer fix): a name or initials on a line of
+    their own among the first two or last two lines of a note photo ("C. Dunn", "- B. Quinn", "FC 9/22"), or a memo or
+    text that opens "this is Sato" or "Sato here". A name inside a task ("call w/ O. Grant") never counts. None when no
+    one, or more than one person, on the firm's list fits."""
+    if input_type == "NOTE":
+        lines = [line["text"] for line in page_text_lines(content[0])] if content else []
+        said = [NOT_A_NAME.sub(" ", text) for text in lines[:2] + lines[-2:]]
+    else:
+        said = [a or b for a, b in SPOKEN_NAME.findall(str(content)[:300])]
+    names = [" ".join(n.split()).strip(" .") for n in said]
+    found = {writer_id(n, timekeepers) for n in names if n and NAME_LIKE.fullmatch(n)} - {None}
+    if len(found) != 1:
+        return None
+    return timekeepers.loc[timekeepers["tk_id"] == found.pop(), "name"].iloc[0]
+
+
+def drop_signature(entries, writer):
+    """The entries without one a reader made of the note's signature alone ("- B. Quinn" read as an entry): no hours,
+    and no word in its narrative but the writer's name. A matter number on it goes to the entry before it, if that
+    one has none."""
+    own = set(re.findall(r"[a-z]+", writer.lower()))
+    drop = []
+    for n in range(len(entries)):
+        row = entries.iloc[n]
+        words = set(re.findall(r"[a-z]+", str(row.get("narrative") or "").lower()))
+        if words and words <= own and (pd.isna(row.get("hours")) or not row.get("hours")):
+            if n and not blank(row.get("cmid")) and blank(entries.iloc[n - 1].get("cmid")):
+                entries.iloc[n - 1, entries.columns.get_loc("cmid")] = row["cmid"]
+            drop.append(entries.index[n])
+    return entries.drop(index=drop) if drop else entries
+
+
+def read_pair(content, input_type, ref, timekeepers, first, second=None, tk_id=None, tk_name=None, **kw):
+    """(entries, first reader's entries, second reader's entries) for one upload, as both_readers gives them, with the
+    writer fix: an upload of one person's own note that names no timekeeper gets the one it's signed with
+    (note_writer), and an entry made of the signature alone is dropped (drop_signature)."""
+    writer = None
+    if tk_id is None and blank(tk_name) and "writer" in (first.fixes or ()) and input_type in WRITER_TYPES:
+        writer = note_writer(content, input_type, timekeepers)
+    entries, ones, twos = both_readers(content, input_type, ref, timekeepers, first, second, tk_id=tk_id,
+                                       tk_name=writer or tk_name, **kw)
+    return (drop_signature(entries, writer) if writer and len(entries) else entries), ones, twos
+
+
+def both_readers(content, input_type, ref, timekeepers, first, second=None, tk_id=None, tk_name=None, upload_date=None,
+                 source=None, year=None, image=None, rules_content=None, deadline=None):
     """(entries, first reader's entries, second reader's entries) for one upload. The arguments are read's, with the
     two readers given apart; second=None reads with one model. Both readers are asked at the same time.
     deadline: a time.monotonic() value after which a piece with no answer counts as failed (the app sets one per

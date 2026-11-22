@@ -46,7 +46,7 @@
       "formatting_changed": 0.0,
       "stress_worst_precision": 0.9513513513513514,
       "format_worst_precision": 0.95,
-      "seconds_per_entry": 0.0035998675125355085
+      "seconds_per_entry": 0.004540426928368699
     },
     "TEST": {
       "entries": 597,
@@ -81,7 +81,7 @@
       "formatting_changed": 0.0,
       "stress_worst_precision": 0.9491978609625669,
       "format_worst_precision": 0.9444444444444444,
-      "seconds_per_entry": 0.00379898185413518
+      "seconds_per_entry": 0.004491930554497681
     },
     "HOLDOUT": {
       "entries": 800,
@@ -116,7 +116,7 @@
       "formatting_changed": 0.0,
       "stress_worst_precision": 0.9320594479830149,
       "format_worst_precision": 0.95,
-      "seconds_per_entry": 0.0037119725524098614
+      "seconds_per_entry": 0.003893488125031581
     }
   },
   "gates": {

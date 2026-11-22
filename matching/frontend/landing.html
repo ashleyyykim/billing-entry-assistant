@@ -10,7 +10,7 @@
   if (location.hash) history.replaceState(null, '', location.pathname + location.search);
   window.scrollTo(0, 0);
 </script>
-<meta name="description" content="For lawyers and the legal assistants who keep their time. Drop in notes from a busy week, answer a few quick questions, and get clean entries on the right client and matter. A UC Berkeley Master of Information and Data Science capstone.">
+<meta name="description" content="For lawyers and the people who keep their time. Drop in a messy week, answer a few quick questions, and get clean entries on the right client and matter. A UC Berkeley Master of Information and Data Science capstone.">
 <meta property="og:title" content="Tenth">
 <meta property="og:description" content="Every tenth of an hour, on the right matter.">
 <meta property="og:type" content="website">
@@ -66,7 +66,7 @@ main section[tabindex="-1"]:focus,main section[tabindex="-1"]:focus-visible{outl
 .btn-solid::after{content:"";position:absolute;top:0;bottom:0;left:-60%;width:50%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.18),transparent);transform:skewX(-18deg);pointer-events:none;opacity:0}
 .btn-solid:hover::after{animation:sheen .7s var(--ease-out) 1}
 @keyframes sheen{0%{left:-60%;opacity:1}100%{left:120%;opacity:1}}
-.btn-line{background:#fff;color:var(--tenth-ink);border-color:var(--tenth-outline)}
+.btn-line{background:var(--tenth-white);color:var(--tenth-ink);border-color:var(--tenth-outline)}
 .btn-line:hover{border-color:var(--tenth-hover)}
 .btn-ghost{background:transparent;color:var(--tenth-ink)}
 .btn-ghost:hover{background:rgba(91,86,126,.08)}
@@ -153,8 +153,8 @@ main section[tabindex="-1"]:focus,main section[tabindex="-1"]:focus-visible{outl
 .sticky{width:210px;height:210px;padding:18px 20px;background:#FAEBC8;border-radius:2px 2px 14px 2px}
 .sticky .hand{font-size:24px;line-height:34px}
 .sticky .hand:first-child{font-size:26px}
-.mail{width:290px;padding:16px 20px;background:#fff;border-radius:8px;font-size:13px;line-height:22px}
-.sheet{width:300px;background:#fff;border-radius:4px;font-size:12px;line-height:16px;font-variant-numeric:tabular-nums;overflow:hidden}
+.mail{width:290px;padding:16px 20px;background:var(--tenth-white);border-radius:8px;font-size:13px;line-height:22px}
+.sheet{width:300px;background:var(--tenth-white);border-radius:4px;font-size:12px;line-height:16px;font-variant-numeric:tabular-nums;overflow:hidden}
 .sheet .r{display:grid;grid-template-columns:76px 1fr 30px;gap:8px;padding:8px 12px;border-top:1px solid var(--tenth-row)}
 .sheet .r.head{background:var(--tenth-surface-alt);font-weight:600;border-top:0}
 .sheet .r.dim{color:#8E899C}
@@ -188,7 +188,7 @@ main section[tabindex="-1"]:focus,main section[tabindex="-1"]:focus-visible{outl
 .sn3{left:24px;top:220px}.sn3 .note{--r:2deg}
 .sn4{left:340px;top:250px}.sn4 .note{--r:-2deg}
 .sn5{left:300px;top:400px}.sn5 .note{--r:3deg}
-.voice{width:270px;padding:14px 16px 16px;background:#fff;border-radius:14px;display:flex;flex-direction:column;gap:8px}
+.voice{width:270px;padding:14px 16px 16px;background:var(--tenth-white);border-radius:14px;display:flex;flex-direction:column;gap:8px}
 .vtop{display:flex;align-items:center;gap:10px}
 .vplay{flex:none;width:28px;height:28px;border-radius:50%;background:var(--tenth-ink);display:grid;place-items:center;padding-left:2px}
 .wave{flex:1;display:flex;align-items:center;gap:2px;height:24px}
@@ -246,14 +246,14 @@ main section[tabindex="-1"]:focus,main section[tabindex="-1"]:focus-visible{outl
 .mission{position:relative;z-index:2;text-align:center;margin-top:-18vh}
 .mission .mound{display:block;width:100%;height:18vh;margin-bottom:-1px}
 .mission .mound path{fill:#D8D4E8}
-.mission .spread{background:linear-gradient(#D8D4E8 0,#A9A3C6 12vh,#6E6892 26vh,#3A3750 40vh,#2C2A36 50vh,#2C2A36 calc(100% - 52vh),#3A3750 calc(100% - 42vh),#6E6892 calc(100% - 30vh),#A9A3C6 calc(100% - 19vh),#D8D4E8 calc(100% - 9vh),var(--color-bg) 100%);padding:58vh 0 calc(var(--section) + 40vh);color:var(--tenth-paper)}   /* evening to ink, then back to morning paper */
+.mission .spread{background:linear-gradient(#D8D4E8 0,#A9A3C6 8vh,#6E6892 18vh,#3A3750 28vh,#2C2A36 35vh,#2C2A36 calc(100% - 36vh),#3A3750 calc(100% - 29vh),#6E6892 calc(100% - 21vh),#A9A3C6 calc(100% - 13vh),#D8D4E8 calc(100% - 6vh),var(--color-bg) 100%);padding:40vh 0 calc(var(--section) + 28vh);color:var(--tenth-paper)}   /* evening to ink, then back to morning paper (about 1.2 screens in all; it was nearly 2) */
 .pull{margin:0 auto;max-width:1000px}
 /* the quote holds in the middle of the screen for about half a screen of scrolling while the ink keeps moving behind it */
-@media (min-width:901px) and (prefers-reduced-motion:no-preference){.mission .spread > .wrap{position:sticky;top:50%;translate:0 -50%}.mission .spread::after{content:"";display:block;height:34vh}}
+@media (min-width:901px) and (prefers-reduced-motion:no-preference){.mission .spread > .wrap{position:sticky;top:50%;translate:0 -50%}.mission .spread::after{content:"";display:block;height:20vh}}
 .pull-label{display:inline-flex;align-items:center;gap:14px;margin-bottom:28px;font:600 12px/16px var(--font-ui);letter-spacing:.14em;text-transform:uppercase;color:#B4AED0}
 .pull-label::before,.pull-label::after{content:"";width:40px;height:1px;background:rgba(180,174,208,.5)}
 .mission .mission-lead{color:rgba(246,244,242,.7);margin-bottom:56px}
-.mission #mission-line{max-width:980px;margin:0 auto;font:400 clamp(42px,5.6vw,80px)/1.08 var(--font-display);letter-spacing:-.02em;text-wrap:balance}
+.mission #mission-line{max-width:980px;margin:0 auto;font:400 clamp(40px,5vw,68px)/1.08 var(--font-display);letter-spacing:-.02em;text-wrap:balance}
 .mission-lead{max-width:640px;margin:0 auto 36px;font-size:21px;line-height:32px;color:var(--color-text-muted);text-wrap:balance}
 .uline{position:relative;display:inline-block;white-space:nowrap}
 .uline .ul{position:absolute;left:-2%;bottom:-.14em;width:104%;height:.28em;overflow:visible;transform-origin:left center}
@@ -268,12 +268,12 @@ main section[tabindex="-1"]:focus,main section[tabindex="-1"]:focus-visible{outl
 @media (max-width:900px){.try-text{padding-top:0}}
 .try-text{flex:1 1 320px;max-width:440px;display:flex;flex-direction:column;gap:16px}
 .try-stage{flex:1 1 520px;display:flex;justify-content:center}
-.qcard{position:relative;width:100%;max-width:580px;min-height:360px;outline:none;border-radius:var(--radius-drop);background:#fff;box-shadow:0 0 0 1px var(--tenth-line),0 16px 40px rgba(91,86,126,.12);padding:32px;overflow:hidden}
+.qcard{position:relative;width:100%;max-width:580px;min-height:360px;outline:none;border-radius:var(--radius-drop);background:var(--tenth-white);box-shadow:0 0 0 1px var(--tenth-line),0 16px 40px rgba(91,86,126,.12);padding:32px;overflow:hidden}
 .qinner{display:flex;flex-direction:column;gap:16px}
 .qcount{font:600 13px/20px var(--font-ui);color:var(--color-text-muted);font-variant-numeric:tabular-nums}
 .qcount span{font-weight:400}
 .qwhy{font-size:15px;line-height:22px;color:var(--color-text-muted);margin-top:-8px}
-.ecard{display:grid;padding:6px;border:1px solid var(--tenth-line);border-radius:16px;background:#fff;box-shadow:0 1px 2px rgba(44,42,54,.04),0 8px 24px rgba(91,86,126,.07)}
+.ecard{display:grid;padding:6px;border:1px solid var(--tenth-line);border-radius:16px;background:var(--tenth-white);box-shadow:0 1px 2px rgba(44,42,54,.04),0 8px 24px rgba(91,86,126,.07)}
 .ecard .f{display:grid;grid-template-columns:104px minmax(0,1fr);column-gap:16px;align-items:baseline;padding:9px 14px;border-radius:12px;transition:background-color .6s var(--ease-out),box-shadow .6s var(--ease-out)}
 .ecard .f-lab{font:500 13px/22px var(--font-ui);color:var(--color-text-muted)}
 .ecard .f-val{font:600 15px/22px var(--font-ui);color:var(--tenth-ink);display:flex;flex-direction:column}
@@ -285,9 +285,9 @@ main section[tabindex="-1"]:focus,main section[tabindex="-1"]:focus-visible{outl
 .gap{border-bottom:1.5px dotted currentColor;font-style:italic;padding:0 2px;color:var(--tenth-slate)}
 .gap.filled{font-style:normal;color:var(--tenth-ink);border-bottom-style:solid;border-bottom-color:var(--tenth-dusk)}
 .qpills{display:flex;flex-direction:column;gap:2px;margin-top:6px}
-.mp{margin:2px 4px 6px;padding:8px;border-radius:12px;background:#fff;box-shadow:0 0 0 1px var(--tenth-line),0 16px 40px rgba(91,86,126,.14);animation:mp-in .22s var(--ease-out) both}
+.mp{margin:2px 4px 6px;padding:8px;border-radius:12px;background:var(--tenth-white);box-shadow:0 0 0 1px var(--tenth-line),0 16px 40px rgba(91,86,126,.14);animation:mp-in .22s var(--ease-out) both}
 @keyframes mp-in{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
-.mp input{width:100%;height:40px;border-radius:10px;border:1px solid var(--tenth-edge);padding:0 12px;font:400 15px/22px var(--font-ui);color:var(--tenth-ink);background:#fff}
+.mp input{width:100%;height:40px;border-radius:10px;border:1px solid var(--tenth-edge);padding:0 12px;font:400 15px/22px var(--font-ui);color:var(--tenth-ink);background:var(--tenth-white)}
 .mp input:focus{outline:none;border-color:var(--tenth-dusk);box-shadow:0 0 0 4px rgba(91,86,126,.16)}
 .mp .cap3{display:block;font:600 12px/16px var(--font-ui);color:var(--color-text-muted);padding:10px 8px 4px}
 .mp button.opt{display:grid;grid-template-columns:72px minmax(0,1fr) auto;gap:10px;align-items:baseline;width:100%;border:0;background:none;border-radius:8px;padding:7px 8px;text-align:left;cursor:pointer;font:500 14px/20px var(--font-ui);color:var(--tenth-ink)}
@@ -304,7 +304,7 @@ main section[tabindex="-1"]:focus,main section[tabindex="-1"]:focus-visible{outl
 .qact{display:flex;flex-direction:column;gap:10px}
 .qguide{font-size:13px;line-height:20px;color:var(--color-text-muted)}
 .qkeys{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:12px;line-height:16px;color:var(--color-text-muted);opacity:0;transition:opacity .25s}
-.qkeys kbd{font:600 12px/16px var(--font-ui);border-radius:4px;padding:1px 6px;border:1px solid var(--tenth-outline);background:#fff;color:var(--color-text-muted)}
+.qkeys kbd{font:600 12px/16px var(--font-ui);border-radius:4px;padding:1px 6px;border:1px solid var(--tenth-outline);background:var(--tenth-white);color:var(--color-text-muted)}
 .qkeys kbd+*{margin-right:4px}
 .qcard:hover .qkeys,.qcard:focus-within .qkeys{opacity:1}
 .qcard .btn-solid::after{content:"";position:absolute;inset:0;left:0;width:auto;background:linear-gradient(105deg,transparent 30%,rgba(255,255,255,.3) 50%,transparent 70%);transform:translateX(-120%);transition:transform .7s var(--ease-out);opacity:1;animation:none}
@@ -320,7 +320,7 @@ main section[tabindex="-1"]:focus,main section[tabindex="-1"]:focus-visible{outl
 .qmeta{display:flex;gap:4px 16px;flex-wrap:wrap}
 .proof{display:flex;gap:12px;align-items:flex-start;margin-top:8px;padding-top:20px;border-top:1px solid var(--tenth-line);font-size:15px;line-height:22px;font-weight:500}
 .proof > i{flex:none;width:16px;height:16px;margin-top:3px;background:#5E7F68;-webkit-mask:var(--icon-check-s) center/contain no-repeat;mask:var(--icon-check-s) center/contain no-repeat}
-.qinput{width:100%;height:44px;border-radius:var(--radius-control);border:1px solid var(--tenth-edge);background:#fff;padding:0 14px;font:400 16px/24px var(--font-ui);color:var(--tenth-ink);transition:border-color .3s var(--ease-out),box-shadow .3s var(--ease-out)}
+.qinput{width:100%;height:44px;border-radius:var(--radius-control);border:1px solid var(--tenth-edge);background:var(--tenth-white);padding:0 14px;font:400 16px/24px var(--font-ui);color:var(--tenth-ink);transition:border-color .3s var(--ease-out),box-shadow .3s var(--ease-out)}
 .qinput:focus{outline:none;border-color:var(--tenth-dusk);box-shadow:0 0 0 4px rgba(91,86,126,.16)}
 .qpart .blank{color:var(--tenth-gold-text)}
 .btn[disabled]{opacity:.4;cursor:not-allowed}
@@ -449,6 +449,8 @@ main section[tabindex="-1"]:focus,main section[tabindex="-1"]:focus-visible{outl
 
 /* icon family B, the same shapes as the app: solid status marks with the symbol cut out, two-tone file types */
 :root{
+  --tenth-white:#FDFCFA;   /* the app's soft warm white */
+  --icon-pencil:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cdefs%3E%3Cmask id='k'%3E%3Crect width='24' height='24' fill='white'/%3E%3Cpath d='M13.2 6.4l4.4 4.4' stroke='black' stroke-width='1.8'/%3E%3C/mask%3E%3C/defs%3E%3Cpath mask='url(%23k)' fill='black' d='M15 3.9a2.3 2.3 0 0 1 3.2 0l1.9 1.9a2.3 2.3 0 0 1 0 3.2L9.6 19.5l-5.1 1.4a.8.8 0 0 1-1-1l1.4-5.1z'/%3E%3C/svg%3E");
   --icon-check-s:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cdefs%3E%3Cmask id='k'%3E%3Crect width='24' height='24' fill='white'/%3E%3Cg fill='none' stroke='black' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M7.6 12.4l3 3 5.8-6.2'/%3E%3C/g%3E%3C/mask%3E%3C/defs%3E%3Cg mask='url(%23k)'%3E%3Ccircle cx='12' cy='12' r='10' fill='black'/%3E%3C/g%3E%3C/svg%3E");
   --icon-clock-s:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cdefs%3E%3Cmask id='k'%3E%3Crect width='24' height='24' fill='white'/%3E%3Cg fill='none' stroke='black' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 6.8V12l3.3 2.1'/%3E%3C/g%3E%3C/mask%3E%3C/defs%3E%3Cg mask='url(%23k)'%3E%3Ccircle cx='12' cy='12' r='10' fill='black'/%3E%3C/g%3E%3C/svg%3E");
   --icon-alert-s:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cdefs%3E%3Cmask id='k'%3E%3Crect width='24' height='24' fill='white'/%3E%3Cg fill='none' stroke='black' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 8.7v4.3'/%3E%3Ccircle cx='12' cy='16.8' r='.5' stroke-width='2.4'/%3E%3C/g%3E%3C/mask%3E%3C/defs%3E%3Cg mask='url(%23k)'%3E%3Cpath fill='black' d='M10.1 3.5a2.2 2.2 0 0 1 3.8 0l8 13.9a2.2 2.2 0 0 1-1.9 3.3H4a2.2 2.2 0 0 1-1.9-3.3z'/%3E%3C/g%3E%3C/svg%3E");
@@ -460,11 +462,68 @@ main section[tabindex="-1"]:focus,main section[tabindex="-1"]:focus-visible{outl
 .pill i.ic{width:15px!important;height:15px!important;display:inline-block;flex:none;background:var(--pc,#957219)!important;-webkit-mask:var(--ic) center/contain no-repeat;mask:var(--ic) center/contain no-repeat}
 .pill.ok i.ic{--pc:#5E7F68}
 .pill.swap-pill .pb i.ic{--pc:#957219}
-.ic-check{--ic:var(--icon-check-s)}.ic-clock{--ic:var(--icon-clock-s)}.ic-alert{--ic:var(--icon-alert-s)}.ic-folder{--ic:var(--icon-folder)}.ic-dots{--ic:var(--icon-dots)}
+.ic-check{--ic:var(--icon-check-s)}.ic-clock{--ic:var(--icon-clock-s)}.ic-alert{--ic:var(--icon-alert-s)}.ic-folder{--ic:var(--icon-folder)}.ic-dots{--ic:var(--icon-dots)}.ic-pencil{--ic:var(--icon-pencil)}
 :root{
   --icon-folder:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cdefs%3E%3Cmask id='k'%3E%3Crect width='24' height='24' fill='white'/%3E%3Cpath fill='none' stroke='black' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.9' d='M3 10h18'/%3E%3C/mask%3E%3C/defs%3E%3Cg mask='url(%23k)'%3E%3Cpath fill='black' d='M2.5 6.6A2.6 2.6 0 0 1 5.1 4h3.8a2 2 0 0 1 1.5.7l1.3 1.5h7.2a2.6 2.6 0 0 1 2.6 2.6v8.6a2.6 2.6 0 0 1-2.6 2.6H5.1a2.6 2.6 0 0 1-2.6-2.6z'/%3E%3C/g%3E%3C/svg%3E");
   --icon-dots:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cdefs%3E%3Cmask id='k'%3E%3Crect width='24' height='24' fill='white'/%3E%3Ccircle cx='7.3' cy='12' r='1.75' fill='black'/%3E%3Ccircle cx='12' cy='12' r='1.75' fill='black'/%3E%3Ccircle cx='16.7' cy='12' r='1.75' fill='black'/%3E%3C/mask%3E%3C/defs%3E%3Cg mask='url(%23k)'%3E%3Crect x='1.5' y='5.5' width='21' height='13' rx='6.5' fill='black'/%3E%3C/g%3E%3C/svg%3E");
 }
+/* Try a question, as the app's entry card */
+.qcard .ecard{padding:6px}
+.ecard .f{grid-template-columns:96px minmax(0,1fr);padding:10px 14px}
+.ecard .f.ask{background:var(--tenth-dusk-wash);transition:background-color .5s var(--ease-out)}
+.ecard .f.settled{background:transparent}
+.ecard .f-val .v{display:block}
+.ecard .f.m .f-val .v b{display:block;font-weight:600}
+.ecard .f.m .f-val .v span{display:block;font-weight:600}
+.ecard .f.m .f-val .v small{display:block;font:400 13px/20px var(--font-ui);color:var(--color-text-muted)}
+.ecard .f-val .v i{font-style:italic}
+.ecard .f[data-part="narr"] .f-val .v{font-weight:400}
+.fn{display:flex;gap:10px;align-items:flex-start;margin-top:8px;font:400 13px/20px var(--font-ui);color:#524C78}
+.fn .ck{position:relative;flex:none;width:16px;height:16px;margin-top:2px;border:0;padding:0;border-radius:50%;background:var(--tenth-white);box-shadow:inset 0 0 0 1.5px rgba(91,86,126,.55);cursor:pointer;transition:background-color .2s,box-shadow .2s}
+.fn .ck:hover,.fn .ck:focus-visible{background:var(--tenth-green-tint);box-shadow:inset 0 0 0 1.5px var(--tenth-green-text);outline:none}
+.fn .tx{flex:1;min-width:0}
+.fn .tx b{display:block;font-weight:600;color:var(--tenth-ink)}
+.fn .acts{display:flex;gap:14px;flex:none}
+.fn .acts button{border:0;background:none;padding:0;font:600 13px/20px var(--font-ui);color:var(--tenth-dusk);cursor:pointer}
+.fn .acts button:hover,.fn .acts button:focus-visible{text-decoration:underline;text-underline-offset:3px;outline:none}
+.fn.done .ck{background:var(--tenth-green);box-shadow:none;cursor:default;border-radius:0;-webkit-mask:var(--icon-check-s) center/contain no-repeat;mask:var(--icon-check-s) center/contain no-repeat}
+.fn.done .tx b{color:var(--tenth-green-text)}
+.chip{display:inline;padding:1px 2px 1px 6px;border:1px solid var(--tenth-dusk-lilac);border-radius:6px;background:color-mix(in srgb,var(--tenth-dusk-lilac) 38%,#fff);color:var(--tenth-ink);white-space:nowrap;overflow:hidden}
+.chip .cx{font:500 14px/1 var(--font-ui);vertical-align:middle;position:relative;top:-2px;border:0;background:none;padding:1px 3px;margin-left:2px;border-radius:4px;color:rgba(91,86,126,.72);cursor:pointer}
+.chip:hover .cx,.chip .cx:focus-visible{color:var(--tenth-dusk);background:rgba(91,86,126,.12);outline:none}
+.qkeys{opacity:1;flex-direction:column;align-items:flex-start;gap:8px}
+.qkeys .kr{display:flex;flex-wrap:wrap;column-gap:20px;row-gap:8px}
+.qkeys .kg{display:inline-flex;align-items:center;gap:7px;white-space:nowrap}
+.qkeys kbd+*{margin-right:0}
+kbd.ik{font:600 13px/18px var(--font-ui);border-radius:4px;padding:0 6px;border:1px solid var(--tenth-outline);background:var(--tenth-white);color:var(--tenth-ink)}
+.qcard .btn-solid.nudge{animation:qnudge 1.2s var(--ease-out) 2}
+@keyframes qnudge{0%{box-shadow:0 0 0 0 rgba(91,86,126,.45)}70%{box-shadow:0 0 0 10px rgba(91,86,126,0)}100%{box-shadow:0 0 0 0 rgba(91,86,126,0)}}
+.swap-pill .pa{color:var(--tenth-green-text)}
+.pill.swap-pill .pa i.ic{--pc:#5E7F68}
+.nar.flag{background:none!important}   /* the app's list doesn't wash a narrative for a missing detail: the chip and "what?" mark it */
+.nar.flag .blank{background:var(--tenth-gold-tint)}
+.row .lchip{display:inline;padding:0 2px 0 6px;border:1px solid var(--tenth-dusk-lilac);border-radius:6px;background:color-mix(in srgb,var(--tenth-dusk-lilac) 38%,#fff);color:var(--tenth-ink);white-space:nowrap}
+.row .cx{font:500 13px/1 var(--font-ui);vertical-align:middle;position:relative;top:-1px;padding:0 3px;color:rgba(91,86,126,.72)}
+.row .cx.gx{color:rgba(118,86,8,.72);margin-left:1px}
+.row .mm.ask{display:block;width:fit-content;background:var(--tenth-gold-tint);border-radius:6px;padding:2px 6px;margin:-2px -6px}
+.row .mm .c,.row .mm .m{display:block}
+.row .why{display:block;margin-top:2px;font-size:12px;line-height:16px;color:var(--color-text-muted)}
+.qhead{display:flex;align-items:center;gap:16px}
+.qback{display:inline-flex;align-items:center;gap:4px;border:0;background:none;padding:2px 6px;margin:-2px -6px;border-radius:6px;font:600 13px/20px var(--font-ui);color:var(--tenth-ink);cursor:pointer}
+.qback:hover,.qback:focus-visible{background:var(--tenth-surface-alt);outline:none}
+/* reading: one idea per short paragraph, a little air between them, lines kept to a comfortable length */
+.pp{display:block}
+.pp + .pp{margin-top:10px}
+.lede .pp + .pp{margin-top:6px}
+.faq details p{max-width:580px}
+.faq details p.why > .ptxt{display:block}
+.beat{max-width:440px}
+.try-text .hint{font-size:14px;line-height:22px;color:var(--color-text-muted);margin-top:-4px}
+.ecard .gapc{display:inline;padding:0 5px;border:1px dashed rgba(91,86,126,.72);border-radius:6px;color:var(--tenth-dusk);font-style:italic;cursor:pointer;white-space:nowrap}
+.ecard .gapc:hover,.ecard .gapc:focus-visible{background:var(--tenth-dusk-wash);border-color:var(--tenth-dusk);outline:none}
+.ecard .gin{font:inherit;width:11ch;padding:0 6px;border:1px solid var(--tenth-dusk);border-radius:6px;background:var(--tenth-white);color:var(--tenth-ink);outline:none;box-shadow:0 0 0 3px rgba(91,86,126,.16)}
+.ecard .gfill{font-weight:inherit}
+.ecard .f.settled .gapc{opacity:.5}
 </style>
 </head>
 <body>
@@ -475,8 +534,8 @@ main section[tabindex="-1"]:focus,main section[tabindex="-1"]:focus-visible{outl
     <a class="brand" href="#top" aria-label="Tenth, back to top"><svg class="gauge" viewBox="12 8 72 80" aria-hidden="true"><defs><clipPath id="kwscg"><rect id="gbot" x="0" y="71" width="96" height="44"/></clipPath><clipPath id="gtopclip"><rect id="gtop" x="0" y="16" width="96" height="40"/></clipPath><mask id="kwsmg" maskUnits="userSpaceOnUse" x="0" y="0" width="96" height="96"><rect width="96" height="96" fill="#fff"/><path d="M55.21 43.38 L54.68 44.04 L54.17 44.68 L53.67 45.30 L53.18 45.90 L52.71 46.49 L52.25 47.05 L51.82 47.60 L51.40 48.13 L51.01 48.64 L50.64 49.12 L50.30 49.59 L49.95 50.12 L49.58 50.66 L49.20 51.22 L48.81 51.80 L48.41 52.39 L48.00 53.00 L47.57 53.62 L47.14 54.26 L46.70 54.91 L46.25 55.58 L45.79 56.27 L40.79 52.62 L41.32 51.96 L41.83 51.32 L42.33 50.70 L42.82 50.10 L43.29 49.51 L43.75 48.95 L44.18 48.40 L44.60 47.87 L44.99 47.36 L45.36 46.88 L45.70 46.41 L46.05 45.88 L46.42 45.34 L46.80 44.78 L47.19 44.20 L47.59 43.61 L48.00 43.00 L48.43 42.38 L48.86 41.74 L49.30 41.09 L49.75 40.42 L50.21 39.73 Z" fill="#000"/></mask><linearGradient id="gtgauge" gradientUnits="userSpaceOnUse" x1="0" y1="16" x2="0" y2="48"><stop offset="0" stop-color="#B4AED0"/><stop offset="1" stop-color="#E9E6F3"/></linearGradient></defs><g class="gauge-spin"><path d="M48 48 C43.5 41.5 33.5 30 30 16 H66 C62.5 30 52.5 41.5 48 48 Z" fill="url(#gtgauge)" clip-path="url(#gtopclip)"/><path d="M48 48 C52.5 54.5 62.5 66 66 80 H30 C33.5 66 43.5 54.5 48 48 Z" fill="#6F6A92" clip-path="url(#kwscg)"/><path d="M26.99 16.75 L27.35 17.85 L27.72 18.94 L28.12 20.00 L28.54 21.06 L28.97 22.10 L29.43 23.12 L29.90 24.13 L30.38 25.13 L30.88 26.10 L31.40 27.07 L31.92 28.02 L32.45 28.95 L33.00 29.87 L33.55 30.78 L34.11 31.67 L34.67 32.54 L35.24 33.40 L35.81 34.24 L36.38 35.07 L36.96 35.89 L37.53 36.68 L38.11 37.47 L38.68 38.23 L39.25 38.98 L39.81 39.72 L40.37 40.44 L40.92 41.14 L41.47 41.83 L42.00 42.50 L42.53 43.15 L43.04 43.79 L43.54 44.41 L44.03 45.01 L44.50 45.59 L44.95 46.16 L45.39 46.71 L45.81 47.25 L46.21 47.76 L46.58 48.26 L46.93 48.74 L47.28 49.25 L47.64 49.79 L48.01 50.34 L48.40 50.91 L48.80 51.50 L49.21 52.10 L49.63 52.73 L50.07 53.37 L50.51 54.02 L50.96 54.70 L51.42 55.39 L51.89 56.09 L52.36 56.81 L52.83 57.55 L53.31 58.30 L53.79 59.06 L54.27 59.84 L54.75 60.63 L55.23 61.44 L55.71 62.26 L56.18 63.09 L56.65 63.94 L57.11 64.79 L57.57 65.66 L58.01 66.54 L58.45 67.43 L58.88 68.33 L59.29 69.24 L59.69 70.16 L60.08 71.08 L60.46 72.02 L60.82 72.97 L61.16 73.92 L61.48 74.88 L61.79 75.84 L62.07 76.81 L62.34 77.79 L62.58 78.77 L62.80 79.76 L62.99 80.75 L69.01 79.25 L68.65 78.15 L68.28 77.06 L67.88 76.00 L67.46 74.94 L67.03 73.90 L66.57 72.88 L66.10 71.87 L65.62 70.87 L65.12 69.90 L64.60 68.93 L64.08 67.98 L63.55 67.05 L63.00 66.13 L62.45 65.22 L61.89 64.33 L61.33 63.46 L60.76 62.60 L60.19 61.76 L59.62 60.93 L59.04 60.11 L58.47 59.32 L57.89 58.53 L57.32 57.77 L56.75 57.02 L56.19 56.28 L55.63 55.56 L55.08 54.86 L54.53 54.17 L54.00 53.50 L53.47 52.85 L52.96 52.21 L52.46 51.59 L51.97 50.99 L51.50 50.41 L51.05 49.84 L50.61 49.29 L50.19 48.75 L49.79 48.24 L49.42 47.74 L49.07 47.26 L48.72 46.75 L48.36 46.21 L47.99 45.66 L47.60 45.09 L47.20 44.50 L46.79 43.90 L46.37 43.27 L45.93 42.63 L45.49 41.98 L45.04 41.30 L44.58 40.61 L44.11 39.91 L43.64 39.19 L43.17 38.45 L42.69 37.70 L42.21 36.94 L41.73 36.16 L41.25 35.37 L40.77 34.56 L40.29 33.74 L39.82 32.91 L39.35 32.06 L38.89 31.21 L38.43 30.34 L37.99 29.46 L37.55 28.57 L37.12 27.67 L36.71 26.76 L36.31 25.84 L35.92 24.92 L35.54 23.98 L35.18 23.03 L34.84 22.08 L34.52 21.12 L34.21 20.16 L33.93 19.19 L33.66 18.21 L33.42 17.23 L33.20 16.24 L33.01 15.25 Z" fill="#2C2A36" mask="url(#kwsmg)"/><path d="M69.01 16.75 L68.65 17.85 L68.28 18.94 L67.88 20.00 L67.46 21.06 L67.03 22.10 L66.57 23.12 L66.10 24.13 L65.62 25.13 L65.12 26.10 L64.60 27.07 L64.08 28.02 L63.55 28.95 L63.00 29.87 L62.45 30.78 L61.89 31.67 L61.33 32.54 L60.76 33.40 L60.19 34.24 L59.62 35.07 L59.04 35.89 L58.47 36.68 L57.89 37.47 L57.32 38.23 L56.75 38.98 L56.19 39.72 L55.63 40.44 L55.08 41.14 L54.53 41.83 L54.00 42.50 L53.47 43.15 L52.96 43.79 L52.46 44.41 L51.97 45.01 L51.50 45.59 L51.05 46.16 L50.61 46.71 L50.19 47.25 L49.79 47.76 L49.42 48.26 L49.07 48.74 L48.72 49.25 L48.36 49.79 L47.99 50.34 L47.60 50.91 L47.20 51.50 L46.79 52.10 L46.37 52.73 L45.93 53.37 L45.49 54.02 L45.04 54.70 L44.58 55.39 L44.11 56.09 L43.64 56.81 L43.17 57.55 L42.69 58.30 L42.21 59.06 L41.73 59.84 L41.25 60.63 L40.77 61.44 L40.29 62.26 L39.82 63.09 L39.35 63.94 L38.89 64.79 L38.43 65.66 L37.99 66.54 L37.55 67.43 L37.12 68.33 L36.71 69.24 L36.31 70.16 L35.92 71.08 L35.54 72.02 L35.18 72.97 L34.84 73.92 L34.52 74.88 L34.21 75.84 L33.93 76.81 L33.66 77.79 L33.42 78.77 L33.20 79.76 L33.01 80.75 L26.99 79.25 L27.35 78.15 L27.72 77.06 L28.12 76.00 L28.54 74.94 L28.97 73.90 L29.43 72.88 L29.90 71.87 L30.38 70.87 L30.88 69.90 L31.40 68.93 L31.92 67.98 L32.45 67.05 L33.00 66.13 L33.55 65.22 L34.11 64.33 L34.67 63.46 L35.24 62.60 L35.81 61.76 L36.38 60.93 L36.96 60.11 L37.53 59.32 L38.11 58.53 L38.68 57.77 L39.25 57.02 L39.81 56.28 L40.37 55.56 L40.92 54.86 L41.47 54.17 L42.00 53.50 L42.53 52.85 L43.04 52.21 L43.54 51.59 L44.03 50.99 L44.50 50.41 L44.95 49.84 L45.39 49.29 L45.81 48.75 L46.21 48.24 L46.58 47.74 L46.93 47.26 L47.28 46.75 L47.64 46.21 L48.01 45.66 L48.40 45.09 L48.80 44.50 L49.21 43.90 L49.63 43.27 L50.07 42.63 L50.51 41.98 L50.96 41.30 L51.42 40.61 L51.89 39.91 L52.36 39.19 L52.83 38.45 L53.31 37.70 L53.79 36.94 L54.27 36.16 L54.75 35.37 L55.23 34.56 L55.71 33.74 L56.18 32.91 L56.65 32.06 L57.11 31.21 L57.57 30.34 L58.01 29.46 L58.45 28.57 L58.88 27.67 L59.29 26.76 L59.69 25.84 L60.08 24.92 L60.46 23.98 L60.82 23.03 L61.16 22.08 L61.48 21.12 L61.79 20.16 L62.07 19.19 L62.34 18.21 L62.58 17.23 L62.80 16.24 L62.99 15.25 Z" fill="#2C2A36"/><path d="M22.5 16 H73.5 M22.5 80 H73.5" fill="none" stroke="#2C2A36" stroke-width="4.8" stroke-linecap="round"/></g></svg><span aria-hidden="true">Tenth</span></a>
     <div class="nav-links">
       <a class="link" href="#story">How it works</a>
-      <a class="link" href="#try">Try a question</a>
-      <a class="link" href="#faq">Questions</a>
+      <a class="link" href="#try">Try it</a>
+      <a class="link" href="#faq">FAQ</a>
     </div>
     <a class="btn btn-solid" data-link="demo" href="#">Try the demo</a>
   </nav>
@@ -494,7 +553,7 @@ main section[tabindex="-1"]:focus,main section[tabindex="-1"]:focus-visible{outl
       </h1>
       <div class="hero-foot">
         <div class="hero-intro">
-          <p class="lede">For lawyers and the legal assistants who keep their time. Drop in notes from a busy week, answer a few quick questions, and get clean entries on the right client and matter.</p>
+          <p class="lede"><span class="pp">For lawyers and the people who keep their time.</span><span class="pp">Drop in a messy week. Answer a few quick questions. Get clean entries on the right client and matter.</span></p>
           <div class="hero-cta">
             <a class="btn btn-lg btn-solid" data-link="demo" href="#">Try the demo <svg viewBox="0 0 24 24" aria-hidden="true" class="go"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 12H20M14 18L20 12L14 6"/></svg></a>
             <span class="cap">Sample notes built in. Nothing to install.</span>
@@ -522,22 +581,22 @@ main section[tabindex="-1"]:focus,main section[tabindex="-1"]:focus-visible{outl
             <article class="beat b1">
               <p class="step eyebrow"><b>i.</b> The problem</p>
               <h2 class="h2 split-me">Time gets written down anywhere.</h2>
-              <p class="muted">A notebook page, a sticky note, a voice memo from the car, an email sent at 11:48 at night. Before any of it is billed, someone sorts every line by hand and chases whatever doesn't make sense.</p>
+              <p class="muted"><span class="pp">A notebook page. A sticky note. A voice memo from the car. An email sent at 11:48 at night.</span><span class="pp">Before any of it gets billed, someone has to sort it all by hand. Usually on a Friday afternoon.</span></p>
             </article>
             <article class="beat b2">
               <p class="step eyebrow"><b>ii.</b> Read</p>
               <h2 class="h2 split-me">Tenth reads every one.</h2>
-              <p class="muted">Handwriting, voice memos, emails and spreadsheets all become the same clean entries: a date, the hours and what was done. If something is hard to read or hear, Tenth flags it instead of guessing.</p>
+              <p class="muted"><span class="pp">Handwriting, voice memos, emails, spreadsheets. They all come out as the same clean entries: who, when, how long and what was done.</span><span class="pp">Coffee ring over the hours? Tenth asks instead of guessing.</span></p>
             </article>
             <article class="beat b3">
               <p class="step eyebrow"><b>iii.</b> Match</p>
               <h2 class="h2 split-me">Then each entry finds its matter.</h2>
-              <p class="muted">Every hour bills to one matter: a single case, deal or project for a client. Tenth weighs the client, the matter number and what each person usually works on, then picks one and says why.</p>
+              <p class="muted"><span class="pp">Every hour bills to a matter: the case, deal or project it was for.</span><span class="pp">Tenth weighs the matter number, the work described and what each person usually works on. Then it picks one and tells you why, in plain words.</span></p>
             </article>
             <article class="beat b4">
               <p class="step eyebrow"><b>iv.</b> Check</p>
               <h2 class="h2 split-me">Then it flags what a client would push back on.</h2>
-              <p class="muted">Vague or noncompliant descriptions are caught before they reach an invoice. For each one, Tenth suggests a clear, defensible rewrite you can approve in one click, and leaves a blank rather than guess a detail it can't know.</p>
+              <p class="muted"><span class="pp">Vague descriptions get caught before a client ever sees them.</span><span class="pp">Tenth spells out shorthand and fills in details it can find. What it can&rsquo;t know, like who was on the call, it leaves for you.</span></p>
             </article>
           </div>
           <div class="stage" aria-hidden="true">
@@ -552,9 +611,9 @@ main section[tabindex="-1"]:focus,main section[tabindex="-1"]:focus-visible{outl
             <ol class="rows">
               <li class="row"><span class="st"><span class="pill ok"><i class="ic ic-check"></i>Matched</span></span><span class="mid"><span class="c">Central Perk</span><span class="m">Trademark Licensing · 2207.002</span><span class="nar">Draft orange couch licensing <span class="swap"><span class="sa">agmt</span><span class="sb">agreement</span></span></span></span><span class="h">0.9</span></li>
               <li class="row"><span class="st"><span class="pill ok"><i class="ic ic-check"></i>Matched</span></span><span class="mid"><span class="c">Bluth Banana Stand</span><span class="m">Real Estate · 1408.001</span><span class="nar">Review stand lease</span></span><span class="h">1.1</span></li>
-              <li class="row"><span class="st"><span class="pill ok swap-pill"><span class="pa"><i class="ic ic-check"></i>Matched</span><span class="pb"><i class="ic ic-dots"></i>Missing details</span></span></span><span class="mid"><span class="c">Krusty Krab</span><span class="m">Trade Secrets · 3150.003</span><span class="nar flag">Call <span class="add">with <i class="blank">who?</i></span> re secret formula <span class="swap"><span class="sa">NDA</span><span class="sb">Nondisclosure Agreement</span></span></span></span><span class="h">0.4</span></li>
-              <li class="row"><span class="st"><span class="pill warn"><i class="ic ic-folder"></i>Check matter</span></span><span class="mid"><span class="c">Central Perk</span><span class="m">Real Estate or Trademark Licensing?</span><span class="nar">Lease renewal for the coffee house</span></span><span class="h">1.5</span></li>
-              <li class="row"><span class="st"><span class="pill warn"><i class="ic ic-clock"></i>Check hours</span><span class="pill warn xchip"><i class="ic ic-dots"></i>Missing details</span></span><span class="mid"><span class="c">Luke&rsquo;s Diner</span><span class="m">General Corporate · 5521.001</span><span class="nar flag">Health inspection call <span class="add">regarding <i class="blank">what?</i></span></span></span><span class="h ask">0.75</span></li>
+              <li class="row"><span class="st"><span class="pill ok swap-pill"><span class="pa"><i class="ic ic-check"></i>Matched</span><span class="pb"><i class="ic ic-pencil"></i>Words added</span></span></span><span class="mid"><span class="c">Krusty Krab</span><span class="m">Trade Secrets · 3150.003</span><span class="nar flag">Call <span class="add">with <span class="lchip">Mr. Krabs<b class="cx" aria-hidden="true">×</b></span></span> re secret formula <span class="swap"><span class="sa">NDA</span><span class="sb">Nondisclosure Agreement</span></span></span></span><span class="h">0.4</span></li>
+              <li class="row"><span class="st"><span class="pill warn"><i class="ic ic-folder"></i>Check matter</span></span><span class="mid"><span class="mm ask"><span class="c">Central Perk</span><span class="m">Real Estate · 2207.001</span></span><span class="why">Trademark Licensing fits almost as well.</span><span class="nar">Lease renewal for the coffee house</span></span><span class="h">1.5</span></li>
+              <li class="row"><span class="st"><span class="pill warn"><i class="ic ic-clock"></i>Check hours</span><span class="pill warn xchip"><i class="ic ic-dots"></i>Missing details</span></span><span class="mid"><span class="c">Luke&rsquo;s Diner</span><span class="m">General Corporate · 5521.001</span><span class="nar flag">Health inspection call <span class="add">regarding <i class="blank">what?</i><b class="cx gx" aria-hidden="true">×</b></span></span></span><span class="h ask" title="Rounded up from 0.75">0.8</span></li>
               <li class="row"><span class="st"><span class="pill ok"><i class="ic ic-check"></i>Matched</span></span><span class="mid"><span class="c">Pawnee Parks and Rec</span><span class="m">Permits · 6604.002</span><span class="nar">Call with Ron regarding the waffle vendor permit</span></span><span class="h">1.2</span></li>
             </ol>
           </div>
@@ -567,36 +626,24 @@ main section[tabindex="-1"]:focus,main section[tabindex="-1"]:focus-visible{outl
   <section class="try" id="try" aria-labelledby="try-title">
     <div class="wrap try-grid">
       <div class="try-text">
-        <p class="eyebrow">Try a question</p>
+        <p class="eyebrow">Try it</p>
         <h2 class="h2 split-me" id="try-title">It would rather ask than guess.</h2>
-        <p class="muted">Anything Tenth can't settle on its own becomes one quick question, never a silent guess. This is the same card as in the app, with three questions from the week above.</p>
-        <p class="proof"><i></i><span>When Tenth matches on its own, it's right about 98 times in 100.<br><span class="cap">Tested on held out entries from a synthetic firm.</span></span></p>
+        <p class="muted"><span class="pp">When Tenth isn&rsquo;t sure, it asks. Never a silent guess.</span><span class="pp">Here are three entries from the week above, on the same card as the app.</span></p>
+        <p class="hint">Go ahead, try it! Press <kbd class="ik">Enter</kbd> or click Looks right, or poke at the links under each note.</p>
+        <p class="proof"><i></i><span>And when it doesn&rsquo;t ask? It&rsquo;s right about 98 times in 100.<br><span class="cap">Tested on entries it had never seen, from a fictional firm we built.</span></span></p>
       </div>
       <div class="try-stage">
         <div class="qcard" id="qcard" aria-live="polite" tabindex="-1">
           <div class="qinner" id="qask">
-            <p class="qcount" id="qcount">Question 1 of 3</p>
-            <p class="qtitle" id="qtitle">Is this the right matter?</p>
-            <p class="qwhy" id="qwhy">71% sure. Next closest is Trademark Licensing, at 24%.</p>
-            <div class="ecard" id="ecard">
-              <div class="f"><span class="f-lab">Date</span><span class="f-val">Tue, Oct 27</span></div>
-              <div class="f"><span class="f-lab">Timekeeper</span><span class="f-val">Elle Woods</span></div>
-              <div class="f now"><span class="f-lab">Matter</span><span class="f-val"><b>Central Perk</b><small>Real Estate · 2207.001</small></span></div>
-              <div class="f"><span class="f-lab">Hours</span><span class="f-val">1.5 hours</span></div>
-              <div class="f"><span class="f-lab">What was done</span><span class="f-val n">Lease renewal for the coffee house</span></div>
-            </div>
-            <div class="qtype" id="qtype" hidden>
-              <label class="sr-only" for="qinput">Name</label><input class="qinput" id="qinput" type="text" autocomplete="off" placeholder="Type who it was with">
-              <div class="qpills" id="qpills"></div>
-            </div>
+            <p class="qcount qhead"><button class="qback" id="qback" type="button" title="Back to the last answer (B)" hidden><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 3.5L5.5 8l4.5 4.5"/></svg>Back</button><span id="qcount">3 to review</span></p>
+            <p class="qtitle">Does this look right?</p>
+            <div class="ecard" id="ecard"></div>
             <div class="qact">
               <div class="qactions">
-                <button class="btn btn-solid" type="button" id="qyes">Yes</button>
-                <button class="btn btn-line" type="button" id="qno">No</button>
-                <button class="btn btn-ghost" type="button" id="qskip" title="Pass for now. It stays marked, and Review asks again.">Pass</button>
+                <button class="btn btn-solid" type="button" id="qyes">Looks right</button>
+                <button class="btn btn-ghost" type="button" id="qskip" title="Pass for now (P). It stays marked, and Review asks again.">Pass</button>
               </div>
-              <p class="qguide" id="qguide">Yes keeps Tenth&rsquo;s pick. No lets you choose another matter. Pass leaves it marked for later.</p>
-              <p class="qkeys" id="qkeys" aria-hidden="true"><kbd>Enter</kbd> yes <kbd>N</kbd> no <kbd>P</kbd> pass</p>
+              <p class="qkeys" id="qkeys" aria-hidden="true"></p>
             </div>
           </div>
           <div class="qdone" id="qdone" hidden>
@@ -616,14 +663,14 @@ main section[tabindex="-1"]:focus,main section[tabindex="-1"]:focus-visible{outl
 
   <section class="faq" id="faq" aria-labelledby="faq-title">
     <div class="wrap faq-grid">
-      <div><h2 class="h2 split-me" id="faq-title">Questions.</h2></div>
+      <div><h2 class="h2 split-me" id="faq-title">Good questions.</h2></div>
       <div class="faq-list">
-        <details open><summary><span>Why is it called Tenth?</span><svg viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"><path d="M4 12L20 12"/><path d="M12.0204 4L12.0205 20.0003"/></g></svg></summary><p class="why"><span class="xfig" id="xfig" aria-hidden="true"><svg class="xsvg" aria-hidden="true" viewBox="12 8 72 80"><defs><clipPath id="kfmchr_x"><rect x="0" y="71" width="96" height="19"/></clipPath><mask id="kfmmhr_x" maskUnits="userSpaceOnUse" x="0" y="0" width="96" height="96"><rect width="96" height="96" fill="#fff"/><path d="M55.21 43.38 L54.68 44.04 L54.17 44.68 L53.67 45.30 L53.18 45.90 L52.71 46.49 L52.25 47.05 L51.82 47.60 L51.40 48.13 L51.01 48.64 L50.64 49.12 L50.30 49.59 L49.95 50.12 L49.58 50.66 L49.20 51.22 L48.81 51.80 L48.41 52.39 L48.00 53.00 L47.57 53.62 L47.14 54.26 L46.70 54.91 L46.25 55.58 L45.79 56.27 L40.79 52.62 L41.32 51.96 L41.83 51.32 L42.33 50.70 L42.82 50.10 L43.29 49.51 L43.75 48.95 L44.18 48.40 L44.60 47.87 L44.99 47.36 L45.36 46.88 L45.70 46.41 L46.05 45.88 L46.42 45.34 L46.80 44.78 L47.19 44.20 L47.59 43.61 L48.00 43.00 L48.43 42.38 L48.86 41.74 L49.30 41.09 L49.75 40.42 L50.21 39.73 Z" fill="#000"/></mask><linearGradient id="kfmghr_x" gradientUnits="userSpaceOnUse" x1="0" y1="16" x2="0" y2="48"><stop offset="0" stop-color="#B4AED0"/><stop offset="1" stop-color="#E9E6F3"/></linearGradient></defs><path d="M48 48 C43.5 41.5 33.5 30 30 16 H66 C62.5 30 52.5 41.5 48 48 Z" fill="url(#kfmghr_x)" opacity="1"/><path d="M48 48 C52.5 54.5 62.5 66 66 80 H30 C33.5 66 43.5 54.5 48 48 Z" fill="#6F6A92" clip-path="url(#kfmchr_x)"/><path d="M26.99 16.75 L27.35 17.85 L27.72 18.94 L28.12 20.00 L28.54 21.06 L28.97 22.10 L29.43 23.12 L29.90 24.13 L30.38 25.13 L30.88 26.10 L31.40 27.07 L31.92 28.02 L32.45 28.95 L33.00 29.87 L33.55 30.78 L34.11 31.67 L34.67 32.54 L35.24 33.40 L35.81 34.24 L36.38 35.07 L36.96 35.89 L37.53 36.68 L38.11 37.47 L38.68 38.23 L39.25 38.98 L39.81 39.72 L40.37 40.44 L40.92 41.14 L41.47 41.83 L42.00 42.50 L42.53 43.15 L43.04 43.79 L43.54 44.41 L44.03 45.01 L44.50 45.59 L44.95 46.16 L45.39 46.71 L45.81 47.25 L46.21 47.76 L46.58 48.26 L46.93 48.74 L47.28 49.25 L47.64 49.79 L48.01 50.34 L48.40 50.91 L48.80 51.50 L49.21 52.10 L49.63 52.73 L50.07 53.37 L50.51 54.02 L50.96 54.70 L51.42 55.39 L51.89 56.09 L52.36 56.81 L52.83 57.55 L53.31 58.30 L53.79 59.06 L54.27 59.84 L54.75 60.63 L55.23 61.44 L55.71 62.26 L56.18 63.09 L56.65 63.94 L57.11 64.79 L57.57 65.66 L58.01 66.54 L58.45 67.43 L58.88 68.33 L59.29 69.24 L59.69 70.16 L60.08 71.08 L60.46 72.02 L60.82 72.97 L61.16 73.92 L61.48 74.88 L61.79 75.84 L62.07 76.81 L62.34 77.79 L62.58 78.77 L62.80 79.76 L62.99 80.75 L69.01 79.25 L68.65 78.15 L68.28 77.06 L67.88 76.00 L67.46 74.94 L67.03 73.90 L66.57 72.88 L66.10 71.87 L65.62 70.87 L65.12 69.90 L64.60 68.93 L64.08 67.98 L63.55 67.05 L63.00 66.13 L62.45 65.22 L61.89 64.33 L61.33 63.46 L60.76 62.60 L60.19 61.76 L59.62 60.93 L59.04 60.11 L58.47 59.32 L57.89 58.53 L57.32 57.77 L56.75 57.02 L56.19 56.28 L55.63 55.56 L55.08 54.86 L54.53 54.17 L54.00 53.50 L53.47 52.85 L52.96 52.21 L52.46 51.59 L51.97 50.99 L51.50 50.41 L51.05 49.84 L50.61 49.29 L50.19 48.75 L49.79 48.24 L49.42 47.74 L49.07 47.26 L48.72 46.75 L48.36 46.21 L47.99 45.66 L47.60 45.09 L47.20 44.50 L46.79 43.90 L46.37 43.27 L45.93 42.63 L45.49 41.98 L45.04 41.30 L44.58 40.61 L44.11 39.91 L43.64 39.19 L43.17 38.45 L42.69 37.70 L42.21 36.94 L41.73 36.16 L41.25 35.37 L40.77 34.56 L40.29 33.74 L39.82 32.91 L39.35 32.06 L38.89 31.21 L38.43 30.34 L37.99 29.46 L37.55 28.57 L37.12 27.67 L36.71 26.76 L36.31 25.84 L35.92 24.92 L35.54 23.98 L35.18 23.03 L34.84 22.08 L34.52 21.12 L34.21 20.16 L33.93 19.19 L33.66 18.21 L33.42 17.23 L33.20 16.24 L33.01 15.25 Z" fill="#2C2A36" mask="url(#kfmmhr_x)"/><path d="M69.01 16.75 L68.65 17.85 L68.28 18.94 L67.88 20.00 L67.46 21.06 L67.03 22.10 L66.57 23.12 L66.10 24.13 L65.62 25.13 L65.12 26.10 L64.60 27.07 L64.08 28.02 L63.55 28.95 L63.00 29.87 L62.45 30.78 L61.89 31.67 L61.33 32.54 L60.76 33.40 L60.19 34.24 L59.62 35.07 L59.04 35.89 L58.47 36.68 L57.89 37.47 L57.32 38.23 L56.75 38.98 L56.19 39.72 L55.63 40.44 L55.08 41.14 L54.53 41.83 L54.00 42.50 L53.47 43.15 L52.96 43.79 L52.46 44.41 L51.97 45.01 L51.50 45.59 L51.05 46.16 L50.61 46.71 L50.19 47.25 L49.79 47.76 L49.42 48.26 L49.07 48.74 L48.72 49.25 L48.36 49.79 L47.99 50.34 L47.60 50.91 L47.20 51.50 L46.79 52.10 L46.37 52.73 L45.93 53.37 L45.49 54.02 L45.04 54.70 L44.58 55.39 L44.11 56.09 L43.64 56.81 L43.17 57.55 L42.69 58.30 L42.21 59.06 L41.73 59.84 L41.25 60.63 L40.77 61.44 L40.29 62.26 L39.82 63.09 L39.35 63.94 L38.89 64.79 L38.43 65.66 L37.99 66.54 L37.55 67.43 L37.12 68.33 L36.71 69.24 L36.31 70.16 L35.92 71.08 L35.54 72.02 L35.18 72.97 L34.84 73.92 L34.52 74.88 L34.21 75.84 L33.93 76.81 L33.66 77.79 L33.42 78.77 L33.20 79.76 L33.01 80.75 L26.99 79.25 L27.35 78.15 L27.72 77.06 L28.12 76.00 L28.54 74.94 L28.97 73.90 L29.43 72.88 L29.90 71.87 L30.38 70.87 L30.88 69.90 L31.40 68.93 L31.92 67.98 L32.45 67.05 L33.00 66.13 L33.55 65.22 L34.11 64.33 L34.67 63.46 L35.24 62.60 L35.81 61.76 L36.38 60.93 L36.96 60.11 L37.53 59.32 L38.11 58.53 L38.68 57.77 L39.25 57.02 L39.81 56.28 L40.37 55.56 L40.92 54.86 L41.47 54.17 L42.00 53.50 L42.53 52.85 L43.04 52.21 L43.54 51.59 L44.03 50.99 L44.50 50.41 L44.95 49.84 L45.39 49.29 L45.81 48.75 L46.21 48.24 L46.58 47.74 L46.93 47.26 L47.28 46.75 L47.64 46.21 L48.01 45.66 L48.40 45.09 L48.80 44.50 L49.21 43.90 L49.63 43.27 L50.07 42.63 L50.51 41.98 L50.96 41.30 L51.42 40.61 L51.89 39.91 L52.36 39.19 L52.83 38.45 L53.31 37.70 L53.79 36.94 L54.27 36.16 L54.75 35.37 L55.23 34.56 L55.71 33.74 L56.18 32.91 L56.65 32.06 L57.11 31.21 L57.57 30.34 L58.01 29.46 L58.45 28.57 L58.88 27.67 L59.29 26.76 L59.69 25.84 L60.08 24.92 L60.46 23.98 L60.82 23.03 L61.16 22.08 L61.48 21.12 L61.79 20.16 L62.07 19.19 L62.34 18.21 L62.58 17.23 L62.80 16.24 L62.99 15.25 Z" fill="#2C2A36"/><path d="M22.5 16 H73.5 M22.5 80 H73.5" fill="none" stroke="#2C2A36" stroke-width="4.8" stroke-linecap="round"/></svg><span class="xl"><span class="xh" id="xhint">hover me</span><span class="xa">X, as in ten</span></span></span><span>Lawyers bill in tenths of an hour, so 0.1 is six minutes. Six minutes sounds small, until you count them across a whole firm for a year. Tenth makes sure every one gets billed. The logo is the Roman numeral for ten, an X with a bar on top and bottom, and it doubles as an hourglass.</span></p></details>
-        <details><summary><span>What can I give it?</span><svg viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"><path d="M4 12L20 12"/><path d="M12.0204 4L12.0205 20.0003"/></g></svg></summary><p>Photos of handwritten sheets and sticky notes, voice memos, PDFs, Word documents, spreadsheets, emails with attachments, and screenshots. Drop in a whole week at once.</p></details>
-        <details><summary><span>What does it check in a description?</span><svg viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"><path d="M4 12L20 12"/><path d="M12.0204 4L12.0205 20.0003"/></g></svg></summary><p>Whether each task says what was done, with whom and about what, the way a client or fee examiner reads it. It writes out shorthand, splits lumped tasks apart, and suggests a clear rewrite you can approve in one click. If a detail is missing, it leaves a blank instead of guessing.</p></details>
-        <details><summary><span>Does it connect to our billing system?</span><svg viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"><path d="M4 12L20 12"/><path d="M12.0204 4L12.0205 20.0003"/></g></svg></summary><p>Not yet. Today Tenth gives you a spreadsheet file (CSV or Excel) to import, with anything still open marked. Connecting directly to billing and document systems is next.</p></details>
-        <details><summary><span>Was real client data used?</span><svg viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"><path d="M4 12L20 12"/><path d="M12.0204 4L12.0205 20.0003"/></g></svg></summary><p>No, for privacy reasons. Law firms can't share their clients' billing records, so Tenth was built and tested on a fictional firm and on time entries that are already public in court filings.</p></details>
-        <details><summary><span>Is it ready for my firm?</span><svg viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"><path d="M4 12L20 12"/><path d="M12.0204 4L12.0205 20.0003"/></g></svg></summary><p>Tenth is a working first version. Your firm's own billing guidelines and learning from your corrections are the next steps.</p></details>
+        <details open><summary><span>Why is it called Tenth?</span><svg viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"><path d="M4 12L20 12"/><path d="M12.0204 4L12.0205 20.0003"/></g></svg></summary><p class="why"><span class="xfig" id="xfig" aria-hidden="true"><svg class="xsvg" aria-hidden="true" viewBox="12 8 72 80"><defs><clipPath id="kfmchr_x"><rect x="0" y="71" width="96" height="19"/></clipPath><mask id="kfmmhr_x" maskUnits="userSpaceOnUse" x="0" y="0" width="96" height="96"><rect width="96" height="96" fill="#fff"/><path d="M55.21 43.38 L54.68 44.04 L54.17 44.68 L53.67 45.30 L53.18 45.90 L52.71 46.49 L52.25 47.05 L51.82 47.60 L51.40 48.13 L51.01 48.64 L50.64 49.12 L50.30 49.59 L49.95 50.12 L49.58 50.66 L49.20 51.22 L48.81 51.80 L48.41 52.39 L48.00 53.00 L47.57 53.62 L47.14 54.26 L46.70 54.91 L46.25 55.58 L45.79 56.27 L40.79 52.62 L41.32 51.96 L41.83 51.32 L42.33 50.70 L42.82 50.10 L43.29 49.51 L43.75 48.95 L44.18 48.40 L44.60 47.87 L44.99 47.36 L45.36 46.88 L45.70 46.41 L46.05 45.88 L46.42 45.34 L46.80 44.78 L47.19 44.20 L47.59 43.61 L48.00 43.00 L48.43 42.38 L48.86 41.74 L49.30 41.09 L49.75 40.42 L50.21 39.73 Z" fill="#000"/></mask><linearGradient id="kfmghr_x" gradientUnits="userSpaceOnUse" x1="0" y1="16" x2="0" y2="48"><stop offset="0" stop-color="#B4AED0"/><stop offset="1" stop-color="#E9E6F3"/></linearGradient></defs><path d="M48 48 C43.5 41.5 33.5 30 30 16 H66 C62.5 30 52.5 41.5 48 48 Z" fill="url(#kfmghr_x)" opacity="1"/><path d="M48 48 C52.5 54.5 62.5 66 66 80 H30 C33.5 66 43.5 54.5 48 48 Z" fill="#6F6A92" clip-path="url(#kfmchr_x)"/><path d="M26.99 16.75 L27.35 17.85 L27.72 18.94 L28.12 20.00 L28.54 21.06 L28.97 22.10 L29.43 23.12 L29.90 24.13 L30.38 25.13 L30.88 26.10 L31.40 27.07 L31.92 28.02 L32.45 28.95 L33.00 29.87 L33.55 30.78 L34.11 31.67 L34.67 32.54 L35.24 33.40 L35.81 34.24 L36.38 35.07 L36.96 35.89 L37.53 36.68 L38.11 37.47 L38.68 38.23 L39.25 38.98 L39.81 39.72 L40.37 40.44 L40.92 41.14 L41.47 41.83 L42.00 42.50 L42.53 43.15 L43.04 43.79 L43.54 44.41 L44.03 45.01 L44.50 45.59 L44.95 46.16 L45.39 46.71 L45.81 47.25 L46.21 47.76 L46.58 48.26 L46.93 48.74 L47.28 49.25 L47.64 49.79 L48.01 50.34 L48.40 50.91 L48.80 51.50 L49.21 52.10 L49.63 52.73 L50.07 53.37 L50.51 54.02 L50.96 54.70 L51.42 55.39 L51.89 56.09 L52.36 56.81 L52.83 57.55 L53.31 58.30 L53.79 59.06 L54.27 59.84 L54.75 60.63 L55.23 61.44 L55.71 62.26 L56.18 63.09 L56.65 63.94 L57.11 64.79 L57.57 65.66 L58.01 66.54 L58.45 67.43 L58.88 68.33 L59.29 69.24 L59.69 70.16 L60.08 71.08 L60.46 72.02 L60.82 72.97 L61.16 73.92 L61.48 74.88 L61.79 75.84 L62.07 76.81 L62.34 77.79 L62.58 78.77 L62.80 79.76 L62.99 80.75 L69.01 79.25 L68.65 78.15 L68.28 77.06 L67.88 76.00 L67.46 74.94 L67.03 73.90 L66.57 72.88 L66.10 71.87 L65.62 70.87 L65.12 69.90 L64.60 68.93 L64.08 67.98 L63.55 67.05 L63.00 66.13 L62.45 65.22 L61.89 64.33 L61.33 63.46 L60.76 62.60 L60.19 61.76 L59.62 60.93 L59.04 60.11 L58.47 59.32 L57.89 58.53 L57.32 57.77 L56.75 57.02 L56.19 56.28 L55.63 55.56 L55.08 54.86 L54.53 54.17 L54.00 53.50 L53.47 52.85 L52.96 52.21 L52.46 51.59 L51.97 50.99 L51.50 50.41 L51.05 49.84 L50.61 49.29 L50.19 48.75 L49.79 48.24 L49.42 47.74 L49.07 47.26 L48.72 46.75 L48.36 46.21 L47.99 45.66 L47.60 45.09 L47.20 44.50 L46.79 43.90 L46.37 43.27 L45.93 42.63 L45.49 41.98 L45.04 41.30 L44.58 40.61 L44.11 39.91 L43.64 39.19 L43.17 38.45 L42.69 37.70 L42.21 36.94 L41.73 36.16 L41.25 35.37 L40.77 34.56 L40.29 33.74 L39.82 32.91 L39.35 32.06 L38.89 31.21 L38.43 30.34 L37.99 29.46 L37.55 28.57 L37.12 27.67 L36.71 26.76 L36.31 25.84 L35.92 24.92 L35.54 23.98 L35.18 23.03 L34.84 22.08 L34.52 21.12 L34.21 20.16 L33.93 19.19 L33.66 18.21 L33.42 17.23 L33.20 16.24 L33.01 15.25 Z" fill="#2C2A36" mask="url(#kfmmhr_x)"/><path d="M69.01 16.75 L68.65 17.85 L68.28 18.94 L67.88 20.00 L67.46 21.06 L67.03 22.10 L66.57 23.12 L66.10 24.13 L65.62 25.13 L65.12 26.10 L64.60 27.07 L64.08 28.02 L63.55 28.95 L63.00 29.87 L62.45 30.78 L61.89 31.67 L61.33 32.54 L60.76 33.40 L60.19 34.24 L59.62 35.07 L59.04 35.89 L58.47 36.68 L57.89 37.47 L57.32 38.23 L56.75 38.98 L56.19 39.72 L55.63 40.44 L55.08 41.14 L54.53 41.83 L54.00 42.50 L53.47 43.15 L52.96 43.79 L52.46 44.41 L51.97 45.01 L51.50 45.59 L51.05 46.16 L50.61 46.71 L50.19 47.25 L49.79 47.76 L49.42 48.26 L49.07 48.74 L48.72 49.25 L48.36 49.79 L47.99 50.34 L47.60 50.91 L47.20 51.50 L46.79 52.10 L46.37 52.73 L45.93 53.37 L45.49 54.02 L45.04 54.70 L44.58 55.39 L44.11 56.09 L43.64 56.81 L43.17 57.55 L42.69 58.30 L42.21 59.06 L41.73 59.84 L41.25 60.63 L40.77 61.44 L40.29 62.26 L39.82 63.09 L39.35 63.94 L38.89 64.79 L38.43 65.66 L37.99 66.54 L37.55 67.43 L37.12 68.33 L36.71 69.24 L36.31 70.16 L35.92 71.08 L35.54 72.02 L35.18 72.97 L34.84 73.92 L34.52 74.88 L34.21 75.84 L33.93 76.81 L33.66 77.79 L33.42 78.77 L33.20 79.76 L33.01 80.75 L26.99 79.25 L27.35 78.15 L27.72 77.06 L28.12 76.00 L28.54 74.94 L28.97 73.90 L29.43 72.88 L29.90 71.87 L30.38 70.87 L30.88 69.90 L31.40 68.93 L31.92 67.98 L32.45 67.05 L33.00 66.13 L33.55 65.22 L34.11 64.33 L34.67 63.46 L35.24 62.60 L35.81 61.76 L36.38 60.93 L36.96 60.11 L37.53 59.32 L38.11 58.53 L38.68 57.77 L39.25 57.02 L39.81 56.28 L40.37 55.56 L40.92 54.86 L41.47 54.17 L42.00 53.50 L42.53 52.85 L43.04 52.21 L43.54 51.59 L44.03 50.99 L44.50 50.41 L44.95 49.84 L45.39 49.29 L45.81 48.75 L46.21 48.24 L46.58 47.74 L46.93 47.26 L47.28 46.75 L47.64 46.21 L48.01 45.66 L48.40 45.09 L48.80 44.50 L49.21 43.90 L49.63 43.27 L50.07 42.63 L50.51 41.98 L50.96 41.30 L51.42 40.61 L51.89 39.91 L52.36 39.19 L52.83 38.45 L53.31 37.70 L53.79 36.94 L54.27 36.16 L54.75 35.37 L55.23 34.56 L55.71 33.74 L56.18 32.91 L56.65 32.06 L57.11 31.21 L57.57 30.34 L58.01 29.46 L58.45 28.57 L58.88 27.67 L59.29 26.76 L59.69 25.84 L60.08 24.92 L60.46 23.98 L60.82 23.03 L61.16 22.08 L61.48 21.12 L61.79 20.16 L62.07 19.19 L62.34 18.21 L62.58 17.23 L62.80 16.24 L62.99 15.25 Z" fill="#2C2A36"/><path d="M22.5 16 H73.5 M22.5 80 H73.5" fill="none" stroke="#2C2A36" stroke-width="4.8" stroke-linecap="round"/></svg><span class="xl"><span class="xh" id="xhint">hover me</span><span class="xa">X, as in ten</span></span></span><span class="ptxt"><span class="pp">Lawyers bill in tenths of an hour, so 0.1 is six minutes. Six minutes sounds small until you count them across a whole firm for a year.</span><span class="pp">Tenth makes sure every one gets billed.</span><span class="pp">The logo is the Roman numeral for ten, an X with a bar on top and bottom. It doubles as an hourglass.</span></span></p></details>
+        <details><summary><span>What can I give it?</span><svg viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"><path d="M4 12L20 12"/><path d="M12.0204 4L12.0205 20.0003"/></g></svg></summary><p><span class="pp">Photos of handwritten pages and sticky notes, voice memos, PDFs, Word documents, spreadsheets, screenshots, and emails with attachments.</span><span class="pp">Drop in a whole week at once. Napkins welcome.</span></p></details>
+        <details><summary><span>What does it check in a description?</span><svg viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"><path d="M4 12L20 12"/><path d="M12.0204 4L12.0205 20.0003"/></g></svg></summary><p><span class="pp">Whether each task says what was done, with whom, and about what. That&rsquo;s what clients and fee examiners look for.</span><span class="pp">Tenth spells out shorthand, splits lumped tasks apart, and fills in missing details it can find. If it can&rsquo;t find one, it leaves a blank for you instead of guessing.</span></p></details>
+        <details><summary><span>Does it connect to our billing system?</span><svg viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"><path d="M4 12L20 12"/><path d="M12.0204 4L12.0205 20.0003"/></g></svg></summary><p><span class="pp">Not yet.</span><span class="pp">Today you get a spreadsheet (CSV or Excel) to import, with anything still open marked, or a PDF to look over. Connecting straight to billing systems is next.</span></p></details>
+        <details><summary><span>Was real client data used?</span><svg viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"><path d="M4 12L20 12"/><path d="M12.0204 4L12.0205 20.0003"/></g></svg></summary><p><span class="pp">No. Law firms can&rsquo;t share their clients&rsquo; billing records, for privacy reasons.</span><span class="pp">So we built and tested Tenth on a fictional firm, and on time entries already public in court filings.</span></p></details>
+        <details><summary><span>Is it ready for my firm?</span><svg viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"><path d="M4 12L20 12"/><path d="M12.0204 4L12.0205 20.0003"/></g></svg></summary><p><span class="pp">It&rsquo;s a working first version. Think of it as a very eager new associate.</span><span class="pp">Next up: your firm&rsquo;s own billing rules, and learning from your corrections.</span></p></details>
       </div>
     </div>
   </section>
@@ -767,55 +814,83 @@ const LINKS = {
     }
   }
 
-  /* Question card works with or without motion */
-  const QS = [
-    { kind: 'match', title: 'Is this the right matter?', why: '71% sure. Next closest is Trademark Licensing, at 24%.',
-      rows: [['Date', 'Tue, Oct 27'], ['Timekeeper', 'Elle Woods'], ['Matter', 'Central Perk', 'Real Estate \u00b7 2207.001'], ['Hours', '1.5 hours'], ['What was done', 'Lease renewal for the coffee house', 'n']], ask: 2,
-      yes: 'Yes', no: 'No', guide: 'Yes keeps Tenth\u2019s pick. No lets you choose another matter. Pass leaves it marked for later.',
-      noNote: 'In the app, No opens a short list of Central Perk\u2019s other matters to pick from.' },
-    { kind: 'round', title: 'Round 0.75 to 0.8 hours?', why: 'Your firm bills in tenths of an hour. The note says 0.75.',
-      rows: [['Date', 'Tue, Oct 27'], ['Timekeeper', 'Elle Woods'], ['Matter', 'Luke\u2019s Diner', 'General Corporate \u00b7 5521.001'], ['Hours', '0.8 hours'], ['What was done', 'Health inspection call regarding <i class="gap">what?</i>', 'n']], ask: 3,
-      yes: 'Yes, 0.8', no: 'No, keep 0.75', guide: 'Yes rounds it up to the next tenth. No keeps 0.75 as written, marked in the file.',
-      noNote: 'Kept as 0.75, and marked in the file.' },
-    { kind: 'blank', title: 'Who was this with?', why: 'The note doesn\u2019t say. Tenth filled in the one used most on this matter (6 times). Enter keeps it, or type or pick another.',
-      rows: [['Date', 'Tue, Oct 27'], ['Timekeeper', 'Elle Woods'], ['Matter', 'Krusty Krab', 'Trade Secrets \u00b7 3150.003'], ['Hours', '0.4 hours'], ['What was done', 'Call with <i class="gap" id="qgap">who?</i> re secret formula Nondisclosure Agreement', 'n']], ask: 4,
-      prefill: 'Mr. Krabs', pills: [['Mr. Krabs', '6 times'], ['Squidward Tentacles', 'twice'], ['Plankton', 'once']],
-      yes: 'Continue', guide: 'Keep Tenth\u2019s pick, type a name, or choose one used before. Pass leaves the blank marked.' }
-  ];
+  /* Try a question: the app's entry card. Each asked part has a note: in bold what Looks right does, under it why, and the other answers as links */
   const $ = (id) => document.getElementById(id);
+  const QS = [
+    { rows: [['date', 'Date', 'Tue, Oct 27'], ['tk', 'Timekeeper', 'Elle Woods'], ['matter', 'Matter', '<b>2207.001</b><span>Central Perk</span><small>Real Estate</small>'], ['hours', 'Hours', '1.5'], ['narr', 'Narrative', 'Lease renewal for the coffee house']],
+      notes: [{ part: 'matter', says: 'Keeps 2207.001.', why: '2207.002 Trademark Licensing fits almost as well.', done: 'Keeps 2207.001.', change: true, key: 'M' }] },
+    { rows: [['date', 'Date', 'Tue, Oct 27'], ['tk', 'Timekeeper', 'Elle Woods'], ['matter', 'Matter', '<b>5521.001</b><span>Luke’s Diner</span><small>General Corporate</small>'], ['hours', 'Hours', '<i>0.8</i>'], ['narr', 'Narrative', 'Health inspection call regarding <span class="gapc" id="qgapc" role="button" tabindex="0" title="Type what it was about (A)">what?</span>']],
+      notes: [{ part: 'narr', says: 'Keeps it as written.', why: 'The note doesn\u2019t say what it was about.', done: 'Keeps it as written.', add: true }, { part: 'hours', says: 'Rounds 0.75 up to 0.8.', why: 'Your firm bills in tenths of an hour.', done: 'Rounds 0.75 up to 0.8.', alt: { label: 'Keep 0.75', key: 'H', done: 'Keeps 0.75.', fn: () => { $('ecard').querySelector('[data-part="hours"] .f-val .v').innerHTML = '0.75'; } } }] },
+    { rows: [['date', 'Date', 'Tue, Oct 27'], ['tk', 'Timekeeper', 'Elle Woods'], ['matter', 'Matter', '<b>3150.003</b><span>Krusty Krab</span><small>Trade Secrets</small>'], ['hours', 'Hours', '0.4'], ['narr', 'Narrative', 'Call with <span class="chip" id="qchip">Mr. Krabs<button type="button" class="cx" aria-label="Take out Mr. Krabs" title="Don’t add (Shift+N)">×</button></span> re secret formula Nondisclosure Agreement']],
+      notes: [{ part: 'narr', says: 'Adds “Mr. Krabs”.', why: 'Used 6 times on this matter.', done: 'Adds “Mr. Krabs”.', alt: { label: 'Don’t add', key: 'N', done: 'Keeps it as written.', fn: () => foldChip() } }] }
+  ];
   const card = { ask: $('qask'), done: $('qdone') };
-  let qi = 0, skipped = 0, busy = false;
-  const qinput = $('qinput'), qtype = $('qtype'), qyes = $('qyes'), qno = $('qno');
-  function paintGap() {
-    const g = $('qgap'); if (!g) return;
-    const v = qinput.value.trim();
-    g.textContent = v || 'who?'; g.classList.toggle('filled', !!v);
-    qyes.classList.toggle('is-off', !v); qyes.setAttribute('aria-disabled', String(!v));
-    $('qpills').querySelectorAll('button').forEach((b) => b.classList.toggle('on', b.dataset.v.toLowerCase() === v.toLowerCase()));
+  let qi = 0, skipped = 0, busy = false, said = {}, hist = [];
+  const qyes = $('qyes');
+  function foldChip() {
+    const c = $('qchip'); if (!c) return;
+    const gone = () => { const p = c.previousSibling; if (p && p.nodeType === 3) p.textContent = p.textContent.replace(/with\s*$/, ''); c.remove(); };
+    if (hasGsap && !reduce) gsap.to(c, { opacity: 0, fontSize: 0, paddingLeft: 0, paddingRight: 0, borderWidth: 0, duration: .3, ease: 'power2.inOut', onComplete: gone }); else gone();
+  }
+  function paintCount() {
+    const left = QS.length - qi;
+    $('qcount').textContent = left === 1 ? 'Last one!' : left + ' to review';
   }
   function paint() {
-    const q = QS[qi];
-    $('qcount').innerHTML = 'Question ' + (qi + 1) + ' of ' + QS.length + (qi === QS.length - 1 ? '<span> Last one.</span>' : '');
-    $('qtitle').textContent = q.title;
-    $('qwhy').textContent = q.why;
-    $('ecard').innerHTML = q.rows.map((r, i) => '<div class="f' + (i === q.ask ? ' now' : '') + '"><span class="f-lab">' + r[0] + '</span><span class="f-val' + (r[2] === 'n' ? ' n' : '') + '">' + (r[2] && r[2] !== 'n' ? '<b>' + r[1] + '</b><small>' + r[2] + '</small>' : r[1]) + '</span></div>').join('');
-    qyes.textContent = q.yes;
-    qno.hidden = !q.no; if (q.no) qno.textContent = q.no;
-    $('qguide').textContent = q.guide;
-    $('qkeys').innerHTML = q.kind === 'blank' ? '<kbd>Enter</kbd> continue <kbd>Esc</kbd> out of the box' : '<kbd>Enter</kbd> yes <kbd>N</kbd> no <kbd>P</kbd> pass';
-    qtype.hidden = q.kind !== 'blank';
-    qyes.classList.remove('is-off'); qyes.removeAttribute('aria-disabled');
-    if (q.kind === 'blank') {
-      $('qpills').innerHTML = '<span class="cap2">Used before on this matter</span>' + q.pills.map((p) => '<button type="button" data-v="' + p[0] + '">' + p[0] + '<span>' + p[1] + '</span></button>').join('');
-      $('qpills').querySelectorAll('button').forEach((b) => b.addEventListener('click', () => { qinput.value = b.dataset.v; paintGap(); qinput.focus(); }));
-      qinput.value = q.prefill; paintGap();
-    }
+    const q = QS[qi]; said = {};
+    paintCount(); $('qback').hidden = !hist.length;
+    $('ecard').innerHTML = q.rows.map(([part, lab, val]) => {
+      const ns = q.notes.filter((n) => n.part === part);
+      return '<div class="f' + (ns.length ? ' ask' : '') + (part === 'matter' ? ' m' : '') + '" data-part="' + part + '"><span class="f-lab">' + lab + '</span><span class="f-val"><span class="v">' + val + '</span>' +
+        ns.map((n, i) => '<span class="fn" data-n="' + q.notes.indexOf(n) + '"><button type="button" class="ck" title="Accept just this one" aria-label="Accept: ' + n.says + '"></button><span class="tx"><b>' + n.says + '</b>' + n.why + '</span><span class="acts">' +
+          (n.add ? '<button type="button" class="addit" title="Type what it was about (A)">Add it</button>' : '') +
+          (n.alt ? '<button type="button" class="alt" title="' + n.alt.label + ' (Shift+' + n.alt.key + ')">' + n.alt.label + '</button>' : '') +
+          (n.change ? '<button type="button" class="chg" title="Change it (' + n.key + ')">Change</button>' : '') + '</span></span>').join('') + '</span></div>';
+    }).join('');
+    $('ecard').querySelectorAll('.fn').forEach((el) => {
+      const n = q.notes[+el.dataset.n];
+      el.querySelector('.ck').addEventListener('click', () => tick(n));
+      const a = el.querySelector('.alt'); if (a) a.addEventListener('click', () => { n.alt.fn(); tick(n, n.alt.done); });
+      const c = el.querySelector('.chg'); if (c) c.addEventListener('click', openPicker);
+      const ad = el.querySelector('.addit'); if (ad) ad.addEventListener('click', () => openGap(n));
+    });
+    const gc = $('qgapc'); if (gc) { const n = q.notes.find((x) => x.add); gc.addEventListener('click', () => openGap(n)); gc.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); e.stopPropagation(); openGap(n); } }); }
+    const cx = $('qchip') && $('qchip').querySelector('.cx'); if (cx) cx.addEventListener('click', () => { const n = q.notes[0]; n.alt.fn(); tick(n, n.alt.done); });
+    const alts = q.notes.filter((n) => n.alt).map((n) => '<span class="kg"><kbd>⇧' + n.alt.key + '</kbd>' + n.alt.label.toLowerCase() + '</span>');
+    const chg = q.notes.filter((n) => n.change).map((n) => '<span class="kg"><kbd>' + n.key + '</kbd>change</span>').concat(q.notes.filter((n) => n.add).map(() => '<span class="kg"><kbd>A</kbd>add detail</span>'));
+    $('qkeys').innerHTML = '<span class="kr"><span class="kg"><kbd>Enter</kbd>looks right</span>' + chg.join('') + alts.join('') + '</span><span class="kr"><span class="kg"><kbd>P</kbd>pass</span>' + (hist.length ? '<span class="kg"><kbd>B</kbd>undo</span>' : '') + '</span>';
   }
-  qinput.addEventListener('input', paintGap);
-  qinput.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter') { e.preventDefault(); if (qinput.value.trim()) qyes.click(); }
-    else if (e.key === 'Escape') { e.preventDefault(); qyes.focus(); }
-  });
+  function markNote(n, text) {   /* one note answered: it turns into a ticked line saying what was done */
+    const q = QS[qi], i = q ? q.notes.indexOf(n) : -1; if (i < 0 || said[i]) return false;
+    said[i] = text || n.done;
+    const el = $('ecard').querySelector('.fn[data-n="' + i + '"]');
+    if (el) { el.classList.add('done'); el.querySelector('.tx').innerHTML = '<b>' + said[i] + '</b>'; el.querySelector('.acts').remove(); el.querySelector('.ck').disabled = true; }
+    return true;
+  }
+  function tick(n, text) {   /* answered in place: with every note answered, the card settles by itself */
+    if (busy || card.ask.hidden || !markNote(n, text)) return;
+    if (QS[qi].notes.every((x, j) => said[j])) settle();
+  }
+  function settle() {   /* Looks right: every note ticks, the washes fade, and the next entry slides in */
+    if (busy || card.ask.hidden) return;
+    busy = true;
+    QS[qi].notes.forEach((n) => markNote(n));
+    $('ecard').querySelectorAll('.f.ask').forEach((f) => f.classList.add('settled'));
+    const go = () => {
+      hist.push({ qi, skipped }); qi += 1;
+      if (qi >= QS.length) { finish(); busy = false; return; }
+      paint();
+      if (hasGsap && !reduce) gsap.fromTo(card.ask, { x: 40, opacity: 0 }, { x: 0, opacity: 1, duration: .45, ease: 'expo.out' });
+      busy = false;
+    };
+    if (hasGsap && !reduce) setTimeout(() => gsap.to(card.ask, { x: -40, opacity: 0, duration: .3, ease: 'power2.in', onComplete: go }), 1000);
+    else setTimeout(go, 900);
+  }
+  function pass() {
+    if (busy || card.ask.hidden) return; busy = true; skipped += 1;
+    const go = () => { hist.push({ qi, skipped: skipped - 1 }); qi += 1; if (qi >= QS.length) { finish(); busy = false; return; } paint(); if (hasGsap && !reduce) gsap.fromTo(card.ask, { x: 40, opacity: 0 }, { x: 0, opacity: 1, duration: .45, ease: 'expo.out' }); busy = false; };
+    if (hasGsap && !reduce) gsap.to(card.ask, { x: -40, opacity: 0, duration: .3, ease: 'power2.in', onComplete: go }); else setTimeout(go, 200);
+  }
   function finish() {
     card.ask.hidden = true; card.done.hidden = false;
     const words = ['None', 'One', 'Two', 'Three'];
@@ -829,87 +904,99 @@ const LINKS = {
       gsap.from(card.done.children, { y: 16, opacity: 0, duration: .7, ease: 'expo.out', stagger: .06, delay: .1 });
     }
   }
-  function advance(settle, note) {
-    if (busy) return; busy = true;
-    if (note) $('qwhy').textContent = note;
-    const go = () => {
-      qi += 1;
-      if (qi >= QS.length) { finish(); busy = false; return; }
-      paint();
-      if (hasGsap && !reduce) gsap.fromTo(card.ask, { x: 40, opacity: 0 }, { x: 0, opacity: 1, duration: .45, ease: 'expo.out' });
-      busy = false;
-    };
-    const wait = note ? 1500 : 300;
-    if (hasGsap && !reduce) setTimeout(() => gsap.to(card.ask, { x: -40, opacity: 0, duration: .3, ease: 'power2.in', onComplete: go }), wait - 300);
-    else setTimeout(go, note ? 900 : 200);
+  function openGap(n) {   /* Add it: a small box right where the detail goes; Enter saves it, Esc puts the chip back */
+    const gc = $('qgapc'); if (!gc || busy || !n) return;
+    const box = document.createElement('input'); box.className = 'gin'; box.type = 'text'; box.placeholder = 'what?'; box.setAttribute('aria-label', 'What it was about');
+    gc.replaceWith(box); box.focus({ preventScroll: true });
+    let left = false;
+    const done = (save) => { if (left) return; left = true; const v = box.value.trim();
+      if (save && v) { const t = document.createElement('span'); t.className = 'gfill'; t.textContent = v; box.replaceWith(t); tick(n, 'Added \u201c' + v + '\u201d.'); }
+      else { box.replaceWith(gc); gc.focus({ preventScroll: true }); } };
+    box.addEventListener('keydown', (e) => { e.stopPropagation(); if (e.key === 'Enter') { e.preventDefault(); done(true); } else if (e.key === 'Escape') { e.preventDefault(); done(false); } });
+    box.addEventListener('blur', () => done(true));
   }
-  qyes.addEventListener('click', () => { if (qyes.classList.contains('is-off')) { qinput.focus(); return; } advance(true); });
+  function back() {   /* Back: the last entry again, as it was before it was answered */
+    if (busy || $('mp') || !hist.length) return;
+    const h = hist.pop(); qi = h.qi; skipped = h.skipped;
+    card.done.hidden = true; card.ask.hidden = false; paint();
+    if (hasGsap && !reduce) gsap.fromTo(card.ask, { x: -40, opacity: 0 }, { x: 0, opacity: 1, duration: .45, ease: 'expo.out' });
+    qyes.focus({ preventScroll: true });
+  }
+  $('qback').addEventListener('click', back);
+  qyes.addEventListener('click', settle);
+  $('qskip').addEventListener('click', pass);
   const MATTERS = [
     ['2207.002', 'Central Perk', 'Trademark Licensing', '24%', 'near'], ['2207.003', 'Central Perk', 'Employment', '3%', 'near'],
-    ['1408.001', 'Bluth Banana Stand', 'Real Estate', '', 'recent'], ['3150.003', 'Krusty Krab', 'Trade Secrets', '', 'recent'], ['6604.002', 'Pawnee Parks and Rec', 'Permits', '', 'recent'],
-    ['5521.001', 'Luke\u2019s Diner', 'General Corporate', '', 'all'], ['2207.001', 'Central Perk', 'Real Estate', '71%', 'all']];
-  function openPicker() {
-    if ($('mp')) return;
-    const row = $('ecard').querySelector('.f.now');
+    ['1408.001', 'Bluth Banana Stand', 'Real Estate', '', 'other'], ['3150.003', 'Krusty Krab', 'Trade Secrets', '', 'other'], ['6604.002', 'Pawnee Parks and Rec', 'Permits', '', 'other'],
+    ['5521.001', 'Luke’s Diner', 'General Corporate', '', 'other'], ['2207.001', 'Central Perk', 'Real Estate', '71%', 'near']];
+  function openPicker() {   /* Change on the matter: the box opens in place, Tenth's closest matches first */
+    if ($('mp') || busy) return;
+    const row = $('ecard').querySelector('.f[data-part="matter"]'), n = QS[qi].notes.find((x) => x.part === 'matter'); if (!row || !n) return;
     const mp = document.createElement('div'); mp.className = 'mp'; mp.id = 'mp';
-    mp.innerHTML = '<input id="mpIn" type="search" autocomplete="off" placeholder="Which matter? Search client, matter or number" aria-label="Which matter is it?"><div id="mpList" role="listbox" aria-label="Matters"></div><div class="mpfoot"><span>Not listed? Pass, and it goes out marked.</span><button class="btn btn-ghost" type="button" id="mpBack" style="min-height:32px;padding:6px 12px">Back</button></div>';
+    mp.innerHTML = '<input id="mpIn" type="search" autocomplete="off" placeholder="Client, matter or number" aria-label="Which matter is it?"><div id="mpList" role="listbox" aria-label="Matters"></div><div class="mpfoot"><span>Esc closes it.</span><button class="btn btn-ghost" type="button" id="mpBack" style="min-height:32px;padding:6px 12px">Cancel</button></div>';
     row.after(mp);
     const inp = $('mpIn'), list = $('mpList');
     let opts = [], at = -1;
     const opt = (m) => '<button type="button" class="opt" role="option" data-k="' + m[0] + '"><span class="num">' + m[0] + '</span><span>' + m[1] + '<small>' + m[2] + '</small></span><span class="pct">' + m[3] + '</span></button>';
     const take = (k) => {
       const m = MATTERS.find((x) => x[0] === k);
-      row.querySelector('.f-val').innerHTML = '<b>' + m[1] + '</b><small>' + m[2] + ' \u00b7 ' + m[0] + '</small>';
-      mp.remove(); advance(true);
+      row.querySelector('.f-val .v').innerHTML = '<b>' + m[0] + '</b><span>' + m[1] + '</span><small>' + m[2] + '</small>';
+      mp.remove(); tick(n, k === '2207.001' ? n.done : 'Saved as ' + m[0] + ' ' + m[2] + '.');
     };
     const draw = () => {
       const q = inp.value.trim().toLowerCase();
       let html = '';
       if (!q) {
-        html += '<span class="cap3">Close matches</span>' + MATTERS.filter((m) => m[4] === 'near').map(opt).join('');
-        html += '<span class="cap3">Recent for Elle Woods</span>' + MATTERS.filter((m) => m[4] === 'recent').map(opt).join('');
+        html += '<span class="cap3">Tenth’s closest matches</span>' + MATTERS.filter((m) => m[4] === 'near').sort((a, b) => parseInt(b[3]) - parseInt(a[3])).map(opt).join('');
+        html += '<span class="cap3">Other matters</span>' + MATTERS.filter((m) => m[4] === 'other').map(opt).join('');
       } else {
         const hits = MATTERS.filter((m) => (m[0] + ' ' + m[1] + ' ' + m[2]).toLowerCase().includes(q));
-        html = hits.length ? hits.map(opt).join('') : '<span class="none">No matter matches \u201c' + inp.value.trim() + '\u201d.</span>';
+        html = hits.length ? hits.map(opt).join('') : '<span class="none">No matter matches “' + inp.value.trim() + '”.</span>';
       }
       list.innerHTML = html;
       opts = [...list.querySelectorAll('button.opt')]; at = q && opts.length ? 0 : -1;
       opts.forEach((b, i) => { b.classList.toggle('on', i === at); b.addEventListener('mousedown', (e) => e.preventDefault()); b.addEventListener('click', () => take(b.dataset.k)); });
     };
+    const close = () => { mp.remove(); qyes.focus({ preventScroll: true }); };
     inp.addEventListener('input', draw);
     inp.addEventListener('keydown', (e) => {
       if (e.key === 'ArrowDown' || e.key === 'ArrowUp') { e.preventDefault(); if (opts.length) { at = (at + (e.key === 'ArrowDown' ? 1 : -1) + opts.length) % opts.length; opts.forEach((b, i) => b.classList.toggle('on', i === at)); } }
       else if (e.key === 'Enter') { e.preventDefault(); if (at >= 0) take(opts[at].dataset.k); }
-      else if (e.key === 'Escape') { e.preventDefault(); e.stopPropagation(); mp.remove(); qno.focus(); }
+      else if (e.key === 'Escape') { e.preventDefault(); e.stopPropagation(); close(); }
     });
-    $('mpBack').addEventListener('click', () => { mp.remove(); qno.focus(); });
+    $('mpBack').addEventListener('click', close);
     draw(); inp.focus({ preventScroll: true });
   }
-  qno.addEventListener('click', () => { if (QS[qi].kind === 'match') openPicker(); else advance(true); });
-  $('qskip').addEventListener('click', () => { skipped += 1; advance(false); });
-  let cardInView = false;
-  if ('IntersectionObserver' in window) new IntersectionObserver((es) => { cardInView = es[0].intersectionRatio >= .6; }, { threshold: [0, .6, 1] }).observe($('qcard'));
+  let cardInView = false, nudged = false;
+  if ('IntersectionObserver' in window) new IntersectionObserver((es) => {
+    cardInView = es[0].intersectionRatio >= .6;
+    if (cardInView && !nudged && !reduce) { nudged = true; setTimeout(() => { qyes.classList.add('nudge'); setTimeout(() => qyes.classList.remove('nudge'), 2600); }, 600); }   /* once: the main button breathes twice, so it reads as a button to press */
+  }, { threshold: [0, .6, 1] }).observe($('qcard'));
+  const onKey = (e) => {
+    if ($('mp') || e.metaKey || e.ctrlKey || e.altKey || e.repeat) return false;
+    const k = e.key.toLowerCase();
+    if (k === 'b' && !e.shiftKey && hist.length) { e.preventDefault(); back(); return true; }
+    if (card.ask.hidden) return false;
+    const q = QS[qi];
+    if (e.shiftKey && (k === 'h' || k === 'n')) { const n = q.notes.find((x) => x.alt && x.alt.key.toLowerCase() === k); if (n) { e.preventDefault(); n.alt.fn(); tick(n, n.alt.done); } return true; }
+    if (k === 'm' && q.notes.some((x) => x.change)) { e.preventDefault(); openPicker(); return true; }
+    if (k === 'a' && !e.shiftKey && q.notes.some((x) => x.add && !said[q.notes.indexOf(x)])) { e.preventDefault(); openGap(q.notes.find((x) => x.add)); return true; }
+    if (k === 'p') { e.preventDefault(); pass(); return true; }
+    if (k === 'enter' && !(e.target.closest && e.target.closest('button, a'))) { e.preventDefault(); settle(); return true; }
+    return false;
+  };
   document.addEventListener('keydown', (e) => {
-    if (!cardInView || card.ask.hidden || e.metaKey || e.ctrlKey || e.altKey || e.repeat) return;
+    if (!cardInView) return;
     const a = document.activeElement;
     const free = !a || a === document.body || a === document.documentElement || (a.matches && a.matches('section[tabindex="-1"]'));
-    if (!free) return;
-    const k = e.key.toLowerCase();
-    if (k === 'n' && !qno.hidden) { e.preventDefault(); qno.click(); }
-    else if (k === 'p') { e.preventDefault(); $('qskip').click(); }
-    else if (k === 'enter') { e.preventDefault(); if (QS[qi].kind === 'blank') qinput.focus(); else qyes.click(); }
+    if (free) onKey(e);
   });
-  $('qcard').addEventListener('keydown', (e) => {
-    if (card.ask.hidden || e.target === qinput || e.target.id === 'mpIn' || e.metaKey || e.ctrlKey || e.altKey) return;
-    const k = e.key.toLowerCase();
-    if (k === 'n' && !qno.hidden) { e.preventDefault(); qno.click(); }
-    else if (k === 'p') { e.preventDefault(); $('qskip').click(); }
-    else if (k === 'enter' && !e.target.closest('button, a')) { e.preventDefault(); qyes.click(); }
-  });
+  $('qcard').addEventListener('keydown', (e) => { if (e.target.id !== 'mpIn' && !e.target.classList.contains('gin')) { if (onKey(e)) e.stopPropagation(); } });
+  paint();
   $('qagain').addEventListener('click', () => {
-    qi = 0; skipped = 0; card.done.hidden = true; card.ask.hidden = false; paint();
+    qi = 0; skipped = 0; hist = []; card.done.hidden = true; card.ask.hidden = false; paint();
     if (hasGsap && !reduce) gsap.fromTo(card.ask, { x: -40, opacity: 0 }, { x: 0, opacity: 1, duration: .45, ease: 'expo.out' });
-    $('qyes').focus();
+    qyes.focus();
   });
 
 
@@ -1095,8 +1182,8 @@ const LINKS = {
   gsap.set('.uline .ul', { scaleX: 0 });
   /* the quote appears whole as it reaches the middle of the screen; only the underline draws, in step with the scroll, while it holds */
   /* the whole quote clears out of a soft blur together, tied to the scroll, so it is always fully there by the time it reaches the middle */
-  gsap.fromTo('.pull', { opacity: 0, y: 18, filter: 'blur(8px)' }, { opacity: 1, y: 0, filter: 'blur(0px)', ease: 'sine.out', scrollTrigger: { trigger: '.mission .spread', start: 'top 55%', end: 'top 5%', scrub: .4 } });
-  gsap.to('.uline .ul', { scaleX: 1, ease: 'none', scrollTrigger: { trigger: '.mission .spread', start: 'top -8%', end: 'top -38%', scrub: .6 } });
+  gsap.fromTo('.pull', { opacity: 0, y: 18, filter: 'blur(8px)' }, { opacity: 1, y: 0, filter: 'blur(0px)', ease: 'sine.out', scrollTrigger: { trigger: '.mission .spread', start: 'top 73%', end: 'top 23%', scrub: .4 } });
+  gsap.to('.uline .ul', { scaleX: 1, ease: 'none', scrollTrigger: { trigger: '.mission .spread', start: 'top 10%', end: 'top -18%', scrub: .6 } });
   /* As the mission slides up: its mound flattens, and the glass in the headline empties */
   const mound = $('moundPath'), heroMark = document.getElementById('hero-mark');
   let peakX = 50;
@@ -1110,7 +1197,7 @@ const LINKS = {
     onUpdate: (s) => shapeMound(s.progress) });
 
   /* Active section in the nav */
-  [['#story', 'How it works'], ['#try', 'Try a question'], ['#faq', 'Questions']].forEach(([id]) => {
+  [['#story', 'How it works'], ['#try', 'Try it'], ['#faq', 'FAQ']].forEach(([id]) => {
     const link = document.querySelector('.nav-links a[href="' + id + '"]');
     ScrollTrigger.create({ trigger: id, start: 'top 50%', end: 'bottom 50%', onToggle: (s) => s.isActive ? link.setAttribute('aria-current', 'true') : link.removeAttribute('aria-current') });
   });

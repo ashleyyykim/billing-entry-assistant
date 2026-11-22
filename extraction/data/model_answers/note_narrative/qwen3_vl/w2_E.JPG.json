@@ -1,0 +1,121 @@
+{
+ "model": "qwen.qwen3-vl-235b-a22b",
+ "prompt": "v2",
+ "mode": "tool",
+ "system_prompt": true,
+ "image_first": false,
+ "entries": [
+  {
+   "lines": [
+    2,
+    3
+   ],
+   "client": "Solace Health",
+   "cmid": "",
+   "date": "11/2",
+   "hours_written": "2.6 hours",
+   "narrative": "worked on board meeting prap + minutes",
+   "unsure": "photo shows 'prap' as 'prep'; 'Solace Health' is a firm client",
+   "hours": 2.6
+  },
+  {
+   "lines": [
+    2,
+    3,
+    4
+   ],
+   "client": "Solace Health",
+   "cmid": "",
+   "date": "11/2",
+   "hours_written": ". 3 hours",
+   "narrative": "reviewed underwriter comments on prospectus",
+   "unsure": "photo shows '.3 hours' with a space; 'Solace Health' is a firm client",
+   "hours": 0.3
+  },
+  {
+   "lines": [
+    2,
+    5
+   ],
+   "client": "Meridian",
+   "cmid": "",
+   "date": "11/2",
+   "hours_written": "0.5hours",
+   "narrative": "provided 10-Q comments",
+   "unsure": "photo shows '0.5 hours' without space; 'Meridian' is a firm client",
+   "hours": 0.5
+  },
+  {
+   "lines": [
+    2,
+    6
+   ],
+   "client": "",
+   "cmid": "3455.002",
+   "date": "11/2",
+   "hours_written": "0.4 hours",
+   "narrative": "provided committee chaster updates",
+   "unsure": "photo shows 'charter' as 'chaster'; '0.4 hours' is clear",
+   "hours": 0.4
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "across": 10,
+   "down": 23,
+   "conf": 87,
+   "number_conf": null,
+   "text": "page E."
+  },
+  {
+   "id": 2,
+   "across": 10,
+   "down": 31,
+   "conf": 76,
+   "number_conf": 98,
+   "text": "Monday 11/2 worked on board meeting prap + minutes"
+  },
+  {
+   "id": 3,
+   "across": 10,
+   "down": 37,
+   "conf": 59,
+   "number_conf": 93,
+   "text": "for solace Health for 2.6 hours, reviewed underwriter"
+  },
+  {
+   "id": 4,
+   "across": 11,
+   "down": 42,
+   "conf": 44,
+   "number_conf": 81,
+   "text": "comments on prospectus for . 3 hours and provided 10-Q"
+  },
+  {
+   "id": 5,
+   "across": 11,
+   "down": 48,
+   "conf": 57,
+   "number_conf": 94,
+   "text": "comments for 0.5hourson meridian, provided committee"
+  },
+  {
+   "id": 6,
+   "across": 11,
+   "down": 53,
+   "conf": 31,
+   "number_conf": 97,
+   "text": "chaster updates for 0.4 hours for 3455.002."
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 7231,
+  "outputTokens": 362,
+  "totalTokens": 7593
+ },
+ "latency_ms": 12845,
+ "prompt_hash": "2112cd0c6e"
+}

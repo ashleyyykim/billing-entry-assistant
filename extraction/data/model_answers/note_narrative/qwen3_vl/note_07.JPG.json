@@ -1,0 +1,98 @@
+{
+ "model": "qwen.qwen3-vl-235b-a22b",
+ "prompt": "v2",
+ "mode": "tool",
+ "system_prompt": true,
+ "image_first": false,
+ "entries": [
+  {
+   "lines": [
+    1,
+    2
+   ],
+   "client": "",
+   "cmid": "3012.004",
+   "date": "10/28",
+   "hours_written": "1.4",
+   "narrative": "revise disclosure schedules for Brightline",
+   "unsure": "",
+   "hours": 1.4
+  },
+  {
+   "lines": [
+    3
+   ],
+   "client": "Halvorsen",
+   "cmid": "",
+   "date": "10/28",
+   "hours_written": "2.0",
+   "narrative": "TCW buyer counsel re escrow",
+   "unsure": "",
+   "hours": 2.0
+  },
+  {
+   "lines": [
+    4,
+    5
+   ],
+   "client": "Firm",
+   "cmid": "1111.001",
+   "date": "10/28",
+   "hours_written": ".3",
+   "narrative": "update time entries",
+   "unsure": "photo shows .3; the reader has 3",
+   "hours": 0.3
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "across": 39,
+   "down": 34,
+   "conf": 74,
+   "number_conf": 91,
+   "text": "3012.004 ravise disclosure"
+  },
+  {
+   "id": 2,
+   "across": 19,
+   "down": 37,
+   "conf": 86,
+   "number_conf": 98,
+   "text": "Wed 10/28 1.4 schedules for"
+  },
+  {
+   "id": 3,
+   "across": 18,
+   "down": 43,
+   "conf": 80,
+   "number_conf": 99,
+   "text": "Halvorsen 2.0 TCW buyer counsel"
+  },
+  {
+   "id": 4,
+   "across": 39,
+   "down": 50,
+   "conf": 71,
+   "number_conf": 71,
+   "text": "1111.001 update time entries"
+  },
+  {
+   "id": 5,
+   "across": 19,
+   "down": 53,
+   "conf": 91,
+   "number_conf": null,
+   "text": "Firm Admin in"
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 7184,
+  "outputTokens": 225,
+  "totalTokens": 7409
+ },
+ "latency_ms": 5388,
+ "prompt_hash": "2112cd0c6e"
+}

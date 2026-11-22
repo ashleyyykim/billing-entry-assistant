@@ -1,0 +1,161 @@
+{
+ "model": "qwen.qwen3-vl-235b-a22b",
+ "prompt": "v2",
+ "mode": "tool",
+ "system_prompt": true,
+ "image_first": false,
+ "entries": [
+  {
+   "lines": [
+    3,
+    4
+   ],
+   "client": "Northgate Capital",
+   "cmid": "",
+   "date": "11/3",
+   "hours_written": "0.6",
+   "narrative": "Call w/ seller's counsel about",
+   "unsure": "",
+   "hours": 0.6
+  },
+  {
+   "lines": [
+    5,
+    6,
+    7
+   ],
+   "client": "Northgate Capital",
+   "cmid": "",
+   "date": "11/3",
+   "hours_written": "2.3",
+   "narrative": "- escrow. disclosure schedule for summit Ridge.",
+   "unsure": "",
+   "hours": 2.3
+  },
+  {
+   "lines": [
+    8,
+    9,
+    10
+   ],
+   "client": "Lantern Software",
+   "cmid": "",
+   "date": "11/3",
+   "hours_written": "1.4",
+   "narrative": "Review ViAeo's markup of manager agreement.",
+   "unsure": "",
+   "hours": 1.4
+  },
+  {
+   "lines": [
+    11
+   ],
+   "client": "Firm",
+   "cmid": "",
+   "date": "11/3",
+   "hours_written": "1.0",
+   "narrative": "Lunch w/prospect.",
+   "unsure": "client written as \"First time (biz dev)\"; interpreted as Firm time for business development",
+   "hours": 1.0
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "across": 14,
+   "down": 24,
+   "conf": 83,
+   "number_conf": null,
+   "text": "Page A"
+  },
+  {
+   "id": 2,
+   "across": 11,
+   "down": 31,
+   "conf": 90,
+   "number_conf": null,
+   "text": "# Date Write the client as Hours what you did"
+  },
+  {
+   "id": 3,
+   "across": 12,
+   "down": 37,
+   "conf": 38,
+   "number_conf": 70,
+   "text": "/ Tues \"/3 Northgate Capital 0.6 Call w/ seller's"
+  },
+  {
+   "id": 4,
+   "across": 70,
+   "down": 41,
+   "conf": 99,
+   "number_conf": null,
+   "text": "counsel about"
+  },
+  {
+   "id": 5,
+   "across": 12,
+   "down": 45,
+   "conf": 48,
+   "number_conf": 81,
+   "text": "2 Thes 11/3 Northgate Capital 2.3 - escrow. disclosure"
+  },
+  {
+   "id": 6,
+   "across": 70,
+   "down": 51,
+   "conf": 82,
+   "number_conf": null,
+   "text": "schedulestor"
+  },
+  {
+   "id": 7,
+   "across": 70,
+   "down": 54,
+   "conf": 94,
+   "number_conf": null,
+   "text": "summit Ridge."
+  },
+  {
+   "id": 8,
+   "across": 12,
+   "down": 56,
+   "conf": 51,
+   "number_conf": 99,
+   "text": "3 Tues 11/3 Lantern Software 1.4 Review ViAeo's"
+  },
+  {
+   "id": 9,
+   "across": 67,
+   "down": 61,
+   "conf": 95,
+   "number_conf": null,
+   "text": "markup of manager"
+  },
+  {
+   "id": 10,
+   "across": 67,
+   "down": 65,
+   "conf": 52,
+   "number_conf": null,
+   "text": "agreement."
+  },
+  {
+   "id": 11,
+   "across": 13,
+   "down": 68,
+   "conf": 61,
+   "number_conf": 99,
+   "text": "4 July 11/3 First time (biz dev) 1.0 Lunch w/prospect."
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 7361,
+  "outputTokens": 299,
+  "totalTokens": 7660
+ },
+ "latency_ms": 5513,
+ "prompt_hash": "2112cd0c6e"
+}

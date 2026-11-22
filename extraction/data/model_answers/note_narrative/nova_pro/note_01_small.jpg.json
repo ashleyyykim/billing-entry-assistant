@@ -1,0 +1,65 @@
+{
+ "model": "us.amazon.nova-pro-v1:0",
+ "entries": [
+  {
+   "lines": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "client": "Halvorsen",
+   "cmid": "",
+   "date": "",
+   "hours_written": "4",
+   "hours": 4.0,
+   "narrative": "call w/lender counsel re Brightline closing",
+   "unsure": "4 hours is likely.4 with the point missing, but the note is unclear and the client is not on the firm's list, so it is recorded as 4 hours."
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "across": 31,
+   "down": 40,
+   "conf": 67,
+   "number_conf": 98,
+   "text": "4 Halvorsen \u4e00"
+  },
+  {
+   "id": 2,
+   "across": 27,
+   "down": 48,
+   "conf": 100,
+   "number_conf": null,
+   "text": "call w/lender"
+  },
+  {
+   "id": 3,
+   "across": 27,
+   "down": 53,
+   "conf": 99,
+   "number_conf": null,
+   "text": "counselve Brightline"
+  },
+  {
+   "id": 4,
+   "across": 27,
+   "down": 61,
+   "conf": 100,
+   "number_conf": null,
+   "text": "closing"
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 808,
+  "outputTokens": 124,
+  "totalTokens": 4995,
+  "cacheReadInputTokens": 4063,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_ms": 2068,
+ "prompt_hash": "b81c84d10e"
+}

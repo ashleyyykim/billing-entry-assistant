@@ -1,0 +1,118 @@
+{
+ "model": "qwen.qwen3-vl-235b-a22b",
+ "prompt": "v2",
+ "mode": "tool",
+ "system_prompt": true,
+ "image_first": false,
+ "entries": [
+  {
+   "lines": [
+    1,
+    2,
+    3
+   ],
+   "client": "Cobalt Ridge",
+   "cmid": "5520.004",
+   "date": "",
+   "hours_written": "2.1",
+   "narrative": "Capital call notice",
+   "unsure": "",
+   "hours": 2.1
+  },
+  {
+   "lines": [
+    1,
+    4
+   ],
+   "client": "Cobalt Ridge",
+   "cmid": "5520.004",
+   "date": "",
+   "hours_written": "4",
+   "narrative": "call w/admin re wire",
+   "unsure": "4 hours for a call is likely .4 with the point missing"
+  },
+  {
+   "lines": [
+    5
+   ],
+   "client": "Aster & Vale",
+   "cmid": "",
+   "date": "",
+   "hours_written": "1.0",
+   "narrative": "10-Q comments",
+   "unsure": "",
+   "hours": 1.0
+  },
+  {
+   "lines": [
+    6
+   ],
+   "client": "Aster & Vale",
+   "cmid": "",
+   "date": "",
+   "hours_written": ".5",
+   "narrative": "board minutes.",
+   "unsure": "ditto mark: same client as the entry above",
+   "hours": 0.5
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "across": 19,
+   "down": 32,
+   "conf": 86,
+   "number_conf": 86,
+   "text": "Cobalt Ridge 5520.004"
+  },
+  {
+   "id": 2,
+   "across": 60,
+   "down": 37,
+   "conf": 100,
+   "number_conf": 100,
+   "text": "2.1"
+  },
+  {
+   "id": 3,
+   "across": 60,
+   "down": 41,
+   "conf": 85,
+   "number_conf": null,
+   "text": "Capital call notice"
+  },
+  {
+   "id": 4,
+   "across": 24,
+   "down": 47,
+   "conf": 84,
+   "number_conf": 100,
+   "text": "4 call w/admin re wire"
+  },
+  {
+   "id": 5,
+   "across": 16,
+   "down": 54,
+   "conf": 90,
+   "number_conf": 99,
+   "text": "Aster & Vale 1.010-Q comments"
+  },
+  {
+   "id": 6,
+   "across": 15,
+   "down": 62,
+   "conf": 78,
+   "number_conf": 78,
+   "text": "same .5 board minutes."
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 6025,
+  "outputTokens": 271,
+  "totalTokens": 6296
+ },
+ "latency_ms": 7464,
+ "prompt_hash": "2112cd0c6e"
+}

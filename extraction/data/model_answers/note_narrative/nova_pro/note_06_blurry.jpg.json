@@ -1,0 +1,67 @@
+{
+ "model": "us.amazon.nova-pro-v1:0",
+ "entries": [
+  {
+   "lines": [
+    1
+   ],
+   "client": "Ridgeview",
+   "cmid": "",
+   "date": "",
+   "hours_written": ".5",
+   "hours": 0.5,
+   "narrative": "call re capital call",
+   "unsure": ""
+  },
+  {
+   "lines": [
+    2,
+    3
+   ],
+   "client": "Firm",
+   "cmid": "",
+   "date": "",
+   "hours_written": "1.0",
+   "hours": 1.0,
+   "narrative": "BD lunch w/ prospective client",
+   "unsure": ""
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "across": 23,
+   "down": 37,
+   "conf": 90,
+   "number_conf": 90,
+   "text": "Ridgeview .5 call re capital call"
+  },
+  {
+   "id": 2,
+   "across": 22,
+   "down": 45,
+   "conf": 81,
+   "number_conf": 100,
+   "text": "Firm BD 1.0 lunch w/ prospective"
+  },
+  {
+   "id": 3,
+   "across": 23,
+   "down": 50,
+   "conf": 99,
+   "number_conf": null,
+   "text": "client"
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 789,
+  "outputTokens": 134,
+  "totalTokens": 4986,
+  "cacheReadInputTokens": 4063,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_ms": 1614,
+ "prompt_hash": "b81c84d10e"
+}

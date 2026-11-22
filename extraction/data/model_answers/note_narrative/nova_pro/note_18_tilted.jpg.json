@@ -1,0 +1,84 @@
+{
+ "model": "us.amazon.nova-pro-v1:0",
+ "entries": [
+  {
+   "lines": [
+    1
+   ],
+   "client": "Harborlight",
+   "cmid": "",
+   "date": "",
+   "hours_written": "1.0",
+   "narrative": "A-1 exitdocs",
+   "unsure": ""
+  },
+  {
+   "lines": [
+    2
+   ],
+   "client": "HarborLightPartners",
+   "cmid": "",
+   "date": "",
+   "hours_written": "",
+   "narrative": "Fund II call",
+   "unsure": ""
+  },
+  {
+   "lines": [
+    3,
+    4
+   ],
+   "client": "Halverson",
+   "cmid": "",
+   "date": "",
+   "hours_written": "0.8",
+   "narrative": "Tamarack disc sched",
+   "unsure": ""
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "across": 13,
+   "down": 33,
+   "conf": 81,
+   "number_conf": 97,
+   "text": "-Harborlight 1.0 A-1 exitdocs"
+  },
+  {
+   "id": 2,
+   "across": 16,
+   "down": 40,
+   "conf": 66,
+   "number_conf": null,
+   "text": "- HarborLightPartners Fund II call"
+  },
+  {
+   "id": 3,
+   "across": 19,
+   "down": 56,
+   "conf": 96,
+   "number_conf": 100,
+   "text": "- Halverson 0.8"
+  },
+  {
+   "id": 4,
+   "across": 23,
+   "down": 57,
+   "conf": 100,
+   "number_conf": null,
+   "text": "Tamarack disc sched"
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 811,
+  "outputTokens": 171,
+  "totalTokens": 4928,
+  "cacheReadInputTokens": 3946,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_ms": 2124,
+ "prompt_hash": "b81c84d10e"
+}

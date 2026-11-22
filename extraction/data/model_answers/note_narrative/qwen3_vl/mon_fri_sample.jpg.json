@@ -1,0 +1,223 @@
+{
+ "model": "qwen.qwen3-vl-235b-a22b",
+ "prompt": "v2",
+ "mode": "tool",
+ "system_prompt": true,
+ "image_first": false,
+ "entries": [
+  {
+   "lines": [
+    1,
+    2
+   ],
+   "client": "",
+   "cmid": "1238.001",
+   "date": "09/21/26",
+   "hours_written": ".4",
+   "narrative": "Attend to call with T.Smith re financial plan",
+   "unsure": "photo shows .4; the reader has 09/21/26 on L2 and 1238.001 on L1, but the photo shows 1238.001 and .4 on the same line as Mon. 09/21/26",
+   "hours": 0.4
+  },
+  {
+   "lines": [
+    3
+   ],
+   "client": "Dream AI",
+   "cmid": "4599.002",
+   "date": "09/21/26",
+   "hours_written": "1.2",
+   "narrative": "Attend to financial review and Legal opinion",
+   "unsure": "photo shows 1.2; the reader has \"Al\" which is likely \"AI\" and \"Pream\" which is likely \"Dream\"; \"review and Legal opinion\" is on the next line but is part of the same entry",
+   "hours": 1.2
+  },
+  {
+   "lines": [
+    4,
+    5,
+    6
+   ],
+   "client": "Firm",
+   "cmid": "1111.001",
+   "date": "09/21/26",
+   "hours_written": "2.0",
+   "narrative": "Admin review and Legal opinion Attend to general admin. matters.",
+   "unsure": "photo shows 2.0; the reader has \"1.2\" on L4 and \"1111.001\" on L5, but the photo shows 1111.001 and 2.0 on the same line as Firm Admin; \"review and Legal opinion\" and \"Attend to general admin. matters.\" are part of the same entry",
+   "hours": 2.0
+  },
+  {
+   "lines": [
+    7,
+    8,
+    9
+   ],
+   "client": "Google",
+   "cmid": "1111.007",
+   "date": "09/18/26",
+   "hours_written": "1.5",
+   "narrative": "Attend Google board BOD meeting",
+   "unsure": "photo shows 1.5; the reader has \"Google\" on L9, but the photo shows \"Google BOD\" on the same line as 1111.007 and 1.5; \"BOD meeting\" is part of the same entry",
+   "hours": 1.5
+  },
+  {
+   "lines": [
+    10,
+    11
+   ],
+   "client": "Nobhill Tech",
+   "cmid": "2198.001",
+   "date": "09/18/26",
+   "hours_written": ".4",
+   "narrative": "File form 83(b).",
+   "unsure": "photo shows .4; the reader has \"Nobttill Tech\" which is likely \"Nobhill Tech\"; \".4\" is on the next line but is part of the same entry",
+   "hours": 0.4
+  },
+  {
+   "lines": [
+    12
+   ],
+   "client": "Rockblack",
+   "cmid": "4433.007",
+   "date": "09/18/26",
+   "hours_written": "2.1",
+   "narrative": "TCW J. Black re Stockplan.",
+   "unsure": "photo shows 2.1; the reader has \"Rockblack\" which is likely \"Rockblack\"; \"TCW J. Black re Stockplan.\" is on the same line",
+   "hours": 2.1
+  },
+  {
+   "lines": [
+    13,
+    14
+   ],
+   "client": "Firm",
+   "cmid": "1111.002",
+   "date": "09/18/26",
+   "hours_written": "1.8",
+   "narrative": "BD Take potential client to lunch @ Kokari.",
+   "unsure": "photo shows 1.8; the reader has \"BD\" which is likely \"BD\"; \"Take potential client to lunch @ Kokari.\" is on the next line but is part of the same entry",
+   "hours": 1.8
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "across": 2,
+   "down": 8,
+   "conf": 83,
+   "number_conf": 99,
+   "text": "X Mon. 1238.001 Attend to call with"
+  },
+  {
+   "id": 2,
+   "across": 15,
+   "down": 14,
+   "conf": 61,
+   "number_conf": 85,
+   "text": "09/21/26 T.Smith re financial plan"
+  },
+  {
+   "id": 3,
+   "across": 9,
+   "down": 25,
+   "conf": 56,
+   "number_conf": 99,
+   "text": "Pream Al 4599.002 Attend to financial"
+  },
+  {
+   "id": 4,
+   "across": 5,
+   "down": 30,
+   "conf": 60,
+   "number_conf": 100,
+   "text": "Firm Admin 1.2 review and Legal opnion"
+  },
+  {
+   "id": 5,
+   "across": 36,
+   "down": 35,
+   "conf": 79,
+   "number_conf": 95,
+   "text": "1111.001 Attend to general admin."
+  },
+  {
+   "id": 6,
+   "across": 54,
+   "down": 41,
+   "conf": 96,
+   "number_conf": null,
+   "text": "matters."
+  },
+  {
+   "id": 7,
+   "across": 4,
+   "down": 45,
+   "conf": 93,
+   "number_conf": 93,
+   "text": "Fri. 09/18/26 1111.007 Attend Google board"
+  },
+  {
+   "id": 8,
+   "across": 35,
+   "down": 52,
+   "conf": 97,
+   "number_conf": 99,
+   "text": "BOD 1.5"
+  },
+  {
+   "id": 9,
+   "across": 27,
+   "down": 53,
+   "conf": 98,
+   "number_conf": null,
+   "text": "Google"
+  },
+  {
+   "id": 10,
+   "across": 8,
+   "down": 57,
+   "conf": 50,
+   "number_conf": 70,
+   "text": "Nobttill Tech 2198.001 File form 83(b)."
+  },
+  {
+   "id": 11,
+   "across": 43,
+   "down": 63,
+   "conf": 60,
+   "number_conf": 60,
+   "text": ".4"
+  },
+  {
+   "id": 12,
+   "across": 5,
+   "down": 67,
+   "conf": 53,
+   "number_conf": 100,
+   "text": "Rockblack 4433.007 TCW J.Black re Stockplan."
+  },
+  {
+   "id": 13,
+   "across": 4,
+   "down": 77,
+   "conf": 76,
+   "number_conf": 97,
+   "text": "Firm BD 1111.002 Take potential drent"
+  },
+  {
+   "id": 14,
+   "across": 61,
+   "down": 83,
+   "conf": 53,
+   "number_conf": null,
+   "text": "to lundh@ kokan."
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 7482,
+  "outputTokens": 945,
+  "totalTokens": 8427
+ },
+ "latency_ms": 20906,
+ "prompt_hash": "2112cd0c6e"
+}

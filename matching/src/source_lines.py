@@ -135,11 +135,40 @@ def line_boxes(path, pages_dir, mode, answers):
     return {k: clip(v) for k, v in found.items()}, {k: [[w[0], *clip(w[1:])] for w in v] for k, v in words.items()}
 
 
+def pdf_places(path):
+    """Each line of a typed PDF, written as one_flow.pdf_text_lines writes it, with where its words sit: [(text,
+    {"page", "top", "words": [[word, left, right], ...]}), ...] top to bottom, page by page, in points. The page uses
+    them to line a table back up (each word under the header it sits beneath)."""
+    import pymupdf
+    from documents import pdf_lines
+    from one_flow import COLUMN_GAP
+    out = []
+    with pymupdf.open(path) as pdf:
+        for n, page in enumerate(pdf):
+            for top, words in pdf_lines(page):
+                text = words[0][2]
+                for (_, right, _), (left, _, word) in zip(words, words[1:]):
+                    text += (" | " if left - right > COLUMN_GAP else " ") + word
+                out.append((text, {"page": n, "top": round(top, 1), "words": [[w, round(x0, 1), round(x1, 1)] for x0, x1, w in words]}))
+    return out
+
+
+def place_pdf_lines(pieces, path):
+    """Puts each layout line's word places (pdf_places) on it, found by its text, in order."""
+    places, j = pdf_places(path), 0
+    for piece in pieces:
+        for line in piece["lines"]:
+            k = next((i for i in [*range(j, len(places)), *range(j)] if places[i][0] == line["text"]), None)
+            if k is not None:
+                line["pdf"], j = places[k][1], k + 1
+
+
 def locate(entries, name, first, second, path=None, pages_dir=None, kind=None, spreadsheet=None):
     """(entries with an `evidence` column, layout) for one upload.
 
     evidence: {"source": ..., "hits": [[piece, line id], ...]} for each entry the model read, else None.
-    layout: {source: {"input_type", "header", "pieces": [{"lines": [{"id", "text", "box"?, "words"?}]}]}} for each source.
+    layout: {source: {"input_type", "header", "pieces": [{"lines": [{"id", "text", "box"?, "words"?, "pdf"?}]}]}} for each
+    source. pdf: where a typed PDF's words sit, so the page can show its table lined up (pdf_places).
     first, second: the one_flow.ModelReaders that read it. path, pages_dir, kind: for a photo's line boxes.
     spreadsheet: the raw cells, to tell the header rows from the data rows."""
     from one_flow import line_ids
@@ -177,6 +206,11 @@ def locate(entries, name, first, second, path=None, pages_dir=None, kind=None, s
                             line["words"] = words.get((n, line["id"]), [])
             except Exception as err:  # noqa: BLE001 - the marks are optional
                 log.warning("no line boxes for %s: %s: %s", source, type(err).__name__, err)
+        if path is not None and Path(str(path)).suffix.lower() == ".pdf" and Path(str(source)).name == Path(str(path)).name:
+            try:
+                place_pdf_lines(pieces, path)
+            except Exception as err:  # noqa: BLE001 - the lined-up table is optional
+                log.warning("no word places for %s: %s: %s", source, type(err).__name__, err)
         layout[source] = item
     for i, row in out.iterrows():
         source = str(row["source"])

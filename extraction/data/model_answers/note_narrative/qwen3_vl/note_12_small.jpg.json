@@ -1,0 +1,48 @@
+{
+ "model": "qwen.qwen3-vl-235b-a22b",
+ "prompt": "v2",
+ "mode": "tool",
+ "system_prompt": true,
+ "image_first": false,
+ "entries": [
+  {
+   "lines": [
+    1
+   ],
+   "client": "Bluefin",
+   "cmid": "",
+   "date": "",
+   "hours_written": "half an hour",
+   "narrative": "w/ Y. Tanakare Keel herm sheet",
+   "unsure": "narrative wraps to L2; \"herm sheet\" likely \"term sheet\"; \"Keel\" likely \"Kool\" from photo",
+   "hours": 0.5
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "across": 8,
+   "down": 38,
+   "conf": 78,
+   "number_conf": null,
+   "text": "Bluefin - half an hour w/ Y."
+  },
+  {
+   "id": 2,
+   "across": 12,
+   "down": 51,
+   "conf": 75,
+   "number_conf": null,
+   "text": "Tanakare Keel herm sheet."
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 4489,
+  "outputTokens": 99,
+  "totalTokens": 4588
+ },
+ "latency_ms": 3287,
+ "prompt_hash": "2112cd0c6e"
+}

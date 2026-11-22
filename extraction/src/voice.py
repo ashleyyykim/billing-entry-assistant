@@ -115,11 +115,13 @@ def ensure_vocabulary(client, phrases, wait=5, prefix="tenth-clients"):
 
 
 def transcript_answer(result, vocabulary):
-    """The parts of Transcribe's result worth keeping: the text, each word with its confidence, and the length."""
-    words = [[item["alternatives"][0]["content"], float(item["alternatives"][0].get("confidence", 0))]
-             for item in result["results"]["items"] if item["type"] == "pronunciation"]
+    """The parts of Transcribe's result worth keeping: the text, each word with its confidence, when each word starts
+    and ends (seconds, for the page to follow the memo as it plays), and the length."""
+    said = [item for item in result["results"]["items"] if item["type"] == "pronunciation"]
+    words = [[item["alternatives"][0]["content"], float(item["alternatives"][0].get("confidence", 0))] for item in said]
+    times = [[float(item.get("start_time", 0)), float(item.get("end_time", 0))] for item in said]
     ends = [float(item["end_time"]) for item in result["results"]["items"] if "end_time" in item]
-    return {"text": result["results"]["transcripts"][0]["transcript"], "words": words,
+    return {"text": result["results"]["transcripts"][0]["transcript"], "words": words, "times": times,
             "seconds": max(ends) if ends else 0.0, "vocabulary": vocabulary}
 
 

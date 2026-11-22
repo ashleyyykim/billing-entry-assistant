@@ -1,0 +1,67 @@
+{
+ "model": "us.amazon.nova-pro-v1:0",
+ "entries": [
+  {
+   "lines": [
+    2,
+    3
+   ],
+   "client": "Tidewater",
+   "cmid": "",
+   "date": "7/1",
+   "hours_written": "14",
+   "hours": 1.4,
+   "narrative": "board consent",
+   "unsure": "14 hours is likely 1.4 with the point missing"
+  },
+  {
+   "lines": [
+    3
+   ],
+   "client": "Tidewater",
+   "cmid": "",
+   "date": "",
+   "hours_written": "1/2 hr",
+   "hours": 0.5,
+   "narrative": "board consent",
+   "unsure": "1/2 hr is 0.5 hours"
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "across": 49,
+   "down": 11,
+   "conf": 31,
+   "number_conf": null,
+   "text": "\u3001"
+  },
+  {
+   "id": 2,
+   "across": 12,
+   "down": 34,
+   "conf": 51,
+   "number_conf": 99,
+   "text": "14 7/1 Tidewater"
+  },
+  {
+   "id": 3,
+   "across": 12,
+   "down": 45,
+   "conf": 100,
+   "number_conf": null,
+   "text": "board consent"
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 771,
+  "outputTokens": 158,
+  "totalTokens": 5004,
+  "cacheReadInputTokens": 4075,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_ms": 1822,
+ "prompt_hash": "b81c84d10e"
+}

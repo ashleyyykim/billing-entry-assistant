@@ -1,0 +1,224 @@
+{
+ "model": "us.amazon.nova-pro-v1:0",
+ "entries": [
+  {
+   "lines": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "client": "T.Smith",
+   "cmid": "1238.001",
+   "date": "09/21/26",
+   "hours_written": ".4",
+   "hours": 0.4,
+   "narrative": "Attend to call with re financial plan",
+   "unsure": ""
+  },
+  {
+   "lines": [
+    3,
+    5
+   ],
+   "client": "Pream Al",
+   "cmid": "4599.002",
+   "date": "",
+   "hours_written": "1.2",
+   "hours": 1.2,
+   "narrative": "Attend to financial review and legal opinion",
+   "unsure": ""
+  },
+  {
+   "lines": [
+    4,
+    6
+   ],
+   "client": "Firm",
+   "cmid": "1111.001",
+   "date": "",
+   "hours_written": "2.0",
+   "hours": 2.0,
+   "narrative": "Admin Attend to general admin. matters.",
+   "unsure": ""
+  },
+  {
+   "lines": [
+    7,
+    8,
+    9
+   ],
+   "client": "Google",
+   "cmid": "1111.007",
+   "date": "09/18/26",
+   "hours_written": "1.5",
+   "hours": 1.5,
+   "narrative": "Attend Google board BOD meeting",
+   "unsure": ""
+  },
+  {
+   "lines": [
+    10,
+    11
+   ],
+   "client": "Nobttill Tech",
+   "cmid": "2198.001",
+   "date": "",
+   "hours_written": ".4",
+   "hours": 0.4,
+   "narrative": "File form 83(b).",
+   "unsure": ""
+  },
+  {
+   "lines": [
+    12,
+    13
+   ],
+   "client": "Rockblack",
+   "cmid": "4433.007",
+   "date": "",
+   "hours_written": "2.1",
+   "hours": 2.1,
+   "narrative": "TCW J.Black re Stockplan.",
+   "unsure": ""
+  },
+  {
+   "lines": [
+    13,
+    14
+   ],
+   "client": "Firm",
+   "cmid": "1111.002",
+   "date": "",
+   "hours_written": "1.8",
+   "hours": 1.8,
+   "narrative": "BD Take potential client to lundh@ kokan.",
+   "unsure": ""
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "across": 2,
+   "down": 8,
+   "conf": 83,
+   "number_conf": 99,
+   "text": "X Mon. 1238.001 Attend to call with"
+  },
+  {
+   "id": 2,
+   "across": 15,
+   "down": 14,
+   "conf": 61,
+   "number_conf": 85,
+   "text": "09/21/26 T.Smith re financial plan"
+  },
+  {
+   "id": 3,
+   "across": 9,
+   "down": 25,
+   "conf": 56,
+   "number_conf": 99,
+   "text": "Pream Al 4599.002 Attend to financial"
+  },
+  {
+   "id": 4,
+   "across": 5,
+   "down": 30,
+   "conf": 60,
+   "number_conf": 100,
+   "text": "Firm Admin 1.2 review and Legal opnion"
+  },
+  {
+   "id": 5,
+   "across": 36,
+   "down": 35,
+   "conf": 79,
+   "number_conf": 95,
+   "text": "1111.001 Attend to general admin."
+  },
+  {
+   "id": 6,
+   "across": 54,
+   "down": 41,
+   "conf": 96,
+   "number_conf": null,
+   "text": "matters."
+  },
+  {
+   "id": 7,
+   "across": 4,
+   "down": 45,
+   "conf": 93,
+   "number_conf": 93,
+   "text": "Fri. 09/18/26 1111.007 Attend Google board"
+  },
+  {
+   "id": 8,
+   "across": 35,
+   "down": 52,
+   "conf": 97,
+   "number_conf": 99,
+   "text": "BOD 1.5"
+  },
+  {
+   "id": 9,
+   "across": 27,
+   "down": 53,
+   "conf": 98,
+   "number_conf": null,
+   "text": "Google"
+  },
+  {
+   "id": 10,
+   "across": 8,
+   "down": 57,
+   "conf": 50,
+   "number_conf": 70,
+   "text": "Nobttill Tech 2198.001 File form 83(b)."
+  },
+  {
+   "id": 11,
+   "across": 43,
+   "down": 63,
+   "conf": 60,
+   "number_conf": 60,
+   "text": ".4"
+  },
+  {
+   "id": 12,
+   "across": 5,
+   "down": 67,
+   "conf": 53,
+   "number_conf": 100,
+   "text": "Rockblack 4433.007 TCW J.Black re Stockplan."
+  },
+  {
+   "id": 13,
+   "across": 4,
+   "down": 77,
+   "conf": 76,
+   "number_conf": 97,
+   "text": "Firm BD 1111.002 Take potential drent"
+  },
+  {
+   "id": 14,
+   "across": 61,
+   "down": 83,
+   "conf": 53,
+   "number_conf": null,
+   "text": "to lundh@ kokan."
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 1324,
+  "outputTokens": 563,
+  "totalTokens": 5779,
+  "cacheReadInputTokens": 0,
+  "cacheWriteInputTokens": 3892
+ },
+ "latency_ms": 5119,
+ "prompt_hash": "b81c84d10e"
+}

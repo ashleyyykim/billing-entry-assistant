@@ -1,0 +1,58 @@
+{
+ "model": "us.amazon.nova-pro-v1:0",
+ "entries": [
+  {
+   "lines": [
+    1,
+    2
+   ],
+   "client": "",
+   "cmid": "5602.003",
+   "date": "",
+   "hours_written": "2.0",
+   "narrative": "Quanta disclosure schedules",
+   "unsure": ""
+  },
+  {
+   "lines": [
+    1,
+    2
+   ],
+   "client": "",
+   "cmid": "5602.003",
+   "date": "",
+   "hours_written": "2.0",
+   "narrative": "Quanta disclosure schedules",
+   "unsure": "Duplicate entry, likely a misreading of the same entry."
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "across": 13,
+   "down": 41,
+   "conf": 97,
+   "number_conf": 97,
+   "text": "5602.003 2.0"
+  },
+  {
+   "id": 2,
+   "across": 12,
+   "down": 47,
+   "conf": 100,
+   "number_conf": null,
+   "text": "Quanta disclosure schedules"
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 743,
+  "outputTokens": 144,
+  "totalTokens": 4973,
+  "cacheReadInputTokens": 4086,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_ms": 1681,
+ "prompt_hash": "b81c84d10e"
+}

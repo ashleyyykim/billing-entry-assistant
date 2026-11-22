@@ -1,0 +1,76 @@
+{
+ "model": "qwen.qwen3-vl-235b-a22b",
+ "prompt": "v2",
+ "mode": "tool",
+ "system_prompt": true,
+ "image_first": false,
+ "entries": [
+  {
+   "lines": [
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "client": "Halvorsen",
+   "cmid": "",
+   "date": "",
+   "hours_written": ".6",
+   "narrative": "call w/ E. Lindqvist re Brightline",
+   "unsure": "",
+   "hours": 0.6
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "across": 15,
+   "down": 31,
+   "conf": 99,
+   "number_conf": null,
+   "text": "Halvorsen"
+  },
+  {
+   "id": 2,
+   "across": 65,
+   "down": 40,
+   "conf": 71,
+   "number_conf": 71,
+   "text": ".6"
+  },
+  {
+   "id": 3,
+   "across": 17,
+   "down": 50,
+   "conf": 84,
+   "number_conf": null,
+   "text": "call w/ E."
+  },
+  {
+   "id": 4,
+   "across": 18,
+   "down": 59,
+   "conf": 73,
+   "number_conf": null,
+   "text": "re Lindquist"
+  },
+  {
+   "id": 5,
+   "across": 25,
+   "down": 64,
+   "conf": 52,
+   "number_conf": null,
+   "text": "Brightline"
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 7147,
+  "outputTokens": 79,
+  "totalTokens": 7226
+ },
+ "latency_ms": 3082,
+ "prompt_hash": "2112cd0c6e"
+}

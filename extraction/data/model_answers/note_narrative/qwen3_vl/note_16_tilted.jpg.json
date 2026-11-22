@@ -1,0 +1,69 @@
+{
+ "model": "qwen.qwen3-vl-235b-a22b",
+ "prompt": "v2",
+ "mode": "tool",
+ "system_prompt": true,
+ "image_first": false,
+ "entries": [
+  {
+   "lines": [
+    1
+   ],
+   "client": "",
+   "cmid": "3012.005",
+   "date": "",
+   "hours_written": "1.3",
+   "narrative": "Corvid NDA Markup",
+   "unsure": "photo shows 3012.005; the reader has 3012.0055",
+   "hours": 1.3
+  },
+  {
+   "lines": [
+    2,
+    3
+   ],
+   "client": "Harborline",
+   "cmid": "2207.003",
+   "date": "",
+   "hours_written": ".9",
+   "narrative": "Calder license redline",
+   "unsure": "photo shows Harborline -> 2207.003; the reader has 2207.003 on its own line and Harborline on the next",
+   "hours": 0.9
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "across": 22,
+   "down": 35,
+   "conf": 97,
+   "number_conf": 97,
+   "text": "3012.0055 corvid NDA Markup 1.3"
+  },
+  {
+   "id": 2,
+   "across": 45,
+   "down": 50,
+   "conf": 100,
+   "number_conf": 100,
+   "text": "2207.003"
+  },
+  {
+   "id": 3,
+   "across": 26,
+   "down": 55,
+   "conf": 80,
+   "number_conf": 80,
+   "text": "Harborline .9 Calder license redline"
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 7447,
+  "outputTokens": 198,
+  "totalTokens": 7645
+ },
+ "latency_ms": 5361,
+ "prompt_hash": "2112cd0c6e"
+}

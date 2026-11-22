@@ -74,6 +74,25 @@ The app loads `02_config.json`, `02_pairs.parquet`, `02_people.parquet`, `04_con
 
 The same service also runs the narrative check (stage 2, `POST /review`), from `../phase2_model/` (see its README). Without those models, matching still works and `/review` returns 503. The Docker files are in `../docker/`.
 
+## Sample files
+
+The page's "Try a sample" files (`data/samples/`) are one demo firm's notes, built from synthetic VAL and TEST entries whose decisions are known:
+
+| File | Whose | What it shows |
+|---|---|---|
+| `notebook.jpg` | C. Dunn | Handwritten page; one entry's hours written without the decimal |
+| `sticky-note.jpg` | B. Quinn | A typed CMID for a matter this attorney doesn't bill |
+| `napkin.jpg` | F. Castillo | A day jotted at a coffee meeting, including the coffee, which goes to the firm's business development matter |
+| `typed-note.txt` | B. Quinn | A client that isn't on the firm's list |
+| `excel-sheet.xlsx` | Several | A billing export: reviews to accept in bulk, a close call, a closed matter, two matters in one entry, a new client |
+| `csv-export.csv` | C. Dunn | A timer app's export in minutes |
+| `word-log.docx` | I. Novak | A two-week log with one review |
+| `pdf-report.pdf` | B. Quinn | A billing system's report with a typed CMID Tenth corrects |
+| `forwarded-email.eml` | I. Novak | An email with a timesheet attached, and one entry sent in both |
+| `voice-memo.m4a` | H. Sato | A partner's voice memo: one entry says "same client", and one is a new client. It shows only where `TENTH_S3_BUCKET` is set, since it needs Amazon Transcribe |
+
+81 of the 96 entries (84%) are matched with no person, more than the 65% in `02_evaluation`, since the samples are a demo. Vague narratives ("flag open issues"), which the page's narrative review (`phase2_model`) asks about, were swapped out of the typed files, except two in the email and where a sample shows that check on purpose. Block entries (several tasks under one time) keep their narratives as the data has them: the page asks about them in one bulk card. `data/sample_answer_key.csv` lists each entry and what Tenth should do with it, and `02_evaluation`'s appendix checks matching on them.
+
 ## Limitations
 
 - The data is synthetic, since firms can't share real time entries. A firm would retrain on its own history.

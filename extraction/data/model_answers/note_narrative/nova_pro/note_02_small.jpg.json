@@ -1,0 +1,55 @@
+{
+ "model": "us.amazon.nova-pro-v1:0",
+ "entries": [
+  {
+   "lines": [
+    1,
+    2,
+    3
+   ],
+   "client": "",
+   "cmid": "5602.003",
+   "date": "10/27",
+   "hours_written": "1.6",
+   "narrative": "review Quanta disclosure schedules",
+   "unsure": "CMID fixed from 5602. 003 to 5602.003, date fixed from 10 127 to 10/27, hours fixed from 1-6 to 1.6"
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "across": 27,
+   "down": 45,
+   "conf": 87,
+   "number_conf": 87,
+   "text": "5602. 003 1-6"
+  },
+  {
+   "id": 2,
+   "across": 26,
+   "down": 52,
+   "conf": 100,
+   "number_conf": null,
+   "text": "review Quanta"
+  },
+  {
+   "id": 3,
+   "across": 26,
+   "down": 58,
+   "conf": 100,
+   "number_conf": null,
+   "text": "disclosure schedules"
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 778,
+  "outputTokens": 140,
+  "totalTokens": 4993,
+  "cacheReadInputTokens": 4075,
+  "cacheWriteInputTokens": 0
+ },
+ "latency_ms": 1697,
+ "prompt_hash": "b81c84d10e"
+}

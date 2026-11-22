@@ -1,0 +1,96 @@
+{
+ "model": "qwen.qwen3-vl-235b-a22b",
+ "prompt": "v2",
+ "mode": "tool",
+ "system_prompt": true,
+ "image_first": false,
+ "entries": [
+  {
+   "lines": [
+    1,
+    2,
+    3
+   ],
+   "client": "Orchard Lane",
+   "cmid": "",
+   "date": "10/26",
+   "hours_written": ".9",
+   "narrative": "review Vendor contract",
+   "unsure": "photo shows 10/26; the reader has 10126",
+   "hours": 0.9
+  },
+  {
+   "lines": [
+    4,
+    5,
+    6
+   ],
+   "client": "Solace Health",
+   "cmid": "",
+   "date": "10/27",
+   "hours_written": "1.1",
+   "narrative": "board minutes",
+   "unsure": "photo shows 10/27; the reader has 10/21",
+   "hours": 1.1
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "across": 34,
+   "down": 22,
+   "conf": 88,
+   "number_conf": 98,
+   "text": "Mon 10126"
+  },
+  {
+   "id": 2,
+   "across": 31,
+   "down": 25,
+   "conf": 74,
+   "number_conf": 92,
+   "text": "Orchard Lane .9"
+  },
+  {
+   "id": 3,
+   "across": 30,
+   "down": 29,
+   "conf": 98,
+   "number_conf": null,
+   "text": "review Vendor contract"
+  },
+  {
+   "id": 4,
+   "across": 33,
+   "down": 37,
+   "conf": 91,
+   "number_conf": 91,
+   "text": "Tues 10/21"
+  },
+  {
+   "id": 5,
+   "across": 33,
+   "down": 40,
+   "conf": 79,
+   "number_conf": 100,
+   "text": "Solace Health 1.1"
+  },
+  {
+   "id": 6,
+   "across": 31,
+   "down": 43,
+   "conf": 64,
+   "number_conf": null,
+   "text": "board minutes"
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 7183,
+  "outputTokens": 175,
+  "totalTokens": 7358
+ },
+ "latency_ms": 4620,
+ "prompt_hash": "2112cd0c6e"
+}

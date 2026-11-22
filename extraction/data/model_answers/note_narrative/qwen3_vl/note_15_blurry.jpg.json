@@ -1,0 +1,119 @@
+{
+ "model": "qwen.qwen3-vl-235b-a22b",
+ "prompt": "v2",
+ "mode": "tool",
+ "system_prompt": true,
+ "image_first": false,
+ "entries": [
+  {
+   "lines": [
+    1,
+    2,
+    3
+   ],
+   "client": "Cobalt Ridge",
+   "cmid": "5520.004",
+   "date": "",
+   "hours_written": "2.1",
+   "narrative": "capital call notice",
+   "unsure": "",
+   "hours": 2.1
+  },
+  {
+   "lines": [
+    1,
+    4
+   ],
+   "client": "Cobalt Ridge",
+   "cmid": "5520.004",
+   "date": "",
+   "hours_written": ".4",
+   "narrative": "call w/admin re wire",
+   "unsure": "arrow: same client and CMID as the entry above",
+   "hours": 0.4
+  },
+  {
+   "lines": [
+    5
+   ],
+   "client": "Aster & Vale",
+   "cmid": "",
+   "date": "",
+   "hours_written": "1.0",
+   "narrative": "10-Q comments",
+   "unsure": "1.010-Q read as 1.0 for 10-Q comments",
+   "hours": 1.0
+  },
+  {
+   "lines": [
+    6
+   ],
+   "client": "Aster & Vale",
+   "cmid": "",
+   "date": "",
+   "hours_written": ".9",
+   "narrative": "board minutes.",
+   "unsure": "same: same client as the entry above; photo shows \".9\" not \"# .9\"",
+   "hours": 0.9
+  }
+ ],
+ "lines": [
+  {
+   "id": 1,
+   "across": 19,
+   "down": 32,
+   "conf": 76,
+   "number_conf": 80,
+   "text": "Cobalt Ridge 5520.004"
+  },
+  {
+   "id": 2,
+   "across": 60,
+   "down": 37,
+   "conf": 100,
+   "number_conf": 100,
+   "text": "2.1"
+  },
+  {
+   "id": 3,
+   "across": 59,
+   "down": 41,
+   "conf": 68,
+   "number_conf": null,
+   "text": "capital call notice"
+  },
+  {
+   "id": 4,
+   "across": 22,
+   "down": 46,
+   "conf": 98,
+   "number_conf": 98,
+   "text": ".4 call w/admin re wire"
+  },
+  {
+   "id": 5,
+   "across": 16,
+   "down": 54,
+   "conf": 87,
+   "number_conf": 99,
+   "text": "Aster & vale 1.010-Q comments"
+  },
+  {
+   "id": 6,
+   "across": 15,
+   "down": 62,
+   "conf": 17,
+   "number_conf": 80,
+   "text": "same My \u0660\u0669 board minutes."
+  }
+ ],
+ "stop_reason": "tool_use",
+ "tries": 1,
+ "usage": {
+  "inputTokens": 7201,
+  "outputTokens": 306,
+  "totalTokens": 7507
+ },
+ "latency_ms": 6456,
+ "prompt_hash": "2112cd0c6e"
+}
