@@ -93,10 +93,10 @@ main section[tabindex="-1"]:focus,main section[tabindex="-1"]:focus-visible{outl
 /* Hero */
 .hero{position:relative;min-height:100svh;display:flex;align-items:stretch;overflow:hidden}
 .hero .wrap{position:relative;z-index:1;width:100%;display:flex;flex-direction:column;justify-content:flex-end;padding-top:140px;padding-bottom:64px}
-.h1{font:500 clamp(56px,8.6vw,128px)/.97 var(--font-display);letter-spacing:-.028em;display:flex;flex-direction:column}
+.h1{font:500 clamp(56px,min(8.6vw,13vh),128px)/.97 var(--font-display);letter-spacing:-.028em;display:flex;flex-direction:column}
 .h1 .l1{display:flex;align-items:flex-end;flex-wrap:wrap;gap:0 .2em}
-.h1 .l2{padding-left:22%}
-.h1 .l3{align-self:flex-end}
+.h1 .l2{padding-left:var(--l2,22%)}
+.h1 .l3{align-self:flex-end}   /* line 1 starts at the left edge, line 2 is centered, line 3 ends at the right edge */
 .hero-mark{position:relative;flex:none;width:.66em;height:.73em;margin-bottom:.1em}
 .hero-mark svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
 .gauge{overflow:visible}
@@ -124,8 +124,10 @@ main section[tabindex="-1"]:focus,main section[tabindex="-1"]:focus-visible{outl
 @keyframes fade-in{from{opacity:0}to{opacity:1}}
 .ann{align-self:flex-end;max-width:220px;margin:0 0 .35em .4em;padding-top:12px;border-top:1px solid var(--tenth-outline);font:400 13px/20px var(--font-ui);letter-spacing:0;color:var(--color-text-muted)}
 .hero-foot{display:flex;flex-wrap:wrap;gap:24px 48px;align-items:flex-end;justify-content:space-between;margin-top:56px}
-.hero-intro{max-width:460px;display:flex;flex-direction:column;gap:20px}
+.hero-intro{max-width:640px;display:flex;flex-direction:column;gap:20px}
 .hero-cta{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.hero.laid .hero-foot{flex-direction:column;align-items:flex-start;gap:28px}   /* the button sits under the subtitle */
+.hero.laid .hero-cta{flex-direction:row;align-items:center;gap:20px}   /* button and its note side by side, so the block stays short */
 .hero-glow{position:absolute;inset:0;pointer-events:none;overflow:hidden}
 .hero{cursor:default}
 .hero-glow span{position:absolute;border-radius:50%;will-change:transform}
@@ -211,6 +213,7 @@ main section[tabindex="-1"]:focus,main section[tabindex="-1"]:focus-visible{outl
 .nar.flag{background:var(--tenth-gold-tint)}
 .row .mid .nar.flag{align-self:flex-start}
 .nar .add{color:inherit}
+.story .nar .add{white-space:nowrap;overflow-x:clip;overflow-y:visible;vertical-align:top}   /* opens from 0 width in step iv, so the words after it slide over */
 .blank{font-style:italic;padding:0 4px;background:var(--tenth-gold-tint);color:var(--tenth-gold-text);border-bottom:1.5px dotted var(--tenth-gold-text);border-radius:3px 3px 0 0}
 .nar.flag .blank{background:#EFE0B9}
 .swap .sa{display:none}
@@ -243,6 +246,11 @@ main section[tabindex="-1"]:focus,main section[tabindex="-1"]:focus-visible{outl
 .intro{position:relative}
 .intro > .hero{position:sticky;top:0;z-index:0}
 .intro > .hero .wrap{padding-bottom:calc(18vh + 24px)}
+/* .hero.laid (set by layoutHero): the headline is centered between the nav and the mound's peak, the subtitle sits
+   right under it, and both move up together only if the subtitle would run into the mound */
+.intro > .hero.laid .wrap{padding:0}
+.hero.laid .h1{position:absolute;left:var(--gutter);right:var(--gutter);top:var(--h1-top)}
+.hero.laid .hero-foot{position:absolute;left:var(--gutter);right:var(--gutter);top:var(--foot-top);margin:0}
 .mission{position:relative;z-index:2;text-align:center;margin-top:-18vh}
 .mission .mound{display:block;width:100%;height:18vh;margin-bottom:-1px}
 .mission .mound path{fill:#D8D4E8}
@@ -425,7 +433,7 @@ main section[tabindex="-1"]:focus,main section[tabindex="-1"]:focus-visible{outl
 .foot-links a{font:500 14px/20px var(--font-ui);color:var(--tenth-ink);text-decoration:none;background:linear-gradient(currentColor,currentColor) left bottom/0 1px no-repeat;padding-bottom:2px;transition:background-size .4s var(--ease-out)}
 .foot-links a:hover{background-size:100% 1px}
 .foot-links a.is-placeholder{outline:none;color:var(--color-text-muted);background-image:linear-gradient(90deg,currentColor 50%,transparent 0);background-size:6px 1px;background-repeat:repeat-x}
-.foot-fine{margin-top:24px;padding-top:20px;background:linear-gradient(var(--tenth-row),var(--tenth-row)) content-box top / 100% 1px no-repeat}
+.foot-fine{margin-top:12px}
 .foot-fine p{font-size:13px;line-height:20px;color:var(--color-text-muted)}
 .foot .fi{width:14px;height:14px;flex:none;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 .foot-links a{display:inline-flex;align-items:center;gap:6px}
@@ -525,7 +533,8 @@ kbd.ik{font:600 13px/18px var(--font-ui);border-radius:4px;padding:0 6px;border:
 .pp{display:block}
 .pp + .pp{margin-top:10px}
 .lede .pp + .pp{margin-top:6px}
-.faq details p{max-width:580px}
+.lede .lede-big{font:500 24px/32px var(--font-display);color:var(--tenth-ink);margin-bottom:6px}
+.faq details p{max-width:740px}   /* the same right edge as the "Why is it called Tenth?" answer */
 .faq details p.why > .ptxt{display:block}
 .beat{max-width:440px}
 .try-text .hint{font-size:14px;line-height:22px;color:var(--color-text-muted);margin-top:-4px}
@@ -563,11 +572,11 @@ kbd.ik{font:600 13px/18px var(--font-ui);border-radius:4px;padding:0 6px;border:
       </h1>
       <div class="hero-foot">
         <div class="hero-intro">
-          <p class="lede"><span class="pp">For lawyers and the people who keep their time.</span><span class="pp">Drop in a messy week. Answer a few quick questions. Get clean entries on the right client and matter.</span></p>
-          <div class="hero-cta">
-            <a class="btn btn-lg btn-solid" data-link="demo" href="#">Try the demo <svg viewBox="0 0 24 24" aria-hidden="true" class="go"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 12H20M14 18L20 12L14 6"/></svg></a>
-            <span class="cap">Sample notes built in. Nothing to install.</span>
-          </div>
+          <p class="lede"><span class="pp">For lawyers and the legal assistants who keep their time.</span><span class="pp">Late, vague notes cost firms the hours they never bill, and cost their people the hours spent cleaning them up. Tenth gives both back.</span></p>
+        </div>
+        <div class="hero-cta">
+          <a class="btn btn-lg btn-solid" data-link="demo" href="#">Try the demo <svg viewBox="0 0 24 24" aria-hidden="true" class="go"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 12H20M14 18L20 12L14 6"/></svg></a>
+          <span class="cap">Sample notes built in. Nothing to install.</span>
         </div>
       </div>
     </div>
@@ -638,9 +647,9 @@ kbd.ik{font:600 13px/18px var(--font-ui);border-radius:4px;padding:0 6px;border:
       <div class="try-text">
         <p class="eyebrow">Try it</p>
         <h2 class="h2 split-me" id="try-title">It would rather ask than guess.</h2>
-        <p class="muted"><span class="pp">When Tenth isn&rsquo;t sure, it asks. Never a silent guess.</span><span class="pp">Here are three entries from the week above, on the same card as the app.</span></p>
-        <p class="hint">Go ahead, try it! Press <kbd class="ik">Enter</kbd> or click Looks right, or poke at the links under each note.</p>
-        <p class="proof"><i></i><span>And when it doesn&rsquo;t ask? It&rsquo;s right about 97 times in 100.<br><span class="cap">Tested on entries it had never seen, from a fictional firm we built.</span></span></p>
+        <p class="muted">When Tenth isn&rsquo;t sure, it asks. Try three entries from the week above.</p>
+        <p class="hint">Press <kbd class="ik">Enter</kbd> or click Looks right.</p>
+        <p class="proof"><i></i><span>When it doesn&rsquo;t ask, it&rsquo;s right 97 times in 100.<br><span class="cap">On entries it had never seen.</span></span></p>
       </div>
       <div class="try-stage">
         <div class="qcard" id="qcard" aria-live="polite" tabindex="-1">
@@ -1081,6 +1090,37 @@ const LINKS = {
   }
 
   /* Hero intro: short, so the message and button are usable almost at once */
+  const layoutHero = () => {
+    const hero = document.querySelector('.intro > .hero'), h1 = hero.querySelector('.h1'), foot = hero.querySelector('.hero-foot');
+    const mound = document.querySelector('.mission .mound'), path = document.getElementById('moundPath');
+    hero.classList.remove('laid');
+    if (innerWidth <= 720 || innerHeight <= 560 || !mound || !path) return;
+    hero.classList.add('laid');
+    const top0 = hero.getBoundingClientRect().top, m = mound.getBoundingClientRect();
+    const navBottom = document.querySelector('.nav-bar').getBoundingClientRect().bottom - top0;
+    const moundY = (x) => {   /* the top of the mound at page x, from its path (viewBox 100 by 40, stretched) */
+      let best = 40, gap = Infinity;
+      for (let i = 0, n = path.getTotalLength(); i <= 200; i++) {
+        const pt = path.getPointAtLength((n * i) / 200), d = Math.abs(m.left + (pt.x / 100) * m.width - x);
+        if (pt.y < 40 && d < gap) { gap = d; best = pt.y; }
+      }
+      return m.top - top0 + (best / 40) * m.height;
+    };
+    const GAP = 72;   /* space between the headline and the subtitle */
+    const peak = moundY(m.left + m.width / 2), h1H = h1.offsetHeight, footH = foot.offsetHeight;
+    let h1Top = (navBottom + peak) / 2 - h1H / 2;
+    let floor = Infinity;   /* the highest point of the mound under the subtitle and the button */
+    [...foot.children].forEach((el) => { const r = el.getBoundingClientRect();
+      for (let x = r.left; x <= r.right; x += 20) floor = Math.min(floor, moundY(x)); });
+    const over = h1Top + h1H + GAP + footH - (floor - 16);
+    if (over > 0) h1Top = Math.max(navBottom + 16, h1Top - over);
+    hero.style.setProperty('--h1-top', h1Top + 'px');
+    hero.style.setProperty('--foot-top', h1Top + h1H + GAP + 'px');
+  };
+  const placeHero = () => { layoutHero(); };
+  placeHero();
+  addEventListener('resize', placeHero);
+  document.fonts && document.fonts.ready.then(placeHero);
   const heroLines = document.querySelectorAll('.h1 .ln');
   const intro = gsap.timeline({ defaults: { ease: 'expo.out' } });
   intro.from(heroLines, { yPercent: 40, opacity: 0, duration: 1.1, stagger: 0.1 })
@@ -1133,9 +1173,20 @@ const LINKS = {
     gsap.set(rows, { autoAlpha: 0, y: 24 });
     gsap.set(pills, { scale: 0 });
     gsap.set('.xchip', { display: 'none' });
+    const grow = [...rows].filter((r) => r.querySelector('.swap, .add, .xchip'));   /* rows that get longer in step iv */
+    const measure = () => grow.forEach((r) => {   /* each row's height before and after step iv, so the space can open smoothly */
+      const shown = (sel, on) => r.querySelectorAll(sel).forEach((el) => { el.style.display = on; });
+      r.style.height = ''; r._h0 = r.offsetHeight;
+      shown('.swap .sa', 'none'); shown('.swap .sb', 'inline'); shown('.add', 'inline-block'); shown('.xchip', 'inline-flex');
+      r.querySelectorAll('.add').forEach((a) => { a.style.width = ''; a._w = a.offsetWidth; });
+      r._h1 = r.offsetHeight;
+      shown('.swap .sa', 'inline'); shown('.swap .sb, .add, .xchip', 'none');
+    });
+    measure();
+    ScrollTrigger.addEventListener('refreshInit', () => { gsap.set(grow, { clearProps: 'height' }); gsap.set(adds, { clearProps: 'width' }); measure(); });
     const steps = story.querySelectorAll('.story-steps span');
     let at = [];
-    const tl = gsap.timeline({ defaults: { ease: 'power2.inOut' }, scrollTrigger: { trigger: story, start: 'top top', end: '+=3600', pin: '.story-pin', scrub: 0.8, refreshPriority: 1,
+    const tl = gsap.timeline({ defaults: { ease: 'power2.inOut' }, scrollTrigger: { trigger: story, start: 'top top', end: '+=3600', pin: '.story-pin', scrub: 0.8, refreshPriority: 1, invalidateOnRefresh: true,
       onUpdate: (s) => { const k = at.filter((x) => s.progress >= x).length; steps.forEach((el, n) => el.classList.toggle('on', n === k)); } } });
     tl.to({}, { duration: .4 })
       .to('.b1', { autoAlpha: 0, y: -24, duration: .5 }, 'read')
@@ -1151,17 +1202,21 @@ const LINKS = {
       .to({}, { duration: .5 })
       .to('.b3', { autoAlpha: 0, y: -24, duration: .5 }, 'check')
       .to('.b4', { autoAlpha: 1, y: 0, duration: .5 }, 'check+=.3')
-      .set('.swap .sa', { display: 'none' }, 'check+=.4')
-      .set('.swap .sb', { display: 'inline' }, 'check+=.4')
-      .fromTo('.swap .sb', { opacity: 0 }, { opacity: 1, duration: .3, immediateRender: false }, 'check+=.4')
-      .set(adds, { display: 'inline' }, 'check+=.5')
-      .fromTo(adds, { opacity: 0 }, { opacity: 1, duration: .5, stagger: .14, immediateRender: false }, 'check+=.5')
-      .to(nars, { backgroundColor: 'rgba(245,236,214,1)', duration: .5, stagger: .14 }, 'check+=.5')
-      .to('.swap-pill', { backgroundColor: '#F5ECD6', duration: .3 }, 'check+=.7')
-      .to('.swap-pill .pa', { opacity: 0, duration: .3, stagger: .08 }, 'check+=.7')
-      .to('.swap-pill .pb', { opacity: 1, duration: .3, stagger: .08 }, 'check+=.8')
-      .set('.xchip', { display: 'inline-flex' }, 'check+=.8')
-      .fromTo('.xchip', { opacity: 0, y: -4 }, { opacity: 1, y: 0, duration: .4, immediateRender: false }, 'check+=.8')
+      .to('.swap .sa', { opacity: 0, duration: .25, ease: 'power1.in' }, 'check+=.3')             /* fade out, then make room, then fade in */
+      .fromTo(grow, { height: (i, r) => r._h0, overflow: 'hidden' }, { height: (i, r) => r._h1, duration: .6, ease: 'power2.inOut', immediateRender: false }, 'check+=.5')
+      .set(grow, { height: 'auto', overflow: 'visible' }, 'check+=1.1')
+      .set('.swap .sa', { display: 'none' }, 'check+=.55')
+      .set('.swap .sb', { display: 'inline', opacity: 0 }, 'check+=.55')
+      .set(adds, { display: 'inline-block', opacity: 0, width: 0 }, 'check+=.5')
+      .to(adds, { width: (i, a) => a._w, duration: .6, ease: 'power2.inOut' }, 'check+=.5')   /* the words after it slide over */
+      .to('.swap .sb', { opacity: 1, duration: .45, ease: 'power1.out' }, 'check+=.65')
+      .to(adds, { opacity: 1, duration: .5, ease: 'power1.out' }, 'check+=.9')
+      .to(nars, { backgroundColor: 'rgba(245,236,214,1)', duration: .6, stagger: .14 }, 'check+=.7')
+      .to('.swap-pill', { backgroundColor: '#F5ECD6', duration: .5 }, 'check+=.8')
+      .to('.swap-pill .pa', { opacity: 0, duration: .35, stagger: .08 }, 'check+=.8')
+      .to('.swap-pill .pb', { opacity: 1, duration: .45, stagger: .08 }, 'check+=1')
+      .set('.xchip', { display: 'inline-flex', opacity: 0, scale: .9 }, 'check+=1')
+      .to('.xchip', { opacity: 1, scale: 1, duration: .5, ease: 'power2.out' }, 'check+=1.05')
       .to({}, { duration: .5 });
     at = ['read', 'match', 'check'].map((l) => (tl.labels[l] + .25) / tl.duration());
     steps.forEach((el, n) => { el.onclick = () => {   /* the i to iv marker jumps to that part of the story */
@@ -1223,5 +1278,10 @@ const LINKS = {
   window.addEventListener('pagehide', () => { gsap.ticker.remove(raf); lenis.destroy(); mm.revert(); ScrollTrigger.killAll(); });
 })();
 </script>
+<!-- Vercel Web Analytics -->
+<script>
+  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+</script>
+<script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>
