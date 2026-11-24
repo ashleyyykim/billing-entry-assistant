@@ -253,6 +253,7 @@ main section[tabindex="-1"]:focus,main section[tabindex="-1"]:focus-visible{outl
 .hero.laid .hero-foot{position:absolute;left:var(--gutter);right:var(--gutter);top:var(--foot-top);margin:0}
 .mission{position:relative;z-index:2;text-align:center;margin-top:-18vh}
 .mission .mound{display:block;width:100%;height:18vh;margin-bottom:-1px}
+.mission{pointer-events:none}.mission .spread{pointer-events:auto}   /* the hill rises over the hero: its empty box must not swallow the pointer on Try the demo */
 .mission .mound path{fill:#D8D4E8}
 .mission .spread{background:linear-gradient(#D8D4E8 0,#A9A3C6 8vh,#6E6892 18vh,#3A3750 28vh,#2C2A36 35vh,#2C2A36 calc(100% - 36vh),#3A3750 calc(100% - 29vh),#6E6892 calc(100% - 21vh),#A9A3C6 calc(100% - 13vh),#D8D4E8 calc(100% - 6vh),var(--color-bg) 100%);padding:40vh 0 calc(var(--section) + 28vh);color:var(--tenth-paper)}   /* evening to ink, then back to morning paper (about 1.2 screens in all; it was nearly 2) */
 .pull{margin:0 auto;max-width:1000px}
