@@ -23,6 +23,7 @@ phase2_model/data/outputs/*
 # Photos and voice memos
 *.[jJ][pP][gG]
 *.[jJ][pP][eE][gG]
+!matching/frontend/landing/team/*.jpg
 *.[hH][eE][iI][cCfF]
 *.[mM]4[aA]
 *.mp3

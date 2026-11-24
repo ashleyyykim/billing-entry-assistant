@@ -18,6 +18,7 @@
    you go). Right, one question in EB Garamond, one reason line, Yes and No. No table, panels or filters until the end,
    when the finished entries appear as a single time sheet to look over and export. Left-aligned; hours right-aligned. */
 :root {
+  --t-fast: .15s; --t-base: .34s; --t-slow: .5s;   /* the app's three speeds: hover and press, a view changing, something arriving */
   color-scheme: light;
   --ease: cubic-bezier(.2,.7,.2,1);
   --icon-check: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 8.5l3.2 3.2L13 4.8'/%3E%3C/svg%3E");
@@ -61,7 +62,7 @@ h1:focus-visible { box-shadow: none; }
 /* ---- buttons ---- */
 .btn { border: 1px solid var(--color-outline); background: var(--tenth-surface); color: var(--tenth-ink); border-radius: var(--radius-control);
   min-height: 40px; padding: 10px 16px; font: 700 14px/20px var(--font-ui); display: inline-flex; align-items: center; justify-content: center; gap: 8px; cursor: pointer; white-space: nowrap;
-  transition: background .15s var(--ease), border-color .15s var(--ease), transform .12s var(--ease); }
+  transition: background var(--t-fast) var(--ease), border-color var(--t-fast) var(--ease), transform var(--t-fast) var(--ease); }
 .btn:hover { background: var(--tenth-surface-alt); border-color: var(--tenth-hover); }
 .btn:active { transform: translateY(1px); }
 .btn.solid { background: var(--tenth-ink); color: #fff; border-color: var(--tenth-ink); }
@@ -92,7 +93,7 @@ kbd { display: inline-block; min-width: 22px; text-align: center; font: 600 12px
 .empty .lede { margin: 0 0 16px; font: 400 22px/28px var(--font-display); max-width: 24em; }
 .empty .body { margin: 0; max-width: 34em; }
 .drop { border: 1px solid var(--tenth-line); box-shadow: var(--shadow-rest); border-radius: var(--radius-drop); background: rgba(255,255,255,.8); padding: 56px 24px; min-height: 340px; text-align: center; cursor: pointer;
-  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; transition: background .15s; }
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; transition: background var(--t-fast); }
 .drop:hover, .drop.over { background: var(--tenth-dusk-wash); }
 .drop strong { font: 600 20px/28px var(--font-ui); }
 .drop .helper { margin: 0 0 16px; font-size: 14px; line-height: 20px; color: var(--color-text-muted); }
@@ -406,7 +407,7 @@ dialog.wide .srcwell > .card, dialog.wide .viewstack, dialog.wide .viewstack > .
 body.has-panel { --panel-w: min(46vw, 640px); }
 body.has-panel.wide-panel { --panel-w: min(54vw, 820px); }
 .panel { position: fixed; top: 0; right: 0; bottom: 0; width: var(--panel-w); z-index: 30; display: flex; flex-direction: column; background: var(--tenth-white);
-  border-left: 1px solid var(--color-control-border); box-shadow: -28px 0 48px -36px rgba(55, 51, 68, .45); animation: panelin .26s var(--ease) both; }
+  border-left: 1px solid var(--color-control-border); box-shadow: -28px 0 48px -36px rgba(55, 51, 68, .45); animation: panelin var(--t-base) var(--ease) both; }
 @keyframes panelin { from { transform: translateX(32px); opacity: 0; } }
 .panel-head { display: flex; align-items: center; gap: 12px; padding: 14px 20px; border-bottom: 1px solid var(--tenth-line); }
 .panel-head .srcname { flex: 1; }
@@ -428,7 +429,7 @@ body.has-panel .app { margin-right: var(--panel-w); margin-left: 0; max-width: n
 .samples p { margin: 0; font-size: 14px; line-height: 20px; }
 .chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
 .chip { border: 1.5px solid var(--color-control-border); background: var(--tenth-surface); color: var(--tenth-ink); border-radius: 999px; padding: 6px 14px; min-height: 36px;
-  font: 600 14px/20px var(--font-ui); cursor: pointer; display: inline-flex; align-items: center; gap: 8px; transition: background .15s, border-color .15s; }
+  font: 600 14px/20px var(--font-ui); cursor: pointer; display: inline-flex; align-items: center; gap: 8px; transition: background var(--t-fast), border-color var(--t-fast); }
 .chip[class*="k-"]::before { content: ""; flex: none; width: 16px; height: 16px; background: var(--tenth-dusk); -webkit-mask: var(--icon) center / contain no-repeat; mask: var(--icon) center / contain no-repeat; }
 .chip:hover { background: var(--tenth-surface-alt); border-color: var(--tenth-ink); }
 .chip.all { background: var(--tenth-ink); border-color: var(--tenth-ink); color: #fff; }
@@ -446,7 +447,7 @@ body.has-panel .app { margin-right: var(--panel-w); margin-left: 0; max-width: n
 .stage-line .t { color: var(--tenth-ink); }
 .stage-line .e { color: var(--color-text-muted); font-variant-numeric: tabular-nums; }
 .fun { display: flex; align-items: baseline; gap: 6px; }
-.fun.swap #funText { animation: funIn .5s var(--ease) both; }
+.fun.swap #funText { animation: funIn var(--t-slow) var(--ease) both; }
 @keyframes funIn { from { opacity: 0; transform: translateY(8px); } }
 .dots { display: inline-flex; gap: 3px; transform: translateY(-2px); }
 .dots i { width: 5px; height: 5px; border-radius: 50%; background: var(--tenth-dusk); animation: blink 1.2s ease-in-out infinite; }
@@ -467,7 +468,7 @@ body.has-panel .app { margin-right: var(--panel-w); margin-left: 0; max-width: n
 .sect + .sect .sect-h { border-top: 1px solid var(--tenth-line); }
 .sect-h:hover { background: var(--tenth-surface); }
 .sect-h .n { color: var(--color-text-muted); font-weight: 400; font-variant-numeric: tabular-nums; }
-.chev, .iconbtn.tog::before { flex: none; width: 7px; height: 7px; border-right: 2px solid currentColor; border-bottom: 2px solid currentColor; transform: rotate(45deg) translate(-2px, -2px); transition: transform .15s; }
+.chev, .iconbtn.tog::before { flex: none; width: 7px; height: 7px; border-right: 2px solid currentColor; border-bottom: 2px solid currentColor; transform: rotate(45deg) translate(-2px, -2px); transition: transform var(--t-fast); }
 .sect-h[aria-expanded="false"] .chev { transform: rotate(-45deg); }
 .iconbtn.tog::before { background: none; -webkit-mask: none; mask: none; content: ""; }
 .iconbtn.tog[aria-expanded="true"]::before { transform: rotate(-135deg) translate(-2px, -2px); }
@@ -509,7 +510,7 @@ body.has-panel .app { margin-right: var(--panel-w); margin-left: 0; max-width: n
 .upright .pill { padding: 2px 10px; }
 .prog { display: flex; align-items: center; gap: 12px; font-size: 14px; line-height: 20px; font-variant-numeric: tabular-nums; }
 .bar2 { width: 120px; height: 6px; border-radius: 999px; background: var(--tenth-line); overflow: hidden; }
-.bar2 i { display: block; height: 100%; background: var(--tenth-ink); border-radius: 999px; transition: width .3s var(--ease); }
+.bar2 i { display: block; height: 100%; background: var(--tenth-ink); border-radius: 999px; transition: width var(--t-base) var(--ease); }
 .upfiles { background: var(--tenth-surface); border: 1px solid var(--tenth-line); border-radius: 8px; }
 .upfile { display: flex; align-items: center; gap: 12px; padding: 8px 20px; border-top: 1px solid var(--tenth-line); }
 .upfile:first-child { border-top: 0; }
@@ -542,13 +543,13 @@ body.has-panel .app { margin-right: var(--panel-w); margin-left: 0; max-width: n
 .newtk input { flex: 1 1 200px; min-width: 0; }
 .count { white-space: nowrap; font-size: 14px; line-height: 20px; color: var(--color-text-muted); font-variant-numeric: tabular-nums; }
 .progress { height: 4px; border-radius: 999px; background: var(--tenth-line); overflow: hidden; }
-.progress span { display: block; height: 100%; width: 0; background: var(--tenth-dusk); border-radius: 999px; transition: width .45s var(--ease); }
+.progress span { display: block; height: 100%; width: 0; background: var(--tenth-dusk); border-radius: 999px; transition: width var(--t-base) var(--ease); }
 .ask { display: grid; grid-template-columns: minmax(0, 520px) minmax(0, 1fr); gap: clamp(32px, 6vw, 96px); align-items: start; padding: 12px 0 40px; }
 .note-col { display: grid; gap: 16px; justify-items: stretch; min-width: 0; }
 .note-wrap { display: grid; gap: 14px; }
-.note-wrap.enter .card, .note-wrap.enter .imgview, .note-wrap.enter .pdfview { animation: settle .45s var(--ease) both; }
+.note-wrap.enter .card, .note-wrap.enter .imgview, .note-wrap.enter .pdfview { animation: settle var(--t-base) var(--ease) both; }
 .q-col { display: grid; gap: 16px; align-content: start; max-width: 540px; min-width: 0; position: sticky; top: 16px; }
-.q-col.swap { animation: rise .28s var(--ease) both; }
+.q-col.swap { animation: rise var(--t-base) var(--ease) both; }
 .srcbar { display: flex; align-items: center; gap: 12px; min-width: 0; }
 .srcbar h2 { margin: 0; min-width: 0; overflow-wrap: anywhere; }
 .srcbar, .strip { min-height: 40px; }
@@ -649,7 +650,7 @@ details.samples summary .go { color: var(--tenth-ink); font-weight: 600; text-de
 .fgroup .ftog { flex: none; display: inline-grid; place-items: center; width: 24px; height: 24px; margin-left: -6px; border: 0; border-radius: 6px; background: transparent; color: var(--color-text-muted); cursor: pointer; }
 .fgroup .ftog:hover { background: rgba(91,86,126,.08); color: var(--tenth-ink); }
 .fgroup .ftog:focus-visible { outline: 2px solid var(--tenth-dusk); outline-offset: 1px; }
-.fgroup .ftog svg, .ftog-ico svg { transition: transform .2s var(--ease); }
+.fgroup .ftog svg, .ftog-ico svg { transition: transform var(--t-fast) var(--ease); }
 .fgroup .ftog[aria-expanded="false"] svg, .ftog-ico.shut svg { transform: rotate(-90deg); }
 .fgroup > b { cursor: pointer; }
 .cols { position: sticky; }   /* holds Collapse all */
@@ -701,10 +702,10 @@ details.samples summary .go { color: var(--tenth-ink); font-weight: 600; text-de
 .mopt b { font-weight: 600; font-size: 14px; line-height: 20px; overflow-wrap: anywhere; }
 .mopt span { font-size: 13px; line-height: 18px; color: var(--color-text-muted); overflow-wrap: anywhere; }
 .mopt:hover { background: var(--tenth-surface-alt); }
-.mopt.on { background: var(--tenth-dusk-wash); box-shadow: inset 3px 0 0 var(--tenth-dusk); }
+.mopt.on { background: var(--tenth-dusk-wash); }   /* the row the arrow keys are on: a soft wash, no bar */
 .mnone, .mmore { padding: 8px 12px; font-size: 13px; line-height: 18px; color: var(--color-text-muted); }
 .totop { position: fixed; right: 24px; bottom: 24px; z-index: 80; display: inline-flex; align-items: center; gap: 6px; padding: 8px 14px 8px 12px; border: 1px solid var(--tenth-line); border-radius: var(--radius-pill); background: var(--tenth-white); box-shadow: var(--shadow-rest); font: 600 13px/18px var(--font-ui); color: var(--tenth-ink); cursor: pointer;
-  opacity: 0; transform: translateY(8px); pointer-events: none; transition: opacity .2s var(--ease), transform .2s var(--ease), right .38s var(--ease); }
+  opacity: 0; transform: translateY(8px); pointer-events: none; transition: opacity var(--t-fast) var(--ease), transform var(--t-fast) var(--ease), right var(--t-base) var(--ease); }
 .totop.on { opacity: 1; transform: none; pointer-events: auto; }
 .totop:hover { background: var(--tenth-dusk-wash); }
 .totop:focus-visible { box-shadow: var(--focus-ring); }
@@ -715,10 +716,10 @@ body.ws-split .totop { right: calc(var(--ws-panel, 0px) + 24px); }   /* clear of
 /* ---- round 10: the question page shows the entry as it will be billed ---- */
 .q-col { max-width: 560px; }
 .q-head { margin: 0; font: 600 14px/20px var(--font-ui); color: var(--tenth-slate); font-variant-numeric: tabular-nums; }
-.q-block { display: grid; gap: 20px; animation: rise .28s var(--ease) both; }
+.q-block { display: grid; gap: 20px; animation: rise var(--t-base) var(--ease) both; }
 .ecard { display: grid; grid-template-columns: minmax(0, 7.5rem) minmax(0, 1fr) auto; grid-template-areas: "date tk tk" "matter matter hours" "narr narr narr"; gap: 18px 24px;
   padding: 18px 22px 20px; background: var(--tenth-white); border: 1px solid var(--tenth-line); border-radius: var(--radius-panel); box-shadow: 0 1px 1px rgba(55,51,68,.12); }
-.ecard.enter { animation: rise .3s var(--ease) both; }
+.ecard.enter { animation: rise var(--t-base) var(--ease) both; }
 .ecard.now-all { box-shadow: 0 0 0 2px var(--tenth-gold), 0 0 0 6px rgba(209,160,58,.2); }
 .f { display: grid; gap: 2px; align-content: start; min-width: 0; margin: -6px -8px; padding: 6px 8px; border-radius: 8px; }
 .f-date { grid-area: date; } .f-tk { grid-area: tk; } .f-matter { grid-area: matter; } .f-hours { grid-area: hours; text-align: right; } .f-narr { grid-area: narr; }
@@ -771,7 +772,7 @@ body.ws-split .totop { right: calc(var(--ws-panel, 0px) + 24px); }   /* clear of
 .f-edit { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; padding: 0; border: 0; border-radius: 8px; background: transparent; cursor: pointer; font: inherit; }
 .f-edit:hover { background: rgba(110, 101, 146, .07); }
 .f-edit:focus-visible { outline: 3px solid var(--tenth-dusk); outline-offset: 1px; }
-.f-edit::after { content: ""; position: absolute; top: 8px; right: 8px; width: 15px; height: 15px; background: var(--tenth-dusk); -webkit-mask: var(--icon-pencil) center / contain no-repeat; mask: var(--icon-pencil) center / contain no-repeat; opacity: 0; transition: opacity .12s; }
+.f-edit::after { content: ""; position: absolute; top: 8px; right: 8px; width: 15px; height: 15px; background: var(--tenth-dusk); -webkit-mask: var(--icon-pencil) center / contain no-repeat; mask: var(--icon-pencil) center / contain no-repeat; opacity: 0; transition: opacity var(--t-fast); }
 .f-edit:hover::after, .f-edit:focus-visible::after { opacity: .75; }
 .f.editing, .f.editing.now { background: var(--tenth-white); outline: 2px solid var(--tenth-dusk); box-shadow: 0 0 0 5px rgba(110, 101, 146, .16); z-index: 3; }
 .f.editing .f-lab { color: var(--tenth-dusk); }
@@ -819,9 +820,10 @@ body.ws-split .totop { right: calc(var(--ws-panel, 0px) + 24px); }   /* clear of
 .c-narr { position: relative; padding-right: 30px; cursor: text; border-radius: 4px; }
 .c-narr:hover { background: rgba(110, 101, 146, .06); }
 .c-narr.editing { padding-right: 0; background: none; }
-.c-narr .nedit { position: absolute; top: 0; right: 2px; width: 24px; height: 24px; padding: 0; border: 0; border-radius: 6px; background: none; cursor: pointer; opacity: 0; }
-.c-narr .nedit::before { content: ""; position: absolute; inset: 4px; background: var(--tenth-dusk); -webkit-mask: var(--icon-pencil) center / contain no-repeat; mask: var(--icon-pencil) center / contain no-repeat; }
-.row:hover .nedit, .nedit:focus-visible { opacity: .7; }
+.c-narr .nedit { position: absolute; top: -2px; right: 2px; width: 24px; height: 24px; padding: 0; border: 0; border-radius: 6px; background: none; cursor: pointer; opacity: 0; }
+.c-narr .nedit::before { content: ""; position: absolute; inset: 4px; background: currentColor; -webkit-mask: var(--icon-pen-fill) center / contain no-repeat; mask: var(--icon-pen-fill) center / contain no-repeat; }   /* the same solid pencil, color and size as the row's other icons */
+.c-narr .nedit { --icon-pen-fill: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='black' stroke='none' d='M10.2 2.4a1.6 1.6 0 0 1 2.2 0l1.2 1.2a1.6 1.6 0 0 1 0 2.2L6.4 13l-3.4.9a.5.5 0 0 1-.6-.6l.9-3.4z'/%3E%3C/svg%3E"); color: var(--tenth-slate); }
+.row:hover .nedit, .nedit:focus-visible { opacity: 1; }
 .c-narr .cell-edit { display: grid; gap: 4px; }
 .c-narr .cell-in { width: 100%; margin: 0; padding: 2px 8px; border: 1.5px solid var(--tenth-dusk); border-radius: 6px; background: var(--tenth-white); color: var(--color-text); font: inherit; line-height: inherit; min-width: 0; }
 .c-narr .card-ta { display: block; resize: vertical; min-height: 4.2em; }
@@ -852,7 +854,7 @@ body.ws-split .totop { right: calc(var(--ws-panel, 0px) + 24px); }   /* clear of
 /* the pencil sits after the label, so it never lands on a value */
 .f-edit::after { display: none; }
 .f-lab::after { content: ""; display: inline-block; width: 12px; height: 12px; margin-left: 6px; vertical-align: -1px; background: var(--tenth-dusk);
-  -webkit-mask: var(--icon-pencil) center / contain no-repeat; mask: var(--icon-pencil) center / contain no-repeat; opacity: 0; transition: opacity .12s; }
+  -webkit-mask: var(--icon-pencil) center / contain no-repeat; mask: var(--icon-pencil) center / contain no-repeat; opacity: 0; transition: opacity var(--t-fast); }
 .f:hover .f-lab::after, .f:has(.f-edit:focus-visible) .f-lab::after { opacity: .8; }
 .f.editing .f-lab::after { display: none; }
 @media (hover: none) { .f:not(.editing) .f-lab::after { opacity: .5; } }
@@ -945,7 +947,7 @@ details.samples summary { padding: 6px 0; }
 body.has-panel .app, body.has-panel.wide-panel .app { margin-left: auto; margin-right: auto; max-width: 1280px; }
 body.has-panel { --panel-w: min(42vw, 560px); }
 body.has-panel.wide-panel { --panel-w: min(54vw, 820px); }
-.panel { animation: panelfade .16s ease-out both; }
+.panel { animation: panelfade var(--t-fast) ease-out both; }
 @keyframes panelfade { from { opacity: 0; } }
 .panel-entry { background: var(--tenth-white); border: 1px solid var(--tenth-line); border-radius: var(--radius-panel); padding: 12px 16px; display: grid; gap: 4px; }
 .panel-entry p { margin: 0; }
@@ -961,14 +963,14 @@ body.has-panel.wide-panel { --panel-w: min(54vw, 820px); }
    chip that needs you is the same honey, Stage 1 or Stage 2: its label says which check it is. (Tried for Stage 2: paler
    honey, apricot, blue, an outline, a dashed edge.) The narrative a Stage 2 chip means isn't marked: pointing at the chip outlines it. */
 .row .c-status { position: relative; }
-.ws-chip-out { position: absolute; margin: 0; pointer-events: none; animation: ws-chip-out .34s var(--ease) both; }
-.ws-chip-in { animation: ws-chip-in .46s var(--ease) .14s both; }
+.ws-chip-out { position: absolute; margin: 0; pointer-events: none; animation: ws-chip-out var(--t-base) var(--ease) both; }
+.ws-chip-in { animation: ws-chip-in var(--t-base) var(--ease) .14s both; }
 @keyframes ws-chip-out { to { opacity: 0; transform: translateY(-6px) scale(.96); filter: blur(1.5px); } }
 @keyframes ws-chip-in { from { opacity: 0; transform: translateY(6px) scale(.96); filter: blur(1px); } to { opacity: 1; transform: none; filter: none; } }
 @media (prefers-reduced-motion: reduce) { .ws-chip-out { display: none; } .ws-chip-in { animation: none; } }
 .ws-more-chk { border: 0; background: none; padding: 2px 4px; margin: 0 0 0 6px; border-radius: 6px; font: 600 12px/16px var(--font-ui); color: var(--color-text-muted); cursor: pointer; }
 .ws-more-chk:hover { background: rgba(91,86,126,.08); color: var(--tenth-ink); }
-.row:has(.ws-more-chk:is(:hover, :focus-visible)) :is(.cb.fl, .m-pair.fl, .c-narr.fl .nt, .c-narr button.gap) { outline: 2px solid var(--tenth-dusk); outline-offset: 2px; border-radius: 5px; transition: outline-color .12s; }   /* "+2 more" points at everything else on the row that needs a look */
+.row:has(.ws-more-chk:is(:hover, :focus-visible)) :is(.cb.fl, .m-pair.fl, .c-narr.fl .nt, .c-narr button.gap) { outline: 2px solid var(--tenth-dusk); outline-offset: 2px; border-radius: 5px; transition: outline-color var(--t-fast); }   /* "+2 more" points at everything else on the row that needs a look */
 .ws-more-chk:focus-visible { outline: 2px solid var(--tenth-dusk); outline-offset: 1px; }
 .row .c-narr.fl.s2 .nt { background: none; }
 /* a value that needs a look is one box around all of it (number, client and matter name; the whole narrative), never a box per line */
@@ -1052,7 +1054,7 @@ details.samples[open] > :not(summary) { text-align: left; }
 body.has-panel.wide-panel { --panel-w: min(46vw, 680px); }
 .xl td.nw { white-space: nowrap; }
 /* round 20: the question comes first, a row opens the entry's page, no dropdown, no panel */
-.q-top { display: grid; gap: 12px; animation: rise .28s var(--ease) both; }
+.q-top { display: grid; gap: 12px; animation: rise var(--t-base) var(--ease) both; }
 .q-top .why-ask { min-height: 48px; }
 .row .who.need { display: block; width: fit-content; margin: 2px 0 0 -4px; font-size: 12px; line-height: 16px; }
 .c-act { grid-template-columns: 32px; }
@@ -1224,7 +1226,7 @@ body.has-panel.wide-panel { --panel-w: min(46vw, 680px); }
 .ecard, .ans, .sug, .ent { box-shadow: 0 1px 2px rgba(55, 51, 68, .06), 0 2px 8px rgba(55, 51, 68, .05); }
 .tab[aria-pressed="true"] { box-shadow: 0 1px 2px rgba(55, 51, 68, .12), 0 1px 4px rgba(55, 51, 68, .06); }
 /* every control answers a press */
-.chip, .tab, .zb, .iconbtn, .gl { transition: background .15s, border-color .15s, color .15s, transform .08s; }
+.chip, .tab, .zb, .iconbtn, .gl { transition: background var(--t-fast), border-color var(--t-fast), color var(--t-fast), transform var(--t-fast); }
 .chip:active, .tab:active, .zb:active:not(:disabled), .iconbtn:active, .gl:active { transform: translateY(1px); }
 .lnk:hover { text-decoration-thickness: 2px; }
 /* a box with a wrong value says so in its border, not only in the line under it */
@@ -1248,7 +1250,7 @@ body { background: radial-gradient(60% 40% at 0% 0%, var(--tenth-sun) 0%, rgba(2
 /* ================= one workspace (build 2026-11-19). Component classes are prefixed ws- so none can collide. ================= */
 /* 1. Reading in place: the heading with the mark turning over, rows streaming in, grey rows where the rest will land */
 .ws-reading { display: flex; align-items: center; gap: 20px; padding: 12px 0 8px; }
-.ws-reading.ws-rise1 { animation: ws-rise .7s var(--ease) both; }
+.ws-reading.ws-rise1 { animation: ws-rise var(--t-slow) var(--ease) both; }
 .ws-readmark { display: inline-flex; flex: none; }
 .ws-readmark svg { display: block; overflow: visible; }
 .ws-reading-t { display: grid; gap: 8px; min-width: 0; }
@@ -1271,7 +1273,7 @@ body { background: radial-gradient(60% 40% at 0% 0%, var(--tenth-sun) 0%, rgba(2
 @keyframes ws-stream { 0% { opacity: 0; transform: translateY(-22px) scale(.985); filter: blur(2px); background: var(--tenth-dusk-wash); } 45% { opacity: 1; filter: blur(0); } 100% { opacity: 1; transform: none; } }
 .ws-pulse { width: 7px; height: 7px; border-radius: 50%; background: var(--tenth-dusk); flex: none; animation: ws-pulse 1.6s ease-in-out infinite; }
 @keyframes ws-pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: .35; transform: scale(.8); } }
-.ws-readpill { display: inline-flex; align-items: center; gap: 8px; font: 500 13px/16px var(--font-ui); color: var(--color-text); background: rgba(255,255,255,.75); border: 1px solid var(--tenth-line); border-radius: 999px; padding: 8px 12px; animation: ws-chip .5s var(--ease) both; }
+.ws-readpill { display: inline-flex; align-items: center; gap: 8px; font: 500 13px/16px var(--font-ui); color: var(--color-text); background: rgba(255,255,255,.75); border: 1px solid var(--tenth-line); border-radius: 999px; padding: 8px 12px; animation: ws-chip var(--t-slow) var(--ease) both; }
 .ws-readpill[hidden] { display: none; }
 @keyframes ws-chip { from { opacity: 0; transform: scale(.9); } to { opacity: 1; transform: none; } }
 @media (prefers-reduced-motion: reduce) {
@@ -1281,7 +1283,7 @@ body { background: radial-gradient(60% 40% at 0% 0%, var(--tenth-sun) 0%, rgba(2
 
 /* 2. The question card over the list */
 .bar { position: relative; z-index: 25; }
-#stage { transition: filter .45s var(--ease), opacity .45s var(--ease), transform .45s var(--ease); }
+#stage { transition: filter var(--t-base) var(--ease), opacity var(--t-base) var(--ease), transform var(--t-base) var(--ease); }
 #stage.ws-dim { filter: blur(2px); opacity: .4; transform: scale(.988); pointer-events: none; user-select: none; }
 .ws-scrim { position: fixed; inset: 0; z-index: 18; background: transparent; }
 .ws-focus.ask { position: fixed; z-index: 20; left: 0; right: 0; margin: 0 auto; top: max(88px, calc(50vh - 380px)); width: min(1040px, calc(100% - 64px)); max-height: calc(100vh - max(88px, calc(50vh - 380px)) - 24px);
@@ -1289,26 +1291,26 @@ body { background: radial-gradient(60% 40% at 0% 0%, var(--tenth-sun) 0%, rgba(2
   display: flex; flex-wrap: wrap; gap: 40px; align-items: flex-start; grid-template-columns: none; }
 .ws-focus .q-col { position: static; flex: 1 1 480px; min-width: 0; max-width: none; display: flex; flex-direction: column; gap: 20px; }
 .ws-focus .note-col { flex: 0 1 400px; min-width: 0; display: flex; flex-direction: column; gap: 12px; }
-.ws-in-up { animation: ws-up .45s var(--ease) both; }
-.ws-in-f { animation: ws-inf .45s var(--ease) both; }
-.ws-in-b { animation: ws-inb .45s var(--ease) both; }
-.ws-in-s .q-col { animation: ws-ins .32s var(--ease) both; }   /* the same entry: what changed eases in where it is */
+.ws-in-up { animation: ws-up var(--t-base) var(--ease) both; }
+.ws-in-f > .q-col, .ws-in-f > .note-col { animation: ws-inf var(--t-base) var(--ease) both; }   /* the card stays solid; only what is in it moves, so the list behind never shows through */
+.ws-in-b > .q-col, .ws-in-b > .note-col { animation: ws-inb var(--t-base) var(--ease) both; }
+.ws-in-s .q-col { animation: ws-ins var(--t-base) var(--ease) both; }   /* the same entry: what changed eases in where it is */
 @keyframes ws-ins { from { opacity: .35; transform: translateY(4px); } to { opacity: 1; transform: none; } }
 /* one card per entry: each check is noted under the part of the entry it is about, with a number that turns into a tick on Looks right */
-.ws-focus .ws-actwrap { position: sticky; bottom: 0; z-index: 2; padding: 20px 0 16px; margin-top: -20px; background: linear-gradient(to bottom, rgba(255,255,255,0), #fff 18px); box-shadow: 0 32px 0 #fff; }   /* a tall card scrolls under its answer, which stays in view; the white below covers the card's own padding */
+.ws-focus .ws-actwrap { position: sticky; bottom: 0; z-index: 2; padding: 20px 0 16px; margin-top: -20px; background: linear-gradient(to bottom, rgba(253,252,250,0), var(--tenth-surface) 18px); box-shadow: 0 32px 0 var(--tenth-surface); }   /* the card's own warm white: pure white showed as a lighter band behind the buttons */   /* a tall card scrolls under its answer, which stays in view; the white below covers the card's own padding */
 #qCol.ws-accepting { pointer-events: none; }
-.ws-focus .f { transition: background .3s var(--ease), box-shadow .3s var(--ease); }
-.ws-focus .ecard { transition: box-shadow .4s var(--ease); }
+.ws-focus .f { transition: background var(--t-base) var(--ease), box-shadow var(--t-base) var(--ease); }
+.ws-focus .ecard { transition: box-shadow var(--t-base) var(--ease); }
 .ws-focus .ecard.ws-settled { box-shadow: 0 0 0 1.5px rgba(110,143,120,.45), 0 0 0 6px rgba(110,143,120,.1); }   /* settled: the entry as it will be billed, with a soft green edge */
 .ws-focus .ecard.ws-settled .f.now { background: transparent; box-shadow: none; animation: none; }
 .ws-focus .ecard.ws-settled .ghost { font-style: normal; }
-.ecard .fillnew { transition: background .3s var(--ease); }
+.ecard .fillnew { transition: background var(--t-base) var(--ease); }
 .ws-focus .ecard.ws-settled .fillnew { background: transparent; }
 .ws-focus .ecard.again .f.now { animation: none; }   /* redrawn in place: no ring again */
 .f-note.done .fn-text b { color: var(--tenth-green-text); font-weight: 600; }
 .f-note.passed .fn-text b { color: var(--color-text-muted); font-weight: 500; }
-.f-note.passed .ck-n { background: var(--tenth-surface-alt); box-shadow: inset 0 0 0 1.5px rgba(91,86,126,.25); }
-.f-note.fresh { animation: ws-chip-in .42s var(--ease) both; }
+.f-note.passed .ck-n { background: transparent; box-shadow: inset 0 0 0 1.5px rgba(91,86,126,.35); }
+.f-note.fresh { animation: ws-chip-in var(--t-base) var(--ease) both; }
 .ws-twin { margin: -4px 0 0; padding: 14px 18px; border-radius: 16px; background: var(--tenth-surface-alt); display: grid; gap: 4px; }
 .ws-twin p { margin: 0; }
 .tw-head { font: 400 13px/20px var(--font-ui); color: var(--color-text-muted); }
@@ -1321,20 +1323,21 @@ body { background: radial-gradient(60% 40% at 0% 0%, var(--tenth-sun) 0%, rgba(2
 .f-note .fn-text { flex: 1 1 180px; min-width: 0; padding-top: 0; }   /* on a narrow card the buttons go under the words instead of squeezing them */
 .f-note .fn-acts { margin-left: auto; }
 .f-note b { font-weight: 600; color: var(--tenth-ink); }
-.f-note .ck-n { flex: none; width: 16px; height: 16px; margin: 2px 2px 0 0; border-radius: 50%; background: var(--tenth-white); box-shadow: inset 0 0 0 1.5px rgba(91,86,126,.45); position: relative; transition: background .25s var(--ease), box-shadow .25s; }
+.f-note .ck-n { flex: none; width: 16px; height: 16px; margin: 2px 2px 0 0; border-radius: 50%; background: var(--tenth-white); box-shadow: inset 0 0 0 1.5px rgba(91,86,126,.45); position: relative; transition: background var(--t-base) var(--ease), box-shadow var(--t-base); }
 .fn-acts { display: flex; gap: 2px; pointer-events: auto; }
 .fn-btn { border: 0; background: none; padding: 0 8px; border-radius: 6px; font: 600 13px/20px var(--font-ui); color: var(--tenth-dusk); cursor: pointer; white-space: nowrap; }
 .fn-btn:hover { background: rgba(91,86,126,.1); }
 .fn-btn:focus-visible { outline: 2px solid var(--tenth-dusk); outline-offset: 1px; }
 .fn-btn[aria-pressed="true"] { background: var(--tenth-dusk-wash); }
-.f-note.ok .ck-n { background: var(--tenth-green-tint); box-shadow: none; color: transparent; }
-.f-note.ok .ck-n::after { content: ""; position: absolute; inset: 0; margin: auto; width: 11px; height: 11px; background: var(--tenth-green-text); -webkit-mask: var(--icon-check-s) center / contain no-repeat; mask: var(--icon-check-s) center / contain no-repeat; animation: ck-pop .3s var(--ease) both; }
+.f-note:not(.ok):not(.passed) .ck-n { background: radial-gradient(circle, var(--tenth-gold, #C9A24E) 0 4px, transparent 4.6px); box-shadow: none; }   /* open: a small amber dot, where Tenth is unsure */
+.f-note.ok .ck-n { background: transparent; box-shadow: none; color: transparent; }   /* answered: a plain check, no badge, no heavier than the dot it replaces */
+.f-note.ok .ck-n::after { content: ""; position: absolute; inset: 0; margin: auto; width: 15px; height: 15px; background: var(--tenth-green-text); -webkit-mask: var(--icon-tick) center / contain no-repeat; mask: var(--icon-tick) center / contain no-repeat; animation: ck-pop var(--t-base) var(--ease) both; }
 @keyframes ck-pop { from { transform: scale(.4); opacity: 0; } 60% { transform: scale(1.15); opacity: 1; } to { transform: none; } }
 .ecard .fillnew { font-weight: inherit; background: var(--tenth-gold-tint); border-radius: 4px; padding: 0 3px; }
 @media (prefers-reduced-motion: reduce) { .ws-in-s .q-col, .f-note.ok .ck-n::after { animation: none; } }
 @keyframes ws-up { from { opacity: 0; transform: translateY(16px) scale(.985); } to { opacity: 1; transform: none; } }
-@keyframes ws-inf { from { opacity: 0; transform: translateX(40px); } to { opacity: 1; transform: none; } }
-@keyframes ws-inb { from { opacity: 0; transform: translateX(-40px); } to { opacity: 1; transform: none; } }
+@keyframes ws-inf { from { opacity: 0; transform: translateX(24px); } to { opacity: 1; transform: none; } }
+@keyframes ws-inb { from { opacity: 0; transform: translateX(-24px); } to { opacity: 1; transform: none; } }
 .ws-focus .q-top { display: flex; flex-direction: column; gap: 8px; }
 .ws-count { margin: 0; min-height: 0; font: 600 13px/20px var(--font-ui); color: var(--color-text-muted); font-variant-numeric: tabular-nums; display: block; }
 .ws-count span { font-weight: 400; }
@@ -1352,7 +1355,7 @@ body { background: radial-gradient(60% 40% at 0% 0%, var(--tenth-sun) 0%, rgba(2
 .ws-focus .f-matter .m-client { font-weight: 600; }
 .ws-focus .f-matter .m-sub { font: 400 14px/20px var(--font-ui); color: var(--color-text-muted); }
 .ws-focus .f-narr .f-val { font: 400 16px/24px var(--font-ui); color: var(--tenth-ink); }
-.ws-focus .f.now { background: var(--tenth-dusk-wash); box-shadow: 0 0 0 1.5px rgba(91,86,126,.42); outline: 0; animation: ws-ring .7s var(--ease) .3s both; }
+.ws-focus .f.now { background: var(--tenth-dusk-wash); box-shadow: 0 0 0 1.5px rgba(91,86,126,.42); outline: 0; animation: ws-ring var(--t-slow) var(--ease) .3s both; }
 .ws-focus .f.now .f-lab { color: var(--color-text-muted); }
 @keyframes ws-ring { from { box-shadow: 0 0 0 8px rgba(91,86,126,0); } to { box-shadow: 0 0 0 1.5px rgba(91,86,126,.42); } }
 .ws-focus .ecard.now-all { box-shadow: 0 0 0 1.5px rgba(91,86,126,.42), var(--shadow-rest); }
@@ -1369,8 +1372,11 @@ body { background: radial-gradient(60% 40% at 0% 0%, var(--tenth-sun) 0%, rgba(2
 .ws-focus .type { display: grid; gap: 4px; margin: 0; }
 .ws-focus .big-in { min-height: 44px; font-size: 16px; padding: 0 16px; border: 1px solid var(--tenth-edge); border-radius: 12px; }
 .ws-focus .big-in:focus { outline: none; border-color: var(--tenth-dusk); box-shadow: 0 0 0 4px rgba(91,86,126,.16); }
-.ws-keys { margin: 0; font-size: 12px; line-height: 16px; color: var(--color-text-muted); display: flex; gap: 6px; align-items: center; flex-wrap: wrap; opacity: 0; transition: opacity .25s; }
-.ws-keys.two { flex-direction: column; align-items: flex-start; gap: 10px; }
+.ws-keys { margin: 0; font-size: 12px; line-height: 16px; color: var(--color-text-muted); display: flex; gap: 6px; align-items: center; flex-wrap: wrap; opacity: 0; transition: opacity var(--t-base); }
+.ws-keys.two { flex-direction: row; align-items: center; }   /* one quiet line, every card */
+.ws-keys.two .k-row { display: contents; }
+.ws-actwrap #yesBtn:focus-visible { box-shadow: 0 0 0 3px rgba(91,86,126,.28); }   /* one soft ring: the button already has the focus on every card, a heavy double ring read as an alarm */
+.f-note .fn-text .fn-does { display: block; margin-top: 2px; font-weight: 400; color: var(--color-text-muted); }
 .ws-keys, .ws-keys .k-row { column-gap: 20px; row-gap: 8px; }
 .ws-keys .k-row { display: flex; align-items: center; flex-wrap: wrap; }
 .ws-keys .k-grp { display: inline-flex; align-items: center; gap: 7px; white-space: nowrap; }
@@ -1381,7 +1387,7 @@ body { background: radial-gradient(60% 40% at 0% 0%, var(--tenth-sun) 0%, rgba(2
 .ws-more { position: relative; margin-left: auto; }
 .ws-morebtn { color: var(--color-text-muted); font-weight: 500 !important; gap: 8px; display: inline-flex; align-items: center; }
 .ws-menu { position: absolute; right: 0; top: calc(100% + 8px); width: 280px; padding: 6px; z-index: 30; border-radius: 12px; background: rgba(255,255,255,.86); -webkit-backdrop-filter: blur(16px) saturate(1.2); backdrop-filter: blur(16px) saturate(1.2);
-  box-shadow: inset 0 1px 0 #fff, 0 0 0 1px rgba(91,86,126,.14), var(--shadow-float); animation: ws-pop .22s var(--ease) both; display: flex; flex-direction: column; }
+  box-shadow: inset 0 1px 0 #fff, 0 0 0 1px rgba(91,86,126,.14), var(--shadow-float); animation: ws-pop var(--t-base) var(--ease) both; display: flex; flex-direction: column; }
 .ws-menu.up { top: auto; bottom: calc(100% + 8px); }
 .ws-menu[hidden] { display: none; }
 @keyframes ws-pop { from { opacity: 0; transform: translateY(-4px) scale(.98); } to { opacity: 1; transform: none; } }
@@ -1392,10 +1398,10 @@ body { background: radial-gradient(60% 40% at 0% 0%, var(--tenth-sun) 0%, rgba(2
 .ws-mi.danger:hover, .ws-mi.danger:focus-visible { background: var(--tenth-copper-tint); color: var(--tenth-copper); }
 /* the note beside the question */
 .ws-focus .nbox { display: flex; flex-direction: column; gap: 12px; }
-.ws-focus .nbox.enter { animation: ws-rise .45s var(--ease) both; }
+.ws-focus .nbox.enter { animation: ws-rise var(--t-base) var(--ease) both; }
 .ws-focus .nframe { height: 360px; max-height: none; border-radius: 12px; background: #FFFEFB; }
 .ws-focus .nframe.k-sheet, .ws-focus .nframe.k-doc { height: auto; min-height: 120px; max-height: 360px; }
-.ws-focus .nzoom { opacity: 0; transition: opacity .2s; }
+.ws-focus .nzoom { opacity: 0; transition: opacity var(--t-fast); }
 .ws-focus .nbox:hover .nzoom, .ws-focus .nbox:focus-within .nzoom { opacity: 1; }
 /* the row the card is about, and the flash when the card is lowered */
 .row.ws-cur { background: var(--tenth-dusk-wash); box-shadow: inset 0 0 0 1.5px rgba(91,86,126,.35); }
@@ -1403,7 +1409,7 @@ body { background: radial-gradient(60% 40% at 0% 0%, var(--tenth-sun) 0%, rgba(2
 @keyframes ws-flash { 0% { background: var(--tenth-dusk-wash); box-shadow: inset 0 0 0 1.5px rgba(91,86,126,.35); } 100% { background: transparent; box-shadow: inset 0 0 0 1.5px rgba(91,86,126,0); } }
 @media (prefers-reduced-motion: reduce) {
   #stage { transition: none; }
-  .ws-in-up, .ws-in-f, .ws-in-b, .ws-menu, .row.ws-flash, .ws-focus .f.now, .ws-focus .nbox.enter { animation: none; }
+  .ws-in-up, .ws-in-f > *, .ws-in-b > *, .ws-menu, .row.ws-flash, .ws-focus .f.now, .ws-focus .nbox.enter { animation: none; }
 }
 
 /* 3. Editing in the card, and typing a new entry */
@@ -1441,12 +1447,12 @@ body { background: radial-gradient(60% 40% at 0% 0%, var(--tenth-sun) 0%, rgba(2
 @keyframes ws-sav1 { 0% { opacity: 0; transform: translateY(4px); } 12%, 70% { opacity: 1; transform: none; } 100% { opacity: 0; } }
 .ws-chipwrap { position: relative; }
 .ws-chipwrap[hidden] { display: none; }
-.ws-chip { font: 500 13px/16px var(--font-ui); color: var(--tenth-ink); background: rgba(255,255,255,.75); border: 1px solid var(--tenth-line); border-radius: 999px; padding: 8px 12px; display: inline-flex; gap: 8px; align-items: center; cursor: pointer; white-space: nowrap; transition: border-color .15s, background .15s; }
+.ws-chip { font: 500 13px/16px var(--font-ui); color: var(--tenth-ink); background: rgba(255,255,255,.75); border: 1px solid var(--tenth-line); border-radius: 999px; padding: 8px 12px; display: inline-flex; gap: 8px; align-items: center; cursor: pointer; white-space: nowrap; transition: border-color var(--t-fast), background var(--t-fast); }
 .ws-chip:hover { border-color: var(--tenth-hover); background: var(--tenth-white); }
 .ws-chip b { font-weight: 600; margin-right: -4px; }
 .ws-chip svg { color: var(--color-text-muted); flex: none; }
 .ws-files { position: absolute; right: 0; top: calc(100% + 8px); width: 340px; padding: 6px; z-index: 40; border-radius: 12px; background: rgba(255,255,255,.86); -webkit-backdrop-filter: blur(16px) saturate(1.2); backdrop-filter: blur(16px) saturate(1.2);
-  box-shadow: inset 0 1px 0 #fff, 0 0 0 1px rgba(91,86,126,.14), var(--shadow-float); animation: ws-pop .22s var(--ease) both; display: flex; flex-direction: column; }
+  box-shadow: inset 0 1px 0 #fff, 0 0 0 1px rgba(91,86,126,.14), var(--shadow-float); animation: ws-pop var(--t-base) var(--ease) both; display: flex; flex-direction: column; }
 .ws-files[hidden] { display: none; }
 .ws-fitem { display: flex; align-items: center; gap: 10px; padding: 8px 8px 8px 12px; border-radius: 8px; font: 500 14px/20px var(--font-ui); }
 .ws-fitem .ficon { flex: none; }
@@ -1471,14 +1477,21 @@ body { background: radial-gradient(60% 40% at 0% 0%, var(--tenth-sun) 0%, rgba(2
 .btn.ws-plus:hover { background: rgba(91,86,126,.08); }
 .ws-lh-r .ws-more { margin-left: 0; }
 .ws-days { display: flex; align-items: flex-end; gap: 4px; max-width: 100%; overflow-x: auto; scrollbar-width: none; }   /* never wider than the list: beside the file panel it scrolls instead of pushing the list under the panel */
-.ws-day { display: flex; flex-direction: column; align-items: center; gap: 4px; width: 28px; padding: 4px 0; border: 0; background: transparent; border-radius: 8px; cursor: pointer; font: 500 12px/16px var(--font-ui); color: var(--color-text-muted); transition: background .15s; }
+.ws-day { display: flex; flex-direction: column; align-items: center; gap: 4px; width: 28px; padding: 4px 0; border: 0; background: transparent; border-radius: 8px; cursor: pointer; font: 500 12px/16px var(--font-ui); color: var(--color-text-muted); transition: background var(--t-fast); }
 .ws-day:hover { background: rgba(91,86,126,.08); }
 .ws-dbar { display: flex; align-items: flex-end; height: 28px; }
-.ws-dbar span { display: block; width: 12px; border-radius: 3px 3px 0 0; background: var(--tenth-hover); transition: height .6s var(--ease), background .2s; }
+.ws-dbar span { display: block; width: 12px; border-radius: 3px 3px 0 0; background: var(--tenth-hover); transition: height var(--t-base) var(--ease), background var(--t-fast); }
 .ws-day.flag .ws-dbar span { background: var(--tenth-gold); }
 .ws-day.on { background: var(--tenth-dusk-wash); color: var(--tenth-ink); }
 .ws-day.on .ws-dbar span { background: var(--tenth-dusk); }
 .ws-day.wkgap { margin-left: 12px; }
+.ws-day.zero { cursor: default; }   /* a week the picked person has no time in: no bar and a faint date, so the strip keeps everyone's span and doesn't change length */
+.ws-day.zero .ws-dl { opacity: .4; }
+.wk-num { display: inline-block; font-variant-numeric: tabular-nums; white-space: nowrap; }   /* a number that counts when you switch people; its width eases with it (morphHead) */
+#wkHeadRev, .wk-barrev { gap: .28em; }   /* "Review" and its number sit a word-space apart, as in plain text */
+.ws-dcap { font: 600 11px/14px var(--font-ui); letter-spacing: .04em; text-transform: uppercase; color: var(--color-text-muted); margin-bottom: 4px; }
+.ws-day.zero:hover { background: transparent; }
+.ws-day .ws-dl { transition: opacity var(--t-base) var(--ease); }
 .ws-days.weeks .ws-day { width: auto; min-width: 44px; padding: 4px 4px; }
 .ws-daysw { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
 .ws-dcap { padding-left: 4px; font: 600 11px/14px var(--font-ui); letter-spacing: .06em; text-transform: uppercase; color: var(--color-text-muted); }
@@ -1490,7 +1503,7 @@ body { background: radial-gradient(60% 40% at 0% 0%, var(--tenth-sun) 0%, rgba(2
 .ws-tools .tab .n { font-variant-numeric: tabular-nums; font-weight: 500; opacity: .8; }
 .ws-search { position: relative; display: inline-flex; align-items: center; }
 .ws-search svg { position: absolute; left: 12px; pointer-events: none; color: var(--color-text-muted); }
-.ws-search input { width: 280px; height: 40px; box-sizing: border-box; border-radius: 12px; border: 1px solid var(--tenth-edge); background: var(--tenth-white); padding: 0 12px 0 36px; font: 500 14px/20px var(--font-ui); color: var(--tenth-ink); }
+.ws-search input { width: 280px; height: 44px; box-sizing: border-box; border-radius: 12px; border: 1px solid var(--tenth-edge); background: var(--tenth-white); padding: 0 12px 0 36px; font: 500 14px/20px var(--font-ui); color: var(--tenth-ink); }
 .ws-search input:focus { outline: none; border-color: var(--tenth-dusk); box-shadow: 0 0 0 4px rgba(91,86,126,.16); }
 .ws-bulk { display: flex; flex-direction: column; gap: 4px; background: var(--tenth-white); border: 1px solid var(--tenth-line); border-radius: 16px; box-shadow: var(--shadow-rest); padding: 8px 12px 8px 16px; }
 .ws-bgrp + .ws-bgrp { border-top: 1px solid var(--tenth-row); }
@@ -1508,11 +1521,11 @@ body { background: radial-gradient(60% 40% at 0% 0%, var(--tenth-sun) 0%, rgba(2
 .ws-nomatch { display: flex; align-items: center; gap: 12px; padding: 16px 20px; color: var(--color-text-muted); font-size: 14px; }
 /* 6. The file beside the list: a solid panel with a hairline edge, compact rows beside it */
 .ws-panel { position: fixed; right: 0; bottom: 0; top: 80px; z-index: 22; display: flex; flex-direction: column; background: var(--tenth-white); border-left: 1px solid var(--tenth-line); box-shadow: -16px 0 40px rgba(91,86,126,.06); box-sizing: border-box; }
-.ws-panel.ws-pin { animation: ws-slide .38s var(--ease) both; }
+.ws-panel.ws-pin { animation: ws-slide var(--t-base) var(--ease) both; }
 @keyframes ws-slide { from { transform: translateX(100%); } to { transform: none; } }
-.ws-panel.ws-out { animation: ws-slide-out .38s var(--ease) both; pointer-events: none; }
+.ws-panel.ws-out { animation: ws-slide-out var(--t-base) var(--ease) both; pointer-events: none; }
 @keyframes ws-slide-out { to { transform: translateX(100%); } }
-.ws-grip { position: absolute; left: -7px; top: 50%; width: 12px; height: 56px; margin-top: -28px; border-radius: 6px; background: var(--tenth-white); box-shadow: 0 0 0 1px var(--tenth-line), 0 2px 6px rgba(44,42,54,.08); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; cursor: col-resize; transition: background .15s, box-shadow .15s; touch-action: none; }
+.ws-grip { position: absolute; left: -7px; top: 50%; width: 12px; height: 56px; margin-top: -28px; border-radius: 6px; background: var(--tenth-white); box-shadow: 0 0 0 1px var(--tenth-line), 0 2px 6px rgba(44,42,54,.08); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; cursor: col-resize; transition: background var(--t-fast), box-shadow var(--t-fast); touch-action: none; }
 .ws-grip i { width: 2.4px; height: 2.4px; border-radius: 50%; background: #8D88AE; }
 .ws-grip:hover, .ws-resizing .ws-grip { background: var(--tenth-dusk-wash); box-shadow: 0 0 0 1px rgba(91,86,126,.4), 0 2px 6px rgba(44,42,54,.1); }
 .ws-resizing { user-select: none; }
@@ -1520,15 +1533,15 @@ body { background: radial-gradient(60% 40% at 0% 0%, var(--tenth-sun) 0%, rgba(2
 .ws-ftabs { display: flex; gap: 4px; padding: 4px; border-radius: 12px; background: var(--tenth-surface-alt); min-width: 0; overflow-x: auto; position: relative; scrollbar-width: none; }
 .ws-ftabs::-webkit-scrollbar { display: none; }
 .ws-ftabs.dragging, .ws-ftabs.dragging .ws-ftab, .ws-days.dragging, .ws-days.dragging .ws-day { cursor: grabbing; user-select: none; }   /* many files scroll sideways rather than shrink to a letter each */
-.ws-ftab { font: 600 13px/16px var(--font-ui); border: 0; background: transparent; color: var(--color-text-muted); border-radius: 8px; padding: 6px 12px; cursor: pointer; white-space: nowrap; flex: none; max-width: 160px; overflow: hidden; text-overflow: ellipsis; position: relative; z-index: 1; transition: color .25s; }
+.ws-ftab { font: 600 13px/16px var(--font-ui); border: 0; background: transparent; color: var(--color-text-muted); border-radius: 8px; padding: 6px 12px; cursor: pointer; white-space: nowrap; flex: none; max-width: 160px; overflow: hidden; text-overflow: ellipsis; position: relative; z-index: 1; transition: color var(--t-base); }
 .ws-ftab.on { color: var(--tenth-ink); }   /* the white is the sliding .ws-thumb */
-.ws-pbody.ws-swap { animation: ws-swap .32s var(--ease) both; }   /* another file eases in */
+.ws-pbody.ws-swap { animation: ws-swap var(--t-base) var(--ease) both; }   /* another file eases in */
 @media (prefers-reduced-motion: reduce) { .ws-pbody.ws-swap { animation: none; } }
 .btn.ws-pclose { width: 36px; min-width: 36px; height: 36px; min-height: 36px; padding: 0; display: grid; place-items: center; flex: none; }
 .ws-pbody { flex: 1; overflow: auto; padding: 16px; }
 .ws-phint { margin: 0 0 12px; font-size: 12px; line-height: 16px; color: var(--color-text-muted); }
 .ws-fnote { border-radius: 12px; background: #FFFEFB; border: 1px solid var(--tenth-line); padding: 8px; overflow-x: auto; }
-.ws-ln { display: block; width: 100%; box-sizing: border-box; text-align: left; border: 0; background: transparent; border-radius: 8px; padding: 0 12px; cursor: pointer; color: #3A3846; font: 400 13px/24px var(--font-ui); white-space: pre-wrap; overflow-wrap: anywhere; transition: background .2s, box-shadow .2s; }
+.ws-ln { display: block; width: 100%; box-sizing: border-box; text-align: left; border: 0; background: transparent; border-radius: 8px; padding: 0 12px; cursor: pointer; color: #3A3846; font: 400 13px/24px var(--font-ui); white-space: pre-wrap; overflow-wrap: anywhere; transition: background var(--t-fast), box-shadow var(--t-fast); }
 .ws-ln:hover { background: rgba(91,86,126,.06); }
 .ws-ln.free { cursor: default; opacity: .55; }
 .ws-ln.free:hover { background: transparent; }
@@ -1547,6 +1560,8 @@ body { background: radial-gradient(60% 40% at 0% 0%, var(--tenth-sun) 0%, rgba(2
 .ws-tbl th:first-child, .ws-tbl td:first-child { padding-left: 12px; }
 .ws-tbl .h { text-align: right; font-variant-numeric: tabular-nums; }
 .ws-tbl .nw { white-space: nowrap; }
+.ws-tbl .nw.sp { white-space: normal; }   /* beside the list, a name or client breaks at its spaces when the file is tight, so the narrative keeps its room and nothing scrolls sideways. Dates and numbers stay whole */
+.ws-tbl th, .ws-tbl td { padding-left: 4px; padding-right: 4px; }
 .ws-tr { cursor: pointer; }
 .ws-tr:hover td, .ws-tr.hv td { background: rgba(91,86,126,.07); }
 .ws-tr.picked td { background: var(--tenth-dusk-wash); }
@@ -1573,7 +1588,7 @@ body.ws-split .row > .c-act { grid-template-columns: 32px; row-gap: 4px; }
 
 /* 7. The matter picker, a solid popover under the Matter row */
 .ws-pwrap { position: relative; z-index: 6; padding: 4px 0 8px; }   /* in the flow, so the card grows to hold it and nothing is cut off */
-.ws-picker { position: relative; display: flex; flex-direction: column; gap: 12px; padding: 16px; border-radius: 16px; background: var(--tenth-white); box-shadow: 0 0 0 1px rgba(91,86,126,.14), var(--shadow-float); animation: ws-pop .22s var(--ease) both; }
+.ws-picker { position: relative; display: flex; flex-direction: column; gap: 12px; padding: 16px; border-radius: 16px; background: var(--tenth-white); box-shadow: 0 0 0 1px rgba(91,86,126,.14), var(--shadow-float); animation: ws-pop var(--t-base) var(--ease) both; }
 .ws-search.wide { display: flex; width: 100%; }
 .ws-search.wide input { width: 100%; }
 .ws-plist { display: flex; flex-direction: column; gap: 2px; max-height: 236px; overflow: auto; border-radius: 12px; background: var(--tenth-white); box-shadow: 0 0 0 1px var(--tenth-line); padding: 6px; }
@@ -1591,7 +1606,7 @@ body.ws-split .row > .c-act { grid-template-columns: 32px; row-gap: 4px; }
 @media (prefers-reduced-motion: reduce) { .ws-picker { animation: none; } }
 
 /* 8. The resume card on Start, a file Tenth couldn't read, toasts with an action */
-.ws-resume { display: flex; align-items: center; gap: 16px; padding: 16px 16px 16px 20px; background: var(--tenth-white); border: 1px solid var(--tenth-line); border-radius: 16px; box-shadow: var(--shadow-rest); margin-bottom: 24px; animation: ws-rise .7s var(--ease) both; }
+.ws-resume { display: flex; align-items: center; gap: 16px; padding: 16px 16px 16px 20px; background: var(--tenth-white); border: 1px solid var(--tenth-line); border-radius: 16px; box-shadow: var(--shadow-rest); margin-bottom: 24px; animation: ws-rise var(--t-slow) var(--ease) both; }
 .ws-ricon { width: 40px; height: 40px; border-radius: 12px; background: var(--tenth-dusk-wash); color: var(--tenth-dusk); display: grid; place-items: center; flex: none; }
 .ws-rtext { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
 .ws-rtext strong { font-size: 16px; line-height: 24px; font-weight: 600; }
@@ -1621,13 +1636,13 @@ body.ws-split .row > .c-act { grid-template-columns: 32px; row-gap: 4px; }
 /* 10. The finish moment, Released, and the phone */
 .ws-lhead { position: relative; isolation: isolate; }
 .ws-fin-tick { display: inline-grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; background: var(--tenth-green); color: #fff; flex: none; }
-.ws-finnow .ws-fin-tick { animation: ws-fint .5s var(--ease) both; }
+.ws-finnow .ws-fin-tick { animation: ws-fint var(--t-slow) var(--ease) both; }
 .ws-fin-glow { position: absolute; left: -80px; top: -60px; width: 720px; height: 320px; z-index: -1; opacity: 0; background: radial-gradient(closest-side, rgba(214,232,220,.9), rgba(214,232,220,0)); pointer-events: none; }
 .ws-finnow .ws-fin-glow { animation: ws-fing 2.4s ease both; }
 @keyframes ws-fint { 0% { transform: scale(.3); opacity: 0; } 60% { transform: scale(1.12); opacity: 1; } 100% { transform: none; } }
 @keyframes ws-fing { 0% { opacity: 0; } 20% { opacity: 1; } 100% { opacity: 0; } }
 .ws-lh-r .btn.solid, .ws-focus .btn.solid, .dlg .btn.solid { position: relative; overflow: hidden; }
-.ws-lh-r .btn.solid::after, .ws-focus .btn.solid::after, .dlg .btn.solid::after { content: ""; position: absolute; inset: 0; background: linear-gradient(105deg, transparent 30%, rgba(255,255,255,.3) 50%, transparent 70%); transform: translateX(-120%); transition: transform .7s var(--ease); pointer-events: none; }
+.ws-lh-r .btn.solid::after, .ws-focus .btn.solid::after, .dlg .btn.solid::after { content: ""; position: absolute; inset: 0; background: linear-gradient(105deg, transparent 30%, rgba(255,255,255,.3) 50%, transparent 70%); transform: translateX(-120%); transition: transform var(--t-slow) var(--ease); pointer-events: none; }
 .ws-lh-r .btn.solid:hover::after, .ws-focus .btn.solid:hover::after, .dlg .btn.solid:hover::after { transform: translateX(120%); }
 .btn.solid.ws-go::after { animation: ws-gosheen 1.2s var(--ease) .5s 1 both; }
 @keyframes ws-gosheen { from { transform: translateX(-120%); } to { transform: translateX(120%); } }
@@ -1635,7 +1650,7 @@ body.ws-split .row > .c-act { grid-template-columns: 32px; row-gap: 4px; }
 .ws-rel h2 { margin: 4px 0 0; font: 500 36px/1.1 var(--font-display); letter-spacing: -.01em; }
 .ws-relline { margin: 0; font: italic 400 18px/26px var(--font-display); color: var(--color-text-muted); }
 .ws-tickw { position: relative; width: 56px; height: 56px; }
-.ws-tick { position: absolute; inset: 4px; display: grid; place-items: center; border-radius: 50%; background: var(--tenth-green); color: #fff; animation: ws-fint .5s var(--ease) both; }
+.ws-tick { position: absolute; inset: 4px; display: grid; place-items: center; border-radius: 50%; background: var(--tenth-green); color: #fff; animation: ws-fint var(--t-slow) var(--ease) both; }
 .ws-ring { position: absolute; inset: 0; border-radius: 50%; border: 1.5px solid rgba(110,143,120,.7); animation: ws-ripple 1.6s var(--ease) .1s both; }
 .ws-ring.r2 { animation-delay: .45s; }
 @keyframes ws-ripple { 0% { transform: scale(.6); opacity: 0; } 20% { opacity: 1; } 100% { transform: scale(2.4); opacity: 0; } }
@@ -1672,7 +1687,7 @@ body.ws-split .row > .c-act { grid-template-columns: 32px; row-gap: 4px; }
   .ws-lh-r .btn:not(.ws-plus) { flex: 1; }
   .upbar.ws-tools { flex-direction: column; align-items: stretch; }
   .ws-tools .tabs { overflow-x: auto; max-width: 100%; }
-  .ws-search, .ws-search input { width: 100%; }
+  .ws-search, .ws-search input, .wk-tr { width: 100%; }
   .ws-fchip { min-width: 0; width: 100%; }
   .ws-focus.ask { top: 84px; }
   .ws-lh-r .ws-menu { top: auto; bottom: calc(100% + 8px); }
@@ -1757,7 +1772,7 @@ dialog.ws-reldlg { width: min(560px, calc(100vw - 32px)); }
 }
 /* list rows: Review says what the arrow did; the file icon opens the file at that entry, for any kind of file */
 .finished { --cols: var(--w-stat) var(--w-when) minmax(220px, 1fr) minmax(0, 1.7fr) 64px 108px; }
-.row > .c-act { display: flex; justify-content: flex-end; align-items: flex-start; gap: 4px; grid-template-columns: none; }
+.row > .c-act { display: flex; justify-content: flex-end; align-items: flex-start; gap: 8px; grid-template-columns: none; }   /* side by side, a clear gap apart: the bin is never right under the file icon, where a slip would hit it */
 .ws-review { min-height: 32px; padding: 6px 10px; font: 600 13px/16px var(--font-ui); border-radius: 8px; }
 .row { outline: none; }
 .row:focus-visible { box-shadow: inset 0 0 0 2px var(--tenth-dusk); }
@@ -1772,15 +1787,15 @@ body.ws-split .row { cursor: default; }
 
 /* the filter tabs: one white highlight that slides between them */
 .ws-tools .tabs { position: relative; }
-.ws-thumb { position: absolute; top: 4px; bottom: 4px; left: 0; width: 0; border-radius: 8px; background: var(--tenth-white); box-shadow: 0 1px 3px rgba(44,42,54,.12), 0 0 0 1px rgba(91,86,126,.08); transition: transform .34s var(--ease), width .34s var(--ease); pointer-events: none; }
-.ws-tools .tab { position: relative; z-index: 1; transition: color .25s; }
+.ws-thumb { position: absolute; top: 4px; bottom: 4px; left: 0; width: 0; border-radius: 8px; background: var(--tenth-white); box-shadow: 0 1px 3px rgba(44,42,54,.12), 0 0 0 1px rgba(91,86,126,.08); transition: transform var(--t-base) var(--ease), width var(--t-base) var(--ease); pointer-events: none; }
+.ws-tools .tab { position: relative; z-index: 1; transition: color var(--t-base); }
 .ws-tools .tab[aria-pressed="true"] { background: transparent; box-shadow: none; }
-.fcards.ws-swap { animation: ws-swap .32s var(--ease) both; }
-@keyframes ws-swap { from { opacity: .35; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+.fcards.ws-swap, .ws-bulk.ws-swap, .wk-gonenote.ws-swap { animation: ws-swap var(--t-base) var(--ease) both; }
+@keyframes ws-swap { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
 @media (prefers-reduced-motion: reduce) { .ws-thumb { transition: none; } .fcards.ws-swap { animation: none; } }
 
 /* columns share the room: as the list narrows, every column and gap gives a little, not the narrative alone. Columns hold down to a 600px-wide list, beside the file or not */
-.finished { --cols: minmax(150px, .9fr) minmax(50px, .36fr) minmax(150px, 1.15fr) 56px minmax(170px, 3fr) 32px; }   /* status, date, matter, hours, narrative, file */
+.finished { --cols: minmax(150px, .9fr) minmax(50px, .36fr) minmax(150px, 1.15fr) 56px minmax(170px, 3fr) 72px; }   /* status, date, matter, hours, narrative, then Show in the file and the bin side by side */
 @container fin (min-width: 600px) {
   .cols { display: grid; grid-template-columns: var(--cols); column-gap: clamp(8px, 1.5cqi, 16px); padding-left: calc(clamp(12px, 2cqi, 24px) + 1px); padding-right: calc(clamp(12px, 2cqi, 24px) + 1px); }
   .cols > div, .cols > div:first-child, .cols > div:nth-child(4), .cols > div:nth-child(5) { padding-left: 0; }
@@ -1795,7 +1810,7 @@ body.ws-split .row { cursor: default; }
 .c-when > .cb { white-space: nowrap; }
 @container fin (max-width: 900px) { .c-status .pill { border-radius: 10px; } }
 /* an open row's chips are its way in: each opens the card at that question */
-.ws-chipbtn { border: 0; cursor: pointer; font: 700 13px/16px var(--font-ui); transition: background .15s, box-shadow .15s; }
+.ws-chipbtn { border: 0; cursor: pointer; font: 700 13px/16px var(--font-ui); transition: background var(--t-fast), box-shadow var(--t-fast); }
 .ws-chipbtn.warn:hover { background: color-mix(in srgb, var(--tenth-gold-tint) 70%, var(--tenth-gold) 30%); }
 .ws-chipbtn.neutral:hover { background: var(--tenth-line); }
 .ws-chipbtn:focus-visible { outline: 2px solid var(--tenth-dusk); outline-offset: 2px; }
@@ -1850,20 +1865,20 @@ body.ws-split .row { cursor: default; }
 .ws-pbody > .voicebar { padding: 0 0 12px; }
 /* the player: a round play button and the memo's own loudness as bars, in the voice icon's two violets. Click or drag the bars to move through it */
 .vplayer { display: flex; align-items: center; gap: 12px; max-width: 480px; padding: 6px 16px 6px 6px; border-radius: var(--radius-pill); background: var(--tenth-dusk-wash); }
-.vplay { flex: none; width: 34px; height: 34px; padding: 0; border: 0; border-radius: 50%; background: var(--tenth-dusk); color: #fff; cursor: pointer; display: grid; place-items: center; transition: background .15s, transform .08s;
+.vplay { flex: none; width: 34px; height: 34px; padding: 0; border: 0; border-radius: 50%; background: var(--tenth-dusk); color: #fff; cursor: pointer; display: grid; place-items: center; transition: background var(--t-fast), transform var(--t-fast);
   --vp-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M5.5 3.2v9.6l7.6-4.8z' fill='black' stroke='black' stroke-width='1.6' stroke-linejoin='round'/%3E%3C/svg%3E"); }
 .vplay::before { content: ""; width: 14px; height: 14px; background: currentColor; -webkit-mask: var(--vp-icon) center / contain no-repeat; mask: var(--vp-icon) center / contain no-repeat; }
 .playing .vplay { --vp-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect x='3.8' y='3' width='3' height='10' rx='1.2' fill='black'/%3E%3Crect x='9.2' y='3' width='3' height='10' rx='1.2' fill='black'/%3E%3C/svg%3E"); }
 .vplay:hover { background: #4B4670; }
 .vplay:active { transform: scale(.94); }
 .vwave { position: relative; flex: 1; min-width: 0; height: 28px; display: flex; align-items: center; justify-content: space-between; gap: 1px; padding: 0 6px; border-radius: 8px; overflow: hidden; }
-.vwave i { flex: 0 1 3px; min-width: 1px; height: 14%; border-radius: 2px; background: var(--tenth-dusk-lilac); transition: height .5s var(--ease), background .12s; }
+.vwave i { flex: 0 1 3px; min-width: 1px; height: 14%; border-radius: 2px; background: var(--tenth-dusk-lilac); transition: height var(--t-slow) var(--ease), background var(--t-fast); }
 .vwave i.on { background: var(--tenth-dusk); }
 .vseek { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; opacity: 0; cursor: pointer; }
 .vwave:has(.vseek:focus-visible) { box-shadow: var(--focus-ring); }
 .vtime { flex: none; font: 500 12px/16px var(--font-ui); color: var(--color-text-muted); font-variant-numeric: tabular-nums; }
 .voicecap { margin: 8px 0 0; font-size: 12px; line-height: 16px; color: var(--color-text-muted); }
-.vw { border-radius: 4px; cursor: pointer; transition: background .15s, box-shadow .15s; }   /* a word of the transcript: click to hear it */
+.vw { border-radius: 4px; cursor: pointer; transition: background var(--t-fast), box-shadow var(--t-fast); }   /* a word of the transcript: click to hear it */
 .vw:hover { background: rgba(91,86,126,.10); }
 .vw.still { cursor: inherit; } .vw.still:hover { background: none; }
 .vpart { background: var(--tenth-dusk-wash); color: var(--tenth-ink); border-radius: 3px; -webkit-box-decoration-break: clone; box-decoration-break: clone; }   /* the entry in question: its passage of the memo, one mark so the line spacing doesn't change */
@@ -1917,6 +1932,7 @@ body.ws-split .row { cursor: default; }
 .drop.ws-locked .ws-lockline { color: var(--tenth-slate); }
 /* ---- icon family B: solid, rounded, two-tone. Status marks are cut out of a solid shape; file types are two-tone pictures; buttons use the same shapes in one tone ---- */
 :root {
+  --icon-tick: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3.2 8.6l3.1 3.1L12.8 5'/%3E%3C/svg%3E");   /* a plain check, for an answered part on the card */
   --icon-check-s: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cdefs%3E%3Cmask id='k'%3E%3Crect width='24' height='24' fill='white'/%3E%3Cg fill='none' stroke='black' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M7.6 12.4l3 3 5.8-6.2'/%3E%3C/g%3E%3C/mask%3E%3C/defs%3E%3Cg mask='url(%23k)'%3E%3Ccircle cx='12' cy='12' r='10' fill='black'/%3E%3C/g%3E%3C/svg%3E");
   --icon-clock: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cdefs%3E%3Cmask id='k'%3E%3Crect width='24' height='24' fill='white'/%3E%3Cg fill='none' stroke='black' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 6.8V12l3.3 2.1'/%3E%3C/g%3E%3C/mask%3E%3C/defs%3E%3Cg mask='url(%23k)'%3E%3Ccircle cx='12' cy='12' r='10' fill='black'/%3E%3C/g%3E%3C/svg%3E");
   --icon-alert: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cdefs%3E%3Cmask id='k'%3E%3Crect width='24' height='24' fill='white'/%3E%3Cg fill='none' stroke='black' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 8.7v4.3'/%3E%3Ccircle cx='12' cy='16.8' r='.5' stroke-width='2.4'/%3E%3C/g%3E%3C/mask%3E%3C/defs%3E%3Cg mask='url(%23k)'%3E%3Cpath fill='black' d='M10.1 3.5a2.2 2.2 0 0 1 3.8 0l8 13.9a2.2 2.2 0 0 1-1.9 3.3H4a2.2 2.2 0 0 1-1.9-3.3z'/%3E%3C/g%3E%3C/svg%3E");
@@ -1971,7 +1987,7 @@ body.ws-split .row { cursor: default; }
 .row:has(.ws-chipbtn[data-field="tk"]:is(:hover, :focus-visible)) .c-when .cb:has(.who),
 .row:has(.ws-chipbtn[data-field="narr"]:is(:hover, :focus-visible)) .c-narr .nt,
 .row:has(.ws-chipbtn[data-field="all"]:is(:hover, :focus-visible)) .c-narr .nt,
-.row:has(.ws-chipbtn[data-field="gap"]:is(:hover, :focus-visible)) .c-narr button.gap { outline: 2px solid var(--tenth-dusk); outline-offset: 2px; border-radius: 5px; transition: outline-color .12s; }
+.row:has(.ws-chipbtn[data-field="gap"]:is(:hover, :focus-visible)) .c-narr button.gap { outline: 2px solid var(--tenth-dusk); outline-offset: 2px; border-radius: 5px; transition: outline-color var(--t-fast); }
 
 /* hours before the narrative: right-aligned numbers, then a clear gap before the words */
 @container fin (min-width: 600px) { .row > .c-narr, .cols > div:nth-child(5) { padding-left: clamp(8px, 1.6cqi, 20px); } }
@@ -2013,32 +2029,37 @@ body.ws-split .row { cursor: default; }
 .finished > .ws-daysw .ws-days { gap: 4px; padding-bottom: 2px; }
 .finished > .ws-daysw .ws-days.weeks .ws-day { flex: none; min-width: 0; padding: 4px 8px; }   /* each week as wide as its label, close together */
 /* ---- the column headings are the list card's top row: same edges and padding as the rows, the card's corners at rest, square and lifted once they stick ---- */
-.fcard > .cols { background: var(--tenth-surface-alt); border: 0; border-bottom: 1px solid var(--tenth-line); border-radius: 0; box-shadow: none; padding-left: 20px; padding-right: 20px; transition: box-shadow .2s var(--ease); }
-.fcard > .cols.stuck { box-shadow: 0 10px 16px -14px rgba(44,42,54,.35); }
+.fcard > .cols { background: var(--tenth-surface-alt); border: 0; border-bottom: 1px solid var(--tenth-line); border-radius: 0; box-shadow: none; padding-left: 20px; padding-right: 20px; transition: box-shadow var(--t-fast) var(--ease); }
+.fcard > .cols.stuck:not(.wk-pgup) { box-shadow: 0 10px 16px -14px rgba(44,42,54,.35); }
+#stage.ws-dim .finished > .ws-tools, #stage.ws-dim .fcard > .cols, #stage.ws-dim .fcard .fgroup.wk-pg.wk-pin { position: relative; top: auto; transform: none !important; box-shadow: none; }   /* under a card the list is a still picture: no bar stuck halfway down it */
+.fcard .fgroup.wk-pg.wk-pin { position: sticky; top: var(--wk-stick, 0px); z-index: 2; }   /* whose rows these are, kept in sight while scrolling through them (pinPerson) */
+.fcard .fgroup.wk-pg.wk-pin.stuck { border-top-color: transparent; box-shadow: 0 10px 16px -14px rgba(44,42,54,.35); }
 .fcard > .cols + .fgroup, .fcard > .cols + .row { border-top: 0; }
 @container fin (min-width: 600px) { .fcard > .cols { padding-left: clamp(12px, 2cqi, 24px); padding-right: clamp(12px, 2cqi, 24px); } }
 /* Nov 21. The parts Tenth asks about sit in the card instead of on it: a soft wash that fades in, no ring. Asked parts next to each other
    share one band with a hairline between, the way a document marks a passage. A part open for typing keeps the wash; the box carries the focus */
-.ws-focus .f.now { box-shadow: none; animation: ws-wash .6s var(--ease) .2s both; }
+.ws-focus .f.now { box-shadow: none; animation: ws-wash var(--t-slow) var(--ease) .2s both; }
 @keyframes ws-wash { from { background-color: rgba(255,255,255,0); } }
 .ws-focus .f.editing, .ws-focus .f.editing.now { background: var(--tenth-dusk-wash); outline: 0; box-shadow: none; }
+.ws-focus .ecard > .f { transition: opacity var(--t-fast) var(--ease); }
+.ws-focus .ecard:has(.f.editing) > .f:not(.editing), .ws-focus .q-col:has(.f.editing) .ws-actwrap .ws-acts { opacity: .45; }   /* one part open: it is the only thing to look at until Enter or Esc */
 .ws-focus :is(.f.now, .f.editing) + :is(.f.now, .f.editing) { border-top-left-radius: 0; border-top-right-radius: 0; box-shadow: inset 0 1px 0 rgba(91,86,126,.12); }
 .ws-focus :is(.f.now, .f.editing):has(+ :is(.f.now, .f.editing)) { border-bottom-left-radius: 0; border-bottom-right-radius: 0; }
 /* a word Tenth only offers: a dashed "+" chip where it would go. It isn't part of what Looks right keeps; clicking it adds it */
 .ecard .fslot { position: relative; z-index: 2; cursor: pointer; color: var(--tenth-dusk); background: rgba(255,255,255,.45); border: 1.5px dashed rgba(91,86,126,.45); border-radius: 6px; padding: 0 5px;
-  -webkit-box-decoration-break: clone; box-decoration-break: clone; transition: background-color .15s, border-color .15s, color .15s; }
+  -webkit-box-decoration-break: clone; box-decoration-break: clone; transition: background-color var(--t-fast), border-color var(--t-fast), color var(--t-fast); }
 .ecard .fslot::before { content: "+"; font-weight: 700; margin-right: 4px; }
 .ecard .fslot:hover, .ecard .fslot:focus-visible { outline: none; background: var(--tenth-gold-tint); border-color: var(--tenth-gold-text); color: var(--tenth-ink); }
-.ws-focus .ecard.ws-settled .fslot { opacity: 0; transition: opacity .3s var(--ease); }   /* left out: it fades as the card settles */
+.ws-focus .ecard.ws-settled .fslot { opacity: 0; transition: opacity var(--t-base) var(--ease); }   /* left out: it fades as the card settles */
 /* the number, client and matter name are one value: pointing at either line lights the whole block, the same block that opens as one box */
-.row .c-matter .m-pair:not(.editing):not(.fl) { border-radius: 6px; padding: 2px 8px 2px 6px; margin: -2px -8px -2px -6px; max-width: calc(100% + 14px); transition: background-color .12s; }
+.row .c-matter .m-pair:not(.editing):not(.fl) { border-radius: 6px; padding: 2px 8px 2px 6px; margin: -2px -8px -2px -6px; max-width: calc(100% + 14px); transition: background-color var(--t-fast); }
 .row .c-matter .m-pair:not(.editing) :is(.cb, .cb:hover, .mname:not(.ghost):hover) { background: none; }
 .row .c-matter .m-pair:not(.editing):not(.fl):has(:is(.cb, .mname):hover) { background: var(--tenth-surface-alt); }
 .row .c-matter .m-pair.fl:has(:is(.cb, .mname):hover) { background: #EFE2C2; }
 .row .c-matter .m-pair:not(.editing):has(.cb:focus-visible) { outline: 2px solid var(--tenth-dusk); outline-offset: 1px; }
 .row .c-matter .m-pair .cb:focus-visible { outline: 0; }
 /* a box open on the card sits in the part's wash instead of on it: see-through, a soft edge, one quiet focus ring, and only as wide as what goes in it */
-.ws-focus .ecard .cell-in { background: rgba(255,255,255,.5); border: 1px solid rgba(91,86,126,.28); border-radius: 10px; padding: 6px 12px; box-shadow: none; transition: background-color .15s, border-color .15s, box-shadow .15s; }
+.ws-focus .ecard .cell-in { background: rgba(255,255,255,.5); border: 1px solid rgba(91,86,126,.28); border-radius: 10px; padding: 6px 12px; box-shadow: none; transition: background-color var(--t-fast), border-color var(--t-fast), box-shadow var(--t-fast); }
 .ws-focus .ecard .cell-in:focus, .ws-focus .ecard .cell-in:focus-visible { outline: none; background: rgba(255,255,255,.82); border-color: rgba(91,86,126,.55); box-shadow: 0 0 0 3px rgba(91,86,126,.1); }
 .ws-focus .ecard .f-hours .cell-in, .ws-focus .ecard .mt-h { max-width: 7.5em; }
 .ws-focus .ecard .f-date .cell-in { max-width: 11em; }
@@ -2074,8 +2095,8 @@ body.ws-split .row { cursor: default; }
 .row .c-narr.fl:not(.s2) .nt { background: none; border-radius: 0; box-shadow: inset 3px 0 0 var(--tenth-gold); padding: 2px 4px 2px 11px; margin: -2px -4px -2px -11px; }
 .row.expanded .c-narr.fl:not(.s2) .nt { box-shadow: none; }
 .row:has(.ws-chipbtn[data-field="gap"]:is(:hover, :focus-visible)) .c-narr .lchip { outline: 2px solid var(--tenth-dusk); outline-offset: 2px; }
-.ws-focus .ecard.ws-settled .fwrap { animation: fw-out .28s var(--ease) forwards; }   /* left out: the chip and its space fold away, so no gap is left in the sentence */
-.ws-focus .ecard.ws-settled .fwrap .fslot { padding: 0; border-width: 0; transition: padding .28s var(--ease), border-width .28s var(--ease), opacity .2s var(--ease); }
+.ws-focus .ecard.ws-settled .fwrap { animation: fw-out var(--t-base) var(--ease) forwards; }   /* left out: the chip and its space fold away, so no gap is left in the sentence */
+.ws-focus .ecard.ws-settled .fwrap .fslot { padding: 0; border-width: 0; transition: padding var(--t-base) var(--ease), border-width var(--t-base) var(--ease), opacity var(--t-fast) var(--ease); }
 @keyframes fw-out { from { opacity: 1; } 60% { opacity: 0; font-size: inherit; } to { opacity: 0; font-size: 0; } }
 @media (prefers-reduced-motion: reduce) { .ws-focus .ecard.ws-settled .fwrap { animation: none; display: none; } }
 .lchip.loff { display: inline-flex; align-items: baseline; gap: 2px; padding: 0 2px 0 6px; cursor: default; white-space: normal; }
@@ -2092,7 +2113,7 @@ body.ws-split .row { cursor: default; }
 .gapw .gap-x { color: var(--tenth-gold-text); margin-left: 1px; }   /* always there, like the other chips' x: a hidden one left a gap before the full stop */
 .gapw .gap-x:hover { background: rgba(118, 86, 8, .14); }
 .lchip.loff .lc-v::before, .ecard .fslot::before { content: none; }   /* no +: the dashed edge already says "offered, not in yet" */
-.lchip .lc-x, .ecard .fslot .fs-x, .gapw .gap-x { font: 500 14px/1 var(--font-ui); vertical-align: middle; position: relative; top: -2px; padding: 1px 3px; transition: color .15s, background-color .15s; }   /* the x sits at the middle of the words, not on their baseline */
+.lchip .lc-x, .ecard .fslot .fs-x, .gapw .gap-x { font: 500 14px/1 var(--font-ui); vertical-align: middle; position: relative; top: -2px; padding: 1px 3px; transition: color var(--t-fast), background-color var(--t-fast); }   /* the x sits at the middle of the words, not on their baseline */
 .lchip .lc-x, .ecard .fslot .fs-x { color: rgba(91, 86, 126, .72); }   /* quieter than the words, but 3:1 like any control (WCAG 1.4.11) */   /* faint at rest, full when the chip is pointed at */
 .gapw .gap-x { color: rgba(118, 86, 8, .72); }
 .lchip:hover .lc-x, .lchip:focus-within .lc-x, .ecard .fslot:hover .fs-x, .fs-x:focus-visible { color: var(--tenth-dusk); }
@@ -2110,9 +2131,9 @@ body.ws-split .row { cursor: default; }
 /* ===== whose time: the list by person, the timekeeper picker, the bin on each row, the Removed tab ===== */
 .finished { --cols: minmax(150px, .9fr) minmax(50px, .36fr) minmax(150px, 1.15fr) 56px minmax(170px, 3fr) 72px; }   /* the last column holds Show in the file and the bin, with room between them */
 .finished.wk-gonetab { --cols: minmax(150px, .9fr) minmax(50px, .36fr) minmax(150px, 1.15fr) 56px minmax(170px, 3fr) 108px; }
-body.ws-split .finished:not(.wk-gonetab) { --cols: minmax(150px, .9fr) minmax(50px, .36fr) minmax(150px, 1.15fr) 56px minmax(170px, 3fr) 32px; }   /* beside the file: the bin sits under Show in the file */
+body.ws-split .finished:not(.wk-gonetab) { --cols: minmax(150px, .9fr) minmax(50px, .36fr) minmax(150px, 1.15fr) 56px minmax(170px, 3fr) 72px; }   /* beside the file too: the bin stays to the right of Show in the file, not under it */
 .row > .c-act { gap: 8px; }
-body.ws-split .row > .c-act { flex-direction: column; align-items: flex-end; gap: 4px; }
+body.ws-split .row > .c-act { flex-direction: row; align-items: flex-start; }
 .wk-av { flex: none; display: inline-grid; place-items: center; width: 28px; height: 28px; border-radius: 999px; background: var(--tenth-dusk-wash); color: var(--tenth-dusk); font: 700 11px/1 var(--font-ui); letter-spacing: .02em; font-variant-numeric: tabular-nums; }
 .wk-av.xs { width: 22px; height: 22px; font-size: 9.5px; }
 .wk-av.q { background: var(--tenth-gold-tint); color: var(--tenth-gold-text); font-size: 12px; }
@@ -2131,7 +2152,7 @@ body.ws-split .row > .c-act { flex-direction: column; align-items: flex-end; gap
 .wk-done { color: var(--tenth-green-text); gap: 6px; }
 .wk-pg .ws-showfile { margin-left: 0; flex: none; }
 .wk-pg > .ws-more { margin-left: -4px; flex: none; }
-.wk-more { display: grid; place-items: center; width: 32px; height: 32px; border: 0; border-radius: 8px; background: transparent; color: var(--color-text-muted); cursor: pointer; transition: background .15s, color .15s; }
+.wk-more { display: grid; place-items: center; width: 32px; height: 32px; border: 0; border-radius: 8px; background: transparent; color: var(--color-text-muted); cursor: pointer; transition: background var(--t-fast), color var(--t-fast); }
 .wk-more:hover, .wk-more[aria-expanded="true"] { background: rgba(91,86,126,.1); color: var(--tenth-ink); }
 .wk-more:focus-visible, .wk-bin:focus-visible, .wk-st:focus-visible, .wk-pick:focus-visible, .wk-pickx:focus-visible { outline: 2px solid var(--tenth-dusk); outline-offset: 2px; }
 .wk-pg.wk-arrive { animation: wk-arrive 1.4s var(--ease) both; }
@@ -2144,18 +2165,30 @@ body.ws-split .row > .c-act { flex-direction: column; align-items: flex-end; gap
 .wk-sep { height: 1px; background: var(--tenth-line); margin: 5px 6px; flex: none; }
 .wk-mfoot { margin: 2px 0 0; padding: 6px 12px 4px; font: 500 12px/16px var(--font-ui); color: var(--color-text-muted); }
 /* a row's settled label opens its card */
-.c-status button.wk-st { cursor: pointer; transition: background .15s, color .15s, box-shadow .15s; }
+.c-status button.wk-st { cursor: pointer; transition: background var(--t-fast), color var(--t-fast), box-shadow var(--t-fast); }
 .c-status button.auto.wk-st { border: 0; background: transparent; border-radius: 999px; font: 600 13px/20px var(--font-ui); color: var(--color-text-muted); }
 .c-status button.auto.wk-st:hover { background: rgba(91,86,126,.08); color: var(--tenth-ink); }
 .c-status button.pill.wk-st { border: 0; }
 .c-status button.pill.neutral.wk-st:hover { background: var(--tenth-line); }
 .c-when .wk-src { cursor: default; }
 /* the bin: quiet at rest, ink when the row is pointed at, copper on its own */
-.wk-bin { display: grid; place-items: center; width: 32px; height: 32px; flex: none; border: 0; border-radius: 8px; background: transparent; color: var(--tenth-edge); cursor: pointer; transition: color .15s, background-color .15s, transform .12s var(--ease); }
+.wk-bin { display: grid; place-items: center; width: 32px; height: 32px; flex: none; border: 0; border-radius: 8px; background: transparent; color: var(--tenth-edge); cursor: pointer; transition: color var(--t-fast), background-color var(--t-fast), transform var(--t-fast) var(--ease); }
 .row .wk-bin { height: 28px; margin-top: -4px; }   /* the same box as Show in the file beside it, centered on the first line of text */
 .row:hover .wk-bin { color: var(--tenth-slate); }
 .wk-bin:hover { color: var(--tenth-copper); background: var(--tenth-copper-tint); }
 .wk-bin:active { transform: scale(.9); }
+/* Row actions behave as one set: faint at rest, slate when the row is pointed at, ink on a soft wash under the pointer (trash: copper, it removes), a small press */
+.row .ws-locate, .row .wk-bin, .c-narr .nedit { color: var(--tenth-edge); transition: color var(--t-fast), background-color var(--t-fast), transform var(--t-fast), opacity var(--t-fast); }
+.row:hover .ws-locate, .row:hover .wk-bin, .row:hover .nedit, .row .ws-locate:focus-visible { color: var(--tenth-slate); }
+.row .ws-locate:hover, .c-narr .nedit:hover { color: var(--tenth-ink); background: rgba(91,86,126,.08); }
+.row .ws-locate[aria-pressed="true"] { color: var(--tenth-ink); background: var(--tenth-dusk-wash); }
+.row .ws-locate:active, .c-narr .nedit:active { transform: scale(.9); }
+@media (hover: none) { .row .ws-locate, .row .wk-bin, .c-narr .nedit { color: var(--tenth-slate); } }
+/* Every control presses the same small way: text buttons dip, icon buttons shrink a touch */
+.wk-pickx:active { transform: translateY(calc(-50% + 1px)); }
+.cols > .ws-foldall:active { transform: translateY(calc(-50% + 1px)); }   /* it is centred with a transform: the press adds to it, or the x drops out of its box
+.wk-pick:active, .wk-more:active, .ws-showfile:active, .ws-ftab:active, .ws-day:active:not(:disabled) { transform: translateY(1px); }
+.wk-pick, .wk-more, .ws-day { transition-property: border-color, box-shadow, background-color, color, transform; transition-duration: var(--t-fast); }
 @media (hover: none) { .wk-bin { color: var(--tenth-slate); } }
 /* the Removed tab */
 .wk-gonenote { display: flex; align-items: center; gap: 10px; padding: 12px 16px; border-radius: 12px; background: var(--tenth-surface-alt); color: var(--color-text-muted); font: 500 13px/18px var(--font-ui); }
@@ -2168,16 +2201,16 @@ body.ws-split .row > .c-act { flex-direction: column; align-items: flex-end; gap
 /* Timekeeper: beside the tabs, the same height */
 .toolbar.wk-bar { gap: 10px; }
 .wk-pickw { position: relative; display: inline-flex; align-items: center; }
-.wk-pick { display: inline-flex; align-items: center; gap: 8px; height: 44px; padding: 0 12px 0 12px; border-radius: 12px; border: 1px solid var(--tenth-outline); background: var(--tenth-white); font: 600 14px/20px var(--font-ui); color: var(--tenth-ink); cursor: pointer; transition: border-color .15s, box-shadow .2s, background .15s; }
+.wk-pick { display: inline-flex; align-items: center; gap: 8px; height: 44px; padding: 0 12px 0 12px; border-radius: 12px; border: 1px solid var(--tenth-outline); background: var(--tenth-white); font: 600 14px/20px var(--font-ui); color: var(--tenth-ink); cursor: pointer; transition: border-color var(--t-fast), box-shadow var(--t-fast), background var(--t-fast); }
 .wk-pick > svg:first-child { color: var(--color-text-muted); }
-.wk-pick > svg:last-child { color: var(--color-text-muted); transition: transform .2s var(--ease); }
+.wk-pick > svg:last-child { color: var(--color-text-muted); transition: transform var(--t-fast) var(--ease); }
 .wk-pick:hover { border-color: var(--tenth-edge); }
 .wk-pick.open { border-color: var(--tenth-dusk); box-shadow: 0 0 0 4px rgba(91,86,126,.16); }
 .wk-pick.open > svg:last-child { transform: rotate(180deg); }
 .wk-pick .wk-lab { font-weight: 500; color: var(--color-text-muted); }
 .wk-pickw.set .wk-pick { background: var(--tenth-dusk-wash); border-color: transparent; color: var(--tenth-dusk); padding-right: 40px; }
 .wk-pickw.set .wk-pick > svg:last-child { color: var(--tenth-dusk); }
-.wk-pickx { position: absolute; right: 6px; top: 50%; transform: translateY(-50%); display: grid; place-items: center; width: 28px; height: 28px; border: 0; border-radius: 8px; background: transparent; color: var(--tenth-dusk); cursor: pointer; transition: background .15s; }
+.wk-pickx { position: absolute; right: 6px; top: 50%; transform: translateY(-50%); display: grid; place-items: center; width: 28px; height: 28px; border: 0; border-radius: 8px; background: transparent; color: var(--tenth-dusk); cursor: pointer; transition: background var(--t-fast); }
 .wk-pickx:hover { background: rgba(91,86,126,.14); }
 .wk-pickw.set .wk-pick > svg:last-child { display: none; }
 .wk-pickw.set .wk-pick .wk-av { background: var(--tenth-white); box-shadow: 0 0 0 1px rgba(91,86,126,.12); }
@@ -2198,11 +2231,6 @@ body.ws-split .row > .c-act { flex-direction: column; align-items: flex-end; gap
 .wk-pc { font: 500 13px/18px var(--font-ui); color: var(--color-text-muted); text-align: right; font-variant-numeric: tabular-nums; }
 .wk-none { margin: 0; padding: 8px 10px; font: 500 13px/18px var(--font-ui); color: var(--color-text-muted); }
 /* one person picked: their name above the heading, and the way back to everyone */
-.wk-eyebrow { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; font: 500 14px/20px var(--font-ui); color: var(--tenth-ink); animation: ws-pop .26s var(--ease) both; }
-.wk-eyebrow b { font-weight: 700; }
-.wk-eyebrow .wk-dot { color: var(--tenth-edge); }
-.wk-eyebrow .lnk { border: 0; background: none; padding: 0; font: 600 14px/20px var(--font-ui); color: var(--tenth-dusk); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; cursor: pointer; }
-.wk-eyebrow .lnk:hover { color: var(--tenth-ink); }
 /* the card says whose entry it is, and who comes next */
 .q-head.wk-count { display: flex; align-items: center; gap: 10px; min-height: 28px; }
 .wk-count .wk-cname { font: 700 15px/20px var(--font-ui); color: var(--tenth-ink); }
@@ -2220,12 +2248,12 @@ body.ws-split .row > .c-act { flex-direction: column; align-items: flex-end; gap
 .wk-addacts { display: flex; gap: 10px; margin-top: 16px; }
 .wk-addacts .wk-typeit { color: var(--tenth-ink); }
 /* change whose time a person's entries are */
-.wk-tkpop { position: fixed; z-index: 80; padding: 14px; border-radius: 12px; background: rgba(255,255,255,.96); -webkit-backdrop-filter: blur(16px) saturate(1.2); backdrop-filter: blur(16px) saturate(1.2); box-shadow: inset 0 1px 0 #fff, 0 0 0 1px rgba(91,86,126,.14), var(--shadow-float); animation: ws-pop .22s var(--ease) both; }
+.wk-tkpop { position: fixed; z-index: 80; padding: 14px; border-radius: 12px; background: rgba(255,255,255,.96); -webkit-backdrop-filter: blur(16px) saturate(1.2); backdrop-filter: blur(16px) saturate(1.2); box-shadow: inset 0 1px 0 #fff, 0 0 0 1px rgba(91,86,126,.14), var(--shadow-float); animation: ws-pop var(--t-base) var(--ease) both; }
 .wk-addpop .tkwrap input, .wk-tkpop .tkwrap input { width: 100%; height: 42px; box-sizing: border-box; border: 1px solid var(--tenth-edge); border-radius: 12px; padding: 0 36px 0 12px; font: 500 14px/20px var(--font-ui); color: var(--tenth-ink);
   background: var(--tenth-white) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M3 4.5l3 3 3-3' fill='none' stroke='%235C5869' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat right 14px center; }
 .wk-addpop .tkwrap input:focus, .wk-tkpop .tkwrap input:focus { outline: none; border-color: var(--tenth-dusk); box-shadow: 0 0 0 3px rgba(91,86,126,.16); }
 .wk-tkpop .tkbox { max-height: 260px; }
-@media (prefers-reduced-motion: reduce) { .wk-pg.wk-arrive, .wk-eyebrow, .wk-tkpop { animation: none; } .wk-bin, .wk-pick > svg:last-child { transition: none; } }
+@media (prefers-reduced-motion: reduce) { .wk-pg.wk-arrive, .wk-tkpop { animation: none; } .wk-bin, .wk-pick > svg:last-child { transition: none; } }
 
 /* Release: whose time, then the file */
 .wk-relsec { margin: 0 0 16px; }
@@ -2233,7 +2261,7 @@ body.ws-split .row > .c-act { flex-direction: column; align-items: flex-end; gap
 .wk-rwho { display: flex; flex-direction: column; max-height: 168px; overflow: auto; overscroll-behavior: contain; padding: 4px; border: 1px solid var(--tenth-line); border-radius: 12px; background: var(--tenth-white); }
 .wk-rl { position: relative; cursor: pointer; }
 .wk-rl input { position: absolute; opacity: 0; pointer-events: none; }
-.wk-rwho .wk-rl { display: grid; grid-template-columns: 22px minmax(0, 1fr) 84px 76px; column-gap: 10px; align-items: center; padding: 8px 10px; border-radius: 8px; font: 500 14px/20px var(--font-ui); color: var(--tenth-ink); transition: background .15s; }
+.wk-rwho .wk-rl { display: grid; grid-template-columns: 22px minmax(0, 1fr) 84px 76px; column-gap: 10px; align-items: center; padding: 8px 10px; border-radius: 8px; font: 500 14px/20px var(--font-ui); color: var(--tenth-ink); transition: background var(--t-fast); }
 .wk-rwho .wk-rl:hover { background: rgba(91,86,126,.06); }
 .wk-rwho .wk-rl.on { background: var(--tenth-dusk-wash); }
 .wk-rwho .wk-rl.on .wk-rn { color: var(--tenth-dusk); }
@@ -2246,17 +2274,38 @@ dialog.wide .dlg > .btns { position: sticky; bottom: 0; z-index: 2; margin: 0 -2
 .wk-rsum b { font-weight: 700; }
 .wk-rsum span { color: var(--color-text-muted); }
 .wk-rfile { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-.wk-rfile .wk-rl { display: flex; padding: 12px 14px; border: 1px solid var(--tenth-outline); border-radius: 12px; background: var(--tenth-white); transition: border-color .15s, box-shadow .15s, background .15s; }
+.wk-rfile .wk-rl { display: flex; padding: 12px 14px; border: 1px solid var(--tenth-outline); border-radius: 12px; background: var(--tenth-white); transition: border-color var(--t-fast), box-shadow var(--t-fast), background var(--t-fast); }
 .wk-rfile .wk-rl:hover { border-color: var(--tenth-edge); }
 .wk-rfile .wk-rl.on { border-color: var(--tenth-dusk); box-shadow: 0 0 0 1px var(--tenth-dusk); background: var(--tenth-dusk-wash); }
 .wk-fo { display: grid; gap: 2px; }
 .wk-fo b { font: 700 14px/20px var(--font-ui); color: var(--tenth-ink); }
 .wk-fo span { font: 500 13px/18px var(--font-ui); color: var(--color-text-muted); }
 .xnote .wk-gpill { background: var(--tenth-surface-alt); color: var(--tenth-slate); }
-.i-trash { --icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='black' d='M4.3 5.5h7.4l-.6 7.4a1.6 1.6 0 0 1-1.6 1.5H6.5a1.6 1.6 0 0 1-1.6-1.5z'/%3E%3Cpath d='M2.8 4h10.4M6.4 4V2.6h3.2V4' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"); }
+.i-trash { --icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='black' stroke='none' d='M3.7 6.4h8.6l-.45 5.7a2.4 2.4 0 0 1-2.4 2.2H6.55a2.4 2.4 0 0 1-2.4-2.2z'/%3E%3Crect x='2.3' y='3.5' width='11.4' height='1.9' rx='.95' fill='black' stroke='none'/%3E%3Ccircle cx='8' cy='2.3' r='1.15' fill='black' stroke='none'/%3E%3C/svg%3E"); }
 .pill.neutral.wk-gpill::before { background: var(--tenth-slate); }
 .xnote .wk-rshow { border: 0; background: none; padding: 0; font: 600 14px/20px var(--font-ui); color: var(--tenth-dusk); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; cursor: pointer; }
 @media (max-width: 560px) { .wk-rfile { grid-template-columns: 1fr; } .wk-rwho .wk-rl { grid-template-columns: 22px minmax(0, 1fr) auto; } .wk-rwho .wk-rc { display: none; } }
+
+/* the filters stay at the top of a long list (not on phones) */
+@media (min-width: 701px) {
+  .finished > .ws-tools { position: sticky; top: 0; z-index: 7; margin-left: -12px; margin-right: -12px; padding: 10px 12px;
+    background: radial-gradient(60% 40% at 0% 0%, var(--tenth-sun) 0%, rgba(250,240,222,0) 70%) no-repeat, var(--color-bg); background-attachment: fixed;   /* the page's own background, fixed the same way: pinned, the bar is part of the page, not a flat box over its glow */ transition: box-shadow var(--t-fast) var(--ease); }
+  .finished > .ws-tools.stuck:not(.wk-colsup) { box-shadow: 0 10px 16px -14px rgba(44,42,54,.35); }
+  .finished .fcard > .cols { top: var(--wk-bar, 0px); }
+}
+.wk-tr { display: flex; align-items: center; gap: 0; width: 300px; }   /* a fixed width: when Review comes in at the right, the search box gives it room, so nothing else moves */
+.wk-tr .ws-search { flex: 1 1 auto; min-width: 0; }
+@media (max-width: 700px) { .wk-tr { width: 100%; } .wk-bar > .wk-pickw, .wk-bar > .wk-pickw > .wk-pick { width: 100%; } }   /* on a phone the picker and search take the full width, like the tabs under them */
+.ws-lhead h1 .wk-num, .ws-statl .wk-num { font-variant-numeric: normal; }   /* inside a sentence a number keeps the font's own spacing; same-width digits left a wide gap after it in the serif heading */
+.wk-tr .ws-search input { width: 100%; transition: none; text-overflow: ellipsis; }   /* narrowed for Review, the hint ends in "..." rather than a cut letter */
+.ws-tools .btn.small.wk-barrev { min-height: 44px; border-radius: 12px; }   /* the same height and corners as the picker, tabs and search beside it */
+.ws-tools .btn.small.wk-barrev { font-size: 14px; line-height: 20px; max-width: 0; margin-left: 0; padding-left: 0; padding-right: 0; border-width: 0; overflow: hidden; white-space: nowrap; opacity: 0; transform: translateY(4px); pointer-events: none;
+  transition: max-width var(--t-base) var(--ease), margin-left var(--t-base) var(--ease), padding var(--t-base) var(--ease), opacity var(--t-fast) var(--ease), transform var(--t-base) var(--ease); }
+.ws-tools.wk-showrev .btn.small.wk-barrev { max-width: 160px; margin-left: 8px; padding-left: 14px; padding-right: 14px; border-width: 1px; opacity: 1; transform: none; pointer-events: auto; }
+.ws-tools.wk-instant, .ws-tools.wk-instant .wk-barrev { transition: none; }
+@media (prefers-reduced-motion: reduce) { .wk-barrev, .finished > .ws-tools { transition: none; } }
+
+@container fin (max-width: 780px) { .fgroup.wk-pg { flex-wrap: wrap; row-gap: 2px; } .wk-pg .wk-meta { order: 9; flex: 1 1 100%; padding-left: 70px; } }   /* beside the file: the name gets the line, the numbers go under it */
 </style>
 </head>
 <body>
@@ -2733,7 +2782,7 @@ function foldOut(node, then) {   // a chip being taken out fades, then its space
   if (!node || !node.animate || matchMedia("(prefers-reduced-motion: reduce)").matches) { then(); return; }
   let ran = false; const go = () => { if (!ran) { ran = true; then(); } };
   node.style.pointerEvents = "none";
-  const a = node.animate([{ opacity: 1 }, { opacity: 0, offset: .55 }, { opacity: 0, fontSize: "0px", paddingLeft: "0px", paddingRight: "0px", borderWidth: "0px" }], { duration: 300, easing: "cubic-bezier(.4,0,.2,1)", fill: "forwards" });
+  const a = node.animate([{ opacity: 1 }, { opacity: 0, offset: .55 }, { opacity: 0, fontSize: "0px", paddingLeft: "0px", paddingRight: "0px", borderWidth: "0px" }], { duration: SPEED.base, easing: "cubic-bezier(.4,0,.2,1)", fill: "forwards" });
   a.onfinish = go; a.oncancel = go; setTimeout(go, 400);
 }
 function blankEl(e, t, g, k, lead) {   // a missing detail in the list, the way the card shows it: Tenth's word filled in (solid, x takes it out), offered (dashed +, x leaves it out), or "what?" to type
@@ -2796,7 +2845,17 @@ const openBlanks = e => e.keepBlanks ? 0 : liveTasks(e).reduce((n, t) => n + (t.
 const junkOpen = e => liveTasks(e).filter(t => t.junk && !t.kept).length;
 
 /* ================= what Tenth still needs to ask ================= */
-function prevOf(e) { return flat().filter(x => x.src === e.src && !x.busy && x.seq < e.seq).sort(byOrder).pop() || null; }   // the entry right above this one in the same file
+function nbr(e, d) {   // during a draw: each file's entries in order, built once, so the one above or below is a lookup
+  if (!RD.nb) { RD.nb = new Map(); const by = new Map(); for (const x of S.entries) if (!x.removed && !x.busy) (by.get(x.src) || by.set(x.src, []).get(x.src)).push(x);
+    by.forEach(list => { list.sort((a, b) => a.seq - b.seq); list.forEach((x, i) => RD.nb.set(x, [list[i - 1] || null, list[i + 1] || null])); }); }
+  const n = RD.nb.get(e); if (n) return n[d];
+  return null;
+}
+function prevOf(e) {   // the entry right above this one in the same file. One pass, no sorting: it is asked for every entry on every redraw
+  if (RD && !e.busy && !e.removed) return nbr(e, 0);
+  let best = null; for (const x of S.entries) if (!x.removed && x.src === e.src && !x.busy && x.seq < e.seq && (!best || x.seq > best.seq)) best = x;
+  return best;
+}
 const GOES_ON = /^\s*(?:re|regarding|and|w\/|with|for|to|on|about|of|in|\+|&)\b/i;   // words a wrapped line starts with
 function mergeCand(e) {   // most likely the next line of the entry above, cut off by mistake: no time of its own right under an entry on the same day and matter, or the words and time that finish an entry above that has none ("re upcoming financing .75" under "coffee w/ prospective client")
   if (e.mergeAsked || e.busy) return null;
@@ -2831,12 +2890,22 @@ function combineBtn(e) {   // says which entry it joins: "above" means nothing o
     title: `Adds this entry's words and hours to ${full ? `\u201c${full}\u201d` : "the entry before it in the file"}, then removes this one.`, onclick: () => combineNow(e) });
 }
 function combineNow(e) { const b = brief(aboveText(e)); commit(() => mergeUp(e)); toast(`Combined with ${b ? `\u201c${b}\u201d` : "the entry before it"}. ${undoWord()} brings it back.`); }
-function nextOf(e) { return flat().filter(x => x.src === e.src && !x.busy && x.seq > e.seq).sort(byOrder)[0] || null; }   // the entry right under this one in the same file
+function nextOf(e) {   // the entry right under this one in the same file
+  if (RD && !e.busy && !e.removed) return nbr(e, 1);
+  let best = null; for (const x of S.entries) if (!x.removed && x.src === e.src && !x.busy && x.seq > e.seq && (!best || x.seq < best.seq)) best = x;
+  return best;
+}
 function tailOf(e, all) {   // the line under this entry, when it may be the rest of it and that is still open
   const n = nextOf(e); if (!n || (!all && n.skipped.merge)) return null;
   const p = mergeCand(n); return p && p.id === e.id ? n : null;
 }
-function qsOf(e, all = false) {   // all: ignore "not sure" skips, so the list can offer them again
+let RD = null;   // while the list is drawn (and only then: nothing changes an entry mid-draw), each entry's questions and neighbours are worked out once
+function qsOf(e, all = false) {
+  if (!RD) return qsOf0(e, all);
+  const k = e.id + (all ? "|a" : ""), hit = RD.qs.get(k); if (hit) return hit.slice();
+  const r = qsOf0(e, all); RD.qs.set(k, r); return r.slice();
+}
+function qsOf0(e, all = false) {   // all: ignore "not sure" skips, so the list can offer them again
   // In the order the answers depend on each other: whose time it is, whether it is one entry, how it was read, then its hours,
   // matter and wording. Nothing is asked that an earlier answer could change or settle.
   const out = [], sk = (o, k) => !all && o[k];
@@ -2958,7 +3027,7 @@ function closeRow() { S.cellEdit = null; S.cardEdit = null; S.editEl = null; S.o
 const PENDING = { FLAG_MISMATCH: { tone: "warn", icon: "alert", label: "Check matter" }, NEEDS_REVIEW: { tone: "warn", icon: "clock", label: "Check matter" }, REVIEW: { tone: "warn", icon: "clock", label: "Check matter" },
   MULTI_MATTER: { tone: "warn", icon: "two", label: "Two matters" }, NO_MATCH: { tone: "neutral", icon: "plus", label: "New client?" } };
 function flag(e) {
-  if (e.tk === null) return { tone: "warn", icon: "alert", label: "Needs timekeeper", open: true };
+  if (e.tk === null) return { tone: "warn", icon: "alert", label: "No timekeeper", open: true };
   if ((e.hoursFlag && !e.hoursOk) || roundOpen(e) || (e.verify && !e.verified)) return { tone: "warn", icon: "alert", label: "Check details", open: true };
   if (e.matterState === "pending") return Object.assign({ open: true }, PENDING[e.action] || PENDING.NEEDS_REVIEW);
   const b = openBlanks(e); if (b) return wordsAdded(e) ? { tone: "warn", icon: "pencil", label: "Words added", open: true, s2: true } : { tone: "warn", icon: "clock", label: "Missing details", open: true, s2: true };
@@ -2972,11 +3041,11 @@ const isOpen = e => !!(flag(e) && flag(e).open);
 function flagsOf(e) {   // every open thing on an entry, in the order the columns read, so the row says all of it
   const out = [], part = e.verify && !e.verified ? verifyPart(e) : "", own = part && isOwnCheck(e);
   const add = (tone, icon, label, field, s2) => { if (!out.some(x => x.label === label)) out.push({ tone, icon, label, field, open: true, s2: !!s2 }); };
-  if (e.tk === null) add("warn", "alert", "Add timekeeper", "tk");
+  if (e.tk === null) add("warn", "alert", "No timekeeper", "tk");
   if (part === "date") add("warn", "alert", "Check date", "date");
   if (e.matterState === "pending") { const p = PENDING[e.action] || PENDING.NEEDS_REVIEW; add(p.tone, p.icon, p.label, "matter"); } else if (part === "matter") add("warn", "alert", "Check matter", "matter");
   if ((e.hoursFlag && !e.hoursOk) || roundOpen(e)) add("warn", "alert", "Check hours", "hours");
-  if (own) add("warn", "alert", (e.verify.codes || []).includes("possible_duplicate") ? "Repeat?" : "Real entry?", "all");   // the same question the card asks
+  if (own) add("warn", "alert", (e.verify.codes || []).includes("possible_duplicate") ? "Repeat?" : "Not a time entry?", "all");   // the same question the card asks
   else if (part === "entry" && e.verify.review) add("warn", "alert", "Check narrative", "narr", true);   // the narrative review's (Stage 2): task times
   else if (part === "entry") { const vf = verifyField(e); add("warn", "alert", { hours: "Check hours", date: "Check date", matter: "Check matter" }[vf] || "Check entry", { hours: 1, date: 1, matter: 1, tk: 1 }[vf] ? vf : "all"); }   // the readers' (Stage 1), named by the part they doubt
   const b = openBlanks(e); if (b) { if (wordsAdded(e)) add("warn", "pencil", "Words added", "narr", true); else add("warn", "clock", "Missing details", "narr", true); }
@@ -2989,7 +3058,7 @@ function rowState(e) {
   if (f && f.open) { const chips = flagsOf(e); return { kind: "open", chip: chips.length ? Object.assign({}, f, { tone: chips.some(c => c.tone === "warn") ? "warn" : f.tone }) : f, chips: chips.length ? chips : [f] }; }
   if (f) return { kind: "you", chip: f };
   if (e.touch === "changed" || e.matterState === "changed") return { kind: "you", chip: { tone: "neutral", icon: "pencil", label: "Edited" } };
-  if (e.touch === "accepted" || e.matterState === "accepted") return { kind: "you", chip: { tone: "neutral", icon: "check", label: "Checked" } };
+  if (e.touch === "accepted" || e.matterState === "accepted") return { kind: "you", chip: { tone: "neutral", icon: "check", label: "Reviewed" } };
   return { kind: "auto" };
 }
 const FILTERS = [["all", "All"], ["open", "To review"], ["rev", "Reviewed"], ["auto", "Matched"], ["gone", "Removed"]];   // Removed shows only once something is taken out
@@ -3035,26 +3104,26 @@ function toggleChips(id) {   // one row open at a time. Its chips ease in after 
       const row = c.closest(".row") || c, r1 = row.offsetHeight, y = scrollY;
       c.style.overflow = "hidden";
       shut.ghosts.forEach((g, i, all) => ghost(c, g, i, all.length, 280));   // the extra chips and "Show less" drift off, the last one first
-      const nt = c.querySelector(".ws-more-chk"); if (nt) nt.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 320, delay: 220, easing: ease, fill: "backwards" });   // "+2 more" comes back once they've gone
-      const a = c.animate([{ height: shut.h + "px" }, { height: c.offsetHeight + "px" }], { duration: 440, delay: 120, easing: ease, fill: "backwards" });   // the row folds behind them, never through them
+      const nt = c.querySelector(".ws-more-chk"); if (nt) nt.animate([{ opacity: 0 }, { opacity: 1 }], { duration: SPEED.base, delay: 220, easing: ease, fill: "backwards" });   // "+2 more" comes back once they've gone
+      const a = c.animate([{ height: shut.h + "px" }, { height: c.offsetHeight + "px" }], { duration: SPEED.base, delay: 120, easing: ease, fill: "backwards" });   // the row folds behind them, never through them
       let on = above; const follow = () => { if (!on) return; window.scrollTo({ top: y + row.offsetHeight - r1, behavior: "instant" }); requestAnimationFrame(follow); };
       follow();
       a.finished.then(() => { on = false; c.style.overflow = ""; if (above) window.scrollTo({ top: y, behavior: "instant" }); }, () => { on = false; c.style.overflow = ""; });
     } }
   if (opening && c1) {
     tog0.forEach(g => ghost(c1, g, 0, 1, 180));   // "+2 more" fades as the chips it stood for arrive
-    c1.style.overflow = "hidden"; c1.animate([{ height: h0 + "px" }, { height: c1.offsetHeight + "px" }], { duration: 340, easing: ease }).finished.then(() => { c1.style.overflow = ""; }, () => {});
+    c1.style.overflow = "hidden"; c1.animate([{ height: h0 + "px" }, { height: c1.offsetHeight + "px" }], { duration: SPEED.base, easing: ease }).finished.then(() => { c1.style.overflow = ""; }, () => {});
     const more = [...c1.querySelectorAll(".ws-chipbtn")].slice(1);
     more.forEach((x, i) => { x.classList.add("ws-chip-in"); x.style.animationDelay = `${60 + i * 50}ms`; });
-    const t = c1.querySelector(".ws-more-chk"); if (t) t.animate([{ opacity: 0, transform: "translateY(4px)" }, { opacity: 1, transform: "none" }], { duration: 360, delay: 140 + more.length * 50, easing: ease, fill: "backwards" });   // "Show less" last
+    const t = c1.querySelector(".ws-more-chk"); if (t) t.animate([{ opacity: 0, transform: "translateY(4px)" }, { opacity: 1, transform: "none" }], { duration: SPEED.base, delay: 140 + more.length * 50, easing: ease, fill: "backwards" });   // "Show less" last
   }
 }
 function chipBtn(e, st) {   // a chip on an open row: click it and the card opens at that question
   const b = chip(st, "ws-chipbtn");
   return el("button", { class: b.className, type: "button", title: "Answer this", "aria-label": `${st.label}: answer it`, "data-field": st.label === "Missing details" || st.label === "Words added" ? "gap" : st.field || "", onclick: ev => { ev.stopPropagation(); openEntry(e.id, null, st.field); } }, st.label);
 }
-const FLAG_ICON = { "Add timekeeper": "person", "Needs timekeeper": "person", "Check matter": "folder", "Two matters": "two", "Check narrative": "lines", "Check entry": "lines",
-  "Missing details": "dots", "Detail missing": "dots", "Check hours": "clock", "Check date": "calendar", "Repeat?": "repeat", "Real entry?": "lines" };   // the icon says which part of the entry the label is about
+const FLAG_ICON = { "No timekeeper": "person", "Add timekeeper": "person", "Needs timekeeper": "person", "Check matter": "folder", "Two matters": "two", "Check narrative": "lines", "Check entry": "lines",
+  "Missing details": "dots", "Detail missing": "dots", "Check hours": "clock", "Check date": "calendar", "Repeat?": "repeat", "Real entry?": "lines", "Not a time entry?": "lines" };   // the icon says which part of the entry the label is about
 const chip = (st, extra = "") => el("span", { class: `pill ${st.tone}${st.s2 ? " s2" : ""} i-${FLAG_ICON[st.label] || st.icon} c-${String(st.label).toLowerCase().replace(/[^a-z]+/g, "-").replace(/^-|-$/g, "")} ${extra}`.trim(), text: st.label });   // s2: a Stage 2 check (the narrative review)
 
 /* ================= history: every answer can be undone ================= */
@@ -3305,8 +3374,8 @@ async function rereview(id) {
 
 /* ================= the questions ================= */
 const CH = {
-  tk: { tone: "warn", icon: "alert", label: "Needs timekeeper" }, hours: { tone: "warn", icon: "alert", label: "Check details" },
-  blank: { tone: "warn", icon: "clock", label: "Detail missing" }, junk: { tone: "neutral", icon: "help", label: "Not billable?" },
+  tk: { tone: "warn", icon: "alert", label: "No timekeeper" }, hours: { tone: "warn", icon: "alert", label: "Check details" },
+  blank: { tone: "warn", icon: "clock", label: "Missing details" }, junk: { tone: "neutral", icon: "help", label: "Not billable?" },
   newclient: PENDING.NO_MATCH, matter: { tone: "warn", icon: "clock", label: "Check matter" },
 };
 const srcName = id => (srcById(id) || {}).name || "this file";
@@ -3378,10 +3447,10 @@ function matterBox(inp, o = {}) {   // a list of matters under the box: type par
     box.replaceChildren(...[
       nTop ? cap("Tenth's closest matches") : null,
       ...shown.flatMap((k, i) => [nTop && i === nTop ? cap("Other matters") : null, el("li", { role: "option", id: `${id}-${i}`, class: "mopt" + (k === o.keep ? " mkeep" : ""), "aria-selected": "false", onclick: () => pick(k) },
-        el("b", {}, ...(mNum(k, MATTERS[k].client) ? [el("span", { class: "mn", text: k }), " "] : []), MATTERS[k].client || k), el("span", { text: MATTERS[k].name || "" }),
+        el("b", {}, ...(mNum(k, MATTERS[k].client) ? [el("span", { class: "mn", text: k }), " "] : []), MATTERS[k].client || k), el("span", { text: [MATTERS[k].name || "", !q && o.sure && o.sure(k) != null ? `${o.sure(k)}% sure` : ""].filter(Boolean).join(" \u00b7 ") }),
         k === o.keep ? el("span", { class: "mtag i-check", text: "Keep" }) : null)]),
-      !shown.length ? el("li", { class: "mnone", text: "No matter on the firm's list fits." }) : null,
-      all.length > shown.length ? el("li", { class: "mmore", text: `Showing ${shown.length} of ${all.length}. Keep typing to narrow.` }) : null,
+      !shown.length ? el("li", { class: "mnone", role: "presentation", text: "No matter on the firm's list fits." }) : null,   // notes in the list, not options
+      all.length > shown.length ? el("li", { class: "mmore", role: "presentation", text: `Showing ${shown.length} of ${all.length}. Keep typing to narrow.` }) : null,
       pre ? el("li", { role: "option", id: `${id}-${shown.length}`, class: "mopt mpre", "aria-selected": "false", onclick: () => pick(pre) }, el("b", { text: `Use ${pre.slice(4)} as pre-retention` }), el("span", { text: "A matter that isn't open yet" })) : null].filter(Boolean));
     mark();
   };
@@ -3394,7 +3463,7 @@ function matterBox(inp, o = {}) {   // a list of matters under the box: type par
       ev.preventDefault(); if (!shown) open();
       if (items.length) { at = ev.key === "ArrowDown" ? (at + 1) % items.length : (at - 1 + items.length) % items.length; mark(); }
     } else if (ev.key === "Enter" && shown && at >= 0) { ev.preventDefault(); ev.stopImmediatePropagation(); pick(items[at]); }
-    else if (ev.key === "Escape" && shown) { ev.preventDefault(); ev.stopImmediatePropagation(); close(); }
+    else if (ev.key === "Escape" && shown) { close(); if (!o.escExits) { ev.preventDefault(); ev.stopImmediatePropagation(); } }   // on the card one Esc closes the list and the part together
   });
   inp.addEventListener("input", () => { delete inp.dataset.cmid; at = -1; open(); });
   if (o.focusOpens !== false) inp.addEventListener("focus", open);
@@ -3490,10 +3559,10 @@ function describe(q) {
   if (q.kind === "entry") return entryDesc(q);
   if (q.kind === "bulk") {   // several entries, one answer: the list of what it covers, Accept all, or go through them one by one
     const g = q.g, oneByOne = () => { S.bulkDone.add(g.kind + ":" + g.qs.map(x => x.key).join(",")); (S.bulkNo = S.bulkNo || new Set()).add(g.kind); S.curKey = null; S.lastKey = null; render(); };
-    return { title: g.head, why: [g.kind === "matter" ? `${acceptWord(g.qs.length)} says each of these ${g.qs.length} matters is right. You can still change any of them in the list, and Undo takes them ${allOrBoth(g.qs.length)} back.`
-      : g.kind === "words" ? `${acceptWord(g.qs.length)} keeps each name or subject below. You can still change any of them in the list, and Undo takes them ${allOrBoth(g.qs.length)} back.`
-      : g.kind === "round" ? `Your firm bills in ${incShort()}. Undo takes back either choice.`
-      : g.kind === "tasks" ? `These ${g.qs.length} entries are block billed: each lists several tasks with one time for all of them. Many clients' billing rules reject block billing and want a time for each task. If these clients accept it, Keep as written leaves them as they are, and Undo takes them ${allOrBoth(g.qs.length)} back.` : `${acceptWord(g.qs.length)} says these ${g.qs.length} entries match the note. Undo takes them ${allOrBoth(g.qs.length)} back.`],
+    return { title: g.head, why: [g.kind === "matter" ? `${acceptWord(g.qs.length)} confirms each matter below. You can still change any of them in the list.`   // short, in billing terms; the toast after it offers Undo
+      : g.kind === "words" ? `${acceptWord(g.qs.length)} keeps each name or subject below. You can still change any of them in the list.`
+      : g.kind === "round" ? `Your firm bills in ${incShort()}.`
+      : g.kind === "tasks" ? `Each lists several tasks under one time. Many clients' billing guidelines require a time for each task. Keep as written if these clients allow it.` : `${acceptWord(g.qs.length)} confirms these ${g.qs.length} entries match the note.`],
       card: (bx => { bx.querySelector(".bh2").remove(); bx.classList.add("ws-bulkcard"); return bx; })(bulkBox(g, null, 8)), noPass: !g.alt, yesLabel: g.btn || acceptN(g.qs.length), noLabel: g.alt ? g.alt.label : "One by one",
       yes: () => bulkAccept(g), no: g.alt ? () => bulkAccept(g, "no") : oneByOne, skip: oneByOne };   // with two answers (round or keep), Pass is "one by one"
   }
@@ -3501,7 +3570,7 @@ function describe(q) {
   switch (q.kind) {
     case "none": {   // an entry opened from the list that has nothing to ask: it says where it stands, and the way back
       const c = catOf(e, rowState(e));
-      const title = { auto: "Matched on its own", you: "You checked this one", edit: "You changed this one", ovr: "Kept as written", open: "To review" }[c] || "This entry is ready";
+      const title = { auto: "Matched on its own", you: "You reviewed this one", edit: "You changed this one", ovr: "Kept as written", open: "To review" }[c] || "This entry is ready";
       const why = [c === "auto" ? `Tenth matched this to the matter${e.prob != null ? `, ${Math.round(e.prob * 100)}% sure` : ""}.` : "", fileSays(e, matterOf(e).cmid), "Click any part of the entry to change it."].filter(Boolean);
       return { title, why, back: toList, skip: () => {} };
     }
@@ -3575,20 +3644,20 @@ function describe(q) {
     case "verify": {
       const own = (e.verify.codes || []).some(c => c === "second_reader_only" || c === "possible_duplicate");
       if (own) {   // the question this card asks, explained on its own terms. The entry's other reasons (its hours, its date) wait in More detail and come up after
-        const dup = (e.verify.codes || []).includes("possible_duplicate") ? twinBox(e) : null, rest = sentences(vText(e)).filter(t => !/its own entry|repeat another|second read/i.test(t));
-        return Object.assign({}, base, { chip: CH.hours, title: dup ? "Is this its own entry?" : "Is this a real entry?", card: entryCard(e), twin: dup,
-          why: [dup ? "It looks a lot like the entry below." : "Tenth found this on only one of its two reads."], more: rest.map(t => el("p", { text: t })), debug: e.verify.debug,
+        const dup = (e.verify.codes || []).includes("possible_duplicate") ? twinBox(e) : null, rest = sentences(vText(e)).filter(t => !/its own entry|repeat another|second read|time entry|two readings/i.test(t));
+        return Object.assign({}, base, { chip: CH.hours, title: dup ? "Is this its own entry?" : "Is this a time entry?", card: entryCard(e), twin: dup,
+          why: [dup ? "It looks a lot like the entry below." : "This line may not be a time entry. Only one of Tenth's two readings found it."], more: rest.map(t => el("p", { text: t })), debug: e.verify.debug,
         yesLabel: "Yes, keep it", noLabel: "No, remove it", yes: () => commit(() => { e.verified = true; mark(e, "accepted"); }), no: () => commit(() => { e.removed = true; }) }); }
       if (e.verify.block) return Object.assign({}, base, { chip: CH.hours, title: "Keep these tasks under one time?", card: entryCard(e),
-        why: ["This entry is block billed: several tasks with one time for all of them.", "Many clients' billing rules reject block billing and want a time for each task."],
+        why: ["Block billed: several tasks under one time.", "Many clients' billing guidelines require a time for each task."],
         yesLabel: "Keep as written", noLabel: "Add times", yes: () => commit(() => { e.verified = true; mark(e, "accepted"); }), no: () => cardOpen(e, "hours") });
       if (noHoursCheck(e) && lineFill(e) != null) { const lt = lineFill(e); return Object.assign({}, base, { chip: CH.hours, title: `Is that ${fmtHr(lt)}\u00A0hours?`, show: { hours: lt }, why: [`The note shows ${fmtHr(lt)} on this line.`],
         yesLabel: "Yes", noLabel: "No, fix it", yes: () => commit(() => { setEntryHours(e, lt); e.verified = true; e.hoursOk = true; mark(e, "changed", "hours"); }), no: () => cardOpen(e, "hours") }); }   // the time on the entry's own line: filled in, to confirm
       if (noHoursCheck(e)) return Object.assign({}, base, { chip: CH.hours, title: "How many hours was it?", why: [first1(vText(e)) || "The note gives no time for this.", "Type the hours from the note."], more: rest1(vText(e)), debug: e.verify.debug,
         type: { label: "Hours", placeholder: "e.g. 1.3", inputmode: "decimal", submit: x => { const n = parseFloat(x); if (!(n > 0 && n <= 24)) return "Enter hours between 0.1 and 24."; commit(() => { setEntryHours(e, roundH(n)); e.verified = true; e.hoursOk = true; mark(e, "changed", "hours"); }); return null; } } });
       const part = verifyPart(e), nodate = part === "date" && !e.date, vf = verifyField(e);
-      const title = part === "date" ? (nodate ? "No date was found. Is that okay?" : `Is ${fmtDate(e.date)} the right date?`) : part === "matter" ? "Is this the right client and matter?" : "Is this what the note says?";
-      return Object.assign({}, base, { chip: CH.hours, title, yesLabel: nodate ? "Yes, leave it" : "Yes", card: entryCard(e), why: [first1(vText(e))], more: rest1(vText(e)), debug: e.verify.debug, noLabel: nodate ? "No, add it" : "No, fix it",
+      const title = part === "date" ? (nodate ? "No date on this entry. Leave it blank?" : `Is ${fmtDate(e.date)} the right date?`) : part === "matter" ? "Is this the right client and matter?" : vf === "hours" ? "Are the hours right?" : vf === "tk" ? "Is this the right timekeeper?" : vf === "date" ? "Is the date right?" : "Does this match the note?";   // the part in doubt, named when there is one
+      return Object.assign({}, base, { chip: CH.hours, title, yesLabel: nodate ? "Yes, leave it blank" : "Yes", card: entryCard(e), why: [first1(vText(e))], more: rest1(vText(e)), debug: e.verify.debug, noLabel: nodate ? "No, add a date" : "No, fix it",
         yes: () => commit(() => { e.verified = true; mark(e, "accepted"); }), no: () => cardOpen(e, part === "entry" ? (["hours", "date", "matter", "tk"].includes(vf) ? vf : "narr") : part) });
     }
     case "blank": {   // what fills the blank: Tenth's best guess is filled in and selected (Enter keeps it, typing replaces it); the other names it found are pills, most used first
@@ -3608,7 +3677,7 @@ function describe(q) {
     }
     case "junk": {
       const t = e.tasks[q.ti];
-      return Object.assign({}, base, { chip: CH.junk, title: "Keep this on the bill?", card: ans(t.text, t.hours != null ? `${fmtHr(t.hours)}\u00A0${t.hours === 1 ? "hour" : "hours"}` : null), why: ["Travel and expenses usually aren't billed."],
+      return Object.assign({}, base, { chip: CH.junk, title: "Keep this on the bill?", card: ans(t.text, t.hours != null ? `${fmtHr(t.hours)}\u00A0${t.hours === 1 ? "hour" : "hours"}` : null), why: ["Travel and expenses usually aren't billed as time."],
         yes: () => commit(() => { t.kept = true; mark(e, "accepted", "text"); }), no: () => commit(() => { t.removed = true; e.hoursDirty = true; mark(e, "changed", "text"); }) });
     }
   }
@@ -3638,10 +3707,10 @@ function bulkGroups0() {
     if (e.busy || !e.verify || isOwnCheck(e) || verifyPart(e) !== "entry" || !(e.verify.codes || []).includes("read_by_rules")) continue;
     const q = qsOf(e).find(x => x.kind === "verify"); if (q) (byFile.get(e.src) || byFile.set(e.src, []).get(e.src)).push(q);
   }
-  byFile.forEach((qs, id) => { const s = srcById(id), n = s ? s.name : "this file"; basic.push({ label: "entries read the basic way", btn: acceptN(qs.length), why: `${n} was read the basic way, one entry per line. If these match the note:`,
-    hint: `${plural(qs.length, "entry", "entries")} in ${n} ${qs.length === 1 ? "was" : "were"} read the basic way. ${acceptWord(qs.length)} says they match the note.`, done: `Marked ${plural(qs.length, "entry", "entries")} from ${n} as matching the note. Undo takes them back.`, qs }); });
+  byFile.forEach((qs, id) => { const s = srcById(id), n = s ? s.name : "this file"; basic.push({ label: "entries read line by line", btn: acceptN(qs.length), why: `Tenth read ${n} line by line, one entry per line. If these match it:`,
+    hint: `${plural(qs.length, "entry", "entries")} in ${n} ${qs.length === 1 ? "was" : "were"} read line by line. ${acceptWord(qs.length)} says they match the note.`, done: `Marked ${plural(qs.length, "entry", "entries")} from ${n} as matching the note. Undo takes them back.`, qs }); });
   return [...basic, { label: "matters Tenth is sure of", btn: acceptN(matter.length), why: `Tenth is at least ${pc}% sure which matter ${matter.length} entries belong to:`,
-      hint: `Tenth is at least ${pc}% sure which matter ${matter.length} entries belong to, this one included. ${acceptWord(matter.length)} says each one is right.`, done: `Said yes to ${matter.length} matters Tenth was at least ${pc}% sure of. Undo takes them back.`, qs: matter },
+      hint: `Tenth is at least ${pc}% sure which matter ${matter.length} entries belong to, this one included. ${acceptWord(matter.length)} says each one is right.`, done: `Confirmed ${matter.length} matters Tenth was at least ${pc}% sure of. Undo takes them back.`, qs: matter },
     { label: "subjects copied from earlier entries", btn: acceptN(words.length), why: `Tenth filled in a name or subject on ${words.length} entries, copied from earlier entries on the same matter:`,
       hint: `Tenth copied a name or subject from earlier entries on the same matter for ${words.length} entries, this one included. ${acceptWord(words.length)} says each one is right.`, done: `Kept ${words.length} names and subjects copied from earlier entries. Undo takes them back.`, qs: words },
     { label: "several tasks under one time", btn: `Keep ${block.length} as written`, why: `${block.length} entries are block billed: several tasks with one time for all of them. Clients that don't accept block billing want a time for each task. If these clients accept it:`,
@@ -3654,7 +3723,7 @@ function bulkGroups() {
   return bulkGroups0().map(g => Object.assign(g, g.label === "matters Tenth is sure of" ? { kind: "matter", head: `Tenth is at least ${pc}% sure of these matters`, tip: "Says each matter listed is right. Undo takes them back." }
     : g.label === "subjects copied from earlier entries" ? { kind: "words", head: "Tenth copied these from earlier entries on the same matter", tip: "Uses each name or subject listed. Undo takes them back." }
     : g.label === "hours off the firm's step" ? { kind: "round", head: offSay(g.qs).replace(/\.$/, ""), tip: `Rounds each time up to the next ${incShort().replace(/s$/, "")}. Undo takes them back.` }
-    : g.label === "several tasks under one time" ? { kind: "tasks", head: "Block billed: several tasks under one time", tip: "Keeps each narrative as written, for clients that accept block billing. Undo takes them back." } : { kind: "basic", head: "Read the basic way, one entry per line", tip: "Says each entry matches the note. Undo takes them back." }));
+    : g.label === "several tasks under one time" ? { kind: "tasks", head: "Block billed: several tasks under one time", tip: "Keeps each narrative as written, for clients that accept block billing. Undo takes them back." } : { kind: "basic", head: "Read line by line: check these match the file", tip: "Says each entry matches the note. Undo takes them back." }));
 }
 function bulkLine(g, q, here) {   // one entry the yes would settle: its date and the thing being accepted
   const e = byId(q.eid); if (!e) return null;
@@ -3697,10 +3766,10 @@ function checkOf(x, e) {   // one check on the card, always the same shape: in b
   if (d.type && !d.yes && x.kind !== "blank") return Object.assign(c, { head: FLD[c.f] || "Entry", says: c.f === "hours" ? "Type the hours." : c.f === "matter" ? "Pick the matter." : "Fill this in.", need: true });   // nothing to keep: it is typed right here
   switch (x.kind) {
     case "verify": {
-      if (e.verify.block) { const n = liveTasks(e).length, h = hoursOf(e); return Object.assign(c, { head: "Narrative", says: `Keeps ${n === 2 ? "both tasks" : n > 2 ? `all ${NUMW[n] || n} tasks` : "the tasks"} under ${hrs(h)}.`, why: "Some clients want a time for each task." }); }
+      if (e.verify.block) { const n = liveTasks(e).length, h = hoursOf(e); return Object.assign(c, { head: "Narrative", why: `Block billed: ${n >= 2 ? (NUMW[n] || n) + " tasks" : "several tasks"} share ${hrs(h)}.`, says: `Keeps one time for all ${n >= 2 ? (NUMW[n] || n) : "of them"}. Many clients' billing guidelines require a time for each task.` }); }
       const p = verifyField(e);
       return Object.assign(c, { head: FLD[p] || "Entry", says: p === "hours" ? (lineFill(e) != null ? `Uses ${hrs(lineFill(e))}.` : `Keeps ${hrs(hoursOf(e))}.`) : p === "date" ? (e.date ? `Keeps ${fmtDate(e.date)}.` : "Leaves it with no date.")
-        : p === "matter" ? "Keeps this matter." : p === "tk" ? "Keeps this timekeeper." : "Keeps the words as read." });
+        : p === "matter" ? "Keeps it as entered." : p === "tk" ? "Keeps it as entered." : "Keeps the words as read." });
     }
     case "hours": {   // a time written with no decimal point: what the note has, and the note's own number one click away
       if (lineFill(e) != null && !((e.hoursFlag || {}).options || []).length) return Object.assign(c, { head: "Hours", says: `Uses ${hrs(lineFill(e))}.`, why: `The note shows ${fmtHr(lineFill(e))} on this line.` });
@@ -3716,8 +3785,8 @@ function checkOf(x, e) {   // one check on the card, always the same shape: in b
       const next = m2 ? [mNum(k2, m2.client), m2.client === m.client ? m2.name : m2.client].filter(Boolean).join(" ") : "";   // "1111.001 Admin", "7222.002 Northgate Capital Partners"
       const raw0 = e.row && e.row.cmid != null ? String(e.row.cmid).trim() : "", raw = /^(nan|none|null)$/i.test(raw0) ? "" : raw0, written = raw === String(k);
       const pct = e.prob != null && k === e.cmid ? Math.round(e.prob * 100) : null, close = e.whyShort === "Close call between matters" && next;
-      const r = raw && !written ? (MATTERS[raw] ? `${Src} says ${raw}, but the work fits this matter better.` : `${Src} says ${raw}, which isn't a firm matter, so this is the closest.`)
-        : written ? (close ? `${Src} says ${k}, but ${next} fits almost as well.` : e.whyShort === "Typed CMID doesn't fit narrative" ? `${Src} says ${k}, but the work described doesn't fit it.` : `${Src} says ${k}, but the work only partly fits it.`)
+      const r = raw && !written ? (MATTERS[raw] ? `The work fits this matter better than ${raw}, the number in ${src}.` : `${raw}, the number in ${src}, isn't a firm matter. This is the closest.`)   // the issue first; where the number came from after it
+        : written ? (close ? `${next} fits almost as well as ${k}.` : e.whyShort === "Typed CMID doesn't fit narrative" ? `The work described doesn't fit ${k}, the number in ${src}.` : `The work only partly fits ${k}, the number in ${src}.`)
         : close ? `${next} fits almost as well.`
         : e.whyShort === "Not sure enough to accept" ? (pct != null ? `Tenth is only ${pct}% sure of this match.` : "Tenth isn't sure of this match.")
         : MATTER_WHY[e.whyShort] || why;
@@ -3754,9 +3823,8 @@ function entryDesc(q) {
 function checkNote(c) {   // a check, noted under the part of the entry it is about: what Looks right keeps and why Tenth asks. Change opens that part right
   // where it is, the way clicking it does; a quick other answer ("Add 'zoning letter'", "Keep 0.75") is one click beside it
   const e = byId(c.q.eid), block = c.q.kind === "verify" && !!e.verify.block, part = { date: "date", tk: "tk", matter: "matter", hours: "hours" }[c.f] || "narr";
-  return el("div", { class: "f-note" + (c.need ? " need" : "") }, c.need ? el("span", { class: "ck-n", "aria-hidden": "true" })
-      : el("button", { class: "ck-n ck-btn", type: "button", title: "Accept just this one", "aria-label": `Accept: ${c.says || c.why}`, onclick: () => acceptOne(c) }),   // a circle to tick, like a to-do: click it for this one, or Looks right for all   // a circle to tick, like a to-do: Looks right ticks it
-    el("span", { class: "fn-text" }, c.says ? el("b", { text: c.says }) : null, c.says && c.why ? " " : null, c.why || null),
+  return el("div", { class: "f-note" + (c.need ? " need" : "") }, el("span", { class: "ck-n", "aria-hidden": "true" }),   // a marker, not a button: where Tenth is unsure. Looks right answers them all; Change or the part's key, one part   // a circle to tick, like a to-do: click it for this one, or Looks right for all   // a circle to tick, like a to-do: Looks right ticks it
+    el("span", { class: "fn-text" }, el("b", { text: c.why || c.says }), c.why && c.says ? el("span", { class: "fn-does", text: c.says }) : null),   // the issue first, in bold: what a reviewer checks. What Looks right does with it, quieter, under it
     el("span", { class: "fn-acts" },
       c.offer ? el("button", { class: "fn-btn", type: "button", title: `Used once before on this matter. Adds \u201c${c.offer}\u201d to the narrative.`, onclick: () => addOffer(c) }, "Add it")
         : c.gap ? el("button", { class: "fn-btn", type: "button", title: "Type the missing detail", onclick: () => { S.cardGap = c.q.key; S.qSig = null; render(); } }, "Add it") : null,
@@ -3836,10 +3904,10 @@ function acceptEntry(q, checks, o = {}) {   // Looks right: each check answered 
   accepting = { finish, cancel, back: o.auto ? back : null }; qc.classList.add("ws-accepting");   // nothing else can be pressed meanwhile; Enter skips ahead
   notes.filter(r => !r.classList.contains("ok")).forEach((r, i) => timers.push(setTimeout(() => r.classList.add("ok"), wait + i * 60)));   // each circle ticks
   timers.push(setTimeout(() => {   // then the notes fold away and the marked parts go plain: the entry as it will be billed, for a moment
-    card.querySelectorAll(".f-notes").forEach(n => n.animate([{ height: n.offsetHeight + "px", opacity: 1, marginTop: "6px" }, { height: "0px", opacity: 0, marginTop: "0px" }], { duration: 300, easing: ease, fill: "forwards" }));
+    card.querySelectorAll(".f-notes").forEach(n => n.animate([{ height: n.offsetHeight + "px", opacity: 1, marginTop: "6px" }, { height: "0px", opacity: 0, marginTop: "0px" }], { duration: SPEED.base, easing: ease, fill: "forwards" }));
     card.classList.add("ws-settled");
-  }, tick + 120));
-  timers.push(setTimeout(finish, tick + 120 + 300 + 460));   // the entry as it will be billed stays a beat, so it registers before the next one
+  }, tick + 100));
+  timers.push(setTimeout(finish, tick + 100 + SPEED.base + 260));   // the entry as it will be billed stays a beat, so it registers before the next one (about 0.7s in all)
 }
 function previewFills(e, checks) {   // the narrative as Looks right would leave it, each word Tenth adds marked. A word only offered sits where it would go as a dashed "+" chip that adds it
   const withFills = extra => {
@@ -3920,8 +3988,11 @@ function render() {
   renderBar(v, cur);
   document.querySelector(".bar").classList.toggle("tk-busy", v !== "empty" && reading() && S.arrived);   // the first read has the big mark by its heading; later reads turn the header's
   const rp = $("#readPill"); rp.hidden = v === "empty" || !reading(); if (!rp.hidden) rp.title = readingLine();
-  if (v !== S.shown) { if (S.shown === "empty") { S.samplesOpen = false; S.pick = []; } S.shown = v; S.noteKey = S.qSig = S.srcShown = null; stage.className = "top"; if (v === "ask") buildAsk(); else closeCard(); if (v === "empty") buildEmpty(); }
-  if (v === "ask") { renderDone(); renderAsk(cur); if (cur) { markCur(cur.eid); autoSettle(cur); } if (S.askY != null && window.scrollY !== S.askY) window.scrollTo(0, S.askY); } else if (v === "wait" || v === "done") renderDone();
+  let snap = null;
+  if (v !== S.shown) { if (S.shown === "ask" && v === "done" && $("#wkHeadRev, #stage [data-num]") && !matchMedia("(prefers-reduced-motion: reduce)").matches) snap = headSnap();   // back from the questions: the list's numbers count down to where the answers left them
+    if (S.shown === "empty") { S.samplesOpen = false; S.pick = []; } S.shown = v; S.behind = false; S.noteKey = S.qSig = S.srcShown = null; stage.className = "top"; if (v === "ask") buildAsk(); else closeCard(); if (v === "empty") buildEmpty(); }
+  if (v === "ask") { if (!S.behind) { renderDone(); S.behind = true; }   // the list behind the card is drawn once and left alone: redrawn on every answer, its blurred Review and counts flickered through the card
+    renderAsk(cur); if (cur) { markCur(cur.eid); autoSettle(cur); } if (S.askY != null && window.scrollY !== S.askY) window.scrollTo(0, S.askY); } else if (v === "wait" || v === "done") { renderDone(); if (snap) morphHead(snap); }
   toTop();
   queueDraft();
 }
@@ -3937,7 +4008,7 @@ function renderBar(v, cur) {
   $("#skipBtn").hidden = v !== "ask" || !!S.typing || !!S.edit;
   $("#undoBtn").hidden = true;   // Undo lives where the change happened: Back on the card, Undo in the toast after a change in the list. U and B still work anywhere
   const work = v !== "empty" && !(reading() && !S.arrived) && flat().length > 0, live = flat();
-  $("#wsCnt").hidden = !work; if (work) $("#wsCntN").textContent = `${live.filter(e => !isOpen(e)).length} of ${live.length} done`;
+  $("#wsCnt").hidden = !work; if (work) $("#wsCntN").textContent = `${live.filter(e => !isOpen(e)).length} of ${live.length} ready`;
   $("#wsChipWrap").hidden = !work; if (work) drawChip(); else closeFiles();
 }
 /* ---- the header: the count and "Saved" share one spot; the chip says what's in this draft and lists its files ---- */
@@ -4301,7 +4372,9 @@ const REWORD = [   // the service's reasons as they were worded before Nov 21, f
   ["This entry has no date, though the ones before it do.", "No date here, though the lines above have one."], ["The weekday doesn't match the date.", "The weekday written doesn't match the date."],
   ["The client isn't one of the firm's clients.", "This client isn't on the firm's list."], ["The client name could mean more than one client.", "This name fits more than one client."],
   ["The client and the matter number don't go together.", "The client and matter number don't match."], ["No client is written; it may belong to the client above it.", "No client is written, so it may be the one above."],
-  ["The matter number written isn't one of the firm's.", "The matter number written isn't on the firm's list."], ["The note has hours that no entry uses.", "The note has a time that isn't on any entry."],
+  ["The matter number written isn't one of the firm's.", "The matter number written isn't on the firm's list."], ["The matter number written isn't on the firm's list.", "This matter number isn't on the firm's matter list."], ["This client isn't on the firm's list.", "This client isn't on the firm's client list."],
+  ["Tenth isn't sure this is its own entry. It may repeat another one.", "This line may not be a time entry. Only one of Tenth's two readings found it."], ["No timekeeper was found.", "The note doesn't say whose time it is."],
+  ["You can fix the hours in the next step.", "Change the hours if they're wrong."], ["Use Change matter if it's wrong.", "Change the matter if it's wrong."],   // drafts saved before app.py said it this way ["The note has hours that no entry uses.", "The note has a time that isn't on any entry."],
   ["The spreadsheet has rows that no entry uses.", "Some rows in the sheet didn't become entries."], ["Tenth wasn't sure which column of the spreadsheet holds what.", "Tenth wasn't sure which column is which."],
   ["The note was too long to read in one go.", "The note was long, so an entry may be cut off."], ["The same hours were given to more than one entry.", "Another entry has this same time."],
   ["No description of the work was found.", "The note doesn't say what the work was."]];
@@ -4469,7 +4542,8 @@ function cardEditor(e, field) {
     }
     return saveCell(e, field, v, field === "matter" ? matterValue(inp) : undefined);
   };
-  const mbx = field === "matter" ? matterBox(inp, { first: matterCands(e).map(x => x.cmid), onPick: () => done(true) }) : null;   // before the key handlers below
+  const mc = field === "matter" ? matterCands(e).map(x => x.cmid) : [], sureOf = k => { const i = mc.indexOf(k), p = i === 0 ? e.probTop ?? e.prob : i === 1 ? e.prob2 : null, top = e.probTop ?? e.prob; return p != null && top != null && top < 0.95 ? Math.round(p * 100) : null; };   // only when how sure Tenth is was the doubt
+  const mbx = field === "matter" ? matterBox(inp, { first: mc, keep: matterOf(e).cmid, sure: sureOf, escExits: true, onPick: () => done(true) }) : null;   // before the key handlers below. Tenth's closest matches first, each with how sure it is; the one on the entry marked Keep
   const done = save => {
     if (S.cardEdit !== key) return;
     const v = inp.value.trim();
@@ -4513,7 +4587,7 @@ function entryView(e, d, q) {
   };
   return el("div", { class: "ecard" + (prev ? " again" : " enter") + (now === "all" ? " now-all" : ""), role: "group", "aria-label": "The entry" },
     f("date", el("span", { class: e.date ? "" : "ghost", text: fmtDate(e.date) })),
-    f("tk", el("span", { class: who && !open.tk ? "" : "ghost", text: who || "Who?" })),
+    f("tk", el("span", { class: who && !open.tk ? "" : "ghost", text: who || "No timekeeper" })),
     f("matter", mat.num ? el("span", { class: "m-num", text: mat.num }) : null, el("b", { class: "m-client" + (mat.ghost && !mat.num ? " ghost" : ""), text: mat.top }), mat.sub ? el("span", { class: "m-sub", text: mat.sub }) : null),
     f("hours", el("span", { class: open.hours ? "ghost" : "", text: fmtH(hrs) })),
     f("narr", ...narr));
@@ -4529,13 +4603,14 @@ function askHead(cur) {   // one count, in entries, above the question; "Last on
   // with several timekeepers: whose time this is, how many of theirs are left, and who comes next, so moving on to the next person is never a surprise
   const nm = tkOf(e.tk).name, left = live.filter(x => x.tk === e.tk && isOpen(x)).length;
   const after = list.map(q => byId(q.eid)).find(x => x && x.tk && x.tk !== e.tk && personCmp(x, e) > 0), an = after ? tkOf(after.tk).name : "";
-  return el("p", { class: "q-head ws-count wk-count" }, back,
-    el("span", { class: "wk-av", "aria-hidden": "true", text: initials(nm) }), el("b", { class: "wk-cname", text: nm }),
+  return el("p", { class: "q-head ws-count wk-count" }, back,   // the name alone: on the card the initials circle only repeats it
+    el("b", { class: "wk-cname", text: nm }),
     el("span", { class: "wk-cn", text: `${left} to review${reading() ? ", more coming" : ""}` }),
     last ? el("span", { class: "wk-cnext", text: "Last one!" })
-      : after ? el("span", { class: "wk-cnext" }, "Then", el("span", { class: "wk-av xs", "aria-hidden": "true", text: initials(an) }), `${an}, ${live.filter(x => x.tk === after.tk && isOpen(x)).length} to review`) : null);
+      : after && left <= 1 ? el("span", { class: "wk-cnext" }, "Next:", ` ${an}`) : null);   // who comes next, only on this person's last one: the one moment it matters
 }
-const ICONS = { "check": "<path d=\"M3.2 8.6l3.1 3.1L12.8 5\"/>", "pencil": "<path fill=\"currentColor\" stroke=\"none\" d=\"M10.2 2.4a1.6 1.6 0 0 1 2.2 0l1.2 1.2a1.6 1.6 0 0 1 0 2.2L6.4 13l-3.4.9a.5.5 0 0 1-.6-.6l.9-3.4z\"/>", "trash": "<path fill=\"currentColor\" stroke=\"none\" d=\"M4.3 5.5h7.4l-.6 7.4a1.6 1.6 0 0 1-1.6 1.5H6.5a1.6 1.6 0 0 1-1.6-1.5z\"/><path d=\"M2.8 4h10.4M6.4 4V2.6h3.2V4\"/>", "join": "<path d=\"M4 3v4a3 3 0 0 0 3 3h5M10 7.5L12.5 10 10 12.5\"/>", "left": "<path d=\"M10 3.5L5.5 8l4.5 4.5\"/>", "minus": "<path d=\"M3.5 8h9\"/>", "fit": "<path d=\"M2.5 6V3.8a1.3 1.3 0 0 1 1.3-1.3H6M10 2.5h2.2a1.3 1.3 0 0 1 1.3 1.3V6M13.5 10v2.2a1.3 1.3 0 0 1-1.3 1.3H10M6 13.5H3.8a1.3 1.3 0 0 1-1.3-1.3V10\"/>", "plus": "<path d=\"M8 3.2v9.6M3.2 8h9.6\"/>", "x": "<path d=\"M4.2 4.2l7.6 7.6M11.8 4.2l-7.6 7.6\"/>", "chev": "<path d=\"M4 6.2l4 4 4-4\"/>", "dots": "<circle cx=\"3.5\" cy=\"8\" r=\"1.5\" fill=\"currentColor\" stroke=\"none\"/><circle cx=\"8\" cy=\"8\" r=\"1.5\" fill=\"currentColor\" stroke=\"none\"/><circle cx=\"12.5\" cy=\"8\" r=\"1.5\" fill=\"currentColor\" stroke=\"none\"/>", "file": "<path d=\"M4.6 1.8h4.6l3.2 3.2v7.6a1.6 1.6 0 0 1-1.6 1.6H4.6A1.6 1.6 0 0 1 3 12.6V3.4a1.6 1.6 0 0 1 1.6-1.6z\"/><path fill=\"currentColor\" stroke=\"none\" d=\"M9 1.8V4a1 1 0 0 0 1 1h2.4z\"/>", "panel": "<rect x=\"1.6\" y=\"2.4\" width=\"12.8\" height=\"11.2\" rx=\"2\"/><path d=\"M9.6 2.6v10.8\"/><path stroke-width=\"1.4\" d=\"M11.4 5.4h1.2M11.4 7.6h1.2\"/>", "locate": "<rect x=\"1.8\" y=\"2.6\" width=\"12.4\" height=\"10.8\" rx=\"2.4\"/><path fill=\"currentColor\" fill-opacity=\".45\" stroke=\"none\" d=\"M9.4 2.6h2.4a2.4 2.4 0 0 1 2.4 2.4v6a2.4 2.4 0 0 1-2.4 2.4H9.4z\"/><path d=\"M4.6 6.4h2M4.6 9.4h2\"/>", "search": "<circle cx=\"7\" cy=\"7\" r=\"4.4\"/><path d=\"M10.4 10.4L14 14\" stroke-width=\"2.6\"/>", "up": "<path d=\"M8 13.2V3.4M4.4 7L8 3.4 11.6 7\"/>", "down": "<path d=\"M8 2.4v7.4M4.9 6.9L8 10l3.1-3.1\"/><rect x=\"2.4\" y=\"12\" width=\"11.2\" height=\"2.4\" rx=\"1.2\" fill=\"currentColor\" stroke=\"none\"/>", "lock": "<path d=\"M5.4 7V5.2a2.6 2.6 0 0 1 5.2 0V7\"/><rect x=\"3.2\" y=\"6.8\" width=\"9.6\" height=\"7.4\" rx=\"2\" fill=\"currentColor\" stroke=\"none\"/>",
+const SPEED = { fast: 150, base: 340, slow: 500 };   // the three speeds, the same as --t-fast, --t-base and --t-slow in the styles
+const ICONS = { "check": "<path d=\"M3.2 8.6l3.1 3.1L12.8 5\"/>", "pencil": "<path fill=\"currentColor\" stroke=\"none\" d=\"M10.2 2.4a1.6 1.6 0 0 1 2.2 0l1.2 1.2a1.6 1.6 0 0 1 0 2.2L6.4 13l-3.4.9a.5.5 0 0 1-.6-.6l.9-3.4z\"/>", "trash": "<path fill=\"currentColor\" stroke=\"none\" d=\"M3.7 6.4h8.6l-.45 5.7a2.4 2.4 0 0 1-2.4 2.2H6.55a2.4 2.4 0 0 1-2.4-2.2z\"/><rect x=\"2.3\" y=\"3.5\" width=\"11.4\" height=\"1.9\" rx=\".95\" fill=\"currentColor\" stroke=\"none\"/><circle cx=\"8\" cy=\"2.3\" r=\"1.15\" fill=\"currentColor\" stroke=\"none\"/>", "join": "<path d=\"M4 3v4a3 3 0 0 0 3 3h5M10 7.5L12.5 10 10 12.5\"/>", "left": "<path d=\"M10 3.5L5.5 8l4.5 4.5\"/>", "minus": "<path d=\"M3.5 8h9\"/>", "fit": "<path d=\"M2.5 6V3.8a1.3 1.3 0 0 1 1.3-1.3H6M10 2.5h2.2a1.3 1.3 0 0 1 1.3 1.3V6M13.5 10v2.2a1.3 1.3 0 0 1-1.3 1.3H10M6 13.5H3.8a1.3 1.3 0 0 1-1.3-1.3V10\"/>", "plus": "<path d=\"M8 3.2v9.6M3.2 8h9.6\"/>", "x": "<path d=\"M4.2 4.2l7.6 7.6M11.8 4.2l-7.6 7.6\"/>", "chev": "<path d=\"M4 6.2l4 4 4-4\"/>", "dots": "<circle cx=\"3.5\" cy=\"8\" r=\"1.5\" fill=\"currentColor\" stroke=\"none\"/><circle cx=\"8\" cy=\"8\" r=\"1.5\" fill=\"currentColor\" stroke=\"none\"/><circle cx=\"12.5\" cy=\"8\" r=\"1.5\" fill=\"currentColor\" stroke=\"none\"/>", "file": "<path d=\"M4.6 1.8h4.6l3.2 3.2v7.6a1.6 1.6 0 0 1-1.6 1.6H4.6A1.6 1.6 0 0 1 3 12.6V3.4a1.6 1.6 0 0 1 1.6-1.6z\"/><path fill=\"currentColor\" stroke=\"none\" d=\"M9 1.8V4a1 1 0 0 0 1 1h2.4z\"/>", "panel": "<path fill=\"currentColor\" fill-opacity=\".42\" stroke=\"none\" d=\"M3.9 2.6h4.9v10.8H3.9a2.3 2.3 0 0 1-2.3-2.3V4.9a2.3 2.3 0 0 1 2.3-2.3z\"/><path fill=\"currentColor\" stroke=\"none\" d=\"M10 2.6h2.1a2.3 2.3 0 0 1 2.3 2.3v6.2a2.3 2.3 0 0 1-2.3 2.3H10z\"/>", "search": "<circle cx=\"7\" cy=\"7\" r=\"4.4\"/><path d=\"M10.4 10.4L14 14\" stroke-width=\"2.6\"/>", "up": "<path d=\"M8 13.2V3.4M4.4 7L8 3.4 11.6 7\"/>", "down": "<path d=\"M8 2.4v7.4M4.9 6.9L8 10l3.1-3.1\"/><rect x=\"2.4\" y=\"12\" width=\"11.2\" height=\"2.4\" rx=\"1.2\" fill=\"currentColor\" stroke=\"none\"/>", "lock": "<path d=\"M5.4 7V5.2a2.6 2.6 0 0 1 5.2 0V7\"/><rect x=\"3.2\" y=\"6.8\" width=\"9.6\" height=\"7.4\" rx=\"2\" fill=\"currentColor\" stroke=\"none\"/>",
   "person": "<circle cx=\"8\" cy=\"5.3\" r=\"2.6\"/><path d=\"M3.2 13.6c.6-2.5 2.5-3.9 4.8-3.9s4.2 1.4 4.8 3.9\"/>", "people": "<circle cx=\"6\" cy=\"5.6\" r=\"2.3\"/><path d=\"M1.9 13.4c.5-2.3 2.1-3.6 4.1-3.6s3.6 1.3 4.1 3.6M10.6 3.5a2.3 2.3 0 0 1 0 4.3M12 9.9c1.2.5 2 1.6 2.3 3.4\"/>",
   "swap": "<path d=\"M2.8 5.4h9.6M10.2 3l2.4 2.4-2.4 2.4M13.2 10.6H3.6M5.8 8.2l-2.4 2.4 2.4 2.4\"/>", "undo": "<path d=\"M5.4 3.4L2.6 6.2 5.4 9\"/><path d=\"M2.9 6.2h6.4a3.6 3.6 0 0 1 0 7.2H7\"/>" };   // icon family B: the same rounded shapes as the status and file icons, in one tone
 function ico(name, size = 16) {   // a small line icon, drawn the same way everywhere
@@ -4822,7 +4897,7 @@ function pipeTable(item) {   // a sheet, or a Word or email table, as a table: i
 }
 const tableOf = item => (item.input_type === "PDF" ? pdfTable(item) : item.input_type === "VOICE" ? null : pipeTable(item));
 const pdfCell = (t, j, c) => j === t.wide ? el("td", { class: "wide" }, el("span", { class: "wd", text: c }))
-  : el("td", { class: [t.hours[j] ? "h" : "", c.length <= 16 ? "nw" : ""].filter(Boolean).join(" ") || null, text: c });
+  : el("td", { class: [t.hours[j] ? "h" : "", c.length <= 16 ? "nw" : "", /\s/.test(c) ? "sp" : ""].filter(Boolean).join(" ") || null, text: c });
 function tableView(item, mm) {   // the card's view of a typed file with a table (a PDF, a Word log, an email's sheet): its table lined up (tableOf), the lines above it as titles. null to show its lines instead
   const parts = item.input_type === "SPREADSHEET" ? null : tableOf(item); if (!parts) return null;   // a sheet has its own view (sheetView)
   const mark = keys => (mm && keys.some(k => mm.hit.has(k)) ? "hit" : mm && keys.some(k => mm.soft.has(k)) ? "soft" : "");
@@ -5103,12 +5178,38 @@ function slideTabs() {   // the white highlight slides from the filter you left 
   th.style.transition = "none"; th.style.width = (from || to).w + "px"; th.style.transform = `translateX(${(from || to).x}px)`;
   if (from && (from.x !== to.x || from.w !== to.w)) { void th.offsetWidth; th.style.transition = ""; th.style.width = to.w + "px"; th.style.transform = `translateX(${to.x}px)`; }
   S.thumb = to;
-  if (S.tabSwap) { S.tabSwap = false; const c = $(".fcards"); if (c) { c.classList.remove("ws-swap"); void c.offsetWidth; c.classList.add("ws-swap"); } }
+  if (S.tabSwap) { S.tabSwap = false; document.querySelectorAll(VIEW_PARTS).forEach(c => { c.classList.remove("ws-swap"); void c.offsetWidth; c.classList.add("ws-swap"); }); }   // only from outside the list (the release dialog's Show)
+}
+function settleView(change) {   // a new filter or person, scrolled down: the new view starts at its top, right under the filters, which don't move.
+  // A view too short for that can't keep the bar up there: the page glides down to show all of it instead of snapping
+  const b = document.body, h0 = document.documentElement.scrollHeight, still = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  b.style.minHeight = h0 + "px"; change();   // held at its old height for a moment, so the browser doesn't cut the scroll short mid-redraw
+  const t = $("#wkTools"); let y = null;
+  if (t) { t.style.position = "static"; y = t.getBoundingClientRect().top + window.scrollY; t.style.position = ""; }   // where the bar sits when not pinned
+  b.style.minHeight = ""; const max = Math.max(0, document.documentElement.scrollHeight - innerHeight);
+  const target = Math.min(y != null && window.scrollY > y ? y : window.scrollY, max);
+  if (Math.abs(target - window.scrollY) < 1) return;
+  if (target === y || still) { window.scrollTo(0, target); return; }   // the bar stays where it is: nothing on screen moves but the rows
+  b.style.minHeight = h0 + "px"; window.scrollTo({ top: target, behavior: "smooth" });
+  let done = false; const end = () => { if (!done) { done = true; b.style.minHeight = ""; } };
+  window.addEventListener("scrollend", end, { once: true }); setTimeout(end, 700);
+}
+const VIEW_PARTS = "#stage .ws-bulk, #stage .wk-gonenote, #stage .fcards";   // what a new view replaces, under the filters
+function swapView(change) {   // a filter, a person or a week picked: one way for all of them. Everything changes at once, on one clock and one curve:
+  // the numbers count, the bars grow or shrink, the filters stay put, the new rows fade in. Scrolled down, the new view starts right under the filters
+  const still = matchMedia("(prefers-reduced-motion: reduce)").matches || view() === "ask", snap = still ? null : headSnap();
+  S.rowsDrawn = false;   // the new rows come in together, not one by one
+  settleView(() => { change(); renderDone(); });
+  const tabOn = $("#wkTools .tab[aria-pressed=\"true\"]"), h1 = $("#stage .ws-lhead h1"), lv = $("#live");   // for a screen reader: what the list shows now, said once, with the final numbers
+  if (lv) lv.textContent = [S.who ? whoName(S.who) : "Everyone", h1 ? h1.textContent : "", tabOn ? `Showing ${tabOn.textContent.replace(/(\D)(\d)/, "$1 $2")}` : "", S.day ? (S.day.startsWith("wk:") ? `week of ${fmtDate(S.day.slice(3))}` : fmtDate(S.day)) : ""].filter(Boolean).join(". ") + ".";
+  if (still) return;
+  morphHead(snap);
+  const ease = getComputedStyle(document.documentElement).getPropertyValue("--ease").trim() || "ease";
+  document.querySelectorAll(VIEW_PARTS).forEach(n => n.animate([{ opacity: 0, transform: "translateY(6px)" }, { opacity: 1, transform: "none" }], { duration: HEAD_MS, easing: ease }));
 }
 function setTab(k) {   // a new filter starts clean: nothing stays open from the last one
   if (S.tab === k && !S.sel) return;
-  S.tabSwap = true;
-  S.tab = k; S.anchor = null; dropSel(); renderDone();
+  swapView(() => { S.tab = k; S.anchor = null; dropSel(); });
 }
 function moveSel(dir) {
   const ids = S.shownIds, i = ids.indexOf(S.sel), n = ids[i + dir];
@@ -5228,8 +5329,14 @@ function noteBox(src, e, mk, qkey) {   // the note beside the question. It opens
 }
 
 /* ---- the file beside the list (board 7): a split, 440px, resizable. Pointing at a row outlines its lines; a line finds its row. ---- */
-const PANEL_KEY = "tenth.panelW";
-const panelW = () => { let w = 440; try { w = +localStorage.getItem(PANEL_KEY) || 440; } catch (er) { /* the default */ } return Math.round(Math.max(360, Math.min(w, innerWidth / 2))); };
+const PANEL_KEY = "tenth.panelW3";   // new key with the new default, so a width dragged under the old default starts fresh
+const LIST_MIN = 610;   // the narrowest the list gets and still shows every column (its container query switches at 600)
+const PANEL_DEF = 660;   // the default on a wide screen: a timesheet with eight columns fits without scrolling sideways, the list keeps the rest
+const panelW = () => {   // a width someone dragged to is kept; otherwise 660, or less on a smaller screen so the list still shows all its columns
+  let w = 0; try { w = +localStorage.getItem(PANEL_KEY) || 0; } catch (er) { /* the default */ }
+  if (!w) w = Math.min(PANEL_DEF, innerWidth - 88 - LIST_MIN);   // 88: the page's margins and the gap beside the panel
+  return Math.round(Math.max(360, Math.min(w, innerWidth / 2)));
+};
 const canShow = s => !!s && s.status === "done" && (!!s.url || !!(s.layout && Object.keys(s.layout).length));
 const panelOn = () => !!S.panel && S.shown !== "ask" && S.shown !== "empty" && wide() && !!srcById(S.panel.src);
 const filesOf = k => [...new Set(flat().filter(e => pkey(e) === k).sort(byView).map(e => e.src))].map(srcById).filter(canShow);   // a person's notes that can be shown
@@ -5251,7 +5358,7 @@ function slideSplit(change, anchorId) {   // the file panel coming or going
   const ease = getComputedStyle(document.documentElement).getPropertyValue("--ease").trim() || "ease";
   parts.forEach((q, i) => {
     const n = $(q), dx = n && x0[i] != null ? x0[i] - n.getBoundingClientRect().left : 0;
-    if (Math.abs(dx) >= 1) n.animate([{ transform: `translateX(${dx}px)` }, { transform: "translateX(0)" }], { duration: 380, easing: ease });
+    if (Math.abs(dx) >= 1) n.animate([{ transform: `translateX(${dx}px)` }, { transform: "translateX(0)" }], { duration: SPEED.base, easing: ease });
   });
 }
 function canLocate(e) { return canShow(srcById(e.src)); }
@@ -5386,17 +5493,52 @@ function toTop() {   // the list, scrolled a screen and a half down: a button ba
   b.classList.toggle("on", on); b.setAttribute("tabindex", on ? "0" : "-1"); b.setAttribute("aria-hidden", String(!on));
 }
 window.addEventListener("scroll", toTop, { passive: true });
-function stuckCols() { const c = document.querySelector(".fcard > .cols"); if (c) c.classList.toggle("stuck", window.scrollY > 0 && c.getBoundingClientRect().top <= 0.5); }   // stuck to the top: a soft shadow over the rows going under it
+function stuckCols() {   // the filters stick to the top, the column names under them; stuck, a soft shadow over the rows going under. Review joins the filters while the heading's is out of sight
+  const t = $("#wkTools"), pin = !!t && getComputedStyle(t).position === "sticky", h = pin ? t.offsetHeight : 0;
+  document.documentElement.style.setProperty("--wk-bar", h + "px");
+  const c = document.querySelector(".fcard > .cols"), cs = !!c && window.scrollY > 0 && c.getBoundingClientRect().top <= h + 0.5;
+  if (c) c.classList.toggle("stuck", cs);
+  if (!t) return;
+  const ts = pin && window.scrollY > 0 && t.getBoundingClientRect().top <= 0.5;
+  t.classList.toggle("stuck", ts); t.classList.toggle("wk-colsup", cs);
+  const hr = $("#wkHeadRev"), show = ts && !!hr && hr.getBoundingClientRect().bottom < t.getBoundingClientRect().bottom, b = t.querySelector(".wk-barrev");   // the heading's Review has gone up under the bar
+  t.classList.toggle("wk-showrev", show);
+  if (b) { b.tabIndex = show ? 0 : -1; b.setAttribute("aria-hidden", String(!show)); }
+  if (t.classList.contains("wk-instant")) requestAnimationFrame(() => requestAnimationFrame(() => t.classList.remove("wk-instant")));   // a redraw puts it straight where it was; only scrolling animates it
+  pinPerson(c, pin ? h : 0);
+}
+function pinPerson(c, bar) {   // everyone's list: the person whose rows are on screen stays under the column names, and the next person pushes them up and takes their place.
+  // One row is sticky at a time, so the next one can push it off. Not with one person picked (the filters say whose), on a phone, or on a short screen
+  const pgs = c ? [...document.querySelectorAll(".finished:not(.wk-one) .fcard .fgroup.wk-pg")] : [];
+  const was = document.querySelector(".fcard .wk-pin"), on = pgs.length > 1 && innerHeight >= 700 && getComputedStyle(c).position === "sticky";
+  const top = bar + (c ? c.offsetHeight : 0), at = g => {   // where a person's row sits in the list, wherever it is pinned
+    if (g !== was) return g.getBoundingClientRect().top;
+    const n = g.nextElementSibling; return n ? n.getBoundingClientRect().top - g.offsetHeight : g.getBoundingClientRect().top;
+  };
+  let cur = null, next = null;
+  if (on && window.scrollY > 0) for (let i = 0; i < pgs.length; i++) { if (at(pgs[i]) <= top + 0.5) { cur = pgs[i]; next = pgs[i + 1] || null; } else break; }
+  if (was && was !== cur) { was.classList.remove("wk-pin", "stuck"); was.style.transform = ""; }
+  if (c) c.classList.toggle("wk-pgup", !!cur);
+  if (!cur) return;
+  document.documentElement.style.setProperty("--wk-stick", top + "px");
+  cur.classList.add("wk-pin");
+  const push = next ? Math.min(0, next.getBoundingClientRect().top - top - cur.offsetHeight) : 0;   // the next person's row arriving underneath
+  cur.style.transform = push ? `translateY(${push}px)` : "";
+  cur.classList.toggle("stuck", at(cur) < top - 0.5);
+}
 window.addEventListener("scroll", stuckCols, { passive: true });
 window.addEventListener("resize", () => { if ($("#wsPanel")) renderPanel(); });
 
 /* ---- the finished time sheet ---- */
 function keepLoops(root) {   // a redrawn element would start its loop over; pinning every endless animation to the page clock makes a redraw invisible
-  try { for (const a of root.getAnimations({ subtree: true })) { const t = a.effect && a.effect.getTiming(); if (t && t.iterations === Infinity && a.startTime !== 0) a.startTime = 0; } } catch (_) { /* older browsers: the loops just restart */ }
+  const LOOPS = ".bar-load, .steps i.now, .dots i, .pen, .fico.go, .ws-dots i, .ws-skel, .ws-pulse";   // the only things that loop: asking each of them is far cheaper than asking the whole page
+  try { for (const a of [...root.querySelectorAll(LOOPS)].flatMap(n => n.getAnimations({ subtree: true }))) { const t = a.effect && a.effect.getTiming(); if (t && t.iterations === Infinity && a.startTime !== 0) a.startTime = 0; } } catch (_) { /* older browsers: the loops just restart */ }
 }
 function fitNarr(root) {   // a flagged narrative that wraps: its box as wide as its longest line, so no empty band runs down its right side
-  root.querySelectorAll(".row .c-narr.fl:not(.s2) > .nt").forEach(nt => {
-    nt.style.width = "";
+  // In three passes, all writes then all reads then all writes: measuring each box right after changing the one before made the page lay itself out once per row
+  const nts = [...root.querySelectorAll(".row .c-narr.fl:not(.s2) > .nt")];
+  nts.forEach(nt => { nt.style.width = ""; });
+  const widths = nts.map(nt => {
     const r = document.createRange(); r.selectNodeContents(nt);
     const lines = [];   // the pieces on each line: a "what?" button sits a little higher or lower than the words beside it, so a piece joins the line it overlaps
     [...r.getClientRects()].filter(b => b.width).sort((a, b) => a.top - b.top).forEach(b => {
@@ -5404,10 +5546,11 @@ function fitNarr(root) {   // a flagged narrative that wraps: its box as wide as
       if (l) { l.left = Math.min(l.left, b.left); l.right = Math.max(l.right, b.right); l.top = Math.min(l.top, b.top); l.bottom = Math.max(l.bottom, b.bottom); }
       else lines.push({ left: b.left, right: b.right, top: b.top, bottom: b.bottom });
     });
-    if (lines.length < 2) return;
-    const cs = getComputedStyle(nt), widest = Math.max(...lines.map(l => l.right - l.left));
-    nt.style.width = Math.ceil(widest + parseFloat(cs.paddingLeft) + parseFloat(cs.paddingRight) + 1) + "px";
+    if (lines.length < 2) return null;
+    const cs = getComputedStyle(nt);
+    return Math.ceil(Math.max(...lines.map(l => l.right - l.left)) + parseFloat(cs.paddingLeft) + parseFloat(cs.paddingRight) + 1);
   });
+  nts.forEach((nt, i) => { if (widths[i] != null) nt.style.width = widths[i] + "px"; });
 }
 let fitTimer = 0, fitW = 0;
 new ResizeObserver(([en]) => { const w = Math.round(en.contentRect.width); if (w === fitW) return; fitW = w; cancelAnimationFrame(fitTimer); fitTimer = requestAnimationFrame(() => fitNarr(stage)); }).observe(stage);   // the window or the file panel changed the list's width
@@ -5420,7 +5563,7 @@ function leaveRows() {   // the rows that settled have had their moment: each fo
   const ease = getComputedStyle(document.documentElement).getPropertyValue("--ease").trim() || "ease";
   const seen = go.filter(r => r.getBoundingClientRect().bottom > 80);   // a row above the view goes when the list is drawn again, which keeps what you're reading still
   seen.forEach((r, i) => { r.style.overflow = "hidden"; r.animate([{ opacity: 1, height: r.offsetHeight + "px" }, { opacity: 0, height: "0px", paddingTop: "0px", paddingBottom: "0px", marginTop: "0px", marginBottom: "0px" }],
-    { duration: 380, delay: Math.min(i * 40, 400), easing: ease, fill: "forwards" }); });   // many at once fold one after another, like a ripple, not a drop
+    { duration: SPEED.base, delay: Math.min(i * 40, 400), easing: ease, fill: "forwards" }); });   // many at once fold one after another, like a ripple, not a drop
   setTimeout(() => { if (view() !== "ask") renderDone(); }, 390 + Math.min(Math.max(seen.length - 1, 0) * 40, 400));
 }
 function chipMotion() {   // a row whose chip changed since the list was last in view: the old chip lifts away and the next one settles in its place
@@ -5436,7 +5579,8 @@ function chipMotion() {   // a row whose chip changed since the list was last in
     [...cs.children].filter(x => x !== ghost).forEach(x => x.classList.add("ws-chip-in"));
   });
 }
-function renderDone() {
+function renderDone() { RD = { qs: new Map(), nb: null }; try { return renderDone0(); } finally { RD = null; } }
+function renderDone0() {
   const first = reading() && !S.arrived;   // the first read: the reading heading, then rows as each file comes back
   if (!reading()) { S.arrived = true; S.rhSeen = false; }
   const wd = wide();
@@ -5457,7 +5601,8 @@ function renderDone() {
     S.bandAsked = null; S.curKey = null; S.lastKey = null; S.cand = 0; S.bandSig = null; S.gapEdit = null; S.sel = nx ? nx.id : null; S.reveal = nx ? nx.id : null; S.center = true; sel = nx || null;
   }
   const st = new Map(live.map(e => [e, rowState(e)])), nOpen = live.filter(e => st.get(e).kind === "open").length;
-  const openNow = new Set(live.filter(e => st.get(e).kind === "open").map(e => e.id)), justDone = S.prevOpen ? [...S.prevOpen].filter(id => !openNow.has(id) && live.some(x => x.id === id)) : [];   // waiting before this draw, done now
+  const openNow = new Set(live.filter(e => st.get(e).kind === "open").map(e => e.id)), scope = S.who || "*", justDone = S.prevOpen && S.prevScope === scope ? [...S.prevOpen].filter(id => !openNow.has(id) && live.some(x => x.id === id)) : [];   // waiting before this draw, done now. Only within one person or everyone: switching people isn't anyone finishing anything
+  S.prevScope = scope;
   S.prevOpen = openNow;
   const cat = new Map(live.map(e => [e, tabOf(catOf(e, st.get(e)))])), counts = {}; cat.forEach(c => { counts[c] = (counts[c] || 0) + 1; });
   const gone = S.entries.filter(e => e.removed && !e.mergedInto && inWho(e)); if (gone.length) counts.gone = gone.length;   // taken out, not combined into another entry
@@ -5466,7 +5611,7 @@ function renderDone() {
   const none = !live.length && !first;   // every file failed, or none has an entry yet
   const fin = !first && !none && !nOpenAll && S.doneCount > 0 && !S.released, finNow = fin && !S.finPlayed;   // every question answered: the check, the soft sage light, and Release turns solid once
   if (fin) S.finPlayed = true; else if (nOpenAll) S.finPlayed = false;
-  const settled = S.who ? (live.some(e => st.get(e).kind === "you") ? "All checked" : "Everything matched") : (S.doneCount === 0 ? "Everything matched" : "All checked");
+  const settled = "Nothing to review";   // the same shape as "7 entries to review", for one person or everyone
   const head = none ? (failed.length ? "Tenth couldn't read these notes" : "Nothing here yet") : S.released ? (nOpen ? `Released, ${nOpen} with gaps marked` : "Released") : nOpen ? `${plural(nOpen, "entry", "entries")} to review` : settled;
   const sub = none ? (failed.length ? "Try each one again below, or add a different file." : "Add a note and Tenth will read it.") : nOpen ? (nq ? `Answer ${plural(nq, "quick question", "quick questions")}, or release now with the gaps marked.` : "Release now with the gaps marked.") : "Look it over, then release it.";
   let tab = first ? "all" : S.tab || (nOpen ? "open" : "all");   // while reading, every row shows as it lands
@@ -5476,11 +5621,11 @@ function renderDone() {
   const words = String(S.q || "").toLowerCase().split(/\s+/).filter(Boolean), narrowed = !!(S.day || words.length) && !first;
   const fits = e => (!S.day || first || inDay(e.date)) && (!words.length || first || words.every(w => searchText(e).includes(w)));   // the day picked in the strip, and the words in the search box
   const seenNow = view() !== "ask", tNow = Date.now(); S.linger = S.linger || new Map();
-  if (seenNow && S.visIds && S.visTab === tab && tab !== "all" && !isGone) S.visIds.forEach(id => {   // a row that settled since the list was last in view stays a moment with its new chip, then folds away
+  if (seenNow && S.visIds && S.visTab === tab && S.visWho === (S.who || "*") && tab !== "all" && !isGone) S.visIds.forEach(id => {   // the same view as last time: a person picked or everyone back is a new view, not rows settling   // a row that settled since the list was last in view stays a moment with its new chip, then folds away
     const e = byId(id); if (e && !S.linger.has(id) && !inTab(e) && fits(e)) { S.linger.set(id, tNow); (S.flash = S.flash || {})[id] = tNow; }
   });
   S.linger.forEach((t, id) => { if (tNow - t > LINGER + 4000) S.linger.delete(id); });
-  const stays = e => tab !== "all" && !isGone && S.linger.has(e.id) && tNow - S.linger.get(e.id) < LINGER;
+  const stays = e => tab !== "all" && !isGone && !inTab(e) && S.linger.has(e.id) && tNow - S.linger.get(e.id) < LINGER;   // a row back in this view isn't leaving it
   const shown = (isGone ? gone.filter(fits) : live.filter(e => (inTab(e) || stays(e) || (sel && e === sel)) && fits(e))).sort(byView);   // person by person, each by date
   const pool = isGone ? gone : live, keys = [...new Set(pool.slice().sort(byView).map(pkey))];
   const whoCol = shown.some(e => !isGone && st.get(e).kind === "open" && !e.tk);   // which note a row came from is Show in the file's job, not a line under the date
@@ -5511,27 +5656,27 @@ function renderDone() {
     el("button", { class: "lnk", type: "button", text: "Show all", onclick: () => setTab("all") })));
   const fresh = []; S.seen = S.seen || new Set();   // rows that weren't there last time stream in, one after another
   body.forEach(n => { const id = n.id && n.id.startsWith("row-") ? n.id.slice(4) : null; if (!id) return; if (S.rowsDrawn && !S.seen.has(id)) fresh.push(n); S.seen.add(id); });
-  fresh.forEach((n, i) => { n.classList.add("ws-stream"); n.style.animationDelay = `${Math.min(i, 12) * 90}ms`; });
+  const gap = Math.min(90, 600 / Math.max(1, fresh.length));   // one after another, but the whole stream lands within about 0.6s however many there are
+  fresh.forEach((n, i) => { n.classList.add("ws-stream"); n.style.animationDelay = `${Math.round(i * gap)}ms`; });
   S.rowsDrawn = true;
   S.shownIds = shown.map(e => e.id);
-  if (seenNow) { S.visIds = shown.filter(e => !stays(e)).map(e => e.id); S.visTab = tab; }
+  if (seenNow) { S.visIds = shown.filter(e => !stays(e)).map(e => e.id); S.visTab = tab; S.visWho = S.who || "*"; }
   const left = shown.filter(stays).map(e => tNow - S.linger.get(e.id));
   clearTimeout(S.leaveT); if (left.length) S.leaveT = setTimeout(leaveRows, Math.max(0, LINGER - Math.max(...left)));
   if (narrowed && !shown.length && live.length) body.push(el("div", { class: "ws-nomatch" }, el("span", { text: words.length ? `No entries match \u201c${S.q.trim()}\u201d${S.day ? ` ${dayWords()}` : ""}.` : `No entries ${dayWords()} in this view.` }),
     el("button", { class: "btn quiet small", type: "button", text: "Clear", onclick: () => { S.q = ""; S.day = null; renderDone(); } })));
-  const eyebrow = S.who ? el("div", { class: "wk-eyebrow" }, el("span", { class: "wk-av xs" + (S.who === "~none" ? " q" : ""), "aria-hidden": "true", text: S.who === "~none" ? "?" : initials(whoName(S.who)) }), el("b", { text: whoName(S.who) }),
-    el("span", { class: "wk-dot", "aria-hidden": "true", text: "\u00b7" }), el("button", { class: "lnk", type: "button", text: "Show everyone", onclick: () => pickWho(null) })) : null;   // one person picked: whose, and the way back
   document.querySelectorAll("body > .wk-float").forEach(m => m.remove());   // a person's menu belongs to the list it was opened from
   stage.replaceChildren(el("section", { class: "finished" + (whoCol ? " whocol" : "") + (isGone ? " wk-gonetab" : "") + (S.who ? " wk-one" : "") },
     first ? readingHead() : el("div", { class: "ws-lhead" + (fin && finNow ? " ws-finnow" : "") },
       fin ? el("span", { class: "ws-fin-glow", "aria-hidden": "true" }) : null,
-      el("div", { class: "ws-lh-l" }, eyebrow, el("h1", {}, fin ? el("span", { class: "ws-fin-tick", "aria-hidden": "true" }, ico("check", 16)) : null, head), none ? el("p", { class: "sub", text: sub }) : null,
-        none ? null : el("div", { class: "ws-stat" }, el("span", { class: "ws-total", text: fmtH(total) }), el("span", { class: "ws-statl", text: `hours, ${plural(live.length, "entry", "entries")}, ${plural(clients, "client", "clients")}` }))),
+      el("div", { class: "ws-lh-l" }, el("h1", {}, fin ? el("span", { class: "ws-fin-tick", "aria-hidden": "true" }, ico("check", 16)) : null, !none && !S.released && nOpen ? [numEl("open", nOpen), nOpen === 1 ? " entry to review" : " entries to review"] : head), none ? el("p", { class: "sub", text: sub }) : null,
+        none ? null : el("div", { class: "ws-stat" }, el("span", { class: "ws-total" }, numEl("hrs", total)), el("span", { class: "ws-statl" }, "hours, ", numEl("n", live.length, true), live.length === 1 ? " entry, " : " entries, ", numEl("cl", clients, true), clients === 1 ? " client" : " clients"))),
       el("div", { class: "fact ws-lh-r" },
-        nOpen && nq ? el("button", { class: "btn" + (S.released ? "" : " solid"), type: "button", onclick: resumeAll }, `Review ${nOpen}`) : null,   // after a release Review is still there, but no longer the main thing to do
-        none || S.released ? null : el("button", { class: "btn" + (nOpen && nq ? "" : " solid") + (fin && finNow ? " ws-go" : ""), type: "button", text: "Release", onclick: openExport }),
+        nOpen && nq ? el("button", { class: "btn" + (S.released ? "" : " solid"), type: "button", id: "wkHeadRev", onclick: resumeAll }, "Review ", numEl("open", nOpen, false, "rev")) : null,   // after a release Review is still there, but no longer the main thing to do
+        // Release turns solid only when the whole draft is checked, not when one person's is, so its color doesn't change as you switch people
+        none || S.released ? null : el("button", { class: "btn" + (nOpenAll && nq ? "" : " solid") + (fin && finNow ? " ws-go" : ""), type: "button", text: "Release", onclick: openExport }),
         none ? el("button", { class: "btn solid", type: "button", text: "Add notes", onclick: () => $("#fileIn").click() }) : addNotesBtn())),
-    first || none ? null : dayStrip(live),   // hours by week (or day) on a line of its own, under the totals
+    first || none ? null : dayStrip(live, allLive),   // hours by week (or day) on a line of its own, under the totals
     S.released ? el("div", { class: "notice ok ws-relnote", role: "status" }, el("span", { class: "pill neutral i-check", text: "Released" }), el("p", { text: "Change anything and it goes back to draft." }),
       el("span", { class: "ws-relget" }, el("button", { class: "btn small", type: "button", onclick: () => downloadAs("xlsx") }, ico("down", 14), "Excel"), el("button", { class: "btn small", type: "button", onclick: () => downloadAs("pdf") }, ico("down", 14), "PDF"))) : null,
     S.notice ? el("div", { class: "notice", role: "status" }, el("p", { text: S.notice })) : null,
@@ -5542,13 +5687,13 @@ function renderDone() {
         : "Tenth couldn't read this file the usual way, so it made one entry per line. Check each entry, or read the file again." })),
       el("div", { class: "ws-bacts" }, el("button", { class: "btn small", type: "button", text: "Read again", onclick: () => reread(s) }),
         el("button", { class: "btn quiet small ws-x", type: "button", "aria-label": "Dismiss", title: "Dismiss", onclick: () => { s.dismissed = true; renderDone(); } }, ico("x"))))),
-    none || first ? null : listBar(tab, counts, live.length, many ? whoPicker(allLive) : null),
+    none || first ? null : listBar(tab, counts, live.length, many ? whoPicker(allLive) : null, nOpen && nq && !S.released ? nOpen : 0),
     none || first ? null : isGone ? el("div", { class: "wk-gonenote", role: "note" }, ico("trash", 14), el("span", { text: "Removed entries stay out of the release. Put one back any time before you release." })) : bulk,
     none ? null : el("div", { class: "splitgrid" }, el("div", { class: "listcol" },
       el("div", { class: "fcards" }, el("div", { class: "fcard" }, el("div", { class: "cols" }, el("div", { "aria-hidden": "true", text: "Status" }), el("div", { "aria-hidden": "true", text: "Date" }), el("div", { "aria-hidden": "true", text: "Matter" }), el("div", { "aria-hidden": "true", class: "num", text: "Hours" }), el("div", { "aria-hidden": "true", text: "Narrative" }), el("div", { "aria-hidden": "true" }), foldAllBtn(keys.filter(k => shown.some(e => pkey(e) === k)))), body))))));   // the headings are the card's first row (Aderant's order: hours before the narrative)
   renderPanel();   // before the list is put back where it was: opening the panel narrows the list and moves its rows
   if (y0 !== null) { const n = document.getElementById(a0.id); if (n) window.scrollBy(0, n.getBoundingClientRect().top - y0); }
-  keepLoops(stage); fitNarr(stage); stuckCols(); chipMotion();
+  pickWidth(); keepLoops(stage); fitNarr(stage); stuckCols(); chipMotion();
   const now = Date.now(); S.flash = S.flash || {}; justDone.forEach(id => { S.flash[id] = now; });
   Object.entries(S.flash).forEach(([id, t0]) => {   // the list can be drawn again while a row flashes: the new row picks the flash up where it was
     const age = now - t0; if (age >= 1400) { delete S.flash[id]; return; }
@@ -5578,23 +5723,33 @@ function foldAllBtn(ids = [...new Set(flat().filter(inWho).map(pkey))]) {   // o
   return el("button", { class: "btn quiet small ws-foldall", type: "button", "aria-label": allIn ? "Expand everyone" : "Collapse everyone", onclick: () => { S.fold = allIn ? {} : Object.fromEntries(ids.map(id => [id, true])); renderDone(); } },
     el("span", { class: "ftog-ico" + (allIn ? " shut" : ""), "aria-hidden": "true" }, ico("chev", 14)), allIn ? "Expand all" : "Collapse all");
 }
-function listBar(tab, counts, total, picker) {   // the filters, whose time (with two or more people), and the search box. The filters show once the list has more than one kind of entry.
+function pickWidth() {   // the picker's width showing Everyone, kept for when one person is picked
+  const b = $("#wkPick"); if (!b || b.closest(".wk-pickw.set") || S.pickW) return;
+  S.pickW = Math.ceil(b.getBoundingClientRect().width); b.style.minWidth = S.pickW + "px";
+}
+function numEl(slot, v, right, key, cls) {   // a number the heading can count from one person's to the next (morphHead)
+  return el("span", { class: "wk-num" + (cls ? " " + cls : ""), "data-num": key || slot, text: slot === "hrs" ? fmtH(v) : String(v) });
+}
+function listBar(tab, counts, total, picker, rev) {   // the filters, whose time (with two or more people), and the search box. The filters show once the list has more than one kind of entry.
   const views = FILTERS.map(([k, label]) => [k, label, k === "all" ? total : counts[k] || 0]).filter(v => v[0] === "all" || v[2] > 0);
   const tabs = views.length > 2 ? el("div", { class: "tabs", role: "group", "aria-label": "Show" }, el("span", { class: "ws-thumb", "aria-hidden": "true" }), views.map(([k, label, n]) =>
-    el("button", { class: "tab" + (k === "gone" ? " wk-gtab" : ""), type: "button", "aria-pressed": String(tab === k), onclick: () => setTab(k) }, label, el("span", { class: "n", text: String(n) })))) : el("span");
+    el("button", { class: "tab" + (k === "gone" ? " wk-gtab" : ""), type: "button", "data-k": k, "aria-pressed": String(tab === k), onclick: () => setTab(k) }, label, numEl("n", n, false, "t-" + k, "n")))) : el("span");
   const inp = el("input", { type: "search", id: "wsSearch", placeholder: S.who ? `Search ${whoName(S.who) === "No timekeeper yet" ? "these" : `${whoName(S.who)}\u2019s`} entries` : "Search client, matter or words", "aria-label": "Search entries", autocomplete: "off" });
   inp.value = S.q || "";
   inp.addEventListener("input", () => { S.q = inp.value; S.qPos = inp.selectionStart; S.qFocus = true; renderDone(); });   // the list is drawn again, and the box keeps its focus
   inp.addEventListener("keydown", ev => { if (ev.key === "Escape" && inp.value) { ev.preventDefault(); ev.stopPropagation(); S.q = ""; S.qPos = 0; S.qFocus = true; renderDone(); } });
-  return el("div", { class: "upbar ws-tools", id: "wkTools" }, el("div", { class: "toolbar wk-bar" }, tabs, picker), el("label", { class: "ws-search" }, ico("search"), inp));
+  const barRev = rev ? el("button", { class: "btn solid small wk-barrev", type: "button", tabindex: "-1", "aria-hidden": "true", onclick: resumeAll }, "Review ", numEl("open", rev, false, "brev")) : null;   // shows only while the heading's Review is scrolled away
+  return el("div", { class: "upbar ws-tools wk-instant", id: "wkTools" }, el("div", { class: "toolbar wk-bar" }, picker, tabs), el("div", { class: "wk-tr" }, el("label", { class: "ws-search" }, ico("search"), inp), barRev));   // Review on the right: the search box keeps its left edge and makes room for it
 }
 const searchText = e => { const m = matterOf(e); return [fmtDate(e.date), e.date, m.client, m.name, m.cmid, e.tk ? tkOf(e.tk).name : "", textOf(narrNodes(e, true))].join(" ").toLowerCase(); };
 const weekOf = iso => { const d = new Date(iso + "T12:00:00Z"); d.setUTCDate(d.getUTCDate() - ((d.getUTCDay() + 6) % 7)); return d.toISOString().slice(0, 10); };   // the Monday of a date's week
 const inDay = d => !S.day || (S.day.startsWith("wk:") ? !!d && weekOf(d) === S.day.slice(3) : d === S.day);   // the day, or week, picked in the strip
 const dayWords = () => (S.day.startsWith("wk:") ? `in the week of ${fmtDate(S.day.slice(3))}` : `on ${fmtDate(S.day)}`);
-function dayStrip(live) {   // hours by day, or by week when the notes cover more than two weeks of days (a bar a day would run on past the buttons). A bar narrows the list to it; again shows everything.
-  const days = [...new Set(live.map(e => e.date).filter(Boolean))].sort(); if (days.length < 2) return null;
+function dayStrip(live, all) {   // hours by day, or by week when the notes cover more than two weeks of days (a bar a day would run on past the buttons). A bar narrows the list to it; again shows everything.
+  // The days are everyone's, the hours the picked person's: switching people keeps the strip in place and only the bars change height
+  const span = all || live, days = [...new Set(span.map(e => e.date).filter(Boolean))].sort(); if (days.length < 2) return null;
   const weeks = days.length > 14, key = d => (weeks ? "wk:" + weekOf(d) : d), by = new Map();
+  span.forEach(e => { if (e.date) by.set(key(e.date), 0); });
   live.forEach(e => { if (e.date) by.set(key(e.date), (by.get(key(e.date)) || 0) + hoursOf(e)); });
   const bars = [...by.keys()].sort(), max = Math.max(...by.values(), 1), WD = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
   const strip = el("div", { class: "ws-days" + (weeks ? " weeks" : ""), role: "group", "aria-label": weeks ? "Hours by week" : "Hours by day" }, bars.map((k, i) => {
@@ -5602,11 +5757,11 @@ function dayStrip(live) {   // hours by day, or by week when the notes cover mor
     const label = weeks ? `Week of ${fmtDate(d)}: ${fmtH(h)} hours` : `${WD[new Date(d + "T12:00:00Z").getUTCDay()]}, ${fmtDate(d)}: ${fmtH(h)} hours`;
     const end = new Date(d + "T12:00:00Z"); end.setUTCDate(end.getUTCDate() + 6);
     const short = weeks ? `${fmtDate(d)}\u2013${end.getUTCMonth() + 1 === +d.slice(5, 7) ? "" : MON[end.getUTCMonth()] + " "}${end.getUTCDate()}` : `${+d.slice(5, 7)}/${+d.slice(8)}`;   // a week as a calendar writes it: Aug 17-23
-    return el("button", { class: "ws-day" + (on ? " on" : "") + (!weeks && i && weekOf(d) !== weekOf(bars[i - 1]) ? " wkgap" : ""), type: "button", "aria-pressed": String(on), "aria-label": label + (on ? `. Showing only this ${weeks ? "week" : "day"}` : ""), title: label,
-      onclick: () => { S.day = on ? null : k; renderDone(); } }, el("span", { class: "ws-dbar" }, el("span", { style: `height:${Math.max(3, Math.round(h / max * 28))}px` })), el("span", { class: "ws-dl", text: short }));
+    return el("button", { class: "ws-day" + (on ? " on" : "") + (h ? "" : " zero") + (!weeks && i && weekOf(d) !== weekOf(bars[i - 1]) ? " wkgap" : ""), type: "button", "data-k": k, disabled: h || on ? null : "", "aria-pressed": String(on), "aria-label": label + (on ? `. Showing only this ${weeks ? "week" : "day"}` : ""), title: label,
+      onclick: () => swapView(() => { S.day = on ? null : k; }) }, el("span", { class: "ws-dbar" }, el("span", { style: `height:${h ? Math.max(3, Math.round(h / max * 28)) : 0}px` })), el("span", { class: "ws-dl", text: short }));
   }));
   dragScroll(strip);   // with a mouse, drag the strip along when it scrolls beside the file panel
-  return el("div", { class: "ws-daysw" }, strip);
+  return el("div", { class: "ws-daysw" }, el("span", { class: "ws-dcap", "aria-hidden": "true", text: weeks ? "Hours by week" : "Hours by day" }), strip);
 }
 function addNotesBtn() {   // the plus: more files, or an entry typed in. With the firm's list, it asks whose time first, filled in with the last answer, so a second person's notes aren't read as the first's
   const ids = Object.keys(TK);
@@ -5771,7 +5926,7 @@ function rowEl(e, stt, srcLine, on, now) {   // a row is one entry. Click it and
     matterCell(e, m, fl, on && now === "matter"), el("div", { class: "c-hours" }, (hp => cellBtn(e, "hours", hp ? [el("span", { title: hp.why }, fmtH(hp.v))] : [fmtH(hoursOf(e))], hp ? true : fl.hours, on && now === "hours"))(hoursProposal(e))), narrCell(e, false, fl.narr, on && now === "narr"),
     el("div", { class: "c-act" },
       wide() && canShow(srcById(e.src)) ? (showing => el("button", { class: "ws-locate", type: "button", "aria-pressed": String(showing), title: showing ? "Close the file" : "Show in the file", "aria-label": showing ? "Close the file" : `Show the entry for ${m.client}, ${fmtDate(e.date)} in its file`,
-        onclick: ev => { ev.stopPropagation(); if (showing) slideSplit(() => { S.panel = null; S.picked = null; renderDone(); }, "row-" + e.id); else pickRow(e.id, true); } }, ico("locate")))(panelOn() && S.panel.src === e.src && S.picked === e.id) : null,   // again: the file closes
+        onclick: ev => { ev.stopPropagation(); if (showing) slideSplit(() => { S.panel = null; S.picked = null; renderDone(); }, "row-" + e.id); else pickRow(e.id, true); } }, ico("panel")))(panelOn() && S.panel.src === e.src && S.picked === e.id) : null,   // again: the file closes
       el("button", { class: "wk-bin", type: "button", title: "Remove entry", "aria-label": `Remove the entry for ${m.client}, ${fmtDate(e.date)}`, onclick: ev => { ev.stopPropagation(); removeEntry(e); } }, ico("trash"))));   // the last thing on the row, apart from Show in the file: no confirm, Undo brings it back
   if (panelOn()) { row.tabIndex = 0; row.addEventListener("keydown", ev => { if (ev.key === "Enter" && ev.target === row) { ev.preventDefault(); pickRow(e.id, true); } }); }   // beside the file, Enter finds the row's lines
   if (S.picked === e.id && panelOn()) row.classList.add("ws-picked");
@@ -5790,7 +5945,7 @@ function foldRow(nodes, then) {   // rows being taken out fade, then their space
   const ease = getComputedStyle(document.documentElement).getPropertyValue("--ease").trim() || "ease", lag = i => Math.min(i * 30, 240);
   nodes.forEach((r, i) => {
     const h = r.offsetHeight; r.style.pointerEvents = "none"; r.style.overflow = "hidden";
-    const a = r.animate([{ opacity: 1, height: h + "px" }, { opacity: 0, height: h + "px", offset: .38 }, { opacity: 0, height: "0px", paddingTop: "0px", paddingBottom: "0px", borderTopWidth: "0px" }], { duration: 360, delay: lag(i), easing: ease, fill: "forwards" });
+    const a = r.animate([{ opacity: 1, height: h + "px" }, { opacity: 0, height: h + "px", offset: .38 }, { opacity: 0, height: "0px", paddingTop: "0px", paddingBottom: "0px", borderTopWidth: "0px" }], { duration: SPEED.base, delay: lag(i), easing: ease, fill: "forwards" });
     if (i === nodes.length - 1) { a.onfinish = go; a.oncancel = go; }
   });
   setTimeout(go, 360 + lag(nodes.length - 1) + 120);
@@ -5845,28 +6000,56 @@ function tkPop(anchor, o) {   // a small pop-up with the timekeeper box, under w
   addEventListener("scroll", place, true); document.addEventListener("pointerdown", outside, true);
   requestAnimationFrame(() => { const i = pop.querySelector("input"); if (i) i.focus({ preventScroll: true }); });
 }
-const WHO_PARTS = "#stage .ws-lhead, #stage .ws-daysw, #stage .ws-bulk, #stage .wk-gonenote, #stage .fcards";   // what changes with the person: not the filters, which stay put
-function pickWho(k) {   // the list, its totals, Review and search narrow to one person; null is everyone. The old view fades out, the new one fades in
+const HEAD_MS = SPEED.base;   // the heading, the bars, the filters and the rows all change together, on one clock and one curve
+function headSnap() {   // the numbers, where things sit, the bars' heights and the Review button, before a person switch
+  const num = {}, at = {}; document.querySelectorAll("#stage [data-num]").forEach(n => { num[n.dataset.num] = { t: n.textContent, w: n.getBoundingClientRect().width }; });
+  [...document.querySelectorAll("#wkTools .tab[data-k]")].map(t => `#wkTools .tab[data-k="${t.dataset.k}"]`).forEach(q => { const n = $(q); if (n) at[q] = n.getBoundingClientRect().left; });
+  const bars = {}; document.querySelectorAll("#stage .ws-day[data-k] .ws-dbar > span").forEach(b => { bars[b.closest(".ws-day").dataset.k] = b.offsetHeight; });
+  const rv = $("#wkHeadRev"), r = rv && rv.getBoundingClientRect();
+  return { num, at, bars, rev: rv ? { node: rv.cloneNode(true), x: r.left + scrollX, y: r.top + scrollY, w: r.width, h: r.height, gap: getComputedStyle(rv).gap } : null };
+}
+function morphHead(o) {   // ...and after: the words stay where they are. Only the numbers count, the bars grow or shrink, and Review fades if there is nothing left
+  const ease = getComputedStyle(document.documentElement).getPropertyValue("--ease").trim() || "ease", D = HEAD_MS, opt = { duration: D, easing: ease };
+  document.querySelectorAll("#stage .ws-day[data-k] .ws-dbar > span").forEach(b => {
+    const was = o.bars[b.closest(".ws-day").dataset.k], now = b.offsetHeight; if (was == null || was === now) return;
+    b.animate([{ height: was + "px" }, { height: now + "px" }], opt);
+  });
+  const runs = [];
+  document.querySelectorAll("#stage [data-num]").forEach(n => {
+    const was = o.num[n.dataset.num], to = n.textContent; if (!was || was.t === to) return; const from = was.t;
+    const a = +from.replace(/,/g, ""), b = +to.replace(/,/g, ""); if (!isFinite(a) || !isFinite(b)) return;
+    const d = Math.max((from.split(".")[1] || "").length, (to.split(".")[1] || "").length);
+    runs.push({ n, a, b, d, to, w0: was.w, w1: n.getBoundingClientRect().width });   // its room goes from the old width to the new one on the same clock, so the words beside it glide instead of hopping a digit at a time
+  });
+  if (runs.length) {   // the counting follows the same curve as the bars: it reads its progress off an animation with the same timing
+    const clock = document.body.animate([{ opacity: 1 }, { opacity: 1 }], opt);
+    const fmt = (v, d) => v.toLocaleString("en-US", { minimumFractionDigits: d, maximumFractionDigits: d });
+    const step = () => { const e = clock.playState === "finished" ? 1 : clock.effect.getComputedTiming().progress || 0;
+      runs.forEach(r => { r.n.textContent = e >= 1 ? r.to : fmt(r.d ? r.a + (r.b - r.a) * e : Math.round(r.a + (r.b - r.a) * e), r.d);
+        r.n.style.width = e >= 1 ? "" : r.w0 + (r.w1 - r.w0) * e + "px"; });
+      if (e < 1) requestAnimationFrame(step); };
+    step();
+  }
+  Object.entries(o.at).forEach(([q, x]) => { const n = $(q); if (!n) return; const dx = x - n.getBoundingClientRect().left; if (Math.abs(dx) > .5) n.animate([{ transform: `translateX(${dx}px)` }, { transform: "none" }], opt); });
+  document.querySelectorAll("#wkTools .tab[data-k]").forEach(t => { if (!(`#wkTools .tab[data-k="${t.dataset.k}"]` in o.at)) t.animate([{ opacity: 0 }, { opacity: 1 }], opt); });   // a filter this person has and the last didn't
+  const rv = $("#wkHeadRev");
+  if (rv && !o.rev) rv.animate([{ opacity: 0, transform: "scale(.96)" }, { opacity: 1, transform: "none" }], { duration: SPEED.slow, easing: ease });   // a little slower than the rest, so a button arriving doesn't pop
+  else if (!rv && o.rev) {   // nothing left for them: the old Review fades where it was
+    const g = o.rev.node; g.removeAttribute("id"); g.setAttribute("aria-hidden", "true"); g.tabIndex = -1;
+    g.style.cssText = `position:absolute;left:${o.rev.x}px;top:${o.rev.y}px;width:${o.rev.w}px;height:${o.rev.h}px;gap:${o.rev.gap};margin:0;pointer-events:none;z-index:8`;   // its own gap: without its id it would take a plain button's wider one
+    document.body.append(g); g.animate([{ opacity: 1, transform: "none" }, { opacity: 0, transform: "scale(.96)" }], { duration: SPEED.fast + 50, easing: "ease-out", fill: "forwards" }).onfinish = () => g.remove();
+  }
+}
+function pickWho(k) {   // the list, its totals, Review and search narrow to one person; null is everyone
   k = k || null; if ((S.who || null) === k) return;
-  const go = () => {
+  swapView(() => {
     S.who = k; S.anchor = null; dropSel();
     if (panelOn() && k) { const f = filesOf(k); S.panel = f.length ? { src: f.some(x => x.id === S.panel.src) ? S.panel.src : f[0].id, who: k } : null; S.picked = null; }   // the file beside the list turns to theirs
-    if (scrollY > 0 && $("#wkTools")) S.anchorId = "wkTools";   // the filters stay where they were on the screen
-    S.rowsDrawn = false;   // the new rows come in with the fade, not one by one
-    renderDone();
-    if (still) return;
-    const ease = getComputedStyle(document.documentElement).getPropertyValue("--ease").trim() || "ease";
-    document.querySelectorAll(WHO_PARTS).forEach((n, i) => n.animate([{ opacity: 0, transform: "translateY(6px)" }, { opacity: 1, transform: "none" }], { duration: 280, delay: i * 30, easing: ease, fill: "backwards" }));
-  };
-  const still = matchMedia("(prefers-reduced-motion: reduce)").matches, out = [...document.querySelectorAll(WHO_PARTS)];
-  if (still || !out.length || view() === "ask") { go(); return; }
-  out.forEach(n => n.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 130, easing: "ease-in", fill: "forwards" }));
-  setTimeout(go, 130);
+  });
 }
 function personHead(k, mine, ents, o) {   // a person's line in the list: who, how much, what is left, their files, and a menu
   const none = k === "~none", nm = whoName(k), id = pid(k), nOpen = o.gone ? 0 : ents.filter(isOpen).length;
-  const hrs = roundH(ents.reduce((a, e) => a + hoursOf(e), 0)), days = ents.map(e => e.date).filter(Boolean).sort();
-  const span = days.length ? (days[0] === days[days.length - 1] ? fmtDate(days[0]) : `${fmtDate(days[0])} to ${fmtDate(days[days.length - 1])}`) : "";
+  const hrs = roundH(ents.reduce((a, e) => a + hoursOf(e), 0));   // no date span: the rows show their dates, and the strip above shows when each person worked
   const fold = () => { S.fold[k] = !o.folded; renderDone(); };
   const files = [...new Set(ents.map(e => e.src))].map(srcById).filter(canShow), showing = panelOn() && (S.panel.who ? S.panel.who === k : files.some(f => f.id === S.panel.src));
   const count = o.gone ? `${ents.length} removed` : o.tab !== "all" && mine.length < ents.length ? `${mine.length} of ${plural(ents.length, "entry", "entries")}` : plural(ents.length, "entry", "entries");
@@ -5875,9 +6058,9 @@ function personHead(k, mine, ents, o) {   // a person's line in the list: who, h
     el("button", { class: "ftog", type: "button", "aria-expanded": String(!o.folded), "aria-label": `${o.folded ? "Show" : "Hide"} ${none ? "the entries with no timekeeper" : `${nm}’s entries`}`, title: o.folded ? "Show entries" : "Hide entries", onclick: fold }, ico("chev", 14)),
     el("span", { class: "wk-av" + (none ? " q" : ""), "aria-hidden": "true", text: none ? "?" : initials(nm) }),
     el("b", { class: "wk-name", text: nm, onclick: fold }),
-    el("span", { class: "wk-meta" }, [count, o.gone ? "" : `${fmtH(hrs)} hours`, span].filter(Boolean).map(t => el("span", { text: t }))),
+    el("span", { class: "wk-meta" }, [count, o.gone ? "" : `${fmtH(hrs)} hours`].filter(Boolean).map(t => el("span", { text: t }))),
     el("span", { class: "wk-sp" }),
-    o.gone ? null : nOpen ? el("span", { class: "wk-need", text: `${nOpen} to review` }) : el("span", { class: "wk-done" }, ico("check", 14), "All checked"),
+    o.gone ? null : nOpen ? el("span", { class: "wk-need", text: `${nOpen} to review` }) : el("span", { class: "wk-done" }, ico("check", 14), "All reviewed"),
     wide() && files.length ? el("button", { class: "btn quiet small ws-showfile", type: "button", "aria-pressed": String(showing), onclick: () => (showing ? slideSplit(() => { S.panel = null; S.picked = null; renderDone(); }, id) : openPanel(files[0].id, id, k)) }, ico("panel", 14), showing ? "Showing" : files.length > 1 ? "Show files" : "Show file") : null,
     more);
 }
@@ -5920,7 +6103,7 @@ function whoPicker(all) {   // Timekeeper: Everyone, or one person. Each with wh
     at = q ? 0 : Math.max(0, shown.findIndex(r => r.k === now));
     list.replaceChildren(...shown.flatMap((r, i) => [el("button", { class: "wk-pi", type: "button", role: "option", id: "wkPi" + i, "aria-selected": String(r.k === now), tabindex: "-1", onclick: () => choose(r), onmousemove: () => { if (at !== i) { at = i; mark(); } } },
         el("span", { class: "wk-ck" }, r.k === now ? ico("check", 14) : null), avOf(r, "xs"), el("span", { class: "wk-pn", text: r.name }),
-        el("span", { class: "wk-ps" + (r.open ? " g" : " ok"), text: r.open ? `${r.open} to review` : "All checked" }), el("span", { class: "wk-pc", title: plural(r.n, "entry", "entries"), text: String(r.n) })),
+        el("span", { class: "wk-ps" + (r.open ? " g" : " ok"), text: r.open ? `${r.open} to review` : "All reviewed" }), el("span", { class: "wk-pc", title: plural(r.n, "entry", "entries"), text: String(r.n) })),
       ...(r.k == null && !q ? [el("div", { class: "wk-sep", role: "separator" })] : [])]));
     if (!shown.length) list.append(el("p", { class: "wk-none", text: "No one by that name in this draft." }));
     mark();
@@ -5939,6 +6122,7 @@ function whoPicker(all) {   // Timekeeper: Everyone, or one person. Each with wh
     else if (ev.key === "Tab") close();
   });
   const wrap = el("div", { class: "wk-pickw" + (now ? " set" : "") }, btn, clear, pop);
+  if (S.pickW) btn.style.minWidth = S.pickW + "px";   // as wide as "Timekeeper Everyone", picked or not, so the filters beside it don't shift (pickWidth)
   return wrap;
 }
 
@@ -6216,7 +6400,7 @@ function renderExport() {
     const whoRow = k => { const es = k == null ? all : all.filter(e => pkey(e) === k), n = es.filter(isOpen).length, nmk = k == null ? "Everyone" : whoName(k);
       return radio("wkRelWho", (who || null) === k, nmk, () => { S.relWho = k; S.relFocus = "wkRelWho"; renderExport(); },
         el("span", { class: "wk-av xs" + (k == null ? " all" : k === "~none" ? " q" : ""), "aria-hidden": "true" }, k == null ? ico("people", 12) : k === "~none" ? "?" : initials(nmk)),
-        el("span", { class: "wk-rn", text: nmk }), el("span", { class: "wk-ps" + (n ? " g" : " ok"), text: n ? `${n} to review` : "All checked" }), el("span", { class: "wk-rc", text: plural(es.length, "entry", "entries") })); };
+        el("span", { class: "wk-rn", text: nmk }), el("span", { class: "wk-ps" + (n ? " g" : " ok"), text: n ? `${n} to review` : "All reviewed" }), el("span", { class: "wk-rc", text: plural(es.length, "entry", "entries") })); };
     const whoPick = many ? el("div", { class: "wk-relsec" }, el("p", { class: "wk-rlab", id: "wkRelWho", text: "Whose time?" }),
       el("div", { class: "wk-rwho", role: "radiogroup", "aria-labelledby": "wkRelWho" }, [null, ...people].map(whoRow))) : null;
     const filePick = !who && nEach > 1 ? el("div", { class: "wk-relsec" }, el("p", { class: "wk-rlab", id: "wkRelFile", text: "File" }),

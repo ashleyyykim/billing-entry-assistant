@@ -488,16 +488,17 @@ def matters():
 
 
 # What Tenth noticed about an entry (shown under Why?) and how to fix it where the page has a way (shown in amber).
-# intake.CHECK_REASONS says what the system did; these say it for the person reviewing. Reasons not listed fall back.
-FIX_HOURS = "You can fix the hours in the next step."
-FIX_MATTER = "Use Change matter if it's wrong."
+# intake.CHECK_REASONS says what the system did; these say it for the person reviewing, in billing terms (matter list, client list,
+# timekeeper), the problem first. The page shows these words as they are. Reasons not listed fall back.
+FIX_HOURS = "Change the hours if they're wrong."
+FIX_MATTER = "Change the matter if it's wrong."
 IN_WORDS = {
     "model_unsure": ("Part of the note was hard to read.", ""),
     "readers_disagree": ("Tenth isn't sure it read this right.", ""),
     "low_conf": ("Part of the note was hard to read.", ""),
     "poor_photo": ("The photo was blurry, dark, or small.", ""),
     "read_by_rules": ("Tenth read this note line by line, so check it against the note.", ""),
-    "second_reader_only": ("Tenth isn't sure this is its own entry. It may repeat another one.", ""),
+    "second_reader_only": ("This line may not be a time entry. Only one of Tenth's two readings found it.", ""),
     "multiple_entries": ("This may be more than one entry.", ""),
     "hours_10x": ("The time has no decimal point.", FIX_HOURS),
     "hours_mismatch": ("The hours may be misread.", FIX_HOURS),
@@ -507,13 +508,13 @@ IN_WORDS = {
     "no_date": ("The note gives no date for this.", ""),
     "date_gap": ("No date here, though the lines above have one.", ""),
     "date_weekday": ("The weekday written doesn't match the date.", ""),
-    "client_unknown": ("This client isn't on the firm's list.", FIX_MATTER),
+    "client_unknown": ("This client isn't on the firm's client list.", FIX_MATTER),
     "client_ambiguous": ("This name fits more than one client.", FIX_MATTER),
     "client_cmid_mismatch": ("The client and matter number don't match.", FIX_MATTER),
     "client_gap": ("No client is written, so it may be the one above.", FIX_MATTER),
-    "cmid_unknown": ("The matter number written isn't on the firm's list.", FIX_MATTER),
+    "cmid_unknown": ("This matter number isn't on the firm's matter list.", FIX_MATTER),
     "cmid_shape": ("The matter number has the wrong number of digits.", FIX_MATTER),
-    "unknown_tk": ("No timekeeper was found.", ""),   # the page asks once for the whole upload (missing_tk), not per entry
+    "unknown_tk": ("The note doesn't say whose time it is.", ""),   # the page asks once for the whole upload (missing_tk), not per entry
     "unused_hours": ("The note has a time that isn't on any entry.", ""),
     "rows_unread": ("Some rows in the sheet didn't become entries.", ""),
     "columns_unsure": ("Tenth wasn't sure which column is which.", ""),
