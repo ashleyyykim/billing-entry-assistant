@@ -2919,7 +2919,7 @@ function view() {   // after reading: one question at a time, then the list. The
   return "done";
 }
 function toList() {   // lowers the card. The list was there all along: it scrolls to that entry's row and the row flashes.
-  const o = S.only, cur = !o && S.shown === "ask" ? current() : null, eid = o ? o.id : cur ? cur.eid : null;
+  const o = S.only, cur = !o && S.shown === "ask" ? current() : null, eid = o ? o.id : cur && cur.kind !== "bulk" ? cur.eid : null;   // a card about several entries has no one row to go to: the list stays where it was
   S.only = null;
   if (!o) S.tab = null;   // from the questions the list opens on what still needs a look (or on everything, when nothing does)
   endEdit(); S.picker = null; S.gapEdit = null; S.cellEdit = null; S.cardEdit = null; S.listMode = true; S.editEl = null; S.overrideAsk = null; S.curKey = null; S.lastKey = null; S.sel = null; S.bandAsked = null;
