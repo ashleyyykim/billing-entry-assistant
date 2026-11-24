@@ -392,6 +392,29 @@ class ExportRows(BaseModel):
 def export_xlsx(body: ExportRows):
     """The released time sheet as an Excel file. Matter numbers and CMIDs stay text (leading zeros and ".001" survive),
     dates are real dates, hours are numbers with one decimal, and the header row stays put while scrolling."""
+    return Response(_xlsx_bytes(body.columns, body.rows), media_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                    headers={"Content-Disposition": 'attachment; filename="tenth-entries.xlsx"'})
+
+
+class ExportFile(BaseModel):
+    name: str
+    rows: list[list]
+
+
+class ExportFiles(BaseModel):
+    columns: list[str]
+    files: list[ExportFile]
+
+
+@app.post("/export.zip")
+def export_zip(body: ExportFiles):
+    """A file per timekeeper, each the same Excel sheet as /export.xlsx, in one .zip download."""
+    return Response(_export_zip_bytes(body.columns, [(f.name, f.rows) for f in body.files]), media_type="application/zip",
+                    headers={"Content-Disposition": 'attachment; filename="tenth-entries.zip"'})
+
+
+def _xlsx_bytes(columns, rows):
+    """One sheet of entries: the header bold and frozen, dates as dates, hours as numbers, numbers and names as text."""
     from io import BytesIO
     from openpyxl import Workbook
     from openpyxl.styles import Alignment, Font, PatternFill
@@ -400,14 +423,14 @@ def export_xlsx(body: ExportRows):
     wb = Workbook()
     ws = wb.active
     ws.title = "Time entries"
-    ws.append(body.columns)
+    ws.append(columns)
     for c in ws[1]:
         c.font = Font(bold=True)
         c.fill = PatternFill("solid", fgColor="ECEAF2")
     text_cols = {"matter", "cmid", "entry_id", "client", "timekeeper"}
-    for row in body.rows:
+    for row in rows:
         out = []
-        for name, v in zip(body.columns, row):
+        for name, v in zip(columns, row):
             v = "" if v is None else v
             if name == "work_date" and v:
                 try:
@@ -423,7 +446,7 @@ def export_xlsx(body: ExportRows):
                 v = str(v)
             out.append(v)
         ws.append(out)
-    for i, name in enumerate(body.columns, start=1):
+    for i, name in enumerate(columns, start=1):
         letter = get_column_letter(i)
         for cell in ws[letter][1:]:
             if name == "work_date":
@@ -439,8 +462,21 @@ def export_xlsx(body: ExportRows):
     ws.freeze_panes = "A2"
     buf = BytesIO()
     wb.save(buf)
-    return Response(buf.getvalue(), media_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-                    headers={"Content-Disposition": 'attachment; filename="tenth-entries.xlsx"'})
+    return buf.getvalue()
+
+
+def _export_zip_bytes(columns, files):
+    """files: (name, rows) pairs. Each becomes name.xlsx in the zip; a name used twice gets a number."""
+    import zipfile
+    from io import BytesIO
+
+    buf, seen = BytesIO(), {}
+    with zipfile.ZipFile(buf, "w", zipfile.ZIP_DEFLATED) as z:
+        for name, rows in files:
+            stem = re.sub(r"[^A-Za-z0-9_.-]+", "-", str(name)).strip("-.") or "entries"
+            seen[stem] = seen.get(stem, 0) + 1
+            z.writestr(f"{stem}{'' if seen[stem] == 1 else '-' + str(seen[stem])}.xlsx", _xlsx_bytes(columns, rows))
+    return buf.getvalue()
 
 
 @app.get("/matters")

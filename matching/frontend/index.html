@@ -866,7 +866,7 @@ body.ws-split .totop { right: calc(var(--ws-panel, 0px) + 24px); }   /* clear of
 .fstat p { margin: 0; font-size: 15px; line-height: 22px; color: var(--color-text-muted); }
 .fstat .pill { margin: 0 0 0 4px; align-self: center; }
 .fmsg .fact { margin-top: 18px; }
-.c-status .auto { white-space: nowrap; }
+.c-status .auto { white-space: nowrap; padding: 0 10px; }   /* same inset as the pills, so every status icon and word lines up */
 /* release: what was split */
 .xsplit { display: grid; gap: 6px; margin: 12px 0; padding: 12px 16px; background: var(--tenth-surface); border: 1px solid var(--tenth-line); border-radius: var(--radius-panel); font-size: 14px; line-height: 20px; }
 .xsplit p { margin: 0; }
@@ -2061,6 +2061,8 @@ body.ws-split .row { cursor: default; }
 .lchip.loff:hover, .lchip.loff:focus-visible { border-color: var(--tenth-dusk); background: var(--tenth-dusk-wash); outline: none; }
 .lchip.lfill, .ecard .fslot.fillslot { border: 1px solid var(--tenth-dusk-lilac); background: color-mix(in srgb, var(--tenth-dusk-lilac) 38%, #fff); color: var(--tenth-ink); }
 .lchip.lfill { display: inline-flex; align-items: baseline; gap: 2px; padding: 0 2px 0 6px; cursor: default; }
+.lchip, .ecard .fslot { margin-right: 3px; }   /* a little air before the ; or . that follows */
+.ws-focus .ecard.ws-settled .fwrap .fslot { margin-right: 0; }
 .lchip .lc-v { font: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: pointer; }
 .lchip .lc-x, .ecard .fslot .fs-x { font: 600 13px/1 var(--font-ui); color: var(--tenth-dusk); background: none; border: 0; padding: 1px 4px; border-radius: 4px; cursor: pointer; }
 .lchip .lc-x:hover, .ecard .fslot .fs-x:hover, .lchip .lc-x:focus-visible, .ecard .fslot .fs-x:focus-visible { background: rgba(91,86,126,.14); outline: none; }
@@ -2104,6 +2106,157 @@ body.ws-split .row { cursor: default; }
 .lchip, .lchip.lfill, .lchip.loff, .ecard .fslot, .row .cb.fl { border-radius: 6px; }   /* one small radius for chips and value boxes */
 .ws-focus .nframe.k-photo { display: flex; flex-direction: column; background: var(--tenth-row); }   /* the photo sits centred on a soft mat, not on a blank band below it */
 .ws-focus .nframe.k-photo > .nin { margin-block: auto; flex: none; }
+
+/* ===== whose time: the list by person, the timekeeper picker, the bin on each row, the Removed tab ===== */
+.finished { --cols: minmax(150px, .9fr) minmax(50px, .36fr) minmax(150px, 1.15fr) 56px minmax(170px, 3fr) 72px; }   /* the last column holds Show in the file and the bin, with room between them */
+.finished.wk-gonetab { --cols: minmax(150px, .9fr) minmax(50px, .36fr) minmax(150px, 1.15fr) 56px minmax(170px, 3fr) 108px; }
+body.ws-split .finished:not(.wk-gonetab) { --cols: minmax(150px, .9fr) minmax(50px, .36fr) minmax(150px, 1.15fr) 56px minmax(170px, 3fr) 32px; }   /* beside the file: the bin sits under Show in the file */
+.row > .c-act { gap: 8px; }
+body.ws-split .row > .c-act { flex-direction: column; align-items: flex-end; gap: 4px; }
+.wk-av { flex: none; display: inline-grid; place-items: center; width: 28px; height: 28px; border-radius: 999px; background: var(--tenth-dusk-wash); color: var(--tenth-dusk); font: 700 11px/1 var(--font-ui); letter-spacing: .02em; font-variant-numeric: tabular-nums; }
+.wk-av.xs { width: 22px; height: 22px; font-size: 9.5px; }
+.wk-av.q { background: var(--tenth-gold-tint); color: var(--tenth-gold-text); font-size: 12px; }
+.wk-av.xs.q { font-size: 11px; }
+.wk-av.all { background: rgba(91,86,126,.1); }
+/* a person's heading */
+.fgroup.wk-pg { gap: 12px; padding-top: 12px; padding-bottom: 12px; min-height: 56px; box-sizing: border-box; scroll-margin-top: 80px; }
+.wk-pg .wk-name { font: 700 15px/20px var(--font-ui); color: var(--tenth-ink); cursor: pointer; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; flex: 0 1 auto; }
+.wk-meta { display: inline-flex; flex-wrap: wrap; align-items: baseline; min-width: 0; font: 500 13px/18px var(--font-ui); color: var(--color-text-muted); font-variant-numeric: tabular-nums; }
+.wk-meta span { white-space: nowrap; }
+.wk-meta span + span::before { content: "\00b7"; margin: 0 7px; color: var(--tenth-edge); }
+.wk-sp { flex: 1 1 0; min-width: 8px; }
+.wk-need, .wk-done { flex: none; display: inline-flex; align-items: center; gap: 7px; font: 600 13px/18px var(--font-ui); white-space: nowrap; }
+.wk-need { color: var(--tenth-gold-text); }
+.wk-need::before { content: ""; width: 7px; height: 7px; border-radius: 999px; background: var(--tenth-gold); box-shadow: 0 0 0 3px rgba(201,162,78,.18); }
+.wk-done { color: var(--tenth-green-text); gap: 6px; }
+.wk-pg .ws-showfile { margin-left: 0; flex: none; }
+.wk-pg > .ws-more { margin-left: -4px; flex: none; }
+.wk-more { display: grid; place-items: center; width: 32px; height: 32px; border: 0; border-radius: 8px; background: transparent; color: var(--color-text-muted); cursor: pointer; transition: background .15s, color .15s; }
+.wk-more:hover, .wk-more[aria-expanded="true"] { background: rgba(91,86,126,.1); color: var(--tenth-ink); }
+.wk-more:focus-visible, .wk-bin:focus-visible, .wk-st:focus-visible, .wk-pick:focus-visible, .wk-pickx:focus-visible { outline: 2px solid var(--tenth-dusk); outline-offset: 2px; }
+.wk-pg.wk-arrive { animation: wk-arrive 1.4s var(--ease) both; }
+@keyframes wk-arrive { 0%, 30% { background: var(--tenth-dusk-wash); } 100% { background: var(--tenth-surface-alt); } }
+.fgroup.wk-tail { justify-content: center; gap: 10px; color: var(--color-text-muted); background: linear-gradient(var(--tenth-white), var(--tenth-surface-alt)); }
+.fgroup.wk-tail .lnk { margin-left: 0; }
+@media (max-width: 700px) { .fgroup.wk-pg { flex-wrap: wrap; row-gap: 4px; } .wk-pg .wk-meta { order: 9; flex: 1 1 100%; padding-left: 64px; } }
+/* a menu that floats over the list's frame */
+.ws-menu.wk-float { position: fixed; right: auto; top: 0; left: 0; width: 290px; }
+.wk-sep { height: 1px; background: var(--tenth-line); margin: 5px 6px; flex: none; }
+.wk-mfoot { margin: 2px 0 0; padding: 6px 12px 4px; font: 500 12px/16px var(--font-ui); color: var(--color-text-muted); }
+/* a row's settled label opens its card */
+.c-status button.wk-st { cursor: pointer; transition: background .15s, color .15s, box-shadow .15s; }
+.c-status button.auto.wk-st { border: 0; background: transparent; border-radius: 999px; font: 600 13px/20px var(--font-ui); color: var(--color-text-muted); }
+.c-status button.auto.wk-st:hover { background: rgba(91,86,126,.08); color: var(--tenth-ink); }
+.c-status button.pill.wk-st { border: 0; }
+.c-status button.pill.neutral.wk-st:hover { background: var(--tenth-line); }
+.c-when .wk-src { cursor: default; }
+/* the bin: quiet at rest, ink when the row is pointed at, copper on its own */
+.wk-bin { display: grid; place-items: center; width: 32px; height: 32px; flex: none; border: 0; border-radius: 8px; background: transparent; color: var(--tenth-edge); cursor: pointer; transition: color .15s, background-color .15s, transform .12s var(--ease); }
+.row .wk-bin { height: 28px; margin-top: -4px; }   /* the same box as Show in the file beside it, centered on the first line of text */
+.row:hover .wk-bin { color: var(--tenth-slate); }
+.wk-bin:hover { color: var(--tenth-copper); background: var(--tenth-copper-tint); }
+.wk-bin:active { transform: scale(.9); }
+@media (hover: none) { .wk-bin { color: var(--tenth-slate); } }
+/* the Removed tab */
+.wk-gonenote { display: flex; align-items: center; gap: 10px; padding: 12px 16px; border-radius: 12px; background: var(--tenth-surface-alt); color: var(--color-text-muted); font: 500 13px/18px var(--font-ui); }
+.wk-gonenote svg { flex: none; color: var(--tenth-edge); }
+.row.wk-gone > :not(.c-act) { opacity: .62; }
+.row.wk-gone .c-narr .nt { text-decoration: line-through; text-decoration-color: rgba(44,42,54,.32); text-decoration-thickness: 1px; }
+.row.wk-gone .c-hours { text-align: right; font-weight: 600; font-variant-numeric: tabular-nums; }
+.wk-back, .wk-putall { display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; }
+.wk-putall { flex: none; }
+/* Timekeeper: beside the tabs, the same height */
+.toolbar.wk-bar { gap: 10px; }
+.wk-pickw { position: relative; display: inline-flex; align-items: center; }
+.wk-pick { display: inline-flex; align-items: center; gap: 8px; height: 44px; padding: 0 12px 0 12px; border-radius: 12px; border: 1px solid var(--tenth-outline); background: var(--tenth-white); font: 600 14px/20px var(--font-ui); color: var(--tenth-ink); cursor: pointer; transition: border-color .15s, box-shadow .2s, background .15s; }
+.wk-pick > svg:first-child { color: var(--color-text-muted); }
+.wk-pick > svg:last-child { color: var(--color-text-muted); transition: transform .2s var(--ease); }
+.wk-pick:hover { border-color: var(--tenth-edge); }
+.wk-pick.open { border-color: var(--tenth-dusk); box-shadow: 0 0 0 4px rgba(91,86,126,.16); }
+.wk-pick.open > svg:last-child { transform: rotate(180deg); }
+.wk-pick .wk-lab { font-weight: 500; color: var(--color-text-muted); }
+.wk-pickw.set .wk-pick { background: var(--tenth-dusk-wash); border-color: transparent; color: var(--tenth-dusk); padding-right: 40px; }
+.wk-pickw.set .wk-pick > svg:last-child { color: var(--tenth-dusk); }
+.wk-pickx { position: absolute; right: 6px; top: 50%; transform: translateY(-50%); display: grid; place-items: center; width: 28px; height: 28px; border: 0; border-radius: 8px; background: transparent; color: var(--tenth-dusk); cursor: pointer; transition: background .15s; }
+.wk-pickx:hover { background: rgba(91,86,126,.14); }
+.wk-pickw.set .wk-pick > svg:last-child { display: none; }
+.wk-pickw.set .wk-pick .wk-av { background: var(--tenth-white); box-shadow: 0 0 0 1px rgba(91,86,126,.12); }
+.ws-menu.wk-pop { left: 0; right: auto; width: 316px; padding: 8px; gap: 6px; background: rgba(255,255,255,.94); }
+.wk-findw { position: relative; display: flex; align-items: center; }
+.wk-findw svg { position: absolute; left: 11px; color: var(--color-text-muted); pointer-events: none; }
+.wk-find { width: 100%; height: 38px; box-sizing: border-box; border: 1px solid var(--tenth-edge); border-radius: 10px; background: var(--tenth-white); padding: 0 10px 0 32px; font: 500 14px/20px var(--font-ui); color: var(--tenth-ink); }
+.wk-find:focus { outline: none; border-color: var(--tenth-dusk); box-shadow: 0 0 0 3px rgba(91,86,126,.16); }
+.wk-list { display: flex; flex-direction: column; max-height: min(360px, 60vh); overflow: auto; overscroll-behavior: contain; }
+.wk-pi { display: grid; grid-template-columns: 16px 22px minmax(0, 1fr) 76px 22px; column-gap: 8px; align-items: center; width: 100%; box-sizing: border-box; padding: 8px 10px; border: 0; border-radius: 8px; background: transparent; text-align: left; font: 500 14px/20px var(--font-ui); color: var(--tenth-ink); cursor: pointer; }
+.wk-pi.at { background: rgba(91,86,126,.08); }
+.wk-pi[aria-selected="true"] { background: var(--tenth-dusk-wash); }
+.wk-pi .wk-ck { display: grid; place-items: center; color: var(--tenth-dusk); }
+.wk-pn { font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.wk-ps { font: 600 13px/18px var(--font-ui); white-space: nowrap; }
+.wk-ps.g { color: var(--tenth-gold-text); }
+.wk-ps.ok { color: var(--tenth-green-text); }
+.wk-pc { font: 500 13px/18px var(--font-ui); color: var(--color-text-muted); text-align: right; font-variant-numeric: tabular-nums; }
+.wk-none { margin: 0; padding: 8px 10px; font: 500 13px/18px var(--font-ui); color: var(--color-text-muted); }
+/* one person picked: their name above the heading, and the way back to everyone */
+.wk-eyebrow { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; font: 500 14px/20px var(--font-ui); color: var(--tenth-ink); animation: ws-pop .26s var(--ease) both; }
+.wk-eyebrow b { font-weight: 700; }
+.wk-eyebrow .wk-dot { color: var(--tenth-edge); }
+.wk-eyebrow .lnk { border: 0; background: none; padding: 0; font: 600 14px/20px var(--font-ui); color: var(--tenth-dusk); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; cursor: pointer; }
+.wk-eyebrow .lnk:hover { color: var(--tenth-ink); }
+/* the card says whose entry it is, and who comes next */
+.q-head.wk-count { display: flex; align-items: center; gap: 10px; min-height: 28px; }
+.wk-count .wk-cname { font: 700 15px/20px var(--font-ui); color: var(--tenth-ink); }
+.wk-count .wk-cn { font: 500 13px/18px var(--font-ui); color: var(--color-text-muted); }
+.wk-count .wk-cnext { margin-left: auto; display: inline-flex; align-items: center; gap: 6px; font: 500 13px/18px var(--font-ui); color: var(--color-text-muted); }
+.wk-count .wk-cnext .wk-av { margin: 0 1px; }
+/* Add notes: whose time, then the files */
+.ws-menu.wk-addpop { width: 360px; padding: 18px; gap: 0; background: rgba(255,255,255,.96); }
+.wk-addt { font: 700 15px/20px var(--font-ui); color: var(--tenth-ink); margin-bottom: 14px; overflow-wrap: anywhere; }
+.wk-tklab { display: block; font: 600 13px/18px var(--font-ui); color: var(--tenth-ink); margin-bottom: 6px; }
+.wk-inline .tkbox { position: static; margin-top: 6px; max-height: 232px; box-shadow: none; border-color: var(--tenth-line); }
+.tkbox .mopt.cur b::after { content: ""; display: inline-block; width: 14px; height: 14px; margin-left: 8px; vertical-align: -2px; background: var(--tenth-dusk); -webkit-mask: var(--wk-check) center / contain no-repeat; mask: var(--wk-check) center / contain no-repeat; }
+:root { --wk-check: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3.2 8.6l3.1 3.1L12.8 5'/%3E%3C/svg%3E"); }
+.wk-addhint { margin: 8px 0 0; font: 600 13px/18px var(--font-ui); color: var(--tenth-copper); }
+.wk-addacts { display: flex; gap: 10px; margin-top: 16px; }
+.wk-addacts .wk-typeit { color: var(--tenth-ink); }
+/* change whose time a person's entries are */
+.wk-tkpop { position: fixed; z-index: 80; padding: 14px; border-radius: 12px; background: rgba(255,255,255,.96); -webkit-backdrop-filter: blur(16px) saturate(1.2); backdrop-filter: blur(16px) saturate(1.2); box-shadow: inset 0 1px 0 #fff, 0 0 0 1px rgba(91,86,126,.14), var(--shadow-float); animation: ws-pop .22s var(--ease) both; }
+.wk-addpop .tkwrap input, .wk-tkpop .tkwrap input { width: 100%; height: 42px; box-sizing: border-box; border: 1px solid var(--tenth-edge); border-radius: 12px; padding: 0 36px 0 12px; font: 500 14px/20px var(--font-ui); color: var(--tenth-ink);
+  background: var(--tenth-white) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M3 4.5l3 3 3-3' fill='none' stroke='%235C5869' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat right 14px center; }
+.wk-addpop .tkwrap input:focus, .wk-tkpop .tkwrap input:focus { outline: none; border-color: var(--tenth-dusk); box-shadow: 0 0 0 3px rgba(91,86,126,.16); }
+.wk-tkpop .tkbox { max-height: 260px; }
+@media (prefers-reduced-motion: reduce) { .wk-pg.wk-arrive, .wk-eyebrow, .wk-tkpop { animation: none; } .wk-bin, .wk-pick > svg:last-child { transition: none; } }
+
+/* Release: whose time, then the file */
+.wk-relsec { margin: 0 0 16px; }
+.wk-rlab { margin: 0 0 6px; font: 600 13px/18px var(--font-ui); color: var(--tenth-ink); }
+.wk-rwho { display: flex; flex-direction: column; max-height: 168px; overflow: auto; overscroll-behavior: contain; padding: 4px; border: 1px solid var(--tenth-line); border-radius: 12px; background: var(--tenth-white); }
+.wk-rl { position: relative; cursor: pointer; }
+.wk-rl input { position: absolute; opacity: 0; pointer-events: none; }
+.wk-rwho .wk-rl { display: grid; grid-template-columns: 22px minmax(0, 1fr) 84px 76px; column-gap: 10px; align-items: center; padding: 8px 10px; border-radius: 8px; font: 500 14px/20px var(--font-ui); color: var(--tenth-ink); transition: background .15s; }
+.wk-rwho .wk-rl:hover { background: rgba(91,86,126,.06); }
+.wk-rwho .wk-rl.on { background: var(--tenth-dusk-wash); }
+.wk-rwho .wk-rl.on .wk-rn { color: var(--tenth-dusk); }
+dialog.wide .dlg > .btns { position: sticky; bottom: 0; z-index: 2; margin: 0 -28px -24px; padding: 14px 28px 20px; background: var(--tenth-white); box-shadow: 0 -1px 0 var(--tenth-line), 0 -12px 16px -12px rgba(44,42,54,.08); border-radius: 0 0 var(--radius-drop) var(--radius-drop); }   /* Release stays in reach however long the preview is */
+#dlgTitle:focus { outline: none; }
+.wk-rwho .wk-rl:has(input:focus-visible), .wk-rfile .wk-rl:has(input:focus-visible) { outline: 2px solid var(--tenth-dusk); outline-offset: 1px; }
+.wk-rn { font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.wk-rc { font: 500 13px/18px var(--font-ui); color: var(--color-text-muted); text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.wk-rsum { margin: 0 0 12px; font: 500 14px/20px var(--font-ui); color: var(--tenth-ink); }
+.wk-rsum b { font-weight: 700; }
+.wk-rsum span { color: var(--color-text-muted); }
+.wk-rfile { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.wk-rfile .wk-rl { display: flex; padding: 12px 14px; border: 1px solid var(--tenth-outline); border-radius: 12px; background: var(--tenth-white); transition: border-color .15s, box-shadow .15s, background .15s; }
+.wk-rfile .wk-rl:hover { border-color: var(--tenth-edge); }
+.wk-rfile .wk-rl.on { border-color: var(--tenth-dusk); box-shadow: 0 0 0 1px var(--tenth-dusk); background: var(--tenth-dusk-wash); }
+.wk-fo { display: grid; gap: 2px; }
+.wk-fo b { font: 700 14px/20px var(--font-ui); color: var(--tenth-ink); }
+.wk-fo span { font: 500 13px/18px var(--font-ui); color: var(--color-text-muted); }
+.xnote .wk-gpill { background: var(--tenth-surface-alt); color: var(--tenth-slate); }
+.i-trash { --icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='black' d='M4.3 5.5h7.4l-.6 7.4a1.6 1.6 0 0 1-1.6 1.5H6.5a1.6 1.6 0 0 1-1.6-1.5z'/%3E%3Cpath d='M2.8 4h10.4M6.4 4V2.6h3.2V4' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"); }
+.pill.neutral.wk-gpill::before { background: var(--tenth-slate); }
+.xnote .wk-rshow { border: 0; background: none; padding: 0; font: 600 14px/20px var(--font-ui); color: var(--tenth-dusk); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; cursor: pointer; }
+@media (max-width: 560px) { .wk-rfile { grid-template-columns: 1fr; } .wk-rwho .wk-rl { grid-template-columns: 22px minmax(0, 1fr) auto; } .wk-rwho .wk-rc { display: none; } }
 </style>
 </head>
 <body>
@@ -2725,14 +2878,14 @@ function asEntry(q) {   // an entry's checks on one card, answered with one Look
   if (!fold.length || qs[0].key !== fold[0].key || !fold.some(x => x.key === q.key)) return q;   // what has to come first (typing, combining) is asked by itself. One check or several, the card looks the same
   return { kind: "entry", key: e.id + ":entry", eid: e.id, qs: fold };
 }
-function pending() {   // the open questions in file order, then line order (S.entries is kept sorted that way)
+function pending() {   // the open questions, person by person, each person's by date (S.entries itself stays in file order)
   const seen = new Set(), out = [];
-  for (const e of flat()) for (const q of qsOf(e)) if (!seen.has(q.key)) { seen.add(q.key); out.push(q); }
+  for (const e of flat().sort(byView)) for (const q of qsOf(e)) if (!seen.has(q.key)) { seen.add(q.key); out.push(q); }
   return out;
 }
 function ahead(list) {   // the next open question from where the walk is. A check that arrives late for an earlier entry waits until the walk comes round again, so nobody is sent back and forth between files
   const at = S.walkEid && byId(S.walkEid); if (!at) return null;
-  return list.find(q => { const e = byId(q.eid); return e && byOrder(e, at) >= 0; }) || null;
+  return list.find(q => { const e = byId(q.eid); return e && byView(e, at) >= 0; }) || null;
 }
 function allQuestionCount() { const seen = new Set(); flat().forEach(e => qsOf(e, true).forEach(q => seen.add(q.key))); return seen.size; }
 const ASK_WHILE_READING = false;   // false: read every note first, then ask. true: start asking as soon as the first note is read.
@@ -2745,7 +2898,7 @@ function current() {
     return asEntry(at(list) || list[0]) || (e ? { kind: "none", key: e.id + ":none", eid: e.id } : null);
   }
   const b = bulkQ(); if (b) return b;   // what can be settled in one go comes first
-  const list = pending(); return asEntry(at(list) || ahead(list) || list[0] || null);
+  const list = walkList(); return asEntry(at(list) || ahead(list) || list[0] || null);
 }
 const acceptN = (n) => n === 2 ? "Accept both" : `Accept all ${n}`;   // "Accept all 2" reads oddly
 const acceptWord = (n) => n === 2 ? "Accept both" : "Accept all";
@@ -2757,11 +2910,11 @@ function bulkQ() {   // the next group Tenth can settle at once that hasn't been
   return g ? { kind: "bulk", key: "bulk:" + g.kind, eid: g.qs[0].eid, g } : null;
 }
 const canBack = () => (S.only ? S.hist.length > S.only.h0 : S.hist.length > 0);   // Back only undoes what was done on this page
-function entryNo(e) { const all = flat().slice().sort(byOrder); return { pos: Math.max(1, all.indexOf(e) + 1), total: Math.max(1, all.length) }; }
+function entryNo(e) { const all = flat().filter(x => inWho(x) || x === e).sort(byView); return { pos: Math.max(1, all.indexOf(e) + 1), total: Math.max(1, all.length) }; }   // where it sits in the list as shown: person by person, by date
 function view() {   // after reading: one question at a time, then the list. The list is also one click away at any point.
   if (!S.sources.length) return "empty";
   if (S.typing) return "ask";   // typing a new entry: the card, empty
-  if (!S.listMode && (S.only || pending().length) && (!reading() || ASK_WHILE_READING || S.arrived)) return "ask";   // notes added mid-review: the questions carry on while they're read
+  if (!S.listMode && (S.only || walkList().length) && (!reading() || ASK_WHILE_READING || S.arrived)) return "ask";   // notes added mid-review: the questions carry on while they're read
   if (reading() || (S.entries.some(e => e.busy) && !(S.arrived && flat().length))) return "wait";   // the first read: the list fills in as each file is read
   return "done";
 }
@@ -2799,7 +2952,7 @@ function reopen(list) {   // "come back to it" skips are cleared, and the progre
   flat().filter(x => srcs.has(x.src)).forEach(x => { delete x.skipped.tk; });
   S.doneCount = Math.max(0, S.doneCount - pending().filter(q => !before.has(q.key)).length);
 }
-function resumeAll() { S.prevOpen = null; S.hold = null; S.cardDone = null; S.walkEid = null; reopen(flat()); S.only = null; S.sel = null; S.listMode = false; S.editEl = null; S.overrideAsk = null; S.curKey = null; S.lastKey = null; render(); }
+function resumeAll() { S.prevOpen = null; S.hold = null; S.cardDone = null; S.walkEid = null; reopen(flat().filter(inWho)); S.only = null; S.sel = null; S.listMode = false; S.editEl = null; S.overrideAsk = null; S.curKey = null; S.lastKey = null; render(); }
 function closeRow() { S.cellEdit = null; S.cardEdit = null; S.editEl = null; S.overrideAsk = null; }
 /* everything still unresolved on an entry, whether or not it was skipped (drives the finished sheet) */
 const PENDING = { FLAG_MISMATCH: { tone: "warn", icon: "alert", label: "Check matter" }, NEEDS_REVIEW: { tone: "warn", icon: "clock", label: "Check matter" }, REVIEW: { tone: "warn", icon: "clock", label: "Check matter" },
@@ -2839,7 +2992,7 @@ function rowState(e) {
   if (e.touch === "accepted" || e.matterState === "accepted") return { kind: "you", chip: { tone: "neutral", icon: "check", label: "Checked" } };
   return { kind: "auto" };
 }
-const FILTERS = [["all", "All"], ["open", "To review"], ["auto", "Matched"], ["you", "Checked"], ["edit", "Edited"], ["ovr", "Kept as written"]];
+const FILTERS = [["all", "All"], ["open", "To review"], ["rev", "Reviewed"], ["auto", "Matched"], ["gone", "Removed"]];   // Removed shows only once something is taken out
 function catOf(e, s) {   // which filter an entry belongs to: one each, so the counts add up
   if (s.kind === "open") return "open";
   if (e.overrides && e.overrides.length) return "ovr";
@@ -2906,7 +3059,20 @@ const chip = (st, extra = "") => el("span", { class: `pill ${st.tone}${st.s2 ? "
 
 /* ================= history: every answer can be undone ================= */
 const snapshot = () => ({ entries: structuredClone(S.entries), done: S.doneCount, key: S.curKey, cand: S.cand, sel: S.sel, walk: S.walkEid, srcDone: new Set(S.sources.filter(s => s.status === "done").map(s => s.id)) });
-const byOrder = (a, b) => a.srcIdx - b.srcIdx || a.seq - b.seq;
+const byOrder = (a, b) => a.srcIdx - b.srcIdx || a.seq - b.seq;   // where it sits in its file: what "the entry above" and combining mean
+/* whose time: the list is grouped by timekeeper, and each person's entries read by date across their files. Entries with no
+   timekeeper come first, since that answer decides where they go. */
+const pkey = e => (e.tk ? String(e.tk) : "~none");
+const tkSort = id => { const n = tkOf(id).name.trim(), w = n.split(/\s+/); return `${w[w.length - 1]} ${n}`.toLowerCase(); };   // last name, then the whole name
+const personCmp = (a, b) => (a.tk ? 1 : 0) - (b.tk ? 1 : 0) || (!a.tk || a.tk === b.tk ? 0 : tkSort(a.tk).localeCompare(tkSort(b.tk)) || String(a.tk).localeCompare(String(b.tk)));
+const byView = (a, b) => personCmp(a, b) || String(a.date || "9999").localeCompare(String(b.date || "9999")) || byOrder(a, b);   // person, then date, then its place in its file
+const inWho = e => !S.who || pkey(e) === S.who;   // the timekeeper picked in the list, or everyone
+const walkList = () => pending().filter(q => { const e = byId(q.eid); return !e || inWho(e); });   // the questions Review walks: everyone's, or the picked person's
+const manyTk = (list = flat()) => new Set(list.map(e => e.tk).filter(Boolean)).size > 1;   // the list is grouped by person either way; the picker and "Then" on the card need two or more
+const whoName = k => (k === "~none" ? "No timekeeper yet" : tkOf(k).name);
+const pid = k => "pg-" + String(k).replace(/[^A-Za-z0-9_-]/g, "_");   // a person's heading in the list
+const srcShort = s => s.name.replace(/\.[^.]+$/, "") || s.name;
+const tabOf = c => (c === "you" || c === "edit" || c === "ovr" ? "rev" : c);   // Checked, Edited and Kept as written share one tab
 const later = [];
 let bulk = false;   // while true, answers only change the entries: the caller keeps one history step and draws the page once
 function commit(fn) {   // an answer that settles a question
@@ -2991,7 +3157,8 @@ async function readFile(src) {
     src.pid = "p" + Math.random().toString(36).slice(2, 10); src.stage = "starting"; src.stageAt = { starting: Date.now() }; src.readers = {}; src.found = null; src.done = 0; src.total = null;
     form.append("progress_id", src.pid);
     if (src.sendAnyway || (src.sample && src.kind === "photo")) form.append("send_anyway", "true");   // the demo photos are 3 megapixels, under what the check wants for a phone photo
-    if (TKPICK && TKPICK !== "*" && TK[TKPICK] && !isNewTk(TKPICK)) form.append("tk_id", TKPICK);   // the timekeeper chosen before the upload
+    const tkAt = src.tk ?? TKPICK;   // the timekeeper chosen when this file was added
+    if (tkAt && tkAt !== "*" && TK[tkAt] && !isNewTk(tkAt)) form.append("tk_id", tkAt);
     const ckey = src.key + "|" + (src.tk || ""), kept = src.fresh ? null : EXTRACTED.get(ckey);   // "Try again" and "Read it again" always ask again
     const out = kept ? structuredClone(kept) : await readInBackground(form, src);
     src.fresh = false;
@@ -3016,8 +3183,9 @@ async function readFile(src) {
     src.backup = src.readErrors.length > 0 || out.entries.some(r => String(r.check_reasons || "").split("; ").includes("read_by_rules"));
     src.backupWhy = src.readErrors.join(" | ") || "Tenth got no answer for this file the usual way.";
     if ([".csv", ".txt", ".eml"].includes(ext(src.name))) src.text = (await src.file.text()).slice(0, 200000);
-    const rows = Object.fromEntries(out.entries.map(r => [r.entry_id, r]));
-    await finish(src, out.decisions.map((d, n) => adapt(d, rows[d.entry_id], src, n)));
+    const rows = Object.fromEntries(out.entries.map(r => [r.entry_id, r])), at = Object.fromEntries(out.entries.map((r, i) => [r.entry_id, i]));
+    const inOrder = out.decisions.slice().sort((a, b) => (at[a.entry_id] ?? 1e9) - (at[b.entry_id] ?? 1e9));   // the note's own order: the service sends its decisions sorted by entry id as text (r1, r10, r11 ... r2)
+    await finish(src, inOrder.map((d, n) => adapt(d, rows[d.entry_id], src, n)));
   } catch (err) {
     const said = err instanceof Said;
     src.status = "failed"; src.debug = said ? err.debug : `${err.name}: ${err.message}`; console.warn("Tenth couldn't read " + src.name + ": " + src.debug);
@@ -3027,7 +3195,8 @@ async function readFile(src) {
   }
 }
 async function finish(src, ents) {
-  if (isNewTk(TKPICK)) ents.forEach(e => { if (e.tk === null) e.tk = TKPICK; });   // the service doesn't know them, so the page fills them in
+  const tkAt = src.tk ?? TKPICK;
+  if (isNewTk(tkAt)) ents.forEach(e => { if (e.tk === null) e.tk = tkAt; });   // the service doesn't know them, so the page fills them in
   await checkNarratives(ents);
   if (!S.sources.includes(src)) return;
   src.status = "done"; if (src.t0) src.took = (Date.now() - src.t0) / 1000;
@@ -3450,8 +3619,8 @@ const para = t => el("p", { text: t });
    that is already on earlier entries for the same matter. Anything else stays a question. */
 const BULK_MIN = 0.8;
 function bulkGroups0() {
-  const matter = [], words = [];
-  for (const e of flat()) {
+  const matter = [], words = [], pool = flat().filter(inWho);   // with a timekeeper picked, only theirs
+  for (const e of pool) {
     if (e.busy) continue;
     const qs = qsOf(e), m = qs.find(q => q.kind === "matter");
     if (e.tk === null) continue;   // whose time it is changes which matters fit: these wait for that answer
@@ -3459,13 +3628,13 @@ function bulkGroups0() {
     qs.filter(q => q.kind === "blank").forEach(q => { const c = (e.tasks[q.ti].ph[q.k] || [])[0]; if (c && c.src === "history" && c.count >= 2) words.push(q); });
   }
   const pc = Math.round(BULK_MIN * 100), basic = [], block = [], round = [];
-  for (const e of flat()) { if (e.busy) continue; const q = qsOf(e).find(x => x.kind === "round"); if (q) round.push(q); }   // times off the firm's step (0.25 when it bills in tenths): one answer for all of them
-  for (const e of flat()) {   // entries whose only doubt is several tasks under one time
+  for (const e of pool) { if (e.busy) continue; const q = qsOf(e).find(x => x.kind === "round"); if (q) round.push(q); }   // times off the firm's step (0.25 when it bills in tenths): one answer for all of them
+  for (const e of pool) {   // entries whose only doubt is several tasks under one time
     if (e.busy || !e.verify || !e.verify.block || e.verified) continue;
     const q = qsOf(e).find(x => x.kind === "verify"); if (q) block.push(q);
   }
   const byFile = new Map();
-  for (const e of flat()) {
+  for (const e of pool) {
     if (e.busy || !e.verify || isOwnCheck(e) || verifyPart(e) !== "entry" || !(e.verify.codes || []).includes("read_by_rules")) continue;
     const q = qsOf(e).find(x => x.kind === "verify"); if (q) (byFile.get(e.src) || byFile.set(e.src, []).get(e.src)).push(q);
   }
@@ -3756,7 +3925,7 @@ function render() {
   toTop();
   queueDraft();
 }
-const toReview = () => { const n = flat().filter(isOpen).length; return `${n} to review${reading() ? ", more coming" : ""}`; };   // counts down as entries are settled, the same number as the header's "done"
+const toReview = () => { const n = flat().filter(e => isOpen(e) && inWho(e)).length; return `${n} to review${reading() ? ", more coming" : ""}`; };   // counts down as entries are settled, the same number as the header's "done"
 function walkInfo(cur) {   // entries, not questions: which one this is, out of all the ones that had something to ask, and how many are settled
   const list = flat().filter(x => x.asked), e = cur && byId(cur.eid);
   return { pos: Math.max(1, list.indexOf(e) + 1), total: Math.max(1, list.length), done: list.filter(x => !qsOf(x).length).length };
@@ -3802,29 +3971,31 @@ function flashSaved() {   // after each change the count steps aside for "Saved"
   c.classList.remove("s0", "s1"); void c.offsetWidth; c.classList.add(savedFlip++ % 2 ? "s1" : "s0");
 }
 
-function tkCombo(ids, bad) {   // whose time: type part of a name and pick it, or open the list. A name not on the list can be added from here
+function tkCombo(ids, bad, o = {}) {   // whose time: type part of a name and pick it, or open the list. A name not on the list can be added from here
+  // o, for the other places that ask whose time: get/set the answer, id, several (offer "Several people"), first (who the list shows before anything is typed), note, sub (a name's second line)
   const nameOf = v => (v === "*" ? "Several people" : TK[v] ? TK[v].name : "");
-  const inp = el("input", { id: "tkPick", type: "text", autocomplete: "off", spellcheck: "false", placeholder: "Type or choose a name", value: nameOf(TKPICK), role: "combobox", "aria-autocomplete": "list", "aria-controls": "tkList", "aria-expanded": "false",
+  const get = o.get || (() => TKPICK), cid = o.id || "tkPick", lid = o.id ? cid + "List" : "tkList", oid = o.id ? cid + "o" : "tko";
+  const set = o.set || (id => { TKPICK = id; gateNew = false; gateDone(); const d = $("#drop"); if (d && S.shown === "empty") d.focus(); });
+  const inp = el("input", { id: cid, type: "text", autocomplete: "off", spellcheck: "false", placeholder: "Type or choose a name", value: nameOf(get()), role: "combobox", "aria-autocomplete": "list", "aria-controls": lid, "aria-expanded": "false",
     "aria-describedby": bad ? "tkHint" : null, "aria-invalid": bad ? "true" : null });
-  const list = el("ul", { class: "tkbox", id: "tkList", role: "listbox", "aria-label": "Timekeepers", hidden: true, onmousedown: ev => ev.preventDefault() });
+  const list = el("ul", { class: "tkbox", id: lid, role: "listbox", "aria-label": "Timekeepers", hidden: true, onmousedown: ev => ev.preventDefault() });
   let items = [], at = -1;
-  const done = () => { gateDone(); const d = $("#drop"); if (d && S.shown === "empty") d.focus(); };
-  const choose = it => { list.hidden = true; inp.setAttribute("aria-expanded", "false"); it.fn(); };
+  const choose = it => { if (o.inline) { it.fn(); inp.value = nameOf(get()); draw(); return; } list.hidden = true; inp.setAttribute("aria-expanded", "false"); it.fn(); };   // inline: the list stays, and the check moves
   const mark = () => {
     list.querySelectorAll(".mopt").forEach((li, k) => { li.classList.toggle("on", k === at); li.setAttribute("aria-selected", String(k === at)); if (k === at) li.scrollIntoView({ block: "nearest" }); });
-    if (at >= 0) inp.setAttribute("aria-activedescendant", `tko-${at}`); else inp.removeAttribute("aria-activedescendant");
+    if (at >= 0) inp.setAttribute("aria-activedescendant", `${oid}-${at}`); else inp.removeAttribute("aria-activedescendant");
   };
   const draw = () => {
-    const typed = inp.value.trim(), q = typed.toLowerCase() === nameOf(TKPICK).toLowerCase() ? "" : typed.toLowerCase();   // a name already chosen shows everyone again
+    const typed = inp.value.trim(), q = typed.toLowerCase() === nameOf(get()).toLowerCase() ? "" : typed.toLowerCase();   // a name already chosen shows everyone again
     const fits = n => { n = n.toLowerCase(); return n.startsWith(q) || n.split(/\s+/).some(w => w.startsWith(q)); };   // the start of a first or last name
-    const hit = ids.filter(id => !q || fits(TK[id].name) || id.toLowerCase() === q);
-    items = hit.map(id => ({ label: TK[id].name, sub: TK[id].isNew ? "Not on the list" : "", fn: () => { TKPICK = id; gateNew = false; done(); } }));
-    if (!q || fits("Several people")) items.unshift({ label: "Several people", sub: "Each note says who", fn: () => { TKPICK = "*"; gateNew = false; done(); } });
+    const hit = (q || !o.first ? ids : o.first.filter(id => TK[id])).filter(id => !q || fits(TK[id].name) || id.toLowerCase() === q);
+    items = hit.map(id => ({ label: TK[id].name, sub: o.sub ? o.sub(id) : TK[id].isNew ? "Not on the list" : "", fn: () => set(id) }));
+    if (o.several !== false && (!q || fits("Several people"))) items.unshift({ label: "Several people", sub: "Each note says who", fn: () => set("*") });
     const exact = ids.some(id => TK[id].name.toLowerCase() === q);
-    if (q && !exact && newTkOk(typed) && (!hit.length || /\s/.test(typed))) items.push({ label: `Add ${typed}`, sub: "Not on the firm's list", add: true, fn: () => { TKPICK = addNewTk(typed); gateNew = false; done(); } });
+    if (q && !exact && newTkOk(typed) && (!hit.length || /\s/.test(typed))) items.push({ label: `Add ${typed}`, sub: "Not on the firm's list", add: true, fn: () => set(addNewTk(typed)) });
     at = q && items.length ? 0 : -1;
-    list.replaceChildren(...items.map((it, k) => el("li", { role: "option", id: `tko-${k}`, class: "mopt" + (it.add ? " tkadd" : ""), "aria-selected": "false", onclick: () => choose(it) }, el("b", { text: it.label }), it.sub ? el("span", { text: it.sub }) : null)),
-      ...(q ? [] : [el("li", { class: "tknote", text: "Someone not on the list? Type their name." })]),
+    list.replaceChildren(...items.map((it, k) => el("li", { role: "option", id: `${oid}-${k}`, class: "mopt" + (it.add ? " tkadd" : "") + (!q && it.label === nameOf(get()) ? " cur" : ""), "aria-selected": "false", onclick: () => choose(it) }, el("b", { text: it.label }), it.sub ? el("span", { text: it.sub }) : null)),
+      ...(q ? [] : [el("li", { class: "tknote", text: o.note || "Someone not on the list? Type their name." })]),
       ...(q && !items.length ? [el("li", { class: "tknote", text: "Type their first and last name to add them." })] : []));
     mark();
   };
@@ -3835,10 +4006,11 @@ function tkCombo(ids, bad) {   // whose time: type part of a name and pick it, o
   inp.addEventListener("keydown", ev => {
     if (ev.key === "ArrowDown" || ev.key === "ArrowUp") { ev.preventDefault(); if (list.hidden) open(); if (items.length) { at = ev.key === "ArrowDown" ? (at + 1) % items.length : (at - 1 + items.length) % items.length; mark(); } }
     else if (ev.key === "Enter") { ev.preventDefault(); if (at >= 0 && items[at]) choose(items[at]); }
-    else if (ev.key === "Escape") { if (!list.hidden) { ev.preventDefault(); ev.stopPropagation(); list.hidden = true; inp.setAttribute("aria-expanded", "false"); inp.value = nameOf(TKPICK); } }
+    else if (ev.key === "Escape") { if (!list.hidden && !o.inline) { ev.preventDefault(); ev.stopPropagation(); list.hidden = true; inp.setAttribute("aria-expanded", "false"); inp.value = nameOf(get()); } }
   });
-  inp.addEventListener("blur", () => { list.hidden = true; inp.setAttribute("aria-expanded", "false"); if (inp.value.trim() !== nameOf(TKPICK)) inp.value = nameOf(TKPICK); });
-  return el("div", { class: "tkwrap" }, inp, list);
+  inp.addEventListener("blur", () => { if (!o.inline) { list.hidden = true; inp.setAttribute("aria-expanded", "false"); } if (inp.value.trim() !== nameOf(get())) inp.value = nameOf(get()); });
+  if (o.inline) { draw(); list.hidden = false; inp.setAttribute("aria-expanded", "true"); }
+  return el("div", { class: "tkwrap" + (o.inline ? " wk-inline" : "") }, inp, list);
 }
 function gateHint() { gateAsk = true; if (S.shown === "empty") { buildEmpty(); const t = $("#tkPick"); if (t) t.focus(); } }
 function gateDone() {   // the choice is made: carry on with anything that was waiting for it
@@ -4351,10 +4523,21 @@ function askHead(cur) {   // one count, in entries, above the question; "Last on
   const all = null;
   if (S.only) { const n = entryNo(byId(cur.eid)); return el("p", { class: "q-head ws-count" }, back, `Entry ${n.pos} of ${n.total}`, all); }
   if (cur.kind === "bulk") return el("p", { class: "q-head ws-count" }, back, `${plural(cur.g.qs.length, "entry", "entries")} at once`);
-  const w = walkInfo(cur), last = !reading() && (cur.kind === "entry" ? pending().every(x => cur.qs.some(y => y.key === x.key)) : pending().length === 1);
-  return el("p", { class: "q-head ws-count" }, back, last ? "Last one!" : toReview(), all);
+  const list = walkList(), last = !reading() && (cur.kind === "entry" ? list.every(x => cur.qs.some(y => y.key === x.key)) : list.length === 1);
+  const e = byId(cur.eid), live = flat();
+  if (!e || !e.tk || cur.kind === "tk" || new Set(live.map(pkey)).size < 2) return el("p", { class: "q-head ws-count" }, back, last ? "Last one!" : toReview(), all);
+  // with several timekeepers: whose time this is, how many of theirs are left, and who comes next, so moving on to the next person is never a surprise
+  const nm = tkOf(e.tk).name, left = live.filter(x => x.tk === e.tk && isOpen(x)).length;
+  const after = list.map(q => byId(q.eid)).find(x => x && x.tk && x.tk !== e.tk && personCmp(x, e) > 0), an = after ? tkOf(after.tk).name : "";
+  return el("p", { class: "q-head ws-count wk-count" }, back,
+    el("span", { class: "wk-av", "aria-hidden": "true", text: initials(nm) }), el("b", { class: "wk-cname", text: nm }),
+    el("span", { class: "wk-cn", text: `${left} to review${reading() ? ", more coming" : ""}` }),
+    last ? el("span", { class: "wk-cnext", text: "Last one!" })
+      : after ? el("span", { class: "wk-cnext" }, "Then", el("span", { class: "wk-av xs", "aria-hidden": "true", text: initials(an) }), `${an}, ${live.filter(x => x.tk === after.tk && isOpen(x)).length} to review`) : null);
 }
-const ICONS = { "check": "<path d=\"M3.2 8.6l3.1 3.1L12.8 5\"/>", "pencil": "<path fill=\"currentColor\" stroke=\"none\" d=\"M10.2 2.4a1.6 1.6 0 0 1 2.2 0l1.2 1.2a1.6 1.6 0 0 1 0 2.2L6.4 13l-3.4.9a.5.5 0 0 1-.6-.6l.9-3.4z\"/>", "trash": "<path fill=\"currentColor\" stroke=\"none\" d=\"M4.3 5.5h7.4l-.6 7.4a1.6 1.6 0 0 1-1.6 1.5H6.5a1.6 1.6 0 0 1-1.6-1.5z\"/><path d=\"M2.8 4h10.4M6.4 4V2.6h3.2V4\"/>", "join": "<path d=\"M4 3v4a3 3 0 0 0 3 3h5M10 7.5L12.5 10 10 12.5\"/>", "left": "<path d=\"M10 3.5L5.5 8l4.5 4.5\"/>", "minus": "<path d=\"M3.5 8h9\"/>", "fit": "<path d=\"M2.5 6V3.8a1.3 1.3 0 0 1 1.3-1.3H6M10 2.5h2.2a1.3 1.3 0 0 1 1.3 1.3V6M13.5 10v2.2a1.3 1.3 0 0 1-1.3 1.3H10M6 13.5H3.8a1.3 1.3 0 0 1-1.3-1.3V10\"/>", "plus": "<path d=\"M8 3.2v9.6M3.2 8h9.6\"/>", "x": "<path d=\"M4.2 4.2l7.6 7.6M11.8 4.2l-7.6 7.6\"/>", "chev": "<path d=\"M4 6.2l4 4 4-4\"/>", "dots": "<circle cx=\"3.5\" cy=\"8\" r=\"1.5\" fill=\"currentColor\" stroke=\"none\"/><circle cx=\"8\" cy=\"8\" r=\"1.5\" fill=\"currentColor\" stroke=\"none\"/><circle cx=\"12.5\" cy=\"8\" r=\"1.5\" fill=\"currentColor\" stroke=\"none\"/>", "file": "<path d=\"M4.6 1.8h4.6l3.2 3.2v7.6a1.6 1.6 0 0 1-1.6 1.6H4.6A1.6 1.6 0 0 1 3 12.6V3.4a1.6 1.6 0 0 1 1.6-1.6z\"/><path fill=\"currentColor\" stroke=\"none\" d=\"M9 1.8V4a1 1 0 0 0 1 1h2.4z\"/>", "panel": "<rect x=\"1.6\" y=\"2.4\" width=\"12.8\" height=\"11.2\" rx=\"2\"/><path d=\"M9.6 2.6v10.8\"/><path stroke-width=\"1.4\" d=\"M11.4 5.4h1.2M11.4 7.6h1.2\"/>", "locate": "<rect x=\"1.8\" y=\"2.6\" width=\"12.4\" height=\"10.8\" rx=\"2.4\"/><path fill=\"currentColor\" fill-opacity=\".45\" stroke=\"none\" d=\"M9.4 2.6h2.4a2.4 2.4 0 0 1 2.4 2.4v6a2.4 2.4 0 0 1-2.4 2.4H9.4z\"/><path d=\"M4.6 6.4h2M4.6 9.4h2\"/>", "search": "<circle cx=\"7\" cy=\"7\" r=\"4.4\"/><path d=\"M10.4 10.4L14 14\" stroke-width=\"2.6\"/>", "up": "<path d=\"M8 13.2V3.4M4.4 7L8 3.4 11.6 7\"/>", "down": "<path d=\"M8 2.4v7.4M4.9 6.9L8 10l3.1-3.1\"/><rect x=\"2.4\" y=\"12\" width=\"11.2\" height=\"2.4\" rx=\"1.2\" fill=\"currentColor\" stroke=\"none\"/>", "lock": "<path d=\"M5.4 7V5.2a2.6 2.6 0 0 1 5.2 0V7\"/><rect x=\"3.2\" y=\"6.8\" width=\"9.6\" height=\"7.4\" rx=\"2\" fill=\"currentColor\" stroke=\"none\"/>" };   // icon family B: the same rounded shapes as the status and file icons, in one tone
+const ICONS = { "check": "<path d=\"M3.2 8.6l3.1 3.1L12.8 5\"/>", "pencil": "<path fill=\"currentColor\" stroke=\"none\" d=\"M10.2 2.4a1.6 1.6 0 0 1 2.2 0l1.2 1.2a1.6 1.6 0 0 1 0 2.2L6.4 13l-3.4.9a.5.5 0 0 1-.6-.6l.9-3.4z\"/>", "trash": "<path fill=\"currentColor\" stroke=\"none\" d=\"M4.3 5.5h7.4l-.6 7.4a1.6 1.6 0 0 1-1.6 1.5H6.5a1.6 1.6 0 0 1-1.6-1.5z\"/><path d=\"M2.8 4h10.4M6.4 4V2.6h3.2V4\"/>", "join": "<path d=\"M4 3v4a3 3 0 0 0 3 3h5M10 7.5L12.5 10 10 12.5\"/>", "left": "<path d=\"M10 3.5L5.5 8l4.5 4.5\"/>", "minus": "<path d=\"M3.5 8h9\"/>", "fit": "<path d=\"M2.5 6V3.8a1.3 1.3 0 0 1 1.3-1.3H6M10 2.5h2.2a1.3 1.3 0 0 1 1.3 1.3V6M13.5 10v2.2a1.3 1.3 0 0 1-1.3 1.3H10M6 13.5H3.8a1.3 1.3 0 0 1-1.3-1.3V10\"/>", "plus": "<path d=\"M8 3.2v9.6M3.2 8h9.6\"/>", "x": "<path d=\"M4.2 4.2l7.6 7.6M11.8 4.2l-7.6 7.6\"/>", "chev": "<path d=\"M4 6.2l4 4 4-4\"/>", "dots": "<circle cx=\"3.5\" cy=\"8\" r=\"1.5\" fill=\"currentColor\" stroke=\"none\"/><circle cx=\"8\" cy=\"8\" r=\"1.5\" fill=\"currentColor\" stroke=\"none\"/><circle cx=\"12.5\" cy=\"8\" r=\"1.5\" fill=\"currentColor\" stroke=\"none\"/>", "file": "<path d=\"M4.6 1.8h4.6l3.2 3.2v7.6a1.6 1.6 0 0 1-1.6 1.6H4.6A1.6 1.6 0 0 1 3 12.6V3.4a1.6 1.6 0 0 1 1.6-1.6z\"/><path fill=\"currentColor\" stroke=\"none\" d=\"M9 1.8V4a1 1 0 0 0 1 1h2.4z\"/>", "panel": "<rect x=\"1.6\" y=\"2.4\" width=\"12.8\" height=\"11.2\" rx=\"2\"/><path d=\"M9.6 2.6v10.8\"/><path stroke-width=\"1.4\" d=\"M11.4 5.4h1.2M11.4 7.6h1.2\"/>", "locate": "<rect x=\"1.8\" y=\"2.6\" width=\"12.4\" height=\"10.8\" rx=\"2.4\"/><path fill=\"currentColor\" fill-opacity=\".45\" stroke=\"none\" d=\"M9.4 2.6h2.4a2.4 2.4 0 0 1 2.4 2.4v6a2.4 2.4 0 0 1-2.4 2.4H9.4z\"/><path d=\"M4.6 6.4h2M4.6 9.4h2\"/>", "search": "<circle cx=\"7\" cy=\"7\" r=\"4.4\"/><path d=\"M10.4 10.4L14 14\" stroke-width=\"2.6\"/>", "up": "<path d=\"M8 13.2V3.4M4.4 7L8 3.4 11.6 7\"/>", "down": "<path d=\"M8 2.4v7.4M4.9 6.9L8 10l3.1-3.1\"/><rect x=\"2.4\" y=\"12\" width=\"11.2\" height=\"2.4\" rx=\"1.2\" fill=\"currentColor\" stroke=\"none\"/>", "lock": "<path d=\"M5.4 7V5.2a2.6 2.6 0 0 1 5.2 0V7\"/><rect x=\"3.2\" y=\"6.8\" width=\"9.6\" height=\"7.4\" rx=\"2\" fill=\"currentColor\" stroke=\"none\"/>",
+  "person": "<circle cx=\"8\" cy=\"5.3\" r=\"2.6\"/><path d=\"M3.2 13.6c.6-2.5 2.5-3.9 4.8-3.9s4.2 1.4 4.8 3.9\"/>", "people": "<circle cx=\"6\" cy=\"5.6\" r=\"2.3\"/><path d=\"M1.9 13.4c.5-2.3 2.1-3.6 4.1-3.6s3.6 1.3 4.1 3.6M10.6 3.5a2.3 2.3 0 0 1 0 4.3M12 9.9c1.2.5 2 1.6 2.3 3.4\"/>",
+  "swap": "<path d=\"M2.8 5.4h9.6M10.2 3l2.4 2.4-2.4 2.4M13.2 10.6H3.6M5.8 8.2l-2.4 2.4 2.4 2.4\"/>", "undo": "<path d=\"M5.4 3.4L2.6 6.2 5.4 9\"/><path d=\"M2.9 6.2h6.4a3.6 3.6 0 0 1 0 7.2H7\"/>" };   // icon family B: the same rounded shapes as the status and file icons, in one tone
 function ico(name, size = 16) {   // a small line icon, drawn the same way everywhere
   const t = document.createElement("template");
   t.innerHTML = `<svg aria-hidden="true" width="${size}" height="${size}" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${ICONS[name] || ""}</svg>`;
@@ -4373,13 +4556,16 @@ function moreMenu(items, o = {}) {   // a small menu that opens over the page; E
   if (!items.length) return null;
   const up = o.up !== false;
   const btn = o.button || el("button", { class: "btn quiet ws-morebtn", type: "button", "aria-haspopup": "menu", "aria-expanded": "false" }, ico("dots"), "More");
-  const menu = el("div", { class: "ws-menu" + (up ? " up" : ""), role: "menu", hidden: true });
+  const menu = el("div", { class: "ws-menu" + (up ? " up" : "") + (o.float ? " wk-float" : ""), role: "menu", hidden: true });
   const wrap = el("div", { class: "ws-more" }, btn, menu);
-  const outside = ev => { if (!wrap.contains(ev.target)) close(); };
-  const close = () => { menu.hidden = true; btn.setAttribute("aria-expanded", "false"); document.removeEventListener("pointerdown", outside, true); };
-  const open = () => { menu.hidden = false; btn.setAttribute("aria-expanded", "true"); document.addEventListener("pointerdown", outside, true); const f = menu.querySelector("button"); if (f) f.focus(); };
-  menu.append(...items.map(it => el("button", { class: "ws-mi" + (it.danger ? " danger" : ""), type: "button", role: "menuitem", title: it.title || null, onclick: () => { close(); it.fn(); } },
-    ico(it.icon), el("span", {}, it.label, it.sub ? el("small", { text: it.sub }) : null))));
+  const outside = ev => { if (!wrap.contains(ev.target) && !menu.contains(ev.target)) close(); };
+  const place = () => { if (!btn.isConnected) { close(); return; } const b = btn.getBoundingClientRect(), w = menu.offsetWidth || 280, below = innerHeight - b.bottom > menu.offsetHeight + 16;   // float: over the list's frame, so the last heading's menu isn't cut off
+    menu.style.left = Math.max(12, Math.min(b.right - w, innerWidth - w - 12)) + "px"; menu.style.top = (below ? b.bottom + 8 : b.top - 8 - menu.offsetHeight) + "px"; menu.style.transformOrigin = below ? "top right" : "bottom right"; };
+  const close = () => { menu.hidden = true; btn.setAttribute("aria-expanded", "false"); document.removeEventListener("pointerdown", outside, true); if (o.float) { removeEventListener("scroll", place, true); wrap.append(menu); } };
+  const open = () => { if (o.float) { document.querySelectorAll("body > .wk-float").forEach(m => m.remove()); document.body.append(menu); }   // float: on the page itself, since the list's frame is the containing block for anything fixed inside it
+    menu.hidden = false; btn.setAttribute("aria-expanded", "true"); if (o.float) { place(); addEventListener("scroll", place, true); } document.addEventListener("pointerdown", outside, true); const f = menu.querySelector("button"); if (f) f.focus(); };
+  menu.append(...items.flatMap(it => [...(it.sep ? [el("div", { class: "wk-sep", role: "separator" })] : []), el("button", { class: "ws-mi" + (it.danger ? " danger" : ""), type: "button", role: "menuitem", title: it.title || null, onclick: () => { close(); it.fn(); } },
+    ico(it.icon), el("span", {}, it.label, it.sub ? el("small", { text: it.sub }) : null))]), ...(o.foot ? [el("p", { class: "wk-mfoot", text: o.foot })] : []));
   btn.addEventListener("click", () => (menu.hidden ? open() : close()));
   menu.addEventListener("keydown", ev => {
     const all = [...menu.querySelectorAll("button")], i = all.indexOf(document.activeElement);
@@ -5046,8 +5232,9 @@ const PANEL_KEY = "tenth.panelW";
 const panelW = () => { let w = 440; try { w = +localStorage.getItem(PANEL_KEY) || 440; } catch (er) { /* the default */ } return Math.round(Math.max(360, Math.min(w, innerWidth / 2))); };
 const canShow = s => !!s && s.status === "done" && (!!s.url || !!(s.layout && Object.keys(s.layout).length));
 const panelOn = () => !!S.panel && S.shown !== "ask" && S.shown !== "empty" && wide() && !!srcById(S.panel.src);
-function openPanel(srcId, anchorId) {
-  const go = () => { S.panel = { src: srcId }; S.picked = null; if (S.shown === "ask") toList(); else renderDone(); };
+const filesOf = k => [...new Set(flat().filter(e => pkey(e) === k).sort(byView).map(e => e.src))].map(srcById).filter(canShow);   // a person's notes that can be shown
+function openPanel(srcId, anchorId, who) {   // who: opened from a person, so its tabs are that person's files
+  const go = () => { S.panel = { src: srcId, who: who || null }; S.picked = null; if (S.shown === "ask") toList(); else renderDone(); };
   if (S.shown === "ask" || panelOn()) go(); else slideSplit(go, anchorId);   // another file in an open panel: nothing moves
 }
 function closePanel() { slideSplit(() => { S.panel = null; S.picked = null; renderDone(); }); }
@@ -5080,12 +5267,13 @@ function hoverLines(eid, on) { const ks = (S.panelMap && S.panelMap.byEntry.get(
 function hoverRow(eid, on) { const r = document.getElementById("row-" + eid); if (r) r.classList.toggle("ws-hv", on); }
 function pickRow(eid, fromRow) {   // from a row's locate icon: the panel turns to its file and its lines. From a line: the list scrolls to the row.
   const e = byId(eid); if (!e) return;
-  if (!fromRow && S.fold[e.src]) S.fold[e.src] = false;   // its file was folded: open it to show the row
+  if (!fromRow && S.fold[pkey(e)]) S.fold[pkey(e)] = false;   // its person was folded: open them to show the row
+  if (!fromRow && !inWho(e)) S.who = null;   // someone else's line in the file: back to everyone
   const opening = fromRow && !panelOn();
-  S.picked = eid; if (fromRow) S.panel = { src: e.src };
+  S.picked = eid; if (fromRow) S.panel = { src: e.src, who: pkey(e) };   // from a row: that person's files
   if (!fromRow && !S.shownIds.includes(eid)) { S.tab = "all"; S.day = null; S.q = ""; }
   S.panelScroll = fromRow;
-  if (opening) { S.panel = null; slideSplit(() => { S.panel = { src: e.src }; renderDone(); }, "row-" + eid); } else renderDone();
+  if (opening) { S.panel = null; slideSplit(() => { S.panel = { src: e.src, who: pkey(e) }; renderDone(); }, "row-" + eid); } else renderDone();
   if (!fromRow) { const r = document.getElementById("row-" + eid); if (r) { const b = r.getBoundingClientRect(); if (b.top < 80 || b.bottom > innerHeight) r.scrollIntoView({ block: "center", behavior: "smooth" }); } }
 }
 function panelNote(src, byLine, byEntry) {
@@ -5128,8 +5316,8 @@ function renderPanel() {
   document.documentElement.style.setProperty("--ws-panel", w + "px");
   const { byLine, byEntry } = lineMap(src); S.panelMap = { byLine, byEntry };
   const same = P && P.dataset.src === src.id, keep = same ? P.querySelector(".ws-pbody").scrollTop : 0;
-  const tabs = el("div", { class: "ws-ftabs", role: "tablist", "aria-label": "Files" }, el("span", { class: "ws-thumb", "aria-hidden": "true" }), chipFiles().filter(canShow).map(f => el("button", { class: "ws-ftab" + (f.id === src.id ? " on" : ""), type: "button", role: "tab", "aria-selected": String(f.id === src.id), title: f.name, text: f.name.replace(/\.[^.]+$/, "") || f.name,
-    onclick: () => { if (f.id !== src.id) { S.panel = { src: f.id }; S.picked = null; renderDone(); } } })));
+  const tabs = el("div", { class: "ws-ftabs", role: "tablist", "aria-label": "Files" }, el("span", { class: "ws-thumb", "aria-hidden": "true" }), (S.panel.who && filesOf(S.panel.who).some(f => f.id === src.id) ? filesOf(S.panel.who) : chipFiles().filter(canShow)).map(f => el("button", { class: "ws-ftab" + (f.id === src.id ? " on" : ""), type: "button", role: "tab", "aria-selected": String(f.id === src.id), title: f.name, text: f.name.replace(/\.[^.]+$/, "") || f.name,
+    onclick: () => { if (f.id !== src.id) { S.panel = { src: f.id, who: S.panel.who }; S.picked = null; renderDone(); } } })));
   const hint = el("p", { class: "ws-phint", text: !byLine.size ? (src.layout ? "Tenth couldn't tell where each entry is in this file." : "This file has no lines to point at.") : S.picked && byEntry.has(S.picked) ? "Violet marks the entry you picked. Click a line to find its row." : "Point at a row to find it here, or click a line to find its row." });
   const zin = el("div", { class: "ws-zin" }, panelNote(src, byLine, byEntry)), body = el("div", { class: "ws-pbody k-" + (src.kind === "photo" ? "photo" : "doc") }, hint, voiceBar(src, S.picked), zin);   // a memo: its recording above the transcript
   const zoom = panelZoom(src, body, zin);
@@ -5258,40 +5446,45 @@ function renderDone() {
   const y0 = a0 ? a0.getBoundingClientRect().top : null;   // the row being worked on stays where it is on the screen
   const nfOld = $(".nframe", stage), nbOld = nfOld ? { key: nfOld.dataset.key, l: nfOld.scrollLeft, t: nfOld.scrollTop } : null;   // the note in the open card keeps its place when the page is drawn again
   S.anchor = null;
-  const live = flat(), total = roundH(live.reduce((s, e) => s + hoursOf(e), 0)), failed = S.sources.filter(s => s.status === "failed");
-  live.forEach(e => { if (isOpen(e)) e.flagged = true; });
+  const allLive = flat(), many = manyTk(allLive);
+  if (S.who && (!many || !allLive.some(e => pkey(e) === S.who))) S.who = null;   // their entries moved or were taken out, or one person is left: everyone again
+  const live = allLive.filter(inWho), total = roundH(live.reduce((s, e) => s + hoursOf(e), 0)), failed = S.sources.filter(s => s.status === "failed");   // live: everyone's, or the picked person's
+  allLive.forEach(e => { if (isOpen(e)) e.flagged = true; });
   if (S.sel && !live.some(x => x.id === S.sel)) { S.sel = null; S.bandAsked = null; }   // taken out
   let sel = wd && S.sel ? live.find(x => x.id === S.sel) || null : null;
   if (sel && S.bandAsked === sel.id && !sel.busy && !qsOf(sel).length) {   // its last question is answered: on to the next entry that needs a look
-    const all = live.slice().sort(byOrder), i = all.indexOf(sel), nx = all.slice(i + 1).concat(all.slice(0, i)).find(x => qsOf(x).length);
+    const all = live.slice().sort(byView), i = all.indexOf(sel), nx = all.slice(i + 1).concat(all.slice(0, i)).find(x => qsOf(x).length);
     S.bandAsked = null; S.curKey = null; S.lastKey = null; S.cand = 0; S.bandSig = null; S.gapEdit = null; S.sel = nx ? nx.id : null; S.reveal = nx ? nx.id : null; S.center = true; sel = nx || null;
   }
   const st = new Map(live.map(e => [e, rowState(e)])), nOpen = live.filter(e => st.get(e).kind === "open").length;
   const openNow = new Set(live.filter(e => st.get(e).kind === "open").map(e => e.id)), justDone = S.prevOpen ? [...S.prevOpen].filter(id => !openNow.has(id) && live.some(x => x.id === id)) : [];   // waiting before this draw, done now
   S.prevOpen = openNow;
-  const cat = new Map(live.map(e => [e, catOf(e, st.get(e))])), counts = {}; cat.forEach(c => { counts[c] = (counts[c] || 0) + 1; });
+  const cat = new Map(live.map(e => [e, tabOf(catOf(e, st.get(e)))])), counts = {}; cat.forEach(c => { counts[c] = (counts[c] || 0) + 1; });
+  const gone = S.entries.filter(e => e.removed && !e.mergedInto && inWho(e)); if (gone.length) counts.gone = gone.length;   // taken out, not combined into another entry
+  const nOpenAll = S.who ? allLive.filter(isOpen).length : nOpen;
   const clients = new Set(live.map(e => matterOf(e).client)).size, nq = allQuestionCount();
   const none = !live.length && !first;   // every file failed, or none has an entry yet
-  const fin = !first && !none && !nOpen && S.doneCount > 0 && !S.released, finNow = fin && !S.finPlayed;   // every question answered: the check, the soft sage light, and Release turns solid once
-  if (fin) S.finPlayed = true; else if (nOpen) S.finPlayed = false;
-  const head = none ? (failed.length ? "Tenth couldn't read these notes" : "Nothing here yet") : S.released ? (nOpen ? `Released, ${nOpen} with gaps marked` : "Released") : nOpen ? `${plural(nOpen, "entry", "entries")} to review` : (S.doneCount === 0 ? "Everything matched" : "All checked");
+  const fin = !first && !none && !nOpenAll && S.doneCount > 0 && !S.released, finNow = fin && !S.finPlayed;   // every question answered: the check, the soft sage light, and Release turns solid once
+  if (fin) S.finPlayed = true; else if (nOpenAll) S.finPlayed = false;
+  const settled = S.who ? (live.some(e => st.get(e).kind === "you") ? "All checked" : "Everything matched") : (S.doneCount === 0 ? "Everything matched" : "All checked");
+  const head = none ? (failed.length ? "Tenth couldn't read these notes" : "Nothing here yet") : S.released ? (nOpen ? `Released, ${nOpen} with gaps marked` : "Released") : nOpen ? `${plural(nOpen, "entry", "entries")} to review` : settled;
   const sub = none ? (failed.length ? "Try each one again below, or add a different file." : "Add a note and Tenth will read it.") : nOpen ? (nq ? `Answer ${plural(nq, "quick question", "quick questions")}, or release now with the gaps marked.` : "Release now with the gaps marked.") : "Look it over, then release it.";
-  const who = new Set(live.map(e => e.tk).filter(Boolean)).size > 1;   // the timekeeper gets a line of its own only when it tells entries apart
   let tab = first ? "all" : S.tab || (nOpen ? "open" : "all");   // while reading, every row shows as it lands
   if (tab !== "all" && !counts[tab]) tab = "all";
-  const inTab = e => tab === "all" || cat.get(e) === tab;
+  const isGone = tab === "gone", inTab = e => tab === "all" || cat.get(e) === tab;
   if (S.day && !live.some(e => e.date && inDay(e.date))) S.day = null;
   const words = String(S.q || "").toLowerCase().split(/\s+/).filter(Boolean), narrowed = !!(S.day || words.length) && !first;
   const fits = e => (!S.day || first || inDay(e.date)) && (!words.length || first || words.every(w => searchText(e).includes(w)));   // the day picked in the strip, and the words in the search box
   const seenNow = view() !== "ask", tNow = Date.now(); S.linger = S.linger || new Map();
-  if (seenNow && S.visIds && S.visTab === tab && tab !== "all") S.visIds.forEach(id => {   // a row that settled since the list was last in view stays a moment with its new chip, then folds away
+  if (seenNow && S.visIds && S.visTab === tab && tab !== "all" && !isGone) S.visIds.forEach(id => {   // a row that settled since the list was last in view stays a moment with its new chip, then folds away
     const e = byId(id); if (e && !S.linger.has(id) && !inTab(e) && fits(e)) { S.linger.set(id, tNow); (S.flash = S.flash || {})[id] = tNow; }
   });
   S.linger.forEach((t, id) => { if (tNow - t > LINGER + 4000) S.linger.delete(id); });
-  const stays = e => tab !== "all" && S.linger.has(e.id) && tNow - S.linger.get(e.id) < LINGER;
-  const shown = live.filter(e => (inTab(e) || stays(e) || (sel && e === sel)) && fits(e)).sort(byOrder), fileIds = [...new Set(live.slice().sort(byOrder).map(e => e.src))];   // a file with nothing to ask in this view still has its line, so it is never missing
-  const whoCol = who || shown.some(e => st.get(e).kind === "open" && !e.tk);
-  const groups = shown.some(e => st.get(e).kind === "open") ? bulkGroups() : [];
+  const stays = e => tab !== "all" && !isGone && S.linger.has(e.id) && tNow - S.linger.get(e.id) < LINGER;
+  const shown = (isGone ? gone.filter(fits) : live.filter(e => (inTab(e) || stays(e) || (sel && e === sel)) && fits(e))).sort(byView);   // person by person, each by date
+  const pool = isGone ? gone : live, keys = [...new Set(pool.slice().sort(byView).map(pkey))];
+  const whoCol = shown.some(e => !isGone && st.get(e).kind === "open" && !e.tk);   // which note a row came from is Show in the file's job, not a line under the date
+  const groups = !isGone && shown.some(e => st.get(e).kind === "open") ? bulkGroups() : [];
   const bulk = groups.length ? el("div", { class: "ws-bulk" }, groups.map(g => {   // one line each: what Tenth is sure of, Show to see the entries, Accept all
     const open = S.bulkOpen === g.kind;
     return el("div", { class: "ws-bgrp" }, el("div", { class: "ws-bline" }, el("span", { class: "ws-hdot " + ({ matter: "i-folder", words: "i-dots" }[g.kind] || "i-lines"), "aria-hidden": "true" }), el("span", { class: "ws-btext", text: bulkSay(g) }),
@@ -5301,31 +5494,21 @@ function renderDone() {
       g.alt ? el("button", { class: "btn small", type: "button", title: "Leaves each time as the note has it. Undo takes them back.", text: g.alt.label, onclick: () => { lightBulk(g, false); bulkAccept(g, "no"); } }) : null),
       open ? el("ul", { class: "ws-blines" }, g.qs.map(q => bulkLine(g, q, false)).filter(Boolean).sort((a, b) => a.date.localeCompare(b.date)).map(r => r.node)) : null);
   })) : null;
-  const body = []; let band = null;
-  const order = [...new Set([...S.sources.map(x => x.id), ...fileIds])];   // the order the notes were added, read or not
-  order.forEach(id => {
-    if (!fileIds.includes(id)) { const s0 = srcById(id); if (s0 && !s0.virtual && (s0.status === "reading" || s0.status === "queued")) body.push(...skelRows(s0)); return; }   // still reading: grey rows in its own place
-    const mine = shown.filter(e => e.src === id), s = srcById(id), all = live.filter(e => e.src === id).length;
-    if (!mine.length) {
-      if (s && tab !== "all" && !narrowed) body.push(el("div", { class: "fgroup quiet" }, el("span", { class: `ficon k-${s.kind}`, "aria-hidden": "true" }), el("b", { text: s.name }),
-        el("span", { class: "fmeta" }, el("span", { text: `${plural(all, "entry", "entries")}, ${tab === "open" ? "nothing needs a look" : "none in this view"}` })),
-        el("button", { class: "lnk", type: "button", text: "Show all", onclick: () => setTab("all") })));
-      return;
-    }
-    if (s) {
-      const days = mine.map(e => e.date).filter(Boolean).sort(), names = [...new Set(mine.map(e => e.tk).filter(Boolean).map(k => tkOf(k).name))];
-      const span = days.length ? (days[0] === days[days.length - 1] ? fmtDate(days[0]) : `${fmtDate(days[0])} to ${fmtDate(days[days.length - 1])}`) : "";
-      const showing = panelOn() && S.panel.src === s.id;
-      const folded = !!S.fold[s.id] && !(sel && sel.src === s.id), fold = () => { S.fold[s.id] = !folded; renderDone(); };
-      body.push(el("div", { class: "fgroup" + (folded ? " folded" : ""), id: "fg-" + s.id }, el("button", { class: "ftog", type: "button", "aria-expanded": String(!folded), "aria-label": `${folded ? "Show" : "Hide"} the entries from ${s.name}`, title: folded ? "Show entries" : "Hide entries", onclick: fold }, ico("chev", 14)),
-        el("span", { class: `ficon k-${s.kind}`, "aria-hidden": "true" }), el("b", { text: s.name, onclick: fold }),
-        el("span", { class: "fmeta" }, el("span", { text: tab !== "all" && mine.length < all ? `${mine.length} of ${plural(all, "entry", "entries")}` : plural(mine.length, "entry", "entries") }),
-          who ? null : names.length ? el("span", { class: "fwho", text: names.length > 2 ? `${names.length} timekeepers` : names.join(" and ") }) : (mine.some(e => e.tk === null) ? el("span", { class: "fwho", text: "No timekeeper yet" }) : null)),
-        wide() && canShow(s) ? el("button", { class: "btn quiet small ws-showfile", type: "button", "aria-pressed": String(showing), onclick: () => (showing ? slideSplit(() => { S.panel = null; S.picked = null; renderDone(); }, "fg-" + s.id) : openPanel(s.id, "fg-" + s.id)) }, ico("panel", 14), showing ? "Showing" : "Show file") : null));
-    }
-    if (s && S.fold[s.id] && !(sel && sel.src === s.id)) return;   // folded: just its heading
-    mine.forEach(e => { const on = !!sel && e === sel, b = on ? bandEl(e) : null; body.push(rowEl(e, st.get(e), who, on, b ? b.now : "")); if (b) { band = b; body.push(b.node); } });
+  const body = []; let band = null, quiet = 0;
+  keys.forEach(k => {   // a section per person: who, then their entries by date. With no timekeeper yet, theirs come first.
+    const mine = shown.filter(e => pkey(e) === k), ents = pool.filter(e => pkey(e) === k);
+    if (!mine.length) { quiet++; return; }
+    const folded = !!S.fold[k] && !(sel && pkey(sel) === k);
+    body.push(personHead(k, mine, ents, { tab, folded, gone: isGone }));
+    if (folded) return;   // folded: just its heading
+    mine.forEach(e => {
+      if (isGone) { body.push(goneRow(e, false)); return; }
+      const on = !!sel && e === sel, b = on ? bandEl(e) : null; body.push(rowEl(e, st.get(e), false, on, b ? b.now : "")); if (b) { band = b; body.push(b.node); }
+    });
   });
+  S.sources.filter(s0 => !s0.virtual && (s0.status === "reading" || s0.status === "queued") && !live.some(e => e.src === s0.id)).forEach(s0 => body.push(...skelRows(s0)));   // a note still being read: its own line, until its entries land under their person
+  if (quiet && !narrowed && !isGone && !first) body.push(el("div", { class: "fgroup quiet wk-tail" }, el("span", { text: `${quiet === 1 ? "1 more person has" : `${quiet} more people have`} ${tab === "open" ? "nothing to review" : "nothing in this view"}.` }),
+    el("button", { class: "lnk", type: "button", text: "Show all", onclick: () => setTab("all") })));
   const fresh = []; S.seen = S.seen || new Set();   // rows that weren't there last time stream in, one after another
   body.forEach(n => { const id = n.id && n.id.startsWith("row-") ? n.id.slice(4) : null; if (!id) return; if (S.rowsDrawn && !S.seen.has(id)) fresh.push(n); S.seen.add(id); });
   fresh.forEach((n, i) => { n.classList.add("ws-stream"); n.style.animationDelay = `${Math.min(i, 12) * 90}ms`; });
@@ -5336,10 +5519,13 @@ function renderDone() {
   clearTimeout(S.leaveT); if (left.length) S.leaveT = setTimeout(leaveRows, Math.max(0, LINGER - Math.max(...left)));
   if (narrowed && !shown.length && live.length) body.push(el("div", { class: "ws-nomatch" }, el("span", { text: words.length ? `No entries match \u201c${S.q.trim()}\u201d${S.day ? ` ${dayWords()}` : ""}.` : `No entries ${dayWords()} in this view.` }),
     el("button", { class: "btn quiet small", type: "button", text: "Clear", onclick: () => { S.q = ""; S.day = null; renderDone(); } })));
-  stage.replaceChildren(el("section", { class: "finished" + (who ? " who" : "") + (whoCol ? " whocol" : "") },
+  const eyebrow = S.who ? el("div", { class: "wk-eyebrow" }, el("span", { class: "wk-av xs" + (S.who === "~none" ? " q" : ""), "aria-hidden": "true", text: S.who === "~none" ? "?" : initials(whoName(S.who)) }), el("b", { text: whoName(S.who) }),
+    el("span", { class: "wk-dot", "aria-hidden": "true", text: "\u00b7" }), el("button", { class: "lnk", type: "button", text: "Show everyone", onclick: () => pickWho(null) })) : null;   // one person picked: whose, and the way back
+  document.querySelectorAll("body > .wk-float").forEach(m => m.remove());   // a person's menu belongs to the list it was opened from
+  stage.replaceChildren(el("section", { class: "finished" + (whoCol ? " whocol" : "") + (isGone ? " wk-gonetab" : "") + (S.who ? " wk-one" : "") },
     first ? readingHead() : el("div", { class: "ws-lhead" + (fin && finNow ? " ws-finnow" : "") },
       fin ? el("span", { class: "ws-fin-glow", "aria-hidden": "true" }) : null,
-      el("div", { class: "ws-lh-l" }, el("h1", {}, fin ? el("span", { class: "ws-fin-tick", "aria-hidden": "true" }, ico("check", 16)) : null, head), none ? el("p", { class: "sub", text: sub }) : null,
+      el("div", { class: "ws-lh-l" }, eyebrow, el("h1", {}, fin ? el("span", { class: "ws-fin-tick", "aria-hidden": "true" }, ico("check", 16)) : null, head), none ? el("p", { class: "sub", text: sub }) : null,
         none ? null : el("div", { class: "ws-stat" }, el("span", { class: "ws-total", text: fmtH(total) }), el("span", { class: "ws-statl", text: `hours, ${plural(live.length, "entry", "entries")}, ${plural(clients, "client", "clients")}` }))),
       el("div", { class: "fact ws-lh-r" },
         nOpen && nq ? el("button", { class: "btn" + (S.released ? "" : " solid"), type: "button", onclick: resumeAll }, `Review ${nOpen}`) : null,   // after a release Review is still there, but no longer the main thing to do
@@ -5356,10 +5542,10 @@ function renderDone() {
         : "Tenth couldn't read this file the usual way, so it made one entry per line. Check each entry, or read the file again." })),
       el("div", { class: "ws-bacts" }, el("button", { class: "btn small", type: "button", text: "Read again", onclick: () => reread(s) }),
         el("button", { class: "btn quiet small ws-x", type: "button", "aria-label": "Dismiss", title: "Dismiss", onclick: () => { s.dismissed = true; renderDone(); } }, ico("x"))))),
-    none || first ? null : listBar(tab, counts, live.length),
-    none || first ? null : bulk,
+    none || first ? null : listBar(tab, counts, live.length, many ? whoPicker(allLive) : null),
+    none || first ? null : isGone ? el("div", { class: "wk-gonenote", role: "note" }, ico("trash", 14), el("span", { text: "Removed entries stay out of the release. Put one back any time before you release." })) : bulk,
     none ? null : el("div", { class: "splitgrid" }, el("div", { class: "listcol" },
-      el("div", { class: "fcards" }, el("div", { class: "fcard" }, el("div", { class: "cols" }, el("div", { "aria-hidden": "true", text: "Status" }), el("div", { "aria-hidden": "true", text: whoCol ? "Date / Who" : "Date" }), el("div", { "aria-hidden": "true", text: "Matter" }), el("div", { "aria-hidden": "true", class: "num", text: "Hours" }), el("div", { "aria-hidden": "true", text: "Narrative" }), el("div", { "aria-hidden": "true" }), foldAllBtn()), body))))));   // the headings are the card's first row (Aderant's order: hours before the narrative)
+      el("div", { class: "fcards" }, el("div", { class: "fcard" }, el("div", { class: "cols" }, el("div", { "aria-hidden": "true", text: "Status" }), el("div", { "aria-hidden": "true", text: "Date" }), el("div", { "aria-hidden": "true", text: "Matter" }), el("div", { "aria-hidden": "true", class: "num", text: "Hours" }), el("div", { "aria-hidden": "true", text: "Narrative" }), el("div", { "aria-hidden": "true" }), foldAllBtn(keys.filter(k => shown.some(e => pkey(e) === k)))), body))))));   // the headings are the card's first row (Aderant's order: hours before the narrative)
   renderPanel();   // before the list is put back where it was: opening the panel narrows the list and moves its rows
   if (y0 !== null) { const n = document.getElementById(a0.id); if (n) window.scrollBy(0, n.getBoundingClientRect().top - y0); }
   keepLoops(stage); fitNarr(stage); stuckCols(); chipMotion();
@@ -5386,21 +5572,21 @@ function badCard(s) {   // board 15: a file Tenth couldn't read. Another photo, 
       el("button", { class: "btn quiet small ws-x", type: "button", "aria-label": `Dismiss the message about ${s.name}`, title: "Dismiss", onclick: () => { s.dismissed = true; renderDone(); } }, ico("x"))));
 }
 const signedOut = s => /credential|signed in|sso|token|access ?denied|unauthori[sz]ed|expired/i.test(String(s.backupWhy || ""));   // the usual cause of a basic read: the reading service doesn't know who is asking
-function foldAllBtn() {   // on the column headings: they stick to the top, so it is in reach anywhere down the list, beside the files it folds
-  const ids = [...new Set(flat().map(e => e.src))], allIn = ids.length > 1 && ids.every(id => S.fold[id]);
+function foldAllBtn(ids = [...new Set(flat().filter(inWho).map(pkey))]) {   // on the column headings: they stick to the top, so it is in reach anywhere down the list, beside the people it folds
+  const allIn = ids.length > 1 && ids.every(id => S.fold[id]);
   if (ids.length < 2) return null;
-  return el("button", { class: "btn quiet small ws-foldall", type: "button", "aria-label": allIn ? "Expand all files" : "Collapse all files", onclick: () => { S.fold = allIn ? {} : Object.fromEntries(ids.map(id => [id, true])); renderDone(); } },
+  return el("button", { class: "btn quiet small ws-foldall", type: "button", "aria-label": allIn ? "Expand everyone" : "Collapse everyone", onclick: () => { S.fold = allIn ? {} : Object.fromEntries(ids.map(id => [id, true])); renderDone(); } },
     el("span", { class: "ftog-ico" + (allIn ? " shut" : ""), "aria-hidden": "true" }, ico("chev", 14)), allIn ? "Expand all" : "Collapse all");
 }
-function listBar(tab, counts, total) {   // the filters and the search box. The filters show once the list has more than one kind of entry.
+function listBar(tab, counts, total, picker) {   // the filters, whose time (with two or more people), and the search box. The filters show once the list has more than one kind of entry.
   const views = FILTERS.map(([k, label]) => [k, label, k === "all" ? total : counts[k] || 0]).filter(v => v[0] === "all" || v[2] > 0);
   const tabs = views.length > 2 ? el("div", { class: "tabs", role: "group", "aria-label": "Show" }, el("span", { class: "ws-thumb", "aria-hidden": "true" }), views.map(([k, label, n]) =>
-    el("button", { class: "tab", type: "button", "aria-pressed": String(tab === k), onclick: () => setTab(k) }, label, el("span", { class: "n", text: String(n) })))) : el("span");
-  const inp = el("input", { type: "search", id: "wsSearch", placeholder: "Search client, matter or words", "aria-label": "Search entries", autocomplete: "off" });
+    el("button", { class: "tab" + (k === "gone" ? " wk-gtab" : ""), type: "button", "aria-pressed": String(tab === k), onclick: () => setTab(k) }, label, el("span", { class: "n", text: String(n) })))) : el("span");
+  const inp = el("input", { type: "search", id: "wsSearch", placeholder: S.who ? `Search ${whoName(S.who) === "No timekeeper yet" ? "these" : `${whoName(S.who)}\u2019s`} entries` : "Search client, matter or words", "aria-label": "Search entries", autocomplete: "off" });
   inp.value = S.q || "";
   inp.addEventListener("input", () => { S.q = inp.value; S.qPos = inp.selectionStart; S.qFocus = true; renderDone(); });   // the list is drawn again, and the box keeps its focus
   inp.addEventListener("keydown", ev => { if (ev.key === "Escape" && inp.value) { ev.preventDefault(); ev.stopPropagation(); S.q = ""; S.qPos = 0; S.qFocus = true; renderDone(); } });
-  return el("div", { class: "upbar ws-tools" }, el("div", { class: "toolbar" }, tabs), el("label", { class: "ws-search" }, ico("search"), inp));
+  return el("div", { class: "upbar ws-tools", id: "wkTools" }, el("div", { class: "toolbar wk-bar" }, tabs, picker), el("label", { class: "ws-search" }, ico("search"), inp));
 }
 const searchText = e => { const m = matterOf(e); return [fmtDate(e.date), e.date, m.client, m.name, m.cmid, e.tk ? tkOf(e.tk).name : "", textOf(narrNodes(e, true))].join(" ").toLowerCase(); };
 const weekOf = iso => { const d = new Date(iso + "T12:00:00Z"); d.setUTCDate(d.getUTCDate() - ((d.getUTCDay() + 6) % 7)); return d.toISOString().slice(0, 10); };   // the Monday of a date's week
@@ -5422,9 +5608,34 @@ function dayStrip(live) {   // hours by day, or by week when the notes cover mor
   dragScroll(strip);   // with a mouse, drag the strip along when it scrolls beside the file panel
   return el("div", { class: "ws-daysw" }, strip);
 }
-function addNotesBtn() {   // the plus: more files, or an entry typed in
-  return moreMenu([{ icon: "file", label: "Add files", sub: "Photos, documents, spreadsheets, emails, or voice memos", fn: () => $("#fileIn").click() }, { icon: "pencil", label: "Type an entry", fn: () => newEntry() }],
+function addNotesBtn() {   // the plus: more files, or an entry typed in. With the firm's list, it asks whose time first, filled in with the last answer, so a second person's notes aren't read as the first's
+  const ids = Object.keys(TK);
+  if (!ids.length) return moreMenu([{ icon: "file", label: "Add files", sub: "Photos, documents, spreadsheets, emails, or voice memos", fn: () => $("#fileIn").click() }, { icon: "pencil", label: "Type an entry", fn: () => newEntry() }],
     { up: false, button: el("button", { class: "btn ws-plus", type: "button", "aria-label": "Add notes", title: "Add notes", "aria-haspopup": "menu", "aria-expanded": "false" }, ico("plus")) });
+  const btn = el("button", { class: "btn ws-plus", type: "button", "aria-label": "Add notes", title: "Add notes", "aria-haspopup": "dialog", "aria-expanded": "false" }, ico("plus"));
+  const wrap = el("div", { class: "ws-more wk-addw" }, btn);
+  let pop = null;
+  const outside = ev => { if (!wrap.contains(ev.target)) close(); };
+  const close = focus => { if (!pop) return; pop.remove(); pop = null; btn.setAttribute("aria-expanded", "false"); document.removeEventListener("pointerdown", outside, true); if (focus) btn.focus(); };
+  const open = () => {
+    let pickd = TKPICK && (TKPICK === "*" || TK[TKPICK]) ? TKPICK : "";
+    const inDraft = [...new Set(flat().slice().sort(byView).map(e => e.tk).filter(id => id && TK[id]))];
+    const last = TKPICK && TK[TKPICK] ? TKPICK : null, first = last && !inDraft.includes(last) ? [...inDraft, last] : inDraft;
+    const wait = S.dropWait || null; S.dropWait = null;   // files dropped on the page: they wait here for the answer
+    const go = el("button", { class: "btn solid", type: "button", text: wait ? `Add ${wait.length === 1 ? "the file" : `${wait.length} files`}` : "Choose files", onclick: () => { if (!pickd) { hint.hidden = false; box.querySelector("input").focus(); return; } TKPICK = pickd; gateNew = false; close(); if (wait) addFiles(wait); else $("#fileIn").click(); } });
+    const typeIt = wait ? null : el("button", { class: "btn quiet wk-typeit", type: "button", text: "Type an entry", onclick: () => { if (pickd) TKPICK = pickd; close(); newEntry(); } });
+    const hint = el("p", { class: "wk-addhint", id: "wkAddHint", role: "status", hidden: true, text: "Choose whose time it is first." });
+    const box = tkCombo(ids, false, { id: "wkAdd", inline: true, first, get: () => pickd, note: "Type any name on the firm’s list.",
+      sub: id => (id === last ? "Your last file" : TK[id].isNew ? "Not on the list" : ""), set: id => { pickd = id; hint.hidden = true; } });
+    pop = el("div", { class: "ws-menu wk-addpop", role: "dialog", "aria-label": "Add notes" }, el("b", { class: "wk-addt", text: wait ? (wait.length === 1 ? `Add ${wait[0].name}` : `Add ${wait.length} files`) : "Add notes" }),
+      el("label", { class: "wk-tklab", for: "wkAdd", text: "Whose time is this?" }), box, hint, el("div", { class: "wk-addacts" }, go, typeIt));
+    pop.addEventListener("keydown", ev => { if (ev.key === "Escape") { ev.preventDefault(); ev.stopPropagation(); close(true); } });
+    box.querySelector("input").addEventListener("keydown", ev => { if (ev.key === "Enter" && ev.metaKey) { ev.preventDefault(); go.click(); } });
+    wrap.append(pop); btn.setAttribute("aria-expanded", "true"); document.addEventListener("pointerdown", outside, true);
+    requestAnimationFrame(() => go.focus({ preventScroll: true }));   // the last answer is already there: Choose files is one more click
+  };
+  btn.addEventListener("click", () => (pop ? close() : open()));
+  return wrap;
 }
 function bulkSay(g) {
   const n = g.qs.length, pc = Math.round(BULK_MIN * 100);
@@ -5547,19 +5758,21 @@ function matterCell(e, m, fl, isNow) {   // the client line, the matter line and
   for (const x of [mn, why]) if (x) x.addEventListener("click", edit);
   return el("div", { class: "c-matter" + (isNow ? " now" : "") }, el("div", { class: "m-pair" + (editing ? " editing" : fl.matter || m.ghost ? " fl" : "") }, el("div", { class: "m-top" }, cellBtn(e, "matter", [...(mNum(m.cmid, m.client) ? [el("span", { class: "cmid", text: m.cmid }), " "] : []), el("b", { text: m.client })], fl.matter)), mn), why);   // number, client and matter name are one thing: the hover outline goes round all of it
 }
-function rowEl(e, stt, who, on, now) {   // a row is one entry. Click it and its question opens right under it (on a narrow screen, on the question page). Its date, matter, hours and narrative can be typed over right here.
-  const m = matterOf(e), open = stt.kind === "open", fl = open ? flagged(e) : {};
+function rowEl(e, stt, srcLine, on, now) {   // a row is one entry. Click it and its question opens right under it (on a narrow screen, on the question page). Its date, matter, hours and narrative can be typed over right here.
+  const m = matterOf(e), open = stt.kind === "open", fl = open ? flagged(e) : {}, s = srcLine ? srcById(e.src) : null;
   const when = [cellBtn(e, "date", [fmtDate(e.date)], fl.date, on && now === "date"),
-    who && e.tk ? cellBtn(e, "tk", [el("span", { class: "who", title: tkOf(e.tk).name, text: shortName(tkOf(e.tk).name) })], false, false)
-    : open && !e.tk ? cellBtn(e, "tk", [el("span", { class: "who need", text: "Who?" })], false, on && now === "tk") : null].filter(Boolean);
-  const status = stt.kind === "auto" ? el("span", { class: "auto i-check", title: e.prob != null ? `Tenth matched this on its own, ${Math.round(e.prob * 100)}% sure.` : "Tenth matched this on its own.", text: "Matched" })
-    : open ? oneChip(e, stt.chips || [stt.chip]) : (stt.chips || [stt.chip]).map(c => chip(c));   // an open entry's chip is a button: it opens the card at its question
+    open && !e.tk ? cellBtn(e, "tk", [el("span", { class: "who need", text: "Who?" })], false, on && now === "tk")
+    : s ? el("span", { class: "who wk-src", title: s.name, text: srcShort(s) }) : null].filter(Boolean);   // whose time is the section's heading; the file says which note it came from
+  const toCard = ev => { ev.stopPropagation(); openEntry(e.id); };   // a settled entry's label opens its card: where it stands, and every part to change, the timekeeper included
+  const status = stt.kind === "auto" ? el("button", { class: "auto i-check wk-st", type: "button", title: `${e.prob != null ? `Tenth matched this on its own, ${Math.round(e.prob * 100)}% sure.` : "Tenth matched this on its own."} Open it to look or change it.`, onclick: toCard }, "Matched")
+    : open ? oneChip(e, stt.chips || [stt.chip]) : (stt.chips || [stt.chip]).map(c => el("button", { class: chip(c, "wk-st").className, type: "button", title: "Open this entry", onclick: toCard }, c.label));   // an open entry's chip is a button: it opens the card at its question
   const row = el("div", { class: "row" + (open ? " open t-" + stt.chip.tone : "") + (on ? " expanded" : ""), id: "row-" + e.id },
     el("div", { class: "c-status" }, status), el("div", { class: "c-when" }, when),
     matterCell(e, m, fl, on && now === "matter"), el("div", { class: "c-hours" }, (hp => cellBtn(e, "hours", hp ? [el("span", { title: hp.why }, fmtH(hp.v))] : [fmtH(hoursOf(e))], hp ? true : fl.hours, on && now === "hours"))(hoursProposal(e))), narrCell(e, false, fl.narr, on && now === "narr"),
     el("div", { class: "c-act" },
       wide() && canShow(srcById(e.src)) ? (showing => el("button", { class: "ws-locate", type: "button", "aria-pressed": String(showing), title: showing ? "Close the file" : "Show in the file", "aria-label": showing ? "Close the file" : `Show the entry for ${m.client}, ${fmtDate(e.date)} in its file`,
-        onclick: ev => { ev.stopPropagation(); if (showing) slideSplit(() => { S.panel = null; S.picked = null; renderDone(); }, "row-" + e.id); else pickRow(e.id, true); } }, ico("locate")))(panelOn() && S.panel.src === e.src && S.picked === e.id) : null));   // again: the file closes
+        onclick: ev => { ev.stopPropagation(); if (showing) slideSplit(() => { S.panel = null; S.picked = null; renderDone(); }, "row-" + e.id); else pickRow(e.id, true); } }, ico("locate")))(panelOn() && S.panel.src === e.src && S.picked === e.id) : null,   // again: the file closes
+      el("button", { class: "wk-bin", type: "button", title: "Remove entry", "aria-label": `Remove the entry for ${m.client}, ${fmtDate(e.date)}`, onclick: ev => { ev.stopPropagation(); removeEntry(e); } }, ico("trash"))));   // the last thing on the row, apart from Show in the file: no confirm, Undo brings it back
   if (panelOn()) { row.tabIndex = 0; row.addEventListener("keydown", ev => { if (ev.key === "Enter" && ev.target === row) { ev.preventDefault(); pickRow(e.id, true); } }); }   // beside the file, Enter finds the row's lines
   if (S.picked === e.id && panelOn()) row.classList.add("ws-picked");
   if (panelOn()) { row.addEventListener("mouseenter", () => hoverLines(e.id, true)); row.addEventListener("mouseleave", () => hoverLines(e.id, false)); }
@@ -5568,6 +5781,165 @@ function rowEl(e, stt, who, on, now) {   // a row is one entry. Click it and its
     pickRow(e.id, true);
   });
   return row;
+}
+
+function foldRow(nodes, then) {   // rows being taken out fade, then their space closes and the rows below slide up into it, and only then does the list change
+  nodes = nodes.filter(Boolean);
+  if (!nodes.length || matchMedia("(prefers-reduced-motion: reduce)").matches) { then(); return; }
+  let ran = false; const go = () => { if (!ran) { ran = true; then(); } };
+  const ease = getComputedStyle(document.documentElement).getPropertyValue("--ease").trim() || "ease", lag = i => Math.min(i * 30, 240);
+  nodes.forEach((r, i) => {
+    const h = r.offsetHeight; r.style.pointerEvents = "none"; r.style.overflow = "hidden";
+    const a = r.animate([{ opacity: 1, height: h + "px" }, { opacity: 0, height: h + "px", offset: .38 }, { opacity: 0, height: "0px", paddingTop: "0px", paddingBottom: "0px", borderTopWidth: "0px" }], { duration: 360, delay: lag(i), easing: ease, fill: "forwards" });
+    if (i === nodes.length - 1) { a.onfinish = go; a.oncancel = go; }
+  });
+  setTimeout(go, 360 + lag(nodes.length - 1) + 120);
+}
+const entrySay = e => [fmtDate(e.date), e.tk ? tkOf(e.tk).name : "", `${fmtH(hoursOf(e))} hours`].filter(Boolean).join(", ");   // which one, in the toast: Aug 14, I. Novak, 1.6 hours
+function removeEntry(e) {   // the bin on a row
+  foldRow([document.getElementById("row-" + e.id), document.getElementById("band-" + e.id)], () => {
+    commit(() => { e.removed = true; });
+    toast(`Entry removed. ${entrySay(e)}`, { label: "Undo", fn: () => { (S.flash = S.flash || {})[e.id] = Date.now(); undo(); } });   // back in its place, with the same soft flash a settled row gets
+  });
+}
+function putBack(list) {   // from the Removed tab: one entry, or a person's
+  foldRow(list.map(e => document.getElementById("row-" + e.id)), () => {
+    commit(() => { list.forEach(e => { e.removed = false; }); });
+    toast(list.length === 1 ? `Put back. ${entrySay(list[0])}` : `Put back ${list.length} entries.`, { label: "Undo", fn: undo });
+  });
+}
+function removeAll(k, ents) {   // a person's menu: every entry of theirs, in one step and one Undo
+  const head = document.getElementById(pid(k)), rows = ents.map(e => document.getElementById("row-" + e.id)), nm = k === "~none" ? "" : whoName(k);
+  foldRow([head, ...rows, ...ents.map(e => document.getElementById("band-" + e.id))], () => {
+    commit(() => { ents.forEach(e => { e.removed = true; }); });
+    toast(ents.length === 1 ? `Entry removed. ${entrySay(ents[0])}` : `Removed ${nm ? `${nm}’s ` : ""}${ents.length} entries.`, { label: "Undo", fn: undo });
+  });
+}
+function moveAll(k, ents, anchor) {   // a person's menu: whose time all of them are
+  const n = ents.length;
+  tkPop(anchor, { title: k === "~none" ? (n === 1 ? "Whose time is this?" : `Whose time are these ${n} entries?`) : `Move ${n === 1 ? "this entry" : `all ${n} entries`} to`, not: k,
+    pick: id => {
+      if (id === k) return;
+      const keys = ents.map(e => e.id), to = tkOf(id).name;
+      if (S.who === k) S.who = id;   // looking at just them: now just the person they moved to
+      delete S.fold[id];
+      commit(() => { ents.forEach(e => { e.tk = id; mark(e, "changed", "tk"); }); });
+      rematch(keys, id);   // whose time it is changes which matters fit
+      toast(`${n === 1 ? "Entry" : `${n} entries`} moved to ${to}.`, { label: "Undo", fn: undo });
+      requestAnimationFrame(() => { const h = document.getElementById(pid(id)); if (h) { const b = h.getBoundingClientRect(); if (b.top < 80 || b.bottom > innerHeight) h.scrollIntoView({ block: "center", behavior: "smooth" }); h.classList.add("wk-arrive"); } });
+    } });
+}
+function tkPop(anchor, o) {   // a small pop-up with the timekeeper box, under what opened it
+  document.querySelectorAll(".wk-tkpop").forEach(x => x.remove());
+  if (!anchor) return;
+  const ids = Object.keys(TK).filter(id => id !== o.not), pop = el("div", { class: "wk-tkpop", role: "dialog", "aria-label": o.title });
+  const close = () => { pop.remove(); document.removeEventListener("pointerdown", outside, true); removeEventListener("scroll", place, true); if (anchor.isConnected) anchor.focus({ preventScroll: true }); };
+  const outside = ev => { if (!pop.contains(ev.target)) close(); };
+  const box = tkCombo(ids, false, { id: "wkTk", get: () => "", several: false, inline: true, first: [...new Set(flat().slice().sort(byView).map(e => e.tk).filter(id => id && id !== o.not && TK[id]))], note: "Type any name on the firm’s list.", set: id => { close(); o.pick(id); } });
+  pop.append(el("label", { class: "wk-tklab", for: "wkTk", text: o.title }), box);
+  pop.addEventListener("keydown", ev => { if (ev.key === "Escape") { ev.preventDefault(); ev.stopPropagation(); close(); } });
+  const place = () => { if (!anchor.isConnected) { close(); return; } const b = anchor.getBoundingClientRect(), w = Math.min(320, innerWidth - 24);
+    pop.style.width = w + "px"; pop.style.left = Math.max(12, Math.min(b.right - w, innerWidth - w - 12)) + "px";
+    const below = innerHeight - b.bottom > pop.offsetHeight + 16; pop.style.top = (below ? b.bottom + 8 : Math.max(12, b.top - 8 - pop.offsetHeight)) + "px"; };
+  document.body.append(pop); place();
+  addEventListener("scroll", place, true); document.addEventListener("pointerdown", outside, true);
+  requestAnimationFrame(() => { const i = pop.querySelector("input"); if (i) i.focus({ preventScroll: true }); });
+}
+const WHO_PARTS = "#stage .ws-lhead, #stage .ws-daysw, #stage .ws-bulk, #stage .wk-gonenote, #stage .fcards";   // what changes with the person: not the filters, which stay put
+function pickWho(k) {   // the list, its totals, Review and search narrow to one person; null is everyone. The old view fades out, the new one fades in
+  k = k || null; if ((S.who || null) === k) return;
+  const go = () => {
+    S.who = k; S.anchor = null; dropSel();
+    if (panelOn() && k) { const f = filesOf(k); S.panel = f.length ? { src: f.some(x => x.id === S.panel.src) ? S.panel.src : f[0].id, who: k } : null; S.picked = null; }   // the file beside the list turns to theirs
+    if (scrollY > 0 && $("#wkTools")) S.anchorId = "wkTools";   // the filters stay where they were on the screen
+    S.rowsDrawn = false;   // the new rows come in with the fade, not one by one
+    renderDone();
+    if (still) return;
+    const ease = getComputedStyle(document.documentElement).getPropertyValue("--ease").trim() || "ease";
+    document.querySelectorAll(WHO_PARTS).forEach((n, i) => n.animate([{ opacity: 0, transform: "translateY(6px)" }, { opacity: 1, transform: "none" }], { duration: 280, delay: i * 30, easing: ease, fill: "backwards" }));
+  };
+  const still = matchMedia("(prefers-reduced-motion: reduce)").matches, out = [...document.querySelectorAll(WHO_PARTS)];
+  if (still || !out.length || view() === "ask") { go(); return; }
+  out.forEach(n => n.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 130, easing: "ease-in", fill: "forwards" }));
+  setTimeout(go, 130);
+}
+function personHead(k, mine, ents, o) {   // a person's line in the list: who, how much, what is left, their files, and a menu
+  const none = k === "~none", nm = whoName(k), id = pid(k), nOpen = o.gone ? 0 : ents.filter(isOpen).length;
+  const hrs = roundH(ents.reduce((a, e) => a + hoursOf(e), 0)), days = ents.map(e => e.date).filter(Boolean).sort();
+  const span = days.length ? (days[0] === days[days.length - 1] ? fmtDate(days[0]) : `${fmtDate(days[0])} to ${fmtDate(days[days.length - 1])}`) : "";
+  const fold = () => { S.fold[k] = !o.folded; renderDone(); };
+  const files = [...new Set(ents.map(e => e.src))].map(srcById).filter(canShow), showing = panelOn() && (S.panel.who ? S.panel.who === k : files.some(f => f.id === S.panel.src));
+  const count = o.gone ? `${ents.length} removed` : o.tab !== "all" && mine.length < ents.length ? `${mine.length} of ${plural(ents.length, "entry", "entries")}` : plural(ents.length, "entry", "entries");
+  const more = o.gone ? (ents.length > 1 ? el("button", { class: "btn small wk-putall", type: "button", onclick: () => putBack(ents) }, ico("undo", 14), `Put back all ${ents.length}`) : null) : personMenu(k, ents, nm);
+  return el("div", { class: "fgroup wk-pg" + (o.folded ? " folded" : "") + (none ? " nobody" : ""), id },
+    el("button", { class: "ftog", type: "button", "aria-expanded": String(!o.folded), "aria-label": `${o.folded ? "Show" : "Hide"} ${none ? "the entries with no timekeeper" : `${nm}’s entries`}`, title: o.folded ? "Show entries" : "Hide entries", onclick: fold }, ico("chev", 14)),
+    el("span", { class: "wk-av" + (none ? " q" : ""), "aria-hidden": "true", text: none ? "?" : initials(nm) }),
+    el("b", { class: "wk-name", text: nm, onclick: fold }),
+    el("span", { class: "wk-meta" }, [count, o.gone ? "" : `${fmtH(hrs)} hours`, span].filter(Boolean).map(t => el("span", { text: t }))),
+    el("span", { class: "wk-sp" }),
+    o.gone ? null : nOpen ? el("span", { class: "wk-need", text: `${nOpen} to review` }) : el("span", { class: "wk-done" }, ico("check", 14), "All checked"),
+    wide() && files.length ? el("button", { class: "btn quiet small ws-showfile", type: "button", "aria-pressed": String(showing), onclick: () => (showing ? slideSplit(() => { S.panel = null; S.picked = null; renderDone(); }, id) : openPanel(files[0].id, id, k)) }, ico("panel", 14), showing ? "Showing" : files.length > 1 ? "Show files" : "Show file") : null,
+    more);
+}
+function personMenu(k, ents, nm) {
+  const n = ents.length, none = k === "~none", items = [];
+  if (S.who === k) items.push({ icon: "people", label: "Show everyone", fn: () => pickWho(null) });
+  else if (manyTk()) items.push({ icon: "person", label: none ? "Show only these" : `Show only ${nm}`, fn: () => pickWho(k) });
+  items.push({ icon: "swap", label: none ? `Set the timekeeper for ${n === 1 ? "it" : `all ${n}`}` : `Change timekeeper for ${n === 1 ? "it" : `all ${n}`}`, fn: () => moveAll(k, ents, btn) });
+  items.push({ icon: "trash", label: n === 1 ? "Remove the entry" : `Remove all ${n} entries`, danger: true, sep: true, fn: () => removeAll(k, ents) });
+  const btn = el("button", { class: "wk-more", type: "button", "aria-label": `More for ${nm}`, title: "More", "aria-haspopup": "menu", "aria-expanded": "false" }, ico("dots"));
+  return moreMenu(items, { up: false, button: btn, float: true, foot: "Undo takes back a change or a removal." });
+}
+function goneRow(e, srcLine) {   // a removed entry, in the Removed tab: what it was, and Put back. Nothing on it can be changed until it is back.
+  const m = matterOf(e), stt = rowState(e), s = srcLine ? srcById(e.src) : null;
+  const status = stt.kind === "auto" ? el("span", { class: "auto i-check", text: "Matched" }) : (stt.chips || [stt.chip]).slice(0, 1).map(c => chip(c));
+  return el("div", { class: "row wk-gone", id: "row-" + e.id },
+    el("div", { class: "c-status" }, status),
+    el("div", { class: "c-when" }, el("span", { text: fmtDate(e.date) }), s ? el("span", { class: "who wk-src", title: s.name, text: srcShort(s) }) : null),
+    el("div", { class: "c-matter" }, el("div", { class: "m-pair" }, el("div", { class: "m-top" }, mNum(m.cmid, m.client) ? el("span", { class: "cmid", text: m.cmid }) : null, mNum(m.cmid, m.client) ? " " : null, el("b", { text: m.client })), m.name ? el("span", { class: "mname", text: m.name }) : null)),
+    el("div", { class: "c-hours" }, el("span", { class: "wk-hrs", text: fmtH(hoursOf(e)) })),
+    el("div", { class: "c-narr" }, el("span", { class: "nt", text: textOf(narrNodes(e, true)) })),
+    el("div", { class: "c-act" }, el("button", { class: "btn small wk-back", type: "button", "aria-label": `Put back the entry for ${m.client}, ${fmtDate(e.date)}`, onclick: ev => { ev.stopPropagation(); putBack([e]); } }, ico("undo", 14), "Put back")));
+}
+function whoPicker(all) {   // Timekeeper: Everyone, or one person. Each with what is left and how many entries, in columns; type to find
+  const ks = [...new Set(all.slice().sort(byView).map(pkey))];
+  const rowOf = k => { const es = k == null ? all : all.filter(e => pkey(e) === k); return { k, name: k == null ? "Everyone" : whoName(k), open: es.filter(isOpen).length, n: es.length }; };
+  const rows = [rowOf(null), ...ks.map(rowOf)], now = S.who || null, cur = rows.find(r => r.k === now) || rows[0];
+  const avOf = (r, cls) => el("span", { class: `wk-av ${cls}` + (r.k == null ? " all" : r.k === "~none" ? " q" : ""), "aria-hidden": "true" }, r.k == null ? ico("people", 12) : r.k === "~none" ? "?" : initials(r.name));
+  const btn = el("button", { class: "wk-pick" + (now ? " set" : ""), type: "button", id: "wkPick", "aria-haspopup": "listbox", "aria-expanded": "false", "aria-label": `Timekeeper: ${cur.name}. Change` },
+    now ? avOf(cur, "xs") : ico("people"), now ? null : el("span", { class: "wk-lab", text: "Timekeeper" }), el("span", { class: "wk-val", text: cur.name }), ico("chev", 14));
+  const clear = now ? el("button", { class: "wk-pickx", type: "button", "aria-label": "Show everyone", title: "Show everyone", onclick: () => pickWho(null) }, ico("x", 14)) : null;
+  const find = el("input", { type: "search", class: "wk-find", placeholder: "Find a timekeeper", "aria-label": "Find a timekeeper", autocomplete: "off", spellcheck: "false", "aria-controls": "wkList" });
+  const list = el("div", { class: "wk-list", id: "wkList", role: "listbox", "aria-label": "Timekeeper" });
+  const pop = el("div", { class: "ws-menu wk-pop", hidden: true }, el("label", { class: "wk-findw" }, ico("search", 14), find), list);
+  let at = 0, shown = rows;
+  const mark = () => { list.querySelectorAll(".wk-pi").forEach((b, i) => { b.classList.toggle("at", i === at); if (i === at) b.scrollIntoView({ block: "nearest" }); }); if (shown[at]) find.setAttribute("aria-activedescendant", "wkPi" + at); };
+  const draw = () => {
+    const q = find.value.trim().toLowerCase(), fits = n => (n = n.toLowerCase(), n.startsWith(q) || n.split(/[\s.]+/).some(w => w && w.startsWith(q)));
+    shown = q ? rows.filter(r => r.k != null && fits(r.name)) : rows;
+    at = q ? 0 : Math.max(0, shown.findIndex(r => r.k === now));
+    list.replaceChildren(...shown.flatMap((r, i) => [el("button", { class: "wk-pi", type: "button", role: "option", id: "wkPi" + i, "aria-selected": String(r.k === now), tabindex: "-1", onclick: () => choose(r), onmousemove: () => { if (at !== i) { at = i; mark(); } } },
+        el("span", { class: "wk-ck" }, r.k === now ? ico("check", 14) : null), avOf(r, "xs"), el("span", { class: "wk-pn", text: r.name }),
+        el("span", { class: "wk-ps" + (r.open ? " g" : " ok"), text: r.open ? `${r.open} to review` : "All checked" }), el("span", { class: "wk-pc", title: plural(r.n, "entry", "entries"), text: String(r.n) })),
+      ...(r.k == null && !q ? [el("div", { class: "wk-sep", role: "separator" })] : [])]));
+    if (!shown.length) list.append(el("p", { class: "wk-none", text: "No one by that name in this draft." }));
+    mark();
+  };
+  const outside = ev => { if (!wrap.contains(ev.target)) close(); };
+  const close = (focus) => { if (pop.hidden) return; pop.hidden = true; btn.setAttribute("aria-expanded", "false"); btn.classList.remove("open"); document.removeEventListener("pointerdown", outside, true); if (focus) btn.focus(); };
+  const open = () => { find.value = ""; draw(); pop.hidden = false; btn.setAttribute("aria-expanded", "true"); btn.classList.add("open"); document.addEventListener("pointerdown", outside, true); find.focus({ preventScroll: true }); };
+  const choose = r => { const kb = document.activeElement === find; close(); pickWho(r.k); if (kb) requestAnimationFrame(() => { const b = $("#wkPick"); if (b) b.focus({ preventScroll: true }); }); };   // from the keys: they stay on the picker
+  btn.addEventListener("click", () => (pop.hidden ? open() : close()));
+  btn.addEventListener("keydown", ev => { if ((ev.key === "ArrowDown" || ev.key === "ArrowUp") && pop.hidden) { ev.preventDefault(); open(); } });
+  find.addEventListener("input", draw);
+  find.addEventListener("keydown", ev => {
+    if (ev.key === "ArrowDown" || ev.key === "ArrowUp") { ev.preventDefault(); if (shown.length) { at = (at + (ev.key === "ArrowDown" ? 1 : -1) + shown.length) % shown.length; mark(); } }
+    else if (ev.key === "Enter") { ev.preventDefault(); if (shown[at]) choose(shown[at]); }
+    else if (ev.key === "Escape") { ev.preventDefault(); ev.stopPropagation(); if (find.value) { find.value = ""; draw(); } else close(true); }
+    else if (ev.key === "Tab") close();
+  });
+  const wrap = el("div", { class: "wk-pickw" + (now ? " set" : "") }, btn, clear, pop);
+  return wrap;
 }
 
 /* ---- edit the whole entry in the card (board 17), or type a new one (board 18). No pop-up: the card's rows become fields. ---- */
@@ -5710,9 +6082,9 @@ function splitPlan(e) {   // one row per task only when every task has a time an
   return { split: true };
 }
 const outText = t => (/\[(PARTICIPANT|SUBJECT|DOCUMENT)\]/.test(taskText(t)) ? textOf(plainPieces(t)).replace(/\s+/g, " ").trim() : taskText(t));   // what goes in the file: an unanswered gap leaves the note's own words, not [SUBJECT]
-function exportRows() {
+function exportRows(list = flat()) {   // list: whose entries go out (everyone's, or one person's)
   const rows = [], info = { split: [], kept: [] };
-  for (const e of flat()) {
+  for (const e of list) {
     const m = matterOf(e), tasks = liveTasks(e); if (!tasks.length) continue;
     const gaps = openBlanks(e) + (e.tk === null ? 1 : 0) + (e.hoursFlag && !e.hoursOk ? 1 : 0) + (roundOpen(e) ? 1 : 0) + (e.verify && !e.verified ? 1 : 0) + (e.matterState === "pending" ? 1 : 0);
     const flags = [e.tk === null && "needs_timekeeper", e.hoursFlag && !e.hoursOk && "check_hours", roundOpen(e) && "check_rounding", e.verify && !e.verified && "check_details", e.matterState === "pending" && "matter_unconfirmed", e.matterState === "intake" && "sent_to_intake", e.preret && e.matterState === "changed" && "pre_retention", junkOpen(e) && "not_billable", isNewTk(e.tk) && "new_timekeeper", ...e.lineFlags, ...(e.overrides || []).map(o => "overridden_" + o)].filter(Boolean).join("|");
@@ -5732,61 +6104,99 @@ function exportRows() {
 }
 const csvText = rows => { const q = v => `"${String(v ?? "").replace(/"/g, '""')}"`; return [COLS, ...rows.map(r => COLS.map(c => r[c]))].map(r => r.map(q).join(",")).join("\n"); };
 const stemOf = n => String(n).replace(/\.[^.]+$/, "").replace(/[^A-Za-z0-9_-]+/g, "-");
-function fileName() {   // the date, and the note's name when everything came from one file
-  const srcs = [...new Set(flat().map(e => e.src))].map(srcById).filter(s => s && (!s.virtual || s.restored)), day = new Date().toLocaleDateString("en-CA");
+const slugOf = n => String(n).replace(/[^A-Za-z0-9_-]+/g, "-").replace(/^-+|-+$/g, "") || "entries";   // a person's name in a file name: C. Dunn is C-Dunn
+function fileName(list = flat()) {   // the date, and the note's name when everything came from one file (or the person's, when only theirs went out)
+  const one = S.relOut && list === S.relOut ? [...new Set(list.map(e => e.tk))] : [];
+  if (one.length === 1 && one[0]) return `tenth-${slugOf(tkOf(one[0]).name)}-${new Date().toLocaleDateString("en-CA")}.csv`;
+  const srcs = [...new Set(list.map(e => e.src))].map(srcById).filter(s => s && (!s.virtual || s.restored)), day = new Date().toLocaleDateString("en-CA");
   return srcs.length === 1 ? `tenth-${stemOf(srcs[0].name)}-${day}.csv` : `tenth-entries-${day}.csv`;
 }
 const fmtNow = () => { try { return localStorage.getItem("tenth.fmt") === "xlsx" ? "xlsx" : "csv"; } catch (er) { return "csv"; } };
 function setFmt(f) { try { localStorage.setItem("tenth.fmt", f); } catch (er) { /* private window: it is only remembered for this visit */ } S.fmt = f; renderExport(); }
-function downloadAs(f) { if (f === "pdf") downloadPdf(); else { S.fmt = "xlsx"; downloadFile(); } }
+function downloadAs(f) {   // after a release: what went out, as one file, or a file per timekeeper
+  const list = S.relOut || flat(), each = !S.relOut && S.relFile === "each" && manyTk(list);
+  if (f === "pdf") downloadPdf(list, each); else { S.fmt = "xlsx"; downloadFile(list, each); }
+}
 const escH = v => String(v ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
-function downloadPdf() {   // a printable time sheet; the browser's print dialog saves it as a PDF (no extra package on the service)
-  const rows = exportRows(), name = fileName().replace(/\.csv$/, ""), hours = fmtH(rows.reduce((n, r) => n + (+r.hours || 0), 0)), rv = rows.some(r => r.needs_review);
-  const who = [...new Set(rows.map(r => r.timekeeper).filter(Boolean))].join(", "), days = rows.map(r => r.work_date).filter(Boolean).sort();
-  const span = days.length ? (days[0] === days[days.length - 1] ? fmtDate(days[0]) : `${fmtDate(days[0])} to ${fmtDate(days[days.length - 1])}`) : "";
-  const html = `<!doctype html><html><head><meta charset="utf-8"><title>${escH(name)}</title><style>@page{size:letter landscape;margin:14mm}body{font:11px/1.45 -apple-system,"Helvetica Neue",Arial,sans-serif;color:#2C2A36;margin:0}
-h1{font:500 20px/1.2 Georgia,serif;margin:0 0 4px}p{margin:0 0 14px;color:#5C5869}table{width:100%;border-collapse:collapse}th{text-align:left;font-weight:600;background:#ECEAF2;padding:6px 8px;border-bottom:1px solid #CDC9D4}
-td{padding:6px 8px;border-bottom:1px solid #E3E0E7;vertical-align:top}.h{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}.n{white-space:nowrap}.r{color:#765608}tfoot td{font-weight:700;border-bottom:0}tr{page-break-inside:avoid}</style></head><body>
-<h1>Time entries</h1><p>${escH([who, span, `${plural(rows.length, "row", "rows")}, ${hours} hours`].filter(Boolean).join(" \u00b7 "))}</p>
+function downloadPdf(list = flat(), each = false) {   // a printable time sheet; the browser's print dialog saves it as a PDF (no extra package on the service). each: a page per timekeeper
+  const all = exportRows(list), name = fileName(list).replace(/\.csv$/, ""), rv = all.some(r => r.needs_review);
+  const parts = each ? [...new Set(all.map(r => r.timekeeper))].sort((a, b) => tkSort(tkFor(a) || a).localeCompare(tkSort(tkFor(b) || b))).map(t => all.filter(r => r.timekeeper === t)) : [all];
+  const sheet = rows => {
+    const hours = fmtH(rows.reduce((n, r) => n + (+r.hours || 0), 0)), who = [...new Set(rows.map(r => r.timekeeper).filter(Boolean))].join(", "), days = rows.map(r => r.work_date).filter(Boolean).sort();
+    const span = days.length ? (days[0] === days[days.length - 1] ? fmtDate(days[0]) : `${fmtDate(days[0])} to ${fmtDate(days[days.length - 1])}`) : "";
+    return `<section><h1>${escH(each && who ? who : "Time entries")}</h1><p>${escH([each ? "" : who, span, `${plural(rows.length, "row", "rows")}, ${hours} hours`].filter(Boolean).join(" \u00b7 "))}</p>
 <table><thead><tr><th>Date</th><th>Timekeeper</th><th>Client</th><th>Matter</th><th class="h">Hours</th><th>Narrative</th>${rv ? "<th>Needs review</th>" : ""}</tr></thead><tbody>
 ${rows.map(r => `<tr><td class="n">${escH(fmtDate(r.work_date))}</td><td>${escH(r.timekeeper)}</td><td>${escH(r.client)}</td><td>${escH([r.cmid, r.matter].filter(Boolean).join(" "))}</td><td class="h">${escH(r.hours)}</td><td>${escH(r.narrative)}</td>${rv ? `<td class="r">${escH(r.needs_review)}</td>` : ""}</tr>`).join("")}
-</tbody><tfoot><tr><td colspan="4">Total</td><td class="h">${escH(hours)}</td><td colspan="${rv ? 2 : 1}"></td></tr></tfoot></table></body></html>`;
+</tbody><tfoot><tr><td colspan="4">Total</td><td class="h">${escH(hours)}</td><td colspan="${rv ? 2 : 1}"></td></tr></tfoot></table></section>`;
+  };
+  const html = `<!doctype html><html><head><meta charset="utf-8"><title>${escH(name)}</title><style>@page{size:letter landscape;margin:14mm}body{font:11px/1.45 -apple-system,"Helvetica Neue",Arial,sans-serif;color:#2C2A36;margin:0}section+section{break-before:page}
+h1{font:500 20px/1.2 Georgia,serif;margin:0 0 4px}p{margin:0 0 14px;color:#5C5869}table{width:100%;border-collapse:collapse}th{text-align:left;font-weight:600;background:#ECEAF2;padding:6px 8px;border-bottom:1px solid #CDC9D4}
+td{padding:6px 8px;border-bottom:1px solid #E3E0E7;vertical-align:top}.h{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}.n{white-space:nowrap}.r{color:#765608}tfoot td{font-weight:700;border-bottom:0}tr{page-break-inside:avoid}</style></head><body>
+${parts.map(sheet).join("\n")}</body></html>`;
   const f = el("iframe", { class: "ws-printframe", title: "Time sheet for printing", "aria-hidden": "true" });
   document.body.append(f);
   f.addEventListener("load", () => { try { f.contentWindow.focus(); f.contentWindow.print(); } catch (er) { toast("Tenth couldn't open the print dialog for the PDF."); } setTimeout(() => f.remove(), 60000); }, { once: true });
   f.srcdoc = html; S.exportFile = name + ".pdf";
   toast("Choose Save as PDF in the print dialog.");
 }
-async function downloadFile() {   // CSV is built here; Excel comes from the service, so matter numbers and dates stay as written
-  if ((S.fmt || fmtNow()) !== "xlsx") { downloadCsv(); return; }
-  const rows = exportRows(), name = fileName().replace(/\.csv$/, ".xlsx");
+async function downloadFile(list = flat(), each = false) {   // CSV is built here; Excel comes from the service, so matter numbers and dates stay as written. each: a file per timekeeper, in a .zip
+  if ((S.fmt || fmtNow()) !== "xlsx") { downloadCsv(list); return; }
+  const rows = exportRows(list), cells = rs => rs.map(r => COLS.map(c => r[c] ?? ""));
+  if (each) {
+    const day = new Date().toLocaleDateString("en-CA"), people = [...new Set(rows.map(r => r.timekeeper))];
+    try {
+      const res = await fetch("/export.zip", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ columns: COLS, files: people.map(t => ({ name: `tenth-${slugOf(t || "no-timekeeper")}-${day}`, rows: cells(rows.filter(r => r.timekeeper === t)) })) }) });
+      if (!res.ok) throw new Error(res.status);
+      const name = `tenth-entries-${day}.zip`; S.exportFile = name;
+      const a = el("a", { href: URL.createObjectURL(await res.blob()), download: name });
+      document.body.append(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(a.href), 4000);
+      return;
+    } catch (er) { toast("A file per timekeeper didn't work, so Tenth saved one file with everyone."); }
+  }
+  const name = fileName(list).replace(/\.csv$/, ".xlsx");
   try {
-    const res = await fetch("/export.xlsx", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ columns: COLS, rows: rows.map(r => COLS.map(c => r[c] ?? "")) }) });
+    const res = await fetch("/export.xlsx", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ columns: COLS, rows: cells(rows) }) });
     if (!res.ok) throw new Error(res.status);
     S.exportFile = name;
     const a = el("a", { href: URL.createObjectURL(await res.blob()), download: name });
     document.body.append(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(a.href), 4000);
-  } catch (er) { downloadCsv(); toast("Excel didn't work, so Tenth saved a CSV instead."); }
+  } catch (er) { downloadCsv(list); toast("Excel didn't work, so Tenth saved a CSV instead."); }
 }
-function downloadCsv() {
-  S.exportFile = fileName();
-  const a = el("a", { href: URL.createObjectURL(new Blob([csvText(exportRows())], { type: "text/csv" })), download: S.exportFile });
+function downloadCsv(list = flat()) {
+  S.exportFile = fileName(list);
+  const a = el("a", { href: URL.createObjectURL(new Blob([csvText(exportRows(list))], { type: "text/csv" })), download: S.exportFile });
   document.body.append(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(a.href), 4000);
 }
-function openExport() { S.exportStage = "preview"; renderExport(); const d = $("#dlg"); try { if (!d.open) d.showModal(); } catch (er) { d.setAttribute("open", ""); } }
-function release() { const rows = exportRows(); S.relInfo = { rows: rows.length, hours: fmtH(rows.reduce((n, r) => n + (+r.hours || 0), 0)), gaps: flat().filter(isOpen).length }; S.released = Date.now(); S.exportStage = "done"; clearDraft(); render(); renderExport(); }
+function openExport() { S.exportStage = "preview"; S.relWho = null; S.relOut = null; renderExport(); const d = $("#dlg"); try { if (!d.open) d.showModal(); } catch (er) { d.setAttribute("open", ""); } const h = $("#dlgTitle"); if (h) h.focus({ preventScroll: true }); }   // the dialog opens at its heading, not on the first choice
+function release() {
+  const k = S.relWho && manyTk() ? S.relWho : null, list = k ? flat().filter(e => pkey(e) === k) : flat(), rows = exportRows(list);
+  S.relInfo = { rows: rows.length, hours: fmtH(rows.reduce((n, r) => n + (+r.hours || 0), 0)), gaps: list.filter(isOpen).length, who: k, name: k ? whoName(k) : "", each: !k && S.relFile === "each" && manyTk(list) };
+  S.exportStage = "done";
+  if (!k) { S.relOut = null; S.released = Date.now(); clearDraft(); render(); renderExport(); return; }
+  // one person: their entries leave the draft, and everyone else's stay, still a draft
+  const ids = new Set(list.map(e => e.id));
+  S.relOut = list; S.entries = S.entries.filter(e => !ids.has(e.id));
+  S.hist.forEach(h => { h.entries = h.entries.filter(e => !ids.has(e.id)); });   // Undo can't bring back what went out
+  const left = new Set(S.entries.map(e => e.src));
+  S.sources = S.sources.filter(x => left.has(x.id) || x.status !== "done");   // a note whose entries all went out leaves with them
+  if (S.who === k) S.who = null;
+  if (S.panel && !srcById(S.panel.src)) S.panel = null;
+  S.notice = `Released ${S.relInfo.name}: ${plural(list.length, "entry", "entries")}, ${S.relInfo.hours} hours. Everyone else is still a draft.`;
+  saveDraft(); render(); renderExport();
+}
 function renderExport() {
-  const dlg = $("#dlg"), need = flat().filter(isOpen), newTks = [...new Set(flat().filter(e => isNewTk(e.tk)).map(e => tkOf(e.tk).name))], close = () => { try { dlg.close(); } catch (er) { dlg.removeAttribute("open"); } };
+  const all = flat(), many = manyTk(all), who = many && S.relWho && all.some(e => pkey(e) === S.relWho) ? S.relWho : null, scope = who ? all.filter(e => pkey(e) === who) : all;   // whose time goes out: everyone, or one person
+  const dlg = $("#dlg"), need = scope.filter(isOpen), newTks = [...new Set(scope.filter(e => isNewTk(e.tk)).map(e => tkOf(e.tk).name))], close = () => { try { dlg.close(); } catch (er) { dlg.removeAttribute("open"); } };
   dlg.classList.toggle("wide", S.exportStage !== "done"); dlg.classList.toggle("ws-reldlg", S.exportStage === "done");
-  const rows = exportRows(), hours = fmtH(rows.reduce((s, r) => s + (+r.hours || 0), 0)), gaps = need.length ? `${plural(need.length, "entry has", "entries have")} gaps, marked in the file.` : "", pcols = rows.some(r => r.needs_review) ? [...PREV, ["needs_review", "Needs review"]] : PREV;
+  const rows = exportRows(scope), hours = fmtH(rows.reduce((s, r) => s + (+r.hours || 0), 0)), gaps = need.length ? `${plural(need.length, "entry has", "entries have")} gaps, marked in the file.` : "", pcols = rows.some(r => r.needs_review) ? [...PREV, ["needs_review", "Needs review"]] : PREV;
   let body;
   if (S.exportStage === "done") {   // the check and ripple, one line, the file, Done
     const r = S.relInfo || { rows: rows.length, hours, gaps: need.length };
     body = [el("div", { class: "ws-rel" }, el("div", { class: "ws-tickw", "aria-hidden": "true" }, el("span", { class: "ws-ring" }), el("span", { class: "ws-ring r2" }), el("span", { class: "ws-tick" }, ico("check", 24))),
-      el("h2", { id: "dlgTitle", text: "Released" }),
-      el("p", { class: "ws-relline", text: r.gaps ? `${plural(r.gaps, "entry", "entries")} went out with ${r.gaps === 1 ? "its gaps" : "their gaps"} marked.` : "Every tenth accounted for." }),
+      el("h2", { id: "dlgTitle", text: r.who ? `Released ${r.name}` : "Released" }),
+      el("p", { class: "ws-relline", text: (r.gaps ? `${plural(r.gaps, "entry", "entries")} went out with ${r.gaps === 1 ? "its gaps" : "their gaps"} marked.` : "Every tenth accounted for.") + (r.who ? " Everyone else is still a draft." : "") }),
       el("div", { class: "ws-fchip" }, el("span", { class: "ficon k-doc", "aria-hidden": "true" }),
-        el("span", { class: "ws-fname" }, el("span", { text: "Want a copy?" }), el("small", { text: `${plural(r.rows, "row", "rows")}, ${r.hours} hours` })),
+        el("span", { class: "ws-fname" }, el("span", { text: "Want a copy?" }), el("small", { text: `${plural(r.rows, "row", "rows")}, ${r.hours} hours${r.each ? ", a file per timekeeper" : ""}` })),
         el("button", { class: "btn small", type: "button", onclick: () => downloadAs("xlsx") }, ico("down", 14), "Excel"), el("button", { class: "btn small", type: "button", onclick: () => downloadAs("pdf") }, ico("down", 14), "PDF")),
       el("div", { class: "btns" }, el("button", { class: "btn solid", type: "button", id: "dlgPrimary", text: "Done", onclick: close })))];
   } else {
@@ -5800,19 +6210,38 @@ function renderExport() {
         info.split.length ? el("ul", {}, info.split.map(e => el("li", {}, el("b", { text: `${fmtDate(e.date)}, ${matterOf(e).client}` }), ": ", liveTasks(e).map(t => `${taskText(t).replace(/\.\s*$/, "")} (${fmtH(t.hours)})`).join("; ")))) : null,
         info.kept.length ? el("ul", {}, info.kept.map(k => el("li", {}, el("b", { text: `${fmtDate(k.e.date)}, ${matterOf(k.e).client}` }), `: ${k.why}.`))) : null) : null);
     if (report) block.append(report);   // the note about splitting sits under the box it explains
-    body = [el("h2", { id: "dlgTitle", text: "Release" }),
-      (newTks.length || need.length) ? el("div", { class: "xnotes" }, newTks.length ? el("div", { class: "xnote" }, el("span", { class: "pill warn i-alert", text: "Not on the list" }), el("p", { text: `${newTks.join(", ")} ${newTks.length === 1 ? "isn't" : "aren't"} on the firm's timekeeper list. The file flags ${newTks.length === 1 ? "them" : "these entries"}.` })) : null,
-      need.length ? el("div", { class: "xnote" }, el("span", { class: "pill warn i-alert", text: "Not finished" }), el("p", { text: `${plural(need.length, "entry still needs", "entries still need")} a look. ${need.length === 1 ? "It goes" : "They go"} out with the gaps marked.` })) : null) : null,
-      block,
+    const people = many ? [...new Set(all.slice().sort(byView).map(pkey))] : [], gone = S.entries.filter(e => e.removed && !e.mergedInto && (!who || pkey(e) === who));
+    const nm = who ? whoName(who) : "", nEach = new Set(scope.map(pkey)).size;
+    const radio = (name, on, label, pick, ...kids) => el("label", { class: "wk-rl" + (on ? " on" : "") }, el("input", { type: "radio", name, checked: on, onchange: pick }), ...kids);
+    const whoRow = k => { const es = k == null ? all : all.filter(e => pkey(e) === k), n = es.filter(isOpen).length, nmk = k == null ? "Everyone" : whoName(k);
+      return radio("wkRelWho", (who || null) === k, nmk, () => { S.relWho = k; S.relFocus = "wkRelWho"; renderExport(); },
+        el("span", { class: "wk-av xs" + (k == null ? " all" : k === "~none" ? " q" : ""), "aria-hidden": "true" }, k == null ? ico("people", 12) : k === "~none" ? "?" : initials(nmk)),
+        el("span", { class: "wk-rn", text: nmk }), el("span", { class: "wk-ps" + (n ? " g" : " ok"), text: n ? `${n} to review` : "All checked" }), el("span", { class: "wk-rc", text: plural(es.length, "entry", "entries") })); };
+    const whoPick = many ? el("div", { class: "wk-relsec" }, el("p", { class: "wk-rlab", id: "wkRelWho", text: "Whose time?" }),
+      el("div", { class: "wk-rwho", role: "radiogroup", "aria-labelledby": "wkRelWho" }, [null, ...people].map(whoRow))) : null;
+    const filePick = !who && nEach > 1 ? el("div", { class: "wk-relsec" }, el("p", { class: "wk-rlab", id: "wkRelFile", text: "File" }),
+      el("div", { class: "wk-rfile", role: "radiogroup", "aria-labelledby": "wkRelFile" },
+        radio("wkRelFile", S.relFile !== "each", "One file", () => { S.relFile = "one"; S.relFocus = "wkRelFile"; renderExport(); }, el("span", { class: "wk-fo" }, el("b", { text: "One file" }), el("span", { text: `All ${plural(scope.length, "entry", "entries")} together` }))),
+        radio("wkRelFile", S.relFile === "each", "A file per timekeeper", () => { S.relFile = "each"; S.relFocus = "wkRelFile"; renderExport(); }, el("span", { class: "wk-fo" }, el("b", { text: "A file per timekeeper" }), el("span", { text: `${nEach} files, in one .zip download` }))))) : null;
+    const scopeLine = many ? el("p", { class: "wk-rsum" }, el("b", { text: `${who ? nm : "Everyone"}: ${plural(scope.length, "entry", "entries")}, ${fmtH(roundH(scope.reduce((a, e) => a + hoursOf(e), 0)))} hours.` }), who ? el("span", { text: " Everyone else stays a draft." }) : null) : null;
+    const goneNote = gone.length ? el("div", { class: "xnote" }, el("span", { class: "pill neutral i-trash wk-gpill", text: "Removed" }), el("p", {}, `${who ? `${gone.length === 1 ? "1 of" : `${gone.length} of`} ${nm}\u2019s entries ${gone.length === 1 ? "was" : "were"}` : `${plural(gone.length, "entry was", "entries were")}`} removed and won\u2019t be released. `,
+      el("button", { class: "lnk wk-rshow", type: "button", text: "Show", onclick: () => { close(); S.tab = "gone"; if (who) S.who = who; S.tabSwap = true; render(); } }))) : null;
+    body = [el("h2", { id: "dlgTitle", tabindex: "-1", text: "Release" }), whoPick, scopeLine,
+      (newTks.length || need.length || gone.length) ? el("div", { class: "xnotes" }, newTks.length ? el("div", { class: "xnote" }, el("span", { class: "pill warn i-alert", text: "Not on the list" }), el("p", { text: `${newTks.join(", ")} ${newTks.length === 1 ? "isn't" : "aren't"} on the firm's timekeeper list. The file flags ${newTks.length === 1 ? "them" : "these entries"}.` })) : null,
+      need.length ? el("div", { class: "xnote" }, el("span", { class: "pill warn i-alert", text: "Not finished" }), el("p", { text: `${plural(need.length, "entry still needs", "entries still need")} a look. ${need.length === 1 ? "It goes" : "They go"} out with the gaps marked.` })) : null, goneNote) : null,
+      filePick, block,
       el("div", { class: "xprev" }, el("p", { class: "xsum" }, el("b", { text: plural(rows.length, "row", "rows") }), `, ${hours} hours`),
       el("div", { class: "csv-box" + (pcols.length > PREV.length ? " rv" : ""), tabindex: "0", role: "region", "aria-label": "Preview of the file" }, el("table", {}, el("thead", {}, el("tr", {}, sp ? el("th", { class: "sp", text: "Split" }) : null, pcols.map(([, h]) => el("th", { text: h })))),
         el("tbody", {}, rows.map(r => el("tr", { class: r._split ? "split" : "" }, sp ? el("td", { class: "sp", text: r._split ? `Task ${r._split}` : "" }) : null,
           pcols.map(([c]) => el("td", { class: c === "hours" ? "n" : c === "narrative" ? "w" : c === "needs_review" ? "r" : "", text: c === "matter" && r.cmid ? `${r.matter} (${r.cmid})` : c === "needs_review" ? String(r[c] ?? "").replace(/; /g, "\n") : String(r[c] ?? "") }))))))),
       ),
-      el("div", { class: "btns" }, el("button", { class: need.length ? "btn danger solid" : "btn solid", type: "button", id: "dlgPrimary", text: need.length ? `Release with ${need.length} unresolved` : "Release", onclick: release }),
+      el("div", { class: "btns" }, el("button", { class: need.length ? "btn danger solid" : "btn solid", type: "button", id: "dlgPrimary", text: `Release${who ? ` ${nm}` : ""}${need.length ? ` with ${need.length} unresolved` : ""}`, onclick: release }),
         el("button", { class: "btn", type: "button", text: need.length ? "Keep working" : "Cancel", onclick: close }), el("span", { class: "ws-relfoot", text: "Download it as Excel or PDF after, if you want a copy." }))];
   }
+  const keep = [dlg, dlg.querySelector(".dlg"), dlg.querySelector(".wk-rwho")].map(n => (n ? n.scrollTop : 0));   // a choice redraws the dialog: nothing it shows moves
   dlg.replaceChildren(el("div", { class: "dlg" }, body));
+  if (S.relFocus) { [dlg, dlg.querySelector(".dlg"), dlg.querySelector(".wk-rwho")].forEach((n, i) => { if (n) n.scrollTop = keep[i]; });
+    const r = dlg.querySelector(`input[name="${S.relFocus}"]:checked`); S.relFocus = null; if (r) r.focus({ preventScroll: true }); return; }   // the keys stay in the group that was just answered
   const p = $("#dlgPrimary"); if (p && dlg.open) p.focus();
 }
 /* ================= wiring ================= */
@@ -5842,7 +6271,12 @@ let dragDepth = 0;
 window.addEventListener("dragenter", ev => { ev.preventDefault(); dragDepth++; document.body.classList.add("dragging"); });
 window.addEventListener("dragleave", () => { dragDepth = Math.max(0, dragDepth - 1); if (!dragDepth) document.body.classList.remove("dragging"); });
 window.addEventListener("dragover", ev => ev.preventDefault());
-window.addEventListener("drop", ev => { ev.preventDefault(); dragDepth = 0; document.body.classList.remove("dragging"); if (ev.dataTransfer && ev.dataTransfer.files.length) addFiles(ev.dataTransfer.files); });
+window.addEventListener("drop", ev => {
+  ev.preventDefault(); dragDepth = 0; document.body.classList.remove("dragging");
+  if (!ev.dataTransfer || !ev.dataTransfer.files.length) return;
+  const plus = S.entries.length && view() !== "ask" ? $(".wk-addw .ws-plus") : null;   // onto a draft: whose time is this, first, the same as Add files
+  if (plus) { S.dropWait = [...ev.dataTransfer.files]; if (plus.getAttribute("aria-expanded") === "true") plus.click(); plus.click(); } else addFiles(ev.dataTransfer.files);
+});
 document.addEventListener("keydown", ev => {
   if ((ev.metaKey || ev.ctrlKey) && !ev.altKey && !ev.shiftKey && ev.key.toLowerCase() === "z" && !/^(INPUT|TEXTAREA|SELECT)$/.test(ev.target.tagName) && !document.querySelector("dialog[open]") && !accepting && (view() === "ask" ? canBack() : S.hist.length)) { ev.preventDefault(); undo(); return; }   // Cmd+Z / Ctrl+Z undoes too, the way it does everywhere else
   if (ev.metaKey || ev.ctrlKey || ev.altKey || ev.repeat || document.querySelector("dialog[open]")) return;
