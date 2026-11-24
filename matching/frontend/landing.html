@@ -9,6 +9,7 @@
   if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
   if (location.hash) history.replaceState(null, '', location.pathname + location.search);
   window.scrollTo(0, 0);
+  document.documentElement.classList.add('js');   /* the hero waits, hidden, until it is laid out and its fonts are in (see heroReady) */
 </script>
 <meta name="description" content="For lawyers and the people who keep their time. Drop in a messy week, answer a few quick questions, and get clean entries on the right client and matter. A UC Berkeley Master of Information and Data Science capstone.">
 <meta property="og:title" content="Tenth">
@@ -252,6 +253,10 @@ main section[tabindex="-1"]:focus,main section[tabindex="-1"]:focus-visible{outl
 .hero.laid .h1{position:absolute;left:var(--gutter);right:var(--gutter);top:var(--h1-top)}
 .hero.laid .hero-foot{position:absolute;left:var(--gutter);right:var(--gutter);top:var(--foot-top);margin:0}
 .mission{position:relative;z-index:2;text-align:center;margin-top:-18vh}
+/* Until the hero is placed (fonts in, headline and button where they go), it stays hidden, so nothing shows in a first spot and jumps.
+   If the script never runs, it shows anyway after 2.5s */
+.js .intro > .hero:not(.ready) .wrap{visibility:hidden;animation:hero-failsafe 0s 2.5s forwards}
+@keyframes hero-failsafe{to{visibility:visible}}
 .mission .mound{display:block;width:100%;height:18vh;margin-bottom:-1px}
 .mission{pointer-events:none}.mission .spread{pointer-events:auto}   /* the hill rises over the hero: its empty box must not swallow the pointer on Try the demo */
 .mission .mound path{fill:#D8D4E8}
@@ -905,16 +910,16 @@ const LINKS = {
       hist.push({ qi, skipped }); qi += 1;
       if (qi >= QS.length) { finish(); busy = false; return; }
       paint();
-      if (hasGsap && !reduce) gsap.fromTo(card.ask, { x: 40, opacity: 0 }, { x: 0, opacity: 1, duration: .45, ease: 'expo.out' });
+      if (hasGsap && !reduce) gsap.fromTo(card.ask, { x: 40, opacity: 0 }, { x: 0, opacity: 1, duration: .34, ease: 'expo.out' });
       busy = false;
     };
-    if (hasGsap && !reduce) setTimeout(() => gsap.to(card.ask, { x: -40, opacity: 0, duration: .3, ease: 'power2.in', onComplete: go }), 1000);
-    else setTimeout(go, 900);
+    if (hasGsap && !reduce) setTimeout(() => gsap.to(card.ask, { x: -40, opacity: 0, duration: .2, ease: 'power2.in', onComplete: go }), 700);   /* long enough to see the note checked off, short enough not to wait */
+    else setTimeout(go, 700);
   }
   function pass() {
     if (busy || card.ask.hidden) return; busy = true; skipped += 1;
-    const go = () => { hist.push({ qi, skipped: skipped - 1 }); qi += 1; if (qi >= QS.length) { finish(); busy = false; return; } paint(); if (hasGsap && !reduce) gsap.fromTo(card.ask, { x: 40, opacity: 0 }, { x: 0, opacity: 1, duration: .45, ease: 'expo.out' }); busy = false; };
-    if (hasGsap && !reduce) gsap.to(card.ask, { x: -40, opacity: 0, duration: .3, ease: 'power2.in', onComplete: go }); else setTimeout(go, 200);
+    const go = () => { hist.push({ qi, skipped: skipped - 1 }); qi += 1; if (qi >= QS.length) { finish(); busy = false; return; } paint(); if (hasGsap && !reduce) gsap.fromTo(card.ask, { x: 40, opacity: 0 }, { x: 0, opacity: 1, duration: .34, ease: 'expo.out' }); busy = false; };
+    if (hasGsap && !reduce) gsap.to(card.ask, { x: -40, opacity: 0, duration: .2, ease: 'power2.in', onComplete: go }); else setTimeout(go, 200);
   }
   function finish() {
     card.ask.hidden = true; card.done.hidden = false;
@@ -944,7 +949,7 @@ const LINKS = {
     if (busy || $('mp') || !hist.length) return;
     const h = hist.pop(); qi = h.qi; skipped = h.skipped;
     card.done.hidden = true; card.ask.hidden = false; paint();
-    if (hasGsap && !reduce) gsap.fromTo(card.ask, { x: -40, opacity: 0 }, { x: 0, opacity: 1, duration: .45, ease: 'expo.out' });
+    if (hasGsap && !reduce) gsap.fromTo(card.ask, { x: -40, opacity: 0 }, { x: 0, opacity: 1, duration: .34, ease: 'expo.out' });
     qyes.focus({ preventScroll: true });
   }
   $('qback').addEventListener('click', back);
@@ -1020,7 +1025,7 @@ const LINKS = {
   paint();
   $('qagain').addEventListener('click', () => {
     qi = 0; skipped = 0; hist = []; card.done.hidden = true; card.ask.hidden = false; paint();
-    if (hasGsap && !reduce) gsap.fromTo(card.ask, { x: -40, opacity: 0 }, { x: 0, opacity: 1, duration: .45, ease: 'expo.out' });
+    if (hasGsap && !reduce) gsap.fromTo(card.ask, { x: -40, opacity: 0 }, { x: 0, opacity: 1, duration: .34, ease: 'expo.out' });
     qyes.focus();
   });
 
@@ -1123,10 +1128,15 @@ const LINKS = {
   addEventListener('resize', placeHero);
   document.fonts && document.fonts.ready.then(placeHero);
   const heroLines = document.querySelectorAll('.h1 .ln');
-  const intro = gsap.timeline({ defaults: { ease: 'expo.out' } });
+  const intro = gsap.timeline({ paused: true, defaults: { ease: 'expo.out' } });
   intro.from(heroLines, { yPercent: 40, opacity: 0, duration: 1.1, stagger: 0.1 })
        .from('.hero-mark', { opacity: 0, scale: .8, duration: .8 }, 0.2)
-       .from('.hero-intro > *', { y: 16, opacity: 0, duration: .8, stagger: .06 }, 0.35);
+       .from('.hero-intro > *', { y: 16, opacity: 0, duration: .8, stagger: .06 }, 0.35)
+       .from('.hero-cta', { y: 16, opacity: 0, duration: .8 }, 0.5);   /* the button arrives right after the subtitle, already in its place */
+  /* The hero shows once its fonts are in (or after 0.9s at most) and it has been laid out with them, then plays its entrance */
+  Promise.race([document.fonts ? document.fonts.ready : Promise.resolve(), new Promise((r) => setTimeout(r, 900))]).then(() => {
+    placeHero(); document.querySelector('.intro > .hero').classList.add('ready'); intro.play();
+  });
 
   /* Hero notes lean toward the pointer (mouse only, paused when the hero is off screen) */
   if (finePointer) {
