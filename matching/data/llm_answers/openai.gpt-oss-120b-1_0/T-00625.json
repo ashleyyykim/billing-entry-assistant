@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00625",
+ "cmid": "7222.002",
+ "second_cmid": "",
+ "shortlist": [
+  "7222.002",
+  "5520.002",
+  "7222.001"
+ ],
+ "confidence": 92,
+ "reason": "Narrative describes due diligence and disclosure schedule review for an acquisition; timekeeper's recent heavy activity on 7222.002 (Northgate Capital Partners acquisition) aligns, and the typed client matches; no evidence of second matter.",
+ "usage": {
+  "inputTokens": 8162,
+  "outputTokens": 649,
+  "totalTokens": 8811
+ },
+ "latency_s": 4.435,
+ "seconds": 4.499644166993676
+}

@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01232",
+ "cmid": "2960.003",
+ "second_cmid": "",
+ "shortlist": [
+  "2960.003",
+  "2960.001",
+  "2960.002"
+ ],
+ "confidence": 95,
+ "reason": "Narrative about officer appointments matches Board Matters for Solace Health; timekeeper's history shows heavy work on 2960.003; typed CMID is invalid.",
+ "usage": {
+  "inputTokens": 8158,
+  "outputTokens": 430,
+  "totalTokens": 8588
+ },
+ "latency_s": 3.119,
+ "seconds": 3.1825744999950984
+}

@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03547",
+ "cmid": "2201.001",
+ "second_cmid": "2201.005",
+ "shortlist": [
+  "2201.001",
+  "2201.005",
+  "4590.005"
+ ],
+ "confidence": 80,
+ "reason": "Narrative involves revising good standing certificates (typical corporate work) and option grant mechanics (equity plan). Timekeeper has extensive history on Harborlight Bio corporate matter (2201.001) and occasional equity work, suggesting primary work on 2201.001 with secondary work on Harborlight Bio equity plan (2201.005).",
+ "usage": {
+  "inputTokens": 8164,
+  "outputTokens": 1160,
+  "totalTokens": 9324
+ },
+ "latency_s": 9.352,
+ "seconds": 9.428308665999793
+}

@@ -1,0 +1,17 @@
+{
+ "entry_id": "T-01605",
+ "cmid": "9140.001",
+ "second_cmid": "",
+ "shortlist": [
+  "9140.001"
+ ],
+ "confidence": 95,
+ "reason": "Typed CMID matches narrative of a conference call with client contact H. Quan; date falls within matter's open period; no evidence of other matter involvement.",
+ "usage": {
+  "inputTokens": 8142,
+  "outputTokens": 535,
+  "totalTokens": 8677
+ },
+ "latency_s": 4.765,
+ "seconds": 4.834474500006763
+}

@@ -1,0 +1,17 @@
+{
+ "entry_id": "T-02750",
+ "cmid": "5520.001",
+ "second_cmid": "",
+ "shortlist": [
+  "5520.001"
+ ],
+ "confidence": 95,
+ "reason": "Narrative about organizing signature packets and funds flow memo aligns with Add-On Acquisition (Project Lark) opened March 2026; typed CMID matches and no other matter fits.",
+ "usage": {
+  "inputTokens": 8176,
+  "outputTokens": 565,
+  "totalTokens": 8741
+ },
+ "latency_s": 3.75,
+ "seconds": 3.821308707993012
+}

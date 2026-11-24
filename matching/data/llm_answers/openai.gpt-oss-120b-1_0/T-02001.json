@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02001",
+ "cmid": "3455.002",
+ "second_cmid": "",
+ "shortlist": [
+  "3455.002",
+  "2960.003",
+  "6103.003"
+ ],
+ "confidence": 95,
+ "reason": "Narrative matches board matters; typed CMID is board & governance for Aster & Vale; timekeeper has extensive hours on this matter, indicating primary assignment.",
+ "usage": {
+  "inputTokens": 8139,
+  "outputTokens": 506,
+  "totalTokens": 8645
+ },
+ "latency_s": 3.65,
+ "seconds": 3.7267115840077167
+}

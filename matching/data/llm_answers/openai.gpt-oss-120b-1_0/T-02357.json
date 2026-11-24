@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02357",
+ "cmid": "7215.002",
+ "second_cmid": "",
+ "shortlist": [
+  "7215.002",
+  "3455.003",
+  "7215.003"
+ ],
+ "confidence": 92,
+ "reason": "Narrative about reviewing a credit agreement matches DEBT matters; timekeeper TK113 has prior hours on 7215.002 (credit facility) indicating correct matter; typed CMID likely mis-entered.",
+ "usage": {
+  "inputTokens": 8131,
+  "outputTokens": 1457,
+  "totalTokens": 9588
+ },
+ "latency_s": 12.645,
+ "seconds": 12.714570041003753
+}

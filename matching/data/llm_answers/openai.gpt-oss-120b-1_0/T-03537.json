@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03537",
+ "cmid": "7222.002",
+ "second_cmid": "5531.001",
+ "shortlist": [
+  "7222.002",
+  "5531.001",
+  "5531.001"
+ ],
+ "confidence": 70,
+ "reason": "Narrative mentions revising R&W policy for Summit Ridge (matter 7222.002) and managing signature packets (typical for acquisition 5531.001); both matters are active, so entry likely covers both.",
+ "usage": {
+  "inputTokens": 8163,
+  "outputTokens": 1247,
+  "totalTokens": 9410
+ },
+ "latency_s": 11.028,
+ "seconds": 11.233857917002751
+}

@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02546",
+ "cmid": "3120.001",
+ "second_cmid": "",
+ "shortlist": [
+  "3120.001",
+  "4590.003",
+  "2207.003"
+ ],
+ "confidence": 85,
+ "reason": "Narrative about editing a guarantee aligns with corporate work for Bluefin Robotics (3120.001). Typed client Brightwave Robotics is similar to Bluefin Robotics, and the timekeeper's largest recent allocation is to 3120.001.",
+ "usage": {
+  "inputTokens": 8139,
+  "outputTokens": 616,
+  "totalTokens": 8755
+ },
+ "latency_s": 2.687,
+ "seconds": 2.8031650420016376
+}

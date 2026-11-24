@@ -1,0 +1,17 @@
+{
+ "entry_id": "T-00035",
+ "cmid": "6103.004",
+ "second_cmid": "",
+ "shortlist": [
+  "6103.004"
+ ],
+ "confidence": 95,
+ "reason": "Typed CMID matches timekeeper's primary matter and narrative of filing aligns with SEC filing for Meridian Therapeutics annual meeting, within open period.",
+ "usage": {
+  "inputTokens": 8138,
+  "outputTokens": 282,
+  "totalTokens": 8420
+ },
+ "latency_s": 2.29,
+ "seconds": 2.5105376669962425
+}

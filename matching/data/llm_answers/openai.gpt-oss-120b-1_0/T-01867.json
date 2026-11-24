@@ -1,0 +1,17 @@
+{
+ "entry_id": "T-01867",
+ "cmid": "7215.005",
+ "second_cmid": "",
+ "shortlist": [
+  "7215.005"
+ ],
+ "confidence": 95,
+ "reason": "Narrative 'Tcw AW.' matches prior notes on matter 7215.005 involving calls with AW regarding Amendment No. 2; date after matter opened; typed CMID aligns.",
+ "usage": {
+  "inputTokens": 8146,
+  "outputTokens": 471,
+  "totalTokens": 8617
+ },
+ "latency_s": 3.085,
+ "seconds": 3.150692416995298
+}

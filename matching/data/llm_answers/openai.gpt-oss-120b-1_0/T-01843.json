@@ -1,0 +1,17 @@
+{
+ "entry_id": "T-01843",
+ "cmid": "7222.002",
+ "second_cmid": "",
+ "shortlist": [
+  "7222.002"
+ ],
+ "confidence": 95,
+ "reason": "Narrative explicitly references Summit Ridge acquisition, which matches matter 7222.002 (Acquisition of Summit Ridge Software) for Northgate Capital Partners.",
+ "usage": {
+  "inputTokens": 8168,
+  "outputTokens": 324,
+  "totalTokens": 8492
+ },
+ "latency_s": 3.261,
+ "seconds": 3.330840291993809
+}

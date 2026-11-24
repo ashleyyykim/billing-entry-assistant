@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02861",
+ "cmid": "1111.001",
+ "second_cmid": "",
+ "shortlist": [
+  "1111.001",
+  "1111.002",
+  "1111.003"
+ ],
+ "confidence": 95,
+ "reason": "Narrative matches past admin entry 'Update time entries for week' on 1111.001; typed matter is Admin; date within open period.",
+ "usage": {
+  "inputTokens": 8140,
+  "outputTokens": 300,
+  "totalTokens": 8440
+ },
+ "latency_s": 2.661,
+ "seconds": 2.7216482920048293
+}

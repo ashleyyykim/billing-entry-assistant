@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00903",
+ "cmid": "2960.003",
+ "second_cmid": "",
+ "shortlist": [
+  "2960.003",
+  "2960.001",
+  "4590.005"
+ ],
+ "confidence": 85,
+ "reason": "Narrative about 409A approval aligns with board matters for Solace Health, which the timekeeper heavily works on; no separate equity plan matter exists for this client.",
+ "usage": {
+  "inputTokens": 8144,
+  "outputTokens": 480,
+  "totalTokens": 8624
+ },
+ "latency_s": 3.844,
+ "seconds": 3.9061803750082618
+}

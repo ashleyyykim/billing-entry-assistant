@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03147",
+ "cmid": "5520.001",
+ "second_cmid": "",
+ "shortlist": [
+  "5520.001",
+  "5520.003",
+  "5520.005"
+ ],
+ "confidence": 92,
+ "reason": "Typed CMID matches client and matter; narrative 'Attend to diligence' aligns with acquisition due diligence for Project Lark; date within matter's open period; no evidence of second matter.",
+ "usage": {
+  "inputTokens": 8145,
+  "outputTokens": 716,
+  "totalTokens": 8861
+ },
+ "latency_s": 6.314,
+ "seconds": 6.485227665994898
+}

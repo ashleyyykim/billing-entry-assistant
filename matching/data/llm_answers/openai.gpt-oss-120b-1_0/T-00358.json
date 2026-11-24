@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00358",
+ "cmid": "9028.003",
+ "second_cmid": "",
+ "shortlist": [
+  "9028.003",
+  "3120.003",
+  "4590.005"
+ ],
+ "confidence": 95,
+ "reason": "Narrative about 83(b) election fits Exec Comp/409A work; typed CMID resembles 9028.003; timekeeper has large recent hours on 9028.003.",
+ "usage": {
+  "inputTokens": 8146,
+  "outputTokens": 546,
+  "totalTokens": 8692
+ },
+ "latency_s": 2.256,
+ "seconds": 2.3202538329933304
+}

@@ -1,0 +1,17 @@
+{
+ "entry_id": "T-03405",
+ "cmid": "3455.002",
+ "second_cmid": "",
+ "shortlist": [
+  "3455.002"
+ ],
+ "confidence": 95,
+ "reason": "Narrative matches typical board consent review work for Aster & Vale Board & Governance matter; typed CMID aligns and timekeeper's history shows extensive work on this matter.",
+ "usage": {
+  "inputTokens": 8149,
+  "outputTokens": 240,
+  "totalTokens": 8389
+ },
+ "latency_s": 1.954,
+ "seconds": 2.1540279999899212
+}

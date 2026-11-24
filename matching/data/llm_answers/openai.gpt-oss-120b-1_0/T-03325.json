@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03325",
+ "cmid": "3120.001",
+ "second_cmid": "",
+ "shortlist": [
+  "3120.001",
+  "2207.003",
+  "3388.001"
+ ],
+ "confidence": 92,
+ "reason": "Typed CMID matches a matter where the timekeeper has the most prior hours (38.5h) and the entry date falls within the matter's active period; narrative is generic but consistent with prior work on this matter.",
+ "usage": {
+  "inputTokens": 8140,
+  "outputTokens": 312,
+  "totalTokens": 8452
+ },
+ "latency_s": 1.876,
+ "seconds": 1.939402332995087
+}

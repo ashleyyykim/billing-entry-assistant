@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03933",
+ "cmid": "2201.005",
+ "second_cmid": "",
+ "shortlist": [
+  "2201.005",
+  "4590.005",
+  "3120.003"
+ ],
+ "confidence": 95,
+ "reason": "Narrative mentions handling option grant paperwork, which aligns with equity plan/409A matters. The timekeeper's recent hours show extensive work on 2201.005 (Equity Plan / 409A for Harborlight Bio). No clear indication of a second specific matter, so second_cmid left blank.",
+ "usage": {
+  "inputTokens": 8149,
+  "outputTokens": 738,
+  "totalTokens": 8887
+ },
+ "latency_s": 3.364,
+ "seconds": 3.4871188749966677
+}

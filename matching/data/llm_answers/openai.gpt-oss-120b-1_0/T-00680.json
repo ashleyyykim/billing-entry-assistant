@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00680",
+ "cmid": "8340.002",
+ "second_cmid": "",
+ "shortlist": [
+  "8340.002",
+  "8340.001",
+  "7215.004"
+ ],
+ "confidence": 95,
+ "reason": "Narrative references 12 Mission lease renewal and drafting a Mission Ave. subordination agreement, which matches the lease matter 8340.002. Timekeeper has recent hours on this matter, confirming relevance.",
+ "usage": {
+  "inputTokens": 8171,
+  "outputTokens": 504,
+  "totalTokens": 8675
+ },
+ "latency_s": 2.427,
+ "seconds": 2.496590666996781
+}

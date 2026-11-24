@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00558",
+ "cmid": "3120.003",
+ "second_cmid": "",
+ "shortlist": [
+  "3120.003",
+  "2201.005",
+  "4590.005"
+ ],
+ "confidence": 85,
+ "reason": "Narrative about share reserve increase and offer letter aligns with equity plan work; timekeeper has recent hours on Bluefin Robotics equity plan (3120.003) indicating likely matter.",
+ "usage": {
+  "inputTokens": 8154,
+  "outputTokens": 806,
+  "totalTokens": 8960
+ },
+ "latency_s": 7.007,
+ "seconds": 7.118430957998498
+}

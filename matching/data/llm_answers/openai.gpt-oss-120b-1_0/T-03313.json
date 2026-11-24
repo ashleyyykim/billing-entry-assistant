@@ -1,0 +1,17 @@
+{
+ "entry_id": "T-03313",
+ "cmid": "3120.001",
+ "second_cmid": "",
+ "shortlist": [
+  "3120.001"
+ ],
+ "confidence": 95,
+ "reason": "Narrative matches typical good standing work for Bluefin Robotics General Corporate (3120.001) and timekeeper's history shows heavy activity on this matter.",
+ "usage": {
+  "inputTokens": 8138,
+  "outputTokens": 368,
+  "totalTokens": 8506
+ },
+ "latency_s": 3.702,
+ "seconds": 3.77079350000713
+}

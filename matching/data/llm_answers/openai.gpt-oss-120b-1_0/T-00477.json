@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00477",
+ "cmid": "3120.001",
+ "second_cmid": "",
+ "shortlist": [
+  "3120.001",
+  "3012.001",
+  "3012.004"
+ ],
+ "confidence": 95,
+ "reason": "Client typed as Bluefin Robotics, matter typed as 'gen' indicating General Corporate. Timekeeper's recent hours heavily on 3120.001 (168.2h). Narrative about reviewing contractor agreement fits General Corporate work. No other Bluefin matters match.",
+ "usage": {
+  "inputTokens": 8143,
+  "outputTokens": 544,
+  "totalTokens": 8687
+ },
+ "latency_s": 5.193,
+ "seconds": 5.306244167004479
+}

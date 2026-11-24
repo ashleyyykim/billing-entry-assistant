@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00519",
+ "cmid": "8340.001",
+ "second_cmid": "",
+ "shortlist": [
+  "8340.001",
+  "8340.002",
+  "7215.003"
+ ],
+ "confidence": 95,
+ "reason": "Narrative references survey and zoning work for Harbor St. acquisition, matching matter 8340.001 (Acquisition of 450 Harbor St.) and timekeeper's extensive prior hours on that matter.",
+ "usage": {
+  "inputTokens": 8173,
+  "outputTokens": 326,
+  "totalTokens": 8499
+ },
+ "latency_s": 1.657,
+ "seconds": 1.8674503340007504
+}

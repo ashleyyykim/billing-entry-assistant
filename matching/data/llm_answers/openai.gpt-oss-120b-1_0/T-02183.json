@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02183",
+ "cmid": "7633.002",
+ "second_cmid": "",
+ "shortlist": [
+  "7633.002",
+  "7633.001",
+  "7633.003"
+ ],
+ "confidence": 95,
+ "reason": "Typed client Copperline Networks and matter Series A match CMID 7633.002, which opened 07/13/2026 and is active on the work date.",
+ "usage": {
+  "inputTokens": 8135,
+  "outputTokens": 484,
+  "totalTokens": 8619
+ },
+ "latency_s": 4.378,
+ "seconds": 4.438063374997
+}

@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00042",
+ "cmid": "2201.001",
+ "second_cmid": "",
+ "shortlist": [
+  "2201.001",
+  "2201.003",
+  "2960.001"
+ ],
+ "confidence": 95,
+ "reason": "Typed client 'Harborlight B' matches Harborlight Bio; narrative 'Track annual filings' aligns with General Corporate work; timekeeper's primary recent hours are on 2201.001.",
+ "usage": {
+  "inputTokens": 8136,
+  "outputTokens": 626,
+  "totalTokens": 8762
+ },
+ "latency_s": 4.839,
+ "seconds": 5.11900079199404
+}

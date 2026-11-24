@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01347",
+ "cmid": "9140.001",
+ "second_cmid": "",
+ "shortlist": [
+  "9140.001",
+  "9140.002",
+  "2215.001"
+ ],
+ "confidence": 95,
+ "reason": "Narrative about drafting subscription documents and private placement memorandum aligns with fund formation work; timekeeper's recent hours heavily on 9140.001 (Fund II Formation) and the matter is open on the work date.",
+ "usage": {
+  "inputTokens": 8184,
+  "outputTokens": 499,
+  "totalTokens": 8683
+ },
+ "latency_s": 4.37,
+ "seconds": 4.618765791004989
+}

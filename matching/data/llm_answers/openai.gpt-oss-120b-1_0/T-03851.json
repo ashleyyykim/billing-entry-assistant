@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03851",
+ "cmid": "4471.004",
+ "second_cmid": "",
+ "shortlist": [
+  "4471.004",
+  "4471.001",
+  "4471.002"
+ ],
+ "confidence": 95,
+ "reason": "Narrative about LP counsel and closing schedule fits Ridgewater Partners Fund IV Formation (4471.004), which opened 09/01/2026; timekeeper has prior fund formation work for Ridgewater.",
+ "usage": {
+  "inputTokens": 8147,
+  "outputTokens": 441,
+  "totalTokens": 8588
+ },
+ "latency_s": 3.951,
+ "seconds": 4.0170375000016065
+}

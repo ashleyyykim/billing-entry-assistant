@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01042",
+ "cmid": "4471.003",
+ "second_cmid": "",
+ "shortlist": [
+  "4471.003",
+  "4471.001",
+  "4471.004"
+ ],
+ "confidence": 95,
+ "reason": "Narrative references C. Abbott and co\u2011invest rights, matching past entries for Ridgewater Partners' Co\u2011Invest vehicle (4471.003); date falls within matter's open period.",
+ "usage": {
+  "inputTokens": 8160,
+  "outputTokens": 424,
+  "totalTokens": 8584
+ },
+ "latency_s": 4.61,
+ "seconds": 4.678403084006277
+}

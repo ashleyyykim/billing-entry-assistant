@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03317",
+ "cmid": "4590.004",
+ "second_cmid": "",
+ "shortlist": [
+  "4590.004",
+  "7633.002",
+  "2201.002"
+ ],
+ "confidence": 92,
+ "reason": "Timekeeper's recent work heavily focused on 4590.004 (34.5h) with generic follow-up on open items; typed CMID likely incorrect as no prior activity on 7633.002.",
+ "usage": {
+  "inputTokens": 8140,
+  "outputTokens": 779,
+  "totalTokens": 8919
+ },
+ "latency_s": 3.552,
+ "seconds": 3.6327469169918913
+}

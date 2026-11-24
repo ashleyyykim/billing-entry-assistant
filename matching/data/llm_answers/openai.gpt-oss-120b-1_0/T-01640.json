@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01640",
+ "cmid": "5750.001",
+ "second_cmid": "",
+ "shortlist": [
+  "5750.001",
+  "2201.005",
+  "3120.003"
+ ],
+ "confidence": 85,
+ "reason": "Narrative references Saffron Labs and tasks (409A minutes, annual filings, closing checklist) that fit within the General Corporate matter for Saffron Labs; no dedicated 409A matter exists for this client.",
+ "usage": {
+  "inputTokens": 8157,
+  "outputTokens": 772,
+  "totalTokens": 8929
+ },
+ "latency_s": 7.063,
+ "seconds": 7.155135541994241
+}

@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03914",
+ "cmid": "9140.001",
+ "second_cmid": "",
+ "shortlist": [
+  "9140.001",
+  "5524.001",
+  "2215.002"
+ ],
+ "confidence": 95,
+ "reason": "Narrative references MFN election form for Fund II; typed client JPC matches Juniper Peak Capital, whose Fund II Formation matter is 9140.001. Timekeeper's recent hours heavily on 9140.001, supporting assignment.",
+ "usage": {
+  "inputTokens": 8149,
+  "outputTokens": 617,
+  "totalTokens": 8766
+ },
+ "latency_s": 2.648,
+ "seconds": 2.7082922920089914
+}

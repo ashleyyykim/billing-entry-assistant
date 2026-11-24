@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00516",
+ "cmid": "2960.003",
+ "second_cmid": "",
+ "shortlist": [
+  "2960.003",
+  "2960.002",
+  "2960.001"
+ ],
+ "confidence": 92,
+ "reason": "Typed CMID 2960003 is a clear typo for 2960.003 (Solace Health Board Matters). Narrative matches prior email work on this matter. No evidence of second matter.",
+ "usage": {
+  "inputTokens": 8137,
+  "outputTokens": 630,
+  "totalTokens": 8767
+ },
+ "latency_s": 3.069,
+ "seconds": 3.268746542002191
+}

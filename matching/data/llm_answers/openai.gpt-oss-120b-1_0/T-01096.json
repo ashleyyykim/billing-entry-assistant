@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01096",
+ "cmid": "9028.001",
+ "second_cmid": "",
+ "shortlist": [
+  "9028.001",
+  "2201.001",
+  "6230.001"
+ ],
+ "confidence": 92,
+ "reason": "Narrative matches past entries for Lanternfish Software (9028.001) which include editing employee offer letters and reworking consulting agreements; timekeeper recently logged hours on this matter.",
+ "usage": {
+  "inputTokens": 8168,
+  "outputTokens": 934,
+  "totalTokens": 9102
+ },
+ "latency_s": 7.516,
+ "seconds": 7.587606125001912
+}

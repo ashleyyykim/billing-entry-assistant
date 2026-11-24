@@ -1,0 +1,15 @@
+{
+ "entry_id": "T-00080",
+ "cmid": "NONE",
+ "second_cmid": "",
+ "shortlist": [],
+ "confidence": 80,
+ "reason": "Typed client 'Harborview Bio' does not match any client in the matter list; no similar matter with DPA review found for that client. Likely the entry refers to a client not on the list, so assign NONE.",
+ "usage": {
+  "inputTokens": 8143,
+  "outputTokens": 496,
+  "totalTokens": 8639
+ },
+ "latency_s": 5.879,
+ "seconds": 5.951913458993658
+}

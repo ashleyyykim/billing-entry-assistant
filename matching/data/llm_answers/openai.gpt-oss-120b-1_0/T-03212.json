@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03212",
+ "cmid": "6110.001",
+ "second_cmid": "",
+ "shortlist": [
+  "6110.001",
+  "6103.001",
+  "3012.003"
+ ],
+ "confidence": 80,
+ "reason": "Narrative mentions annual filings and closing checklist; timekeeper has prior hours on 6110.001 (General Corporate) which includes annual filings in past entries, making it the best fit among matters the keeper has worked on.",
+ "usage": {
+  "inputTokens": 8144,
+  "outputTokens": 1187,
+  "totalTokens": 9331
+ },
+ "latency_s": 6.564,
+ "seconds": 6.761247583999648
+}

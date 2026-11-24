@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03017",
+ "cmid": "5520.001",
+ "second_cmid": "",
+ "shortlist": [
+  "5520.001",
+  "3012.005",
+  "3012.004"
+ ],
+ "confidence": 80,
+ "reason": "Narrative mentions follow-up with OC on closing conditions, a phrase seen in past entries for 5520.001, and analysis of a transition services agreement, which is typical for acquisition matters like 5520.001 (Add-On Acquisition Project Lark).",
+ "usage": {
+  "inputTokens": 8160,
+  "outputTokens": 1105,
+  "totalTokens": 9265
+ },
+ "latency_s": 8.987,
+ "seconds": 9.062204917005147
+}

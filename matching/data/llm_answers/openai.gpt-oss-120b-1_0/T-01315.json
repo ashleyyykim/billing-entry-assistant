@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01315",
+ "cmid": "2201.005",
+ "second_cmid": "",
+ "shortlist": [
+  "2201.005",
+  "9028.003",
+  "4590.005"
+ ],
+ "confidence": 78,
+ "reason": "Option grant mechanics aligns with equity plan matters; timekeeper heavily works on Harborlight Bio (2201.*) and has prior exec comp work on Lanternfish, but primary client focus suggests 2201.005.",
+ "usage": {
+  "inputTokens": 8146,
+  "outputTokens": 1082,
+  "totalTokens": 9228
+ },
+ "latency_s": 8.504,
+ "seconds": 8.584884874988347
+}

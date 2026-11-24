@@ -1,0 +1,17 @@
+{
+ "entry_id": "T-00812",
+ "cmid": "9140.001",
+ "second_cmid": "",
+ "shortlist": [
+  "9140.001"
+ ],
+ "confidence": 95,
+ "reason": "Typed CMID matches the timekeeper's primary matter (186h) and the date is within the matter's open period; no evidence of another matter.",
+ "usage": {
+  "inputTokens": 8142,
+  "outputTokens": 303,
+  "totalTokens": 8445
+ },
+ "latency_s": 1.76,
+ "seconds": 1.8293541659950279
+}

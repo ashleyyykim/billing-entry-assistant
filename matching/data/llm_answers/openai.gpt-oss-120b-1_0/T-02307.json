@@ -1,0 +1,15 @@
+{
+ "entry_id": "T-02307",
+ "cmid": "NONE",
+ "second_cmid": "",
+ "shortlist": [],
+ "confidence": 95,
+ "reason": "Typed CMID and client do not match any listed matter; narrative about borrowing base certificate points to a DEBT credit facility, but no matching open DEBT matter for CR Partners exists.",
+ "usage": {
+  "inputTokens": 8164,
+  "outputTokens": 1225,
+  "totalTokens": 9389
+ },
+ "latency_s": 4.95,
+ "seconds": 5.024174874997698
+}

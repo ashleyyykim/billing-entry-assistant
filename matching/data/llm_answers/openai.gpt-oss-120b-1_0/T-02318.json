@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02318",
+ "cmid": "9028.003",
+ "second_cmid": "",
+ "shortlist": [
+  "9028.003",
+  "3120.003",
+  "4590.005"
+ ],
+ "confidence": 95,
+ "reason": "Narrative matches past entries for Lanternfish Software's Exec Comp matter (9028.003) which handles option grant notices; timekeeper's recent hours heavily on this matter.",
+ "usage": {
+  "inputTokens": 8144,
+  "outputTokens": 411,
+  "totalTokens": 8555
+ },
+ "latency_s": 3.762,
+ "seconds": 3.8230327920027776
+}

@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01241",
+ "cmid": "9140.002",
+ "second_cmid": "",
+ "shortlist": [
+  "9140.002",
+  "9140.001",
+  "7215.003"
+ ],
+ "confidence": 70,
+ "reason": "Narrative about redemption rights and board consent fits a fund matter; Juniper Labs likely a typo for Juniper Peak Capital, whose General Fund Matters (9140.002) involve board consents and investor redemption rights.",
+ "usage": {
+  "inputTokens": 8154,
+  "outputTokens": 754,
+  "totalTokens": 8908
+ },
+ "latency_s": 6.996,
+ "seconds": 7.060658082991722
+}

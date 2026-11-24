@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03154",
+ "cmid": "3120.001",
+ "second_cmid": "",
+ "shortlist": [
+  "3120.001",
+  "5520.005",
+  "5520.002"
+ ],
+ "confidence": 85,
+ "reason": "Timekeeper's largest recent allocation is to Bluefin Robotics General Corporate (3120.001); generic 'Conf w/ team' likely a routine call for that primary matter.",
+ "usage": {
+  "inputTokens": 8136,
+  "outputTokens": 510,
+  "totalTokens": 8646
+ },
+ "latency_s": 4.703,
+ "seconds": 4.904943000001367
+}

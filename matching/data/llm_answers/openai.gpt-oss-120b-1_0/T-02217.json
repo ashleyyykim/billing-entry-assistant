@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02217",
+ "cmid": "8340.003",
+ "second_cmid": "",
+ "shortlist": [
+  "8340.003",
+  "8340.001",
+  "8340.002"
+ ],
+ "confidence": 95,
+ "reason": "Narrative references '88 Bay' which matches the Acquisition of 88 Bay Rd. matter (8340.003); date is after matter opened; no indication of multiple matters.",
+ "usage": {
+  "inputTokens": 8134,
+  "outputTokens": 377,
+  "totalTokens": 8511
+ },
+ "latency_s": 1.636,
+ "seconds": 1.705891874997178
+}

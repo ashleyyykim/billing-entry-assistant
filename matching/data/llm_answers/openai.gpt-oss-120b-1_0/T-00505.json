@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00505",
+ "cmid": "4590.004",
+ "second_cmid": "",
+ "shortlist": [
+  "4590.004",
+  "4590.003",
+  "4590.001"
+ ],
+ "confidence": 95,
+ "reason": "Narrative references exclusivity and open issues for Tidewater AI's Commercial - Enterprise MSAs, matching matter 4590.004; timekeeper has recent hours on this matter.",
+ "usage": {
+  "inputTokens": 8146,
+  "outputTokens": 374,
+  "totalTokens": 8520
+ },
+ "latency_s": 4.065,
+ "seconds": 4.177575000008801
+}

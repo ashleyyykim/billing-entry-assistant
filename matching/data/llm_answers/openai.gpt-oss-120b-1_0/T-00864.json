@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00864",
+ "cmid": "2201.003",
+ "second_cmid": "",
+ "shortlist": [
+  "2201.003",
+  "2201.001",
+  "2207.003"
+ ],
+ "confidence": 85,
+ "reason": "Narrative mentions coordinating closing deliverables and circulating a revised draft, which aligns with financing closing work seen in past entries for Harborlight Bio Series A (2201.003). Typed CMID 2201.001 is likely incorrect; 2201.003 opened before the work date and is active.",
+ "usage": {
+  "inputTokens": 8149,
+  "outputTokens": 1169,
+  "totalTokens": 9318
+ },
+ "latency_s": 7.834,
+ "seconds": 7.906599624999217
+}

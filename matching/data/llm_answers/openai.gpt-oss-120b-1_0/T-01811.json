@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01811",
+ "cmid": "2201.001",
+ "second_cmid": "",
+ "shortlist": [
+  "2201.001",
+  "7215.004",
+  "6888.002"
+ ],
+ "confidence": 85,
+ "reason": "Narrative describes entity maintenance and good standing certificates, typical of General Corporate work. Timekeeper heavily assigned to 2201.001 and typed CMID matches. Mention of Kestell likely a mistake; no evidence of work on Northgate Bank matters.",
+ "usage": {
+  "inputTokens": 8162,
+  "outputTokens": 743,
+  "totalTokens": 8905
+ },
+ "latency_s": 6.416,
+ "seconds": 6.487387917004526
+}

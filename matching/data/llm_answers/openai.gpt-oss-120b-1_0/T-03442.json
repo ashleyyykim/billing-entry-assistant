@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03442",
+ "cmid": "9140.001",
+ "second_cmid": "",
+ "shortlist": [
+  "9140.001",
+  "5524.001",
+  "2215.002"
+ ],
+ "confidence": 80,
+ "reason": "Timekeeper TK110 has logged the most hours on 9140.001 (186h) and the narrative is vague, likely referring to ongoing email communication on the same matter.",
+ "usage": {
+  "inputTokens": 8135,
+  "outputTokens": 509,
+  "totalTokens": 8644
+ },
+ "latency_s": 4.399,
+ "seconds": 4.466814458006411
+}

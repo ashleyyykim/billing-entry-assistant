@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00795",
+ "cmid": "3120.001",
+ "second_cmid": "",
+ "shortlist": [
+  "3120.001",
+  "2201.001",
+  "2960.001"
+ ],
+ "confidence": 95,
+ "reason": "Narrative matches good standing requests; TK107's major prior work is on Bluefin Robotics (3120.001) and typed client resembles Bluefin Robotics.",
+ "usage": {
+  "inputTokens": 8139,
+  "outputTokens": 540,
+  "totalTokens": 8679
+ },
+ "latency_s": 4.956,
+ "seconds": 5.142620999991777
+}

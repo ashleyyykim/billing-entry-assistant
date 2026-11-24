@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00216",
+ "cmid": "6103.004",
+ "second_cmid": "",
+ "shortlist": [
+  "6103.004",
+  "6103.001",
+  "6103.003"
+ ],
+ "confidence": 95,
+ "reason": "Narrative about exhibit index and proxy for annual meeting matches Meridian Therapeutics 2026 Annual Meeting (6103.004); timekeeper has large prior hours on this matter and typed CMID resembles 6103.004.",
+ "usage": {
+  "inputTokens": 8158,
+  "outputTokens": 450,
+  "totalTokens": 8608
+ },
+ "latency_s": 4.514,
+ "seconds": 4.631742833997123
+}

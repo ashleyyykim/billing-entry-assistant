@@ -1,0 +1,15 @@
+{
+ "entry_id": "T-03739",
+ "cmid": "NONE",
+ "second_cmid": "",
+ "shortlist": [],
+ "confidence": 30,
+ "reason": "Typed client 'Meridian Labs' does not match any client in the matter list; no clear narrative link to existing matters.",
+ "usage": {
+  "inputTokens": 8139,
+  "outputTokens": 971,
+  "totalTokens": 9110
+ },
+ "latency_s": 8.842,
+ "seconds": 9.043955500004813
+}

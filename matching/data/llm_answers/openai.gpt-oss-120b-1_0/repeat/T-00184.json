@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00184",
+ "cmid": "3120.001",
+ "second_cmid": "",
+ "shortlist": [
+  "3120.001",
+  "3012.001",
+  "2207.001"
+ ],
+ "confidence": 92,
+ "reason": "Narrative focuses on bylaws revisions, foreign qualification filings, and Delaware franchise tax drafting, which aligns with corporate governance work seen in Bluefin Robotics General Corporate (3120.001). The timekeeper logged the most hours on this matter in the prior period, supporting the match.",
+ "usage": {
+  "inputTokens": 8178,
+  "outputTokens": 731,
+  "totalTokens": 8909
+ },
+ "latency_s": 2.913,
+ "seconds": 2.976445291991695
+}

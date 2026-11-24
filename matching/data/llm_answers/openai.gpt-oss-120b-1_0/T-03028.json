@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03028",
+ "cmid": "7215.003",
+ "second_cmid": "",
+ "shortlist": [
+  "7215.003",
+  "7215.004",
+  "7215.005"
+ ],
+ "confidence": 95,
+ "reason": "Narrative 'Attend to loan documents' matches the credit facility loan matter 7215.003 (Northgate Bank Credit Facility - Asterion Holdings). The matter is open on the work date and matches the timekeeper's history.",
+ "usage": {
+  "inputTokens": 8140,
+  "outputTokens": 437,
+  "totalTokens": 8577
+ },
+ "latency_s": 4.076,
+ "seconds": 4.141741125000408
+}

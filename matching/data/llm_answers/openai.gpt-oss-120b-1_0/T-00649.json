@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00649",
+ "cmid": "7633.002",
+ "second_cmid": "",
+ "shortlist": [
+  "7633.002",
+  "7633.001",
+  "7633.003"
+ ],
+ "confidence": 95,
+ "reason": "Typed client matches Copperline Networks; typed matter 7633002 likely meant 7633.002 (Series A Financing). Narrative 'track clsg deliverables' aligns with financing closing tasks. Matter is open and date fits.",
+ "usage": {
+  "inputTokens": 8140,
+  "outputTokens": 555,
+  "totalTokens": 8695
+ },
+ "latency_s": 5.452,
+ "seconds": 5.715091958001722
+}

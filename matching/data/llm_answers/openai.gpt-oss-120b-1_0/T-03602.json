@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03602",
+ "cmid": "3120.001",
+ "second_cmid": "",
+ "shortlist": [
+  "3120.001",
+  "3120.003",
+  "3120.002"
+ ],
+ "confidence": 85,
+ "reason": "Narrative about hiring questions with founder aligns with employee matters seen in Bluefin Robotics General Corporate (3120.001); timekeeper's recent heavy activity on 3120.001 suggests correct matter despite typed CMID 3120.003.",
+ "usage": {
+  "inputTokens": 8146,
+  "outputTokens": 599,
+  "totalTokens": 8745
+ },
+ "latency_s": 4.907,
+ "seconds": 5.016602249990683
+}

@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03015",
+ "cmid": "8340.001",
+ "second_cmid": "",
+ "shortlist": [
+  "8340.001",
+  "8340.002",
+  "8012.001"
+ ],
+ "confidence": 95,
+ "reason": "Narrative references M. Carter, title exceptions, and survey work, matching past entries for 8340.001 (Acquisition of 450 Harbor St.) where similar tasks were recorded.",
+ "usage": {
+  "inputTokens": 8173,
+  "outputTokens": 499,
+  "totalTokens": 8672
+ },
+ "latency_s": 3.787,
+ "seconds": 3.85260129100061
+}

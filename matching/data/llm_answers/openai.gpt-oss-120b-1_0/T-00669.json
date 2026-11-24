@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00669",
+ "cmid": "8340.001",
+ "second_cmid": "",
+ "shortlist": [
+  "8340.001",
+  "8340.002",
+  "8012.001"
+ ],
+ "confidence": 95,
+ "reason": "Narrative describes title company conference and environmental review for 450 Harbor St., matching acquisition matter 8340.001; timekeeper's history shows primary work on this matter.",
+ "usage": {
+  "inputTokens": 8177,
+  "outputTokens": 355,
+  "totalTokens": 8532
+ },
+ "latency_s": 2.389,
+ "seconds": 2.4541261669946834
+}

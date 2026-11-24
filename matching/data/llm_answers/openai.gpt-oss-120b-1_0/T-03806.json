@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03806",
+ "cmid": "5520.001",
+ "second_cmid": "",
+ "shortlist": [
+  "5520.001",
+  "3012.004",
+  "3012.005"
+ ],
+ "confidence": 80,
+ "reason": "Narrative mentions seller counsel and R&W for Larkspur Controls, likely an acquisition. Closest matching matter is 5520.001 Add-On Acquisition (Project Lark), opened March 2026, fitting timeline.",
+ "usage": {
+  "inputTokens": 8146,
+  "outputTokens": 968,
+  "totalTokens": 9114
+ },
+ "latency_s": 8.394,
+ "seconds": 8.461989208008163
+}

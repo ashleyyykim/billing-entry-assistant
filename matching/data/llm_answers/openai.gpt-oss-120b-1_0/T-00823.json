@@ -1,0 +1,17 @@
+{
+ "entry_id": "T-00823",
+ "cmid": "9140.001",
+ "second_cmid": "",
+ "shortlist": [
+  "9140.001"
+ ],
+ "confidence": 95,
+ "reason": "Narrative about first close timing aligns with Fund II Formation matter for Juniper Peak Capital (9140.001); typed CMID matches and timekeeper has extensive history on this matter.",
+ "usage": {
+  "inputTokens": 8151,
+  "outputTokens": 320,
+  "totalTokens": 8471
+ },
+ "latency_s": 1.897,
+ "seconds": 1.964245833005407
+}

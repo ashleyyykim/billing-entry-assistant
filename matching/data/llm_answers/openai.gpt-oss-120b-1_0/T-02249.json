@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02249",
+ "cmid": "6230.001",
+ "second_cmid": "",
+ "shortlist": [
+  "6230.001",
+  "9028.001",
+  "2201.001"
+ ],
+ "confidence": 92,
+ "reason": "Narrative matches past work on employee offer letters for Ember Grid Energy (6230.001); timekeeper has prior hours on this matter and the matter is open on the work date.",
+ "usage": {
+  "inputTokens": 8143,
+  "outputTokens": 806,
+  "totalTokens": 8949
+ },
+ "latency_s": 6.71,
+ "seconds": 6.9222005830088165
+}

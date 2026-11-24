@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01154",
+ "cmid": "7633.002",
+ "second_cmid": "",
+ "shortlist": [
+  "7633.002",
+  "7633.001",
+  "7633.003"
+ ],
+ "confidence": 85,
+ "reason": "Narrative describes drafting term sheet, investors' rights agreement, and pay-to-play opinion, all typical of a financing matter; matches Series A Financing (VC) for Copperline Networks opened 07/13/2026, and work date is after opening.",
+ "usage": {
+  "inputTokens": 8179,
+  "outputTokens": 640,
+  "totalTokens": 8819
+ },
+ "latency_s": 4.137,
+ "seconds": 4.204549041998689
+}

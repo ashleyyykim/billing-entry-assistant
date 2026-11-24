@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00231",
+ "cmid": "6103.001",
+ "second_cmid": "",
+ "shortlist": [
+  "6103.001",
+  "6103.004",
+  "3455.001"
+ ],
+ "confidence": 92,
+ "reason": "Narrative describes Form 8-K Item 5.02 SEC filing work for Meridian Therapeutics; the correct Meridian SEC matter is 6103.001. Typed CMID 6103.002 is a CAPMKT matter, mismatched. No evidence of second matter.",
+ "usage": {
+  "inputTokens": 8172,
+  "outputTokens": 687,
+  "totalTokens": 8859
+ },
+ "latency_s": 3.743,
+ "seconds": 3.935223999986192
+}

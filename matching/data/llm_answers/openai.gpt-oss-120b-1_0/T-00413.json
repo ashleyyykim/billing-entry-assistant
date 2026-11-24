@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00413",
+ "cmid": "9140.002",
+ "second_cmid": "",
+ "shortlist": [
+  "9140.002",
+  "9140.001",
+  "2215.002"
+ ],
+ "confidence": 85,
+ "reason": "Typed CMID matches client and matter; narrative is generic call status which fits general fund matters. Timekeeper has prior work on Juniper Peak Capital fund matters, supporting this assignment.",
+ "usage": {
+  "inputTokens": 8141,
+  "outputTokens": 742,
+  "totalTokens": 8883
+ },
+ "latency_s": 3.825,
+ "seconds": 3.940861916009453
+}

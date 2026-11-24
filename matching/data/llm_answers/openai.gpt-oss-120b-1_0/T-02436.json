@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02436",
+ "cmid": "8012.001",
+ "second_cmid": "",
+ "shortlist": [
+  "8012.001",
+  "8012.002",
+  "8340.001"
+ ],
+ "confidence": 96,
+ "reason": "Narrative references rent roll for 9 Pine, which is the property acquisition matter 8012.001; typed CMID matches and date is within matter's active period.",
+ "usage": {
+  "inputTokens": 8146,
+  "outputTokens": 293,
+  "totalTokens": 8439
+ },
+ "latency_s": 2.156,
+ "seconds": 2.2245328330027405
+}

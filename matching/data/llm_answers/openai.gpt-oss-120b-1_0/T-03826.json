@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03826",
+ "cmid": "7215.003",
+ "second_cmid": "",
+ "shortlist": [
+  "7215.003",
+  "7215.004",
+  "7215.005"
+ ],
+ "confidence": 85,
+ "reason": "Narrative about editing a management rights letter for partner review aligns with credit facility work; timekeeper has extensive prior hours on Northgate Bank credit facility 7215.003, which is open during the work date.",
+ "usage": {
+  "inputTokens": 8147,
+  "outputTokens": 1023,
+  "totalTokens": 9170
+ },
+ "latency_s": 9.057,
+ "seconds": 9.13063716700708
+}

@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02940",
+ "cmid": "4471.002",
+ "second_cmid": "",
+ "shortlist": [
+  "4471.002",
+  "4471.003",
+  "4471.001"
+ ],
+ "confidence": 85,
+ "reason": "Typed CMID matches a matter the timekeeper has previously billed (3.8h) and is open on the work date; narrative is generic but no conflict.",
+ "usage": {
+  "inputTokens": 8140,
+  "outputTokens": 397,
+  "totalTokens": 8537
+ },
+ "latency_s": 3.573,
+ "seconds": 3.637608499993803
+}

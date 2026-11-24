@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01346",
+ "cmid": "4478.001",
+ "second_cmid": "",
+ "shortlist": [
+  "4478.001",
+  "2215.001",
+  "4471.001"
+ ],
+ "confidence": 92,
+ "reason": "Narrative references Fund I LPAC consent and transfer documents; typed client Ridgeview Partners matches 4478.001 (General Fund Matters) which is likely Fund I; other similar fund matters exist but client matches.",
+ "usage": {
+  "inputTokens": 8200,
+  "outputTokens": 1044,
+  "totalTokens": 9244
+ },
+ "latency_s": 9.615,
+ "seconds": 9.679449707997264
+}

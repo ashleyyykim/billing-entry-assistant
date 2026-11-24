@@ -1,0 +1,17 @@
+{
+ "entry_id": "T-02155",
+ "cmid": "5524.002",
+ "second_cmid": "",
+ "shortlist": [
+  "5524.002"
+ ],
+ "confidence": 95,
+ "reason": "Narrative about drafting investor register matches typical fund matters; past entries for 5524.002 involve investor register. Typed CMID matches and matter is open.",
+ "usage": {
+  "inputTokens": 8162,
+  "outputTokens": 318,
+  "totalTokens": 8480
+ },
+ "latency_s": 2.422,
+ "seconds": 2.5384752079989994
+}

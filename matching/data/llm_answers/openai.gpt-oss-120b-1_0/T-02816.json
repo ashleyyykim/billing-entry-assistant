@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02816",
+ "cmid": "6110.002",
+ "second_cmid": "",
+ "shortlist": [
+  "6110.002",
+  "6110.001",
+  "2201.001"
+ ],
+ "confidence": 95,
+ "reason": "Narrative matches acquisition closing tasks for Meridian Thermal Systems (Coldline HVAC) and foreign qualification, aligning with matter 6110.002; date within open period; no evidence of second matter.",
+ "usage": {
+  "inputTokens": 8162,
+  "outputTokens": 915,
+  "totalTokens": 9077
+ },
+ "latency_s": 8.337,
+ "seconds": 8.400070500007132
+}

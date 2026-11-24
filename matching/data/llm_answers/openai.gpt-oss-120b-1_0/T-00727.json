@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00727",
+ "cmid": "8340.001",
+ "second_cmid": "",
+ "shortlist": [
+  "8340.001",
+  "8340.002",
+  "8340.003"
+ ],
+ "confidence": 95,
+ "reason": "Narrative explicitly references 450 Harbor acquisition, matching matter 8340.001; date within matter's active period; no indication of second matter.",
+ "usage": {
+  "inputTokens": 8186,
+  "outputTokens": 286,
+  "totalTokens": 8472
+ },
+ "latency_s": 2.547,
+ "seconds": 2.7662167499947827
+}

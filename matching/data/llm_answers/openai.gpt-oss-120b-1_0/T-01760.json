@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01760",
+ "cmid": "5602.002",
+ "second_cmid": "",
+ "shortlist": [
+  "5602.002",
+  "5602.003",
+  "5602.001"
+ ],
+ "confidence": 70,
+ "reason": "Typed CMID matches client Ironwood Semiconductor; narrative is generic; timekeeper has recent Ironwood activity, but no prior work on this specific matter, so moderate confidence.",
+ "usage": {
+  "inputTokens": 8139,
+  "outputTokens": 760,
+  "totalTokens": 8899
+ },
+ "latency_s": 5.951,
+ "seconds": 6.018810334004229
+}

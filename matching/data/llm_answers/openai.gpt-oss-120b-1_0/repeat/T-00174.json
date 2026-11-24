@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00174",
+ "cmid": "6103.004",
+ "second_cmid": "",
+ "shortlist": [
+  "6103.004",
+  "6103.001",
+  "6103.002"
+ ],
+ "confidence": 95,
+ "reason": "Narrative matches annual meeting Item 5.02 disclosure; matches matter 6103.004 (2026 Annual Meeting) which is open and timekeeper has large history on it.",
+ "usage": {
+  "inputTokens": 8150,
+  "outputTokens": 440,
+  "totalTokens": 8590
+ },
+ "latency_s": 3.816,
+ "seconds": 3.9406597089982824
+}

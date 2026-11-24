@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00974",
+ "cmid": "8340.001",
+ "second_cmid": "",
+ "shortlist": [
+  "8340.001",
+  "8340.002",
+  "8340.003"
+ ],
+ "confidence": 95,
+ "reason": "Narrative matches acquisition work (ALTA survey, title objection) previously recorded for 8340.001; date within matter's open period.",
+ "usage": {
+  "inputTokens": 8167,
+  "outputTokens": 352,
+  "totalTokens": 8519
+ },
+ "latency_s": 1.915,
+ "seconds": 2.0872357079933863
+}

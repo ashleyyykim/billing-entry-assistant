@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00385",
+ "cmid": "3455.002",
+ "second_cmid": "",
+ "shortlist": [
+  "3455.002",
+  "6103.003",
+  "2960.003"
+ ],
+ "confidence": 92,
+ "reason": "Narrative describes board governance work (officer appointments, board minutes, audit committee, D&O questionnaire) matching the Board & Governance matter for Aster & Vale (3455.002). Timekeeper has extensive hours on this matter, indicating primary responsibility.",
+ "usage": {
+  "inputTokens": 8191,
+  "outputTokens": 844,
+  "totalTokens": 9035
+ },
+ "latency_s": 7.012,
+ "seconds": 7.125676083989674
+}

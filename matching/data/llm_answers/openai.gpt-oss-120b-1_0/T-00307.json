@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00307",
+ "cmid": "6103.004",
+ "second_cmid": "",
+ "shortlist": [
+  "6103.004",
+  "6103.001",
+  "6103.003"
+ ],
+ "confidence": 95,
+ "reason": "Narrative mentions XBRL tagging for annual meeting, which matches past entries for Meridian Therapeutics 6103.004; timekeeper has large recent hours on this matter.",
+ "usage": {
+  "inputTokens": 8159,
+  "outputTokens": 461,
+  "totalTokens": 8620
+ },
+ "latency_s": 4.5,
+ "seconds": 4.700774541008286
+}

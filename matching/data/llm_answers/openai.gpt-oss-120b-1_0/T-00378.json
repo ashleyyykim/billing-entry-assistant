@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00378",
+ "cmid": "8340.001",
+ "second_cmid": "",
+ "shortlist": [
+  "8340.001",
+  "8012.001",
+  "8347.001"
+ ],
+ "confidence": 95,
+ "reason": "TK117 has the majority of recent hours on 8340.001, a real estate acquisition matter, and the narrative 'Attend to property acquisition' aligns with that matter.",
+ "usage": {
+  "inputTokens": 8136,
+  "outputTokens": 582,
+  "totalTokens": 8718
+ },
+ "latency_s": 3.623,
+ "seconds": 3.692586499993922
+}

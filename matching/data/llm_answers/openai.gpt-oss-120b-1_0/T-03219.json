@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03219",
+ "cmid": "4471.004",
+ "second_cmid": "",
+ "shortlist": [
+  "4471.004",
+  "4471.001",
+  "4471.003"
+ ],
+ "confidence": 95,
+ "reason": "Narrative explicitly references Fund IV management company agreement and closing schedule, matching Ridgewater Partners Fund IV Formation (4471.004). Matter opened 09/01/2026, work date 09/17/2026 is within active period. No indication of second matter.",
+ "usage": {
+  "inputTokens": 8165,
+  "outputTokens": 591,
+  "totalTokens": 8756
+ },
+ "latency_s": 4.966,
+ "seconds": 5.036030999996001
+}

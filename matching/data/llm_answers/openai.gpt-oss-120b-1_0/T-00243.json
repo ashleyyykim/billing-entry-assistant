@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00243",
+ "cmid": "3120.001",
+ "second_cmid": "5520.002",
+ "shortlist": [
+  "3120.001",
+  "5602.001",
+  "3455.001"
+ ],
+ "confidence": 78,
+ "reason": "Narrative mentions annual filings, which aligns with general corporate matters like Bluefin Robotics (3120.001) where the timekeeper has the most prior hours. The 'other deal' likely refers to a separate active deal such as the Portfolio Co. Sale (5520.002).",
+ "usage": {
+  "inputTokens": 8142,
+  "outputTokens": 1345,
+  "totalTokens": 9487
+ },
+ "latency_s": 10.64,
+ "seconds": 10.76613216700207
+}

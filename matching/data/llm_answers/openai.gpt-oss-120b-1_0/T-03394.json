@@ -1,0 +1,17 @@
+{
+ "entry_id": "T-03394",
+ "cmid": "6103.003",
+ "second_cmid": "",
+ "shortlist": [
+  "6103.003"
+ ],
+ "confidence": 92,
+ "reason": "Typed client Meridian Therapeutics and matter Board & Governance match CMID 6103.003, which is open and aligns with narrative 'Attend to board matters.' No evidence of a second matter.",
+ "usage": {
+  "inputTokens": 8138,
+  "outputTokens": 464,
+  "totalTokens": 8602
+ },
+ "latency_s": 4.6,
+ "seconds": 4.673152083996683
+}

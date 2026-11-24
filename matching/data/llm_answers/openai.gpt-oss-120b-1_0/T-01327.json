@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01327",
+ "cmid": "4590.005",
+ "second_cmid": "",
+ "shortlist": [
+  "4590.005",
+  "3120.005",
+  "2201.005"
+ ],
+ "confidence": 95,
+ "reason": "Narrative references 409A valuation and early exercise, matching Tidewater AI's Equity Plan / 409A matter (4590.005). Client typed as Tidewater AI confirms.",
+ "usage": {
+  "inputTokens": 8153,
+  "outputTokens": 492,
+  "totalTokens": 8645
+ },
+ "latency_s": 2.636,
+ "seconds": 2.7026757919957163
+}

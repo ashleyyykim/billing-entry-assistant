@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01527",
+ "cmid": "3120.001",
+ "second_cmid": "",
+ "shortlist": [
+  "3120.001",
+  "2201.001",
+  "2956.001"
+ ],
+ "confidence": 95,
+ "reason": "Narrative matches typical tasks for Bluefin Robotics General Corporate matter; timekeeper's history shows primary focus on 3120.001; date within matter's open period.",
+ "usage": {
+  "inputTokens": 8147,
+  "outputTokens": 441,
+  "totalTokens": 8588
+ },
+ "latency_s": 2.081,
+ "seconds": 2.248312124997028
+}

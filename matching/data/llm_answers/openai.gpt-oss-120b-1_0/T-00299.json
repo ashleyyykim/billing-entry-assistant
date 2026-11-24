@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00299",
+ "cmid": "6103.004",
+ "second_cmid": "6103.002",
+ "shortlist": [
+  "6103.004",
+  "6103.002",
+  "6103.001"
+ ],
+ "confidence": 80,
+ "reason": "Narrative matches SEC-related work (insider trading policy XBRL tagging) typical for Meridian's SEC Reporting or Annual Meeting matters; date aligns with closure of 2026 Annual Meeting (6103.004). Separate financing suggests a follow\u2011on offering (6103.002).",
+ "usage": {
+  "inputTokens": 8147,
+  "outputTokens": 1221,
+  "totalTokens": 9368
+ },
+ "latency_s": 11.352,
+ "seconds": 11.419089541988797
+}

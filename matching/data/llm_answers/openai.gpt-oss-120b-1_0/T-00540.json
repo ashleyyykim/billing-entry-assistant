@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00540",
+ "cmid": "5524.002",
+ "second_cmid": "",
+ "shortlist": [
+  "5524.002",
+  "5524.001",
+  "5524.003"
+ ],
+ "confidence": 95,
+ "reason": "Narrative about LPAC approval and GP interest transfer matches past entries for Cobalt Ridge Partners General Fund Matters (5524.002); timekeeper has large recent hours on this matter.",
+ "usage": {
+  "inputTokens": 8178,
+  "outputTokens": 494,
+  "totalTokens": 8672
+ },
+ "latency_s": 3.991,
+ "seconds": 4.05564420799783
+}

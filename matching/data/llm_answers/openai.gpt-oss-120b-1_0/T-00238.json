@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00238",
+ "cmid": "2201.001",
+ "second_cmid": "",
+ "shortlist": [
+  "2201.001",
+  "2201.005",
+  "2201.003"
+ ],
+ "confidence": 95,
+ "reason": "Narrative about annual stockholder consent on employee matters aligns with General Corporate work for Harborlight Bio (2201.001); typed CMID has an extra zero; timekeeper's primary billing is to 2201.001.",
+ "usage": {
+  "inputTokens": 8149,
+  "outputTokens": 618,
+  "totalTokens": 8767
+ },
+ "latency_s": 5.261,
+ "seconds": 5.453638624996529
+}

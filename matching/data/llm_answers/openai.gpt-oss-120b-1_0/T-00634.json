@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00634",
+ "cmid": "3019.001",
+ "second_cmid": "",
+ "shortlist": [
+  "3019.001",
+  "3019.002",
+  "3019.001"
+ ],
+ "confidence": 95,
+ "reason": "Narrative about emails with CEO on a customer contract fits the General Corporate matter for Halverson Industries (3019.001). Typed client matches, and no other matter aligns better.",
+ "usage": {
+  "inputTokens": 8144,
+  "outputTokens": 472,
+  "totalTokens": 8616
+ },
+ "latency_s": 4.768,
+ "seconds": 4.838130333999288
+}

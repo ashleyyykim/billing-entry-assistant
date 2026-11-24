@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00080",
+ "cmid": "2956.001",
+ "second_cmid": "",
+ "shortlist": [
+  "2956.001",
+  "2201.001",
+  "2207.001"
+ ],
+ "confidence": 85,
+ "reason": "Narrative exactly matches past entry for 2956.001 (review DPA, update issues list). Typed client likely typo; no DPA work recorded for Harborlight Bio matters.",
+ "usage": {
+  "inputTokens": 8143,
+  "outputTokens": 756,
+  "totalTokens": 8899
+ },
+ "latency_s": 4.585,
+ "seconds": 4.655123791002552
+}

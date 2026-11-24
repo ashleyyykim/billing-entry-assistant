@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02003",
+ "cmid": "3120.001",
+ "second_cmid": "",
+ "shortlist": [
+  "3120.001",
+  "3120.002",
+  "3120.003"
+ ],
+ "confidence": 70,
+ "reason": "Narrative mentions Bluefin Robotics emails; likely general corporate correspondence, matching Bluefin's General Corporate matter (3120.001). No evidence for financing or equity plan.",
+ "usage": {
+  "inputTokens": 8139,
+  "outputTokens": 502,
+  "totalTokens": 8641
+ },
+ "latency_s": 4.641,
+ "seconds": 4.709014833992114
+}

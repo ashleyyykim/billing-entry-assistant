@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01604",
+ "cmid": "9140.001",
+ "second_cmid": "",
+ "shortlist": [
+  "9140.001",
+  "9140.002",
+  "2215.001"
+ ],
+ "confidence": 95,
+ "reason": "Narrative references Fund II formation tasks (LPAC composition, Form D, blue sky filings, first close) for Juniper Peak Capital, matching matter 9140.001. Timekeeper's history shows extensive work on 9140.001.",
+ "usage": {
+  "inputTokens": 8198,
+  "outputTokens": 566,
+  "totalTokens": 8764
+ },
+ "latency_s": 5.533,
+ "seconds": 5.6051591669966
+}

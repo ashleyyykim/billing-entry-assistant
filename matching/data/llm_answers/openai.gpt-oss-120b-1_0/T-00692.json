@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00692",
+ "cmid": "3455.001",
+ "second_cmid": "",
+ "shortlist": [
+  "3455.001",
+  "6103.001",
+  "5602.001"
+ ],
+ "confidence": 95,
+ "reason": "Narrative about Section 16 filings aligns with SEC reporting; typed client 'Aster &' matches Aster & Vale; timekeeper has prior hours on 3455.001.",
+ "usage": {
+  "inputTokens": 8140,
+  "outputTokens": 444,
+  "totalTokens": 8584
+ },
+ "latency_s": 3.325,
+ "seconds": 3.432203999997
+}

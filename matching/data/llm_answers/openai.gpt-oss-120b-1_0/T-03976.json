@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03976",
+ "cmid": "4471.004",
+ "second_cmid": "",
+ "shortlist": [
+  "4471.004",
+  "4471.001",
+  "4471.002"
+ ],
+ "confidence": 95,
+ "reason": "Narrative mentions LPAC composition for Fund IV, matching the Fund IV Formation matter (4471.004) opened 09/01/2026; typed client RWP aligns with Ridgewater Partners.",
+ "usage": {
+  "inputTokens": 8149,
+  "outputTokens": 688,
+  "totalTokens": 8837
+ },
+ "latency_s": 2.934,
+ "seconds": 3.0074960830097552
+}

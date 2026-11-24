@@ -1,0 +1,17 @@
+{
+ "entry_id": "T-01699",
+ "cmid": "9028.003",
+ "second_cmid": "",
+ "shortlist": [
+  "9028.003"
+ ],
+ "confidence": 95,
+ "reason": "Narrative about 83(b) filings and financing aligns with Exec Comp/409A work for Lanternfish Software; timekeeper's history shows large prior work on 9028.003; matter is open on the date.",
+ "usage": {
+  "inputTokens": 8154,
+  "outputTokens": 356,
+  "totalTokens": 8510
+ },
+ "latency_s": 2.147,
+ "seconds": 2.3553360829973826
+}

@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03198",
+ "cmid": "5524.003",
+ "second_cmid": "",
+ "shortlist": [
+  "5524.003",
+  "5524.002",
+  "5520.004"
+ ],
+ "confidence": 95,
+ "reason": "Typed CMID matches a listed matter (Investment - Vantage Bio) and narrative about GP interest transfer and LPAC approval aligns with fund investment work; timekeeper's recent activity shows heavy work on Cobalt Ridge Partners fund matters.",
+ "usage": {
+  "inputTokens": 8188,
+  "outputTokens": 451,
+  "totalTokens": 8639
+ },
+ "latency_s": 3.802,
+ "seconds": 3.982429707990377
+}

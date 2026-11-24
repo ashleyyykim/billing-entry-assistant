@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00767",
+ "cmid": "8340.001",
+ "second_cmid": "",
+ "shortlist": [
+  "8340.001",
+  "8340.002",
+  "8340.003"
+ ],
+ "confidence": 95,
+ "reason": "Narrative references Phase I environmental for 450 Harbor, which is the acquisition matter 8340.001; typed CMID points to lease but content matches acquisition.",
+ "usage": {
+  "inputTokens": 8158,
+  "outputTokens": 425,
+  "totalTokens": 8583
+ },
+ "latency_s": 2.63,
+ "seconds": 2.695730499995989
+}

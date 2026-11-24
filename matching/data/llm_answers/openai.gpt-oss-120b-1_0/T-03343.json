@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03343",
+ "cmid": "9140.002",
+ "second_cmid": "",
+ "shortlist": [
+  "9140.002",
+  "9140.001",
+  "2215.001"
+ ],
+ "confidence": 92,
+ "reason": "Narrative mentions capital call notice, which aligns with Juniper Peak Capital's General Fund Matters (9140.002) where past entries involve capital call notices. Closing schedule also fits fund matters. Timekeeper's recent hours include 9140.002.",
+ "usage": {
+  "inputTokens": 8161,
+  "outputTokens": 738,
+  "totalTokens": 8899
+ },
+ "latency_s": 6.597,
+ "seconds": 6.669468542007962
+}

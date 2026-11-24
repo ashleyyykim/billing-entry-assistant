@@ -1,0 +1,15 @@
+{
+ "entry_id": "T-02777",
+ "cmid": "NONE",
+ "second_cmid": "",
+ "shortlist": [],
+ "confidence": 95,
+ "reason": "Client 'Juniper Labs' does not appear in the provided matter list; no matching CMID found.",
+ "usage": {
+  "inputTokens": 8140,
+  "outputTokens": 499,
+  "totalTokens": 8639
+ },
+ "latency_s": 3.295,
+ "seconds": 3.3651106670004083
+}

@@ -1,0 +1,17 @@
+{
+ "entry_id": "T-03220",
+ "cmid": "3120.001",
+ "second_cmid": "",
+ "shortlist": [
+  "3120.001"
+ ],
+ "confidence": 95,
+ "reason": "Narrative mentions drafting employee offer letter, which aligns with Bluefin Robotics General Corporate matter (3120.001) where employee matters are handled. No matching matter for Northstar Health Ventures, so second_cmid left blank.",
+ "usage": {
+  "inputTokens": 8163,
+  "outputTokens": 684,
+  "totalTokens": 8847
+ },
+ "latency_s": 6.014,
+ "seconds": 6.213494166004239
+}

@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01373",
+ "cmid": "2960.001",
+ "second_cmid": "",
+ "shortlist": [
+  "2960.001",
+  "2960.002",
+  "2960.003"
+ ],
+ "confidence": 70,
+ "reason": "Client is Solace Health; timekeeper has recent activity on Solace Health matters. A brief phone call likely pertains to the general corporate matter, which is the most routine.",
+ "usage": {
+  "inputTokens": 8138,
+  "outputTokens": 1370,
+  "totalTokens": 9508
+ },
+ "latency_s": 9.73,
+ "seconds": 9.807628958005807
+}

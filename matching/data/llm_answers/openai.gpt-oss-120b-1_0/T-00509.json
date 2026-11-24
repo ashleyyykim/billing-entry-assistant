@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00509",
+ "cmid": "5524.001",
+ "second_cmid": "",
+ "shortlist": [
+  "5524.001",
+  "2215.002",
+  "9140.001"
+ ],
+ "confidence": 92,
+ "reason": "Narrative matches fund formation; typed CMID is a fund formation matter and timekeeper has prior hours on 5524.001, making it the most likely match.",
+ "usage": {
+  "inputTokens": 8140,
+  "outputTokens": 492,
+  "totalTokens": 8632
+ },
+ "latency_s": 2.763,
+ "seconds": 2.9802365409996128
+}

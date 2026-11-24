@@ -1,0 +1,17 @@
+{
+ "entry_id": "T-03461",
+ "cmid": "8340.001",
+ "second_cmid": "",
+ "shortlist": [
+  "8340.001"
+ ],
+ "confidence": 95,
+ "reason": "Typed CMID and client match the timekeeper's primary matter with extensive prior hours; narrative is generic but consistent.",
+ "usage": {
+  "inputTokens": 8144,
+  "outputTokens": 391,
+  "totalTokens": 8535
+ },
+ "latency_s": 4.156,
+ "seconds": 4.23576325000613
+}

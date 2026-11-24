@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00562",
+ "cmid": "3120.001",
+ "second_cmid": "",
+ "shortlist": [
+  "3120.001",
+  "2207.001",
+  "2201.001"
+ ],
+ "confidence": 95,
+ "reason": "Narrative matches past entries for 3120.001 (consulting/agmt employee matters and good standing requests). Prior hours show TK109 works heavily on this matter.",
+ "usage": {
+  "inputTokens": 8154,
+  "outputTokens": 382,
+  "totalTokens": 8536
+ },
+ "latency_s": 2.734,
+ "seconds": 2.846222583000781
+}

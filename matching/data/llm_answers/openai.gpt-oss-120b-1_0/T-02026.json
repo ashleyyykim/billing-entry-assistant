@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02026",
+ "cmid": "5524.001",
+ "second_cmid": "",
+ "shortlist": [
+  "5524.001",
+  "2215.001",
+  "4471.001"
+ ],
+ "confidence": 95,
+ "reason": "Narrative about tracking closing schedule, open items, and carried interest waterfall aligns with fund formation work for Cobalt Ridge Partners Fund II Formation (5524.001); matches past entries and timekeeper's history.",
+ "usage": {
+  "inputTokens": 8156,
+  "outputTokens": 440,
+  "totalTokens": 8596
+ },
+ "latency_s": 3.088,
+ "seconds": 3.1923980000137817
+}

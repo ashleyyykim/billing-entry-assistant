@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01957",
+ "cmid": "7215.003",
+ "second_cmid": "",
+ "shortlist": [
+  "7215.003",
+  "7215.004",
+  "7215.005"
+ ],
+ "confidence": 92,
+ "reason": "Narrative about pricing grid and closing deliverables aligns with credit facility work for Northgate Bank; typed CMID matches and timekeeper has extensive prior hours on 7215.003.",
+ "usage": {
+  "inputTokens": 8157,
+  "outputTokens": 564,
+  "totalTokens": 8721
+ },
+ "latency_s": 3.674,
+ "seconds": 3.738658000002033
+}

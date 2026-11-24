@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03626",
+ "cmid": "6230.001",
+ "second_cmid": "",
+ "shortlist": [
+  "6230.001",
+  "3012.001",
+  "2207.001"
+ ],
+ "confidence": 92,
+ "reason": "Narrative matches corporate bylaws drafting for Ember Grid Energy; timekeeper has significant prior hours on 6230.001 and no indication of a second matter.",
+ "usage": {
+  "inputTokens": 8150,
+  "outputTokens": 488,
+  "totalTokens": 8638
+ },
+ "latency_s": 4.218,
+ "seconds": 4.2840872920060065
+}

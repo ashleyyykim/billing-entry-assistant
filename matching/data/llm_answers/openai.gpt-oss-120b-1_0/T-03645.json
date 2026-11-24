@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03645",
+ "cmid": "5520.001",
+ "second_cmid": "",
+ "shortlist": [
+  "5520.001",
+  "5520.003",
+  "5520.004"
+ ],
+ "confidence": 92,
+ "reason": "Narrative references 'Larkspur' which aligns with Project Lark acquisition (5520.001). Typed CMID 5520.005 is closed before work date, so incorrect.",
+ "usage": {
+  "inputTokens": 8153,
+  "outputTokens": 504,
+  "totalTokens": 8657
+ },
+ "latency_s": 4.345,
+ "seconds": 4.413340792001691
+}

@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02967",
+ "cmid": "2960.003",
+ "second_cmid": "",
+ "shortlist": [
+  "2960.003",
+  "3455.002",
+  "6103.003"
+ ],
+ "confidence": 95,
+ "reason": "Narrative mentions board consent and audit committee charter, matching Solace Health Board Matters (2960.003). Typed client misspelled as Soace Health, matching Solace Health. Timekeeper has large prior hours on 2960.003.",
+ "usage": {
+  "inputTokens": 8159,
+  "outputTokens": 511,
+  "totalTokens": 8670
+ },
+ "latency_s": 2.121,
+ "seconds": 2.189925457991194
+}

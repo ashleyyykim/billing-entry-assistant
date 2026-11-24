@@ -1,0 +1,17 @@
+{
+ "entry_id": "T-00398",
+ "cmid": "5602.003",
+ "second_cmid": "",
+ "shortlist": [
+  "5602.003"
+ ],
+ "confidence": 95,
+ "reason": "Narrative references Quanta Photonics acquisition, matching matter 5602.003; timekeeper has recent hours on this matter, and typed CMID appears to be a typo of 5602.003.",
+ "usage": {
+  "inputTokens": 8198,
+  "outputTokens": 298,
+  "totalTokens": 8496
+ },
+ "latency_s": 1.783,
+ "seconds": 1.9011784169997554
+}

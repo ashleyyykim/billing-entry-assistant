@@ -1,0 +1,18 @@
+{
+ "entry_id": "T-03192",
+ "cmid": "5520.001",
+ "second_cmid": "7410.001",
+ "shortlist": [
+  "5520.001",
+  "7410.001"
+ ],
+ "confidence": 95,
+ "reason": "Narrative references MAC definition for Larkspur (Cobalt Ridge Capital Project Lark) and bylaws work for Orchard Lane Health, matching matters 5520.001 and 7410.001.",
+ "usage": {
+  "inputTokens": 8169,
+  "outputTokens": 544,
+  "totalTokens": 8713
+ },
+ "latency_s": 5.435,
+ "seconds": 5.502975750001497
+}

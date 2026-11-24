@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03107",
+ "cmid": "2201.001",
+ "second_cmid": "",
+ "shortlist": [
+  "2201.001",
+  "2201.003",
+  "2207.001"
+ ],
+ "confidence": 95,
+ "reason": "Narrative describes foreign qualification filings for Harborlight Bio, matching its General Corporate matter 2201.001, which is the timekeeper's primary matter.",
+ "usage": {
+  "inputTokens": 8169,
+  "outputTokens": 448,
+  "totalTokens": 8617
+ },
+ "latency_s": 3.942,
+ "seconds": 4.008558499990613
+}

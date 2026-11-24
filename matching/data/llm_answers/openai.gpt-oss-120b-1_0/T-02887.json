@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02887",
+ "cmid": "8012.001",
+ "second_cmid": "",
+ "shortlist": [
+  "8012.001",
+  "8340.001",
+  "8340.002"
+ ],
+ "confidence": 85,
+ "reason": "Narrative about due diligence and rent roll fits a real estate acquisition; timekeeper has significant prior hours on 8012.001 (Acquisition of 9 Pine St.) and less on other RE matters, making 8012.001 the most likely match.",
+ "usage": {
+  "inputTokens": 8156,
+  "outputTokens": 942,
+  "totalTokens": 9098
+ },
+ "latency_s": 7.952,
+ "seconds": 8.153199958993355
+}

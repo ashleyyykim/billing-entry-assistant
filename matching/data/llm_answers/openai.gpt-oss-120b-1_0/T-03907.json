@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03907",
+ "cmid": "7633.002",
+ "second_cmid": "",
+ "shortlist": [
+  "7633.002",
+  "2201.002",
+  "4590.003"
+ ],
+ "confidence": 92,
+ "reason": "Narrative references reviewing a Series A side letter and pay-to-play certificate of incorporation, matching the Series A financing matter for Copperline Networks (7633.002) opened July 2026.",
+ "usage": {
+  "inputTokens": 8170,
+  "outputTokens": 542,
+  "totalTokens": 8712
+ },
+ "latency_s": 4.111,
+ "seconds": 4.233640916994773
+}

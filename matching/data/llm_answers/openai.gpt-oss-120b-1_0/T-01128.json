@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01128",
+ "cmid": "8340.001",
+ "second_cmid": "",
+ "shortlist": [
+  "8340.001",
+  "8340.002",
+  "7215.003"
+ ],
+ "confidence": 95,
+ "reason": "Narrative references 450 Harbor acquisition and M. Carter, matching past entries for matter 8340.001 (Acquisition of 450 Harbor St.) and timekeeper's prior work on that matter.",
+ "usage": {
+  "inputTokens": 8168,
+  "outputTokens": 457,
+  "totalTokens": 8625
+ },
+ "latency_s": 3.806,
+ "seconds": 3.8838529999920866
+}

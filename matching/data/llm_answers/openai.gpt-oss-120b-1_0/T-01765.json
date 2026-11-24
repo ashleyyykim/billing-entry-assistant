@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01765",
+ "cmid": "5520.001",
+ "second_cmid": "9035.001",
+ "shortlist": [
+  "5520.001",
+  "9035.001",
+  "9035.002"
+ ],
+ "confidence": 92,
+ "reason": "Narrative mentions key employee retention and financing commitment letter, matching past entries for 5520.001; also references consulting agreement for Lantern Software Group, likely its General Corporate matter 9035.001.",
+ "usage": {
+  "inputTokens": 8182,
+  "outputTokens": 776,
+  "totalTokens": 8958
+ },
+ "latency_s": 3.686,
+ "seconds": 3.84914312500041
+}

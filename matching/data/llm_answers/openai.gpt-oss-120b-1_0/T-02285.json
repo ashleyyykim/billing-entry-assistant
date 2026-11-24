@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02285",
+ "cmid": "5524.002",
+ "second_cmid": "",
+ "shortlist": [
+  "5524.002",
+  "5524.001",
+  "4471.003"
+ ],
+ "confidence": 95,
+ "reason": "Narrative about distribution waterfall, fund extension, capital call notices aligns with General Fund Matters for Cobalt Ridge Partners (5524.002); timekeeper has significant recent hours on this matter.",
+ "usage": {
+  "inputTokens": 8175,
+  "outputTokens": 514,
+  "totalTokens": 8689
+ },
+ "latency_s": 5.321,
+ "seconds": 5.389197333002812
+}

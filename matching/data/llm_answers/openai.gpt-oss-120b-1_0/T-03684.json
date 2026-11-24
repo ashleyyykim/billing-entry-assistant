@@ -1,0 +1,17 @@
+{
+ "entry_id": "T-03684",
+ "cmid": "1111.001",
+ "second_cmid": "",
+ "shortlist": [
+  "1111.001"
+ ],
+ "confidence": 95,
+ "reason": "Narrative matches internal firm meeting; typed CMID aligns with admin matter; timekeeper has prior hours on this matter.",
+ "usage": {
+  "inputTokens": 8137,
+  "outputTokens": 195,
+  "totalTokens": 8332
+ },
+ "latency_s": 2.261,
+ "seconds": 2.3223960000032093
+}

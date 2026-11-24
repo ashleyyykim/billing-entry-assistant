@@ -1,0 +1,17 @@
+{
+ "entry_id": "T-03091",
+ "cmid": "3455.002",
+ "second_cmid": "",
+ "shortlist": [
+  "3455.002"
+ ],
+ "confidence": 95,
+ "reason": "Narrative about incorporating comments into committee charters aligns with Board & Governance work, matching the typed CMID and the timekeeper's primary matter.",
+ "usage": {
+  "inputTokens": 8148,
+  "outputTokens": 309,
+  "totalTokens": 8457
+ },
+ "latency_s": 2.849,
+ "seconds": 2.993122542000492
+}

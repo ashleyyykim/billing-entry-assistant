@@ -1,0 +1,17 @@
+{
+ "entry_id": "T-01193",
+ "cmid": "4590.004",
+ "second_cmid": "",
+ "shortlist": [
+  "4590.004"
+ ],
+ "confidence": 95,
+ "reason": "Narrative mentions tracking signature pages for Enterprise MSAs, matching Tidewater AI's Commercial - Enterprise MSAs matter (4590.004).",
+ "usage": {
+  "inputTokens": 8141,
+  "outputTokens": 406,
+  "totalTokens": 8547
+ },
+ "latency_s": 1.92,
+ "seconds": 2.106864625005983
+}

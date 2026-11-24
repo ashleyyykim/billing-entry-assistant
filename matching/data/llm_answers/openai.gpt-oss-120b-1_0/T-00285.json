@@ -1,0 +1,17 @@
+{
+ "entry_id": "T-00285",
+ "cmid": "6103.004",
+ "second_cmid": "",
+ "shortlist": [
+  "6103.004"
+ ],
+ "confidence": 96,
+ "reason": "Narrative about annual meeting DEF 14A matches Meridian Therapeutics 2026 Annual Meeting (6103.004); timekeeper's recent hours heavily on this matter and client name typo aligns.",
+ "usage": {
+  "inputTokens": 8169,
+  "outputTokens": 451,
+  "totalTokens": 8620
+ },
+ "latency_s": 4.703,
+ "seconds": 4.771529584002565
+}

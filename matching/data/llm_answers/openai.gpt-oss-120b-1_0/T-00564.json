@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00564",
+ "cmid": "9140.001",
+ "second_cmid": "",
+ "shortlist": [
+  "9140.001",
+  "5524.001",
+  "2215.002"
+ ],
+ "confidence": 95,
+ "reason": "Narrative mentions drafting Fund II blue sky filings; typed CMID resembles garbled 9140.001; timekeeper has extensive prior work on 9140.001, matching client Juniper Peak Capital Fund II Formation.",
+ "usage": {
+  "inputTokens": 8149,
+  "outputTokens": 1116,
+  "totalTokens": 9265
+ },
+ "latency_s": 9.578,
+ "seconds": 9.77902504200756
+}

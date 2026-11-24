@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02966",
+ "cmid": "1111.002",
+ "second_cmid": "",
+ "shortlist": [
+  "1111.002",
+  "1111.001",
+  "1111.003"
+ ],
+ "confidence": 96,
+ "reason": "Narrative describes preparing an engagement letter for a prospective client, which aligns with the Firm's Business Development matter (1111.002); typed CMID matches and the matter is open.",
+ "usage": {
+  "inputTokens": 8142,
+  "outputTokens": 322,
+  "totalTokens": 8464
+ },
+ "latency_s": 1.545,
+ "seconds": 1.654229124993435
+}

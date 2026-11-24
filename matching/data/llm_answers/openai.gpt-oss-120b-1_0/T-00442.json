@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00442",
+ "cmid": "2201.001",
+ "second_cmid": "",
+ "shortlist": [
+  "2201.001",
+  "9028.001",
+  "1111.001"
+ ],
+ "confidence": 93,
+ "reason": "Narrative indicates a general corporate call; TK106's primary general corporate matter is Harborlight Bio (2201.001) with extensive prior hours, matching the typed matter and timing.",
+ "usage": {
+  "inputTokens": 8140,
+  "outputTokens": 601,
+  "totalTokens": 8741
+ },
+ "latency_s": 5.156,
+ "seconds": 5.2260565840115305
+}

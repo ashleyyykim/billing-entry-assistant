@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01688",
+ "cmid": "9140.001",
+ "second_cmid": "",
+ "shortlist": [
+  "9140.001",
+  "9140.002",
+  "2215.002"
+ ],
+ "confidence": 85,
+ "reason": "Client name matches Juniper Peak Capital; timekeeper has large recent hours on 9140.001; Zoom likely related to fund formation or general fund matters, most probable is 9140.001.",
+ "usage": {
+  "inputTokens": 8141,
+  "outputTokens": 474,
+  "totalTokens": 8615
+ },
+ "latency_s": 2.218,
+ "seconds": 2.3840307500067865
+}

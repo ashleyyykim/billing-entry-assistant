@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02908",
+ "cmid": "3120.001",
+ "second_cmid": "",
+ "shortlist": [
+  "3120.001",
+  "5602.001",
+  "3455.001"
+ ],
+ "confidence": 85,
+ "reason": "Narrative 'Track annual filings' aligns with corporate filing work; timekeeper's primary matter is 3120.001 (Bluefin General Corporate) with large hours, making it the most likely match despite other SEC reporting matters.",
+ "usage": {
+  "inputTokens": 8140,
+  "outputTokens": 592,
+  "totalTokens": 8732
+ },
+ "latency_s": 2.692,
+ "seconds": 2.842941958006122
+}

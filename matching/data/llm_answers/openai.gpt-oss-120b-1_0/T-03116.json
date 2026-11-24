@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03116",
+ "cmid": "4471.004",
+ "second_cmid": "",
+ "shortlist": [
+  "4471.004",
+  "4471.001",
+  "4471.002"
+ ],
+ "confidence": 95,
+ "reason": "Narrative references Fund IV formation and ERISA status for Fund IV; client matches Ridgewater Partners (misspelled). Fund IV Formation matter 4471.004 opened 09/01/2026, active on 2026-09-15.",
+ "usage": {
+  "inputTokens": 8165,
+  "outputTokens": 564,
+  "totalTokens": 8729
+ },
+ "latency_s": 4.566,
+ "seconds": 4.628124792012386
+}

@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03744",
+ "cmid": "8340.001",
+ "second_cmid": "",
+ "shortlist": [
+  "8340.001",
+  "8340.002",
+  "7215.002"
+ ],
+ "confidence": 95,
+ "reason": "Narrative about analyzing tenant estoppels for Harbor St aligns with the acquisition matter 8340.001, which is active on the work date.",
+ "usage": {
+  "inputTokens": 8138,
+  "outputTokens": 319,
+  "totalTokens": 8457
+ },
+ "latency_s": 2.93,
+ "seconds": 3.1280915410025045
+}

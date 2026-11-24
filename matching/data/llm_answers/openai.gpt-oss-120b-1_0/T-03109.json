@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03109",
+ "cmid": "3012.001",
+ "second_cmid": "",
+ "shortlist": [
+  "3012.001",
+  "2201.001",
+  "3019.001"
+ ],
+ "confidence": 85,
+ "reason": "Narrative mentions reviewing foreign qualification, which matches past entries for 3012.001; typed CMID likely erroneous.",
+ "usage": {
+  "inputTokens": 8143,
+  "outputTokens": 833,
+  "totalTokens": 8976
+ },
+ "latency_s": 4.801,
+ "seconds": 4.870581041992409
+}

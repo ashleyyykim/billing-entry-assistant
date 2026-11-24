@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01348",
+ "cmid": "9140.002",
+ "second_cmid": "",
+ "shortlist": [
+  "9140.002",
+  "9140.001",
+  "2215.001"
+ ],
+ "confidence": 95,
+ "reason": "Typed CMID is a typo of 9140.002; client and matter match; timekeeper has recent hours on this matter; date within open period.",
+ "usage": {
+  "inputTokens": 8142,
+  "outputTokens": 299,
+  "totalTokens": 8441
+ },
+ "latency_s": 2.927,
+ "seconds": 2.9901857080112677
+}

@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01591",
+ "cmid": "2207.001",
+ "second_cmid": "",
+ "shortlist": [
+  "2207.001",
+  "3012.005",
+  "2207.003"
+ ],
+ "confidence": 92,
+ "reason": "Narrative exactly matches past entry for 2207.001 ('Review and respond to emails'). Timekeeper has prior Harborline Biosciences work (2207.003). Typed CMID/client likely incorrect.",
+ "usage": {
+  "inputTokens": 8147,
+  "outputTokens": 845,
+  "totalTokens": 8992
+ },
+ "latency_s": 4.755,
+ "seconds": 4.825811834001797
+}

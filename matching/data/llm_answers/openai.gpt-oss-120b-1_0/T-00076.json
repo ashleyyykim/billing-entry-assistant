@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00076",
+ "cmid": "6103.001",
+ "second_cmid": "",
+ "shortlist": [
+  "6103.001",
+  "3455.001",
+  "6103.004"
+ ],
+ "confidence": 85,
+ "reason": "Narrative about drafting a trading policy aligns with SEC Reporting matters; Meridian Therapeutics' SEC Reporting matter is 6103.001. Typed CMID 6103.005 (ATM Program) is inconsistent. Timekeeper has extensive recent work on Meridian SEC matters (6103.004), supporting this assignment.",
+ "usage": {
+  "inputTokens": 8149,
+  "outputTokens": 707,
+  "totalTokens": 8856
+ },
+ "latency_s": 8.736,
+ "seconds": 8.959287083009258
+}

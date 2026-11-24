@@ -1,0 +1,17 @@
+{
+ "entry_id": "T-00116",
+ "cmid": "4590.003",
+ "second_cmid": "",
+ "shortlist": [
+  "4590.003"
+ ],
+ "confidence": 95,
+ "reason": "Typed client Tidewater AI matches matter 4590.003 (Series B Financing). Prior hours show TK109 worked on 4590.003. Narrative mentions all\u2011hands financing call and reading a series SPA, consistent with a financing matter. Date falls within matter's open period.",
+ "usage": {
+  "inputTokens": 8158,
+  "outputTokens": 1120,
+  "totalTokens": 9278
+ },
+ "latency_s": 8.151,
+ "seconds": 8.268368791003013
+}

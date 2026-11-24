@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03399",
+ "cmid": "8340.001",
+ "second_cmid": "",
+ "shortlist": [
+  "8340.001",
+  "8340.003",
+  "8340.002"
+ ],
+ "confidence": 92,
+ "reason": "Narrative mentions Zoom with M. Carter, who appears in past entries for 8340.001 (title exception discussions). Timekeeper has extensive hours on 8340.001, indicating primary work on that matter. Typed CMID likely a typo.",
+ "usage": {
+  "inputTokens": 8141,
+  "outputTokens": 491,
+  "totalTokens": 8632
+ },
+ "latency_s": 4.563,
+ "seconds": 4.6245748340006685
+}

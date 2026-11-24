@@ -1,0 +1,15 @@
+{
+ "entry_id": "T-00553",
+ "cmid": "NONE",
+ "second_cmid": "",
+ "shortlist": [],
+ "confidence": 100,
+ "reason": "Client 'Quuill & Anchor' does not match any client in the matter list; no clear narrative link to any listed matter.",
+ "usage": {
+  "inputTokens": 8146,
+  "outputTokens": 771,
+  "totalTokens": 8917
+ },
+ "latency_s": 6.559,
+ "seconds": 6.670031000001472
+}

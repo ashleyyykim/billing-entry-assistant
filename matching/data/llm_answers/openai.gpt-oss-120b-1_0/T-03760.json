@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03760",
+ "cmid": "2960.001",
+ "second_cmid": "",
+ "shortlist": [
+  "2960.001",
+  "2960.002",
+  "2960.003"
+ ],
+ "confidence": 95,
+ "reason": "Narrative describes drafting employee offer letter and reviewing advisor agreement for closing, typical tasks for Solace Health's General Corporate matter (2960.001). Typed client matches, and the matter is open on the work date.",
+ "usage": {
+  "inputTokens": 8156,
+  "outputTokens": 654,
+  "totalTokens": 8810
+ },
+ "latency_s": 5.83,
+ "seconds": 5.901604667000356
+}

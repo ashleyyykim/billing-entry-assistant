@@ -1,0 +1,18 @@
+{
+ "entry_id": "T-03720",
+ "cmid": "9140.001",
+ "second_cmid": "",
+ "shortlist": [
+  "9140.001",
+  "7222.001"
+ ],
+ "confidence": 95,
+ "reason": "Narrative about GP call on LPAC composition aligns with Juniper Peak Capital Fund II Formation (9140.001); timekeeper has extensive hours on this matter and typed CMID matches.",
+ "usage": {
+  "inputTokens": 8146,
+  "outputTokens": 421,
+  "totalTokens": 8567
+ },
+ "latency_s": 2.465,
+ "seconds": 2.6468703749997076
+}

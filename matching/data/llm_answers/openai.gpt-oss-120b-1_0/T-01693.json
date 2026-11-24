@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01693",
+ "cmid": "8347.001",
+ "second_cmid": "",
+ "shortlist": [
+  "8347.001",
+  "8340.001",
+  "8340.002"
+ ],
+ "confidence": 92,
+ "reason": "Typed CMID matches an open acquisition matter; timekeeper has recent work on related Pelican Bay and Pelican Row acquisition and lease matters, making this the most likely assignment.",
+ "usage": {
+  "inputTokens": 8126,
+  "outputTokens": 586,
+  "totalTokens": 8712
+ },
+ "latency_s": 5.32,
+ "seconds": 5.528885584004456
+}

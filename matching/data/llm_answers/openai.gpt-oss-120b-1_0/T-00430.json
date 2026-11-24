@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00430",
+ "cmid": "8340.001",
+ "second_cmid": "",
+ "shortlist": [
+  "8340.001",
+  "8340.002",
+  "8340.003"
+ ],
+ "confidence": 95,
+ "reason": "Narrative explicitly mentions managing the 450 Harbor closing, which matches matter 8340.001 (Acquisition of 450 Harbor St.) and timekeeper has recent hours on this matter.",
+ "usage": {
+  "inputTokens": 8170,
+  "outputTokens": 307,
+  "totalTokens": 8477
+ },
+ "latency_s": 1.923,
+ "seconds": 1.9877627499954542
+}

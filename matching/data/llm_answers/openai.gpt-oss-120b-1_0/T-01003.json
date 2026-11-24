@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01003",
+ "cmid": "2201.001",
+ "second_cmid": "",
+ "shortlist": [
+  "2201.001",
+  "2201.005",
+  "2207.001"
+ ],
+ "confidence": 95,
+ "reason": "Narrative mentions entity maintenance and revising good standing certificates, which are core tasks of Harborlight Bio General Corporate (2201.001). K. Osei appears in Harborlight Bio matters, supporting this assignment. Date falls within matter's active period.",
+ "usage": {
+  "inputTokens": 8155,
+  "outputTokens": 481,
+  "totalTokens": 8636
+ },
+ "latency_s": 2.417,
+ "seconds": 2.523281791000045
+}

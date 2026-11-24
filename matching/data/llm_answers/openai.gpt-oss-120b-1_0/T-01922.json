@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01922",
+ "cmid": "6103.003",
+ "second_cmid": "",
+ "shortlist": [
+  "6103.003",
+  "6103.004",
+  "2960.003"
+ ],
+ "confidence": 92,
+ "reason": "Typed client is Meridian Therapeutics; narrative 'Start drafting minutes' aligns with Board & Governance matter (6103.003) which handles board minutes. Date is within open period. High confidence.",
+ "usage": {
+  "inputTokens": 8135,
+  "outputTokens": 605,
+  "totalTokens": 8740
+ },
+ "latency_s": 2.56,
+ "seconds": 2.620691500007524
+}

@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01559",
+ "cmid": "7222.002",
+ "second_cmid": "",
+ "shortlist": [
+  "7222.002",
+  "3012.004",
+  "9035.002"
+ ],
+ "confidence": 92,
+ "reason": "Narrative about change of control provisions and diligence memo aligns with acquisition matter 7222.002 (Acquisition of Summit Ridge Software). Timekeeper's recent heavy activity on this matter supports the match.",
+ "usage": {
+  "inputTokens": 8158,
+  "outputTokens": 667,
+  "totalTokens": 8825
+ },
+ "latency_s": 2.588,
+ "seconds": 2.6929180419974728
+}

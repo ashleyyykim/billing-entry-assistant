@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01448",
+ "cmid": "3455.002",
+ "second_cmid": "",
+ "shortlist": [
+  "3455.002",
+  "3455.001",
+  "3455.003"
+ ],
+ "confidence": 95,
+ "reason": "Narrative matches board meeting minutes; client and matter typed align with 3455.002; timekeeper's history shows extensive work on this matter.",
+ "usage": {
+  "inputTokens": 8143,
+  "outputTokens": 320,
+  "totalTokens": 8463
+ },
+ "latency_s": 2.935,
+ "seconds": 3.0048829169973033
+}

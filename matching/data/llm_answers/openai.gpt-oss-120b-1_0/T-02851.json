@@ -1,0 +1,18 @@
+{
+ "entry_id": "T-02851",
+ "cmid": "7222.002",
+ "second_cmid": "",
+ "shortlist": [
+  "7222.002",
+  "7222.001"
+ ],
+ "confidence": 95,
+ "reason": "Narrative references Summit Ridge transition services agreement; client matches Northgate Capital Partners; matter 7222.002 is the acquisition of Summit Ridge Software, opened before work date.",
+ "usage": {
+  "inputTokens": 8146,
+  "outputTokens": 394,
+  "totalTokens": 8540
+ },
+ "latency_s": 3.497,
+ "seconds": 3.658613375009736
+}

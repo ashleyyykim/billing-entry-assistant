@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02893",
+ "cmid": "7215.005",
+ "second_cmid": "",
+ "shortlist": [
+  "7215.005",
+  "7215.003",
+  "7215.004"
+ ],
+ "confidence": 95,
+ "reason": "Narrative about tracking UCC searches for Asterion aligns with the Asterion Amendment No.2 matter (7215.005); timekeeper's history shows work on related Northgate Bank matters.",
+ "usage": {
+  "inputTokens": 8149,
+  "outputTokens": 404,
+  "totalTokens": 8553
+ },
+ "latency_s": 3.81,
+ "seconds": 3.9287400409957627
+}

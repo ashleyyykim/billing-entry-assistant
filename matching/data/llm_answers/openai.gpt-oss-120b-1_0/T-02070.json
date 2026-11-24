@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02070",
+ "cmid": "3120.003",
+ "second_cmid": "",
+ "shortlist": [
+  "3120.003",
+  "3120.001",
+  "NONE"
+ ],
+ "confidence": 92,
+ "reason": "Narrative mentions stock plan and Y. Tanaka, which matches past entries for Bluefin Robotics Equity Plan (3120.003). Typed CMID is incorrect; 3120.003 is the best fit.",
+ "usage": {
+  "inputTokens": 8146,
+  "outputTokens": 618,
+  "totalTokens": 8764
+ },
+ "latency_s": 5.372,
+ "seconds": 5.542629542003851
+}

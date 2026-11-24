@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03641",
+ "cmid": "5520.001",
+ "second_cmid": "6230.001",
+ "shortlist": [
+  "5520.001",
+  "6230.001",
+  "5520.003"
+ ],
+ "confidence": 95,
+ "reason": "Asset purchase agreement review matches Cobalt Ridge Capital acquisition (5520.001); organizing annual filings for Ember Grid Energy matches its general corporate matter (6230.001).",
+ "usage": {
+  "inputTokens": 8169,
+  "outputTokens": 435,
+  "totalTokens": 8604
+ },
+ "latency_s": 3.499,
+ "seconds": 3.567746916000033
+}

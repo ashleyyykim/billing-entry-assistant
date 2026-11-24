@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03682",
+ "cmid": "2201.001",
+ "second_cmid": "",
+ "shortlist": [
+  "2201.001",
+  "2201.003",
+  "1111.001"
+ ],
+ "confidence": 95,
+ "reason": "Narrative about entity maintenance matches General Corporate work for Harborlight Bio; typed client HB aligns; timekeeper's history shows heavy work on 2201.001.",
+ "usage": {
+  "inputTokens": 8139,
+  "outputTokens": 508,
+  "totalTokens": 8647
+ },
+ "latency_s": 2.007,
+ "seconds": 2.0899230420036474
+}

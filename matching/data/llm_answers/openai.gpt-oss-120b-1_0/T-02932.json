@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02932",
+ "cmid": "4590.003",
+ "second_cmid": "",
+ "shortlist": [
+  "4590.003",
+  "4590.004",
+  "4590.002"
+ ],
+ "confidence": 92,
+ "reason": "Narrative matches prior entries for 4590.003 (J.Black contact) and typed CMID aligns; matter open on date.",
+ "usage": {
+  "inputTokens": 8141,
+  "outputTokens": 482,
+  "totalTokens": 8623
+ },
+ "latency_s": 2.12,
+ "seconds": 2.3224350420059636
+}

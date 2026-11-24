@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00221",
+ "cmid": "6103.004",
+ "second_cmid": "",
+ "shortlist": [
+  "6103.004",
+  "6103.001",
+  "6103.002"
+ ],
+ "confidence": 95,
+ "reason": "Narrative matches past work on annual meeting filings for matter 6103.004, which is the 2026 Annual Meeting and was open on the work date.",
+ "usage": {
+  "inputTokens": 8144,
+  "outputTokens": 390,
+  "totalTokens": 8534
+ },
+ "latency_s": 2.157,
+ "seconds": 2.2277857919980306
+}

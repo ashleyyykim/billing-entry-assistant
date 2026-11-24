@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03778",
+ "cmid": "6103.003",
+ "second_cmid": "",
+ "shortlist": [
+  "6103.003",
+  "2960.003",
+  "6103.001"
+ ],
+ "confidence": 85,
+ "reason": "Narrative about reviewing committee charters aligns with board governance work; Meridian client points to Meridian Therapeutics, whose BOARD matter 6103.003 handles governance and charters.",
+ "usage": {
+  "inputTokens": 8137,
+  "outputTokens": 691,
+  "totalTokens": 8828
+ },
+ "latency_s": 3.483,
+ "seconds": 3.557197083995561
+}

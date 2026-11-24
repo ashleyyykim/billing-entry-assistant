@@ -1,0 +1,17 @@
+{
+ "entry_id": "T-02894",
+ "cmid": "7215.003",
+ "second_cmid": "",
+ "shortlist": [
+  "7215.003"
+ ],
+ "confidence": 95,
+ "reason": "Narrative explicitly references Credit Facility - Asterion Holdings, which matches matter 7215.003; timekeeper has prior hours on this matter and date is within open period.",
+ "usage": {
+  "inputTokens": 8168,
+  "outputTokens": 293,
+  "totalTokens": 8461
+ },
+ "latency_s": 2.774,
+ "seconds": 2.835774917009985
+}

@@ -1,0 +1,15 @@
+{
+ "entry_id": "T-03436",
+ "cmid": "NONE",
+ "second_cmid": "",
+ "shortlist": [],
+ "confidence": 95,
+ "reason": "Typed CMID 4471.009 does not exist; narrative describes acquisition work (third\u2011party consents, non\u2011compete) but Ridgewater Partners matters are fund\u2011related and contain no acquisition matters, so the entry likely does not correspond to any listed matter.",
+ "usage": {
+  "inputTokens": 8160,
+  "outputTokens": 1159,
+  "totalTokens": 9319
+ },
+ "latency_s": 10.82,
+ "seconds": 10.891376917003072
+}

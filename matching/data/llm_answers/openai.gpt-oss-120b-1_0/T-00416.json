@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00416",
+ "cmid": "9140.001",
+ "second_cmid": "",
+ "shortlist": [
+  "9140.001",
+  "9140.002",
+  "2215.001"
+ ],
+ "confidence": 95,
+ "reason": "Narrative matches past work on management company agreement and GP operating agreement for Fund II, consistent with 9140.001 history; date within matter's open period.",
+ "usage": {
+  "inputTokens": 8181,
+  "outputTokens": 427,
+  "totalTokens": 8608
+ },
+ "latency_s": 3.668,
+ "seconds": 3.7437287909997394
+}

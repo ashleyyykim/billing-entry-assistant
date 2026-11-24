@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01888",
+ "cmid": "9140.001",
+ "second_cmid": "",
+ "shortlist": [
+  "9140.001",
+  "4471.003",
+  "4471.002"
+ ],
+ "confidence": 95,
+ "reason": "Narrative about co-invest rights side letter aligns with fund formation work for Juniper Peak Capital; typed CMID matches client and matter; timekeeper's history shows extensive work on 9140.001; date within open period.",
+ "usage": {
+  "inputTokens": 8157,
+  "outputTokens": 635,
+  "totalTokens": 8792
+ },
+ "latency_s": 5.553,
+ "seconds": 5.6324757910042536
+}

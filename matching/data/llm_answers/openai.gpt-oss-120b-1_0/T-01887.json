@@ -1,0 +1,15 @@
+{
+ "entry_id": "T-01887",
+ "cmid": "NONE",
+ "second_cmid": "",
+ "shortlist": [],
+ "confidence": 95,
+ "reason": "Typed client 'Brightwave Robotics' and CMID 2120.001 are not in the matter list; narrative does not clearly match any listed matter.",
+ "usage": {
+  "inputTokens": 8147,
+  "outputTokens": 1401,
+  "totalTokens": 9548
+ },
+ "latency_s": 10.309,
+ "seconds": 10.381284749993938
+}

@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00068",
+ "cmid": "6230.001",
+ "second_cmid": "",
+ "shortlist": [
+  "6230.001",
+  "6230.002",
+  "6230.003"
+ ],
+ "confidence": 85,
+ "reason": "Typed client (misspelled) matches Ember Grid Energy; ICA review is typical corporate work, aligning with General Corporate matter 6230.001.",
+ "usage": {
+  "inputTokens": 8143,
+  "outputTokens": 540,
+  "totalTokens": 8683
+ },
+ "latency_s": 5.564,
+ "seconds": 5.630296000003
+}

@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03250",
+ "cmid": "5602.002",
+ "second_cmid": "",
+ "shortlist": [
+  "5602.002",
+  "4590.003",
+  "3120.002"
+ ],
+ "confidence": 88,
+ "reason": "Narrative about lock-up agreement signatures and closing checklist fits a securities financing matter; 5602.002 is a Convertible Notes Offering opened just a month before the work date, matching the timing and type.",
+ "usage": {
+  "inputTokens": 8144,
+  "outputTokens": 1972,
+  "totalTokens": 10116
+ },
+ "latency_s": 15.186,
+ "seconds": 15.256449749998865
+}

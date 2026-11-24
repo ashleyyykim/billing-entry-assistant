@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00233",
+ "cmid": "6103.004",
+ "second_cmid": "",
+ "shortlist": [
+  "6103.004",
+  "6103.001",
+  "6103.003"
+ ],
+ "confidence": 95,
+ "reason": "Narrative matches SEC filing work for Meridian's 2026 Annual Meeting, which is the purpose of matter 6103.004; typed CMID matches and timekeeper has extensive hours on this matter.",
+ "usage": {
+  "inputTokens": 8158,
+  "outputTokens": 461,
+  "totalTokens": 8619
+ },
+ "latency_s": 4.2,
+ "seconds": 4.2650663329986855
+}

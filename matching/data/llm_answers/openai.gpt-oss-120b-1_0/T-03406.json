@@ -1,0 +1,17 @@
+{
+ "entry_id": "T-03406",
+ "cmid": "3455.002",
+ "second_cmid": "",
+ "shortlist": [
+  "3455.002"
+ ],
+ "confidence": 95,
+ "reason": "Narrative describes board meeting agenda, charter revisions, and UWC edits, matching Board & Governance work for Aster & Vale (3455.002). Typed CMID aligns and timekeeper's recent hours heavily on this matter.",
+ "usage": {
+  "inputTokens": 8170,
+  "outputTokens": 297,
+  "totalTokens": 8467
+ },
+ "latency_s": 3.084,
+ "seconds": 3.2630904160032514
+}

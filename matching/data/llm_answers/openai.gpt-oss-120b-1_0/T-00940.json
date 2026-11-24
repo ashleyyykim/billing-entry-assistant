@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00940",
+ "cmid": "2960.003",
+ "second_cmid": "",
+ "shortlist": [
+  "2960.003",
+  "2960.001",
+  "3455.002"
+ ],
+ "confidence": 92,
+ "reason": "Narrative focuses on audit committee, board composition, and D&O questionnaires, which align with Solace Health Board Matters (2960.003). Timekeeper has large recent hours on this matter, indicating primary assignment despite typed CMID being 2960.001.",
+ "usage": {
+  "inputTokens": 8167,
+  "outputTokens": 475,
+  "totalTokens": 8642
+ },
+ "latency_s": 4.964,
+ "seconds": 5.111281666002469
+}

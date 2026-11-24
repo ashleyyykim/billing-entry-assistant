@@ -1,0 +1,17 @@
+{
+ "entry_id": "T-01563",
+ "cmid": "1111.001",
+ "second_cmid": "",
+ "shortlist": [
+  "1111.001"
+ ],
+ "confidence": 95,
+ "reason": "Conflicts training is internal admin work, matching Firm Admin matter 1111.001; typed CMID aligns and timekeeper has prior hours on this matter.",
+ "usage": {
+  "inputTokens": 8137,
+  "outputTokens": 282,
+  "totalTokens": 8419
+ },
+ "latency_s": 2.907,
+ "seconds": 2.9750855830061482
+}

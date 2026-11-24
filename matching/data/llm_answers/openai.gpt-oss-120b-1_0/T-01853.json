@@ -1,0 +1,17 @@
+{
+ "entry_id": "T-01853",
+ "cmid": "7222.001",
+ "second_cmid": "",
+ "shortlist": [
+  "7222.001"
+ ],
+ "confidence": 80,
+ "reason": "Typed CMID matches client Northgate Capital Partners; narrative indicates a Zoom with V. Kaur likely a contact for this matter; date within open period; no evidence for alternative matter.",
+ "usage": {
+  "inputTokens": 8143,
+  "outputTokens": 523,
+  "totalTokens": 8666
+ },
+ "latency_s": 4.982,
+ "seconds": 5.059534582993365
+}

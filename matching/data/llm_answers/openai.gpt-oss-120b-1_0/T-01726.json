@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01726",
+ "cmid": "4590.004",
+ "second_cmid": "",
+ "shortlist": [
+  "4590.004",
+  "4590.001",
+  "4590.003"
+ ],
+ "confidence": 95,
+ "reason": "Typed CMID matches narrative and timekeeper's recent heavy activity on 4590.004; no indication of other matters.",
+ "usage": {
+  "inputTokens": 8142,
+  "outputTokens": 204,
+  "totalTokens": 8346
+ },
+ "latency_s": 2.107,
+ "seconds": 2.219225708002341
+}

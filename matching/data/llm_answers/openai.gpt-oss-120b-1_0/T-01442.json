@@ -1,0 +1,17 @@
+{
+ "entry_id": "T-01442",
+ "cmid": "8340.001",
+ "second_cmid": "",
+ "shortlist": [
+  "8340.001"
+ ],
+ "confidence": 95,
+ "reason": "Narrative about drafting zoning report aligns with prior work on 8340.001 (zoning report) and typed CMID matches; timekeeper has extensive hours on this matter.",
+ "usage": {
+  "inputTokens": 8153,
+  "outputTokens": 416,
+  "totalTokens": 8569
+ },
+ "latency_s": 3.931,
+ "seconds": 4.003018749994226
+}

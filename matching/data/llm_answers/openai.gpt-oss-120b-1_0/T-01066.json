@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01066",
+ "cmid": "3120.001",
+ "second_cmid": "",
+ "shortlist": [
+  "3120.001",
+  "3012.001",
+  "2207.001"
+ ],
+ "confidence": 95,
+ "reason": "Narrative about reviewing annual shareholder consent on contractor classification aligns with General Corporate work for Bluefin Robotics; typed client (misspelled) and matter point to 3120.001, and timekeeper has recent hours on this matter.",
+ "usage": {
+  "inputTokens": 8147,
+  "outputTokens": 688,
+  "totalTokens": 8835
+ },
+ "latency_s": 3.832,
+ "seconds": 3.897519624995766
+}

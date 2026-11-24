@@ -1,0 +1,18 @@
+{
+ "entry_id": "T-02540",
+ "cmid": "3388.001",
+ "second_cmid": "",
+ "shortlist": [
+  "3388.001",
+  "4471.002"
+ ],
+ "confidence": 92,
+ "reason": "Narrative matches Fund III Formation; timekeeper previously logged hours on 3388.001 (Fund III Formation for Quarry Lane Ventures), making it the most likely matter.",
+ "usage": {
+  "inputTokens": 8161,
+  "outputTokens": 1472,
+  "totalTokens": 9633
+ },
+ "latency_s": 10.676,
+ "seconds": 10.865297290991293
+}

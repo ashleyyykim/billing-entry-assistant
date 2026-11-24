@@ -1,0 +1,18 @@
+{
+ "entry_id": "T-03404",
+ "cmid": "8340.001",
+ "second_cmid": "",
+ "shortlist": [
+  "8340.001",
+  "8340.002"
+ ],
+ "confidence": 95,
+ "reason": "Narrative mentions email with M. Carter, who appears in prior entries for 8340.001 (title exceptions). Rent roll is typical due\u2011diligence for a property acquisition, matching the acquisition matter 8340.001. Typed CMID also matches, and the timekeeper has extensive hours on this matter.",
+ "usage": {
+  "inputTokens": 8144,
+  "outputTokens": 636,
+  "totalTokens": 8780
+ },
+ "latency_s": 4.215,
+ "seconds": 4.286923916995875
+}

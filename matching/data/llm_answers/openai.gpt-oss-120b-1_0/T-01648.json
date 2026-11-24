@@ -1,0 +1,17 @@
+{
+ "entry_id": "T-01648",
+ "cmid": "8347.002",
+ "second_cmid": "",
+ "shortlist": [
+  "8347.002"
+ ],
+ "confidence": 95,
+ "reason": "Narrative about landlord counsel, CAM charges and renewal options matches lease matter 8347.002 (Lease - 40 Harbor Way). Typed CMID matches, matter open, and timekeeper has prior hours on this matter.",
+ "usage": {
+  "inputTokens": 8154,
+  "outputTokens": 301,
+  "totalTokens": 8455
+ },
+ "latency_s": 1.993,
+ "seconds": 2.0640876249963185
+}

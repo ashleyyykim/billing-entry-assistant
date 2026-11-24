@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02519",
+ "cmid": "2201.001",
+ "second_cmid": "",
+ "shortlist": [
+  "2201.001",
+  "2201.003",
+  "1111.001"
+ ],
+ "confidence": 92,
+ "reason": "Typed client 'Harborlight Light' likely a typo for Harborlight Bio; timekeeper's primary matter is 2201.001 with many hours; narrative is a brief conference call consistent with general corporate matters.",
+ "usage": {
+  "inputTokens": 8139,
+  "outputTokens": 634,
+  "totalTokens": 8773
+ },
+ "latency_s": 5.574,
+ "seconds": 5.637589584002853
+}

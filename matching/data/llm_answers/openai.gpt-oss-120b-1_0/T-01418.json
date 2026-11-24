@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01418",
+ "cmid": "5524.002",
+ "second_cmid": "",
+ "shortlist": [
+  "5524.002",
+  "5524.001",
+  "4471.001"
+ ],
+ "confidence": 95,
+ "reason": "Typed client and matter match Cobalt Ridge Partners General Fund Matters (5524.002); timekeeper has extensive recent hours on this matter, and narrative is generic file work.",
+ "usage": {
+  "inputTokens": 8137,
+  "outputTokens": 301,
+  "totalTokens": 8438
+ },
+ "latency_s": 1.529,
+ "seconds": 1.595583667003666
+}

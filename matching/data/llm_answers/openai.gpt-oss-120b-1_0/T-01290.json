@@ -1,0 +1,15 @@
+{
+ "entry_id": "T-01290",
+ "cmid": "NONE",
+ "second_cmid": "",
+ "shortlist": [],
+ "confidence": 95,
+ "reason": "The narrative references client 'Halcyon Data' which does not appear in the provided matter list; no matching CMID can be identified.",
+ "usage": {
+  "inputTokens": 8142,
+  "outputTokens": 263,
+  "totalTokens": 8405
+ },
+ "latency_s": 1.89,
+ "seconds": 1.9604820829990786
+}

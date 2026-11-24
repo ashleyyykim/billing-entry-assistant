@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00962",
+ "cmid": "5520.002",
+ "second_cmid": "",
+ "shortlist": [
+  "5520.002",
+  "5520.004",
+  "5524.002"
+ ],
+ "confidence": 92,
+ "reason": "Typed CMID matches client and matter; matter is open on work date; narrative 'Conf w/ team' plausibly refers to a conference call about the portfolio sale.",
+ "usage": {
+  "inputTokens": 8147,
+  "outputTokens": 601,
+  "totalTokens": 8748
+ },
+ "latency_s": 2.751,
+ "seconds": 2.94543654199515
+}

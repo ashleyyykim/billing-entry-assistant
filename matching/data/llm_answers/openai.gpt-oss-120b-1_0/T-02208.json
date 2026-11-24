@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02208",
+ "cmid": "3455.001",
+ "second_cmid": "",
+ "shortlist": [
+  "3455.001",
+  "3455.002",
+  "2201.001"
+ ],
+ "confidence": 95,
+ "reason": "Narrative matches SEC reporting; client Aster & Vale; TK112 has prior hours on 3455.001; SEC matter is open.",
+ "usage": {
+  "inputTokens": 8144,
+  "outputTokens": 330,
+  "totalTokens": 8474
+ },
+ "latency_s": 2.791,
+ "seconds": 2.8627568750089267
+}

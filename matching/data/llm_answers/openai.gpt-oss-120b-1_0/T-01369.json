@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01369",
+ "cmid": "8340.001",
+ "second_cmid": "",
+ "shortlist": [
+  "8340.001",
+  "8340.002",
+  "8340.003"
+ ],
+ "confidence": 95,
+ "reason": "Narrative matches title objections for 450 Harbor, which is the focus of matter 8340.001; prior entries and timekeeper history confirm this matter.",
+ "usage": {
+  "inputTokens": 8134,
+  "outputTokens": 378,
+  "totalTokens": 8512
+ },
+ "latency_s": 2.658,
+ "seconds": 2.7270117920124903
+}

@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00450",
+ "cmid": "6103.003",
+ "second_cmid": "",
+ "shortlist": [
+  "6103.003",
+  "3455.002",
+  "3455.001"
+ ],
+ "confidence": 92,
+ "reason": "Narrative matches past entry for 6103.003 which involved reviewing D&O questionnaire; board governance matter open and fits date.",
+ "usage": {
+  "inputTokens": 8143,
+  "outputTokens": 647,
+  "totalTokens": 8790
+ },
+ "latency_s": 4.938,
+ "seconds": 5.0999126250098925
+}

@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03465",
+ "cmid": "1111.001",
+ "second_cmid": "",
+ "shortlist": [
+  "1111.001",
+  "1111.002",
+  "1111.003"
+ ],
+ "confidence": 95,
+ "reason": "Narrative matches past entry for 1111.001 (Update time entries for week). Typed CMID is invalid, so assign to admin matter.",
+ "usage": {
+  "inputTokens": 8143,
+  "outputTokens": 335,
+  "totalTokens": 8478
+ },
+ "latency_s": 3.039,
+ "seconds": 3.106068833003519
+}

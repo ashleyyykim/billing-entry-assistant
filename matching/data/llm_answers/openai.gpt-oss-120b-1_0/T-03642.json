@@ -1,0 +1,15 @@
+{
+ "entry_id": "T-03642",
+ "cmid": "NONE",
+ "second_cmid": "",
+ "shortlist": [],
+ "confidence": 95,
+ "reason": "Typed CMID 5520.009 not in matter list; narrative references Project Basalt which does not correspond to any listed matter for Cobalt Ridge Capital or other clients.",
+ "usage": {
+  "inputTokens": 8154,
+  "outputTokens": 485,
+  "totalTokens": 8639
+ },
+ "latency_s": 2.255,
+ "seconds": 2.320932791000814
+}

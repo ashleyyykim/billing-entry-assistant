@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02114",
+ "cmid": "2201.001",
+ "second_cmid": "",
+ "shortlist": [
+  "2201.001",
+  "2201.003",
+  "3120.001"
+ ],
+ "confidence": 85,
+ "reason": "Narrative fits corporate work (advisor agreement, stockholder consent) and timekeeper has majority of hours on 2201.001; typed CMID matches; possible but less certain alternative is 2201.003 (financing closing).",
+ "usage": {
+  "inputTokens": 8158,
+  "outputTokens": 693,
+  "totalTokens": 8851
+ },
+ "latency_s": 6.62,
+ "seconds": 6.680330250004772
+}

@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01540",
+ "cmid": "9028.003",
+ "second_cmid": "",
+ "shortlist": [
+  "9028.003",
+  "3120.003",
+  "2201.005"
+ ],
+ "confidence": 95,
+ "reason": "Narrative about equity incentive plan and option agreements matches Lanternfish Software Exec Comp/409A matter (9028.003). Typed CMID invalid; timekeeper's history shows extensive work on 9028.003.",
+ "usage": {
+  "inputTokens": 8161,
+  "outputTokens": 391,
+  "totalTokens": 8552
+ },
+ "latency_s": 3.708,
+ "seconds": 3.7745696250058245
+}

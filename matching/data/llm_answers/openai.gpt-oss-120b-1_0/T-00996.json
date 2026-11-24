@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00996",
+ "cmid": "5524.002",
+ "second_cmid": "",
+ "shortlist": [
+  "5524.002",
+  "5524.001",
+  "5520.004"
+ ],
+ "confidence": 95,
+ "reason": "Narrative about LPAC approval, drawdown notice, GP interest transfer and investor register matches fund administration work recorded for 5524.002; timekeeper's recent hours heavily on this matter.",
+ "usage": {
+  "inputTokens": 8188,
+  "outputTokens": 429,
+  "totalTokens": 8617
+ },
+ "latency_s": 4.436,
+ "seconds": 4.627017708000494
+}

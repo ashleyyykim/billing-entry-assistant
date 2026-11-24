@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02899",
+ "cmid": "5750.002",
+ "second_cmid": "",
+ "shortlist": [
+  "5750.002",
+  "5750.003",
+  "2201.003"
+ ],
+ "confidence": 95,
+ "reason": "Narrative about lead investor counsel and information rights aligns with Seed Financing for Saffron Labs; timekeeper has prior hours on this matter.",
+ "usage": {
+  "inputTokens": 8144,
+  "outputTokens": 418,
+  "totalTokens": 8562
+ },
+ "latency_s": 4.013,
+ "seconds": 4.177220749988919
+}

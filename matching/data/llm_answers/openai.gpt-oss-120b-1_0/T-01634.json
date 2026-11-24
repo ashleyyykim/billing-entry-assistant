@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01634",
+ "cmid": "9028.003",
+ "second_cmid": "",
+ "shortlist": [
+  "9028.003",
+  "9028.001",
+  "9028.004"
+ ],
+ "confidence": 95,
+ "reason": "Narrative about option grant paperwork and 83(b) election aligns with Exec Comp / 409A matter 9028.003; timekeeper has extensive prior work on this matter; dates fit.",
+ "usage": {
+  "inputTokens": 8164,
+  "outputTokens": 380,
+  "totalTokens": 8544
+ },
+ "latency_s": 1.926,
+ "seconds": 1.9938370840100106
+}

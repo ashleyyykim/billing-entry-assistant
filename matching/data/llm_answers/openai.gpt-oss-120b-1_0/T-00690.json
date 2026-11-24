@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00690",
+ "cmid": "9140.002",
+ "second_cmid": "4471.001",
+ "shortlist": [
+  "9140.002",
+  "4471.001",
+  "2215.001"
+ ],
+ "confidence": 70,
+ "reason": "Narrative mentions fund extension and distribution waterfall, typical of general fund matters. Juniper Peak Capital has a General Fund Matters matter (9140.002) and Ridgewater Partners has a General Fund Matters matter (4471.001) where R. Dale appears in past entries.",
+ "usage": {
+  "inputTokens": 8162,
+  "outputTokens": 1533,
+  "totalTokens": 9695
+ },
+ "latency_s": 13.838,
+ "seconds": 13.90831574999902
+}

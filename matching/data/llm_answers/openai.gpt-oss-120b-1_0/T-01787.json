@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01787",
+ "cmid": "5520.003",
+ "second_cmid": "",
+ "shortlist": [
+  "5520.003",
+  "5524.003",
+  "5520.001"
+ ],
+ "confidence": 95,
+ "reason": "Narrative mentions earnout for Larchmont Sensors, which aligns with matter 5520.003 (Add-On Acquisition Project Larch) at Cobalt Ridge Capital. Typed CMID 5524-003 is unrelated (Vantage Bio investment). Timekeeper has prior work on Cobalt Ridge Capital matters, supporting this match.",
+ "usage": {
+  "inputTokens": 8150,
+  "outputTokens": 502,
+  "totalTokens": 8652
+ },
+ "latency_s": 4.469,
+ "seconds": 4.677494167000987
+}

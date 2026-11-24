@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01030",
+ "cmid": "7222.002",
+ "second_cmid": "",
+ "shortlist": [
+  "7222.002",
+  "9035.002",
+  "3012.004"
+ ],
+ "confidence": 95,
+ "reason": "Narrative 'Attend to closing matters' aligns with acquisition closing for 7222.002; typed CMID matches and timekeeper has extensive recent hours on this matter.",
+ "usage": {
+  "inputTokens": 8141,
+  "outputTokens": 370,
+  "totalTokens": 8511
+ },
+ "latency_s": 3.931,
+ "seconds": 4.10748049999529
+}

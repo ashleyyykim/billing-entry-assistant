@@ -1,0 +1,17 @@
+{
+ "entry_id": "T-02784",
+ "cmid": "2960.003",
+ "second_cmid": "",
+ "shortlist": [
+  "2960.003"
+ ],
+ "confidence": 95,
+ "reason": "Narrative about board composition and D&O questionnaire matches Solace Health Board Matters (2960.003), which is the only board matter for that client and timekeeper has extensive prior hours on it.",
+ "usage": {
+  "inputTokens": 8149,
+  "outputTokens": 432,
+  "totalTokens": 8581
+ },
+ "latency_s": 3.784,
+ "seconds": 3.8592252079979517
+}

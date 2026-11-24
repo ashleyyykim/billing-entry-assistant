@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00191",
+ "cmid": "4590.003",
+ "second_cmid": "",
+ "shortlist": [
+  "4590.003",
+  "2207.002",
+  "3120.002"
+ ],
+ "confidence": 78,
+ "reason": "Narrative about lead investor counsel and redemption rights fits a financing matter. Typed client 'Tidewater Robotics' likely a typo for 'Tidewater AI', whose Series B Financing (4590.003) opened in April 2026 and is active. No exact match elsewhere, so 4590.003 is most probable.",
+ "usage": {
+  "inputTokens": 8149,
+  "outputTokens": 1314,
+  "totalTokens": 9463
+ },
+ "latency_s": 5.638,
+ "seconds": 5.709745499989367
+}

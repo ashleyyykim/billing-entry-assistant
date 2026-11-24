@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01574",
+ "cmid": "2201.001",
+ "second_cmid": "",
+ "shortlist": [
+  "2201.001",
+  "2960.001",
+  "2201.003"
+ ],
+ "confidence": 95,
+ "reason": "Narrative matches prior work on good standing certificates for Harborlight Bio General Corporate (2201.001); timekeeper has extensive recent hours on this matter and client matches.",
+ "usage": {
+  "inputTokens": 8141,
+  "outputTokens": 441,
+  "totalTokens": 8582
+ },
+ "latency_s": 1.998,
+ "seconds": 2.0565764579951065
+}

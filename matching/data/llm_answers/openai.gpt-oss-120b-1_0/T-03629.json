@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03629",
+ "cmid": "6103.003",
+ "second_cmid": "",
+ "shortlist": [
+  "6103.003",
+  "6103.001",
+  "6103.002"
+ ],
+ "confidence": 92,
+ "reason": "Narrative matches board governance tasks (organize director signatures, update closing checklist) and aligns with past entries for 6103.003; typed CMID is a close variant.",
+ "usage": {
+  "inputTokens": 8153,
+  "outputTokens": 454,
+  "totalTokens": 8607
+ },
+ "latency_s": 2.332,
+ "seconds": 2.399945334007498
+}

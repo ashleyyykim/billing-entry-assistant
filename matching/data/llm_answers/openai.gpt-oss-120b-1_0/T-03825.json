@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03825",
+ "cmid": "2960.003",
+ "second_cmid": "",
+ "shortlist": [
+  "2960.003",
+  "3455.002",
+  "6103.003"
+ ],
+ "confidence": 95,
+ "reason": "Narrative references 409A approval and committee charters for Solace Health, matching the Board Matters matter (2960.003). Timekeeper has prior entries on this matter.",
+ "usage": {
+  "inputTokens": 8158,
+  "outputTokens": 512,
+  "totalTokens": 8670
+ },
+ "latency_s": 4.756,
+ "seconds": 4.9259076669986825
+}

@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01786",
+ "cmid": "2960.001",
+ "second_cmid": "",
+ "shortlist": [
+  "2960.001",
+  "2960.003",
+  "2960.002"
+ ],
+ "confidence": 92,
+ "reason": "Typed CMID 2960001 appears to be a typo for 2960.001 (Solace Health General Corporate). Narrative about employee matters and annual filings matches corporate work, and no other matter fits better.",
+ "usage": {
+  "inputTokens": 8150,
+  "outputTokens": 491,
+  "totalTokens": 8641
+ },
+ "latency_s": 4.043,
+ "seconds": 4.111821082988172
+}

@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01524",
+ "cmid": "2201.001",
+ "second_cmid": "",
+ "shortlist": [
+  "2201.001",
+  "2201.003",
+  "2207.001"
+ ],
+ "confidence": 95,
+ "reason": "Narrative about analyzing and revising good standing certificates aligns with Harborlight Bio General Corporate matter (2201.001); typed CMID matches and timekeeper has extensive history on this matter.",
+ "usage": {
+  "inputTokens": 8146,
+  "outputTokens": 318,
+  "totalTokens": 8464
+ },
+ "latency_s": 3.336,
+ "seconds": 3.401693667008658
+}

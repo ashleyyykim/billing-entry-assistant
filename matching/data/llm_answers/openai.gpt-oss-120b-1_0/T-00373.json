@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00373",
+ "cmid": "8340.001",
+ "second_cmid": "",
+ "shortlist": [
+  "8340.001",
+  "8340.003",
+  "8012.001"
+ ],
+ "confidence": 95,
+ "reason": "Narrative references drafting an ALTA survey for Harbor St., matching the acquisition of 450 Harbor St. (8340.001). Timekeeper has extensive prior hours on this matter and client matches.",
+ "usage": {
+  "inputTokens": 8146,
+  "outputTokens": 379,
+  "totalTokens": 8525
+ },
+ "latency_s": 2.365,
+ "seconds": 2.4401626249891706
+}

@@ -1,0 +1,18 @@
+{
+ "entry_id": "T-00087",
+ "cmid": "6103.004",
+ "second_cmid": "",
+ "shortlist": [
+  "6103.004",
+  "6103.001"
+ ],
+ "confidence": 95,
+ "reason": "Narrative about drafting annual meeting 10-Q and proxy statement matches the 2026 Annual Meeting matter (6103.004); timekeeper's recent heavy activity on this matter supports the match.",
+ "usage": {
+  "inputTokens": 8172,
+  "outputTokens": 411,
+  "totalTokens": 8583
+ },
+ "latency_s": 4.109,
+ "seconds": 4.170979750007973
+}

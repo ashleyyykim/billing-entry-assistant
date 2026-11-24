@@ -1,0 +1,17 @@
+{
+ "entry_id": "T-00582",
+ "cmid": "5602.001",
+ "second_cmid": "",
+ "shortlist": [
+  "5602.001"
+ ],
+ "confidence": 95,
+ "reason": "Narrative explicitly mentions SEC matters, matching the SEC Reporting matter 5602.001 for Ironwood Semiconductor, and the date falls within the matter's open period.",
+ "usage": {
+  "inputTokens": 8140,
+  "outputTokens": 288,
+  "totalTokens": 8428
+ },
+ "latency_s": 1.806,
+ "seconds": 1.9225486669893144
+}

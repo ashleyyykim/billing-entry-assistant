@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02335",
+ "cmid": "5520.001",
+ "second_cmid": "",
+ "shortlist": [
+  "5520.001",
+  "5520.003",
+  "5520.002"
+ ],
+ "confidence": 85,
+ "reason": "Typed CMID refers to a closed matter; narrative about basket and cap for Larkspur Controls aligns with Project Lark (5520.001) which is open on the work date.",
+ "usage": {
+  "inputTokens": 8170,
+  "outputTokens": 654,
+  "totalTokens": 8824
+ },
+ "latency_s": 4.501,
+ "seconds": 4.701242333001574
+}

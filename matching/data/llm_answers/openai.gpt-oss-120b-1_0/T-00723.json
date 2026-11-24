@@ -1,0 +1,17 @@
+{
+ "entry_id": "T-00723",
+ "cmid": "1111.001",
+ "second_cmid": "",
+ "shortlist": [
+  "1111.001"
+ ],
+ "confidence": 95,
+ "reason": "Narrative matches past entry for 1111.001 (Attend practice group meeting) and typed CMID is correct.",
+ "usage": {
+  "inputTokens": 8138,
+  "outputTokens": 198,
+  "totalTokens": 8336
+ },
+ "latency_s": 2.027,
+ "seconds": 2.0937671669962583
+}

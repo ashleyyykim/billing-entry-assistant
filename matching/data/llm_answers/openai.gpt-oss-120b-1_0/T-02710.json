@@ -1,0 +1,17 @@
+{
+ "entry_id": "T-02710",
+ "cmid": "7215.005",
+ "second_cmid": "",
+ "shortlist": [
+  "7215.005"
+ ],
+ "confidence": 95,
+ "reason": "Narrative about discussing conditions precedent and revising amendment aligns with Amendment No. 2 (7215.005). Timekeeper's recent work includes other Northgate Bank matters, and the entry date is after the matter opened.",
+ "usage": {
+  "inputTokens": 8155,
+  "outputTokens": 350,
+  "totalTokens": 8505
+ },
+ "latency_s": 2.402,
+ "seconds": 2.49377720800112
+}

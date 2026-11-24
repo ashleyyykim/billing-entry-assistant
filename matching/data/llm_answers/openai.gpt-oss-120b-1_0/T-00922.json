@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00922",
+ "cmid": "2201.001",
+ "second_cmid": "",
+ "shortlist": [
+  "2201.001",
+  "2201.005",
+  "2201.003"
+ ],
+ "confidence": 95,
+ "reason": "Harborlight Bio client; contractor agreement and officer appointments fit General Corporate work; TK106's primary matter is 2201.001 with extensive prior hours.",
+ "usage": {
+  "inputTokens": 8156,
+  "outputTokens": 564,
+  "totalTokens": 8720
+ },
+ "latency_s": 4.749,
+ "seconds": 4.816286542001762
+}

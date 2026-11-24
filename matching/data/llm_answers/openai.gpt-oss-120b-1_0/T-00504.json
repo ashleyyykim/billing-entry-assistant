@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00504",
+ "cmid": "3120.001",
+ "second_cmid": "",
+ "shortlist": [
+  "3120.001",
+  "6110.001",
+  "1111.001"
+ ],
+ "confidence": 92,
+ "reason": "TK107's recent work heavily on 3120.001 (168h) and the task 'Track annual filings' fits a General Corporate matter; other listed matters are less likely.",
+ "usage": {
+  "inputTokens": 8138,
+  "outputTokens": 947,
+  "totalTokens": 9085
+ },
+ "latency_s": 8.093,
+ "seconds": 8.3003088330006
+}

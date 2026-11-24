@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00678",
+ "cmid": "1111.001",
+ "second_cmid": "",
+ "shortlist": [
+  "1111.001",
+  "1111.002",
+  "1111.003"
+ ],
+ "confidence": 95,
+ "reason": "Narrative describes internal conflicts training, matching Firm admin matter 1111.001; typed client/matter align; timekeeper has prior hours on 1111.001.",
+ "usage": {
+  "inputTokens": 8134,
+  "outputTokens": 266,
+  "totalTokens": 8400
+ },
+ "latency_s": 2.893,
+ "seconds": 2.9661419589974685
+}

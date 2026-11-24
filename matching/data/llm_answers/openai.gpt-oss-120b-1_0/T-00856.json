@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00856",
+ "cmid": "9028.003",
+ "second_cmid": "",
+ "shortlist": [
+  "9028.003",
+  "9028.001",
+  "9028.002"
+ ],
+ "confidence": 95,
+ "reason": "Narrative about early exercise aligns with Exec Comp/409A matter; timekeeper's history shows extensive work on 9028.003; typed CMID likely typo.",
+ "usage": {
+  "inputTokens": 8145,
+  "outputTokens": 361,
+  "totalTokens": 8506
+ },
+ "latency_s": 3.239,
+ "seconds": 3.310800749997725
+}

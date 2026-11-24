@@ -1,0 +1,17 @@
+{
+ "entry_id": "T-03241",
+ "cmid": "5750.003",
+ "second_cmid": "",
+ "shortlist": [
+  "5750.003"
+ ],
+ "confidence": 95,
+ "reason": "Typed CMID matches client Saffron and narrative references S. Bauer, who appears in past entries for matter 5750.003 (Commercial Contracts). Date falls within matter's open period.",
+ "usage": {
+  "inputTokens": 8142,
+  "outputTokens": 504,
+  "totalTokens": 8646
+ },
+ "latency_s": 3.985,
+ "seconds": 4.051297041994985
+}

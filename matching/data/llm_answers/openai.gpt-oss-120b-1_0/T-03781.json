@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03781",
+ "cmid": "6103.001",
+ "second_cmid": "",
+ "shortlist": [
+  "6103.001",
+  "6103.002",
+  "6103.003"
+ ],
+ "confidence": 85,
+ "reason": "S. Cole appears in past entries for Meridian Therapeutics matters, especially SEC Reporting (6103.001) where a conference call about MD&A was noted. The other Meridian matters also reference S. Cole, but the brief 'Conf w/S. Cole' aligns best with the SEC Reporting matter.",
+ "usage": {
+  "inputTokens": 8137,
+  "outputTokens": 925,
+  "totalTokens": 9062
+ },
+ "latency_s": 5.842,
+ "seconds": 5.914678040993749
+}

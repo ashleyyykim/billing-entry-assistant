@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01701",
+ "cmid": "9028.003",
+ "second_cmid": "",
+ "shortlist": [
+  "9028.003",
+  "9028.001",
+  "9028.002"
+ ],
+ "confidence": 95,
+ "reason": "Narrative about 409A timing aligns with Exec Comp / 409A matter 9028.003 for Lanternfish Software; typed CMID matches and timekeeper has extensive history on this matter.",
+ "usage": {
+  "inputTokens": 8150,
+  "outputTokens": 313,
+  "totalTokens": 8463
+ },
+ "latency_s": 1.866,
+ "seconds": 2.083122915995773
+}

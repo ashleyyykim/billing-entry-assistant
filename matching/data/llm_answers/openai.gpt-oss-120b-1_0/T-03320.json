@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03320",
+ "cmid": "2956.003",
+ "second_cmid": "",
+ "shortlist": [
+  "2956.003",
+  "2956.001",
+  "2956.002"
+ ],
+ "confidence": 95,
+ "reason": "Narrative describes licensing work for Solace Media's Podcast Network, matching matter 2956.003 which is open and aligns with client and matter.",
+ "usage": {
+  "inputTokens": 8166,
+  "outputTokens": 456,
+  "totalTokens": 8622
+ },
+ "latency_s": 2.604,
+ "seconds": 2.6625152090127813
+}

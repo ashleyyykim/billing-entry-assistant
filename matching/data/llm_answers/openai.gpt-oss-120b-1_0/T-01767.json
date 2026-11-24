@@ -1,0 +1,17 @@
+{
+ "entry_id": "T-01767",
+ "cmid": "5602.003",
+ "second_cmid": "",
+ "shortlist": [
+  "5602.003"
+ ],
+ "confidence": 95,
+ "reason": "Typed CMID matches client and matter; narrative of reviewing/responding to emails aligns with past email work on this matter; timekeeper has significant recent hours on 5602.003; date falls within matter's open period.",
+ "usage": {
+  "inputTokens": 8146,
+  "outputTokens": 318,
+  "totalTokens": 8464
+ },
+ "latency_s": 2.556,
+ "seconds": 2.765594416996464
+}

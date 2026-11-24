@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02050",
+ "cmid": "3120.001",
+ "second_cmid": "",
+ "shortlist": [
+  "3120.001",
+  "6110.001",
+  "4590.001"
+ ],
+ "confidence": 92,
+ "reason": "Narrative matches past entry for Bluefin Robotics (3120.001) about drafting advisor agreement; typed CMID likely erroneous.",
+ "usage": {
+  "inputTokens": 8146,
+  "outputTokens": 646,
+  "totalTokens": 8792
+ },
+ "latency_s": 6.9,
+ "seconds": 7.0960972089960705
+}

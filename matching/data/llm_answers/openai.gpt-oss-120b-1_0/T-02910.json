@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02910",
+ "cmid": "4590.004",
+ "second_cmid": "",
+ "shortlist": [
+  "4590.004",
+  "9028.001",
+  "2201.002"
+ ],
+ "confidence": 85,
+ "reason": "TK108 has spent the most hours on 4590.004 (34.5h) and the narrative about reviewing a legal opinion fits the licensing/enterprise MSA work for Tidewater AI. Other matters have minimal hours, making 4590.004 the most likely match.",
+ "usage": {
+  "inputTokens": 8147,
+  "outputTokens": 721,
+  "totalTokens": 8868
+ },
+ "latency_s": 6.677,
+ "seconds": 6.887232042005053
+}

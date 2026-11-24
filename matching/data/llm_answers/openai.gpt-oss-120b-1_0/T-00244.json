@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00244",
+ "cmid": "2207.003",
+ "second_cmid": "",
+ "shortlist": [
+  "2207.003",
+  "2956.001",
+  "4590.004"
+ ],
+ "confidence": 95,
+ "reason": "Narrative about IP ownership with counterparty counsel aligns with licensing matter; typed CMID matches licensing matter for Harborline Biosciences and timekeeper has prior hours on this matter.",
+ "usage": {
+  "inputTokens": 8150,
+  "outputTokens": 383,
+  "totalTokens": 8533
+ },
+ "latency_s": 2.461,
+ "seconds": 2.5708073339919792
+}

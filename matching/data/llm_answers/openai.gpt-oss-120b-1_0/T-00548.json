@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00548",
+ "cmid": "2201.005",
+ "second_cmid": "",
+ "shortlist": [
+  "2201.005",
+  "2201.001",
+  "4590.005"
+ ],
+ "confidence": 92,
+ "reason": "Typed CMID matches client and matter type; narrative 'Emails' likely pertains to equity plan correspondence; no evidence of other matter involvement.",
+ "usage": {
+  "inputTokens": 8141,
+  "outputTokens": 636,
+  "totalTokens": 8777
+ },
+ "latency_s": 3.626,
+ "seconds": 3.699288333998993
+}

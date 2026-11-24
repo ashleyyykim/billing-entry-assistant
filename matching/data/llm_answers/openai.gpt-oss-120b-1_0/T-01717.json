@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01717",
+ "cmid": "5520.001",
+ "second_cmid": "",
+ "shortlist": [
+  "5520.001",
+  "5520.003",
+  "5520.004"
+ ],
+ "confidence": 92,
+ "reason": "Narrative references 'Larkspur Controls' and typed matter 'Project Larkk' likely refers to Add-On Acquisition (Project Lark) (5520.001), which is open and matches date.",
+ "usage": {
+  "inputTokens": 8145,
+  "outputTokens": 539,
+  "totalTokens": 8684
+ },
+ "latency_s": 2.532,
+ "seconds": 2.599794167006621
+}

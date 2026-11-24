@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02884",
+ "cmid": "5524.002",
+ "second_cmid": "",
+ "shortlist": [
+  "5524.002",
+  "5524.001",
+  "4471.003"
+ ],
+ "confidence": 95,
+ "reason": "Narrative about fund extension and capital call notice matches prior work on 5524.002 (General Fund Matters) for Cobalt Ridge Partners; timekeeper's history shows heavy billing to this matter.",
+ "usage": {
+  "inputTokens": 8153,
+  "outputTokens": 432,
+  "totalTokens": 8585
+ },
+ "latency_s": 3.467,
+ "seconds": 3.538736417001928
+}

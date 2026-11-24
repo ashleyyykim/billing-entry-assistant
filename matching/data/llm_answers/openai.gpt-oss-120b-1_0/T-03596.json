@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03596",
+ "cmid": "7215.005",
+ "second_cmid": "",
+ "shortlist": [
+  "7215.005",
+  "7215.003",
+  "7215.004"
+ ],
+ "confidence": 95,
+ "reason": "Narrative references Amendment No. 2 for Northgate Bank, matching matter 7215.005 (Asterion - Amendment No. 2) opened 08/17/2026; date fits and no other matter mentions Amendment No. 2.",
+ "usage": {
+  "inputTokens": 8175,
+  "outputTokens": 442,
+  "totalTokens": 8617
+ },
+ "latency_s": 2.512,
+ "seconds": 2.5800038750021486
+}

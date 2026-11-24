@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00925",
+ "cmid": "3120.001",
+ "second_cmid": "",
+ "shortlist": [
+  "3120.001",
+  "2201.001",
+  "2207.001"
+ ],
+ "confidence": 95,
+ "reason": "Narrative matches typical work for General Corporate good standing certificates; timekeeper has extensive recent hours on 3120.001 and past entries for that matter involve managing good standing requests. Typed CMID is invalid.",
+ "usage": {
+  "inputTokens": 8143,
+  "outputTokens": 540,
+  "totalTokens": 8683
+ },
+ "latency_s": 2.988,
+ "seconds": 3.057674958006828
+}

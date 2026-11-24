@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00614",
+ "cmid": "8340.001",
+ "second_cmid": "",
+ "shortlist": [
+  "8340.001",
+  "8340.002",
+  "8340.003"
+ ],
+ "confidence": 95,
+ "reason": "Narrative references 450 Harbor acquisition; matches matter 8340.001 which involves title commitment and purchase agreement for 450 Harbor.",
+ "usage": {
+  "inputTokens": 8149,
+  "outputTokens": 426,
+  "totalTokens": 8575
+ },
+ "latency_s": 3.845,
+ "seconds": 3.9175168330111774
+}

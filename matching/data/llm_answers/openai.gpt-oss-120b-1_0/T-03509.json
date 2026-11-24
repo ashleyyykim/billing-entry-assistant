@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03509",
+ "cmid": "2960.003",
+ "second_cmid": "",
+ "shortlist": [
+  "2960.003",
+  "2960.001",
+  "2960.002"
+ ],
+ "confidence": 95,
+ "reason": "Narrative about reviewing board minutes and audit committee aligns with Solace Health's Board Matters matter (2960.003); timekeeper has extensive prior hours on this matter.",
+ "usage": {
+  "inputTokens": 8146,
+  "outputTokens": 342,
+  "totalTokens": 8488
+ },
+ "latency_s": 3.141,
+ "seconds": 3.204774333993555
+}

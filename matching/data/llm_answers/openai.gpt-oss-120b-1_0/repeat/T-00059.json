@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00059",
+ "cmid": "6103.004",
+ "second_cmid": "",
+ "shortlist": [
+  "6103.004",
+  "6103.005",
+  "6103.002"
+ ],
+ "confidence": 85,
+ "reason": "Typed CMID 6103005 likely a typo for 6103.004; ATM Program opens after work date, but Annual Meeting matter is open on 2026-07-06 and fits narrative of client call about subsequent events.",
+ "usage": {
+  "inputTokens": 8142,
+  "outputTokens": 673,
+  "totalTokens": 8815
+ },
+ "latency_s": 4.689,
+ "seconds": 4.763385375001235
+}

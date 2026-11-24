@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01110",
+ "cmid": "9028.003",
+ "second_cmid": "",
+ "shortlist": [
+  "9028.003",
+  "9028.001",
+  "9028.002"
+ ],
+ "confidence": 96,
+ "reason": "Narrative about equity refresh grants and offer letter matches Exec Comp matter for Lanternfish Software (9028.003); timekeeper has extensive recent hours on this matter.",
+ "usage": {
+  "inputTokens": 8158,
+  "outputTokens": 303,
+  "totalTokens": 8461
+ },
+ "latency_s": 3.278,
+ "seconds": 3.3386915830051294
+}

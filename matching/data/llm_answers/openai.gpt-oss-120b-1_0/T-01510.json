@@ -1,0 +1,17 @@
+{
+ "entry_id": "T-01510",
+ "cmid": "6103.003",
+ "second_cmid": "",
+ "shortlist": [
+  "6103.003"
+ ],
+ "confidence": 95,
+ "reason": "Narrative describes board governance tasks (organizing director signatures, preparing summary of open points) which aligns with Meridian Therapeutics Board & Governance matter 6103.003; typed CMID matches, matter is open on the work date.",
+ "usage": {
+  "inputTokens": 8152,
+  "outputTokens": 358,
+  "totalTokens": 8510
+ },
+ "latency_s": 1.9,
+ "seconds": 2.0051207919896115
+}

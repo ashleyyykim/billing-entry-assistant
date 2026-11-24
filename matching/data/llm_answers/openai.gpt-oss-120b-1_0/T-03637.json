@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03637",
+ "cmid": "9035.002",
+ "second_cmid": "",
+ "shortlist": [
+  "9035.002",
+  "9035.001",
+  "7222.002"
+ ],
+ "confidence": 95,
+ "reason": "Narrative matches buyer diligence for Vireo; matches recent work history on 9035.002 (Sale to Vireo Systems) and typed matter aligns with that sale.",
+ "usage": {
+  "inputTokens": 8147,
+  "outputTokens": 337,
+  "totalTokens": 8484
+ },
+ "latency_s": 1.672,
+ "seconds": 1.7367629999935161
+}

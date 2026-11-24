@@ -1,0 +1,15 @@
+{
+ "entry_id": "T-02522",
+ "cmid": "NONE",
+ "second_cmid": "",
+ "shortlist": [],
+ "confidence": 95,
+ "reason": "Typed client 'Meridian Labs' does not match any client in the matter list, and narrative about DPA review fits licensing matters but no clear match to existing client/matter; safest to assign NONE.",
+ "usage": {
+  "inputTokens": 8151,
+  "outputTokens": 1238,
+  "totalTokens": 9389
+ },
+ "latency_s": 11.707,
+ "seconds": 11.825404415998491
+}

@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00601",
+ "cmid": "2960.001",
+ "second_cmid": "",
+ "shortlist": [
+  "2960.001",
+  "2960.002",
+  "2960.003"
+ ],
+ "confidence": 95,
+ "reason": "Narrative matches typical tasks for Solace Health General Corporate (Delaware franchise tax and stock plan) and typed CMID corresponds to 2960.001 despite dash.",
+ "usage": {
+  "inputTokens": 8158,
+  "outputTokens": 565,
+  "totalTokens": 8723
+ },
+ "latency_s": 5.901,
+ "seconds": 5.983562958004768
+}

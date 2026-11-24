@@ -1,0 +1,17 @@
+{
+ "entry_id": "T-02166",
+ "cmid": "7215.005",
+ "second_cmid": "",
+ "shortlist": [
+  "7215.005"
+ ],
+ "confidence": 95,
+ "reason": "Narrative explicitly references Amendment No. 2, matching matter 7215.005 (Asterion - Amendment No. 2) opened 08/17/2026; timekeeper's recent work on Northgate Bank credit facilities supports this assignment.",
+ "usage": {
+  "inputTokens": 8162,
+  "outputTokens": 414,
+  "totalTokens": 8576
+ },
+ "latency_s": 2.066,
+ "seconds": 2.256548417004524
+}

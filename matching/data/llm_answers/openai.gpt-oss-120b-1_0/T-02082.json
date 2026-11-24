@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02082",
+ "cmid": "8340.001",
+ "second_cmid": "",
+ "shortlist": [
+  "8340.001",
+  "8340.002",
+  "8340.003"
+ ],
+ "confidence": 95,
+ "reason": "Narrative matches past work on zoning report for Acquisition of 450 Harbor St., which is CMID 8340.001; timekeeper's history shows extensive hours on this matter.",
+ "usage": {
+  "inputTokens": 8136,
+  "outputTokens": 315,
+  "totalTokens": 8451
+ },
+ "latency_s": 2.628,
+ "seconds": 2.9191856250108685
+}

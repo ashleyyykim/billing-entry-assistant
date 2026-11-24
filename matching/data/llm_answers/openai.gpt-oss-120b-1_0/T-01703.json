@@ -1,0 +1,17 @@
+{
+ "entry_id": "T-01703",
+ "cmid": "8340.001",
+ "second_cmid": "",
+ "shortlist": [
+  "8340.001"
+ ],
+ "confidence": 95,
+ "reason": "Narrative about title exceptions matches past entries for 8340.001 (Pelican Row Holdings acquisition) and typed CMID is correct; matter is open on the work date.",
+ "usage": {
+  "inputTokens": 8149,
+  "outputTokens": 383,
+  "totalTokens": 8532
+ },
+ "latency_s": 2.169,
+ "seconds": 2.2725161670095986
+}

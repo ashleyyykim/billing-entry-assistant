@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03644",
+ "cmid": "9035.002",
+ "second_cmid": "",
+ "shortlist": [
+  "9035.002",
+  "9035.001",
+  "3012.004"
+ ],
+ "confidence": 92,
+ "reason": "Narrative about MAC definition and closing conditions fits a sale transaction; Lantern Software Group's only sale matter is 9035.002, while typed CMID 9035.001 is general corporate and likely incorrect.",
+ "usage": {
+  "inputTokens": 8169,
+  "outputTokens": 696,
+  "totalTokens": 8865
+ },
+ "latency_s": 5.85,
+ "seconds": 5.914260874997126
+}

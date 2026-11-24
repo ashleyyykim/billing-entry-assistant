@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03986",
+ "cmid": "2960.003",
+ "second_cmid": "",
+ "shortlist": [
+  "2960.003",
+  "2960.001",
+  "2960.002"
+ ],
+ "confidence": 95,
+ "reason": "Narrative about director onboarding and board consent aligns with Solace Health's Board Matters (2960.003); timekeeper has extensive recent hours on this matter.",
+ "usage": {
+  "inputTokens": 8151,
+  "outputTokens": 361,
+  "totalTokens": 8512
+ },
+ "latency_s": 1.686,
+ "seconds": 1.7904339590022573
+}

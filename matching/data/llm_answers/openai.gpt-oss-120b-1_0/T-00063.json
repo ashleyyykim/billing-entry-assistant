@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00063",
+ "cmid": "8012.001",
+ "second_cmid": "",
+ "shortlist": [
+  "8012.001",
+  "3012.001",
+  "8340.001"
+ ],
+ "confidence": 95,
+ "reason": "Narrative references Phase I environmental and zoning letter for Pine St., which aligns with the acquisition of 9 Pine St. (8012.001). Typed CMID appears incorrect.",
+ "usage": {
+  "inputTokens": 8161,
+  "outputTokens": 563,
+  "totalTokens": 8724
+ },
+ "latency_s": 3.753,
+ "seconds": 3.823652959006722
+}

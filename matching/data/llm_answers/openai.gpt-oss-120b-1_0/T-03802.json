@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03802",
+ "cmid": "7215.003",
+ "second_cmid": "",
+ "shortlist": [
+  "7215.003",
+  "7215.005",
+  "7215.004"
+ ],
+ "confidence": 95,
+ "reason": "Narrative references pricing grid for Asterion and lien searches, matching the Northgate Bank Credit Facility for Asterion Holdings (7215.003). Prior time entries show extensive work on this matter.",
+ "usage": {
+  "inputTokens": 8156,
+  "outputTokens": 421,
+  "totalTokens": 8577
+ },
+ "latency_s": 1.733,
+ "seconds": 1.7994663329882314
+}

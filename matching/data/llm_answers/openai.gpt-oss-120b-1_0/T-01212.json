@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01212",
+ "cmid": "8340.001",
+ "second_cmid": "",
+ "shortlist": [
+  "8340.001",
+  "8340.002",
+  "8340.003"
+ ],
+ "confidence": 95,
+ "reason": "Narrative mentions Harbor St. estoppels, matching the acquisition of 450 Harbor St. (8340.001). Timekeeper has recent extensive hours on this matter.",
+ "usage": {
+  "inputTokens": 8148,
+  "outputTokens": 397,
+  "totalTokens": 8545
+ },
+ "latency_s": 4.119,
+ "seconds": 4.190393791010138
+}

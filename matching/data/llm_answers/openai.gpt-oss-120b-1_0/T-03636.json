@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03636",
+ "cmid": "6110.001",
+ "second_cmid": "",
+ "shortlist": [
+  "6110.001",
+  "6110.002",
+  "3455.002"
+ ],
+ "confidence": 85,
+ "reason": "Typed CMID, client, and matter match the narrative of generic document work for Meridian Thermal Systems' General Corporate matter; no contradictory evidence from prior entries.",
+ "usage": {
+  "inputTokens": 8139,
+  "outputTokens": 552,
+  "totalTokens": 8691
+ },
+ "latency_s": 2.554,
+ "seconds": 2.6173900830035564
+}

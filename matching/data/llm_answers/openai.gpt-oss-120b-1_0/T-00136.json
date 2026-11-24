@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00136",
+ "cmid": "8340.001",
+ "second_cmid": "",
+ "shortlist": [
+  "8340.001",
+  "8012.001",
+  "8347.001"
+ ],
+ "confidence": 95,
+ "reason": "Narrative matches past entry for 8340.001 (Mark up ALTA survey) and timekeeper has large hours on that matter; date within open period.",
+ "usage": {
+  "inputTokens": 8142,
+  "outputTokens": 429,
+  "totalTokens": 8571
+ },
+ "latency_s": 3.18,
+ "seconds": 3.2957936250022613
+}

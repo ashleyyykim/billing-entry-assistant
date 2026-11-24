@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01886",
+ "cmid": "9140.001",
+ "second_cmid": "",
+ "shortlist": [
+  "9140.001",
+  "9140.002",
+  "2215.001"
+ ],
+ "confidence": 95,
+ "reason": "Narrative about coordinating LP signature pages aligns with fund formation work; timekeeper has extensive recent hours on Juniper Peak Capital Fund II Formation (9140.001) and typed client matches.",
+ "usage": {
+  "inputTokens": 8150,
+  "outputTokens": 562,
+  "totalTokens": 8712
+ },
+ "latency_s": 3.325,
+ "seconds": 3.389143624997814
+}

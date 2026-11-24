@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00088",
+ "cmid": "6103.004",
+ "second_cmid": "",
+ "shortlist": [
+  "6103.004",
+  "6103.002",
+  "6103.001"
+ ],
+ "confidence": 80,
+ "reason": "Typed CMID appears mistyped (O05). 6103.005 not opened yet. Timekeeper's primary work is on 6103.004 (125h). Narrative generic but fits ongoing filing/correspondence work for annual meeting.",
+ "usage": {
+  "inputTokens": 8140,
+  "outputTokens": 773,
+  "totalTokens": 8913
+ },
+ "latency_s": 8.169,
+ "seconds": 8.286864207999315
+}

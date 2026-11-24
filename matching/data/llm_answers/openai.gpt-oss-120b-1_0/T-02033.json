@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02033",
+ "cmid": "8340.001",
+ "second_cmid": "",
+ "shortlist": [
+  "8340.001",
+  "8340.002",
+  "8012.001"
+ ],
+ "confidence": 95,
+ "reason": "Narrative references Phase I environmental for 450 Harbor and zoning report, which are specific to the acquisition of 450 Harbor St. (matter 8340.001). Timekeeper's recent high hours on 8340.001 support this assignment.",
+ "usage": {
+  "inputTokens": 8160,
+  "outputTokens": 513,
+  "totalTokens": 8673
+ },
+ "latency_s": 2.128,
+ "seconds": 2.19139754200296
+}

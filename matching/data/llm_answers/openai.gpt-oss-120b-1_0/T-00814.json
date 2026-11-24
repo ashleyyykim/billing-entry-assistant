@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00814",
+ "cmid": "9140.001",
+ "second_cmid": "",
+ "shortlist": [
+  "9140.001",
+  "9140.002",
+  "4471.002"
+ ],
+ "confidence": 95,
+ "reason": "Narrative matches past entries for 9140.001 (Fund II Management Company Agreement) and timekeeper has extensive history on that matter.",
+ "usage": {
+  "inputTokens": 8151,
+  "outputTokens": 421,
+  "totalTokens": 8572
+ },
+ "latency_s": 3.985,
+ "seconds": 4.059650625000359
+}

@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01588",
+ "cmid": "4590.004",
+ "second_cmid": "",
+ "shortlist": [
+  "4590.004",
+  "4590.001",
+  "4590.003"
+ ],
+ "confidence": 95,
+ "reason": "Narrative references Orbis Health license agreement renewal, matching licensing matter for Tidewater AI (4590.004) where Orbis Health appears in past entries.",
+ "usage": {
+  "inputTokens": 8151,
+  "outputTokens": 439,
+  "totalTokens": 8590
+ },
+ "latency_s": 3.65,
+ "seconds": 3.753566208004486
+}

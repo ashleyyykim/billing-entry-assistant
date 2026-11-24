@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01656",
+ "cmid": "3455.002",
+ "second_cmid": "",
+ "shortlist": [
+  "3455.002",
+  "6103.003",
+  "2960.003"
+ ],
+ "confidence": 95,
+ "reason": "Narrative involves editing a unanimous written consent and board composition call, matching board governance work seen in 3455.002 past entries; timekeeper has extensive hours on this matter.",
+ "usage": {
+  "inputTokens": 8159,
+  "outputTokens": 837,
+  "totalTokens": 8996
+ },
+ "latency_s": 6.345,
+ "seconds": 6.420906040992122
+}

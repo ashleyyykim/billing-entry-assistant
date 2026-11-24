@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00492",
+ "cmid": "3012.001",
+ "second_cmid": "",
+ "shortlist": [
+  "3012.001",
+  "2207.001",
+  "2201.001"
+ ],
+ "confidence": 96,
+ "reason": "Narrative matches 'attend to corporate matters' and typed client/matter align with Halvorsen Industrial General Corporate (3012.001); this matter appears in timekeeper's recent history, making it the most likely match.",
+ "usage": {
+  "inputTokens": 8138,
+  "outputTokens": 385,
+  "totalTokens": 8523
+ },
+ "latency_s": 3.595,
+ "seconds": 3.693179207999492
+}

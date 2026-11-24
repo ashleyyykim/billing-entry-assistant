@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00860",
+ "cmid": "2201.005",
+ "second_cmid": "",
+ "shortlist": [
+  "2201.005",
+  "4590.005",
+  "3120.003"
+ ],
+ "confidence": 95,
+ "reason": "Narrative describes coordinating option grant paperwork, which aligns with Harborlight Bio's Equity Plan / 409A matter (2201.005); client typed as Harborlight Bio confirms.",
+ "usage": {
+  "inputTokens": 8150,
+  "outputTokens": 559,
+  "totalTokens": 8709
+ },
+ "latency_s": 5.612,
+ "seconds": 5.682988957996713
+}

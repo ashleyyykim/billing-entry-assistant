@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00813",
+ "cmid": "9140.001",
+ "second_cmid": "",
+ "shortlist": [
+  "9140.001",
+  "9140.002",
+  "2215.002"
+ ],
+ "confidence": 95,
+ "reason": "Narrative matches fund formation work (investor subscriptions, open items, revised draft) and timekeeper's recent heavy activity on Juniper Peak Capital Fund II Formation (9140.001).",
+ "usage": {
+  "inputTokens": 8147,
+  "outputTokens": 411,
+  "totalTokens": 8558
+ },
+ "latency_s": 2.929,
+ "seconds": 2.9967239590041572
+}

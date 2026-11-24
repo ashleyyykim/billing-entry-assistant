@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00665",
+ "cmid": "6230.001",
+ "second_cmid": "",
+ "shortlist": [
+  "6230.001",
+  "2956.002",
+  "2201.001"
+ ],
+ "confidence": 92,
+ "reason": "Typed CMID 6230.1 likely refers to 6230.001. Narrative matches general corporate work. Timekeeper's recent hours show the largest allocation to 6230.001, indicating ongoing work on Ember Grid Energy corporate matters.",
+ "usage": {
+  "inputTokens": 8139,
+  "outputTokens": 539,
+  "totalTokens": 8678
+ },
+ "latency_s": 5.174,
+ "seconds": 5.328643333006767
+}

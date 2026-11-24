@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03491",
+ "cmid": "3120.001",
+ "second_cmid": "",
+ "shortlist": [
+  "3120.001",
+  "2201.001",
+  "1111.001"
+ ],
+ "confidence": 95,
+ "reason": "Narrative matches past entry for 3120.001 ('Manage good standing requests') and timekeeper has large hours on that matter.",
+ "usage": {
+  "inputTokens": 8137,
+  "outputTokens": 401,
+  "totalTokens": 8538
+ },
+ "latency_s": 3.27,
+ "seconds": 3.478958125007921
+}

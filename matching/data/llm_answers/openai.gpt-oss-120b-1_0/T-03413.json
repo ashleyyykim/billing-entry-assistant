@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03413",
+ "cmid": "7222.002",
+ "second_cmid": "",
+ "shortlist": [
+  "7222.002",
+  "2207.001",
+  "9035.002"
+ ],
+ "confidence": 95,
+ "reason": "Narrative matches past entry for 7222.002 which involved updating material contracts; date fits matter open period.",
+ "usage": {
+  "inputTokens": 8138,
+  "outputTokens": 473,
+  "totalTokens": 8611
+ },
+ "latency_s": 4.165,
+ "seconds": 4.222066000002087
+}

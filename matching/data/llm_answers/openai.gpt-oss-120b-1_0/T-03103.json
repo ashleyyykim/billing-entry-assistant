@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03103",
+ "cmid": "7215.005",
+ "second_cmid": "",
+ "shortlist": [
+  "7215.005",
+  "7215.003",
+  "7215.004"
+ ],
+ "confidence": 95,
+ "reason": "Typed CMID '7215.0O5' likely meant 7215.005; client misspelled; narrative 'Rework guaranty' fits amendment work for Asterion Amendment No. 2.",
+ "usage": {
+  "inputTokens": 8142,
+  "outputTokens": 555,
+  "totalTokens": 8697
+ },
+ "latency_s": 6.004,
+ "seconds": 6.072585457994137
+}

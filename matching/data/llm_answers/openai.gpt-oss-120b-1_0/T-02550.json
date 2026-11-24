@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02550",
+ "cmid": "4471.004",
+ "second_cmid": "",
+ "shortlist": [
+  "4471.004",
+  "4471.003",
+  "4471.002"
+ ],
+ "confidence": 95,
+ "reason": "Narrative explicitly references Fund IV co\u2011invest rights and ERISA status, matching the Ridgewater Partners Fund IV Formation matter (4471.004). Past entries for this matter include similar communications with R. Vance.",
+ "usage": {
+  "inputTokens": 8165,
+  "outputTokens": 589,
+  "totalTokens": 8754
+ },
+ "latency_s": 5.503,
+ "seconds": 5.582476250012405
+}

@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02807",
+ "cmid": "3012.004",
+ "second_cmid": "",
+ "shortlist": [
+  "3012.004",
+  "3012.005",
+  "5520.001"
+ ],
+ "confidence": 70,
+ "reason": "Typed CMID is invalid; narrative generic. Timekeeper previously logged hours on 3012.004 (Acquisition of Brightline Pumps) and works on deal matters. This is the most likely active acquisition matter.",
+ "usage": {
+  "inputTokens": 8141,
+  "outputTokens": 1298,
+  "totalTokens": 9439
+ },
+ "latency_s": 11.327,
+ "seconds": 11.393954040991957
+}

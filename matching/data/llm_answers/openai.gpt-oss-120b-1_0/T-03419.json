@@ -1,0 +1,17 @@
+{
+ "entry_id": "T-03419",
+ "cmid": "7222.002",
+ "second_cmid": "",
+ "shortlist": [
+  "7222.002"
+ ],
+ "confidence": 95,
+ "reason": "Narrative matches past entry for 7222.002 (call with Kaur re specific indemnities) and typed CMID aligns; date within matter's active period.",
+ "usage": {
+  "inputTokens": 8153,
+  "outputTokens": 234,
+  "totalTokens": 8387
+ },
+ "latency_s": 2.458,
+ "seconds": 2.52432250000129
+}

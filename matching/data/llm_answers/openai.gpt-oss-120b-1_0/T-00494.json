@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00494",
+ "cmid": "5520.004",
+ "second_cmid": "",
+ "shortlist": [
+  "5520.004",
+  "5520.001",
+  "5520.003"
+ ],
+ "confidence": 98,
+ "reason": "Narrative matches past entries for 5520.004 (analyze/revise capital account statements) and typed CMID aligns with this matter.",
+ "usage": {
+  "inputTokens": 8145,
+  "outputTokens": 290,
+  "totalTokens": 8435
+ },
+ "latency_s": 2.944,
+ "seconds": 3.046759957986069
+}

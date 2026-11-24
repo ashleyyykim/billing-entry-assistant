@@ -1,0 +1,15 @@
+{
+ "entry_id": "T-03416",
+ "cmid": "NONE",
+ "second_cmid": "",
+ "shortlist": [],
+ "confidence": 95,
+ "reason": "Narrative references Ridgeline Capital IRA, which is not a client or matter in the list; typed CMID 7633.002 (Copperline Networks Series A) does not match the work described.",
+ "usage": {
+  "inputTokens": 8185,
+  "outputTokens": 1207,
+  "totalTokens": 9392
+ },
+ "latency_s": 10.766,
+ "seconds": 10.969179084000643
+}

@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03475",
+ "cmid": "5520.001",
+ "second_cmid": "",
+ "shortlist": [
+  "5520.001",
+  "5520.003",
+  "5520.002"
+ ],
+ "confidence": 92,
+ "reason": "Narrative about analyzing customer contracts and earnout aligns with acquisition deal work for 5520.001 (Add-On Acquisition Project Lark); earnout typical in acquisitions and matter is open on the date.",
+ "usage": {
+  "inputTokens": 8150,
+  "outputTokens": 660,
+  "totalTokens": 8810
+ },
+ "latency_s": 5.761,
+ "seconds": 5.823289375010063
+}

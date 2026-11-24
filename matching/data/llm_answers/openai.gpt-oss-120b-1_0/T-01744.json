@@ -1,0 +1,17 @@
+{
+ "entry_id": "T-01744",
+ "cmid": "2960.001",
+ "second_cmid": "",
+ "shortlist": [
+  "2960.001"
+ ],
+ "confidence": 92,
+ "reason": "Typed client Solace Health and matter General Corporate match CMID 2960.001; narrative aligns with corporate matters; matter is open on the work date.",
+ "usage": {
+  "inputTokens": 8137,
+  "outputTokens": 372,
+  "totalTokens": 8509
+ },
+ "latency_s": 2.931,
+ "seconds": 3.003280959004769
+}

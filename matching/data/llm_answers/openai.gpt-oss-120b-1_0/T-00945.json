@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00945",
+ "cmid": "5520.001",
+ "second_cmid": "",
+ "shortlist": [
+  "5520.001",
+  "5520.003",
+  "5520.004"
+ ],
+ "confidence": 92,
+ "reason": "Narrative matches typical tasks for an add-on acquisition (financing commitment letter, employment agreements, R&W insurance). Timekeeper has recent hours on 5520.001 and no hours on 5520.003, making 5520.001 the most likely matter.",
+ "usage": {
+  "inputTokens": 8170,
+  "outputTokens": 890,
+  "totalTokens": 9060
+ },
+ "latency_s": 5.175,
+ "seconds": 5.39171283300675
+}

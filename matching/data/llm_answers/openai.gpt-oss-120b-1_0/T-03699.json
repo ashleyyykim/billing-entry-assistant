@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03699",
+ "cmid": "3120.003",
+ "second_cmid": "",
+ "shortlist": [
+  "3120.003",
+  "3120.001",
+  "3120.002"
+ ],
+ "confidence": 92,
+ "reason": "Narrative mentions Y. Tanaka and option grant mechanics, which align with Bluefin Robotics Equity Plan (3120.003) where Y. Tanaka appears in past entries. Corporate matter (3120.001) does not involve option grants.",
+ "usage": {
+  "inputTokens": 8184,
+  "outputTokens": 635,
+  "totalTokens": 8819
+ },
+ "latency_s": 5.758,
+ "seconds": 5.909270249991096
+}

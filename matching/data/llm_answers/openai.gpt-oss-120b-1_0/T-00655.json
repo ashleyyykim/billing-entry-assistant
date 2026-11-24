@@ -1,0 +1,15 @@
+{
+ "entry_id": "T-00655",
+ "cmid": "NONE",
+ "second_cmid": "",
+ "shortlist": [],
+ "confidence": 95,
+ "reason": "Narrative references Hartwell, which does not appear in any listed matter; typed CMID is invalid, so entry cannot be matched to a known matter.",
+ "usage": {
+  "inputTokens": 8157,
+  "outputTokens": 515,
+  "totalTokens": 8672
+ },
+ "latency_s": 3.427,
+ "seconds": 3.4939922079938697
+}

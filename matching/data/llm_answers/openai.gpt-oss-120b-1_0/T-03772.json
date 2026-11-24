@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03772",
+ "cmid": "2201.005",
+ "second_cmid": "",
+ "shortlist": [
+  "2201.005",
+  "3120.003",
+  "4590.005"
+ ],
+ "confidence": 95,
+ "reason": "83(b) filings are part of equity plan/409A work; timekeeper has significant recent hours on Harborlight Bio equity plan (2201.005) and the narrative matches that matter.",
+ "usage": {
+  "inputTokens": 8141,
+  "outputTokens": 467,
+  "totalTokens": 8608
+ },
+ "latency_s": 4.521,
+ "seconds": 4.58720845800417
+}

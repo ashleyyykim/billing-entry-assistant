@@ -1,0 +1,15 @@
+{
+ "entry_id": "T-00156",
+ "cmid": "NONE",
+ "second_cmid": "",
+ "shortlist": [],
+ "confidence": 95,
+ "reason": "Client Halcyon Data is not in the matter list; GP removal likely a fund matter but no matching client/matter found.",
+ "usage": {
+  "inputTokens": 8142,
+  "outputTokens": 603,
+  "totalTokens": 8745
+ },
+ "latency_s": 3.281,
+ "seconds": 3.569028416997753
+}

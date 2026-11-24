@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00944",
+ "cmid": "8340.001",
+ "second_cmid": "",
+ "shortlist": [
+  "8340.001",
+  "8340.002",
+  "8340.003"
+ ],
+ "confidence": 95,
+ "reason": "Narrative references 450 Harbor, which is the acquisition matter 8340.001 for Pelican Row Holdings. Timekeeper TK113 has significant recent hours on this matter, confirming the match.",
+ "usage": {
+  "inputTokens": 8156,
+  "outputTokens": 395,
+  "totalTokens": 8551
+ },
+ "latency_s": 3.627,
+ "seconds": 3.6932832500024233
+}

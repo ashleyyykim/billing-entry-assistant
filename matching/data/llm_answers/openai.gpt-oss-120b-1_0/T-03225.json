@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03225",
+ "cmid": "9140.001",
+ "second_cmid": "",
+ "shortlist": [
+  "9140.001",
+  "9140.002",
+  "2215.002"
+ ],
+ "confidence": 95,
+ "reason": "Client Juniper Peak Capital, matter Fund II matches Fund II Formation (9140.001); narrative aligns with reviewing subscription documents; timekeeper has extensive recent hours on 9140.001.",
+ "usage": {
+  "inputTokens": 8143,
+  "outputTokens": 395,
+  "totalTokens": 8538
+ },
+ "latency_s": 1.685,
+ "seconds": 1.759672625004896
+}

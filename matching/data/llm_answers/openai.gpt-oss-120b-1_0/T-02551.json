@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02551",
+ "cmid": "4471.001",
+ "second_cmid": "",
+ "shortlist": [
+  "4471.001",
+  "4471.002",
+  "4471.004"
+ ],
+ "confidence": 85,
+ "reason": "Typed client Ridgewater matches; narrative 'Attend to LP matters' aligns with General Fund Matters which handles LP issues; other Ridgewater matters are formation-focused, less likely.",
+ "usage": {
+  "inputTokens": 8136,
+  "outputTokens": 874,
+  "totalTokens": 9010
+ },
+ "latency_s": 6.265,
+ "seconds": 6.486703957998543
+}

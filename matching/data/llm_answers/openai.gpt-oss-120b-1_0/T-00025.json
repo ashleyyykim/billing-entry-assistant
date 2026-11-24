@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00025",
+ "cmid": "6103.003",
+ "second_cmid": "",
+ "shortlist": [
+  "6103.003",
+  "6103.001",
+  "6103.004"
+ ],
+ "confidence": 92,
+ "reason": "Narrative mentions D&O questionnaire, which matches past entries for Meridian Therapeutics Board & Governance (6103.003). Typed CMID is invalid; date fits open matter.",
+ "usage": {
+  "inputTokens": 8147,
+  "outputTokens": 543,
+  "totalTokens": 8690
+ },
+ "latency_s": 5.75,
+ "seconds": 6.02990687500278
+}

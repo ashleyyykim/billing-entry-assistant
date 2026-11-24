@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03266",
+ "cmid": "3012.005",
+ "second_cmid": "",
+ "shortlist": [
+  "3012.005",
+  "3012.004",
+  "3012.001"
+ ],
+ "confidence": 92,
+ "reason": "Narrative mentions escrow agreement for partner review on Project Corvid; Halvorsen Industrial's Corvid Valves acquisition (3012.005) fits, opened before work date.",
+ "usage": {
+  "inputTokens": 8145,
+  "outputTokens": 589,
+  "totalTokens": 8734
+ },
+ "latency_s": 2.966,
+ "seconds": 3.027013333994546
+}

@@ -1,0 +1,17 @@
+{
+ "entry_id": "T-03931",
+ "cmid": "9028.003",
+ "second_cmid": "",
+ "shortlist": [
+  "9028.003"
+ ],
+ "confidence": 95,
+ "reason": "Narrative about 409A timing matches past entries for Lanternfish Software Exec Comp / 409A (9028.003) and timekeeper has extensive history on this matter.",
+ "usage": {
+  "inputTokens": 8168,
+  "outputTokens": 326,
+  "totalTokens": 8494
+ },
+ "latency_s": 3.023,
+ "seconds": 3.0982453750038985
+}

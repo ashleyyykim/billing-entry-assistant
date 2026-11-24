@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02205",
+ "cmid": "2960.003",
+ "second_cmid": "",
+ "shortlist": [
+  "2960.003",
+  "3455.002",
+  "6103.003"
+ ],
+ "confidence": 95,
+ "reason": "Narrative about a phone call with GC to set meeting agenda aligns with board matters for Solace Health, matching the typed CMID and the timekeeper's heavy recent work on that matter.",
+ "usage": {
+  "inputTokens": 8143,
+  "outputTokens": 360,
+  "totalTokens": 8503
+ },
+ "latency_s": 3.215,
+ "seconds": 3.272193333992618
+}

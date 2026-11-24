@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00329",
+ "cmid": "8347.001",
+ "second_cmid": "",
+ "shortlist": [
+  "8347.001",
+  "8347.002",
+  "8347.001"
+ ],
+ "confidence": 95,
+ "reason": "Narrative references Market St closing deliverables; Pelican Bay Holdings' acquisition of 1200 Market St. (8347.001) matches exactly and is open on the work date.",
+ "usage": {
+  "inputTokens": 8147,
+  "outputTokens": 405,
+  "totalTokens": 8552
+ },
+ "latency_s": 4.075,
+ "seconds": 4.146855958999367
+}

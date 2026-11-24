@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01632",
+ "cmid": "9028.003",
+ "second_cmid": "",
+ "shortlist": [
+  "9028.003",
+  "3120.003",
+  "4590.005"
+ ],
+ "confidence": 95,
+ "reason": "Narrative mentions drafting Form S-8, which matches past entries for 9028.003 (Exec Comp / 409A) where Form S-8 work was done; timekeeper's history shows heavy work on 9028.003 and client abbreviation LFS aligns with Lantern Software.",
+ "usage": {
+  "inputTokens": 8142,
+  "outputTokens": 539,
+  "totalTokens": 8681
+ },
+ "latency_s": 4.588,
+ "seconds": 4.658438667000155
+}

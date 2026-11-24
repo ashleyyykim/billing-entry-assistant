@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00776",
+ "cmid": "5520.004",
+ "second_cmid": "",
+ "shortlist": [
+  "5520.004",
+  "5524.002",
+  "4471.001"
+ ],
+ "confidence": 95,
+ "reason": "Narrative mentions LP inquiry and capital call notice, tasks typical for fund administration. Past entries for 5520.004 include LP inquiry and capital account statements, aligning with this work. Timekeeper has logged hours to 5520.004, supporting assignment.",
+ "usage": {
+  "inputTokens": 8169,
+  "outputTokens": 930,
+  "totalTokens": 9099
+ },
+ "latency_s": 5.064,
+ "seconds": 5.28405550000025
+}

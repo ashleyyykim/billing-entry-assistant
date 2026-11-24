@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02572",
+ "cmid": "2960.003",
+ "second_cmid": "",
+ "shortlist": [
+  "2960.003",
+  "3455.002",
+  "6103.003"
+ ],
+ "confidence": 95,
+ "reason": "Narrative references board chair, option grants, D&O questionnaire, and board deck, matching Solace Health Board Matters (2960.003). Typed client 'SH' aligns with Solace Health, and timekeeper's prior heavy work on 2960.003 supports this.",
+ "usage": {
+  "inputTokens": 8161,
+  "outputTokens": 484,
+  "totalTokens": 8645
+ },
+ "latency_s": 4.488,
+ "seconds": 4.688560166992829
+}

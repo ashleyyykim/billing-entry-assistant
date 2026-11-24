@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00367",
+ "cmid": "3120.003",
+ "second_cmid": "",
+ "shortlist": [
+  "3120.003",
+  "3120.001",
+  "3120.002"
+ ],
+ "confidence": 92,
+ "reason": "Bluefin Robotics client; offer letter review fits equity plan matter (3120.003) where timekeeper has recent hours",
+ "usage": {
+  "inputTokens": 8142,
+  "outputTokens": 641,
+  "totalTokens": 8783
+ },
+ "latency_s": 4.631,
+ "seconds": 4.7393746669986285
+}

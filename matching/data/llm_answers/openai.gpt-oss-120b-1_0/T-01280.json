@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01280",
+ "cmid": "8340.001",
+ "second_cmid": "",
+ "shortlist": [
+  "8340.001",
+  "8340.002",
+  "8012.001"
+ ],
+ "confidence": 92,
+ "reason": "Typed client is Pelican Row Holdings; timekeeper's major recent work is on acquisition matter 8340.001. Narrative fits scanning executed acquisition documents.",
+ "usage": {
+  "inputTokens": 8143,
+  "outputTokens": 465,
+  "totalTokens": 8608
+ },
+ "latency_s": 2.641,
+ "seconds": 2.7530808329902356
+}

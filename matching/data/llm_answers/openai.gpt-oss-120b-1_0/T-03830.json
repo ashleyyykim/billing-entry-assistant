@@ -1,0 +1,17 @@
+{
+ "entry_id": "T-03830",
+ "cmid": "2201.001",
+ "second_cmid": "",
+ "shortlist": [
+  "2201.001"
+ ],
+ "confidence": 95,
+ "reason": "TK106's recent billing history shows dominant work on 2201.001 and the generic 'Review documents' aligns with typical corporate matter tasks; no evidence of another matter involvement.",
+ "usage": {
+  "inputTokens": 8137,
+  "outputTokens": 359,
+  "totalTokens": 8496
+ },
+ "latency_s": 2.761,
+ "seconds": 2.8302449580078246
+}

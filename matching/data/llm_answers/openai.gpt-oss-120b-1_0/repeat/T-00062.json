@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00062",
+ "cmid": "1111.001",
+ "second_cmid": "",
+ "shortlist": [
+  "1111.001",
+  "1111.002",
+  "1111.003"
+ ],
+ "confidence": 95,
+ "reason": "Narrative matches past entries for 1111.001 (Admin) which includes attending practice group meetings; client is Firm; typed matter likely typo.",
+ "usage": {
+  "inputTokens": 8123,
+  "outputTokens": 329,
+  "totalTokens": 8452
+ },
+ "latency_s": 3.73,
+ "seconds": 3.832877834007377
+}

@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01363",
+ "cmid": "8340.001",
+ "second_cmid": "",
+ "shortlist": [
+  "8340.001",
+  "8340.002",
+  "8340.003"
+ ],
+ "confidence": 92,
+ "reason": "Typed client matches Pelican Row Holdings; typed CMID 8340.009 does not exist. Timekeeper has extensive hours on 8340.001 (real estate acquisition) and the work (CFO email on contractor classification) fits within acquisition due diligence. Date is within matter's open period.",
+ "usage": {
+  "inputTokens": 8144,
+  "outputTokens": 1142,
+  "totalTokens": 9286
+ },
+ "latency_s": 11.595,
+ "seconds": 11.709419457998592
+}

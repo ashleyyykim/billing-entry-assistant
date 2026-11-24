@@ -1,0 +1,17 @@
+{
+ "entry_id": "T-00574",
+ "cmid": "2215.001",
+ "second_cmid": "",
+ "shortlist": [
+  "2215.001"
+ ],
+ "confidence": 95,
+ "reason": "Narrative about reviewing annual meeting materials and capital account statements aligns with General Fund Matters for Harbor Light Partners, matching typed CMID and timekeeper's prior work on this matter.",
+ "usage": {
+  "inputTokens": 8162,
+  "outputTokens": 408,
+  "totalTokens": 8570
+ },
+ "latency_s": 1.88,
+ "seconds": 1.9480082910013152
+}

@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02965",
+ "cmid": "2960.003",
+ "second_cmid": "",
+ "shortlist": [
+  "2960.003",
+  "3455.002",
+  "7410.002"
+ ],
+ "confidence": 95,
+ "reason": "Narrative matches prior entry for Solace Health board matters with P. Liu; timekeeper's history shows extensive work on 2960.003.",
+ "usage": {
+  "inputTokens": 8143,
+  "outputTokens": 524,
+  "totalTokens": 8667
+ },
+ "latency_s": 3.351,
+ "seconds": 3.4226921669906005
+}

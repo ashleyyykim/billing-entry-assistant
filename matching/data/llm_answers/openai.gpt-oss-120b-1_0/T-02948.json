@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02948",
+ "cmid": "5520.004",
+ "second_cmid": "",
+ "shortlist": [
+  "5520.004",
+  "5520.001",
+  "5520.002"
+ ],
+ "confidence": 95,
+ "reason": "Narrative describes Fund V investor register and LPAC consent work, matching Cobalt Ridge Capital's Fund Administration matter (5520.004). Timekeeper TK111 has recent hours on this matter, confirming assignment.",
+ "usage": {
+  "inputTokens": 8203,
+  "outputTokens": 496,
+  "totalTokens": 8699
+ },
+ "latency_s": 2.917,
+ "seconds": 2.9882103749987436
+}

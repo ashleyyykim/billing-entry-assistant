@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01026",
+ "cmid": "8340.001",
+ "second_cmid": "",
+ "shortlist": [
+  "8340.001",
+  "8340.003",
+  "8340.002"
+ ],
+ "confidence": 95,
+ "reason": "Zoning letter likely tied to Pelican Row Holdings acquisition of 450 Harbor St., which already has zoning work in past entries and is the primary matter TK117 works on.",
+ "usage": {
+  "inputTokens": 8140,
+  "outputTokens": 499,
+  "totalTokens": 8639
+ },
+ "latency_s": 4.343,
+ "seconds": 4.403510415999335
+}

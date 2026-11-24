@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00082",
+ "cmid": "6103.004",
+ "second_cmid": "8012.001",
+ "shortlist": [
+  "6103.004",
+  "8012.001",
+  "6103.001"
+ ],
+ "confidence": 95,
+ "reason": "Narrative references quarterly report for annual meeting (Meridian Therapeutics 2026 Annual Meeting) and estoppel certificates for Pine St (Silverleaf Holdings acquisition 9 Pine St). Both matters are active and match timekeeper's recent work.",
+ "usage": {
+  "inputTokens": 8152,
+  "outputTokens": 543,
+  "totalTokens": 8695
+ },
+ "latency_s": 6.322,
+ "seconds": 6.525572750004358
+}

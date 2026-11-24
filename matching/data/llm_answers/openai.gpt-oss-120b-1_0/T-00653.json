@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00653",
+ "cmid": "9140.001",
+ "second_cmid": "",
+ "shortlist": [
+  "9140.001",
+  "9140.002",
+  "2215.001"
+ ],
+ "confidence": 95,
+ "reason": "Narrative about reviewing PPM aligns with fund formation; Juniper Peak Capital's Fund II Formation matter (9140.001) matches client and recent heavy billing by this timekeeper.",
+ "usage": {
+  "inputTokens": 8145,
+  "outputTokens": 373,
+  "totalTokens": 8518
+ },
+ "latency_s": 3.258,
+ "seconds": 3.3282138329959707
+}

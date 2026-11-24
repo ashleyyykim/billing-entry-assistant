@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03365",
+ "cmid": "2960.003",
+ "second_cmid": "",
+ "shortlist": [
+  "2960.003",
+  "2960.001",
+  "2960.002"
+ ],
+ "confidence": 78,
+ "reason": "Typed client 'Solaca Health' matches Solace Health. Generic 'Emails' likely relate to board matters where email exchanges are common (see past entry 2960.003). No specific indication of financing or corporate filings, so board matter is most plausible.",
+ "usage": {
+  "inputTokens": 8134,
+  "outputTokens": 840,
+  "totalTokens": 8974
+ },
+ "latency_s": 6.311,
+ "seconds": 6.370562457988854
+}

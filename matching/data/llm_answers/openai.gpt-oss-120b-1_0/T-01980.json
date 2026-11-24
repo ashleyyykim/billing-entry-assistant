@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01980",
+ "cmid": "8347.002",
+ "second_cmid": "",
+ "shortlist": [
+  "8347.002",
+  "8340.002",
+  "8012.002"
+ ],
+ "confidence": 95,
+ "reason": "Narrative describes lease agreement work; timekeeper has prior lease entries for 8347.002 (Pelican Bay Holdings) and 8340.002 (Pelican Row). Typed client PBH matches Pelican Bay Holdings, making 8347.002 the best fit.",
+ "usage": {
+  "inputTokens": 8130,
+  "outputTokens": 550,
+  "totalTokens": 8680
+ },
+ "latency_s": 5.281,
+ "seconds": 5.348505667003337
+}

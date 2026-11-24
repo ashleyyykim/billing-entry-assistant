@@ -1,0 +1,17 @@
+{
+ "entry_id": "T-02066",
+ "cmid": "3120.001",
+ "second_cmid": "",
+ "shortlist": [
+  "3120.001"
+ ],
+ "confidence": 95,
+ "reason": "Narrative about reviewing good standing certificates aligns with Bluefin Robotics General Corporate matter, which has prior entries for good standing requests and the timekeeper has extensive history on this CMID.",
+ "usage": {
+  "inputTokens": 8147,
+  "outputTokens": 258,
+  "totalTokens": 8405
+ },
+ "latency_s": 1.988,
+ "seconds": 2.049035959003959
+}

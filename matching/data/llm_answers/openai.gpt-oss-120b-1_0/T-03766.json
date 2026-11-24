@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03766",
+ "cmid": "6230.001",
+ "second_cmid": "",
+ "shortlist": [
+  "6230.001",
+  "6230.002",
+  "6230.003"
+ ],
+ "confidence": 92,
+ "reason": "Typed CMID matches Ember Grid Energy General Corporate, which is open on the work date. The timekeeper has prior hours on this matter, and the generic narrative 'Emails' fits routine correspondence for a corporate matter.",
+ "usage": {
+  "inputTokens": 8137,
+  "outputTokens": 367,
+  "totalTokens": 8504
+ },
+ "latency_s": 3.838,
+ "seconds": 4.025810332997935
+}

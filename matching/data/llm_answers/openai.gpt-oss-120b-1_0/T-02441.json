@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02441",
+ "cmid": "4590.004",
+ "second_cmid": "",
+ "shortlist": [
+  "4590.004",
+  "2201.003",
+  "2201.002"
+ ],
+ "confidence": 95,
+ "reason": "Narrative matches licensing renewal work seen in 4590.004 entries; timekeeper's recent heavy work on 4590.004 supports this.",
+ "usage": {
+  "inputTokens": 8146,
+  "outputTokens": 549,
+  "totalTokens": 8695
+ },
+ "latency_s": 4.67,
+ "seconds": 4.778127000012319
+}

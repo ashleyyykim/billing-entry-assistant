@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00273",
+ "cmid": "6103.004",
+ "second_cmid": "",
+ "shortlist": [
+  "6103.004",
+  "6103.001",
+  "6103.005"
+ ],
+ "confidence": 95,
+ "reason": "Narrative mentions SEC matters; date matches closure of 6103.004 (Annual Meeting) which is SEC related. Timekeeper has extensive history on 6103.004, making this a strong match. Typed CMID likely erroneous.",
+ "usage": {
+  "inputTokens": 8140,
+  "outputTokens": 494,
+  "totalTokens": 8634
+ },
+ "latency_s": 4.26,
+ "seconds": 4.36970070800453
+}

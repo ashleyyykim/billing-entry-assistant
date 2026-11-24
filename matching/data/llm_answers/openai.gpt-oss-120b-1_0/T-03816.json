@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03816",
+ "cmid": "7222.002",
+ "second_cmid": "",
+ "shortlist": [
+  "7222.002",
+  "7222.001",
+  "9035.002"
+ ],
+ "confidence": 95,
+ "reason": "Narrative references Summit Ridge signing call and closing list, matching matter 7222.002 (Acquisition of Summit Ridge Software) which has prior entries about closing list and Summit Ridge.",
+ "usage": {
+  "inputTokens": 8152,
+  "outputTokens": 451,
+  "totalTokens": 8603
+ },
+ "latency_s": 4.395,
+ "seconds": 4.455262417002814
+}

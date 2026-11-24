@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01933",
+ "cmid": "7215.004",
+ "second_cmid": "",
+ "shortlist": [
+  "7215.004",
+  "7215.003",
+  "8340.001"
+ ],
+ "confidence": 80,
+ "reason": "Typed CMID matches an open credit facility matter; narrative is generic document review consistent with prior work on similar credit facility matters. No contradictory evidence, but generic description lowers confidence.",
+ "usage": {
+  "inputTokens": 8138,
+  "outputTokens": 900,
+  "totalTokens": 9038
+ },
+ "latency_s": 8.23,
+ "seconds": 8.313959584003896
+}

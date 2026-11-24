@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01757",
+ "cmid": "3455.002",
+ "second_cmid": "",
+ "shortlist": [
+  "3455.002",
+  "2960.003",
+  "6103.003"
+ ],
+ "confidence": 95,
+ "reason": "Typed client 'AV' matches Aster & Vale; narrative about board meeting aligns with BOARD type matter 3455.002, which the timekeeper has logged many hours on recently.",
+ "usage": {
+  "inputTokens": 8145,
+  "outputTokens": 450,
+  "totalTokens": 8595
+ },
+ "latency_s": 3.127,
+ "seconds": 3.2768214999960037
+}

@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00042",
+ "cmid": "2201.001",
+ "second_cmid": "",
+ "shortlist": [
+  "2201.001",
+  "2201.003",
+  "2207.001"
+ ],
+ "confidence": 95,
+ "reason": "Harborlight Bio's General Corporate matter (2201.001) handles annual filings; prior hours show extensive work on this matter and the client name matches.",
+ "usage": {
+  "inputTokens": 8136,
+  "outputTokens": 428,
+  "totalTokens": 8564
+ },
+ "latency_s": 4.28,
+ "seconds": 4.4932664160005515
+}

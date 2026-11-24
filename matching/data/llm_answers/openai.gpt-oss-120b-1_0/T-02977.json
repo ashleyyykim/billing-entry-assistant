@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02977",
+ "cmid": "5520.001",
+ "second_cmid": "",
+ "shortlist": [
+  "5520.001",
+  "5520.003",
+  "5520.002"
+ ],
+ "confidence": 95,
+ "reason": "Typed CMID matches timekeeper's recent work on this acquisition; narrative 'Attend to diligence' aligns with acquisition due diligence; matter is open on work date.",
+ "usage": {
+  "inputTokens": 8145,
+  "outputTokens": 543,
+  "totalTokens": 8688
+ },
+ "latency_s": 4.054,
+ "seconds": 4.110656874996494
+}

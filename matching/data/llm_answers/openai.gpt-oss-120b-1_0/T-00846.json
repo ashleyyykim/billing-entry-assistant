@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00846",
+ "cmid": "2960.001",
+ "second_cmid": "",
+ "shortlist": [
+  "2960.001",
+  "9028.001",
+  "2207.001"
+ ],
+ "confidence": 85,
+ "reason": "Typed CMID with dash likely meant 2960.001 (Solace Health General Corporate). Narrative 'track annual filings' fits corporate matter. No other strong indicators.",
+ "usage": {
+  "inputTokens": 8136,
+  "outputTokens": 829,
+  "totalTokens": 8965
+ },
+ "latency_s": 7.884,
+ "seconds": 7.959024124997086
+}

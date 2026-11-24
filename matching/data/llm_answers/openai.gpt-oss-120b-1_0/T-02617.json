@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02617",
+ "cmid": "2960.003",
+ "second_cmid": "",
+ "shortlist": [
+  "2960.003",
+  "6103.003",
+  "3455.002"
+ ],
+ "confidence": 95,
+ "reason": "Narrative matches past entry for Solace Health Board Matters (2960.003) reviewing comp committee charter; timekeeper's history includes 2960.003; typed client/matter are incorrect.",
+ "usage": {
+  "inputTokens": 8137,
+  "outputTokens": 499,
+  "totalTokens": 8636
+ },
+ "latency_s": 4.703,
+ "seconds": 4.825210249997326
+}

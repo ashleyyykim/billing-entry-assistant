@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02841",
+ "cmid": "3120.003",
+ "second_cmid": "",
+ "shortlist": [
+  "3120.003",
+  "3120.002",
+  "3120.001"
+ ],
+ "confidence": 95,
+ "reason": "Narrative mentions meeting with Y. Tanaka about share reserve increase, which aligns with Bluefin Robotics equity plan matter (3120.003) where Y. Tanaka appears in past entries.",
+ "usage": {
+  "inputTokens": 8146,
+  "outputTokens": 372,
+  "totalTokens": 8518
+ },
+ "latency_s": 3.249,
+ "seconds": 3.3232441670115804
+}

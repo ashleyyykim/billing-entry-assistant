@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03438",
+ "cmid": "7222.001",
+ "second_cmid": "",
+ "shortlist": [
+  "7222.001",
+  "4471.004",
+  "4471.001"
+ ],
+ "confidence": 70,
+ "reason": "Narrative mentions drafting subscription documents for a Fund IV, matching both 7222.001 (Northgate Capital Partners Fund IV Formation) and 4471.004 (Ridgewater Partners Fund IV Formation). Prior hours show TK109 has already logged time on 7222.001, suggesting continuation on that matter. Confidence moderate due to multiple Fund IV matters.",
+ "usage": {
+  "inputTokens": 8154,
+  "outputTokens": 1319,
+  "totalTokens": 9473
+ },
+ "latency_s": 11.911,
+ "seconds": 11.979189249992487
+}

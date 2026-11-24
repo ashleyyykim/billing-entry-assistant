@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02804",
+ "cmid": "3019.002",
+ "second_cmid": "",
+ "shortlist": [
+  "3019.002",
+  "6110.002",
+  "5520.001"
+ ],
+ "confidence": 70,
+ "reason": "Typed CMID matches the timekeeper's recent focus on acquisition matters (multiple acquisition entries). Narrative is generic but likely a status call for the acquisition. No evidence of other matters fitting better.",
+ "usage": {
+  "inputTokens": 8138,
+  "outputTokens": 727,
+  "totalTokens": 8865
+ },
+ "latency_s": 6.265,
+ "seconds": 6.335281084000599
+}

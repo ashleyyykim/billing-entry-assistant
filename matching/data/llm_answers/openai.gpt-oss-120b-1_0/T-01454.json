@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01454",
+ "cmid": "2201.005",
+ "second_cmid": "",
+ "shortlist": [
+  "2201.005",
+  "2201.003",
+  "2201.001"
+ ],
+ "confidence": 95,
+ "reason": "Narrative 'TCW K. Osei' matches past entries for Harborlight Bio matter 2201.005 (Equity Plan / 409A) where K. Osei was contacted. Typed CMID 2201.3 likely a typo for 2201.003, but the specific person points to 2201.005.",
+ "usage": {
+  "inputTokens": 8142,
+  "outputTokens": 456,
+  "totalTokens": 8598
+ },
+ "latency_s": 3.434,
+ "seconds": 3.6023587089875946
+}

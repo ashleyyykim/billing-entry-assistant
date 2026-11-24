@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00779",
+ "cmid": "5520.004",
+ "second_cmid": "",
+ "shortlist": [
+  "5520.004",
+  "5524.002",
+  "4471.001"
+ ],
+ "confidence": 92,
+ "reason": "Narrative matches prior work on LP/annual meeting materials for Cobalt Ridge Capital fund administration (5520.004); timekeeper's history shows significant hours on this matter.",
+ "usage": {
+  "inputTokens": 8148,
+  "outputTokens": 798,
+  "totalTokens": 8946
+ },
+ "latency_s": 6.654,
+ "seconds": 6.723533166994457
+}

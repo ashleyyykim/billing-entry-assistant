@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03274",
+ "cmid": "5524.001",
+ "second_cmid": "",
+ "shortlist": [
+  "5524.001",
+  "5524.002",
+  "5520.004"
+ ],
+ "confidence": 95,
+ "reason": "Narrative mentions Zoom with T. Smith on LP inquiry, matching past entry for 5524.001 (Cobalt Ridge Partners Fund II Formation) which involves LP matters and T. Smith.",
+ "usage": {
+  "inputTokens": 8150,
+  "outputTokens": 546,
+  "totalTokens": 8696
+ },
+ "latency_s": 5.337,
+ "seconds": 5.4071783749968745
+}

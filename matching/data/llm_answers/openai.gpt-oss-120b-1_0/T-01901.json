@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01901",
+ "cmid": "2960.003",
+ "second_cmid": "",
+ "shortlist": [
+  "2960.003",
+  "3455.002",
+  "3455.001"
+ ],
+ "confidence": 95,
+ "reason": "Narrative matches board matters and D&O questionnaire work for Solace Health, matching typed CMID and timekeeper's history.",
+ "usage": {
+  "inputTokens": 8168,
+  "outputTokens": 350,
+  "totalTokens": 8518
+ },
+ "latency_s": 3.473,
+ "seconds": 3.542809834005311
+}

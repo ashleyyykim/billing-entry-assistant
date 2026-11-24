@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01893",
+ "cmid": "5520.004",
+ "second_cmid": "",
+ "shortlist": [
+  "5520.004",
+  "5520.001",
+  "5524.002"
+ ],
+ "confidence": 95,
+ "reason": "Narrative matches past entries for 5520.004 (Fund V annual meeting materials and LPAC consent).",
+ "usage": {
+  "inputTokens": 8180,
+  "outputTokens": 534,
+  "totalTokens": 8714
+ },
+ "latency_s": 4.786,
+ "seconds": 4.854814833001001
+}

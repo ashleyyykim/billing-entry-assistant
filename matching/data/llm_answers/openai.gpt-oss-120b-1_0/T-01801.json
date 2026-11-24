@@ -1,0 +1,15 @@
+{
+ "entry_id": "T-01801",
+ "cmid": "NONE",
+ "second_cmid": "",
+ "shortlist": [],
+ "confidence": 95,
+ "reason": "Typed client and CMID do not match any matter on the list; narrative 'Attend to loan documents' suggests a DEBT matter, but no matching client or matter is present, so entry should be assigned to NONE.",
+ "usage": {
+  "inputTokens": 8141,
+  "outputTokens": 660,
+  "totalTokens": 8801
+ },
+ "latency_s": 6.841,
+ "seconds": 6.913369292000425
+}

@@ -1,0 +1,18 @@
+{
+ "entry_id": "T-00780",
+ "cmid": "9140.001",
+ "second_cmid": "",
+ "shortlist": [
+  "9140.001",
+  "9140.002"
+ ],
+ "confidence": 95,
+ "reason": "Narrative matches fund formation subscription docs; typed CMID invalid; TK104 has prior hours on 9140.001; Juniper Peak Capital only has 9140 series matters.",
+ "usage": {
+  "inputTokens": 8147,
+  "outputTokens": 436,
+  "totalTokens": 8583
+ },
+ "latency_s": 2.445,
+ "seconds": 2.5050879170012195
+}

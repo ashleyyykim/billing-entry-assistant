@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01620",
+ "cmid": "8340.001",
+ "second_cmid": "",
+ "shortlist": [
+  "8340.001",
+  "8012.001",
+  "8347.001"
+ ],
+ "confidence": 95,
+ "reason": "Narrative about reviewing a title report aligns with a real estate acquisition matter; typed CMID 8340.001 matches acquisition of 450 Harbor St., which the timekeeper has logged extensive hours on and is open on the work date.",
+ "usage": {
+  "inputTokens": 8133,
+  "outputTokens": 437,
+  "totalTokens": 8570
+ },
+ "latency_s": 4.122,
+ "seconds": 4.193383125006221
+}

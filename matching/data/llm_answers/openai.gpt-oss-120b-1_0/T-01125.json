@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01125",
+ "cmid": "8340.001",
+ "second_cmid": "",
+ "shortlist": [
+  "8340.001",
+  "8012.001",
+  "8340.003"
+ ],
+ "confidence": 95,
+ "reason": "Narrative about drafting title objections for rent roll aligns with real estate acquisition matter; client hint 'PRH-450 Harbor' matches acquisition of 450 Harbor St. (8340.001). Timekeeper has large hours on 8340.001, and matter is open.",
+ "usage": {
+  "inputTokens": 8144,
+  "outputTokens": 473,
+  "totalTokens": 8617
+ },
+ "latency_s": 4.455,
+ "seconds": 4.524103917006869
+}

@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01300",
+ "cmid": "5524.002",
+ "second_cmid": "",
+ "shortlist": [
+  "5524.002",
+  "4471.001",
+  "2215.001"
+ ],
+ "confidence": 95,
+ "reason": "Narrative matches fund LP register work; timekeeper's recent heavy billing on 5524.002 supports this assignment.",
+ "usage": {
+  "inputTokens": 8141,
+  "outputTokens": 570,
+  "totalTokens": 8711
+ },
+ "latency_s": 4.971,
+ "seconds": 5.125308292001137
+}

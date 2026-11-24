@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03927",
+ "cmid": "2960.001",
+ "second_cmid": "",
+ "shortlist": [
+  "2960.001",
+  "2960.002",
+  "2960.003"
+ ],
+ "confidence": 95,
+ "reason": "Narrative describes foreign qualification and entity maintenance for Solace Health, matching the General Corporate matter 2960.001.",
+ "usage": {
+  "inputTokens": 8177,
+  "outputTokens": 456,
+  "totalTokens": 8633
+ },
+ "latency_s": 2.062,
+ "seconds": 2.277428333996795
+}

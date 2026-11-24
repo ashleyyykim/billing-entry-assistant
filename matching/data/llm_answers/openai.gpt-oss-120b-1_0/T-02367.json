@@ -1,0 +1,17 @@
+{
+ "entry_id": "T-02367",
+ "cmid": "6230.001",
+ "second_cmid": "",
+ "shortlist": [
+  "6230.001"
+ ],
+ "confidence": 95,
+ "reason": "Narrative references T. Walsh, who is associated with Ember Grid Energy matter 6230.001 in past entries; typed CMID matches and date is within open period.",
+ "usage": {
+  "inputTokens": 8140,
+  "outputTokens": 399,
+  "totalTokens": 8539
+ },
+ "latency_s": 1.837,
+ "seconds": 1.9006396670010872
+}

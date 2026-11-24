@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00204",
+ "cmid": "2215.001",
+ "second_cmid": "",
+ "shortlist": [
+  "2215.001",
+  "4478.001",
+  "4478.002"
+ ],
+ "confidence": 95,
+ "reason": "K. Moss is referenced in past entries for Harbor Light Partners' General Fund Matters (2215.001); typed client appears misspelled, and LPAC approval aligns with fund matters.",
+ "usage": {
+  "inputTokens": 8143,
+  "outputTokens": 892,
+  "totalTokens": 9035
+ },
+ "latency_s": 4.758,
+ "seconds": 4.840737459002412
+}

@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03182",
+ "cmid": "6103.003",
+ "second_cmid": "",
+ "shortlist": [
+  "6103.003",
+  "6103.001",
+  "6103.002"
+ ],
+ "confidence": 95,
+ "reason": "Narrative mentions drafting governance guidelines for board composition, matching Meridian Therapeutics Board & Governance matter (6103.003). The master services agreement for Medley Foods is unrelated to any listed matter, so only primary matter assigned.",
+ "usage": {
+  "inputTokens": 8160,
+  "outputTokens": 527,
+  "totalTokens": 8687
+ },
+ "latency_s": 4.751,
+ "seconds": 4.9732429169962415
+}

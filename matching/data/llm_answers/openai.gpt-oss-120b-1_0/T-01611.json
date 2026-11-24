@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01611",
+ "cmid": "3455.001",
+ "second_cmid": "",
+ "shortlist": [
+  "3455.001",
+  "3455.002",
+  "3455.003"
+ ],
+ "confidence": 95,
+ "reason": "Narrative matches past entry for 3455.001 (trading policy review) and client Aster & Vale aligns with this matter.",
+ "usage": {
+  "inputTokens": 8155,
+  "outputTokens": 362,
+  "totalTokens": 8517
+ },
+ "latency_s": 3.284,
+ "seconds": 3.348904540995136
+}

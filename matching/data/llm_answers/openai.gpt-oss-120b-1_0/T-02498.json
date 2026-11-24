@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02498",
+ "cmid": "5520.001",
+ "second_cmid": "",
+ "shortlist": [
+  "5520.001",
+  "5520.003",
+  "5520.004"
+ ],
+ "confidence": 92,
+ "reason": "Typed client misspelled but matches Cobalt Ridge Capital; typed matter 'Proj. Lark' aligns with Add-On Acquisition (Project Lark) CMID 5520.001; date within open period; narrative fits signature packet organization for acquisition closing.",
+ "usage": {
+  "inputTokens": 8145,
+  "outputTokens": 564,
+  "totalTokens": 8709
+ },
+ "latency_s": 2.454,
+ "seconds": 2.5231465000106255
+}

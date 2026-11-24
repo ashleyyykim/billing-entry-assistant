@@ -1,0 +1,17 @@
+{
+ "entry_id": "T-01053",
+ "cmid": "3120.001",
+ "second_cmid": "",
+ "shortlist": [
+  "3120.001"
+ ],
+ "confidence": 95,
+ "reason": "Narrative matches past entry for 3120.001 (Bluefin Robotics) involving call with Y. Tanaka about employee matters; typed CMID also 3120.001.",
+ "usage": {
+  "inputTokens": 8150,
+  "outputTokens": 336,
+  "totalTokens": 8486
+ },
+ "latency_s": 1.854,
+ "seconds": 1.9215119169966783
+}

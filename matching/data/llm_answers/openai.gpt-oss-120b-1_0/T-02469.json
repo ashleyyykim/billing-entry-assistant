@@ -1,0 +1,17 @@
+{
+ "entry_id": "T-02469",
+ "cmid": "9028.003",
+ "second_cmid": "",
+ "shortlist": [
+  "9028.003"
+ ],
+ "confidence": 95,
+ "reason": "Narrative about 83(b) election and share reserve increase aligns with Exec Comp/409A matter 9028.003; typed CMID matches and timekeeper's history shows primary work on this matter.",
+ "usage": {
+  "inputTokens": 8167,
+  "outputTokens": 416,
+  "totalTokens": 8583
+ },
+ "latency_s": 1.827,
+ "seconds": 1.9001018750132062
+}

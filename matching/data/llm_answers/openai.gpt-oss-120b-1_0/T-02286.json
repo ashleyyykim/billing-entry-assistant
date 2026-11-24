@@ -1,0 +1,17 @@
+{
+ "entry_id": "T-02286",
+ "cmid": "5524.002",
+ "second_cmid": "",
+ "shortlist": [
+  "5524.002"
+ ],
+ "confidence": 95,
+ "reason": "Narrative mentions a call with W. Ochoa, who appears in past entries for matter 5524.002 (Cobalt Ridge Partners | General Fund Matters). No other matter references Ochoa. Date falls within matter's open period.",
+ "usage": {
+  "inputTokens": 8140,
+  "outputTokens": 359,
+  "totalTokens": 8499
+ },
+ "latency_s": 2.133,
+ "seconds": 2.2032607089931844
+}

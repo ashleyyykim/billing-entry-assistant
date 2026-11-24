@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03173",
+ "cmid": "8340.001",
+ "second_cmid": "",
+ "shortlist": [
+  "8340.001",
+  "8340.003",
+  "8340.002"
+ ],
+ "confidence": 95,
+ "reason": "Narrative about title exceptions, environmental, zoning aligns with real estate acquisition; typed CMID 8340.1 likely 8340.001; timekeeper has large prior hours on 8340.001.",
+ "usage": {
+  "inputTokens": 8164,
+  "outputTokens": 452,
+  "totalTokens": 8616
+ },
+ "latency_s": 1.964,
+ "seconds": 2.0415657090052264
+}

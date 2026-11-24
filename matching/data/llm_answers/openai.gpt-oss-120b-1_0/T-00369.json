@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00369",
+ "cmid": "1111.001",
+ "second_cmid": "",
+ "shortlist": [
+  "1111.001",
+  "2201.001",
+  "2207.001"
+ ],
+ "confidence": 95,
+ "reason": "Narrative matches past admin entry for 1111.001; updating time entries is an admin task.",
+ "usage": {
+  "inputTokens": 8141,
+  "outputTokens": 282,
+  "totalTokens": 8423
+ },
+ "latency_s": 1.306,
+ "seconds": 1.410047833007411
+}

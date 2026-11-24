@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00289",
+ "cmid": "6103.004",
+ "second_cmid": "",
+ "shortlist": [
+  "6103.004",
+  "5602.001",
+  "3455.001"
+ ],
+ "confidence": 92,
+ "reason": "Narrative describes SEC filing edits (8-K, MD&A) which aligns with SEC reporting matters. Timekeeper's recent heavy activity on 6103.004 (125h) suggests this entry belongs there despite typed client/matter blank. No evidence of a second matter.",
+ "usage": {
+  "inputTokens": 8162,
+  "outputTokens": 877,
+  "totalTokens": 9039
+ },
+ "latency_s": 7.57,
+ "seconds": 7.633067665999988
+}

@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00760",
+ "cmid": "8340.001",
+ "second_cmid": "",
+ "shortlist": [
+  "8340.001",
+  "8340.003",
+  "8340.002"
+ ],
+ "confidence": 95,
+ "reason": "Narrative references Harbor St title and ALTA survey for 450 Harbor, which aligns with matter 8340.001 (Acquisition of 450 Harbor St.) and not with 8340.003.",
+ "usage": {
+  "inputTokens": 8156,
+  "outputTokens": 328,
+  "totalTokens": 8484
+ },
+ "latency_s": 2.214,
+ "seconds": 2.3261372910055798
+}

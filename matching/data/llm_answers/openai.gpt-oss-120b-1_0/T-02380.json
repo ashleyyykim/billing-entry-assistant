@@ -1,0 +1,17 @@
+{
+ "entry_id": "T-02380",
+ "cmid": "5520.001",
+ "second_cmid": "",
+ "shortlist": [
+  "5520.001"
+ ],
+ "confidence": 95,
+ "reason": "Narrative references Project Lark acquisition and transition services; matches Cobalt Ridge Capital's Add-On Acquisition (Project Lark) matter 5520.001. Typed client and matter are misspelled but clearly point to this matter.",
+ "usage": {
+  "inputTokens": 8164,
+  "outputTokens": 531,
+  "totalTokens": 8695
+ },
+ "latency_s": 2.424,
+ "seconds": 2.4900061250082217
+}

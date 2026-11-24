@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01522",
+ "cmid": "7215.003",
+ "second_cmid": "",
+ "shortlist": [
+  "7215.003",
+  "7215.005",
+  "7215.004"
+ ],
+ "confidence": 85,
+ "reason": "Narrative references collateral and commitment letter for Asterion, matching the credit facility matter 7215.003 where prior work by this timekeeper is extensive; no evidence of a separate amendment matter.",
+ "usage": {
+  "inputTokens": 8170,
+  "outputTokens": 677,
+  "totalTokens": 8847
+ },
+ "latency_s": 3.548,
+ "seconds": 3.614714166993508
+}

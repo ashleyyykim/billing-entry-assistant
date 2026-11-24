@@ -1,0 +1,17 @@
+{
+ "entry_id": "T-01077",
+ "cmid": "2960.003",
+ "second_cmid": "",
+ "shortlist": [
+  "2960.003"
+ ],
+ "confidence": 95,
+ "reason": "Narrative mentions meeting with P. Liu, which matches prior entry for 2960.003 (Solace Health Board Matters) involving P. Liu; timekeeper's history shows extensive work on this matter.",
+ "usage": {
+  "inputTokens": 8140,
+  "outputTokens": 341,
+  "totalTokens": 8481
+ },
+ "latency_s": 2.566,
+ "seconds": 2.6321839169977466
+}

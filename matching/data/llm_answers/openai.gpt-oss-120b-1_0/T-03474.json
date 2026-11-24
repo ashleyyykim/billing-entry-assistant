@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03474",
+ "cmid": "5520.001",
+ "second_cmid": "",
+ "shortlist": [
+  "5520.001",
+  "5520.002",
+  "5520.003"
+ ],
+ "confidence": 85,
+ "reason": "Typed client is Cobalt Ridge Capital; timekeeper has prior hours on 5520.001 (Add-On Acquisition Project Lark) and narrative about organizing closing documents fits acquisition closing tasks. No evidence of second matter.",
+ "usage": {
+  "inputTokens": 8143,
+  "outputTokens": 891,
+  "totalTokens": 9034
+ },
+ "latency_s": 3.684,
+ "seconds": 3.751820334000513
+}

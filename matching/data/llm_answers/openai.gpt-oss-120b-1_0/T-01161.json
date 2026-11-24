@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01161",
+ "cmid": "9140.001",
+ "second_cmid": "",
+ "shortlist": [
+  "9140.001",
+  "9140.002",
+  "2215.001"
+ ],
+ "confidence": 95,
+ "reason": "Narrative about placement agent co-invest rights aligns with Juniper Peak Capital fund formation; typed client misspelled matches Juniper Peak Capital; timekeeper's recent large hours on 9140.001 support this.",
+ "usage": {
+  "inputTokens": 8166,
+  "outputTokens": 432,
+  "totalTokens": 8598
+ },
+ "latency_s": 2.337,
+ "seconds": 2.3988795000041137
+}

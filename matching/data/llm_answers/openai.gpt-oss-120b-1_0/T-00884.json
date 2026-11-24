@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00884",
+ "cmid": "5602.003",
+ "second_cmid": "",
+ "shortlist": [
+  "5602.003",
+  "5602.001",
+  "5602.002"
+ ],
+ "confidence": 95,
+ "reason": "Narrative about R&W coverage, basket and cap aligns with acquisition matter 5602.003 (Acquisition of Quanta Photonics) for Ironwood Semiconductor; timekeeper's recent hours heavily on this matter.",
+ "usage": {
+  "inputTokens": 8163,
+  "outputTokens": 327,
+  "totalTokens": 8490
+ },
+ "latency_s": 3.114,
+ "seconds": 3.2129542919865344
+}

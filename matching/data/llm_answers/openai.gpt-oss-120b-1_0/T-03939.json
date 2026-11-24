@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03939",
+ "cmid": "8340.001",
+ "second_cmid": "",
+ "shortlist": [
+  "8340.001",
+  "8340.002",
+  "8340.003"
+ ],
+ "confidence": 80,
+ "reason": "Typed client matches Pelican Row Holdings; timekeeper's recent hours heavily on 8340.001 (acquisition) versus minimal on 8340.002; generic 'Review documents' aligns with acquisition document review tasks.",
+ "usage": {
+  "inputTokens": 8136,
+  "outputTokens": 639,
+  "totalTokens": 8775
+ },
+ "latency_s": 3.451,
+ "seconds": 3.515636291995179
+}

@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03334",
+ "cmid": "4471.001",
+ "second_cmid": "",
+ "shortlist": [
+  "4471.001",
+  "4471.002",
+  "4471.003"
+ ],
+ "confidence": 70,
+ "reason": "Narrative mentions a call with C. Abbott, who appears in Ridgewater Partners matters (4471 series). The most generic fund matter with C. Abbott is 4471.001 (General Fund Matters). No other clues point to a different matter.",
+ "usage": {
+  "inputTokens": 8139,
+  "outputTokens": 905,
+  "totalTokens": 9044
+ },
+ "latency_s": 3.925,
+ "seconds": 4.005677041001036
+}

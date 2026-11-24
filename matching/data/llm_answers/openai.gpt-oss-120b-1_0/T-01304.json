@@ -1,0 +1,17 @@
+{
+ "entry_id": "T-01304",
+ "cmid": "5520.004",
+ "second_cmid": "",
+ "shortlist": [
+  "5520.004"
+ ],
+ "confidence": 95,
+ "reason": "Narrative matches prior entries for 5520.004 involving O. Pratt and fund administration tasks; typed CMID aligns; no indication of second matter.",
+ "usage": {
+  "inputTokens": 8150,
+  "outputTokens": 368,
+  "totalTokens": 8518
+ },
+ "latency_s": 2.143,
+ "seconds": 2.221915792004438
+}

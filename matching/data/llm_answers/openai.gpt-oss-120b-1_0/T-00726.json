@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00726",
+ "cmid": "3455.002",
+ "second_cmid": "",
+ "shortlist": [
+  "3455.002",
+  "3455.001",
+  "6103.003"
+ ],
+ "confidence": 92,
+ "reason": "Say-on-pay is a board governance issue; Aster & Vale's Board & Governance matter (3455.002) matches the client and prior work by this timekeeper.",
+ "usage": {
+  "inputTokens": 8142,
+  "outputTokens": 390,
+  "totalTokens": 8532
+ },
+ "latency_s": 3.775,
+ "seconds": 3.914237792007043
+}

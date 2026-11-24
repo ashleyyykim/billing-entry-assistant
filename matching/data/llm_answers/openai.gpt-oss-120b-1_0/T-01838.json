@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01838",
+ "cmid": "3455.002",
+ "second_cmid": "",
+ "shortlist": [
+  "3455.002",
+  "3455.001",
+  "3455.003"
+ ],
+ "confidence": 95,
+ "reason": "Narrative about drafting a unanimous written consent for 409A approval aligns with board governance work, matching the Board & Governance matter (3455.002). Timekeeper has extensive history on this matter, and the typed CMID appears to be a mistake.",
+ "usage": {
+  "inputTokens": 8150,
+  "outputTokens": 559,
+  "totalTokens": 8709
+ },
+ "latency_s": 6.021,
+ "seconds": 6.085331540991319
+}

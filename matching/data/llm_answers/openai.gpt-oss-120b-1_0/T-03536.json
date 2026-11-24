@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03536",
+ "cmid": "5520.001",
+ "second_cmid": "",
+ "shortlist": [
+  "5520.001",
+  "5520.003",
+  "5520.002"
+ ],
+ "confidence": 95,
+ "reason": "Narrative references Larkspur Controls closing and 'Project Lark' acquisition, matching matter 5520.001 Add-On Acquisition (Project Lark) with similar past entries involving OC and final documents.",
+ "usage": {
+  "inputTokens": 8178,
+  "outputTokens": 620,
+  "totalTokens": 8798
+ },
+ "latency_s": 4.976,
+ "seconds": 5.164548250002554
+}

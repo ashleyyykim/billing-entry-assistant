@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03575",
+ "cmid": "6103.003",
+ "second_cmid": "",
+ "shortlist": [
+  "6103.003",
+  "6103.001",
+  "6103.004"
+ ],
+ "confidence": 92,
+ "reason": "Narrative 'flag open issues' aligns with board matters; typed client matches Meridian Therapeutics; typed matter resembles 6103.003 (Board & Governance).",
+ "usage": {
+  "inputTokens": 8145,
+  "outputTokens": 460,
+  "totalTokens": 8605
+ },
+ "latency_s": 4.336,
+ "seconds": 4.404096832993673
+}

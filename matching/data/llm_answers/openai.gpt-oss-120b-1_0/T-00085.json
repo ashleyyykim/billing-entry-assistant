@@ -1,0 +1,18 @@
+{
+ "entry_id": "T-00085",
+ "cmid": "6103.004",
+ "second_cmid": "",
+ "shortlist": [
+  "6103.004",
+  "6103.001"
+ ],
+ "confidence": 95,
+ "reason": "Narrative matches Section 16 filings; typed CMID aligns with annual meeting matter which handles Section 16 filings and is open on the work date.",
+ "usage": {
+  "inputTokens": 8144,
+  "outputTokens": 475,
+  "totalTokens": 8619
+ },
+ "latency_s": 5.745,
+ "seconds": 5.854719583003316
+}

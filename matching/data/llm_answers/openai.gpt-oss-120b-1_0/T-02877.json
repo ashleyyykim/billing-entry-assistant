@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02877",
+ "cmid": "5520.001",
+ "second_cmid": "",
+ "shortlist": [
+  "5520.001",
+  "5520.002",
+  "5520.003"
+ ],
+ "confidence": 95,
+ "reason": "Narrative mentions basket and cap for Larkspur, matching indemnity cap work seen in past entries for 5520.001 (Project Lark) under Cobalt Ridge Capital; client typed as Cobalt Ridge Ca aligns.",
+ "usage": {
+  "inputTokens": 8156,
+  "outputTokens": 511,
+  "totalTokens": 8667
+ },
+ "latency_s": 3.541,
+ "seconds": 3.739858542001457
+}

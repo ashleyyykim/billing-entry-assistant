@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00017",
+ "cmid": "6103.004",
+ "second_cmid": "",
+ "shortlist": [
+  "6103.004",
+  "6103.001",
+  "3455.001"
+ ],
+ "confidence": 95,
+ "reason": "Narrative about drafting proxy statement and MD&A aligns with Meridian Therapeutics' 2026 Annual Meeting SEC matter (6103.004), which is active and matches timekeeper's heavy history on this matter.",
+ "usage": {
+  "inputTokens": 8143,
+  "outputTokens": 435,
+  "totalTokens": 8578
+ },
+ "latency_s": 3.283,
+ "seconds": 3.6542835409927648
+}

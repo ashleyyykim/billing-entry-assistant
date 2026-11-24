@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02665",
+ "cmid": "4471.002",
+ "second_cmid": "",
+ "shortlist": [
+  "4471.002",
+  "4471.003",
+  "4471.001"
+ ],
+ "confidence": 92,
+ "reason": "Narrative references drafting LP side letter and analyzing LPA for Fund III, matching Ridgewater Partners' Fund III Formation matter (4471.002).",
+ "usage": {
+  "inputTokens": 8166,
+  "outputTokens": 571,
+  "totalTokens": 8737
+ },
+ "latency_s": 4.58,
+ "seconds": 4.692199165991042
+}

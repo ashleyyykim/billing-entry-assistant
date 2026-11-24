@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00536",
+ "cmid": "5520.004",
+ "second_cmid": "",
+ "shortlist": [
+  "5520.004",
+  "5524.002",
+  "5524.001"
+ ],
+ "confidence": 92,
+ "reason": "Narrative about fund extension and annual meeting materials aligns with Fund Administration matter (5520.004). Timekeeper's recent hours include this CMID, supporting the match.",
+ "usage": {
+  "inputTokens": 8155,
+  "outputTokens": 502,
+  "totalTokens": 8657
+ },
+ "latency_s": 3.402,
+ "seconds": 3.4713523340033134
+}

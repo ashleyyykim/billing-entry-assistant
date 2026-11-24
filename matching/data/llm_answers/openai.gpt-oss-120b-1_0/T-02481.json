@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02481",
+ "cmid": "5520.001",
+ "second_cmid": "",
+ "shortlist": [
+  "5520.001",
+  "5520.002",
+  "5520.003"
+ ],
+ "confidence": 95,
+ "reason": "Narrative references Larkspur Controls and a debt commitment letter, matching the Add-On Acquisition (Project Lark) matter (5520.001). Timekeeper has prior hours on this matter, and dates align.",
+ "usage": {
+  "inputTokens": 8191,
+  "outputTokens": 596,
+  "totalTokens": 8787
+ },
+ "latency_s": 5.056,
+ "seconds": 5.12265083300008
+}

@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02924",
+ "cmid": "4471.004",
+ "second_cmid": "",
+ "shortlist": [
+  "4471.004",
+  "4471.001",
+  "4471.002"
+ ],
+ "confidence": 95,
+ "reason": "Narrative references GP operating agreement and ERISA status for Fund IV, matching Ridgewater Partners Fund IV Formation (4471.004); typed client misspelled but matches Ridgewater Partners.",
+ "usage": {
+  "inputTokens": 8165,
+  "outputTokens": 472,
+  "totalTokens": 8637
+ },
+ "latency_s": 4.122,
+ "seconds": 4.326341499996488
+}

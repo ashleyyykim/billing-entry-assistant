@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01398",
+ "cmid": "3455.002",
+ "second_cmid": "",
+ "shortlist": [
+  "3455.002",
+  "3455.001",
+  "3455.003"
+ ],
+ "confidence": 95,
+ "reason": "C. Morgan appears in Aster & Vale matters; board governance work involves meeting agenda; timekeeper's history shows primary focus on 3455.002.",
+ "usage": {
+  "inputTokens": 8143,
+  "outputTokens": 407,
+  "totalTokens": 8550
+ },
+ "latency_s": 2.944,
+ "seconds": 3.0115256249991944
+}

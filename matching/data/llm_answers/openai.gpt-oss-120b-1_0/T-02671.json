@@ -1,0 +1,17 @@
+{
+ "entry_id": "T-02671",
+ "cmid": "5520.004",
+ "second_cmid": "",
+ "shortlist": [
+  "5520.004"
+ ],
+ "confidence": 95,
+ "reason": "Narrative references Fund V, which is specifically handled in matter 5520.004 (Fund Administration) and past entries show Fund V work under this CMID.",
+ "usage": {
+  "inputTokens": 8150,
+  "outputTokens": 473,
+  "totalTokens": 8623
+ },
+ "latency_s": 2.931,
+ "seconds": 3.034690833010245
+}

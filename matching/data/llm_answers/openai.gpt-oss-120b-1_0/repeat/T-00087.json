@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00087",
+ "cmid": "6103.004",
+ "second_cmid": "",
+ "shortlist": [
+  "6103.004",
+  "6103.001",
+  "3455.001"
+ ],
+ "confidence": 95,
+ "reason": "Narrative references drafting annual meeting 10-Q, proxy statement, and say-on-pay, matching the 2026 Annual Meeting SEC filing matter (6103.004). Prior hours show TK104 heavily worked on this matter.",
+ "usage": {
+  "inputTokens": 8172,
+  "outputTokens": 382,
+  "totalTokens": 8554
+ },
+ "latency_s": 3.498,
+ "seconds": 3.561858791988925
+}

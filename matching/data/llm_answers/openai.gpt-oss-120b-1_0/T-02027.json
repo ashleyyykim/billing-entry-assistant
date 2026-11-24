@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02027",
+ "cmid": "9140.001",
+ "second_cmid": "",
+ "shortlist": [
+  "9140.001",
+  "9140.002",
+  "2215.001"
+ ],
+ "confidence": 95,
+ "reason": "Narrative about coordinating LP signature pages and closing checklist matches Fund II Formation work; TK110 has large prior hours on 9140.001, confirming primary matter.",
+ "usage": {
+  "inputTokens": 8149,
+  "outputTokens": 400,
+  "totalTokens": 8549
+ },
+ "latency_s": 1.905,
+ "seconds": 1.97359174999292
+}

@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03624",
+ "cmid": "2960.001",
+ "second_cmid": "",
+ "shortlist": [
+  "2960.001",
+  "2960.003",
+  "2960.002"
+ ],
+ "confidence": 92,
+ "reason": "Narrative about editing annual shareholder consent fits Solace Health General Corporate matter (2960.001). Typed CMID typo matches this matter; other Solace Health matters less likely.",
+ "usage": {
+  "inputTokens": 8153,
+  "outputTokens": 664,
+  "totalTokens": 8817
+ },
+ "latency_s": 5.821,
+ "seconds": 5.887002999996184
+}

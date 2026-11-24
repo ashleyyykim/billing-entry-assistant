@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02012",
+ "cmid": "5750.003",
+ "second_cmid": "",
+ "shortlist": [
+  "5750.003",
+  "2201.001",
+  "4590.004"
+ ],
+ "confidence": 70,
+ "reason": "Narrative about a customer contract question aligns with commercial contracts matter (5750.003). Timekeeper has prior hours on this matter, and the typed CMID (2201.001) likely erroneous.",
+ "usage": {
+  "inputTokens": 8152,
+  "outputTokens": 1454,
+  "totalTokens": 9606
+ },
+ "latency_s": 7.791,
+ "seconds": 7.89790629199706
+}

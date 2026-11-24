@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03064",
+ "cmid": "9140.001",
+ "second_cmid": "",
+ "shortlist": [
+  "9140.001",
+  "9140.002",
+  "4471.001"
+ ],
+ "confidence": 95,
+ "reason": "Narrative about LP signature pages aligns with fund formation work; typed client and CMID are misspelled but match Juniper Peak Capital Fund II Formation, which the timekeeper has logged many hours on.",
+ "usage": {
+  "inputTokens": 8145,
+  "outputTokens": 311,
+  "totalTokens": 8456
+ },
+ "latency_s": 1.418,
+ "seconds": 1.4743544999946607
+}

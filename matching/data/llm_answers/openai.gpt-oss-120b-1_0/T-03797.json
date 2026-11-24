@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03797",
+ "cmid": "8340.002",
+ "second_cmid": "",
+ "shortlist": [
+  "8340.002",
+  "8340.001",
+  "7215.003"
+ ],
+ "confidence": 78,
+ "reason": "Typed CMID '8340.2' likely meant 8340.002; timekeeper has recent hours on both 8340.001 and 8340.002, but the typo aligns with the second matter. Narrative is generic file work fitting either, but the typo suggests 8340.002.",
+ "usage": {
+  "inputTokens": 8138,
+  "outputTokens": 767,
+  "totalTokens": 8905
+ },
+ "latency_s": 5.106,
+ "seconds": 5.1730522500001825
+}

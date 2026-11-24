@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00869",
+ "cmid": "7215.003",
+ "second_cmid": "",
+ "shortlist": [
+  "7215.003",
+  "7215.005",
+  "7215.004"
+ ],
+ "confidence": 95,
+ "reason": "Narrative references UCC-1s and intercreditor agreement for Northgate's Asterion credit facility, matching matter 7215.003 which the timekeeper has previously logged hours on.",
+ "usage": {
+  "inputTokens": 8161,
+  "outputTokens": 499,
+  "totalTokens": 8660
+ },
+ "latency_s": 4.585,
+ "seconds": 4.6558938340022
+}

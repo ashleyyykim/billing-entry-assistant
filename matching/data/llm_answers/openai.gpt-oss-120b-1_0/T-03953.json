@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03953",
+ "cmid": "5520.001",
+ "second_cmid": "",
+ "shortlist": [
+  "5520.001",
+  "5520.003",
+  "5520.002"
+ ],
+ "confidence": 85,
+ "reason": "Narrative describes purchase agreement review for Larkspur acquisition, matching Cobalt Ridge Capital's Add-On Acquisition (Project Lark) opened March 2026; no other matter fits.",
+ "usage": {
+  "inputTokens": 8165,
+  "outputTokens": 570,
+  "totalTokens": 8735
+ },
+ "latency_s": 5.366,
+ "seconds": 5.627045792003628
+}

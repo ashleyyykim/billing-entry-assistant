@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00159",
+ "cmid": "6103.001",
+ "second_cmid": "",
+ "shortlist": [
+  "6103.001",
+  "5602.001",
+  "3455.001"
+ ],
+ "confidence": 95,
+ "reason": "Narrative matches past entry for 6103.001 (insider trading policy XBRL tagging); typed matter '2026 Annual Meeting' is unrelated.",
+ "usage": {
+  "inputTokens": 8153,
+  "outputTokens": 523,
+  "totalTokens": 8676
+ },
+ "latency_s": 4.415,
+ "seconds": 4.489059665997047
+}

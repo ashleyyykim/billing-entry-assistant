@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02847",
+ "cmid": "6103.003",
+ "second_cmid": "",
+ "shortlist": [
+  "6103.003",
+  "2960.003",
+  "3455.002"
+ ],
+ "confidence": 85,
+ "reason": "Narrative matches past entry for board composition (R. Iyer) which aligns with 6103.003 (Board & Governance) and no other matter shows board composition with that contact.",
+ "usage": {
+  "inputTokens": 8148,
+  "outputTokens": 946,
+  "totalTokens": 9094
+ },
+ "latency_s": 8.803,
+ "seconds": 8.868569333004416
+}

@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02413",
+ "cmid": "2960.003",
+ "second_cmid": "",
+ "shortlist": [
+  "2960.003",
+  "3455.002",
+  "6103.003"
+ ],
+ "confidence": 92,
+ "reason": "Board minutes revision matches board matters; timekeeper has extensive recent work on Solace Health board matter (2960.003) and it is open on the date.",
+ "usage": {
+  "inputTokens": 8138,
+  "outputTokens": 860,
+  "totalTokens": 8998
+ },
+ "latency_s": 6.952,
+ "seconds": 7.0174749580037314
+}

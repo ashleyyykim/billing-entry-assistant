@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00088",
+ "cmid": "6103.004",
+ "second_cmid": "",
+ "shortlist": [
+  "6103.004",
+  "6103.002",
+  "6103.005"
+ ],
+ "confidence": 92,
+ "reason": "Typed CMID appears mistyped; date 2026-07-07 falls within 6103.004's active period (opened 02/02/2026, closed 07/10/2026). Timekeeper heavily logged hours on 6103.004 in prior months, and client matches Meridian Therapeutics.",
+ "usage": {
+  "inputTokens": 8140,
+  "outputTokens": 854,
+  "totalTokens": 8994
+ },
+ "latency_s": 6.259,
+ "seconds": 6.33704124999349
+}

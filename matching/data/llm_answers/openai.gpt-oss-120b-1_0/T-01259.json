@@ -1,0 +1,18 @@
+{
+ "entry_id": "T-01259",
+ "cmid": "3120.003",
+ "second_cmid": "5531.001",
+ "shortlist": [
+  "3120.003",
+  "5531.001"
+ ],
+ "confidence": 95,
+ "reason": "Narrative mentions equity questions with Y. Tanaka (Bluefin Robotics equity plan, matter 3120.003) and review of employment agreements for Fieldstone (Cobalt Rock Capital acquisition of Fieldstone Foods, matter 5531.001). Both matters are open on the work date.",
+ "usage": {
+  "inputTokens": 8155,
+  "outputTokens": 643,
+  "totalTokens": 8798
+ },
+ "latency_s": 2.545,
+ "seconds": 2.614062124994234
+}

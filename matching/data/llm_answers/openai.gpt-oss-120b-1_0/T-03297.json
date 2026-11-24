@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03297",
+ "cmid": "2201.005",
+ "second_cmid": "",
+ "shortlist": [
+  "2201.005",
+  "2201.003",
+  "2201.001"
+ ],
+ "confidence": 80,
+ "reason": "Narrative mentions side letter and liquidation preference; K. Osei appears in past entries for 2201.005 (Equity Plan/409A) and the timekeeper has extensive work on Harborlight Bio matters, making 2201.005 the most likely match.",
+ "usage": {
+  "inputTokens": 8163,
+  "outputTokens": 1002,
+  "totalTokens": 9165
+ },
+ "latency_s": 9.466,
+ "seconds": 9.537238166987663
+}

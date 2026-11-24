@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03204",
+ "cmid": "2201.001",
+ "second_cmid": "",
+ "shortlist": [
+  "2201.001",
+  "2201.003",
+  "2201.004"
+ ],
+ "confidence": 85,
+ "reason": "Typed client 'HB' matches Harborlight Bio; the timekeeper's recent large volume of hours on 2201.001 suggests this generic 'Attend to file' entry is for that matter.",
+ "usage": {
+  "inputTokens": 8135,
+  "outputTokens": 644,
+  "totalTokens": 8779
+ },
+ "latency_s": 5.834,
+ "seconds": 5.8918337499926565
+}

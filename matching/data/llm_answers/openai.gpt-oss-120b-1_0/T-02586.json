@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02586",
+ "cmid": "8340.001",
+ "second_cmid": "",
+ "shortlist": [
+  "8340.001",
+  "8340.003",
+  "8340.002"
+ ],
+ "confidence": 95,
+ "reason": "Narrative explicitly references acquisition of 450 Harbor St., which matches matter 8340.001.",
+ "usage": {
+  "inputTokens": 8145,
+  "outputTokens": 327,
+  "totalTokens": 8472
+ },
+ "latency_s": 3.004,
+ "seconds": 3.1049434580054367
+}

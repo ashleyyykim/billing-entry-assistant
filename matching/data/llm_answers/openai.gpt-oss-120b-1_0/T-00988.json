@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00988",
+ "cmid": "8340.001",
+ "second_cmid": "",
+ "shortlist": [
+  "8340.001",
+  "8340.003",
+  "8012.001"
+ ],
+ "confidence": 95,
+ "reason": "Narrative matches acquisition of 450 Harbor St. title work; typed CMID aligns; timekeeper has large prior hours on this matter.",
+ "usage": {
+  "inputTokens": 8194,
+  "outputTokens": 305,
+  "totalTokens": 8499
+ },
+ "latency_s": 1.982,
+ "seconds": 2.1751413330057403
+}

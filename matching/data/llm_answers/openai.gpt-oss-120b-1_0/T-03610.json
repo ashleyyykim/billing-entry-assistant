@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03610",
+ "cmid": "4471.003",
+ "second_cmid": "",
+ "shortlist": [
+  "4471.003",
+  "4471.001",
+  "4471.002"
+ ],
+ "confidence": 92,
+ "reason": "Narrative about key person provisions matches past entry for Ridgewater Partners Fund III Co-Invest Vehicle (4471.003) which involved key person provisions; typed client is Ridgewater Partners and timekeeper has prior hours on Ridgewater matters.",
+ "usage": {
+  "inputTokens": 8141,
+  "outputTokens": 539,
+  "totalTokens": 8680
+ },
+ "latency_s": 2.854,
+ "seconds": 2.9645460409956286
+}

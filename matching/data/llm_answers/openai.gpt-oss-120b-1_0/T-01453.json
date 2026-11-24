@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01453",
+ "cmid": "3455.001",
+ "second_cmid": "",
+ "shortlist": [
+  "3455.001",
+  "3455.002",
+  "3455.003"
+ ],
+ "confidence": 80,
+ "reason": "Typed client matches Aster & Vale; timekeeper has recent hours on 3455.001 (SEC Reporting) for that client; generic 'Work on documents' likely refers to SEC filing documents.",
+ "usage": {
+  "inputTokens": 8137,
+  "outputTokens": 639,
+  "totalTokens": 8776
+ },
+ "latency_s": 3.103,
+ "seconds": 3.173540250005317
+}

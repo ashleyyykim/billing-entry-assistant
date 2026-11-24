@@ -1,0 +1,15 @@
+{
+ "entry_id": "T-03184",
+ "cmid": "NONE",
+ "second_cmid": "",
+ "shortlist": [],
+ "confidence": 20,
+ "reason": "Narrative references client 'Cobalt Ridge Ventures' which does not appear in the provided matter list; no close match to existing Cobalt Ridge Capital or Partners matters, and timekeeper's recent history shows no work on those matters.",
+ "usage": {
+  "inputTokens": 8171,
+  "outputTokens": 471,
+  "totalTokens": 8642
+ },
+ "latency_s": 4.128,
+ "seconds": 4.2841789170051925
+}

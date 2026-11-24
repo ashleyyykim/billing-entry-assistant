@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02503",
+ "cmid": "5524.002",
+ "second_cmid": "",
+ "shortlist": [
+  "5524.002",
+  "5524.001",
+  "5524.003"
+ ],
+ "confidence": 95,
+ "reason": "Narrative about investor register updates matches past work on 5524.002 (General Fund Matters) and timekeeper's heavy history on that matter; typed CMID is invalid but client typo points to Cobalt Ridge Partners.",
+ "usage": {
+  "inputTokens": 8149,
+  "outputTokens": 395,
+  "totalTokens": 8544
+ },
+ "latency_s": 2.016,
+ "seconds": 2.2151535839948338
+}

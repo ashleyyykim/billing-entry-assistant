@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03924",
+ "cmid": "8340.002",
+ "second_cmid": "",
+ "shortlist": [
+  "8340.002",
+  "8340.001",
+  "8340.003"
+ ],
+ "confidence": 95,
+ "reason": "Narrative about rent roll aligns with lease matter for Pelican Row Holdings; lease matter is 8340.002, opened before work date.",
+ "usage": {
+  "inputTokens": 8132,
+  "outputTokens": 428,
+  "totalTokens": 8560
+ },
+ "latency_s": 3.727,
+ "seconds": 3.7898071669915225
+}

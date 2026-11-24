@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02277",
+ "cmid": "5520.001",
+ "second_cmid": "",
+ "shortlist": [
+  "5520.001",
+  "5520.003",
+  "5520.002"
+ ],
+ "confidence": 95,
+ "reason": "Typed client and matter point to Cobalt Ridge Capital's Project Lark acquisition (5520.001). Narrative 'Draft diligence report' aligns with acquisition diligence. Matter is open on the work date.",
+ "usage": {
+  "inputTokens": 8138,
+  "outputTokens": 476,
+  "totalTokens": 8614
+ },
+ "latency_s": 2.266,
+ "seconds": 2.33271145899198
+}

@@ -1,0 +1,20 @@
+{
+ "entry_id": "T-01978",
+ "cmid": "8340.001",
+ "second_cmid": "",
+ "shortlist": [
+  "8340.001",
+  "8012.001",
+  "8340.003",
+  "8347.001"
+ ],
+ "confidence": 92,
+ "reason": "Timekeeper has logged extensive hours on 8340.001 (Acquisition of 450 Harbor St.) and narrative matches property acquisition; other RE_ACQ matters have little or no prior work.",
+ "usage": {
+  "inputTokens": 8125,
+  "outputTokens": 734,
+  "totalTokens": 8859
+ },
+ "latency_s": 6.685,
+ "seconds": 6.758187832994736
+}

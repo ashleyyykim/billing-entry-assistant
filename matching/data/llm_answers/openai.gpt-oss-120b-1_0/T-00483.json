@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00483",
+ "cmid": "6103.001",
+ "second_cmid": "",
+ "shortlist": [
+  "6103.001",
+  "6103.002",
+  "3455.001"
+ ],
+ "confidence": 88,
+ "reason": "Narrative mentions trading policy, XBRL tagging, and officer departure, which align with SEC reporting work (type SEC) on Meridian Therapeutics (6103.001). Typed CMID 6103.002 is a CAPMKT matter and does not fit the described tasks.",
+ "usage": {
+  "inputTokens": 8166,
+  "outputTokens": 495,
+  "totalTokens": 8661
+ },
+ "latency_s": 4.895,
+ "seconds": 5.016185582993785
+}

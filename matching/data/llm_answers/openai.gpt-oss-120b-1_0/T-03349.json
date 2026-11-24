@@ -1,0 +1,18 @@
+{
+ "entry_id": "T-03349",
+ "cmid": "9140.001",
+ "second_cmid": "",
+ "shortlist": [
+  "9140.001",
+  "9140.002"
+ ],
+ "confidence": 95,
+ "reason": "Narrative about reviewing PPM and editing partnership agreement aligns with fund formation work; TK111 has extensive prior hours on Juniper Peak Capital Fund II Formation (9140.001).",
+ "usage": {
+  "inputTokens": 8163,
+  "outputTokens": 458,
+  "totalTokens": 8621
+ },
+ "latency_s": 2.12,
+ "seconds": 2.188554624997778
+}

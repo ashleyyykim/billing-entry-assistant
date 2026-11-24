@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01950",
+ "cmid": "7222.002",
+ "second_cmid": "",
+ "shortlist": [
+  "7222.002",
+  "7222.001",
+  "9035.002"
+ ],
+ "confidence": 95,
+ "reason": "Narrative about closing checklist revisions for non-compete aligns with acquisition matter (MA_BUY) for Northgate Capital Partners; timekeeper's recent hours heavily on 7222.002, and date falls within matter's active period.",
+ "usage": {
+  "inputTokens": 8150,
+  "outputTokens": 378,
+  "totalTokens": 8528
+ },
+ "latency_s": 3.111,
+ "seconds": 3.302985707996413
+}

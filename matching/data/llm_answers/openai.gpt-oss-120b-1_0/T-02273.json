@@ -1,0 +1,17 @@
+{
+ "entry_id": "T-02273",
+ "cmid": "3455.002",
+ "second_cmid": "",
+ "shortlist": [
+  "3455.002"
+ ],
+ "confidence": 95,
+ "reason": "Narrative matches Board & Governance work for Aster & Vale; typed CMID aligns; heavy recent hours on this matter; no indication of second matter.",
+ "usage": {
+  "inputTokens": 8160,
+  "outputTokens": 274,
+  "totalTokens": 8434
+ },
+ "latency_s": 2.001,
+ "seconds": 2.0679496669908985
+}

@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03383",
+ "cmid": "6103.005",
+ "second_cmid": "",
+ "shortlist": [
+  "6103.005",
+  "2201.003",
+  "5520.001"
+ ],
+ "confidence": 85,
+ "reason": "Typed CMID matches a valid open matter (Meridian Therapeutics ATM Program) and the narrative 'Work on deal' is consistent with a capital market transaction; no evidence points to a different matter.",
+ "usage": {
+  "inputTokens": 8139,
+  "outputTokens": 641,
+  "totalTokens": 8780
+ },
+ "latency_s": 6.858,
+ "seconds": 6.927421290994971
+}

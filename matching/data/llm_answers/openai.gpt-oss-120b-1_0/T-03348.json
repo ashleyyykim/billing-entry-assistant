@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03348",
+ "cmid": "9140.001",
+ "second_cmid": "",
+ "shortlist": [
+  "9140.001",
+  "9140.002",
+  "2215.001"
+ ],
+ "confidence": 95,
+ "reason": "Narrative explicitly mentions reworking the Fund II Management Company Agreement, matching past entries for 9140.001 (Fund II Formation) which handles mgmt co agreement work.",
+ "usage": {
+  "inputTokens": 8149,
+  "outputTokens": 395,
+  "totalTokens": 8544
+ },
+ "latency_s": 1.915,
+ "seconds": 1.9820315830002073
+}

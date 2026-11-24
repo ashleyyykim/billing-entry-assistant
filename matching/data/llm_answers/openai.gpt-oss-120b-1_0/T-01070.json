@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01070",
+ "cmid": "9140.001",
+ "second_cmid": "",
+ "shortlist": [
+  "9140.001",
+  "2215.002",
+  "4478.002"
+ ],
+ "confidence": 95,
+ "reason": "Narrative references LP signature pages for Fund II; client JPC matches Juniper Peak Capital; prior hours show heavy work on 9140.001 (Fund II Formation) and dates align.",
+ "usage": {
+  "inputTokens": 8140,
+  "outputTokens": 470,
+  "totalTokens": 8610
+ },
+ "latency_s": 3.201,
+ "seconds": 3.2680637919984292
+}

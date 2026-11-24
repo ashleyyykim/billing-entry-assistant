@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01203",
+ "cmid": "8340.001",
+ "second_cmid": "",
+ "shortlist": [
+  "8340.001",
+  "8340.002",
+  "8340.003"
+ ],
+ "confidence": 95,
+ "reason": "Narrative matches past entries for 8340.001 involving calls with M. Carter about title and closing date; matter opened before work date.",
+ "usage": {
+  "inputTokens": 8143,
+  "outputTokens": 328,
+  "totalTokens": 8471
+ },
+ "latency_s": 3.392,
+ "seconds": 3.4566454159939894
+}

@@ -1,0 +1,15 @@
+{
+ "entry_id": "T-02178",
+ "cmid": "NONE",
+ "second_cmid": "",
+ "shortlist": [],
+ "confidence": 95,
+ "reason": "Narrative references 'Ridge line Capital' which is not in the matter list; typed CMID 7633.002 (Copperline Networks) does not match the client or work described.",
+ "usage": {
+  "inputTokens": 8150,
+  "outputTokens": 522,
+  "totalTokens": 8672
+ },
+ "latency_s": 4.85,
+ "seconds": 4.994707500009099
+}

@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00063",
+ "cmid": "8012.001",
+ "second_cmid": "",
+ "shortlist": [
+  "8012.001",
+  "3012.001",
+  "8340.001"
+ ],
+ "confidence": 95,
+ "reason": "Narrative matches prior work on 8012.001 (Phase I environmental and Pine St. zoning), typed CMID likely erroneous.",
+ "usage": {
+  "inputTokens": 8161,
+  "outputTokens": 633,
+  "totalTokens": 8794
+ },
+ "latency_s": 8.379,
+ "seconds": 8.446299250004813
+}

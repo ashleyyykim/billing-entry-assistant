@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02656",
+ "cmid": "7215.003",
+ "second_cmid": "",
+ "shortlist": [
+  "7215.003",
+  "7215.004",
+  "7215.005"
+ ],
+ "confidence": 60,
+ "reason": "Typed client 'Northgate Credit' points to Northgate Bank credit facility matters. The entry is after 5/29/2026, so 7215.002 is closed. Diligence work aligns with typical tasks on credit facilities such as 7215.003 (Asterion Holdings) or 7215.004 (Kestrel Foods). No other clues, so 7215.003 is the most likely.",
+ "usage": {
+  "inputTokens": 8139,
+  "outputTokens": 955,
+  "totalTokens": 9094
+ },
+ "latency_s": 8.375,
+ "seconds": 8.44321279200085
+}

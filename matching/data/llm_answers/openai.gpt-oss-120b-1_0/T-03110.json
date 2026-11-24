@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03110",
+ "cmid": "2201.001",
+ "second_cmid": "",
+ "shortlist": [
+  "2201.001",
+  "2201.003",
+  "2201.005"
+ ],
+ "confidence": 95,
+ "reason": "Narrative about drafting good standing certificates and advisor agreement aligns with General Corporate work for Harborlight Bio, matching past entries for 2201.001 and the timekeeper's primary matter.",
+ "usage": {
+  "inputTokens": 8163,
+  "outputTokens": 395,
+  "totalTokens": 8558
+ },
+ "latency_s": 1.834,
+ "seconds": 2.0444620409980416
+}

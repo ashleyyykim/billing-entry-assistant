@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01706",
+ "cmid": "8340.001",
+ "second_cmid": "",
+ "shortlist": [
+  "8340.001",
+  "8340.002",
+  "8340.003"
+ ],
+ "confidence": 95,
+ "reason": "Narrative references title work for 450 Harbor St, matching acquisition matter 8340.001 (Pelican Row Holdings | Acquisition of 450 Harbor St.) opened before the work date.",
+ "usage": {
+  "inputTokens": 8187,
+  "outputTokens": 363,
+  "totalTokens": 8550
+ },
+ "latency_s": 3.262,
+ "seconds": 3.4633148329885444
+}

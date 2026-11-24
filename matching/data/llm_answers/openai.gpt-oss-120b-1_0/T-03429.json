@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03429",
+ "cmid": "4590.004",
+ "second_cmid": "",
+ "shortlist": [
+  "4590.004",
+  "2207.003",
+  "2956.001"
+ ],
+ "confidence": 95,
+ "reason": "Narrative matches past entry for 4590.004 which involved revising a reseller agreement; the matter is open on the work date and the timekeeper has recent activity on Tidewater AI matters.",
+ "usage": {
+  "inputTokens": 8148,
+  "outputTokens": 922,
+  "totalTokens": 9070
+ },
+ "latency_s": 7.435,
+ "seconds": 7.4962754160078475
+}

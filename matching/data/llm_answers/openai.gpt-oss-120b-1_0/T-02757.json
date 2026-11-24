@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02757",
+ "cmid": "5524.002",
+ "second_cmid": "",
+ "shortlist": [
+  "5524.002",
+  "4471.001",
+  "3388.002"
+ ],
+ "confidence": 80,
+ "reason": "Narrative about LPAC consent aligns with fund matters; timekeeper's primary recent work is on 5524.002, making it the most likely correct matter despite similar tasks on 4471.001.",
+ "usage": {
+  "inputTokens": 8149,
+  "outputTokens": 805,
+  "totalTokens": 8954
+ },
+ "latency_s": 7.024,
+ "seconds": 7.087809417003882
+}

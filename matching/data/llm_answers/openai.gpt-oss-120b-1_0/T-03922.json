@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03922",
+ "cmid": "2960.003",
+ "second_cmid": "",
+ "shortlist": [
+  "2960.003",
+  "3455.002",
+  "4590.002"
+ ],
+ "confidence": 92,
+ "reason": "Narrative 'Attendto board matters' matches BOARD type; TK112's primary board work is on Solace Health Board Matters (2960.003) with 124.2h in recent months, making it the most likely matter.",
+ "usage": {
+  "inputTokens": 8136,
+  "outputTokens": 991,
+  "totalTokens": 9127
+ },
+ "latency_s": 3.868,
+ "seconds": 3.950750916992547
+}

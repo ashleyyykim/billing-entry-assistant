@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03422",
+ "cmid": "5602.003",
+ "second_cmid": "",
+ "shortlist": [
+  "5602.003",
+  "4597.001",
+  "3012.004"
+ ],
+ "confidence": 85,
+ "reason": "Narrative 'Attend to closing matters' matches the closing work on acquisition matter 5602.003, which the timekeeper has logged significant recent hours on and is active/open.",
+ "usage": {
+  "inputTokens": 8137,
+  "outputTokens": 1403,
+  "totalTokens": 9540
+ },
+ "latency_s": 11.571,
+ "seconds": 11.635236999994959
+}

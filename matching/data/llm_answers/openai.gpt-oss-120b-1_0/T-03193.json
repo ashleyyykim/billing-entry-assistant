@@ -1,0 +1,17 @@
+{
+ "entry_id": "T-03193",
+ "cmid": "5520.001",
+ "second_cmid": "",
+ "shortlist": [
+  "5520.001"
+ ],
+ "confidence": 95,
+ "reason": "Narrative references escrow for Larkspur, matching Project Lark acquisition (5520.001) opened before the work date.",
+ "usage": {
+  "inputTokens": 8149,
+  "outputTokens": 357,
+  "totalTokens": 8506
+ },
+ "latency_s": 2.324,
+ "seconds": 2.3893192919931607
+}

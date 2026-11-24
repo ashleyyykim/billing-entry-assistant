@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02876",
+ "cmid": "5520.001",
+ "second_cmid": "",
+ "shortlist": [
+  "5520.001",
+  "5520.003",
+  "5520.005"
+ ],
+ "confidence": 95,
+ "reason": "Narrative about lender counsel and third-party consents matches acquisition work. Typed client matches Cobalt Ridge Capital. Prior TK102 entries show extensive work on 5520.001 (Add-On Acquisition Project Lark). Likely typo in matter name.",
+ "usage": {
+  "inputTokens": 8151,
+  "outputTokens": 551,
+  "totalTokens": 8702
+ },
+ "latency_s": 3.317,
+ "seconds": 3.43065187499451
+}

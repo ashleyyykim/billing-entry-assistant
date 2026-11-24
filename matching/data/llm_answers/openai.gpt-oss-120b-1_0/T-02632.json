@@ -1,0 +1,17 @@
+{
+ "entry_id": "T-02632",
+ "cmid": "7222.002",
+ "second_cmid": "",
+ "shortlist": [
+  "7222.002"
+ ],
+ "confidence": 95,
+ "reason": "Narrative references Summit Ridge financing commitment letter and all\u2011hands call, which aligns with matter 7222.002 (Acquisition of Summit Ridge Software). Typed CMID matches, matter is open, and timekeeper's history shows extensive work on this matter.",
+ "usage": {
+  "inputTokens": 8168,
+  "outputTokens": 341,
+  "totalTokens": 8509
+ },
+ "latency_s": 2.204,
+ "seconds": 2.276820957995369
+}

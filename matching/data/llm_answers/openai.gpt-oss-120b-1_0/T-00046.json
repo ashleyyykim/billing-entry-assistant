@@ -1,0 +1,15 @@
+{
+ "entry_id": "T-00046",
+ "cmid": "NONE",
+ "second_cmid": "",
+ "shortlist": [],
+ "confidence": 95,
+ "reason": "Narrative references client 'Quill & Anchor' and UCC searches, but no matter in the provided list involves that client; no matching CMID can be identified.",
+ "usage": {
+  "inputTokens": 8159,
+  "outputTokens": 591,
+  "totalTokens": 8750
+ },
+ "latency_s": 4.348,
+ "seconds": 4.448549667009502
+}

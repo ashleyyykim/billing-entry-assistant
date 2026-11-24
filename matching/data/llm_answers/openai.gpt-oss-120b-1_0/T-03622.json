@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03622",
+ "cmid": "2201.003",
+ "second_cmid": "",
+ "shortlist": [
+  "2201.003",
+  "5520.001",
+  "5520.003"
+ ],
+ "confidence": 80,
+ "reason": "Narrative matches past entry phrasing for 2201.003 ('Attend to closing matters'); typed CMID/client are incorrect; this matter is open and fits date.",
+ "usage": {
+  "inputTokens": 8140,
+  "outputTokens": 1796,
+  "totalTokens": 9936
+ },
+ "latency_s": 15.139,
+ "seconds": 15.212956000003032
+}

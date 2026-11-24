@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01469",
+ "cmid": "2960.003",
+ "second_cmid": "",
+ "shortlist": [
+  "2960.003",
+  "3455.001",
+  "6103.002"
+ ],
+ "confidence": 92,
+ "reason": "Typed CMID matches a matter with extensive recent hours and is open on the work date; narrative is generic but no evidence of another matter.",
+ "usage": {
+  "inputTokens": 8138,
+  "outputTokens": 368,
+  "totalTokens": 8506
+ },
+ "latency_s": 3.692,
+ "seconds": 3.7589830420038197
+}

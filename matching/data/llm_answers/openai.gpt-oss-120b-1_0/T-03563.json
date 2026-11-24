@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03563",
+ "cmid": "8340.001",
+ "second_cmid": "",
+ "shortlist": [
+  "8340.001",
+  "8340.002",
+  "7215.002"
+ ],
+ "confidence": 95,
+ "reason": "Typed CMID matches narrative about Harbor St. zoning letter; past entries for 8340.001 include similar zoning work; timekeeper has extensive hours on this matter.",
+ "usage": {
+  "inputTokens": 8144,
+  "outputTokens": 350,
+  "totalTokens": 8494
+ },
+ "latency_s": 2.379,
+ "seconds": 2.5641296669928124
+}

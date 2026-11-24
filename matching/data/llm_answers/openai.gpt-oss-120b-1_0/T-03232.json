@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03232",
+ "cmid": "8340.001",
+ "second_cmid": "",
+ "shortlist": [
+  "8340.001",
+  "8340.002",
+  "8340.003"
+ ],
+ "confidence": 80,
+ "reason": "Typed client 'PRH' matches Pelican Row Holdings (client for CMIDs 8340.xxx). Timekeeper's recent hours heavily on 8340.001, and the matter is open on the work date. Narrative is vague but likely a status call about the acquisition matter.",
+ "usage": {
+  "inputTokens": 8124,
+  "outputTokens": 553,
+  "totalTokens": 8677
+ },
+ "latency_s": 4.952,
+ "seconds": 5.019364833002328
+}

@@ -1,0 +1,17 @@
+{
+ "entry_id": "T-02845",
+ "cmid": "6103.003",
+ "second_cmid": "",
+ "shortlist": [
+  "6103.003"
+ ],
+ "confidence": 95,
+ "reason": "Narrative matches board governance work (director signatures, closing checklist) and aligns with past entries for 6103.003; typed CMID is plausible and within open dates.",
+ "usage": {
+  "inputTokens": 8144,
+  "outputTokens": 332,
+  "totalTokens": 8476
+ },
+ "latency_s": 1.944,
+ "seconds": 2.0049880409933394
+}

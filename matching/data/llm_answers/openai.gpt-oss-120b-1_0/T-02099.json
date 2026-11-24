@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02099",
+ "cmid": "7222.002",
+ "second_cmid": "",
+ "shortlist": [
+  "7222.002",
+  "9035.002",
+  "3012.004"
+ ],
+ "confidence": 85,
+ "reason": "TK101 spent the most hours (84.2) on 7222.002 in the prior months, and 'attend to diligence' aligns with an acquisition matter.",
+ "usage": {
+  "inputTokens": 8135,
+  "outputTokens": 454,
+  "totalTokens": 8589
+ },
+ "latency_s": 4.308,
+ "seconds": 4.552513999995426
+}

@@ -1,0 +1,17 @@
+{
+ "entry_id": "T-00437",
+ "cmid": "5602.003",
+ "second_cmid": "",
+ "shortlist": [
+  "5602.003"
+ ],
+ "confidence": 96,
+ "reason": "Narrative references Quanta Photonics transition services agreement and earnout, matching the acquisition matter 5602.003 (Acquisition of Quanta Photonics). Date falls within matter's active period.",
+ "usage": {
+  "inputTokens": 8182,
+  "outputTokens": 289,
+  "totalTokens": 8471
+ },
+ "latency_s": 2.714,
+ "seconds": 2.780591832997743
+}

@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00218",
+ "cmid": "6103.004",
+ "second_cmid": "",
+ "shortlist": [
+  "6103.004",
+  "6103.003",
+  "3455.001"
+ ],
+ "confidence": 95,
+ "reason": "Narrative matches past entries for 6103.004 involving XBRL tagging and D&O questionnaires; date within matter's open period.",
+ "usage": {
+  "inputTokens": 8151,
+  "outputTokens": 515,
+  "totalTokens": 8666
+ },
+ "latency_s": 4.301,
+ "seconds": 4.4280272079922725
+}

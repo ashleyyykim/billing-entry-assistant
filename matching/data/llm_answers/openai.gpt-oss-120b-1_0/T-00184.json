@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00184",
+ "cmid": "3120.001",
+ "second_cmid": "",
+ "shortlist": [
+  "3120.001",
+  "3012.001",
+  "2201.001"
+ ],
+ "confidence": 95,
+ "reason": "Narrative matches corporate work (bylaws, foreign qualification, franchise tax) typical for Bluefin Robotics General Corporate (3120.001); timekeeper's recent hours heavily on this matter.",
+ "usage": {
+  "inputTokens": 8178,
+  "outputTokens": 591,
+  "totalTokens": 8769
+ },
+ "latency_s": 5.611,
+ "seconds": 5.709765749998041
+}

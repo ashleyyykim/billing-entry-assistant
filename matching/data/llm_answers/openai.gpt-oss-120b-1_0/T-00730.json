@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00730",
+ "cmid": "2201.005",
+ "second_cmid": "",
+ "shortlist": [
+  "2201.005",
+  "2201.001",
+  "2207.001"
+ ],
+ "confidence": 70,
+ "reason": "Typed client 'Harbor Bio' likely refers to Harborlight Bio; recent heavy work on 2201.005 suggests this generic 'Attend to file' entry pertains to that matter.",
+ "usage": {
+  "inputTokens": 8135,
+  "outputTokens": 510,
+  "totalTokens": 8645
+ },
+ "latency_s": 5.194,
+ "seconds": 5.331259583006613
+}

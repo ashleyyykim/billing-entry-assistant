@@ -1,0 +1,21 @@
+{
+ "entry_id": "T-03617",
+ "cmid": "2960.003",
+ "second_cmid": "",
+ "shortlist": [
+  "2960.003",
+  "3455.002",
+  "6103.003",
+  "7410.002",
+  "4590.002"
+ ],
+ "confidence": 95,
+ "reason": "Narrative about board chair and board composition aligns with board matters; typed CMID matches Solace Health board matter and timekeeper has extensive history on this matter.",
+ "usage": {
+  "inputTokens": 8144,
+  "outputTokens": 504,
+  "totalTokens": 8648
+ },
+ "latency_s": 4.307,
+ "seconds": 4.376464250002755
+}

@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02480",
+ "cmid": "3455.001",
+ "second_cmid": "",
+ "shortlist": [
+  "3455.001",
+  "3455.002",
+  "3455.003"
+ ],
+ "confidence": 92,
+ "reason": "Narrative mentions Zoom with C. Morgan, who appears in past entries for 3455.001 (SEC Reporting) involving C. Morgan. Matter is open on the date.",
+ "usage": {
+  "inputTokens": 8138,
+  "outputTokens": 629,
+  "totalTokens": 8767
+ },
+ "latency_s": 4.519,
+ "seconds": 4.7175770830072
+}

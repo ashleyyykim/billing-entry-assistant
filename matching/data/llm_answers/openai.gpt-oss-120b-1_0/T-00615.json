@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00615",
+ "cmid": "8340.001",
+ "second_cmid": "",
+ "shortlist": [
+  "8340.001",
+  "8340.002",
+  "8347.002"
+ ],
+ "confidence": 85,
+ "reason": "Narrative about drafting estoppels fits real estate acquisition/lease work. Timekeeper has most hours on 8340.001 and typed CMID matches. Estoppels common in acquisition due diligence, so likely 8340.001.",
+ "usage": {
+  "inputTokens": 8140,
+  "outputTokens": 516,
+  "totalTokens": 8656
+ },
+ "latency_s": 3.74,
+ "seconds": 3.848650208004983
+}

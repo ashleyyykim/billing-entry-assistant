@@ -1,0 +1,17 @@
+{
+ "entry_id": "T-00468",
+ "cmid": "3455.002",
+ "second_cmid": "",
+ "shortlist": [
+  "3455.002"
+ ],
+ "confidence": 95,
+ "reason": "Narrative about reviewing board meeting minutes and audit committee charter matches the Board & Governance matter (3455.002) for Aster & Vale; typed CMID aligns and matter is open.",
+ "usage": {
+  "inputTokens": 8163,
+  "outputTokens": 365,
+  "totalTokens": 8528
+ },
+ "latency_s": 3.47,
+ "seconds": 3.5405126660043607
+}

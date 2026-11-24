@@ -1,0 +1,18 @@
+{
+ "entry_id": "T-00191",
+ "cmid": "4590.003",
+ "second_cmid": "",
+ "shortlist": [
+  "4590.003",
+  "4597.002",
+  "2201.003"
+ ],
+ "confidence": 80,
+ "usage": {
+  "inputTokens": 8149,
+  "outputTokens": 2000,
+  "totalTokens": 10149
+ },
+ "latency_s": 7.883,
+ "seconds": 7.961666041999706
+}

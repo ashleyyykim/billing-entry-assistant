@@ -1,0 +1,20 @@
+{
+ "entry_id": "T-02393",
+ "cmid": "8012.001",
+ "second_cmid": "",
+ "shortlist": [
+  "8012.001",
+  "8012.002",
+  "7215.003",
+  "7215.004"
+ ],
+ "confidence": 95,
+ "reason": "Broker correspondence on closing prorations aligns with real estate acquisition work for Silverleaf Holdings (8012.001). Prior hours show TK105 has billed on this matter.",
+ "usage": {
+  "inputTokens": 8142,
+  "outputTokens": 343,
+  "totalTokens": 8485
+ },
+ "latency_s": 1.821,
+ "seconds": 1.8935128330049338
+}

@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02063",
+ "cmid": "6110.001",
+ "second_cmid": "",
+ "shortlist": [
+  "6110.001",
+  "2207.001",
+  "2201.001"
+ ],
+ "confidence": 95,
+ "reason": "Narrative describes updating a bylaws amendment for a General Corporate matter. Typed client matches Meridian Thermal Systems, whose General Corporate matter is 6110.001, opened and active on the work date.",
+ "usage": {
+  "inputTokens": 8136,
+  "outputTokens": 452,
+  "totalTokens": 8588
+ },
+ "latency_s": 4.031,
+ "seconds": 4.094469541989383
+}

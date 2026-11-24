@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00439",
+ "cmid": "5602.001",
+ "second_cmid": "",
+ "shortlist": [
+  "5602.001",
+  "6103.001",
+  "3455.001"
+ ],
+ "confidence": 95,
+ "reason": "Narrative mentions Section 16 filings and XBRL tagging with P. Nair, matching past entries for Ironwood Semiconductor SEC Reporting (5602.001) which involve XBRL tagging and communication with P. Nair.",
+ "usage": {
+  "inputTokens": 8163,
+  "outputTokens": 951,
+  "totalTokens": 9114
+ },
+ "latency_s": 7.906,
+ "seconds": 7.980053415987641
+}

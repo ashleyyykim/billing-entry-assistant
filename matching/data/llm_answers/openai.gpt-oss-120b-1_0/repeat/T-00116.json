@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00116",
+ "cmid": "4590.003",
+ "second_cmid": "",
+ "shortlist": [
+  "4590.003",
+  "4590.004",
+  "4590.002"
+ ],
+ "confidence": 95,
+ "reason": "Narrative mentions all-hands financing call and SPA for Summit Growth, both tied to Tidewater AI Series B Financing (4590.003) which the timekeeper has prior hours on.",
+ "usage": {
+  "inputTokens": 8158,
+  "outputTokens": 690,
+  "totalTokens": 8848
+ },
+ "latency_s": 6.646,
+ "seconds": 6.708474958999432
+}

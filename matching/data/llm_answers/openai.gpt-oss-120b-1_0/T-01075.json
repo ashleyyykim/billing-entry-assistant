@@ -1,0 +1,17 @@
+{
+ "entry_id": "T-01075",
+ "cmid": "9140.001",
+ "second_cmid": "",
+ "shortlist": [
+  "9140.001"
+ ],
+ "confidence": 98,
+ "reason": "Narrative matches past entry for 9140.001 (review of management company agreement) and typed CMID aligns.",
+ "usage": {
+  "inputTokens": 8148,
+  "outputTokens": 226,
+  "totalTokens": 8374
+ },
+ "latency_s": 1.204,
+ "seconds": 1.277829083002871
+}

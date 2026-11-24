@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01531",
+ "cmid": "2207.003",
+ "second_cmid": "",
+ "shortlist": [
+  "2207.003",
+  "2207.001",
+  "2201.003"
+ ],
+ "confidence": 95,
+ "reason": "Narrative explicitly references Calder Pharma licensing work, matching Harborline Biosciences matter 2207.003; timekeeper has prior hours on this matter.",
+ "usage": {
+  "inputTokens": 8178,
+  "outputTokens": 381,
+  "totalTokens": 8559
+ },
+ "latency_s": 3.338,
+ "seconds": 3.533133541001007
+}

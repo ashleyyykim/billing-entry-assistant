@@ -1,0 +1,20 @@
+{
+ "entry_id": "T-00929",
+ "cmid": "7633.002",
+ "second_cmid": "",
+ "shortlist": [
+  "7633.002",
+  "2201.003",
+  "3120.002",
+  "4597.002"
+ ],
+ "confidence": 95,
+ "reason": "Narrative mentions Series A pay-to-play and wire instructions; typed client is a misspelling of Copperline Networks, whose Series A financing matter is 7633.002 opened 07/13/2026, matching date and context.",
+ "usage": {
+  "inputTokens": 8158,
+  "outputTokens": 1094,
+  "totalTokens": 9252
+ },
+ "latency_s": 8.863,
+ "seconds": 8.974302292001084
+}

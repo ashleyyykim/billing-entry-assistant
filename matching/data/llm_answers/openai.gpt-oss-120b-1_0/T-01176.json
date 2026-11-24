@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01176",
+ "cmid": "8340.001",
+ "second_cmid": "",
+ "shortlist": [
+  "8340.001",
+  "8340.002",
+  "7215.003"
+ ],
+ "confidence": 95,
+ "reason": "Narrative references 450 Harbor zoning letter, matching matter 8340.001 (Acquisition of 450 Harbor St.) which is open and the timekeeper has extensive prior hours on this matter.",
+ "usage": {
+  "inputTokens": 8151,
+  "outputTokens": 388,
+  "totalTokens": 8539
+ },
+ "latency_s": 3.133,
+ "seconds": 3.2647904170007678
+}

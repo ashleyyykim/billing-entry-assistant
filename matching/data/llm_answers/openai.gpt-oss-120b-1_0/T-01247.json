@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01247",
+ "cmid": "7222.002",
+ "second_cmid": "",
+ "shortlist": [
+  "7222.002",
+  "9035.002",
+  "3012.004"
+ ],
+ "confidence": 85,
+ "reason": "Typed CMID invalid; narrative about escrow review for closing fits acquisition matter. TK101's largest prior allocation is to 7222.002 (acquisition of Summit Ridge Software) opened before date, making it the most likely match.",
+ "usage": {
+  "inputTokens": 8150,
+  "outputTokens": 1104,
+  "totalTokens": 9254
+ },
+ "latency_s": 4.471,
+ "seconds": 4.674996125002508
+}

@@ -1,0 +1,17 @@
+{
+ "entry_id": "T-02129",
+ "cmid": "9028.003",
+ "second_cmid": "",
+ "shortlist": [
+  "9028.003"
+ ],
+ "confidence": 95,
+ "reason": "Narrative about drafting S-8, equity incentive plan, and option grant notices matches prior work logged under Lanternfish Software Exec Comp matter 9028.003.",
+ "usage": {
+  "inputTokens": 8174,
+  "outputTokens": 419,
+  "totalTokens": 8593
+ },
+ "latency_s": 3.057,
+ "seconds": 3.1614668340043863
+}

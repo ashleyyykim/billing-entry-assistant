@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02834",
+ "cmid": "1111.001",
+ "second_cmid": "",
+ "shortlist": [
+  "1111.001",
+  "1111.002",
+  "1111.003"
+ ],
+ "confidence": 95,
+ "reason": "Narrative is generic admin update of time entries, matching the firm's Admin matter (1111.001). No indication of other matters.",
+ "usage": {
+  "inputTokens": 8137,
+  "outputTokens": 249,
+  "totalTokens": 8386
+ },
+ "latency_s": 1.336,
+ "seconds": 1.4021631670038914
+}

@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01732",
+ "cmid": "5524.001",
+ "second_cmid": "",
+ "shortlist": [
+  "5524.001",
+  "5524.002",
+  "5524.003"
+ ],
+ "confidence": 92,
+ "reason": "Narrative about investor subscriptions aligns with fund formation work; past entries for 5524.001 involve subscription documents; client matches Cobalt Ridge Partners.",
+ "usage": {
+  "inputTokens": 8145,
+  "outputTokens": 544,
+  "totalTokens": 8689
+ },
+ "latency_s": 5.471,
+ "seconds": 5.543263208994176
+}

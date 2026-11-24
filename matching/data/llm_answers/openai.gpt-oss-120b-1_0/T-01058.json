@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01058",
+ "cmid": "7633.002",
+ "second_cmid": "",
+ "shortlist": [
+  "7633.002",
+  "7633.001",
+  "4590.003"
+ ],
+ "confidence": 95,
+ "reason": "Narrative explicitly mentions drafting a Series A opinion, matching the Series A financing matter for Copperline Networks (7633.002). No evidence of work on a second matter.",
+ "usage": {
+  "inputTokens": 8162,
+  "outputTokens": 463,
+  "totalTokens": 8625
+ },
+ "latency_s": 4.38,
+ "seconds": 4.445786083000712
+}

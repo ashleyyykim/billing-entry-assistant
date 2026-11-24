@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01163",
+ "cmid": "5520.004",
+ "second_cmid": "",
+ "shortlist": [
+  "5520.004",
+  "4471.004",
+  "9140.001"
+ ],
+ "confidence": 95,
+ "reason": "Narrative references Fund V distribution waterfall, capital call, and GP interest transfer, which aligns with fund administration work (5520.004). Timekeeper has recent hours on this matter, supporting the match.",
+ "usage": {
+  "inputTokens": 8187,
+  "outputTokens": 599,
+  "totalTokens": 8786
+ },
+ "latency_s": 5.654,
+ "seconds": 5.718437083007302
+}

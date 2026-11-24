@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01788",
+ "cmid": "2956.001",
+ "second_cmid": "",
+ "shortlist": [
+  "2956.001",
+  "2956.003",
+  "2207.003"
+ ],
+ "confidence": 85,
+ "reason": "Narrative mentions updating a DPA and issues list, which matches past entries for 2956.001 (Licensing - Content Distribution) that involve DPA work. No other matter in list has DPA focus.",
+ "usage": {
+  "inputTokens": 8154,
+  "outputTokens": 759,
+  "totalTokens": 8913
+ },
+ "latency_s": 6.145,
+ "seconds": 6.205962791995262
+}

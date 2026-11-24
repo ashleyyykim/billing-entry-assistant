@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02956",
+ "cmid": "9140.001",
+ "second_cmid": "",
+ "shortlist": [
+  "9140.001",
+  "2215.001",
+  "3388.001"
+ ],
+ "confidence": 95,
+ "reason": "Narrative about first close timing aligns with fund formation matter; typed CMID matches client and matter type; time within open period.",
+ "usage": {
+  "inputTokens": 8155,
+  "outputTokens": 379,
+  "totalTokens": 8534
+ },
+ "latency_s": 2.627,
+ "seconds": 2.6897317090042634
+}

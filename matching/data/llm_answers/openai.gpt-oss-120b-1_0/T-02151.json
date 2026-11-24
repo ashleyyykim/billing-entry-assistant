@@ -1,0 +1,17 @@
+{
+ "entry_id": "T-02151",
+ "cmid": "1111.001",
+ "second_cmid": "",
+ "shortlist": [
+  "1111.001"
+ ],
+ "confidence": 95,
+ "reason": "Narrative indicates internal CLE attendance, matching the Firm Admin matter (1111.001) which is the only Admin type matter and the timekeeper has prior hours on it.",
+ "usage": {
+  "inputTokens": 8133,
+  "outputTokens": 247,
+  "totalTokens": 8380
+ },
+ "latency_s": 1.437,
+ "seconds": 1.5058196669997415
+}

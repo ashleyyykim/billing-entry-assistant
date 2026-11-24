@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01907",
+ "cmid": "8340.001",
+ "second_cmid": "",
+ "shortlist": [
+  "8340.001",
+  "8340.002",
+  "8012.001"
+ ],
+ "confidence": 85,
+ "reason": "TK113 has extensive prior hours on 8340.001 (real estate acquisition) and the task of preparing foreign qualification filings fits within acquisition due diligence; typed client appears incorrect.",
+ "usage": {
+  "inputTokens": 8134,
+  "outputTokens": 842,
+  "totalTokens": 8976
+ },
+ "latency_s": 3.565,
+ "seconds": 3.634314416995039
+}

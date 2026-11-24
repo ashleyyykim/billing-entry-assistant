@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00555",
+ "cmid": "3120.001",
+ "second_cmid": "",
+ "shortlist": [
+  "3120.001",
+  "3120.002",
+  "3120.003"
+ ],
+ "confidence": 95,
+ "reason": "Narrative about annual stockholder consent aligns with Bluefin Robotics' General Corporate matter (3120.001); client and matter type match, and timekeeper frequently logs hours to this matter.",
+ "usage": {
+  "inputTokens": 8146,
+  "outputTokens": 448,
+  "totalTokens": 8594
+ },
+ "latency_s": 3.915,
+ "seconds": 3.97968179199961
+}

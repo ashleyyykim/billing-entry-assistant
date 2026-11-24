@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00381",
+ "cmid": "8347.001",
+ "second_cmid": "",
+ "shortlist": [
+  "8347.001",
+  "8340.001",
+  "8340.003"
+ ],
+ "confidence": 92,
+ "reason": "Narrative matches a real estate acquisition; typed CMID 8347.001 is an acquisition matter opened before the work date, and timekeeper's history shows work on related Pelican Bay and Pelican Row acquisition/lease matters.",
+ "usage": {
+  "inputTokens": 8139,
+  "outputTokens": 438,
+  "totalTokens": 8577
+ },
+ "latency_s": 2.322,
+ "seconds": 2.4228908749937546
+}

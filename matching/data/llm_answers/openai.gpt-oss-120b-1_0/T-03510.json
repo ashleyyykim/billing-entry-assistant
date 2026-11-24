@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03510",
+ "cmid": "2960.003",
+ "second_cmid": "",
+ "shortlist": [
+  "2960.003",
+  "2960.001",
+  "2960.002"
+ ],
+ "confidence": 95,
+ "reason": "Narrative references P. Liu, matching prior entry for 2960.003 (Board Matters) and timekeeper has extensive hours on that matter.",
+ "usage": {
+  "inputTokens": 8148,
+  "outputTokens": 285,
+  "totalTokens": 8433
+ },
+ "latency_s": 1.306,
+ "seconds": 1.4823072500003036
+}

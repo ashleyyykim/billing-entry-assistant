@@ -1,0 +1,18 @@
+{
+ "entry_id": "T-01722",
+ "cmid": "2201.001",
+ "second_cmid": "",
+ "shortlist": [
+  "2201.001",
+  "2201.003"
+ ],
+ "confidence": 80,
+ "reason": "Typed client Harborlight matches Harborlight Bio matters; primary matter for TK106 is 2201.001 with many hours; narrative of scanning executed documents fits general corporate work.",
+ "usage": {
+  "inputTokens": 8141,
+  "outputTokens": 747,
+  "totalTokens": 8888
+ },
+ "latency_s": 7.306,
+ "seconds": 7.374605959004839
+}

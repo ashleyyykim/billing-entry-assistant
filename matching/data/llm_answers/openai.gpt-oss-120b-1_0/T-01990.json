@@ -1,0 +1,15 @@
+{
+ "entry_id": "T-01990",
+ "cmid": "NONE",
+ "second_cmid": "",
+ "shortlist": [],
+ "confidence": 0,
+ "reason": "Typed CMID 6103.004 is closed (07/10/2026) and narrative 'Emails.' provides no clear indication of another matter; insufficient evidence to assign to any open matter.",
+ "usage": {
+  "inputTokens": 8137,
+  "outputTokens": 753,
+  "totalTokens": 8890
+ },
+ "latency_s": 7.109,
+ "seconds": 7.217566042003455
+}

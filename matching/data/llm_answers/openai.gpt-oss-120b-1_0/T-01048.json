@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01048",
+ "cmid": "2201.001",
+ "second_cmid": "",
+ "shortlist": [
+  "2201.001",
+  "2201.003",
+  "2201.005"
+ ],
+ "confidence": 95,
+ "reason": "Narrative about contractor classification and employment agreement aligns with General Corporate work for Harborlight Bio (2201.001); timekeeper has extensive recent hours on this matter and typed CMID matches.",
+ "usage": {
+  "inputTokens": 8171,
+  "outputTokens": 376,
+  "totalTokens": 8547
+ },
+ "latency_s": 3.631,
+ "seconds": 3.699111833004281
+}

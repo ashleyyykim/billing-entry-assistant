@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00948",
+ "cmid": "6230.002",
+ "second_cmid": "",
+ "shortlist": [
+  "6230.002",
+  "6230.001",
+  "6230.001"
+ ],
+ "confidence": 80,
+ "reason": "Typed CMID matches an open Series B financing matter for Ember Grid Energy; timekeeper has prior work on Ember Grid Energy (6230.001) indicating relevance, but narrative is vague.",
+ "usage": {
+  "inputTokens": 8140,
+  "outputTokens": 619,
+  "totalTokens": 8759
+ },
+ "latency_s": 3.676,
+ "seconds": 3.748187584002153
+}

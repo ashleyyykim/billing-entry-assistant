@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00431",
+ "cmid": "8340.001",
+ "second_cmid": "",
+ "shortlist": [
+  "8340.001",
+  "8340.002",
+  "8340.003"
+ ],
+ "confidence": 95,
+ "reason": "Narrative references due diligence for Harbor St, matching acquisition matter 8340.001; date within matter's open period.",
+ "usage": {
+  "inputTokens": 8160,
+  "outputTokens": 358,
+  "totalTokens": 8518
+ },
+ "latency_s": 3.14,
+ "seconds": 3.3477514999976847
+}

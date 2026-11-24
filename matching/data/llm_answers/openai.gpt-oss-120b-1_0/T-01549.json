@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01549",
+ "cmid": "6103.003",
+ "second_cmid": "",
+ "shortlist": [
+  "6103.003",
+  "2960.003",
+  "2201.003"
+ ],
+ "confidence": 95,
+ "reason": "Typed CMID matches client Meridian Therapeutics; narrative about coordinating director signatures and updating a closing checklist aligns with board governance work seen in past entries for 6103.003.",
+ "usage": {
+  "inputTokens": 8142,
+  "outputTokens": 752,
+  "totalTokens": 8894
+ },
+ "latency_s": 3.643,
+ "seconds": 3.720333416000358
+}

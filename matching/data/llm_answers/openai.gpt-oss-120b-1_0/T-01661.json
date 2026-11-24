@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01661",
+ "cmid": "5524.001",
+ "second_cmid": "",
+ "shortlist": [
+  "5524.001",
+  "5524.002",
+  "5520.001"
+ ],
+ "confidence": 70,
+ "reason": "Typed CMID matches client and matter type; narrative is generic but no evidence pointing elsewhere; date within open period; timekeeper's recent work spans various matters, no clear alternative.",
+ "usage": {
+  "inputTokens": 8140,
+  "outputTokens": 489,
+  "totalTokens": 8629
+ },
+ "latency_s": 4.625,
+ "seconds": 4.695416333997855
+}

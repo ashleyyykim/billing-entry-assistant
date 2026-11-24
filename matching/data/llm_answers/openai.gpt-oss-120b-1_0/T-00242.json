@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00242",
+ "cmid": "3120.001",
+ "second_cmid": "",
+ "shortlist": [
+  "3120.001",
+  "3120.003",
+  "5520.005"
+ ],
+ "confidence": 95,
+ "reason": "Narrative matches employee agreement drafting typical for Bluefin Robotics General Corporate matter; timekeeper's recent heavy activity on 3120.001 supports this.",
+ "usage": {
+  "inputTokens": 8147,
+  "outputTokens": 369,
+  "totalTokens": 8516
+ },
+ "latency_s": 2.244,
+ "seconds": 2.3573925829987274
+}

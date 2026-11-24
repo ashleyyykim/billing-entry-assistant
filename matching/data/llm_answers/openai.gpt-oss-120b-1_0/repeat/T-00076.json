@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00076",
+ "cmid": "6103.001",
+ "second_cmid": "",
+ "shortlist": [
+  "6103.001",
+  "6103.004",
+  "3455.001"
+ ],
+ "confidence": 92,
+ "reason": "Narrative about drafting a trading policy aligns with SEC Reporting matters; Meridian Therapeutics client matches 6103.001, and timekeeper has extensive recent work on Meridian SEC matters.",
+ "usage": {
+  "inputTokens": 8149,
+  "outputTokens": 514,
+  "totalTokens": 8663
+ },
+ "latency_s": 3.851,
+ "seconds": 3.917121833001147
+}

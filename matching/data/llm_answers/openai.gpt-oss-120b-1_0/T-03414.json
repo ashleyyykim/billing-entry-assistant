@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03414",
+ "cmid": "5602.003",
+ "second_cmid": "",
+ "shortlist": [
+  "5602.003",
+  "5602.001",
+  "5602.002"
+ ],
+ "confidence": 95,
+ "reason": "Narrative references Quanta Photonics merger, matching acquisition matter 5602.003 for Ironwood Semiconductor; timekeeper has recent hours on this matter.",
+ "usage": {
+  "inputTokens": 8177,
+  "outputTokens": 404,
+  "totalTokens": 8581
+ },
+ "latency_s": 3.521,
+ "seconds": 3.5859206669993
+}

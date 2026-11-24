@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01111",
+ "cmid": "9028.003",
+ "second_cmid": "",
+ "shortlist": [
+  "9028.003",
+  "9028.002",
+  "9028.001"
+ ],
+ "confidence": 96,
+ "reason": "Narrative matches prior entries for 9028.003 (exec comp/409A) involving founder call and S-8 review; typed CMID matches; matter open on date.",
+ "usage": {
+  "inputTokens": 8159,
+  "outputTokens": 411,
+  "totalTokens": 8570
+ },
+ "latency_s": 3.861,
+ "seconds": 3.924549041010323
+}

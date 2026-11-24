@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03876",
+ "cmid": "8340.001",
+ "second_cmid": "",
+ "shortlist": [
+  "8340.001",
+  "8340.002",
+  "8340.003"
+ ],
+ "confidence": 95,
+ "reason": "Narrative explicitly references purchase and sale agreement for 450 Harbor, matching the acquisition matter 8340.001; date fits; no indication of second matter.",
+ "usage": {
+  "inputTokens": 8156,
+  "outputTokens": 371,
+  "totalTokens": 8527
+ },
+ "latency_s": 3.937,
+ "seconds": 4.009952500011423
+}

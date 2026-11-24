@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00705",
+ "cmid": "8340.001",
+ "second_cmid": "",
+ "shortlist": [
+  "8340.001",
+  "8340.002",
+  "8012.001"
+ ],
+ "confidence": 95,
+ "reason": "Narrative references 450 Harbor and M. Carter, both tied to matter 8340.001 (Acquisition of 450 Harbor St.) where prior entries involve title work and M. Carter.",
+ "usage": {
+  "inputTokens": 8160,
+  "outputTokens": 408,
+  "totalTokens": 8568
+ },
+ "latency_s": 3.391,
+ "seconds": 3.450448667004821
+}

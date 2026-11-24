@@ -1,0 +1,18 @@
+{
+ "entry_id": "T-01005",
+ "cmid": "3120.003",
+ "second_cmid": "",
+ "shortlist": [
+  "3120.003",
+  "3120.001"
+ ],
+ "confidence": 85,
+ "reason": "Narrative about stock plan aligns with equity plan matter 3120.003; typed CMID 3120.001 is likely a mistake.",
+ "usage": {
+  "inputTokens": 8146,
+  "outputTokens": 469,
+  "totalTokens": 8615
+ },
+ "latency_s": 2.254,
+ "seconds": 2.326404708001064
+}

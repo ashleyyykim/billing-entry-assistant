@@ -1,0 +1,20 @@
+{
+ "entry_id": "T-00621",
+ "cmid": "6110.002",
+ "second_cmid": "",
+ "shortlist": [
+  "6110.002",
+  "5520.001",
+  "5520.002",
+  "3455.002"
+ ],
+ "confidence": 70,
+ "reason": "TK118 has recent hours on acquisition matters (6110.002, 5520.001, 5520.002) and the narrative 'Attend to closing matters' fits acquisition closing; 6110.002 is the most recent acquisition with hours and likely in closing phase.",
+ "usage": {
+  "inputTokens": 8137,
+  "outputTokens": 1021,
+  "totalTokens": 9158
+ },
+ "latency_s": 5.03,
+ "seconds": 5.09316704099183
+}

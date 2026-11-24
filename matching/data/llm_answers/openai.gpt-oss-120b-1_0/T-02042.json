@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02042",
+ "cmid": "3455.002",
+ "second_cmid": "",
+ "shortlist": [
+  "3455.002",
+  "6103.003",
+  "7410.002"
+ ],
+ "confidence": 95,
+ "reason": "TK118's primary matter is 3455.002 (Board & Governance) with extensive hours; narrative about comp committee charter and board minutes aligns with board work; typed CMID appears erroneous.",
+ "usage": {
+  "inputTokens": 8159,
+  "outputTokens": 661,
+  "totalTokens": 8820
+ },
+ "latency_s": 3.699,
+ "seconds": 3.8556125829927623
+}

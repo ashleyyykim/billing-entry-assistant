@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02060",
+ "cmid": "7215.005",
+ "second_cmid": "",
+ "shortlist": [
+  "7215.005",
+  "7215.004",
+  "7215.003"
+ ],
+ "confidence": 95,
+ "reason": "Narrative references Amendment No. 2 and Asterion borrowing base certificate, which belong to matter 7215.005 (Asterion - Amendment No. 2). Typed CMID 7215.004 (Kestrel Foods) does not match the described work.",
+ "usage": {
+  "inputTokens": 8183,
+  "outputTokens": 681,
+  "totalTokens": 8864
+ },
+ "latency_s": 5.749,
+ "seconds": 5.926015749995713
+}

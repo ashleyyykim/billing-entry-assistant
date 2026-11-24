@@ -1,0 +1,17 @@
+{
+ "entry_id": "T-00327",
+ "cmid": "8820.001",
+ "second_cmid": "",
+ "shortlist": [
+  "8820.001"
+ ],
+ "confidence": 95,
+ "reason": "Narrative 'Review documents' aligns with typical fund formation work for Mosaic Health Partners; timekeeper has prior hours on 8820.001 and the matter is open on the work date.",
+ "usage": {
+  "inputTokens": 8140,
+  "outputTokens": 282,
+  "totalTokens": 8422
+ },
+ "latency_s": 2.739,
+ "seconds": 2.851895208004862
+}

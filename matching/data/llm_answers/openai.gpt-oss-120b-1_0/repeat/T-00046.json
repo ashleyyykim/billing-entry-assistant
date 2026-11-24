@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00046",
+ "cmid": "7215.003",
+ "second_cmid": "",
+ "shortlist": [
+  "7215.003",
+  "7215.004",
+  "7215.006"
+ ],
+ "confidence": 85,
+ "reason": "Narrative mentions UCC searches and amendment fee call, matching past entries for 7215.003 (credit facility amendment fee) and typical UCC work on credit facilities. Matter is open on work date.",
+ "usage": {
+  "inputTokens": 8159,
+  "outputTokens": 975,
+  "totalTokens": 9134
+ },
+ "latency_s": 9.221,
+ "seconds": 9.301178792011342
+}

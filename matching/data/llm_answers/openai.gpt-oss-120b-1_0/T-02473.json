@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02473",
+ "cmid": "6103.003",
+ "second_cmid": "",
+ "shortlist": [
+  "6103.003",
+  "6103.001",
+  "6103.002"
+ ],
+ "confidence": 92,
+ "reason": "Narrative mentions conference with S. Cole, who appears in Meridian Therapeutics SEC entry, but typed matter is Board & Governance, matching CMID 6103.003.",
+ "usage": {
+  "inputTokens": 8140,
+  "outputTokens": 544,
+  "totalTokens": 8684
+ },
+ "latency_s": 2.526,
+ "seconds": 2.63034604198765
+}

@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01014",
+ "cmid": "4471.002",
+ "second_cmid": "",
+ "shortlist": [
+  "4471.002",
+  "4471.001",
+  "4471.003"
+ ],
+ "confidence": 95,
+ "reason": "Narrative describes drafting an LP side letter and discussing first close timing, which aligns with a fund formation matter. Ridgewater Partners Fund III Formation (4471.002) matches the typed CMID and is active during the work date.",
+ "usage": {
+  "inputTokens": 8174,
+  "outputTokens": 601,
+  "totalTokens": 8775
+ },
+ "latency_s": 2.669,
+ "seconds": 2.7371586249937536
+}

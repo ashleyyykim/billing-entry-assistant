@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01631",
+ "cmid": "9028.003",
+ "second_cmid": "",
+ "shortlist": [
+  "9028.003",
+  "9028.001",
+  "9028.002"
+ ],
+ "confidence": 95,
+ "reason": "Narrative about revising S-8 for early exercise aligns with Exec Comp / 409A matter (9028.003). Typed client matches Lanternfish Software. TK115's recent hours heavily on 9028.003, confirming primary matter.",
+ "usage": {
+  "inputTokens": 8153,
+  "outputTokens": 378,
+  "totalTokens": 8531
+ },
+ "latency_s": 1.963,
+ "seconds": 2.0296752499998547
+}

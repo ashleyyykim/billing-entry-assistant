@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03775",
+ "cmid": "6103.003",
+ "second_cmid": "",
+ "shortlist": [
+  "6103.003",
+  "6103.001",
+  "6103.002"
+ ],
+ "confidence": 92,
+ "reason": "Narrative about option grants aligns with board matters for Meridian Therapeutics; client matches Meridian Therapeutics; no equity plan matter exists for this client, so board matter is best fit.",
+ "usage": {
+  "inputTokens": 8149,
+  "outputTokens": 878,
+  "totalTokens": 9027
+ },
+ "latency_s": 7.673,
+ "seconds": 7.747154791999492
+}

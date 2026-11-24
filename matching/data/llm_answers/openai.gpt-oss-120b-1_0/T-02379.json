@@ -1,0 +1,17 @@
+{
+ "entry_id": "T-02379",
+ "cmid": "5520.001",
+ "second_cmid": "",
+ "shortlist": [
+  "5520.001"
+ ],
+ "confidence": 95,
+ "reason": "Narrative references 'Project Lark', which matches matter 5520.001 Add-On Acquisition (Project Lark); dates align and no other matter fits.",
+ "usage": {
+  "inputTokens": 8168,
+  "outputTokens": 375,
+  "totalTokens": 8543
+ },
+ "latency_s": 2.74,
+ "seconds": 2.911193000007188
+}

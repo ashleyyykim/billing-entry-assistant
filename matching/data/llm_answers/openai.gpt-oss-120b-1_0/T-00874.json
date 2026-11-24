@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00874",
+ "cmid": "3455.002",
+ "second_cmid": "",
+ "shortlist": [
+  "3455.002",
+  "2960.003",
+  "6103.003"
+ ],
+ "confidence": 95,
+ "reason": "Client abbreviation AV matches Aster & Vale; board meeting minutes for closing aligns with Board & Governance matter 3455.002, which the timekeeper has logged extensive hours on.",
+ "usage": {
+  "inputTokens": 8141,
+  "outputTokens": 557,
+  "totalTokens": 8698
+ },
+ "latency_s": 5.415,
+ "seconds": 5.480045500007691
+}

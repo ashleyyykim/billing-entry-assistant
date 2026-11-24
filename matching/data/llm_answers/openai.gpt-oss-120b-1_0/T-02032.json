@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02032",
+ "cmid": "6103.005",
+ "second_cmid": "",
+ "shortlist": [
+  "6103.005",
+  "6103.004",
+  "6103.001"
+ ],
+ "confidence": 95,
+ "reason": "Narrative mentions organizing closing deliverables for ATM, which aligns with Meridian Therapeutics ATM Program (6103.005) opened 08/10/2026.",
+ "usage": {
+  "inputTokens": 8139,
+  "outputTokens": 398,
+  "totalTokens": 8537
+ },
+ "latency_s": 3.84,
+ "seconds": 4.029988750000484
+}

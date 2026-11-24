@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00227",
+ "cmid": "6103.004",
+ "second_cmid": "",
+ "shortlist": [
+  "6103.004",
+  "6103.001",
+  "6103.003"
+ ],
+ "confidence": 95,
+ "reason": "Narrative describes annual meeting proxy, exhibit index, Section 16 filings, and Item 5.02 disclosure, matching Meridian Therapeutics 2026 Annual Meeting matter (6103.004). Date is within matter's open period.",
+ "usage": {
+  "inputTokens": 8197,
+  "outputTokens": 395,
+  "totalTokens": 8592
+ },
+ "latency_s": 3.447,
+ "seconds": 3.564318375007133
+}

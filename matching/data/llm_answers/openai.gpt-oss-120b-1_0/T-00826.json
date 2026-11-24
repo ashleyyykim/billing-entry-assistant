@@ -1,0 +1,18 @@
+{
+ "entry_id": "T-00826",
+ "cmid": "9140.001",
+ "second_cmid": "9140.002",
+ "shortlist": [
+  "9140.001",
+  "9140.002"
+ ],
+ "confidence": 95,
+ "reason": "Narrative mentions marking up a management company agreement (fee waivers) which aligns with Fund II Formation (9140.001) and editing the investor register for a Fund I extension, which aligns with General Fund Matters (9140.002). Both matters are for Juniper Peak Capital and the timekeeper has prior hours on both.",
+ "usage": {
+  "inputTokens": 8168,
+  "outputTokens": 548,
+  "totalTokens": 8716
+ },
+ "latency_s": 5.07,
+ "seconds": 5.135544832999585
+}

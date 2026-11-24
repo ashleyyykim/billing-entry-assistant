@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03138",
+ "cmid": "3012.001",
+ "second_cmid": "",
+ "shortlist": [
+  "3012.001",
+  "3012.004",
+  "3012.005"
+ ],
+ "confidence": 70,
+ "reason": "Narrative mentions Lindqvist, who appears in prior entries for Halvorsen matters 3012.001 and 3012.004. The timekeeper has history on 3012.001 (7.5h) and 3012.004 (1.8h) but not on 3012.005. Indemnification email fits general corporate work, making 3012.001 the most likely, though typed CMID suggests 3012.005, creating uncertainty.",
+ "usage": {
+  "inputTokens": 8149,
+  "outputTokens": 1034,
+  "totalTokens": 9183
+ },
+ "latency_s": 9.132,
+ "seconds": 9.286932499991963
+}

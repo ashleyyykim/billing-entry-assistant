@@ -1,0 +1,18 @@
+{
+ "entry_id": "T-00017",
+ "cmid": "6103.004",
+ "second_cmid": "",
+ "shortlist": [
+  "6103.004",
+  "6103.001"
+ ],
+ "confidence": 95,
+ "reason": "Narrative about drafting proxy statement for MD&A matches the SEC/annual meeting matter for Meridian Therapeutics (6103.004), which is open and the timekeeper has recent high hours on this matter.",
+ "usage": {
+  "inputTokens": 8143,
+  "outputTokens": 472,
+  "totalTokens": 8615
+ },
+ "latency_s": 2.23,
+ "seconds": 2.450648625002941
+}

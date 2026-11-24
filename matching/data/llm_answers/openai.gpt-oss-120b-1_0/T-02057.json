@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02057",
+ "cmid": "5602.001",
+ "second_cmid": "",
+ "shortlist": [
+  "5602.001",
+  "6103.001",
+  "6103.004"
+ ],
+ "confidence": 95,
+ "reason": "Narrative describes SEC filing work (10-Q Item 5.02, proxy, 10-K MD&A) matching Ironwood Semiconductor's SEC Reporting matter 5602.001, which is open on the date.",
+ "usage": {
+  "inputTokens": 8184,
+  "outputTokens": 434,
+  "totalTokens": 8618
+ },
+ "latency_s": 4.065,
+ "seconds": 4.256196040994837
+}

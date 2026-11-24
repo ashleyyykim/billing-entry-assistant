@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03958",
+ "cmid": "5524.002",
+ "second_cmid": "",
+ "shortlist": [
+  "5524.002",
+  "5524.001",
+  "5520.004"
+ ],
+ "confidence": 95,
+ "reason": "Narrative about managing capital call notices aligns with General Fund Matters (5524.002) for Cobalt Ridge Partners; typed CMID matches and client abbreviation fits.",
+ "usage": {
+  "inputTokens": 8152,
+  "outputTokens": 388,
+  "totalTokens": 8540
+ },
+ "latency_s": 3.965,
+ "seconds": 4.077993583996431
+}

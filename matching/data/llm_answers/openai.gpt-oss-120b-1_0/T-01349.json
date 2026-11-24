@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01349",
+ "cmid": "9140.001",
+ "second_cmid": "",
+ "shortlist": [
+  "9140.001",
+  "2215.001",
+  "4471.001"
+ ],
+ "confidence": 95,
+ "reason": "Narrative explicitly references Fund II PPM draft and co-invest rights, matching the Juniper Peak Capital Fund II Formation matter (9140.001) which is open on the work date.",
+ "usage": {
+  "inputTokens": 8173,
+  "outputTokens": 321,
+  "totalTokens": 8494
+ },
+ "latency_s": 2.123,
+ "seconds": 2.198630584010971
+}

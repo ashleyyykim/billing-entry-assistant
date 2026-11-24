@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03157",
+ "cmid": "4471.004",
+ "second_cmid": "",
+ "shortlist": [
+  "4471.004",
+  "4471.002",
+  "4471.003"
+ ],
+ "confidence": 92,
+ "reason": "Narrative about reviewing and commenting on an offering memo and first close timing matches a fund formation matter. Typed client misspells Ridgewater Partners, pointing to Ridgewater matters. Fund IV Formation (4471.004) opened Sep 1 2026, aligning with the Sep 16 2026 work date and focus on first close timing.",
+ "usage": {
+  "inputTokens": 8150,
+  "outputTokens": 1044,
+  "totalTokens": 9194
+ },
+ "latency_s": 5.271,
+ "seconds": 5.338960374996532
+}

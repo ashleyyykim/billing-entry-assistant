@@ -1,0 +1,17 @@
+{
+ "entry_id": "T-00099",
+ "cmid": "6103.004",
+ "second_cmid": "",
+ "shortlist": [
+  "6103.004"
+ ],
+ "confidence": 95,
+ "reason": "Narrative involves EDGAR filing and S-3 edits, which are SEC-related tasks matching the SEC filing matter 6103.004 (2026 Annual Meeting) that is open during the work date.",
+ "usage": {
+  "inputTokens": 8163,
+  "outputTokens": 415,
+  "totalTokens": 8578
+ },
+ "latency_s": 3.559,
+ "seconds": 3.6677395410079043
+}

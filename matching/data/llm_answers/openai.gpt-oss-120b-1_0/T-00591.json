@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00591",
+ "cmid": "8340.001",
+ "second_cmid": "",
+ "shortlist": [
+  "8340.001",
+  "8340.002",
+  "7215.002"
+ ],
+ "confidence": 95,
+ "reason": "Narrative references M. Carter, who appears in past entries for matter 8340.001 (title exceptions due diligence). Date fits matter open period.",
+ "usage": {
+  "inputTokens": 8130,
+  "outputTokens": 573,
+  "totalTokens": 8703
+ },
+ "latency_s": 4.753,
+ "seconds": 4.892689042011625
+}

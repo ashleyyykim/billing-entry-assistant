@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00059",
+ "cmid": "6103.004",
+ "second_cmid": "",
+ "shortlist": [
+  "6103.004",
+  "6103.002",
+  "6103.001"
+ ],
+ "confidence": 70,
+ "reason": "Typed CMID points to ATM Program but that matter opens after the work date, so it's likely a mis\u2011typed CMID. The client is Meridian Therapeutics; the timekeeper has recent activity on Meridian matters, especially the 2026 Annual Meeting (6103.004) which is open during the work date and would involve a phone call about subsequent events.",
+ "usage": {
+  "inputTokens": 8142,
+  "outputTokens": 608,
+  "totalTokens": 8750
+ },
+ "latency_s": 6.89,
+ "seconds": 6.999271541993949
+}

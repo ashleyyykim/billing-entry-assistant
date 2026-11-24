@@ -1,0 +1,15 @@
+{
+ "entry_id": "T-02769",
+ "cmid": "NONE",
+ "second_cmid": "",
+ "shortlist": [],
+ "confidence": 95,
+ "reason": "No client or matter named Halcyon Data appears in the matter list; the narrative does not clearly map to any listed matter, so entry should be marked as NONE.",
+ "usage": {
+  "inputTokens": 8148,
+  "outputTokens": 510,
+  "totalTokens": 8658
+ },
+ "latency_s": 3.743,
+ "seconds": 3.819239167001797
+}

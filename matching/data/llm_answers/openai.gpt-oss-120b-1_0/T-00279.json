@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00279",
+ "cmid": "6103.004",
+ "second_cmid": "",
+ "shortlist": [
+  "6103.004",
+  "6103.001",
+  "6103.002"
+ ],
+ "confidence": 95,
+ "reason": "Narrative about MD&A correspondence matches SEC filing work for Meridian Therapeutics annual meeting (6103.004); typed CMID matches, timekeeper has extensive hours on this matter, and date aligns with matter's close date.",
+ "usage": {
+  "inputTokens": 8145,
+  "outputTokens": 520,
+  "totalTokens": 8665
+ },
+ "latency_s": 4.597,
+ "seconds": 4.731052167000598
+}

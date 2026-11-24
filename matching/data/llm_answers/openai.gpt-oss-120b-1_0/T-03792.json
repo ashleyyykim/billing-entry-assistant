@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03792",
+ "cmid": "8340.001",
+ "second_cmid": "",
+ "shortlist": [
+  "8340.001",
+  "8340.002",
+  "8012.001"
+ ],
+ "confidence": 95,
+ "reason": "Narrative 'Rework title commitment' matches past work on 8340.001 (title commitment updates) and client Pelican Row Holdings - 450 Harbor aligns with that matter.",
+ "usage": {
+  "inputTokens": 8142,
+  "outputTokens": 402,
+  "totalTokens": 8544
+ },
+ "latency_s": 3.505,
+ "seconds": 3.632900124997832
+}

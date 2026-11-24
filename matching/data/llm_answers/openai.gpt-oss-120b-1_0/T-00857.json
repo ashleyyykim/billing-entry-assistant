@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00857",
+ "cmid": "6230.001",
+ "second_cmid": "",
+ "shortlist": [
+  "6230.001",
+  "6230.002",
+  "6230.003"
+ ],
+ "confidence": 95,
+ "reason": "Narrative about drafting bylaws and updating issues list aligns with Ember Grid Energy's General Corporate matter (6230.001). Prior hours show TK115 worked on this matter.",
+ "usage": {
+  "inputTokens": 8158,
+  "outputTokens": 475,
+  "totalTokens": 8633
+ },
+ "latency_s": 4.415,
+ "seconds": 4.477406833000714
+}

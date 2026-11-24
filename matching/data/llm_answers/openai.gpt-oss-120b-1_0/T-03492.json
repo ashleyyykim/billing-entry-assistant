@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03492",
+ "cmid": "3120.003",
+ "second_cmid": "",
+ "shortlist": [
+  "3120.003",
+  "3120.001",
+  "3120.002"
+ ],
+ "confidence": 95,
+ "reason": "Narrative about option grant mechanics aligns with Bluefin Robotics Equity Plan (3120.003) rather than General Corporate (3120.001) despite typed CMID.",
+ "usage": {
+  "inputTokens": 8144,
+  "outputTokens": 684,
+  "totalTokens": 8828
+ },
+ "latency_s": 6.857,
+ "seconds": 7.024239708000096
+}

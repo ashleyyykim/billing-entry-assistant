@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00535",
+ "cmid": "5524.002",
+ "second_cmid": "",
+ "shortlist": [
+  "5524.002",
+  "5520.004",
+  "1111.001"
+ ],
+ "confidence": 85,
+ "reason": "The timekeeper's recent hours are heavily weighted toward 5524.002 (180.7h), making it the most likely matter for a generic 'Attend to file' entry on July 17, 2026.",
+ "usage": {
+  "inputTokens": 8135,
+  "outputTokens": 579,
+  "totalTokens": 8714
+ },
+ "latency_s": 3.582,
+ "seconds": 3.6916809170070337
+}

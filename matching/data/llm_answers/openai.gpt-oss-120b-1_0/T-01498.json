@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01498",
+ "cmid": "3455.002",
+ "second_cmid": "",
+ "shortlist": [
+  "3455.002",
+  "3455.001",
+  "3455.003"
+ ],
+ "confidence": 95,
+ "reason": "Typed client and matter match Board & Governance for Aster & Vale; typed CMID 3455.2 likely a typo for 3455.002; timekeeper has prior hours on this matter.",
+ "usage": {
+  "inputTokens": 8141,
+  "outputTokens": 383,
+  "totalTokens": 8524
+ },
+ "latency_s": 3.608,
+ "seconds": 3.6829257079953095
+}

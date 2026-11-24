@@ -1,0 +1,20 @@
+{
+ "entry_id": "T-03812",
+ "cmid": "7633.002",
+ "second_cmid": "",
+ "shortlist": [
+  "7633.002",
+  "7633.001",
+  "4590.004",
+  "2201.002"
+ ],
+ "confidence": 88,
+ "reason": "Typed CMID matches Copperline Networks Series A financing, opened before work date; narrative 'attend to clsg matters' aligns with financing closing; no conflicting evidence.",
+ "usage": {
+  "inputTokens": 8140,
+  "outputTokens": 569,
+  "totalTokens": 8709
+ },
+ "latency_s": 2.499,
+ "seconds": 2.7173234579968266
+}

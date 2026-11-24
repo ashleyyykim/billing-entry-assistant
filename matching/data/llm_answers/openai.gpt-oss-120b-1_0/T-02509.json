@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02509",
+ "cmid": "5602.001",
+ "second_cmid": "",
+ "shortlist": [
+  "5602.001",
+  "3455.001",
+  "6103.001"
+ ],
+ "confidence": 95,
+ "reason": "Narrative describes SEC reporting tasks (10-Q, Form 4, annual report) matching Ironwood Semiconductor SEC Reporting matter 5602.001; typed CMID aligns and matter is open on the work date.",
+ "usage": {
+  "inputTokens": 8185,
+  "outputTokens": 390,
+  "totalTokens": 8575
+ },
+ "latency_s": 2.2,
+ "seconds": 2.3979775839979993
+}

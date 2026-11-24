@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00156",
+ "cmid": "9140.002",
+ "second_cmid": "",
+ "shortlist": [
+  "9140.002",
+  "4471.001",
+  "4478.001"
+ ],
+ "confidence": 70,
+ "reason": "GP removal is a fund governance issue; timekeeper has recent work on Juniper Peak Capital fund formation, making its General Fund Matters a likely match despite client name mismatch.",
+ "usage": {
+  "inputTokens": 8142,
+  "outputTokens": 909,
+  "totalTokens": 9051
+ },
+ "latency_s": 6.621,
+ "seconds": 6.70791187499708
+}

@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02763",
+ "cmid": "2201.001",
+ "second_cmid": "",
+ "shortlist": [
+  "2201.001",
+  "2201.005",
+  "2201.003"
+ ],
+ "confidence": 95,
+ "reason": "Narrative describes drafting an advisor agreement and contractor classification, which aligns with Harborlight Bio's General Corporate matter (2201.001). Typed CMID matches and timekeeper has extensive history on this matter.",
+ "usage": {
+  "inputTokens": 8159,
+  "outputTokens": 405,
+  "totalTokens": 8564
+ },
+ "latency_s": 4.0,
+ "seconds": 4.058510250004474
+}

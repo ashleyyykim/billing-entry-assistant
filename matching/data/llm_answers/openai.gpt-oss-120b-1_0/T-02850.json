@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02850",
+ "cmid": "7222.002",
+ "second_cmid": "",
+ "shortlist": [
+  "7222.002",
+  "7222.001",
+  "7215.003"
+ ],
+ "confidence": 95,
+ "reason": "Narrative references acquisition of Summit Ridge, matching matter 7222.002 (Acquisition of Summit Ridge Software). Timekeeper's recent hours heavily on 7222.002, confirming relevance.",
+ "usage": {
+  "inputTokens": 8167,
+  "outputTokens": 322,
+  "totalTokens": 8489
+ },
+ "latency_s": 3.373,
+ "seconds": 3.4381027500057826
+}

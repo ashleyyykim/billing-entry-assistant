@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03955",
+ "cmid": "5520.001",
+ "second_cmid": "",
+ "shortlist": [
+  "5520.001",
+  "5520.003",
+  "5520.002"
+ ],
+ "confidence": 70,
+ "reason": "Typed client 'Cobalt Ridga Capital' matches Cobalt Ridge Capital (CMID 5520.xxx). Narrative 'revise diligence memo' aligns with acquisition diligence work typical for add-on acquisition matters (e.g., Project Lark 5520.001 or Project Larch 5520.003). No other client matches; choose the earliest open acquisition matter as primary.",
+ "usage": {
+  "inputTokens": 8138,
+  "outputTokens": 1035,
+  "totalTokens": 9173
+ },
+ "latency_s": 10.465,
+ "seconds": 10.534048208995955
+}

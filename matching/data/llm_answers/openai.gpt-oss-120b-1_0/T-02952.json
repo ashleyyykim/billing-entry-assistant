@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02952",
+ "cmid": "2215.001",
+ "second_cmid": "",
+ "shortlist": [
+  "2215.001",
+  "8820.001",
+  "4471.001"
+ ],
+ "confidence": 92,
+ "reason": "Narrative references Fund I work; past entries for 2215.001 involve Fund I investor register and fund matters, and timekeeper has logged hours on 2215.001, making it the most likely match.",
+ "usage": {
+  "inputTokens": 8172,
+  "outputTokens": 742,
+  "totalTokens": 8914
+ },
+ "latency_s": 6.555,
+ "seconds": 6.6304770419956185
+}

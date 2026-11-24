@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01592",
+ "cmid": "3120.001",
+ "second_cmid": "",
+ "shortlist": [
+  "3120.001",
+  "3120.002",
+  "3120.003"
+ ],
+ "confidence": 95,
+ "reason": "Narrative matches advisor agreement edits typical of General Corporate work for Bluefin Robotics; typed client and matter point to Bluefin Robotics General Corporate (3120.001); recent billing history shows heavy activity on this matter.",
+ "usage": {
+  "inputTokens": 8148,
+  "outputTokens": 369,
+  "totalTokens": 8517
+ },
+ "latency_s": 3.912,
+ "seconds": 3.992828540998744
+}

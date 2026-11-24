@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02278",
+ "cmid": "7215.005",
+ "second_cmid": "",
+ "shortlist": [
+  "7215.005",
+  "7215.003",
+  "7215.004"
+ ],
+ "confidence": 95,
+ "reason": "Narrative references Amendment No. 2 and Asterion guarantee, matching CMID 7215.005 which is the Asterion Amendment No. 2 matter opened 08/17/2026.",
+ "usage": {
+  "inputTokens": 8173,
+  "outputTokens": 350,
+  "totalTokens": 8523
+ },
+ "latency_s": 1.889,
+ "seconds": 1.9622481670085108
+}

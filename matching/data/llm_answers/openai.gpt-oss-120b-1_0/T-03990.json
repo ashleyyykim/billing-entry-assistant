@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03990",
+ "cmid": "9028.003",
+ "second_cmid": "",
+ "shortlist": [
+  "9028.003",
+  "3120.003",
+  "4590.005"
+ ],
+ "confidence": 95,
+ "reason": "Narrative about equity incentive plan matches Lanternfish Software exec comp matter 9028.003; typed client indicates Lanternfish Software; timekeeper has extensive recent hours on 9028.003.",
+ "usage": {
+  "inputTokens": 8146,
+  "outputTokens": 507,
+  "totalTokens": 8653
+ },
+ "latency_s": 4.933,
+ "seconds": 5.038847499992698
+}

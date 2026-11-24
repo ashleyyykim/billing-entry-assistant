@@ -1,0 +1,17 @@
+{
+ "entry_id": "T-00035",
+ "cmid": "6103.004",
+ "second_cmid": "",
+ "shortlist": [
+  "6103.004"
+ ],
+ "confidence": 95,
+ "reason": "Narrative exactly matches past entry for 6103.004; typed CMID aligns; within matter dates; high usage by timekeeper.",
+ "usage": {
+  "inputTokens": 8138,
+  "outputTokens": 295,
+  "totalTokens": 8433
+ },
+ "latency_s": 3.47,
+ "seconds": 3.751606667006854
+}

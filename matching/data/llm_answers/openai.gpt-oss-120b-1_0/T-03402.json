@@ -1,0 +1,17 @@
+{
+ "entry_id": "T-03402",
+ "cmid": "8340.001",
+ "second_cmid": "",
+ "shortlist": [
+  "8340.001"
+ ],
+ "confidence": 95,
+ "reason": "Narrative mentions TCW M. Carter, which appears in past entries for matter 8340.001 (Pelican Row Holdings acquisition). Typed client PRH matches Pelican Row Holdings. Date within matter's active period.",
+ "usage": {
+  "inputTokens": 8137,
+  "outputTokens": 502,
+  "totalTokens": 8639
+ },
+ "latency_s": 1.993,
+ "seconds": 2.154126000008546
+}

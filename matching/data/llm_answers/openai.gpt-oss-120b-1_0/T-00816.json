@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00816",
+ "cmid": "3388.002",
+ "second_cmid": "",
+ "shortlist": [
+  "3388.002",
+  "3388.001",
+  "2215.001"
+ ],
+ "confidence": 95,
+ "reason": "Narrative matches General Fund Matters for Quarry Lane Ventures; typed client/matter misspelled but matches 3388.002; recent hours show work on this matter.",
+ "usage": {
+  "inputTokens": 8154,
+  "outputTokens": 438,
+  "totalTokens": 8592
+ },
+ "latency_s": 4.018,
+ "seconds": 4.082075124999392
+}

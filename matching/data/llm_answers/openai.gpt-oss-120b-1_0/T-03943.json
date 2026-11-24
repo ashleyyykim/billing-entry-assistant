@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03943",
+ "cmid": "3455.002",
+ "second_cmid": "",
+ "shortlist": [
+  "3455.002",
+  "6103.003",
+  "4590.002"
+ ],
+ "confidence": 95,
+ "reason": "Narrative describes D&O questionnaire review, compensation committee, board materials \u2013 all board governance work. Typed client 'Ater & Vale' matches misspelled Aster & Vale, whose board matter is 3455.002. Prior TK118 hours heavily on 3455.002, confirming assignment.",
+ "usage": {
+  "inputTokens": 8181,
+  "outputTokens": 512,
+  "totalTokens": 8693
+ },
+ "latency_s": 3.603,
+ "seconds": 3.6726672090007924
+}

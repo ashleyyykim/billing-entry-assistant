@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00241",
+ "cmid": "3120.001",
+ "second_cmid": "",
+ "shortlist": [
+  "3120.001",
+  "3120.003",
+  "3120.002"
+ ],
+ "confidence": 95,
+ "reason": "Narrative mentions a call with Y. Tanaka, who appears in past entries for Bluefin Robotics matter 3120.001 (General Corporate) and 3120.003 (Equity Plan). The timekeeper's recent hours heavily involve 3120.001, making it the most likely matter.",
+ "usage": {
+  "inputTokens": 8141,
+  "outputTokens": 548,
+  "totalTokens": 8689
+ },
+ "latency_s": 2.344,
+ "seconds": 2.4665794159955112
+}

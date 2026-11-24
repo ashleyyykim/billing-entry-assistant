@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00618",
+ "cmid": "7215.003",
+ "second_cmid": "",
+ "shortlist": [
+  "7215.003",
+  "7215.004",
+  "7215.005"
+ ],
+ "confidence": 95,
+ "reason": "Narrative references Asterion collateral and borrower counsel, matching the Northgate Bank credit facility for Asterion (7215.003). Timekeeper has recent hours on this matter, confirming assignment.",
+ "usage": {
+  "inputTokens": 8178,
+  "outputTokens": 397,
+  "totalTokens": 8575
+ },
+ "latency_s": 1.893,
+ "seconds": 1.9717847919964697
+}

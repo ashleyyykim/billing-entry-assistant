@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03603",
+ "cmid": "3120.001",
+ "second_cmid": "",
+ "shortlist": [
+  "3120.001",
+  "2201.001",
+  "2956.002"
+ ],
+ "confidence": 95,
+ "reason": "Narrative matches corporate annual filing work; typed CMID matches Bluefin Robotics General Corporate, which the timekeeper heavily works on.",
+ "usage": {
+  "inputTokens": 8144,
+  "outputTokens": 522,
+  "totalTokens": 8666
+ },
+ "latency_s": 2.32,
+ "seconds": 2.390456915993127
+}

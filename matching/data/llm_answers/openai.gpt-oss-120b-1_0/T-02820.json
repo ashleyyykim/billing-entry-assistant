@@ -1,0 +1,17 @@
+{
+ "entry_id": "T-02820",
+ "cmid": "6110.001",
+ "second_cmid": "",
+ "shortlist": [
+  "6110.001"
+ ],
+ "confidence": 92,
+ "reason": "Typed CMID matches client and timekeeper has prior hours on 6110.001; narrative about bylaws fits General Corporate work for Meridian Thermal Systems.",
+ "usage": {
+  "inputTokens": 8145,
+  "outputTokens": 579,
+  "totalTokens": 8724
+ },
+ "latency_s": 4.814,
+ "seconds": 4.880759499996202
+}

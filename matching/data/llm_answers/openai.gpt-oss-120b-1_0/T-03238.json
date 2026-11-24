@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03238",
+ "cmid": "2207.001",
+ "second_cmid": "",
+ "shortlist": [
+  "2207.001",
+  "2201.001",
+  "3012.001"
+ ],
+ "confidence": 92,
+ "reason": "Narrative mentions Delaware franchise tax and advisor agreement, typical corporate matters. Typed client 'Coppeerlin' likely misspelled 'Harborline Biosciences', whose General Corporate matter is 2207.001. Prior TK114 hours include 0.4h on 2207.001, supporting this match.",
+ "usage": {
+  "inputTokens": 8175,
+  "outputTokens": 574,
+  "totalTokens": 8749
+ },
+ "latency_s": 5.653,
+ "seconds": 5.718258584005525
+}

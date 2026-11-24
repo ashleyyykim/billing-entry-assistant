@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02862",
+ "cmid": "5602.003",
+ "second_cmid": "",
+ "shortlist": [
+  "5602.003",
+  "5602.002",
+  "5602.001"
+ ],
+ "confidence": 95,
+ "reason": "Narrative matches past entry for 5602.003 about basket and cap correspondence; typed CMID aligns and matter is open.",
+ "usage": {
+  "inputTokens": 8150,
+  "outputTokens": 247,
+  "totalTokens": 8397
+ },
+ "latency_s": 2.328,
+ "seconds": 2.3942444160056766
+}

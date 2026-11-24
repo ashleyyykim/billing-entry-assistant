@@ -1,0 +1,15 @@
+{
+ "entry_id": "T-00518",
+ "cmid": "NONE",
+ "second_cmid": "",
+ "shortlist": [],
+ "confidence": 40,
+ "reason": "Typed client 'LFS' and matter 'Project Heron' do not match any client or matter in the list; narrative suggests a credit facility but no clear link to listed matters.",
+ "usage": {
+  "inputTokens": 8157,
+  "outputTokens": 1744,
+  "totalTokens": 9901
+ },
+ "latency_s": 11.97,
+ "seconds": 12.035520833000191
+}

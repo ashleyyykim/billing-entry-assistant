@@ -1,0 +1,17 @@
+{
+ "entry_id": "T-00930",
+ "cmid": "2207.003",
+ "second_cmid": "",
+ "shortlist": [
+  "2207.003"
+ ],
+ "confidence": 96,
+ "reason": "Narrative about drafting Calder Pharma data processing agreement aligns with Harborline Biosciences licensing matter (2207.003). Timekeeper TK109 has prior hours on this matter, and the matter is open on the work date.",
+ "usage": {
+  "inputTokens": 8146,
+  "outputTokens": 364,
+  "totalTokens": 8510
+ },
+ "latency_s": 3.149,
+ "seconds": 3.335467124998104
+}

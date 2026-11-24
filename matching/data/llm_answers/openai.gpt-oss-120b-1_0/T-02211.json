@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02211",
+ "cmid": "3455.001",
+ "second_cmid": "",
+ "shortlist": [
+  "3455.001",
+  "3455.002",
+  "6103.002"
+ ],
+ "confidence": 85,
+ "reason": "Typed client Aster & Vale and matter 'sec' point to SEC Reporting (3455.001); timekeeper has recent hours on this matter, and the matter is open on the date.",
+ "usage": {
+  "inputTokens": 8137,
+  "outputTokens": 421,
+  "totalTokens": 8558
+ },
+ "latency_s": 2.905,
+ "seconds": 2.9789828339999076
+}

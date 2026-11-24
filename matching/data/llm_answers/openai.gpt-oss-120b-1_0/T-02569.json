@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02569",
+ "cmid": "2215.001",
+ "second_cmid": "",
+ "shortlist": [
+  "2215.001",
+  "9140.001",
+  "5520.004"
+ ],
+ "confidence": 85,
+ "reason": "Narrative focuses on managing investor register updates, which matches past entries for 2215.001 (Harbor Light Partners General Fund Matters) that involve investor register work. The timekeeper has logged significant hours on this matter, supporting the match. The mention of \"other deal\" is vague, so no second specific matter is assigned.",
+ "usage": {
+  "inputTokens": 8145,
+  "outputTokens": 817,
+  "totalTokens": 8962
+ },
+ "latency_s": 7.124,
+ "seconds": 7.2341650830057915
+}

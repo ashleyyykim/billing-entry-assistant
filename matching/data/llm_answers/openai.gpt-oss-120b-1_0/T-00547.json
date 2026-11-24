@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00547",
+ "cmid": "2201.001",
+ "second_cmid": "",
+ "shortlist": [
+  "2201.001",
+  "2207.001",
+  "9028.003"
+ ],
+ "confidence": 95,
+ "reason": "Typed client HB matches Harborlight Bio; narrative about employment agreement and foreign qualification filings aligns with General Corporate work typical for 2201.001; timekeeper's prior hours heavily on 2201.001 indicating primary assignment.",
+ "usage": {
+  "inputTokens": 8158,
+  "outputTokens": 835,
+  "totalTokens": 8993
+ },
+ "latency_s": 7.156,
+ "seconds": 7.2197224169940455
+}

@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01055",
+ "cmid": "3120.001",
+ "second_cmid": "",
+ "shortlist": [
+  "3120.001",
+  "3120.002",
+  "3120.003"
+ ],
+ "confidence": 95,
+ "reason": "Narrative matches past entry 'Conf w/ Y. Tanaka' for matter 3120.001 (Bluefin Robotics General Corporate) and typed matter is General Corporate.",
+ "usage": {
+  "inputTokens": 8138,
+  "outputTokens": 274,
+  "totalTokens": 8412
+ },
+ "latency_s": 2.179,
+ "seconds": 2.369201916997554
+}

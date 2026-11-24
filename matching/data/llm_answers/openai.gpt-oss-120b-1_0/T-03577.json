@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03577",
+ "cmid": "7215.003",
+ "second_cmid": "",
+ "shortlist": [
+  "7215.003",
+  "7215.004",
+  "7215.005"
+ ],
+ "confidence": 80,
+ "reason": "Typed client is Northgate Bank; timekeeper's recent hours include 7215.003; narrative is a brief call note likely related to that credit facility matter.",
+ "usage": {
+  "inputTokens": 8138,
+  "outputTokens": 547,
+  "totalTokens": 8685
+ },
+ "latency_s": 2.38,
+ "seconds": 2.574439917007112
+}

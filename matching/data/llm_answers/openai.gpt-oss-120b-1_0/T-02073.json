@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02073",
+ "cmid": "7633.002",
+ "second_cmid": "",
+ "shortlist": [
+  "7633.002",
+  "2201.003",
+  "2201.002"
+ ],
+ "confidence": 92,
+ "reason": "Narrative describes drafting a stock purchase agreement for a Series A financing, matching Copperline Networks' Series A Financing matter (7633.002) opened July 2026; client and matter typed align.",
+ "usage": {
+  "inputTokens": 8151,
+  "outputTokens": 653,
+  "totalTokens": 8804
+ },
+ "latency_s": 7.126,
+ "seconds": 7.191944125006557
+}

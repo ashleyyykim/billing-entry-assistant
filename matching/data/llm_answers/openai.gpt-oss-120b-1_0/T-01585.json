@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01585",
+ "cmid": "7633.002",
+ "second_cmid": "",
+ "shortlist": [
+  "7633.002",
+  "7633.001",
+  "7633.003"
+ ],
+ "confidence": 85,
+ "reason": "Disclosure schedule drafting for Project Marlin aligns with financing work; Copperline client matches Copperline Networks; Series A financing matter opened July 2026 fits date.",
+ "usage": {
+  "inputTokens": 8145,
+  "outputTokens": 702,
+  "totalTokens": 8847
+ },
+ "latency_s": 6.202,
+ "seconds": 6.275106709013926
+}

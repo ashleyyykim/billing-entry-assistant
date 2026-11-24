@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02601",
+ "cmid": "9028.003",
+ "second_cmid": "",
+ "shortlist": [
+  "9028.003",
+  "9028.001",
+  "6230.001"
+ ],
+ "confidence": 95,
+ "reason": "Narrative mentions O. Grant, who appears in past entries for 9028.003 (equity refresh grants). Typed CMID 6230.001 is likely a mistake; 9028.003 is open and matches the timekeeper's primary matter.",
+ "usage": {
+  "inputTokens": 8143,
+  "outputTokens": 505,
+  "totalTokens": 8648
+ },
+ "latency_s": 3.499,
+ "seconds": 3.559362083004089
+}

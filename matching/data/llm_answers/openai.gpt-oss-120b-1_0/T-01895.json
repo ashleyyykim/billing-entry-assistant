@@ -1,0 +1,17 @@
+{
+ "entry_id": "T-01895",
+ "cmid": "2215.001",
+ "second_cmid": "",
+ "shortlist": [
+  "2215.001"
+ ],
+ "confidence": 95,
+ "reason": "Narrative about drafting transfer documents for Fund I matches past entries for 2215.001 (General Fund Matters) which include Fund I transfer work; typed CMID aligns and no indication of second matter.",
+ "usage": {
+  "inputTokens": 8160,
+  "outputTokens": 466,
+  "totalTokens": 8626
+ },
+ "latency_s": 3.501,
+ "seconds": 3.654730374997598
+}

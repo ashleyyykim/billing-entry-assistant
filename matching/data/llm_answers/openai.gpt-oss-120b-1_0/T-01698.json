@@ -1,0 +1,17 @@
+{
+ "entry_id": "T-01698",
+ "cmid": "9028.003",
+ "second_cmid": "",
+ "shortlist": [
+  "9028.003"
+ ],
+ "confidence": 95,
+ "reason": "Narrative about RSU award agreement and 409A timing matches Lanternfish Software Exec Comp / 409A matter (9028.003) and matches past entries for that matter.",
+ "usage": {
+  "inputTokens": 8166,
+  "outputTokens": 317,
+  "totalTokens": 8483
+ },
+ "latency_s": 2.753,
+ "seconds": 2.824228082987247
+}

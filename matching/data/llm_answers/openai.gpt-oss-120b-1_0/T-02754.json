@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02754",
+ "cmid": "5520.001",
+ "second_cmid": "",
+ "shortlist": [
+  "5520.001",
+  "5520.003",
+  "5520.004"
+ ],
+ "confidence": 95,
+ "reason": "Narrative mentions zoom with W.Hale, who appears in past entries for matter 5520.001 (Project Lark). Typed client CRC matches Cobalt Ridge Capital, and typed matter Lark aligns with Project Lark.",
+ "usage": {
+  "inputTokens": 8137,
+  "outputTokens": 662,
+  "totalTokens": 8799
+ },
+ "latency_s": 3.244,
+ "seconds": 3.31231445800222
+}

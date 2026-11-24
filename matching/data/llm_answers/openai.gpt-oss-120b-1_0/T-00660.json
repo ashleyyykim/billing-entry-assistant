@@ -1,0 +1,15 @@
+{
+ "entry_id": "T-00660",
+ "cmid": "NONE",
+ "second_cmid": "",
+ "shortlist": [],
+ "confidence": 95,
+ "reason": "Client 'Brightwave Robotics' does not appear in the matter list; no matching matter for guaranty/lien searches. Likely a typo but no suitable matter found, so assign NONE.",
+ "usage": {
+  "inputTokens": 8155,
+  "outputTokens": 1110,
+  "totalTokens": 9265
+ },
+ "latency_s": 4.702,
+ "seconds": 4.77756733399292
+}

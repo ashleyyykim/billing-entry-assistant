@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02396",
+ "cmid": "3120.001",
+ "second_cmid": "",
+ "shortlist": [
+  "3120.001",
+  "3120.003",
+  "3120.002"
+ ],
+ "confidence": 95,
+ "reason": "Narrative matches past entry for 3120.001 which includes 'Conf w/ Y. Tanaka.' Typed client is a misspelling of Bluefin Robotics.",
+ "usage": {
+  "inputTokens": 8141,
+  "outputTokens": 402,
+  "totalTokens": 8543
+ },
+ "latency_s": 3.557,
+ "seconds": 3.749683083005948
+}

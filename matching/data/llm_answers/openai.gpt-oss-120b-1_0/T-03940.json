@@ -1,0 +1,17 @@
+{
+ "entry_id": "T-03940",
+ "cmid": "8340.001",
+ "second_cmid": "",
+ "shortlist": [
+  "8340.001"
+ ],
+ "confidence": 95,
+ "reason": "Narrative mentions Zoom with M. Carter about closing date; M. Carter appears in past entries for 8340.001 (Acquisition of 450 Harbor St.) and timekeeper has significant hours logged to that matter.",
+ "usage": {
+  "inputTokens": 8146,
+  "outputTokens": 311,
+  "totalTokens": 8457
+ },
+ "latency_s": 2.04,
+ "seconds": 2.106318292004289
+}

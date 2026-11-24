@@ -20,9 +20,16 @@
 <link rel="icon" href="icon.svg" type="image/svg+xml">
 <link rel="icon" href="tab-icon-32.png" type="image/png" sizes="32x32">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<!-- Fonts come from this site, not Google, so they arrive with the page. The hero's three are fetched first -->
+<link rel="preload" href="landing/fonts/eb-garamond.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="landing/fonts/eb-garamond-italic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="landing/fonts/hanken-grotesk.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:'EB Garamond';font-style:normal;font-weight:400 500;font-display:swap;src:url(landing/fonts/eb-garamond.woff2) format('woff2')}
+@font-face{font-family:'EB Garamond';font-style:italic;font-weight:400 500;font-display:swap;src:url(landing/fonts/eb-garamond-italic.woff2) format('woff2')}
+@font-face{font-family:'Hanken Grotesk';font-style:normal;font-weight:400 700;font-display:swap;src:url(landing/fonts/hanken-grotesk.woff2) format('woff2')}
+@font-face{font-family:'Caveat';font-style:normal;font-weight:500;font-display:swap;src:url(landing/fonts/caveat.woff2) format('woff2')}
+</style>
 <link rel="stylesheet" href="theme.css?v=plaster1">
 <link rel="stylesheet" href="landing/vendor/lenis.css">
 <style>
@@ -255,7 +262,7 @@ main section[tabindex="-1"]:focus,main section[tabindex="-1"]:focus-visible{outl
 .mission{position:relative;z-index:2;text-align:center;margin-top:-18vh}
 /* Until the hero is placed (fonts in, headline and button where they go), it stays hidden, so nothing shows in a first spot and jumps.
    If the script never runs, it shows anyway after 2.5s */
-.js .intro > .hero:not(.ready) .wrap{visibility:hidden;animation:hero-failsafe 0s 2.5s forwards}
+.js .intro > .hero:not(.ready) .wrap{visibility:hidden;animation:hero-failsafe 0s 1.5s forwards}
 @keyframes hero-failsafe{to{visibility:visible}}
 .mission .mound{display:block;width:100%;height:18vh;margin-bottom:-1px}
 .mission{pointer-events:none}.mission .spread{pointer-events:auto}   /* the hill rises over the hero: its empty box must not swallow the pointer on Try the demo */
@@ -601,6 +608,51 @@ kbd.ik{font:600 13px/18px var(--font-ui);border-radius:4px;padding:0 6px;border:
     </div></div>
   </section>
 </div>
+<script>
+  /* The hero shows as soon as its fonts are in (they come from this site and are fetched first, so this is quick), already in its place.
+     No entrance animation: it is simply there. If the fonts are slow, it shows after 0.6s anyway. */
+(() => {
+  const layoutHero = () => {
+    const hero = document.querySelector('.intro > .hero'), h1 = hero.querySelector('.h1'), foot = hero.querySelector('.hero-foot');
+    const mound = document.querySelector('.mission .mound'), path = document.getElementById('moundPath');
+    hero.classList.remove('laid');
+    if (innerWidth <= 720 || innerHeight <= 560 || !mound || !path) return;
+    hero.classList.add('laid');
+    const top0 = hero.getBoundingClientRect().top, m = mound.getBoundingClientRect();
+    const navBottom = document.querySelector('.nav-bar').getBoundingClientRect().bottom - top0;
+    const pts = [];   /* the path sampled once: reading it point by point for every spot was most of the page's first second */
+    for (let i = 0, n = path.getTotalLength(); i <= 200; i++) { const pt = path.getPointAtLength((n * i) / 200); if (pt.y < 40) pts.push(pt); }
+    const moundY = (x) => {   /* the top of the mound at page x, from its path (viewBox 100 by 40, stretched) */
+      let best = 40, gap = Infinity;
+      for (const pt of pts) { const d = Math.abs(m.left + (pt.x / 100) * m.width - x); if (d < gap) { gap = d; best = pt.y; } }
+      return m.top - top0 + (best / 40) * m.height;
+    };
+    const GAP = 72;   /* space between the headline and the subtitle */
+    const peak = moundY(m.left + m.width / 2), h1H = h1.offsetHeight, footH = foot.offsetHeight;
+    let h1Top = (navBottom + peak) / 2 - h1H / 2;
+    let floor = Infinity;   /* the highest point of the mound under the subtitle and the button */
+    [...foot.children].forEach((el) => { const r = el.getBoundingClientRect();
+      for (let x = r.left; x <= r.right; x += 20) floor = Math.min(floor, moundY(x)); });
+    const over = h1Top + h1H + GAP + footH - (floor - 16);
+    if (over > 0) h1Top = Math.max(navBottom + 16, h1Top - over);
+    hero.style.setProperty('--h1-top', h1Top + 'px');
+    hero.style.setProperty('--foot-top', h1Top + h1H + GAP + 'px');
+  };
+  const hero = document.querySelector('.intro > .hero');
+  const shapeMound = () => {   /* the mound's shape at this scroll spot, the same one the page's scroll script gives it later (shapeMound there), so the headline is placed for it */
+    const path = document.getElementById('moundPath'), mark = document.getElementById('hero-mark'), mission = document.querySelector('.mission');
+    if (!path || !mark || !mission) return;
+    const r = mark.getBoundingClientRect(), x = Math.min(80, Math.max(20, (r.left + r.width / 2) / innerWidth * 100));
+    const p = Math.min(1, Math.max(0, (innerHeight - mission.getBoundingClientRect().top) / innerHeight)), h = 24 * (1 - p) + 1;
+    path.setAttribute('d', 'M0 40V30C' + (x * .55).toFixed(1) + ' 30 ' + (x - 12).toFixed(1) + ' ' + (30 - h).toFixed(1) + ' ' + x.toFixed(1) + ' ' + (30 - h).toFixed(1) + 'S' + (x + (100 - x) * .45).toFixed(1) + ' 30 100 30V40Z');
+  };
+  const show = () => { shapeMound(); layoutHero(); hero.classList.add('ready'); };
+  const faces = document.fonts ? Promise.all(['500 1em "EB Garamond"', 'italic 500 1em "EB Garamond"', '400 1em "Hanken Grotesk"'].map((f) => document.fonts.load(f))) : Promise.resolve();
+  Promise.race([faces, new Promise((r) => setTimeout(r, 600))]).then(show, show);
+  addEventListener('resize', layoutHero);
+  document.fonts && document.fonts.ready.then(layoutHero);
+})();
+</script>
 
   <section class="story" id="story" aria-label="How Tenth works">
     <div class="story-pin">
@@ -1105,48 +1157,7 @@ const LINKS = {
     return el.querySelectorAll('.wd');
   }
 
-  /* Hero intro: short, so the message and button are usable almost at once */
-  const layoutHero = () => {
-    const hero = document.querySelector('.intro > .hero'), h1 = hero.querySelector('.h1'), foot = hero.querySelector('.hero-foot');
-    const mound = document.querySelector('.mission .mound'), path = document.getElementById('moundPath');
-    hero.classList.remove('laid');
-    if (innerWidth <= 720 || innerHeight <= 560 || !mound || !path) return;
-    hero.classList.add('laid');
-    const top0 = hero.getBoundingClientRect().top, m = mound.getBoundingClientRect();
-    const navBottom = document.querySelector('.nav-bar').getBoundingClientRect().bottom - top0;
-    const moundY = (x) => {   /* the top of the mound at page x, from its path (viewBox 100 by 40, stretched) */
-      let best = 40, gap = Infinity;
-      for (let i = 0, n = path.getTotalLength(); i <= 200; i++) {
-        const pt = path.getPointAtLength((n * i) / 200), d = Math.abs(m.left + (pt.x / 100) * m.width - x);
-        if (pt.y < 40 && d < gap) { gap = d; best = pt.y; }
-      }
-      return m.top - top0 + (best / 40) * m.height;
-    };
-    const GAP = 72;   /* space between the headline and the subtitle */
-    const peak = moundY(m.left + m.width / 2), h1H = h1.offsetHeight, footH = foot.offsetHeight;
-    let h1Top = (navBottom + peak) / 2 - h1H / 2;
-    let floor = Infinity;   /* the highest point of the mound under the subtitle and the button */
-    [...foot.children].forEach((el) => { const r = el.getBoundingClientRect();
-      for (let x = r.left; x <= r.right; x += 20) floor = Math.min(floor, moundY(x)); });
-    const over = h1Top + h1H + GAP + footH - (floor - 16);
-    if (over > 0) h1Top = Math.max(navBottom + 16, h1Top - over);
-    hero.style.setProperty('--h1-top', h1Top + 'px');
-    hero.style.setProperty('--foot-top', h1Top + h1H + GAP + 'px');
-  };
-  const placeHero = () => { layoutHero(); };
-  placeHero();
-  addEventListener('resize', placeHero);
-  document.fonts && document.fonts.ready.then(placeHero);
-  const heroLines = document.querySelectorAll('.h1 .ln');
-  const intro = gsap.timeline({ paused: true, defaults: { ease: 'expo.out' } });
-  intro.from(heroLines, { yPercent: 40, opacity: 0, duration: 1.1, stagger: 0.1 })
-       .from('.hero-mark', { opacity: 0, scale: .8, duration: .8 }, 0.2)
-       .from('.hero-intro > *', { y: 16, opacity: 0, duration: .8, stagger: .06 }, 0.35)
-       .from('.hero-cta', { y: 16, opacity: 0, duration: .8 }, 0.5);   /* the button arrives right after the subtitle, already in its place */
-  /* The hero shows once its fonts are in (or after 0.9s at most) and it has been laid out with them, then plays its entrance */
-  Promise.race([document.fonts ? document.fonts.ready : Promise.resolve(), new Promise((r) => setTimeout(r, 900))]).then(() => {
-    placeHero(); document.querySelector('.intro > .hero').classList.add('ready'); intro.play();
-  });
+  /* The hero is laid out and shown by the small script right after it, before this one loads */
 
   /* Hero notes lean toward the pointer (mouse only, paused when the hero is off screen) */
   if (finePointer) {

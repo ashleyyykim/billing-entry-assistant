@@ -1,0 +1,28 @@
+{
+  "openai.gpt-oss-120b-1_0":{
+    "entries":601.0,
+    "first pick right, LLM":0.8330170778,
+    "first pick right, model":0.9373814042,
+    "p-value":0.0000000001,
+    "LLM at 90+: share alone":0.768718802,
+    "LLM at 90+: right when alone":0.8484848485,
+    "LLM at 90+: silent errors":70.0,
+    "model at the same share: silent errors":24.0,
+    "same answer twice":0.8333333333,
+    "seconds per entry":4.4007474905,
+    "USD per 1,000 entries":1.5573761231
+  },
+  "us.amazon.nova-pro-v1_0":{
+    "entries":601.0,
+    "first pick right, LLM":0.7874762808,
+    "first pick right, model":0.9373814042,
+    "p-value":1.42387633e-19,
+    "LLM at 90+: share alone":0.8302828619,
+    "LLM at 90+: right when alone":0.8036072144,
+    "LLM at 90+: silent errors":98.0,
+    "model at the same share: silent errors":37.0,
+    "same answer twice":0.9333333333,
+    "seconds per entry":4.4021912951,
+    "USD per 1,000 entries":2.3546672213
+  }
+}

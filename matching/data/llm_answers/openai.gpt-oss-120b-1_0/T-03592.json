@@ -1,0 +1,17 @@
+{
+ "entry_id": "T-03592",
+ "cmid": "7215.003",
+ "second_cmid": "",
+ "shortlist": [
+  "7215.003"
+ ],
+ "confidence": 95,
+ "reason": "Narrative explicitly references Asterion intercreditor agreement; 7215.003 is the Credit Facility for Asterion Holdings, matching client and work type.",
+ "usage": {
+  "inputTokens": 8149,
+  "outputTokens": 264,
+  "totalTokens": 8413
+ },
+ "latency_s": 1.499,
+ "seconds": 1.60612341700471
+}

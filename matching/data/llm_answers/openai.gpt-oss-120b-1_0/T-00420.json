@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00420",
+ "cmid": "8340.002",
+ "second_cmid": "",
+ "shortlist": [
+  "8340.002",
+  "8340.001",
+  "8347.002"
+ ],
+ "confidence": 85,
+ "reason": "Typed CMID matches recent work pattern; narrative vague but likely a status call for the lease matter; no evidence of second matter.",
+ "usage": {
+  "inputTokens": 8127,
+  "outputTokens": 597,
+  "totalTokens": 8724
+ },
+ "latency_s": 5.209,
+ "seconds": 5.39841858400905
+}

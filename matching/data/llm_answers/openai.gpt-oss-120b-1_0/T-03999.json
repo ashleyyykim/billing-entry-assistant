@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03999",
+ "cmid": "8340.002",
+ "second_cmid": "",
+ "shortlist": [
+  "8340.002",
+  "8340.001",
+  "8340.003"
+ ],
+ "confidence": 95,
+ "reason": "Narrative about tenant estoppels is lease work; Pelican Row Holdings lease matter is 8340.002, while typed CMID 8340.001 is acquisition, so correct to 8340.002.",
+ "usage": {
+  "inputTokens": 8149,
+  "outputTokens": 378,
+  "totalTokens": 8527
+ },
+ "latency_s": 1.77,
+ "seconds": 1.9629077500139829
+}

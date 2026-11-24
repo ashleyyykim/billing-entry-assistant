@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03024",
+ "cmid": "3455.002",
+ "second_cmid": "",
+ "shortlist": [
+  "3455.002",
+  "2201.005",
+  "4590.005"
+ ],
+ "confidence": 80,
+ "reason": "Narrative about option grants aligns with equity compensation work; timekeeper's extensive history on board matters (3455.002) suggests this entry belongs there, though equity plan matters also handle option grants.",
+ "usage": {
+  "inputTokens": 8145,
+  "outputTokens": 972,
+  "totalTokens": 9117
+ },
+ "latency_s": 8.158,
+ "seconds": 8.230299542003195
+}

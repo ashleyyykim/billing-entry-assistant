@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01687",
+ "cmid": "3120.003",
+ "second_cmid": "",
+ "shortlist": [
+  "3120.003",
+  "3120.001",
+  "2201.005"
+ ],
+ "confidence": 85,
+ "reason": "Narrative about CEO equity questions and option grant mechanics points to Bluefin Robotics' Equity Plan matter (3120.003). Typed CMID 3120.001 is General Corporate, less specific. No evidence of second matter.",
+ "usage": {
+  "inputTokens": 8157,
+  "outputTokens": 532,
+  "totalTokens": 8689
+ },
+ "latency_s": 3.033,
+ "seconds": 3.1074479170056293
+}

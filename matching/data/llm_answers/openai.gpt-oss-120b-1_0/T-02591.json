@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02591",
+ "cmid": "2960.001",
+ "second_cmid": "",
+ "shortlist": [
+  "2960.001",
+  "2960.003",
+  "2960.002"
+ ],
+ "confidence": 92,
+ "reason": "Narrative matches corporate equity and NDA work previously done on Solace Health General Corporate matter (2960.001).",
+ "usage": {
+  "inputTokens": 8188,
+  "outputTokens": 569,
+  "totalTokens": 8757
+ },
+ "latency_s": 4.985,
+ "seconds": 5.058424667004147
+}

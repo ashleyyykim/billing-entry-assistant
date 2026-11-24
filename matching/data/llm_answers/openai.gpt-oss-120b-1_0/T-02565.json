@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02565",
+ "cmid": "9140.001",
+ "second_cmid": "",
+ "shortlist": [
+  "9140.001",
+  "9140.002",
+  "2215.001"
+ ],
+ "confidence": 95,
+ "reason": "Narrative describes side letter review and drafting subscription documents for closing, typical tasks for a Fund II Formation matter; typed CMID matches and timekeeper has extensive prior hours on 9140.001.",
+ "usage": {
+  "inputTokens": 8166,
+  "outputTokens": 357,
+  "totalTokens": 8523
+ },
+ "latency_s": 1.724,
+ "seconds": 1.9034878329985077
+}

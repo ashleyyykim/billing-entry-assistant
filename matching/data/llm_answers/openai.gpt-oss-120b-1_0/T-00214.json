@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00214",
+ "cmid": "6103.004",
+ "second_cmid": "",
+ "shortlist": [
+  "6103.004",
+  "6103.001",
+  "6103.002"
+ ],
+ "confidence": 92,
+ "reason": "Narrative about SEC filings aligns with Meridian Therapeutics' 2026 Annual Meeting matter (6103.004) which is open on 7/9/2026 and timekeeper has extensive prior hours on this matter.",
+ "usage": {
+  "inputTokens": 8160,
+  "outputTokens": 624,
+  "totalTokens": 8784
+ },
+ "latency_s": 6.506,
+ "seconds": 6.613119040994206
+}

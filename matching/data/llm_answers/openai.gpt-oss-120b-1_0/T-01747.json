@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01747",
+ "cmid": "3120.003",
+ "second_cmid": "",
+ "shortlist": [
+  "3120.003",
+  "4590.005",
+  "2201.005"
+ ],
+ "confidence": 85,
+ "reason": "Narrative about 83(b) elections and 409A valuation aligns with equity plan matters; timekeeper has prior work on Bluefin Robotics equity plan (3120.003) and Tidewater AI equity plan (4590.005). Typed CMID is unrelated; 3120.003 is most likely.",
+ "usage": {
+  "inputTokens": 8170,
+  "outputTokens": 1564,
+  "totalTokens": 9734
+ },
+ "latency_s": 12.538,
+ "seconds": 12.6113117079949
+}

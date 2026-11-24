@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02011",
+ "cmid": "7215.003",
+ "second_cmid": "",
+ "shortlist": [
+  "7215.003",
+  "7215.005",
+  "7215.004"
+ ],
+ "confidence": 95,
+ "reason": "Narrative references drafting a compliance certificate for Asterion, matching the Credit Facility - Asterion Holdings matter (7215.003). Timekeeper's recent hours heavily involve this matter, and the matter is open on the work date.",
+ "usage": {
+  "inputTokens": 8147,
+  "outputTokens": 416,
+  "totalTokens": 8563
+ },
+ "latency_s": 1.975,
+ "seconds": 2.0387711660005152
+}

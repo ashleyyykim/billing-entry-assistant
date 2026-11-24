@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01468",
+ "cmid": "2960.003",
+ "second_cmid": "",
+ "shortlist": [
+  "2960.003",
+  "3455.002",
+  "7410.002"
+ ],
+ "confidence": 92,
+ "reason": "Narrative about officer appointments and revising committee charters matches prior work on Solace Health Board Matters (2960.003) which includes reviewing committee charters.",
+ "usage": {
+  "inputTokens": 8152,
+  "outputTokens": 669,
+  "totalTokens": 8821
+ },
+ "latency_s": 4.861,
+ "seconds": 5.07092833299248
+}

@@ -1,0 +1,18 @@
+{
+ "entry_id": "T-00204",
+ "cmid": "4478.001",
+ "second_cmid": "",
+ "shortlist": [
+  "4478.001",
+  "4478.002"
+ ],
+ "confidence": 92,
+ "reason": "Narrative mentions LPAC approval, a fund matter. Ridgeview Partners has fund matters 4478.001 (General Fund Matters) and 4478.002 (Fund II Formation). The typed client matches RidgeviewPartners, and LPAC work aligns with general fund matters.",
+ "usage": {
+  "inputTokens": 8143,
+  "outputTokens": 635,
+  "totalTokens": 8778
+ },
+ "latency_s": 6.031,
+ "seconds": 6.2452996670035645
+}

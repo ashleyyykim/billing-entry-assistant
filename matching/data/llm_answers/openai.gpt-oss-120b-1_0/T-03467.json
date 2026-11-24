@@ -1,0 +1,17 @@
+{
+ "entry_id": "T-03467",
+ "cmid": "7222.002",
+ "second_cmid": "",
+ "shortlist": [
+  "7222.002"
+ ],
+ "confidence": 95,
+ "reason": "Narrative matches acquisition of Summit Ridge Software (MA_BUY) which is exactly matter 7222.002; typed CMID aligns and timekeeper's history shows extensive work on this matter.",
+ "usage": {
+  "inputTokens": 8179,
+  "outputTokens": 356,
+  "totalTokens": 8535
+ },
+ "latency_s": 3.011,
+ "seconds": 3.197115542003303
+}

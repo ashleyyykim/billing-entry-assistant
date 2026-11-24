@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00541",
+ "cmid": "5524.002",
+ "second_cmid": "",
+ "shortlist": [
+  "5524.002",
+  "4471.001",
+  "5520.004"
+ ],
+ "confidence": 95,
+ "reason": "Narrative references LP inquiry and LPAC consent, which are typical tasks for a General Fund Matters matter; the typed CMID matches the Cobalt Ridge Partners General Fund Matters (5524.002) and the timekeeper's history shows extensive work on this matter.",
+ "usage": {
+  "inputTokens": 8166,
+  "outputTokens": 477,
+  "totalTokens": 8643
+ },
+ "latency_s": 2.339,
+ "seconds": 2.445578917002422
+}

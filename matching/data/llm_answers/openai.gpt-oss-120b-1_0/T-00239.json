@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00239",
+ "cmid": "2201.003",
+ "second_cmid": "",
+ "shortlist": [
+  "2201.003",
+  "2201.001",
+  "2201.004"
+ ],
+ "confidence": 85,
+ "reason": "Narrative about drafting escrow agreement for Project Basalt aligns with financing work; TK106 has prior hours on Harborlight's Series A financing (2201.003) and the matter is open on the date.",
+ "usage": {
+  "inputTokens": 8147,
+  "outputTokens": 692,
+  "totalTokens": 8839
+ },
+ "latency_s": 3.378,
+ "seconds": 3.5853627920005238
+}

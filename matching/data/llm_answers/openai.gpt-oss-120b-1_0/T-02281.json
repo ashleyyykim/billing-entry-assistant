@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02281",
+ "cmid": "4590.001",
+ "second_cmid": "",
+ "shortlist": [
+  "4590.001",
+  "7410.001",
+  "3012.001"
+ ],
+ "confidence": 85,
+ "reason": "Narrative mentions hiring questions and bylaws amendment, matching corporate matters. Typed client is a misspelling of Tidewater AI, whose General Corporate matter is 4590.001.",
+ "usage": {
+  "inputTokens": 8154,
+  "outputTokens": 1016,
+  "totalTokens": 9170
+ },
+ "latency_s": 3.946,
+ "seconds": 4.018920250004157
+}

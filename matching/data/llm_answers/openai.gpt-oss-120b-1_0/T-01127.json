@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01127",
+ "cmid": "7215.003",
+ "second_cmid": "",
+ "shortlist": [
+  "7215.003",
+  "7215.004",
+  "7215.006"
+ ],
+ "confidence": 85,
+ "reason": "Typed CMID closed before work date; timekeeper has recent hours on 7215.003 (Asterion) and narrative fits a credit facility borrowing base review.",
+ "usage": {
+  "inputTokens": 8162,
+  "outputTokens": 687,
+  "totalTokens": 8849
+ },
+ "latency_s": 3.538,
+ "seconds": 3.718325875001028
+}

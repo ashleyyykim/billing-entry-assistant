@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00414",
+ "cmid": "9140.001",
+ "second_cmid": "",
+ "shortlist": [
+  "9140.001",
+  "5524.001",
+  "4478.002"
+ ],
+ "confidence": 92,
+ "reason": "Narrative about co-invest rights for Fund II matches Fund II Formation matters; timekeeper's recent heavy billing on 9140.001 suggests this is the correct matter.",
+ "usage": {
+  "inputTokens": 8152,
+  "outputTokens": 622,
+  "totalTokens": 8774
+ },
+ "latency_s": 3.163,
+ "seconds": 3.3712727920064935
+}

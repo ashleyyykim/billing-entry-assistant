@@ -1,0 +1,18 @@
+{
+ "entry_id": "T-00565",
+ "cmid": "9140.001",
+ "second_cmid": "",
+ "shortlist": [
+  "9140.001",
+  "9140.002"
+ ],
+ "confidence": 92,
+ "reason": "Typed client matches Juniper Peak Capital; timekeeper's recent hours heavily weighted to 9140.001; entry date within matter's active period; generic 'open items' likely refers to ongoing fund formation work.",
+ "usage": {
+  "inputTokens": 8139,
+  "outputTokens": 395,
+  "totalTokens": 8534
+ },
+ "latency_s": 3.721,
+ "seconds": 3.782788625001558
+}

@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02808",
+ "cmid": "5520.001",
+ "second_cmid": "",
+ "shortlist": [
+  "5520.001",
+  "3012.004",
+  "5602.003"
+ ],
+ "confidence": 95,
+ "reason": "Narrative references Project Lark, matching the Add-On Acquisition (Project Lark) matter 5520.001, which is open on the work date. No other matter fits the Project Lark name.",
+ "usage": {
+  "inputTokens": 8137,
+  "outputTokens": 458,
+  "totalTokens": 8595
+ },
+ "latency_s": 3.841,
+ "seconds": 3.918177833009395
+}

@@ -1,0 +1,18 @@
+{
+ "entry_id": "T-03513",
+ "cmid": "8012.001",
+ "second_cmid": "",
+ "shortlist": [
+  "8012.001",
+  "8012.002"
+ ],
+ "confidence": 95,
+ "reason": "Narrative about tenant estoppels and Phase I environmental aligns with real estate acquisition due diligence for Silverleaf Holdings' 9 Pine St. acquisition (8012.001); no evidence of work on a second distinct matter.",
+ "usage": {
+  "inputTokens": 8144,
+  "outputTokens": 646,
+  "totalTokens": 8790
+ },
+ "latency_s": 3.529,
+ "seconds": 3.596025875012856
+}

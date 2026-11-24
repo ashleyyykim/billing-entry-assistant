@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02817",
+ "cmid": "2201.001",
+ "second_cmid": "2201.005",
+ "shortlist": [
+  "2201.001",
+  "2201.005",
+  "2201.003"
+ ],
+ "confidence": 92,
+ "reason": "Narrative describes corporate tasks (contractor classification, good standing certificates, foreign qualification) matching Harborlight Bio General Corporate (2201.001). Also mentions option grant mechanics, which aligns with Equity Plan (2201.005). Timekeeper's recent heavy billing on 2201.001 supports primary assignment.",
+ "usage": {
+  "inputTokens": 8182,
+  "outputTokens": 719,
+  "totalTokens": 8901
+ },
+ "latency_s": 6.414,
+ "seconds": 6.484678749999148
+}

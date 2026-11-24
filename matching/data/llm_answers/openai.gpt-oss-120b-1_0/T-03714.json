@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03714",
+ "cmid": "4471.004",
+ "second_cmid": "",
+ "shortlist": [
+  "4471.004",
+  "7222.001",
+  "3388.001"
+ ],
+ "confidence": 95,
+ "reason": "Narrative references a Fund IV first close call; only Ridgewater Partners Fund IV Formation (4471.004) matches and aligns with typed CMID pattern 4471.xxx, opened before the work date.",
+ "usage": {
+  "inputTokens": 8147,
+  "outputTokens": 799,
+  "totalTokens": 8946
+ },
+ "latency_s": 5.125,
+ "seconds": 5.234242083999561
+}

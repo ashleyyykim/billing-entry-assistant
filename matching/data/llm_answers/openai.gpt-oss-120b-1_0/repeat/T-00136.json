@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00136",
+ "cmid": "8340.001",
+ "second_cmid": "",
+ "shortlist": [
+  "8340.001",
+  "8340.002",
+  "8340.003"
+ ],
+ "confidence": 95,
+ "reason": "Narrative matches past entry for 8340.001 (Mark up ALTA survey) and client PRH aligns with Pelican Row Holdings.",
+ "usage": {
+  "inputTokens": 8142,
+  "outputTokens": 330,
+  "totalTokens": 8472
+ },
+ "latency_s": 3.454,
+ "seconds": 3.566891875001602
+}

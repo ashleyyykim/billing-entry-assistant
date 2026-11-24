@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01067",
+ "cmid": "3120.003",
+ "second_cmid": "3120.001",
+ "shortlist": [
+  "3120.003",
+  "3120.001",
+  "3120.002"
+ ],
+ "confidence": 92,
+ "reason": "Narrative mentions option grant mechanics with Y.Tanaka, which aligns with Bluefin Robotics Equity Plan (3120.003). Customer contract question likely falls under General Corporate (3120.001). Typed CMID appears mistyped as 3120/001.",
+ "usage": {
+  "inputTokens": 8163,
+  "outputTokens": 767,
+  "totalTokens": 8930
+ },
+ "latency_s": 3.979,
+ "seconds": 4.047542458007229
+}

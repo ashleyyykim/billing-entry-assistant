@@ -1,0 +1,17 @@
+{
+ "entry_id": "T-00685",
+ "cmid": "3120.001",
+ "second_cmid": "",
+ "shortlist": [
+  "3120.001"
+ ],
+ "confidence": 95,
+ "reason": "Narrative 'T/c w/ Y. Tanaka.' matches prior entries for Bluefin Robotics General Corporate (3120.001) and typed CMID is correct.",
+ "usage": {
+  "inputTokens": 8144,
+  "outputTokens": 280,
+  "totalTokens": 8424
+ },
+ "latency_s": 2.221,
+ "seconds": 2.2809098750003614
+}

@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01451",
+ "cmid": "5520.004",
+ "second_cmid": "",
+ "shortlist": [
+  "5520.004",
+  "5524.002",
+  "5520.001"
+ ],
+ "confidence": 92,
+ "reason": "Narrative about preparing a capital call notice for a fund extension aligns with Fund Administration work (5520.004) for Cobalt Ridge Capital; past entries for this matter include drafting LPAC consent and capital account statements.",
+ "usage": {
+  "inputTokens": 8150,
+  "outputTokens": 604,
+  "totalTokens": 8754
+ },
+ "latency_s": 5.748,
+ "seconds": 5.817688249997445
+}

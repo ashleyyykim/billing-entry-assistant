@@ -1,0 +1,17 @@
+{
+ "entry_id": "T-03507",
+ "cmid": "2960.003",
+ "second_cmid": "",
+ "shortlist": [
+  "2960.003"
+ ],
+ "confidence": 95,
+ "reason": "Narrative matches Board Matters for Solace Health; typed client/matter align; timekeeper's recent activity heavily on 2960.003.",
+ "usage": {
+  "inputTokens": 8143,
+  "outputTokens": 299,
+  "totalTokens": 8442
+ },
+ "latency_s": 2.969,
+ "seconds": 3.0268591250060126
+}

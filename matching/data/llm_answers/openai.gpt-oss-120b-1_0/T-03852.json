@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03852",
+ "cmid": "4471.004",
+ "second_cmid": "",
+ "shortlist": [
+  "4471.004",
+  "7222.001",
+  "4471.001"
+ ],
+ "confidence": 92,
+ "reason": "Narrative references Form D fee waivers and MFN election for Fund IV; typed client is misspelled Ridgewater Partners, matching Ridgewater Partners Fund IV Formation (4471.004) opened 09/01/2026, active on work date.",
+ "usage": {
+  "inputTokens": 8160,
+  "outputTokens": 643,
+  "totalTokens": 8803
+ },
+ "latency_s": 5.531,
+ "seconds": 5.594437374995323
+}

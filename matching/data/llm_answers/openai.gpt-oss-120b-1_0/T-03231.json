@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03231",
+ "cmid": "2960.003",
+ "second_cmid": "",
+ "shortlist": [
+  "2960.003",
+  "3455.002",
+  "6103.003"
+ ],
+ "confidence": 85,
+ "reason": "Narrative about compensation committee charter aligns with board matters; timekeeper has extensive recent hours on Solace Health board matter (2960.003) indicating primary focus.",
+ "usage": {
+  "inputTokens": 8141,
+  "outputTokens": 557,
+  "totalTokens": 8698
+ },
+ "latency_s": 5.065,
+ "seconds": 5.133809374994598
+}

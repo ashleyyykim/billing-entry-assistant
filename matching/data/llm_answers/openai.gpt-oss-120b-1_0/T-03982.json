@@ -1,0 +1,17 @@
+{
+ "entry_id": "T-03982",
+ "cmid": "4471.004",
+ "second_cmid": "",
+ "shortlist": [
+  "4471.004"
+ ],
+ "confidence": 95,
+ "reason": "Narrative refers to reviewing a Fund IV management company agreement; the only Fund IV matter is Ridgewater Partners Fund IV Formation (4471.004). Typed client misspelled Ridgewater, confirming match.",
+ "usage": {
+  "inputTokens": 8156,
+  "outputTokens": 753,
+  "totalTokens": 8909
+ },
+ "latency_s": 6.583,
+ "seconds": 6.6546172500093235
+}

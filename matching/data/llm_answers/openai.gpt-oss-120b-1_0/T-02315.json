@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02315",
+ "cmid": "8340.001",
+ "second_cmid": "",
+ "shortlist": [
+  "8340.001",
+  "8340.002",
+  "7215.002"
+ ],
+ "confidence": 95,
+ "reason": "Narrative matches acquisition work for Pelican Row Holdings; typed client/matter are misspelled but clearly refer to Acquisition of 450 Harbor St., which is CMID 8340.001. Timekeeper's recent history shows extensive work on this matter.",
+ "usage": {
+  "inputTokens": 8137,
+  "outputTokens": 428,
+  "totalTokens": 8565
+ },
+ "latency_s": 2.425,
+ "seconds": 2.524704625000595
+}

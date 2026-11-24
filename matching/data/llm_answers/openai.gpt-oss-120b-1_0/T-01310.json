@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01310",
+ "cmid": "7215.003",
+ "second_cmid": "",
+ "shortlist": [
+  "7215.003",
+  "7215.004",
+  "7215.002"
+ ],
+ "confidence": 92,
+ "reason": "Narrative about UCC searches and collateral calls matches credit facility work; typed CMID aligns and matter is open on the work date.",
+ "usage": {
+  "inputTokens": 8154,
+  "outputTokens": 432,
+  "totalTokens": 8586
+ },
+ "latency_s": 2.285,
+ "seconds": 2.354760999995051
+}

@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01455",
+ "cmid": "2201.001",
+ "second_cmid": "",
+ "shortlist": [
+  "2201.001",
+  "2201.003",
+  "2201.005"
+ ],
+ "confidence": 60,
+ "reason": "Typed client is Harborlight; most likely Harborlight Bio. The timekeeper's primary recent work is on 2201.001 (General Corporate) with many hours, making it the default matter for a generic status call.",
+ "usage": {
+  "inputTokens": 8135,
+  "outputTokens": 856,
+  "totalTokens": 8991
+ },
+ "latency_s": 7.327,
+ "seconds": 7.394511083999532
+}

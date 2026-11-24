@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02651",
+ "cmid": "5524.002",
+ "second_cmid": "",
+ "shortlist": [
+  "5524.002",
+  "5520.004",
+  "5524.001"
+ ],
+ "confidence": 95,
+ "reason": "Narrative about LP inquiry and drafting LP register aligns with General Fund Matters for Cobalt Ridge Partners (5524.002); timekeeper's history shows primary work on this matter.",
+ "usage": {
+  "inputTokens": 8165,
+  "outputTokens": 518,
+  "totalTokens": 8683
+ },
+ "latency_s": 2.878,
+ "seconds": 2.95567025001219
+}

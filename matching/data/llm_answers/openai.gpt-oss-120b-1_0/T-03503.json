@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03503",
+ "cmid": "9140.002",
+ "second_cmid": "",
+ "shortlist": [
+  "9140.002",
+  "9140.001",
+  "5524.001"
+ ],
+ "confidence": 70,
+ "reason": "Typed CMID matches an open matter for Juniper Peak Capital; timekeeper has extensive history on related Juniper Peak matter (9140.001) indicating likely correct client, though narrative is generic.",
+ "usage": {
+  "inputTokens": 8138,
+  "outputTokens": 535,
+  "totalTokens": 8673
+ },
+ "latency_s": 5.087,
+ "seconds": 5.155994458007626
+}

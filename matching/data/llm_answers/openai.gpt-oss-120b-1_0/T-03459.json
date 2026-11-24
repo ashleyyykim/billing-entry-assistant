@@ -1,0 +1,17 @@
+{
+ "entry_id": "T-03459",
+ "cmid": "7633.001",
+ "second_cmid": "",
+ "shortlist": [
+  "7633.001"
+ ],
+ "confidence": 95,
+ "reason": "Typed CMID and client match Copperline Networks; narrative of managing good standing requests and updating closing checklist aligns with corporate matter tasks typical for this matter.",
+ "usage": {
+  "inputTokens": 8144,
+  "outputTokens": 552,
+  "totalTokens": 8696
+ },
+ "latency_s": 5.097,
+ "seconds": 5.166029375002836
+}

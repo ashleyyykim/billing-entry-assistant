@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00102",
+ "cmid": "6103.004",
+ "second_cmid": "",
+ "shortlist": [
+  "6103.004",
+  "6103.001",
+  "3455.001"
+ ],
+ "confidence": 95,
+ "reason": "Narrative references 2026 Annual Meeting and trading policy risk factors, matching matter 6103.004; timekeeper has extensive recent hours on this matter.",
+ "usage": {
+  "inputTokens": 8165,
+  "outputTokens": 412,
+  "totalTokens": 8577
+ },
+ "latency_s": 2.567,
+ "seconds": 2.6443164579977747
+}

@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02482",
+ "cmid": "7222.002",
+ "second_cmid": "7215.004",
+ "shortlist": [
+  "7222.002",
+  "7215.004",
+  "7222.001"
+ ],
+ "confidence": 92,
+ "reason": "Narrative references Summit Ridge TSA (Northgate Capital Partners acquisition) and Kestrel good standing certificates (Northgate Bank credit facility). Prior hours show primary work on 7222.002.",
+ "usage": {
+  "inputTokens": 8172,
+  "outputTokens": 679,
+  "totalTokens": 8851
+ },
+ "latency_s": 5.855,
+ "seconds": 6.0502461249998305
+}

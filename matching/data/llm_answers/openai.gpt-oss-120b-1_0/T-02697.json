@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02697",
+ "cmid": "5602.003",
+ "second_cmid": "",
+ "shortlist": [
+  "5602.003",
+  "3012.004",
+  "5520.001"
+ ],
+ "confidence": 85,
+ "reason": "Timekeeper's recent heavy activity (15.1h) on 5602.003, an acquisition matter that typically involves managing signature packets; narrative matches this task.",
+ "usage": {
+  "inputTokens": 8142,
+  "outputTokens": 854,
+  "totalTokens": 8996
+ },
+ "latency_s": 5.765,
+ "seconds": 5.958279583996045
+}

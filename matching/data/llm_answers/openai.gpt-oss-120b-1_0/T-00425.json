@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00425",
+ "cmid": "9028.003",
+ "second_cmid": "",
+ "shortlist": [
+  "9028.003",
+  "9028.001",
+  "9028.004"
+ ],
+ "confidence": 95,
+ "reason": "Narrative about severance terms, option grant paperwork, and S-8 review matches Exec Comp/409A work typical for Lanternfish matter 9028.003; dates and prior entries align.",
+ "usage": {
+  "inputTokens": 8179,
+  "outputTokens": 473,
+  "totalTokens": 8652
+ },
+ "latency_s": 4.305,
+ "seconds": 4.4695997499948135
+}

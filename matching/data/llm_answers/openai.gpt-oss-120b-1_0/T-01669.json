@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01669",
+ "cmid": "5520.001",
+ "second_cmid": "",
+ "shortlist": [
+  "5520.001",
+  "5520.003",
+  "3012.005"
+ ],
+ "confidence": 85,
+ "reason": "Narrative mentions acquisition of Larkspur Controls, matching the Add-On Acquisition (Project Lark) matter (5520.001) which the timekeeper has logged many hours on recently; no other matter aligns as closely.",
+ "usage": {
+  "inputTokens": 8140,
+  "outputTokens": 624,
+  "totalTokens": 8764
+ },
+ "latency_s": 5.971,
+ "seconds": 6.152984041997115
+}

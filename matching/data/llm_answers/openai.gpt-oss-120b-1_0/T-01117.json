@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01117",
+ "cmid": "7215.004",
+ "second_cmid": "",
+ "shortlist": [
+  "7215.004",
+  "7215.003",
+  "7215.001"
+ ],
+ "confidence": 85,
+ "reason": "Narrative involves title objection, lien searches, and perfection certificate, typical for collateral work on a credit facility. The client Kestrel matches the Credit Facility - Kestrel Foods (7215.004) opened 04/13/2026, still open. Prior work shows the timekeeper handles credit facility matters.",
+ "usage": {
+  "inputTokens": 8165,
+  "outputTokens": 690,
+  "totalTokens": 8855
+ },
+ "latency_s": 6.349,
+ "seconds": 6.416929208004149
+}

@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00484",
+ "cmid": "8340.001",
+ "second_cmid": "",
+ "shortlist": [
+  "8340.001",
+  "8340.002",
+  "8340.003"
+ ],
+ "confidence": 95,
+ "reason": "Narrative discusses title objection letter and title exceptions for 450 Harbor, which aligns with the acquisition matter 8340.001 (Acquisition of 450 Harbor St.) rather than the lease matter 8340.002. The work date is within the open period of 8340.001.",
+ "usage": {
+  "inputTokens": 8175,
+  "outputTokens": 379,
+  "totalTokens": 8554
+ },
+ "latency_s": 2.194,
+ "seconds": 2.3891706249996787
+}

@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03042",
+ "cmid": "5520.001",
+ "second_cmid": "",
+ "shortlist": [
+  "5520.001",
+  "5520.003",
+  "5531.001"
+ ],
+ "confidence": 55,
+ "reason": "Typed client 'Cobalt' matches Cobalt Ridge Capital matters. Scanning and saving executed documents is typical for acquisition closings; the open acquisition matters for Cobalt Ridge Capital are 5520.001 (Project Lark), 5520.003 (Project Larch), and 5531.001 (Fieldstone Foods). No specific clue to pick one, so moderate confidence in 5520.001 as first guess.",
+ "usage": {
+  "inputTokens": 8137,
+  "outputTokens": 1419,
+  "totalTokens": 9556
+ },
+ "latency_s": 6.726,
+ "seconds": 6.792026124996482
+}

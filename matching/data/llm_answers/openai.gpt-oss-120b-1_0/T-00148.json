@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00148",
+ "cmid": "6103.001",
+ "second_cmid": "",
+ "shortlist": [
+  "6103.001",
+  "6103.004",
+  "5602.001"
+ ],
+ "confidence": 95,
+ "reason": "Narrative mentions TCW S. Cole; S. Cole appears in past entries for Meridian Therapeutics SEC Reporting (6103.001). Typed client 'MT' matches Meridian Therapeutics. Date within open period.",
+ "usage": {
+  "inputTokens": 8136,
+  "outputTokens": 598,
+  "totalTokens": 8734
+ },
+ "latency_s": 6.095,
+ "seconds": 6.204601833989727
+}

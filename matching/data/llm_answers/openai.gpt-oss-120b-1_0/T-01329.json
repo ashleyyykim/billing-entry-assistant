@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01329",
+ "cmid": "7633.003",
+ "second_cmid": "",
+ "shortlist": [
+  "7633.003",
+  "4590.005",
+  "3120.003"
+ ],
+ "confidence": 95,
+ "reason": "Narrative describes drafting an opinion on an option pool increase, which aligns with an Exec Comp matter. Client typed is Copperline Networks, whose Exec Comp matter is 7633.003. Protective provisions and redemption rights for Ridgeline Capital likely pertain to the same equity plan work. No other matter fits better.",
+ "usage": {
+  "inputTokens": 8173,
+  "outputTokens": 731,
+  "totalTokens": 8904
+ },
+ "latency_s": 3.98,
+ "seconds": 4.248751792008989
+}

@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00964",
+ "cmid": "2207.001",
+ "second_cmid": "",
+ "shortlist": [
+  "2207.001",
+  "2201.001",
+  "1111.001"
+ ],
+ "confidence": 70,
+ "reason": "Typed CMID matches client and matter; narrative is generic but no conflict. Timekeeper's history is heavy on 2201.001, but could be new work for Harborline Biosciences.",
+ "usage": {
+  "inputTokens": 8142,
+  "outputTokens": 690,
+  "totalTokens": 8832
+ },
+ "latency_s": 4.976,
+ "seconds": 5.0449220839946065
+}

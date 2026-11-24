@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01679",
+ "cmid": "8340.002",
+ "second_cmid": "",
+ "shortlist": [
+  "8340.002",
+  "8340.001",
+  "7215.003"
+ ],
+ "confidence": 95,
+ "reason": "Typed CMID matches 8340.002 (Pelican Row Holdings lease). Timekeeper has recent hours on this matter and client name (misspelled) aligns. No indication of second matter.",
+ "usage": {
+  "inputTokens": 8141,
+  "outputTokens": 609,
+  "totalTokens": 8750
+ },
+ "latency_s": 2.752,
+ "seconds": 2.818722500000149
+}

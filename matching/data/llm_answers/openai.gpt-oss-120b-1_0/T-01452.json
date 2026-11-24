@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01452",
+ "cmid": "5524.002",
+ "second_cmid": "",
+ "shortlist": [
+  "5524.002",
+  "5524.001",
+  "5520.004"
+ ],
+ "confidence": 95,
+ "reason": "Narrative about LPAC consent and issues list aligns with General Fund Matters for Cobalt Ridge Partners (5524.002); timekeeper's history shows extensive work on this matter.",
+ "usage": {
+  "inputTokens": 8151,
+  "outputTokens": 508,
+  "totalTokens": 8659
+ },
+ "latency_s": 4.39,
+ "seconds": 4.520116666011745
+}

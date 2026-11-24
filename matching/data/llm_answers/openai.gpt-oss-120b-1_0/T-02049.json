@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02049",
+ "cmid": "5520.001",
+ "second_cmid": "",
+ "shortlist": [
+  "5520.001",
+  "5520.002",
+  "5520.003"
+ ],
+ "confidence": 95,
+ "reason": "Narrative mentions Cobalt Ridge Capital Project Lark and W.Hale, matching past entries for matter 5520.001 (Add-On Acquisition Project Lark) which opened before the work date.",
+ "usage": {
+  "inputTokens": 8167,
+  "outputTokens": 477,
+  "totalTokens": 8644
+ },
+ "latency_s": 3.699,
+ "seconds": 3.7687931659893366
+}

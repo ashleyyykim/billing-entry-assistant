@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03408",
+ "cmid": "3455.003",
+ "second_cmid": "",
+ "shortlist": [
+  "3455.003",
+  "3455.002",
+  "1111.001"
+ ],
+ "confidence": 70,
+ "reason": "Typed CMID points to Revolver Amendment No. 3; narrative is generic email review which could apply to any matter, but no contradictory evidence, and timekeeper has recent activity on related Aster & Vale matters.",
+ "usage": {
+  "inputTokens": 8141,
+  "outputTokens": 586,
+  "totalTokens": 8727
+ },
+ "latency_s": 4.313,
+ "seconds": 4.384347083992907
+}

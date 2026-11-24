@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01004",
+ "cmid": "3120.001",
+ "second_cmid": "",
+ "shortlist": [
+  "3120.001",
+  "3012.001",
+  "3012.003"
+ ],
+ "confidence": 95,
+ "reason": "Narrative mentions Y. Tanaka, who appears in Bluefin Robotics matter 3120.001; timekeeper's history shows extensive work on 3120.001, indicating this entry belongs there despite typed CMID.",
+ "usage": {
+  "inputTokens": 8155,
+  "outputTokens": 539,
+  "totalTokens": 8694
+ },
+ "latency_s": 5.259,
+ "seconds": 5.327011959001538
+}

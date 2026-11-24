@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01920",
+ "cmid": "9028.003",
+ "second_cmid": "",
+ "shortlist": [
+  "9028.003",
+  "9028.001",
+  "9028.004"
+ ],
+ "confidence": 96,
+ "reason": "Narrative matches Exec Comp / 409A work for Lanternfish Software; timekeeper's history shows heavy activity on 9028.003; matter is open on the date.",
+ "usage": {
+  "inputTokens": 8165,
+  "outputTokens": 424,
+  "totalTokens": 8589
+ },
+ "latency_s": 3.941,
+ "seconds": 4.168663791992003
+}

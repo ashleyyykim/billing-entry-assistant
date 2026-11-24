@@ -1,0 +1,17 @@
+{
+ "entry_id": "T-00970",
+ "cmid": "9140.001",
+ "second_cmid": "",
+ "shortlist": [
+  "9140.001"
+ ],
+ "confidence": 95,
+ "reason": "Narrative matches Juniper Peak Capital Fund II Formation, which is CMID 9140.001; timekeeper has extensive recent hours on this matter and the client/matter match exactly.",
+ "usage": {
+  "inputTokens": 8159,
+  "outputTokens": 344,
+  "totalTokens": 8503
+ },
+ "latency_s": 1.477,
+ "seconds": 1.62519241598784
+}

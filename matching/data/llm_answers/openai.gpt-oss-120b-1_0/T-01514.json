@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01514",
+ "cmid": "3455.002",
+ "second_cmid": "",
+ "shortlist": [
+  "3455.002",
+  "3455.001",
+  "3455.003"
+ ],
+ "confidence": 95,
+ "reason": "Narrative clearly describes board governance work and board meeting logistics, matching the Board & Governance matter (3455.002). Timekeeper has extensive recent hours on this matter, confirming assignment.",
+ "usage": {
+  "inputTokens": 8174,
+  "outputTokens": 364,
+  "totalTokens": 8538
+ },
+ "latency_s": 5.266,
+ "seconds": 5.328386124994722
+}

@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02322",
+ "cmid": "6103.003",
+ "second_cmid": "",
+ "shortlist": [
+  "6103.003",
+  "6103.001",
+  "6103.004"
+ ],
+ "confidence": 92,
+ "reason": "Narrative describes joining a board meeting for Meridian Therapeutics, matching the Board & Governance matter (6103.003) which is open on the date.",
+ "usage": {
+  "inputTokens": 8145,
+  "outputTokens": 450,
+  "totalTokens": 8595
+ },
+ "latency_s": 4.194,
+ "seconds": 4.257937583010062
+}

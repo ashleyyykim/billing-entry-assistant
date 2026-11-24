@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-02536",
+ "cmid": "9028.001",
+ "second_cmid": "",
+ "shortlist": [
+  "9028.001",
+  "9028.002",
+  "9028.003"
+ ],
+ "confidence": 95,
+ "reason": "Narrative mentions Grant, a known contact for Lanternfish Software matters, and entity maintenance aligns with General Corporate work for 9028.001.",
+ "usage": {
+  "inputTokens": 8150,
+  "outputTokens": 386,
+  "totalTokens": 8536
+ },
+ "latency_s": 2.277,
+ "seconds": 2.363433624996105
+}

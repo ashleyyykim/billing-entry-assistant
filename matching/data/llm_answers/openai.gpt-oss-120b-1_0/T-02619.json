@@ -1,0 +1,17 @@
+{
+ "entry_id": "T-02619",
+ "cmid": "6103.003",
+ "second_cmid": "",
+ "shortlist": [
+  "6103.003"
+ ],
+ "confidence": 95,
+ "reason": "Client Meridian Therapeutics and Board & Governance matter correspond to CMID 6103.003; entry date within matter's active period.",
+ "usage": {
+  "inputTokens": 8137,
+  "outputTokens": 396,
+  "totalTokens": 8533
+ },
+ "latency_s": 4.1,
+ "seconds": 4.164257166994503
+}

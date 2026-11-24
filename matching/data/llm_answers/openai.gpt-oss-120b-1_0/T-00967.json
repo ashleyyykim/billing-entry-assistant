@@ -1,0 +1,17 @@
+{
+ "entry_id": "T-00967",
+ "cmid": "4590.004",
+ "second_cmid": "",
+ "shortlist": [
+  "4590.004"
+ ],
+ "confidence": 95,
+ "reason": "Narrative references Orbis Health, which is associated with Tidewater AI's Commercial - Enterprise MSAs matter (4590.004) as seen in past entries. No other matter matches.",
+ "usage": {
+  "inputTokens": 8149,
+  "outputTokens": 368,
+  "totalTokens": 8517
+ },
+ "latency_s": 1.784,
+ "seconds": 1.8503020420030225
+}

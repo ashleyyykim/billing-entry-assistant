@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-00772",
+ "cmid": "7222.002",
+ "second_cmid": "",
+ "shortlist": [
+  "7222.002",
+  "7222.001",
+  "9035.002"
+ ],
+ "confidence": 95,
+ "reason": "Narrative mentions meeting with Kaur about closing conditions; past entries show Kaur associated with matter 7222.002 (Northgate Capital Partners acquisition of Summit Ridge Software). Date fits within matter's open period.",
+ "usage": {
+  "inputTokens": 8150,
+  "outputTokens": 459,
+  "totalTokens": 8609
+ },
+ "latency_s": 4.235,
+ "seconds": 4.346107875011512
+}

@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01567",
+ "cmid": "5520.004",
+ "second_cmid": "",
+ "shortlist": [
+  "5520.004",
+  "5524.002",
+  "5524.001"
+ ],
+ "confidence": 92,
+ "reason": "Narrative describes fund administrator communication on LPAC approval and investor register review, which matches the Fund Administration matter (5520.004) for Cobalt Ridge Capital; client name likely mistyped.",
+ "usage": {
+  "inputTokens": 8162,
+  "outputTokens": 604,
+  "totalTokens": 8766
+ },
+ "latency_s": 3.768,
+ "seconds": 3.846399959002156
+}

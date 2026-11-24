@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01238",
+ "cmid": "2960.001",
+ "second_cmid": "7222.002",
+ "shortlist": [
+  "2960.001",
+  "7222.002",
+  "7222.001"
+ ],
+ "confidence": 95,
+ "reason": "Narrative splits between equity questions with CEO (fits Solace Health General Corporate 2960.001) and third\u2011party consents for Summit Ridge (fits acquisition 7222.002); typed CMID matches first part.",
+ "usage": {
+  "inputTokens": 8162,
+  "outputTokens": 834,
+  "totalTokens": 8996
+ },
+ "latency_s": 7.444,
+ "seconds": 7.653850375005277
+}

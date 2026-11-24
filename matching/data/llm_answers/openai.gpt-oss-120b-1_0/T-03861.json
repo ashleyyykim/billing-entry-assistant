@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03861",
+ "cmid": "6103.003",
+ "second_cmid": "",
+ "shortlist": [
+  "6103.003",
+  "6103.002",
+  "6103.004"
+ ],
+ "confidence": 95,
+ "reason": "Narrative about committee charters and officer appointments aligns with Board & Governance matter 6103.003; typed CMID matches and dates are within open period.",
+ "usage": {
+  "inputTokens": 8160,
+  "outputTokens": 410,
+  "totalTokens": 8570
+ },
+ "latency_s": 3.449,
+ "seconds": 3.5550774589937646
+}

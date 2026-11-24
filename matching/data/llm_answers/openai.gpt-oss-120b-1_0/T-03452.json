@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03452",
+ "cmid": "2960.003",
+ "second_cmid": "",
+ "shortlist": [
+  "2960.003",
+  "3455.002",
+  "3455.001"
+ ],
+ "confidence": 95,
+ "reason": "Narrative mentions board matters; Solace Health's board matter is 2960.003 and timekeeper has extensive prior hours on that matter.",
+ "usage": {
+  "inputTokens": 8137,
+  "outputTokens": 355,
+  "totalTokens": 8492
+ },
+ "latency_s": 3.11,
+ "seconds": 3.179003457989893
+}

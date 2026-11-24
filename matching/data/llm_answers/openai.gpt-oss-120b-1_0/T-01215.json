@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01215",
+ "cmid": "7222.002",
+ "second_cmid": "",
+ "shortlist": [
+  "7222.002",
+  "2207.003",
+  "4597.002"
+ ],
+ "confidence": 95,
+ "reason": "Narrative mentions Kaur, who appears in past entries for 7222.002 (Northgate Capital Partners acquisition). Date fits matter open period and timekeeper's recent heavy work on this matter.",
+ "usage": {
+  "inputTokens": 8162,
+  "outputTokens": 378,
+  "totalTokens": 8540
+ },
+ "latency_s": 3.602,
+ "seconds": 3.672975250010495
+}

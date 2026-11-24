@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01564",
+ "cmid": "4471.001",
+ "second_cmid": "",
+ "shortlist": [
+  "4471.001",
+  "4471.002",
+  "4478.002"
+ ],
+ "confidence": 95,
+ "reason": "Narrative matches past entry for Fund II LPAC consent on 4471.001 (Ridgewater Partners General Fund Matters). Typed client misspelled but matches Ridgewater Partners.",
+ "usage": {
+  "inputTokens": 8147,
+  "outputTokens": 834,
+  "totalTokens": 8981
+ },
+ "latency_s": 6.772,
+ "seconds": 6.837672459005262
+}

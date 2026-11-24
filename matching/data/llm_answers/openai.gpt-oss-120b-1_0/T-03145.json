@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-03145",
+ "cmid": "5602.003",
+ "second_cmid": "",
+ "shortlist": [
+  "5602.003",
+  "5602.001",
+  "5602.002"
+ ],
+ "confidence": 95,
+ "reason": "Narrative references change of control provisions for Quanta Photonics, which is the acquisition target in matter 5602.003 (Acquisition of Quanta Photonics). Timekeeper TK102 has prior hours on this matter, and the client Ironwood matches.",
+ "usage": {
+  "inputTokens": 8150,
+  "outputTokens": 370,
+  "totalTokens": 8520
+ },
+ "latency_s": 1.864,
+ "seconds": 2.046178000004147
+}

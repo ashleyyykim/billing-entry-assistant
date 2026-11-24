@@ -1,0 +1,17 @@
+{
+ "entry_id": "T-03375",
+ "cmid": "9028.003",
+ "second_cmid": "",
+ "shortlist": [
+  "9028.003"
+ ],
+ "confidence": 95,
+ "reason": "Narrative about RSU agreement and 409A timing matches Exec Comp / 409A matter for Lanternfish Software (9028.003), which the timekeeper has extensive prior hours on.",
+ "usage": {
+  "inputTokens": 8152,
+  "outputTokens": 349,
+  "totalTokens": 8501
+ },
+ "latency_s": 3.128,
+ "seconds": 3.197139249998145
+}

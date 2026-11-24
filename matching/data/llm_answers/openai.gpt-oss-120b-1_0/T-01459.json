@@ -1,0 +1,19 @@
+{
+ "entry_id": "T-01459",
+ "cmid": "3120.001",
+ "second_cmid": "",
+ "shortlist": [
+  "3120.001",
+  "3120.002",
+  "3120.003"
+ ],
+ "confidence": 95,
+ "reason": "Narrative about handling annual filings aligns with Bluefin Robotics' General Corporate matter (3120.001); timekeeper's recent heavy billing on this matter supports the match.",
+ "usage": {
+  "inputTokens": 8145,
+  "outputTokens": 417,
+  "totalTokens": 8562
+ },
+ "latency_s": 3.953,
+ "seconds": 4.023137875003158
+}
