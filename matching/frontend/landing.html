@@ -1224,7 +1224,7 @@ const LINKS = {
       .to('.b1', { autoAlpha: 0, y: -24, duration: .5 }, 'read')
       .to('.b2', { autoAlpha: 1, y: 0, duration: .5 }, 'read+=.3')
       .to(story.querySelectorAll('.sn .note'), { '--r': '0deg', duration: .8 }, 'read')
-      .to(sweeps, { '--hl': 1, duration: .5, stagger: .1, ease: 'power2.out' }, 'read+=.4')
+      .to({}, { duration: 1.2 }, 'read+=.4')   /* the highlights sweep in here: see sweepAt below */
       .to({}, { duration: .5 })
       .to('.b2', { autoAlpha: 0, y: -24, duration: .5 }, 'match')
       .to('.b3', { autoAlpha: 1, y: 0, duration: .5 }, 'match+=.3')
@@ -1251,12 +1251,20 @@ const LINKS = {
       .to('.xchip', { opacity: 1, scale: 1, duration: .5, ease: 'power2.out' }, 'check+=1.05')
       .to({}, { duration: .5 });
     at = ['read', 'match', 'check'].map((l) => (tl.labels[l] + .25) / tl.duration());
+    /* The highlights are set from the timeline's own time, not tweened: a tweened CSS variable was left at its end value
+       after each ScrollTrigger refresh, so the notes showed highlighted in step i */
+    const sweepAt = () => { const t = tl.time() - (tl.labels.read + .4);
+      sweeps.forEach((el, i) => { const k = Math.min(1, Math.max(0, (t - i * .1) / .5)); el.style.setProperty('--hl', (1 - (1 - k) * (1 - k)).toFixed(3)); }); };
+    tl.eventCallback('onUpdate', sweepAt);
+    ScrollTrigger.addEventListener('refresh', sweepAt);
+    sweepAt();
     steps.forEach((el, n) => { el.onclick = () => {   /* the i to iv marker jumps to that part of the story */
       const st = tl.scrollTrigger, p = n ? (tl.labels[['read', 'match', 'check'][n - 1]] + 1) / tl.duration() : 0;
       lenis.scrollTo(st.start + p * (st.end - st.start), { duration: 1.2 });
     }; });
     return () => {
       story.classList.remove('is-pinned');
+      ScrollTrigger.removeEventListener('refresh', sweepAt);
       gsap.set('.b1, .b2, .b3, .b4, .sn, .sn .note, .hlt, .row, .xchip, .pill i, .nar, .add, .swap > span, .swap-pill, .swap-pill > span', { clearProps: 'all' });
     };
   });
