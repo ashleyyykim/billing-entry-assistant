@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Tenth</title>
+<title>Tenth: every tenth of an hour, on the right matter</title>
 <script>
   /* a reload always starts at the top of the page */
   if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
@@ -12,9 +12,16 @@
   document.documentElement.classList.add('js');   /* the hero waits, hidden, until it is laid out and its fonts are in (see heroReady) */
 </script>
 <meta name="description" content="For lawyers and the people who keep their time. Drop in a messy week, answer a few quick questions, and get clean entries on the right client and matter. A UC Berkeley Master of Information and Data Science capstone.">
-<meta property="og:title" content="Tenth">
-<meta property="og:description" content="Every tenth of an hour, on the right matter.">
+<meta property="og:title" content="Tenth: every tenth of an hour, on the right matter">
+<meta property="og:description" content="For lawyers and the legal assistants who keep their time. Drop in a messy week, answer a few quick questions, and get clean entries on the right client and matter.">
 <meta property="og:type" content="website">
+<meta property="og:site_name" content="Tenth">
+<meta property="og:url" content="https://trytenth.app/">
+<meta property="og:image" content="https://trytenth.app/landing/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Tenth. Every tenth of an hour, on the right matter. For lawyers and the legal assistants who keep their time.">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#F6F4F2">
 <link rel="icon" href="tab-icon.ico" sizes="any">
 <link rel="icon" href="icon.svg" type="image/svg+xml">
@@ -41,7 +48,6 @@
   --gutter:48px;
   --max:1344px;
   --ease-out:cubic-bezier(.22,1,.36,1);
-  --wash-ring:0 0 0 1.5px rgba(91,86,126,.42);
 }
 @media (max-width:900px){:root{--section:96px;--gutter:24px}}
 *,*::before,*::after{box-sizing:border-box}
@@ -57,14 +63,12 @@ h1,h2,h3{margin:0;font-weight:500}
 .skip:focus{top:16px}
 main section[tabindex="-1"]:focus,main section[tabindex="-1"]:focus-visible{outline:none;box-shadow:none}
 .wrap{max-width:var(--max);margin:0 auto;padding:0 var(--gutter)}
-.serif{font-family:var(--font-display);font-weight:500}
 .eyebrow{font:600 12px/16px var(--font-ui);letter-spacing:.08em;text-transform:uppercase;color:var(--color-text-muted)}
 .h2{font:500 clamp(36px,4.2vw,56px)/1.08 var(--font-display);letter-spacing:-.018em;text-wrap:balance}
 .h2 em,.h1 em{font-style:italic;color:var(--tenth-dusk)}
 .lede{font-size:18px;line-height:28px;color:var(--color-text-muted);text-wrap:pretty}
 .muted{color:var(--color-text-muted)}
 .cap{font-size:13px;line-height:20px;color:var(--color-text-muted)}
-
 /* Buttons */
 .btn{position:relative;overflow:hidden;display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:40px;padding:10px 16px;border-radius:var(--radius-control);border:1px solid transparent;font:700 14px/20px var(--font-ui);text-decoration:none;cursor:pointer;transition:background-color .3s var(--ease-out),border-color .3s var(--ease-out),transform .12s ease-out;-webkit-tap-highlight-color:transparent}
 .btn:active{transform:translateY(1px)}
@@ -74,8 +78,6 @@ main section[tabindex="-1"]:focus,main section[tabindex="-1"]:focus-visible{outl
 .btn-solid::after{content:"";position:absolute;top:0;bottom:0;left:-60%;width:50%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.18),transparent);transform:skewX(-18deg);pointer-events:none;opacity:0}
 .btn-solid:hover::after{animation:sheen .7s var(--ease-out) 1}
 @keyframes sheen{0%{left:-60%;opacity:1}100%{left:120%;opacity:1}}
-.btn-line{background:var(--tenth-white);color:var(--tenth-ink);border-color:var(--tenth-outline)}
-.btn-line:hover{border-color:var(--tenth-hover)}
 .btn-ghost{background:transparent;color:var(--tenth-ink)}
 .btn-ghost:hover{background:rgba(91,86,126,.08)}
 .btn svg{width:18px;height:18px;transition:transform .3s var(--ease-out)}
@@ -84,7 +86,6 @@ main section[tabindex="-1"]:focus,main section[tabindex="-1"]:focus-visible{outl
 .link{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:var(--radius-control);font:500 14px/20px var(--font-ui);text-decoration:none;color:var(--tenth-ink);transition:background-color .3s var(--ease-out)}
 .link:hover{background:rgba(91,86,126,.08)}
 .link svg{width:18px;height:18px}
-
 /* Nav */
 .nav{position:fixed;top:16px;left:0;right:0;z-index:50;display:flex;justify-content:center;padding:0 16px;pointer-events:none;transition:transform .5s var(--ease-out)}
 .nav.is-hidden{transform:translateY(-180%)}
@@ -97,7 +98,6 @@ main section[tabindex="-1"]:focus,main section[tabindex="-1"]:focus-visible{outl
 .nav-links a{position:relative}
 .nav-links a[aria-current="true"]{background:rgba(91,86,126,.10)}
 @media (max-width:720px){.nav-links{display:none}.nav-bar{gap:16px}}
-
 /* Hero */
 .hero{position:relative;min-height:100svh;display:flex;align-items:stretch;overflow:hidden}
 .hero .wrap{position:relative;z-index:1;width:100%;display:flex;flex-direction:column;justify-content:flex-end;padding-top:140px;padding-bottom:64px}
@@ -130,7 +130,6 @@ main section[tabindex="-1"]:focus,main section[tabindex="-1"]:focus-visible{outl
 .is-playing.is-looping .hm-motion .lg-spin,.is-playing.is-looping .hm-motion .lg-top,.is-playing.is-looping .hm-motion .lg-bot,.is-playing.is-looping .hm-motion .lg-stream{animation-iteration-count:infinite}
 @keyframes fade-out{to{opacity:0}}
 @keyframes fade-in{from{opacity:0}to{opacity:1}}
-.ann{align-self:flex-end;max-width:220px;margin:0 0 .35em .4em;padding-top:12px;border-top:1px solid var(--tenth-outline);font:400 13px/20px var(--font-ui);letter-spacing:0;color:var(--color-text-muted)}
 .hero-foot{display:flex;flex-wrap:wrap;gap:24px 48px;align-items:flex-end;justify-content:space-between;margin-top:56px}
 .hero-intro{max-width:640px;display:flex;flex-direction:column;gap:20px}
 .hero-cta{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
@@ -141,21 +140,10 @@ main section[tabindex="-1"]:focus,main section[tabindex="-1"]:focus-visible{outl
 .hero-glow span{position:absolute;border-radius:50%;will-change:transform}
 .hero-glow .g1{left:8%;top:-18%;width:900px;height:700px;background:radial-gradient(closest-side,rgba(250,240,222,1),rgba(250,240,222,0))}
 .hero-glow .g2{right:-6%;top:28%;width:760px;height:620px;background:radial-gradient(closest-side,rgba(236,234,242,.9),rgba(236,234,242,0))}
-.hero-notes{position:absolute;inset:0;pointer-events:none}
-.hero-notes .hn{position:absolute;will-change:transform;pointer-events:auto}
-.hero-notes .n1{right:4%;top:15%}
-.hero-notes .n2{right:5%;bottom:56px}
-@media (max-width:1180px){.hero-notes .n1{right:-40px;top:96px}.hero-notes .n2{display:none}.ann{display:none}}
-@media (max-width:720px){.hero-notes .n1{right:-90px;top:64px;opacity:.9}.hero-notes .n1 .note{--s:.62}.h1 .l2{padding-left:12%}.hero .wrap{padding-top:120px}}
-
+@media (max-width:720px){.h1 .l2{padding-left:12%}.hero .wrap{padding-top:120px}}
 /* Notes, recreated from the demo's sample notes */
 @property --bob{syntax:"<length>";inherits:false;initial-value:0px}
 .note{--r:0deg;--s:1;--lift:0px;transform:translateY(calc(var(--lift) + var(--bob))) rotate(var(--r)) scale(var(--s));transition:transform .5s var(--ease-out),box-shadow .5s var(--ease-out);box-shadow:var(--sh-rest)}
-.hero-notes .note:hover{--lift:-6px;box-shadow:var(--sh-lift)}
-.hero-notes .note{animation:bob 7s ease-in-out infinite alternate}
-.hero-notes .n2 .note{animation-duration:9s;animation-delay:-3s}
-.hero-notes .sticky:hover{--r:4deg!important}
-@keyframes bob{from{--bob:-5px}to{--bob:5px}}
 .hand{font-family:var(--font-hand);font-weight:500;color:var(--tenth-ink);display:block}
 .paper{width:380px;min-height:136px;padding-bottom:20px!important;padding:12px 36px;border-radius:4px;background-color:#FDFCF9;background-image:repeating-linear-gradient(to bottom,transparent 0,transparent 31px,#E6E3EA 31px,#E6E3EA 32px);display:flex;flex-direction:column}
 .paper .hand{font-size:26px;line-height:32px}
@@ -167,7 +155,7 @@ main section[tabindex="-1"]:focus,main section[tabindex="-1"]:focus-visible{outl
 .sheet{width:300px;background:var(--tenth-white);border-radius:4px;font-size:12px;line-height:16px;font-variant-numeric:tabular-nums;overflow:hidden}
 .sheet .r{display:grid;grid-template-columns:76px 1fr 30px;gap:8px;padding:8px 12px;border-top:1px solid var(--tenth-row)}
 .sheet .r.head{background:var(--tenth-surface-alt);font-weight:600;border-top:0}
-.sheet .r.dim{color:#8E899C}
+.sheet .r.dim{color:#706C82}   /* still lighter than the entry's row, and readable (4.9:1) */
 .sn .note{transition:translate .5s var(--ease-out),box-shadow .5s var(--ease-out)}
 .sn:hover .note{translate:0 -6px;box-shadow:var(--sh-lift)}
 .row{border-radius:8px;transition:background-color .3s var(--ease-out)}
@@ -181,7 +169,6 @@ main section[tabindex="-1"]:focus,main section[tabindex="-1"]:focus-visible{outl
 .sline{display:block;margin:2px -20px 0;padding:2px 20px}
 .voice .sline{margin:0 -16px;padding:1px 16px}
 .sline::before,.sheet .r.hlt::before{background:var(--tenth-dusk-wash);box-shadow:inset 4px 0 0 var(--tenth-dusk)}
-
 /* Story */
 .story{position:relative;padding:var(--section) 0}
 .story-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:64px;align-items:start}
@@ -218,19 +205,18 @@ main section[tabindex="-1"]:focus,main section[tabindex="-1"]:focus-visible{outl
 .pill{justify-self:start;white-space:nowrap;display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border-radius:999px;background:var(--tenth-surface-alt);font:600 12px/16px var(--font-ui)}
 .pill i{width:7px;height:7px;border-radius:50%;display:inline-block}
 .nar{border-radius:4px;padding:0 4px;margin:0 -4px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
-.nar.flag{background:var(--tenth-gold-tint)}
 .row .mid .nar.flag{align-self:flex-start}
 .nar .add{color:inherit}
-.story .nar .add{white-space:nowrap;overflow-x:clip;overflow-y:visible;vertical-align:top}   /* opens from 0 width in step iv, so the words after it slide over */
+.story .nar .add{white-space:nowrap;overflow-x:clip;overflow-y:visible;vertical-align:top}   /* written in, left to right, in step iv (stepFour) */
 .blank{font-style:italic;padding:0 4px;background:var(--tenth-gold-tint);color:var(--tenth-gold-text);border-bottom:1.5px dotted var(--tenth-gold-text);border-radius:3px 3px 0 0}
 .nar.flag .blank{background:#EFE0B9}
 .swap .sa{display:none}
 .swap-pill{display:inline-grid;padding:4px 10px}
-.swap-pill > span{grid-area:1/1;display:inline-flex;align-items:center;gap:6px}
+.swap-pill > span{grid-area:1/1;justify-self:start;display:inline-flex;align-items:center;gap:6px}
 .swap-pill .pa{opacity:0}
 .swap-pill .pb{color:var(--tenth-gold-text)}
 .pill.swap-pill .pb i{background:var(--tenth-gold)}
-.pill.ok{color:var(--tenth-green-text)}.pill.ok i{background:var(--tenth-green)}
+.pill.ok{color:var(--color-text-muted);background:transparent}.pill.ok i{background:var(--color-text-muted)}   /* as in the app: Matched is quiet grey, so the gold labels are what stand out */
 .pill.wait{color:var(--tenth-gold-text)}.pill.wait i{background:var(--tenth-gold)}
 /* Pinned version (wide screens, motion allowed) */
 .story.is-pinned{padding:0}
@@ -248,7 +234,6 @@ main section[tabindex="-1"]:focus,main section[tabindex="-1"]:focus-visible{outl
 .story.is-pinned .rows{position:absolute;left:0;right:0;top:20px;margin:0}
 @media (max-width:1100px){.story-grid{grid-template-columns:minmax(0,1fr)}.stage-notes{height:auto;display:flex;flex-wrap:wrap;gap:24px}.stage-notes .sn{position:relative;left:auto;top:auto}.stage-notes .note{--r:0deg}}
 @media (max-width:560px){.paper{width:100%;max-width:380px}.stage-notes .note{max-width:100%}.stage-notes .sn{max-width:100%}.row{grid-template-columns:52px minmax(0,1fr) 40px;}.row .pill{grid-column:2/4}}
-
 /* Mission */
 /* Hero and mission: the hero stays put and the mission slides up over it like the next page, its top edge a mound of sand that deepens to ink */
 .intro{position:relative}
@@ -273,15 +258,12 @@ main section[tabindex="-1"]:focus,main section[tabindex="-1"]:focus-visible{outl
 @media (min-width:901px) and (prefers-reduced-motion:no-preference){.mission .spread > .wrap{position:sticky;top:50%;translate:0 -50%}.mission .spread::after{content:"";display:block;height:20vh}}
 .pull-label{display:inline-flex;align-items:center;gap:14px;margin-bottom:28px;font:600 12px/16px var(--font-ui);letter-spacing:.14em;text-transform:uppercase;color:#B4AED0}
 .pull-label::before,.pull-label::after{content:"";width:40px;height:1px;background:rgba(180,174,208,.5)}
-.mission .mission-lead{color:rgba(246,244,242,.7);margin-bottom:56px}
 .mission #mission-line{max-width:980px;margin:0 auto;font:400 clamp(40px,5vw,68px)/1.08 var(--font-display);letter-spacing:-.02em;text-wrap:balance}
-.mission-lead{max-width:640px;margin:0 auto 36px;font-size:21px;line-height:32px;color:var(--color-text-muted);text-wrap:balance}
 .uline{position:relative;display:inline-block;white-space:nowrap}
 .uline .ul{position:absolute;left:-2%;bottom:-.14em;width:104%;height:.28em;overflow:visible;transform-origin:left center}
 .uline .ul path{fill:none;stroke:#B4AED0;stroke-width:3;stroke-linecap:round;vector-effect:non-scaling-stroke}
 .mission .w{color:var(--tenth-paper)}
 .uline{font-style:italic;color:inherit}
-
 /* Try a question */
 .try{padding:0 0 var(--section)}
 .try-grid{display:flex;flex-wrap:wrap;gap:64px;align-items:flex-start}
@@ -293,7 +275,6 @@ main section[tabindex="-1"]:focus,main section[tabindex="-1"]:focus-visible{outl
 .qinner{display:flex;flex-direction:column;gap:16px}
 .qcount{font:600 13px/20px var(--font-ui);color:var(--color-text-muted);font-variant-numeric:tabular-nums}
 .qcount span{font-weight:400}
-.qwhy{font-size:15px;line-height:22px;color:var(--color-text-muted);margin-top:-8px}
 .ecard{display:grid;padding:6px;border:1px solid var(--tenth-line);border-radius:16px;background:var(--tenth-white);box-shadow:0 1px 2px rgba(44,42,54,.04),0 8px 24px rgba(91,86,126,.07)}
 .ecard .f{display:grid;grid-template-columns:104px minmax(0,1fr);column-gap:16px;align-items:baseline;padding:9px 14px;border-radius:12px;transition:background-color .6s var(--ease-out),box-shadow .6s var(--ease-out)}
 .ecard .f-lab{font:500 13px/22px var(--font-ui);color:var(--color-text-muted)}
@@ -304,8 +285,6 @@ main section[tabindex="-1"]:focus,main section[tabindex="-1"]:focus-visible{outl
 .ecard .f.done{background:var(--tenth-green-tint);box-shadow:0 0 0 1.5px rgba(110,143,120,.6);animation:none}
 @keyframes ws-ring{from{box-shadow:0 0 0 8px rgba(91,86,126,0)}to{box-shadow:0 0 0 1.5px rgba(91,86,126,.42)}}
 .gap{border-bottom:1.5px dotted currentColor;font-style:italic;padding:0 2px;color:var(--tenth-slate)}
-.gap.filled{font-style:normal;color:var(--tenth-ink);border-bottom-style:solid;border-bottom-color:var(--tenth-dusk)}
-.qpills{display:flex;flex-direction:column;gap:2px;margin-top:6px}
 .mp{margin:2px 4px 6px;padding:8px;border-radius:12px;background:var(--tenth-white);box-shadow:0 0 0 1px var(--tenth-line),0 16px 40px rgba(91,86,126,.14);animation:mp-in .22s var(--ease-out) both}
 @keyframes mp-in{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
 .mp input{width:100%;height:40px;border-radius:10px;border:1px solid var(--tenth-edge);padding:0 12px;font:400 15px/22px var(--font-ui);color:var(--tenth-ink);background:var(--tenth-white)}
@@ -318,32 +297,16 @@ main section[tabindex="-1"]:focus,main section[tabindex="-1"]:focus-visible{outl
 .mp button.opt:hover,.mp button.opt.on{background:rgba(91,86,126,.08)}
 .mp .mpfoot{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:8px 8px 2px;font-size:12px;line-height:16px;color:var(--color-text-muted)}
 .mp .none{display:block;padding:8px;font-size:13px;color:var(--color-text-muted)}
-.qpills .cap2{font-size:12px;line-height:16px;color:var(--color-text-muted);margin-bottom:2px}
-.qpills button{display:flex;justify-content:space-between;align-items:center;gap:12px;width:100%;border:0;background:none;border-radius:8px;padding:6px 10px;font:500 14px/20px var(--font-ui);color:var(--tenth-ink);cursor:pointer;text-align:left}
-.qpills button span{font-weight:400;font-size:12px;color:var(--color-text-muted)}
-.qpills button:hover,.qpills button.on{background:rgba(91,86,126,.08)}
 .qact{display:flex;flex-direction:column;gap:10px}
-.qguide{font-size:13px;line-height:20px;color:var(--color-text-muted)}
 .qkeys{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:12px;line-height:16px;color:var(--color-text-muted);opacity:0;transition:opacity .25s}
 .qkeys kbd{font:600 12px/16px var(--font-ui);border-radius:4px;padding:1px 6px;border:1px solid var(--tenth-outline);background:var(--tenth-white);color:var(--color-text-muted)}
 .qkeys kbd+*{margin-right:4px}
 .qcard:hover .qkeys,.qcard:focus-within .qkeys{opacity:1}
 .qcard .btn-solid::after{content:"";position:absolute;inset:0;left:0;width:auto;background:linear-gradient(105deg,transparent 30%,rgba(255,255,255,.3) 50%,transparent 70%);transform:translateX(-120%);transition:transform .7s var(--ease-out);opacity:1;animation:none}
 .qcard .btn-solid:hover::after{transform:translateX(120%);animation:none}
-.btn.is-off{background:var(--tenth-surface-alt);color:#8A8698;cursor:default}
-.btn.is-off:hover{background:var(--tenth-surface-alt)}
 .qtitle{font:500 32px/36px var(--font-display);letter-spacing:-.01em}
-.qpart{border-radius:12px;padding:12px 16px;background:var(--tenth-dusk-wash);box-shadow:var(--wash-ring);transition:background-color .6s var(--ease-out),box-shadow .6s var(--ease-out);display:flex;flex-direction:column;gap:2px}
-.qpart b{font-weight:600}
-.qpart span{font-size:13px;line-height:20px;color:#524C78;transition:color .6s var(--ease-out)}
-.qpart.is-settled{background:var(--tenth-green-tint);box-shadow:0 0 0 1.5px rgba(110,143,120,.6)}
-.qpart.is-settled span{color:var(--tenth-green-text)}
-.qmeta{display:flex;gap:4px 16px;flex-wrap:wrap}
 .proof{display:flex;gap:12px;align-items:flex-start;margin-top:8px;padding-top:20px;border-top:1px solid var(--tenth-line);font-size:15px;line-height:22px;font-weight:500}
 .proof > i{flex:none;width:16px;height:16px;margin-top:3px;background:#5E7F68;-webkit-mask:var(--icon-check-s) center/contain no-repeat;mask:var(--icon-check-s) center/contain no-repeat}
-.qinput{width:100%;height:44px;border-radius:var(--radius-control);border:1px solid var(--tenth-edge);background:var(--tenth-white);padding:0 14px;font:400 16px/24px var(--font-ui);color:var(--tenth-ink);transition:border-color .3s var(--ease-out),box-shadow .3s var(--ease-out)}
-.qinput:focus{outline:none;border-color:var(--tenth-dusk);box-shadow:0 0 0 4px rgba(91,86,126,.16)}
-.qpart .blank{color:var(--tenth-gold-text)}
 .btn[disabled]{opacity:.4;cursor:not-allowed}
 .qactions{display:flex;gap:8px;flex-wrap:wrap;padding-top:8px}
 .qdone{display:flex;flex-direction:column;align-items:center;text-align:center;gap:12px;padding:24px 0}
@@ -353,37 +316,11 @@ main section[tabindex="-1"]:focus,main section[tabindex="-1"]:focus-visible{outl
 .qdone .big{font:500 36px/40px var(--font-display)}
 .qdone .soft{font:italic 400 20px/28px var(--font-display);color:var(--color-text-muted)}
 [hidden]{display:none!important}
-
 /* Careful by design, the one ink section */
 .ink{background:var(--tenth-ink);color:var(--tenth-paper)}
 .ink .wrap{padding-top:var(--section);padding-bottom:var(--section);display:flex;flex-wrap:wrap;gap:64px;align-items:center}
 .ink .eyebrow{color:var(--tenth-dusk-lilac)}
-.ink-text{flex:1 1 340px;max-width:460px;display:flex;flex-direction:column;gap:16px}
-.ink-text p{color:#CFCBD8}
-.dial{flex:1 1 480px;display:flex;flex-direction:column;gap:32px}
-.dial-nums{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border-top:1px solid rgba(246,244,242,.16);border-bottom:1px solid rgba(246,244,242,.16)}
-.dial-nums > div{padding:24px 24px 24px 0;display:flex;flex-direction:column;gap:4px}
-.dial-nums > div + div{padding-left:24px;border-left:1px solid rgba(246,244,242,.16)}
-.dial-nums .n{font:500 clamp(56px,6vw,80px)/1 var(--font-display);font-variant-numeric:tabular-nums}
-.dial-nums .t{color:#CFCBD8}
-.dial label{display:flex;justify-content:space-between;gap:16px;font-size:14px;line-height:20px;color:#CFCBD8}
-.dial label b{color:var(--tenth-paper);font-weight:600;text-align:center}
-.range{-webkit-appearance:none;appearance:none;width:100%;height:28px;background:transparent;cursor:pointer;margin:0}
-.range::-webkit-slider-runnable-track{height:2px;background:rgba(246,244,242,.24);border-radius:2px}
-.range::-moz-range-track{height:2px;background:rgba(246,244,242,.24);border-radius:2px}
-.range::-webkit-slider-thumb{-webkit-appearance:none;width:22px;height:22px;margin-top:-10px;border-radius:50%;background:var(--tenth-paper);box-shadow:0 0 0 4px rgba(169,163,198,.35);transition:box-shadow .3s var(--ease-out)}
-.range::-moz-range-thumb{width:22px;height:22px;border:0;border-radius:50%;background:var(--tenth-paper);box-shadow:0 0 0 4px rgba(169,163,198,.35)}
-.range:hover::-webkit-slider-thumb{box-shadow:0 0 0 8px rgba(169,163,198,.3)}
-.range:focus-visible{box-shadow:none;outline:2px solid var(--tenth-dusk-lilac);outline-offset:4px;border-radius:4px}
-.ticks{position:relative;height:16px;margin:0 11px;font-size:12px;line-height:16px;color:var(--tenth-dusk-lilac)}
-.ticks span{position:absolute;top:0;transform:translateX(-50%);white-space:nowrap}
-.ticks span:nth-child(1){left:0;transform:translateX(-11px)}
-.ticks span:nth-child(2){left:33.333%}
-.ticks span:nth-child(3){left:66.667%}
-.ticks span:nth-child(4){left:100%;transform:translateX(calc(-100% + 11px))}
-.ticks .pick{color:var(--tenth-paper);font-weight:600}
 .ink .cap{color:var(--tenth-dusk-lilac)}
-
 /* FAQ */
 .faq{padding:var(--section) 0 0}
 .faq-grid{display:flex;flex-wrap:wrap;gap:48px}
@@ -407,13 +344,12 @@ main section[tabindex="-1"]:focus,main section[tabindex="-1"]:focus-visible{outl
 .xfig.is-x svg path[fill^="url"],.xfig.is-x svg path[fill="#6F6A92"]{opacity:0}
 .xfig .xl{position:absolute;left:50%;top:100%;margin-top:4px;translate:-50% 0;rotate:-5deg;display:grid;justify-items:center;font:500 22px/1 var(--font-hand);color:var(--tenth-dusk);white-space:nowrap;pointer-events:none}
 .xfig .xl > span{grid-area:1/1;padding:2px 8px 6px;transition:opacity .45s var(--ease-out),translate .45s var(--ease-out)}   /* room for Caveat's overhanging strokes */
-.xfig .xh{opacity:.6}
+.xfig .xh{opacity:.9}   /* the handwritten hint, readable (4.9:1) */
 .xfig .xa{opacity:0;translate:0 -4px}
 .xfig.is-x .xh{opacity:0}
 .xfig.is-x .xa{opacity:1;translate:0 0}
 .xfig:hover .xh{opacity:0}
 @media (max-width:560px){.xfig{width:48px;height:53px}}
-
 /* Close */
 .close{padding:var(--section) 0 40px;text-align:center;background:radial-gradient(46% 50% at 50% 55%,var(--tenth-sun) 0%,rgba(250,240,222,0) 70%)}
 .close .wrap{display:flex;flex-direction:column;align-items:center;gap:28px}
@@ -451,17 +387,14 @@ main section[tabindex="-1"]:focus,main section[tabindex="-1"]:focus-visible{outl
 .foot-fine p{font-size:13px;line-height:20px;color:var(--color-text-muted)}
 .foot .fi{width:14px;height:14px;flex:none;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 .foot-links a{display:inline-flex;align-items:center;gap:6px}
-
 /* Word reveal for headings (decorative copy, the real text stays for screen readers) */
 .split{display:inline}
 .split .wd{display:inline-block;will-change:transform}
-
 @media (prefers-reduced-motion: reduce){
   .hero-mark .hm-motion{display:none}.hero-mark .hm-rest{animation:none;opacity:1}
   .btn-solid:hover::after{animation:none}
-  .note,.nav,.qpart,.btn{transition:none}
+  .note,.nav,.btn{transition:none}
   .ecard .f.now{animation:none}
-  .hero-notes .note{animation:none}
   .mission .w{color:var(--tenth-paper)}
 }
 /* rows, as in the app's list */
@@ -478,23 +411,17 @@ main section[tabindex="-1"]:focus,main section[tabindex="-1"]:focus-visible{outl
 .swap-pill{padding:3px 10px 3px 8px}
 .swap-pill .pb{color:var(--tenth-gold-text)}
 @media (max-width:560px){.row{grid-template-columns:minmax(0,1fr) auto}.row .st{grid-column:1/-1;flex-direction:row;flex-wrap:wrap}}
-
 /* icon family B, the same shapes as the app: solid status marks with the symbol cut out, two-tone file types */
 :root{
   --tenth-white:#FDFCFA;   /* the app's soft warm white */
   --icon-pencil:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cdefs%3E%3Cmask id='k'%3E%3Crect width='24' height='24' fill='white'/%3E%3Cpath d='M13.2 6.4l4.4 4.4' stroke='black' stroke-width='1.8'/%3E%3C/mask%3E%3C/defs%3E%3Cpath mask='url(%23k)' fill='black' d='M15 3.9a2.3 2.3 0 0 1 3.2 0l1.9 1.9a2.3 2.3 0 0 1 0 3.2L9.6 19.5l-5.1 1.4a.8.8 0 0 1-1-1l1.4-5.1z'/%3E%3C/svg%3E");
   --icon-check-s:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cdefs%3E%3Cmask id='k'%3E%3Crect width='24' height='24' fill='white'/%3E%3Cg fill='none' stroke='black' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M7.6 12.4l3 3 5.8-6.2'/%3E%3C/g%3E%3C/mask%3E%3C/defs%3E%3Cg mask='url(%23k)'%3E%3Ccircle cx='12' cy='12' r='10' fill='black'/%3E%3C/g%3E%3C/svg%3E");
   --icon-clock-s:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cdefs%3E%3Cmask id='k'%3E%3Crect width='24' height='24' fill='white'/%3E%3Cg fill='none' stroke='black' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 6.8V12l3.3 2.1'/%3E%3C/g%3E%3C/mask%3E%3C/defs%3E%3Cg mask='url(%23k)'%3E%3Ccircle cx='12' cy='12' r='10' fill='black'/%3E%3C/g%3E%3C/svg%3E");
-  --icon-alert-s:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cdefs%3E%3Cmask id='k'%3E%3Crect width='24' height='24' fill='white'/%3E%3Cg fill='none' stroke='black' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 8.7v4.3'/%3E%3Ccircle cx='12' cy='16.8' r='.5' stroke-width='2.4'/%3E%3C/g%3E%3C/mask%3E%3C/defs%3E%3Cg mask='url(%23k)'%3E%3Cpath fill='black' d='M10.1 3.5a2.2 2.2 0 0 1 3.8 0l8 13.9a2.2 2.2 0 0 1-1.9 3.3H4a2.2 2.2 0 0 1-1.9-3.3z'/%3E%3C/g%3E%3C/svg%3E");
-  --kind-photo:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect x='2.5' y='4' width='19' height='16' rx='4' fill='%23A9A3C6'/%3E%3Ccircle cx='8' cy='9.3' r='2' fill='%23fff'/%3E%3Cpath fill='%235B567E' d='M2.5 16.5l5.2-4.8a1.3 1.3 0 0 1 1.8 0l3.6 3.4 2.2-2a1.3 1.3 0 0 1 1.8 0l4.4 4.2V16a4 4 0 0 1-4 4h-11a4 4 0 0 1-4-3.5z'/%3E%3C/svg%3E");
-  --kind-sheet:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect x='3' y='3' width='18' height='18' rx='4' fill='%235B567E'/%3E%3Cpath fill='%23A9A3C6' d='M7 3h10a4 4 0 0 1 4 4v1.5H3V7a4 4 0 0 1 4-4z'/%3E%3Cpath d='M3 14.3h18M9.3 8.5V21' stroke='%23fff' stroke-width='1.6'/%3E%3C/svg%3E");
-  --kind-mail:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect x='2.5' y='5' width='19' height='14.5' rx='3.5' fill='%23A9A3C6'/%3E%3Cpath fill='%235B567E' d='M3.3 7.2l7.4 5.6a2.2 2.2 0 0 0 2.6 0l7.4-5.6A3.5 3.5 0 0 0 18 5H6a3.5 3.5 0 0 0-2.7 2.2z'/%3E%3C/svg%3E");
-  --kind-voice:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect x='8.5' y='2.5' width='7' height='12' rx='3.5' fill='%235B567E'/%3E%3Cpath d='M5.2 10.8a6.8 6.8 0 0 0 13.6 0M12 17.8V21' fill='none' stroke='%23A9A3C6' stroke-width='2.2' stroke-linecap='round'/%3E%3Crect x='8.5' y='20' width='7' height='2.2' rx='1.1' fill='%235B567E'/%3E%3C/svg%3E");
 }
 .pill i.ic{width:15px!important;height:15px!important;display:inline-block;flex:none;background:var(--pc,#957219)!important;-webkit-mask:var(--ic) center/contain no-repeat;mask:var(--ic) center/contain no-repeat}
-.pill.ok i.ic{--pc:#5E7F68}
+.pill.ok i.ic{--pc:var(--color-text-muted)}
 .pill.swap-pill .pb i.ic{--pc:#957219}
-.ic-check{--ic:var(--icon-check-s)}.ic-clock{--ic:var(--icon-clock-s)}.ic-alert{--ic:var(--icon-alert-s)}.ic-folder{--ic:var(--icon-folder)}.ic-dots{--ic:var(--icon-dots)}.ic-pencil{--ic:var(--icon-pencil)}
+.ic-check{--ic:var(--icon-check-s)}.ic-clock{--ic:var(--icon-clock-s)}.ic-folder{--ic:var(--icon-folder)}.ic-dots{--ic:var(--icon-dots)}.ic-pencil{--ic:var(--icon-pencil)}
 :root{
   --icon-folder:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cdefs%3E%3Cmask id='k'%3E%3Crect width='24' height='24' fill='white'/%3E%3Cpath fill='none' stroke='black' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.9' d='M3 10h18'/%3E%3C/mask%3E%3C/defs%3E%3Cg mask='url(%23k)'%3E%3Cpath fill='black' d='M2.5 6.6A2.6 2.6 0 0 1 5.1 4h3.8a2 2 0 0 1 1.5.7l1.3 1.5h7.2a2.6 2.6 0 0 1 2.6 2.6v8.6a2.6 2.6 0 0 1-2.6 2.6H5.1a2.6 2.6 0 0 1-2.6-2.6z'/%3E%3C/g%3E%3C/svg%3E");
   --icon-dots:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cdefs%3E%3Cmask id='k'%3E%3Crect width='24' height='24' fill='white'/%3E%3Ccircle cx='7.3' cy='12' r='1.75' fill='black'/%3E%3Ccircle cx='12' cy='12' r='1.75' fill='black'/%3E%3Ccircle cx='16.7' cy='12' r='1.75' fill='black'/%3E%3C/mask%3E%3C/defs%3E%3Cg mask='url(%23k)'%3E%3Crect x='1.5' y='5.5' width='21' height='13' rx='6.5' fill='black'/%3E%3C/g%3E%3C/svg%3E");
@@ -506,7 +433,7 @@ main section[tabindex="-1"]:focus,main section[tabindex="-1"]:focus-visible{outl
 .ecard .f.settled{background:transparent;box-shadow:0 0 0 1.5px rgba(91,86,126,0);animation:none}
 @keyframes ws-ring{from{box-shadow:0 0 0 8px rgba(91,86,126,0)}to{box-shadow:0 0 0 1.5px rgba(91,86,126,.42)}}
 @keyframes ck-pop{from{transform:scale(.4);opacity:0}60%{transform:scale(1.15);opacity:1}to{transform:none}}
-@media (prefers-reduced-motion:reduce){.ecard .f.ask,.fn.done .ck{animation:none}}
+@media (prefers-reduced-motion:reduce){.ecard .f.ask,.fn.done .ck,.fn.ok .ck{animation:none}}
 .ecard .f-val .v{display:block}
 .ecard .f.m .f-val .v b{display:block;font-weight:600}
 .ecard .f.m .f-val .v span{display:block;font-weight:600}
@@ -521,8 +448,8 @@ main section[tabindex="-1"]:focus,main section[tabindex="-1"]:focus-visible{outl
 .fn .acts{display:flex;gap:14px;flex:none}
 .fn .acts button{border:0;background:none;padding:0;font:600 13px/20px var(--font-ui);color:var(--tenth-dusk);cursor:pointer}
 .fn .acts button:hover,.fn .acts button:focus-visible{text-decoration:underline;text-underline-offset:3px;outline:none}
-.fn.done .ck{background:var(--tenth-green-text);border-radius:0;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3.2 8.6l3.1 3.1L12.8 5'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3.2 8.6l3.1 3.1L12.8 5'/%3E%3C/svg%3E") center/contain no-repeat}   /* answered: a plain check, like the app */
-.fn.done .ck{animation:ck-pop .34s cubic-bezier(.2,.7,.2,1) both}
+.fn.done .ck,.fn.ok .ck{background:var(--tenth-green-text);border-radius:0;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3.2 8.6l3.1 3.1L12.8 5'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3.2 8.6l3.1 3.1L12.8 5'/%3E%3C/svg%3E") center/contain no-repeat}   /* answered: a plain check, like the app */
+.fn.done .ck,.fn.ok .ck{animation:ck-pop .34s cubic-bezier(.2,.7,.2,1) both}   /* done: answered with a link (its words turn green); ok: ticked by Looks right (as in the app) */
 .fn.done .tx b{color:var(--tenth-green-text)}
 .chip{display:inline;padding:1px 2px 1px 6px;border:1px solid var(--tenth-dusk-lilac);border-radius:6px;background:color-mix(in srgb,var(--tenth-dusk-lilac) 38%,#fff);color:var(--tenth-ink);white-space:nowrap;overflow:hidden}
 .chip .cx{font:500 14px/1 var(--font-ui);vertical-align:middle;position:relative;top:-2px;border:0;background:none;padding:1px 3px;margin-left:2px;border-radius:4px;color:rgba(91,86,126,.72);cursor:pointer}
@@ -534,15 +461,15 @@ main section[tabindex="-1"]:focus,main section[tabindex="-1"]:focus-visible{outl
 kbd.ik{font:600 13px/18px var(--font-ui);border-radius:4px;padding:0 6px;border:1px solid var(--tenth-outline);background:var(--tenth-white);color:var(--tenth-ink)}
 .qcard .btn-solid.nudge{animation:qnudge 1.2s var(--ease-out) 2}
 @keyframes qnudge{0%{box-shadow:0 0 0 0 rgba(91,86,126,.45)}70%{box-shadow:0 0 0 10px rgba(91,86,126,0)}100%{box-shadow:0 0 0 0 rgba(91,86,126,0)}}
-.swap-pill .pa{color:var(--tenth-green-text)}
-.pill.swap-pill .pa i.ic{--pc:#5E7F68}
-.nar.flag{background:none!important}   /* the app's list doesn't wash a narrative for a missing detail: the chip and "what?" mark it */
+.swap-pill .pa{color:var(--color-text-muted)}
+.pill.swap-pill .pa i.ic{--pc:var(--color-text-muted)}
 .nar.flag .blank{background:var(--tenth-gold-tint)}
 .row .lchip{display:inline;padding:0 2px 0 6px;border:1px solid var(--tenth-dusk-lilac);border-radius:6px;background:color-mix(in srgb,var(--tenth-dusk-lilac) 38%,#fff);color:var(--tenth-ink);white-space:nowrap}
 .row .cx{font:500 13px/1 var(--font-ui);vertical-align:middle;position:relative;top:-1px;padding:0 3px;color:rgba(91,86,126,.72)}
 .row .cx.gx{color:rgba(118,86,8,.72);margin-left:1px}
 .row .mm.ask{display:block;width:fit-content;background:var(--tenth-gold-tint);border-radius:6px;padding:2px 6px;margin:-2px -6px}
 .row .mm .c,.row .mm .m{display:block}
+.row .c{font-weight:400}.row .c .cmid{font-weight:700;font-variant-numeric:tabular-nums;margin-right:2px}   /* as in the app: the matter number leads, then the client */
 .row .why{display:block;margin-top:2px;font-size:12px;line-height:16px;color:var(--color-text-muted)}
 .qhead{display:flex;align-items:center;gap:16px}
 .qback{display:inline-flex;align-items:center;gap:4px;border:0;background:none;padding:2px 6px;margin:-2px -6px;border-radius:6px;font:600 13px/20px var(--font-ui);color:var(--tenth-ink);cursor:pointer}
@@ -551,7 +478,6 @@ kbd.ik{font:600 13px/18px var(--font-ui);border-radius:4px;padding:0 6px;border:
 .pp{display:block}
 .pp + .pp{margin-top:10px}
 .lede .pp + .pp{margin-top:6px}
-.lede .lede-big{font:500 24px/32px var(--font-display);color:var(--tenth-ink);margin-bottom:6px}
 .faq details p{max-width:740px}   /* the same right edge as the "Why is it called Tenth?" answer */
 .faq details p.why > .ptxt{display:block}
 .beat{max-width:440px}
@@ -560,7 +486,58 @@ kbd.ik{font:600 13px/18px var(--font-ui);border-radius:4px;padding:0 6px;border:
 .ecard .gapc:hover,.ecard .gapc:focus-visible{background:var(--tenth-dusk-wash);border-color:var(--tenth-dusk);outline:none}
 .ecard .gin{font:inherit;width:11ch;padding:0 6px;border:1px solid var(--tenth-dusk);border-radius:6px;background:var(--tenth-white);color:var(--tenth-ink);outline:none;box-shadow:0 0 0 3px rgba(91,86,126,.16)}
 .ecard .gfill{font-weight:inherit}
-.ecard .f.settled .gapc{opacity:.5}
+.ecard{transition:box-shadow .34s cubic-bezier(.2,.7,.2,1),border-color .34s cubic-bezier(.2,.7,.2,1)}
+.ecard.is-settled{border-color:rgba(110,143,120,.45);box-shadow:0 0 0 1px rgba(110,143,120,.2),0 0 0 6px rgba(110,143,120,.1)}   /* as in the app: settled, the entry as it will be billed, with a soft green edge */
+.ecard.is-settled .f-val i{font-style:normal}
+.ecard .chip{transition:background-color .34s cubic-bezier(.2,.7,.2,1),border-color .34s cubic-bezier(.2,.7,.2,1)}
+.ecard .chip .cx{transition:opacity .15s}
+.ecard.is-settled .chip{background:transparent;border-color:transparent}
+.ecard.is-settled .chip .cx{opacity:0}
+.try{overflow-x:clip}   /* the glow behind the card fades out past the edge of the screen; without this it made the page scroll sideways */
+.try-stage{position:relative;isolation:isolate}   /* a soft glow behind the Try card: lilac up and to the right, the hero's morning warmth down and to the left (painted once, no blur, so scrolling costs nothing) */
+.try-stage::before,.try-stage::after{content:"";position:absolute;z-index:-1;pointer-events:none;border-radius:50%}
+.try-stage::before{left:58%;top:40%;width:min(820px,140%);height:min(700px,130%);transform:translate(-50%,-50%);background:radial-gradient(closest-side,rgba(158,151,196,.6),rgba(158,151,196,.2) 55%,rgba(158,151,196,0))}
+.try-stage::after{left:36%;top:66%;width:min(760px,130%);height:min(620px,120%);transform:translate(-50%,-50%);background:radial-gradient(closest-side,rgba(244,224,190,.95),rgba(246,232,206,.4) 55%,rgba(250,240,222,0))}
+/* ---------- Phones and narrow windows. Nothing below applies to the desktop layout ---------- */
+/* The story, wherever it isn't pinned (narrower than 1101px): each picture sits under the steps it shows.
+   I and II (messy notes, read) lead to the notes; III and IV (match, check) lead to the finished entries */
+@media (max-width:1100px){
+  .story-grid{display:flex;flex-direction:column;gap:0}
+  .story-grid .beats,.story-grid .stage{display:contents}
+  .story-grid .beat{margin-bottom:48px}
+  .story-grid .b1{order:1}.story-grid .b2{order:2}.story-grid .stage-notes{order:3;margin-bottom:72px}
+  .story-grid .b3{order:4}.story-grid .b4{order:5}.story-grid .rows{order:6;margin-top:0}
+}
+@media (max-width:720px){
+  /* hero: the three lines of the headline start at the same edge */
+  .h1 .l2{padding-left:0}
+  .h1{font-size:clamp(56px,15.4vw,68px)}   /* the headline leads: bigger than the desktop rule gives a phone (56px) */
+  .hero .lede{font-size:16px;line-height:24px}
+  .hero .lede .pp + .pp{margin-top:8px}
+  /* the notes: one under another across the width, alternating sides with a slight tilt, like a pile on a desk */
+  .stage-notes{flex-direction:column;flex-wrap:nowrap;gap:20px}
+  .stage-notes .sn{width:100%;display:flex}
+  .stage-notes .sn:nth-child(even){justify-content:flex-end}
+  .stage-notes .sn1 .note{--r:-1.2deg}.stage-notes .sn2 .note{--r:1.6deg}.stage-notes .sn3 .note{--r:-.8deg}.stage-notes .sn4 .note{--r:1deg}.stage-notes .sn5 .note{--r:-1.4deg}
+  .stage-notes .paper{width:94%;max-width:none}
+  .stage-notes .sticky{width:min(240px,72%);height:auto;aspect-ratio:1}
+  .stage-notes .sn .note:not(.paper):not(.sticky){width:94%;max-width:none}
+  /* the Try card: each label sits above its value, so the notes under a value get the full width */
+  .qcard{padding:22px 18px}
+  .ecard .f{grid-template-columns:minmax(0,1fr);row-gap:2px}
+  .ecard .f-lab{font-size:12px;line-height:18px}
+  .fn{flex-wrap:wrap}
+  .fn .acts{flex-basis:100%;padding-left:26px}
+  /* made by: the photos line up in one column */
+  .team-names{flex-direction:column;align-items:flex-start;gap:14px}
+  .team-names li{font-size:26px}
+}
+/* touch screens have no keys to press: the keyboard hints go */
+@media (hover:none) and (pointer:coarse){
+  .chip .cx,.fn .acts button,.qback{position:relative}
+  .chip .cx::after,.fn .acts button::after,.qback::after{content:"";position:absolute;inset:-10px -8px}   /* a finger-sized target (about 34px) around the small x and text links; nothing visible changes */
+  .try-text .hint,.qkeys{display:none}
+}
 </style>
 </head>
 <body>
@@ -639,12 +616,23 @@ kbd.ik{font:600 13px/18px var(--font-ui);border-radius:4px;padding:0 6px;border:
     hero.style.setProperty('--foot-top', h1Top + h1H + GAP + 'px');
   };
   const hero = document.querySelector('.intro > .hero');
+  /* The mound's outline for a peak at x (0 to 100) and how far the mission has risen (p, 0 to 1). On a wide screen the peak sits under the
+     hourglass and falls away steeply on the far side; on a phone (720px and narrower) the hourglass is far off to the right, so the mound is
+     a gentle, even dune near the middle instead of a lopsided wave */
+  window.moundD = (x, p) => {
+    if (innerWidth <= 720) {
+      const c = 50 + (x - 50) * .25, h = 15 * (1 - p) + 1, top = (30 - h).toFixed(1);
+      return 'M0 40V30C' + (c * .45).toFixed(1) + ' 30 ' + (c - 22).toFixed(1) + ' ' + top + ' ' + c.toFixed(1) + ' ' + top + 'S' + (c + (100 - c) * .55).toFixed(1) + ' 30 100 30V40Z';
+    }
+    const h = 24 * (1 - p) + 1;
+    return 'M0 40V30C' + (x * .55).toFixed(1) + ' 30 ' + (x - 12).toFixed(1) + ' ' + (30 - h).toFixed(1) + ' ' + x.toFixed(1) + ' ' + (30 - h).toFixed(1) + 'S' + (x + (100 - x) * .45).toFixed(1) + ' 30 100 30V40Z';
+  };
   const shapeMound = () => {   /* the mound's shape at this scroll spot, the same one the page's scroll script gives it later (shapeMound there), so the headline is placed for it */
     const path = document.getElementById('moundPath'), mark = document.getElementById('hero-mark'), mission = document.querySelector('.mission');
     if (!path || !mark || !mission) return;
     const r = mark.getBoundingClientRect(), x = Math.min(80, Math.max(20, (r.left + r.width / 2) / innerWidth * 100));
-    const p = Math.min(1, Math.max(0, (innerHeight - mission.getBoundingClientRect().top) / innerHeight)), h = 24 * (1 - p) + 1;
-    path.setAttribute('d', 'M0 40V30C' + (x * .55).toFixed(1) + ' 30 ' + (x - 12).toFixed(1) + ' ' + (30 - h).toFixed(1) + ' ' + x.toFixed(1) + ' ' + (30 - h).toFixed(1) + 'S' + (x + (100 - x) * .45).toFixed(1) + ' 30 100 30V40Z');
+    const p = Math.min(1, Math.max(0, (innerHeight - mission.getBoundingClientRect().top) / innerHeight));
+    path.setAttribute('d', window.moundD(x, p));
   };
   const show = () => { shapeMound(); layoutHero(); hero.classList.add('ready'); };
   const faces = document.fonts ? Promise.all(['500 1em "EB Garamond"', 'italic 500 1em "EB Garamond"', '400 1em "Hanken Grotesk"'].map((f) => document.fonts.load(f))) : Promise.resolve();
@@ -691,19 +679,18 @@ kbd.ik{font:600 13px/18px var(--font-ui);border-radius:4px;padding:0 6px;border:
             </div>
             <!-- ILLUSTRATIVE: a made-up week with pop culture nods. Clients and matters are invented; step iv (shorthand, blanks) is the real output of phase2_model v1 (rules rewriter) on these descriptions. -->
             <ol class="rows">
-              <li class="row"><span class="st"><span class="pill ok"><i class="ic ic-check"></i>Matched</span></span><span class="mid"><span class="c">Central Perk</span><span class="m">Trademark Licensing · 2207.002</span><span class="nar">Draft orange couch licensing <span class="swap"><span class="sa">agmt</span><span class="sb">agreement</span></span></span></span><span class="h">0.9</span></li>
-              <li class="row"><span class="st"><span class="pill ok"><i class="ic ic-check"></i>Matched</span></span><span class="mid"><span class="c">Bluth Banana Stand</span><span class="m">Real Estate · 1408.001</span><span class="nar">Review stand lease</span></span><span class="h">1.1</span></li>
-              <li class="row"><span class="st"><span class="pill ok swap-pill"><span class="pa"><i class="ic ic-check"></i>Matched</span><span class="pb"><i class="ic ic-pencil"></i>Words added</span></span></span><span class="mid"><span class="c">Krusty Krab</span><span class="m">Trade Secrets · 3150.003</span><span class="nar flag">Call <span class="add">with <span class="lchip">Mr. Krabs<b class="cx" aria-hidden="true">×</b></span></span> re secret formula <span class="swap"><span class="sa">NDA</span><span class="sb">Nondisclosure Agreement</span></span></span></span><span class="h">0.4</span></li>
-              <li class="row"><span class="st"><span class="pill warn"><i class="ic ic-folder"></i>Check matter</span></span><span class="mid"><span class="mm ask"><span class="c">Central Perk</span><span class="m">Real Estate · 2207.001</span></span><span class="why">Trademark Licensing fits almost as well.</span><span class="nar">Lease renewal for the coffee house</span></span><span class="h">1.5</span></li>
-              <li class="row"><span class="st"><span class="pill warn"><i class="ic ic-clock"></i>Check hours</span><span class="pill warn xchip"><i class="ic ic-dots"></i>Missing details</span></span><span class="mid"><span class="c">Luke&rsquo;s Diner</span><span class="m">General Corporate · 5521.001</span><span class="nar flag">Health inspection call <span class="add">regarding <i class="blank">what?</i><b class="cx gx" aria-hidden="true">×</b></span></span></span><span class="h ask" title="Rounded up from 0.75">0.8</span></li>
-              <li class="row"><span class="st"><span class="pill ok"><i class="ic ic-check"></i>Matched</span></span><span class="mid"><span class="c">Pawnee Parks and Rec</span><span class="m">Permits · 6604.002</span><span class="nar">Call with Ron regarding the waffle vendor permit</span></span><span class="h">1.2</span></li>
+              <li class="row"><span class="st"><span class="pill ok"><i class="ic ic-check"></i><span class="pt">Matched</span></span></span><span class="mid"><span class="c"><b class="cmid">2207.002</b> Central Perk</span><span class="m">Trademark Licensing</span><span class="nar">Draft orange couch licensing <span class="swap"><span class="sa">agmt</span><span class="sb">agreement</span></span></span></span><span class="h">0.9</span></li>
+              <li class="row"><span class="st"><span class="pill ok"><i class="ic ic-check"></i><span class="pt">Matched</span></span></span><span class="mid"><span class="c"><b class="cmid">1408.001</b> Bluth Banana Stand</span><span class="m">Real Estate</span><span class="nar">Review stand lease</span></span><span class="h">1.1</span></li>
+              <li class="row"><span class="st"><span class="pill ok swap-pill"><span class="pa"><i class="ic ic-check"></i><span class="pt">Matched</span></span><span class="pb"><i class="ic ic-pencil"></i><span class="pt">Words added</span></span></span></span><span class="mid"><span class="c"><b class="cmid">3150.003</b> Krusty Krab</span><span class="m">Trade Secrets</span><span class="nar flag">Call <span class="add">with <span class="lchip">Mr. Krabs<b class="cx" aria-hidden="true">×</b></span></span> re secret formula <span class="swap"><span class="sa">NDA</span><span class="sb">Nondisclosure Agreement</span></span></span></span><span class="h">0.4</span></li>
+              <li class="row"><span class="st"><span class="pill warn"><i class="ic ic-folder"></i><span class="pt">Check matter</span></span></span><span class="mid"><span class="mm ask"><span class="c"><b class="cmid">2207.001</b> Central Perk</span><span class="m">Real Estate</span></span><span class="why">2207.002 Trademark Licensing fits almost as well.</span><span class="nar">Lease renewal for the coffee house</span></span><span class="h">1.5</span></li>
+              <li class="row"><span class="st"><span class="pill warn"><i class="ic ic-clock"></i><span class="pt">Check hours</span></span><span class="pill warn xchip"><i class="ic ic-dots"></i><span class="pt">Missing details</span></span></span><span class="mid"><span class="c"><b class="cmid">5521.001</b> Luke&rsquo;s Diner</span><span class="m">General Corporate</span><span class="nar flag">Health inspection call <span class="add">regarding <i class="blank">what?</i><b class="cx gx" aria-hidden="true">×</b></span></span></span><span class="h ask" title="Rounded up from 0.75">0.8</span></li>
+              <li class="row"><span class="st"><span class="pill ok"><i class="ic ic-check"></i><span class="pt">Matched</span></span></span><span class="mid"><span class="c"><b class="cmid">6604.002</b> Pawnee Parks and Rec</span><span class="m">Permits</span><span class="nar">Call with Ron regarding the waffle vendor permit</span></span><span class="h">1.2</span></li>
             </ol>
           </div>
         </div>
       </div>
     </div>
   </section>
-
 
   <section class="try" id="try" aria-labelledby="try-title">
     <div class="wrap try-grid">
@@ -741,7 +728,6 @@ kbd.ik{font:600 13px/18px var(--font-ui);border-radius:4px;padding:0 6px;border:
       </div>
     </div>
   </section>
-
 
   <section class="faq" id="faq" aria-labelledby="faq-title">
     <div class="wrap faq-grid">
@@ -864,7 +850,6 @@ const LINKS = {
     }).observe(mark);
   }
 
-
   /* The logo in the first answer: hover or tap and the sand fades, leaving the X (ten) */
   const xfig = document.getElementById('xfig');
   if (xfig && !finePointer) document.getElementById('xhint').textContent = 'tap me';
@@ -910,11 +895,11 @@ const LINKS = {
   /* Try a question: the app's entry card. Each asked part has a note: in bold what Looks right does, under it why, and the other answers as links */
   const $ = (id) => document.getElementById(id);
   const QS = [
-    { rows: [['date', 'Date', 'Tue, Oct 27'], ['tk', 'Timekeeper', 'Elle Woods'], ['matter', 'Matter', '<b>2207.001</b><span>Central Perk</span><small>Real Estate</small>'], ['hours', 'Hours', '1.5'], ['narr', 'Narrative', 'Lease renewal for the coffee house']],
-      notes: [{ part: 'matter', says: 'Keeps 2207.001.', why: '2207.002 Trademark Licensing fits almost as well as 2207.001.', done: 'Keeps 2207.001.', change: true, key: 'M' }] },
-    { rows: [['date', 'Date', 'Tue, Oct 27'], ['tk', 'Timekeeper', 'Elle Woods'], ['matter', 'Matter', '<b>5521.001</b><span>Luke’s Diner</span><small>General Corporate</small>'], ['hours', 'Hours', '<i>0.8</i>'], ['narr', 'Narrative', 'Health inspection call regarding <span class="gapc" id="qgapc" role="button" tabindex="0" title="Type what it was about (A)">what?</span>']],
-      notes: [{ part: 'narr', says: 'Keeps it as written.', why: 'The note doesn\u2019t say what it was about.', done: 'Keeps it as written.', add: true }, { part: 'hours', says: 'Rounds 0.75 up to 0.8.', why: 'Your firm bills in tenths of an hour.', done: 'Rounds 0.75 up to 0.8.', alt: { label: 'Keep 0.75', key: 'H', done: 'Keeps 0.75.', fn: () => { $('ecard').querySelector('[data-part="hours"] .f-val .v').innerHTML = '0.75'; } } }] },
-    { rows: [['date', 'Date', 'Tue, Oct 27'], ['tk', 'Timekeeper', 'Elle Woods'], ['matter', 'Matter', '<b>3150.003</b><span>Krusty Krab</span><small>Trade Secrets</small>'], ['hours', 'Hours', '0.4'], ['narr', 'Narrative', 'Call with <span class="chip" id="qchip">Mr. Krabs<button type="button" class="cx" aria-label="Take out Mr. Krabs" title="Don’t add (Shift+N)">×</button></span> re secret formula Nondisclosure Agreement']],
+    { rows: [['date', 'Date', 'Oct 27'], ['tk', 'Timekeeper', 'Elle Woods'], ['matter', 'Matter', '<b>2207.001</b><span>Central Perk</span><small>Real Estate</small>'], ['hours', 'Hours', '1.5'], ['narr', 'Narrative', 'Lease renewal for the coffee house']],
+      notes: [{ part: 'matter', says: 'Keeps 2207.001.', why: '2207.002 Trademark Licensing fits almost as well.', done: 'Keeps 2207.001.', change: true, key: 'M' }] },
+    { rows: [['date', 'Date', 'Oct 27'], ['tk', 'Timekeeper', 'Elle Woods'], ['matter', 'Matter', '<b>5521.001</b><span>Luke’s Diner</span><small>General Corporate</small>'], ['hours', 'Hours', '<i>0.8</i>'], ['narr', 'Narrative', 'Health inspection call <span class="gapc" id="qgapc" role="button" tabindex="0" title="Type what it was about (A)">regarding what?</span>']],
+      notes: [{ part: 'narr', says: 'Keeps it as written.', why: 'The note doesn\u2019t say what it was about.', done: 'Keeps it as written.', add: true }, { part: 'hours', says: 'Rounds 0.75 up to 0.8.', why: 'Your firm bills in tenths of an hour.', done: 'Rounds 0.75 up to 0.8.', alt: { label: 'Keep 0.75', key: 'H', done: 'Saved as 0.75 hours.', fn: () => { $('ecard').querySelector('[data-part="hours"] .f-val .v').innerHTML = '0.75'; } } }] },
+    { rows: [['date', 'Date', 'Oct 27'], ['tk', 'Timekeeper', 'Elle Woods'], ['matter', 'Matter', '<b>3150.003</b><span>Krusty Krab</span><small>Trade Secrets</small>'], ['hours', 'Hours', '0.4'], ['narr', 'Narrative', 'Call with <span class="chip" id="qchip">Mr. Krabs<button type="button" class="cx" aria-label="Take out Mr. Krabs" title="Don’t add (Shift+N)">×</button></span> re secret formula Nondisclosure Agreement']],
       notes: [{ part: 'narr', says: 'Adds “Mr. Krabs”.', why: 'Used 6 times on this matter.', done: 'Adds “Mr. Krabs”.', alt: { label: 'Don’t add', key: 'N', done: 'Keeps it as written.', fn: () => foldChip() } }] }
   ];
   const card = { ask: $('qask'), done: $('qdone') };
@@ -931,6 +916,7 @@ const LINKS = {
   }
   function paint() {
     const q = QS[qi]; said = {};
+    const ec = $('ecard'); if (ec.classList.contains('is-settled')) { ec.style.transition = 'none'; ec.classList.remove('is-settled'); void ec.offsetWidth; ec.style.transition = ''; }   /* a new entry starts plain */
     paintCount(); $('qback').hidden = !hist.length;
     $('ecard').innerHTML = q.rows.map(([part, lab, val]) => {
       const ns = q.notes.filter((n) => n.part === part);
@@ -948,8 +934,12 @@ const LINKS = {
     });
     const gc = $('qgapc'); if (gc) { const n = q.notes.find((x) => x.add); gc.addEventListener('click', () => openGap(n)); gc.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); e.stopPropagation(); openGap(n); } }); }
     const cx = $('qchip') && $('qchip').querySelector('.cx'); if (cx) cx.addEventListener('click', () => { const n = q.notes[0]; n.alt.fn(); tick(n, n.alt.done); });
-    const alts = q.notes.filter((n) => n.alt).map((n) => '<span class="kg"><kbd>⇧' + n.alt.key + '</kbd>' + n.alt.label.toLowerCase() + '</span>');
-    const chg = q.notes.filter((n) => n.change).map((n) => '<span class="kg"><kbd>' + n.key + '</kbd>change</span>').concat(q.notes.filter((n) => n.add).map(() => '<span class="kg"><kbd>A</kbd>add detail</span>'));
+    paintKeys();
+  }
+  function paintKeys() {   /* the keys for what is still open on this entry, as in the app */
+    const open = QS[qi].notes.filter((n, i) => !said[i]);
+    const alts = open.filter((n) => n.alt).map((n) => '<span class="kg"><kbd>⇧' + n.alt.key + '</kbd>' + n.alt.label.toLowerCase() + '</span>');
+    const chg = open.filter((n) => n.change).map((n) => '<span class="kg"><kbd>' + n.key + '</kbd>change</span>').concat(open.filter((n) => n.add).map(() => '<span class="kg"><kbd>A</kbd>add detail</span>'));
     $('qkeys').innerHTML = '<span class="kr"><span class="kg"><kbd>Enter</kbd>looks right</span>' + chg.join('') + alts.join('') + '</span><span class="kr"><span class="kg"><kbd>P</kbd>pass</span>' + (hist.length ? '<span class="kg"><kbd>B</kbd>undo</span>' : '') + '</span>';
   }
   function markNote(n, text) {   /* one note answered: it turns into a ticked line saying what was done */
@@ -957,28 +947,48 @@ const LINKS = {
     said[i] = text || n.done;
     const el = $('ecard').querySelector('.fn[data-n="' + i + '"]');
     if (el) { el.classList.add('done'); el.querySelector('.tx').innerHTML = '<b>' + said[i] + '</b>'; el.querySelector('.acts').remove(); }
+    const f = el && el.closest('.f'); if (f && q.notes.every((x, j) => x.part !== n.part || said[j])) f.classList.add('settled');   /* its part is answered: no longer washed */
+    paintKeys();
     return true;
   }
-  function tick(n, text) {   /* answered in place: with every note answered, the card settles by itself */
+  function tick(n, text) {   /* one note answered, as in the app: it says what was done, its part goes plain and what changed eases in where it is.
+                               With every note answered, the card settles by itself after a moment to read it */
     if (busy || card.ask.hidden || !markNote(n, text)) return;
-    if (QS[qi].notes.every((x, j) => said[j])) settle();
+    dimIn();
+    if (QS[qi].notes.every((x, j) => said[j])) settle(true);
   }
+  const APP_EASE = 'cubic-bezier(.2,.7,.2,1)';   /* the app's ease and its base speed, 340ms */
+  function dimIn() { if (!reduce) card.ask.animate([{ opacity: .35, transform: 'translateY(4px)' }, { opacity: 1, transform: 'none' }], { duration: 340, easing: APP_EASE }); }
   function slideIn(dir) {   /* as in the app: the card stays solid and what is in it eases in from 24px */
     if (reduce) return;
-    card.ask.animate([{ opacity: 0, transform: 'translateX(' + 24 * dir + 'px)' }, { opacity: 1, transform: 'none' }], { duration: 340, easing: 'cubic-bezier(.2,.7,.2,1)' });
+    card.ask.animate([{ opacity: 0, transform: 'translateX(' + 24 * dir + 'px)' }, { opacity: 1, transform: 'none' }], { duration: 340, easing: APP_EASE });
   }
-  function settle() {   /* Looks right: every note ticks, the washes fade, and the next entry slides in */
+  let accepting = null;   /* while the card settles: Enter or Looks right skips ahead */
+  function settle(auto) {   /* Looks right, as in the app: each open note's dot ticks (60ms apart), then the notes fold away and the asked parts go plain,
+                               so for a beat the card shows the entry as it will be billed, with a soft green edge; then the next entry slides in.
+                               auto: every note was answered with a link, so its answers stay readable for 900ms first */
     if (busy || card.ask.hidden) return;
     busy = true;
-    QS[qi].notes.forEach((n) => markNote(n));
-    $('ecard').querySelectorAll('.f.ask').forEach((f) => f.classList.add('settled'));
+    const q = QS[qi], ec = $('ecard'), open = q.notes.map((n, i) => i).filter((i) => !said[i]), timers = [];
+    const wait = auto ? 900 : 0, ticked = wait + open.length * 60;
+    let gone = false;
     const go = () => {
+      if (gone) return; gone = true; timers.forEach(clearTimeout); accepting = null;
       hist.push({ qi, skipped }); qi += 1;
       if (qi >= QS.length) { finish(); busy = false; return; }
       paint(); slideIn(1);
       busy = false;
     };
-    setTimeout(go, 700);   /* as in the app: the check pops, the wash fades, then the next entry comes in */
+    if (reduce) { go(); return; }
+    accepting = { finish: go };
+    open.forEach((i, k) => timers.push(setTimeout(() => { const el = ec.querySelector('.fn[data-n="' + i + '"]'); if (el) el.classList.add('ok'); }, wait + k * 60)));
+    timers.push(setTimeout(() => {
+      ec.querySelectorAll('.fn').forEach((el) => { el.style.overflow = 'hidden'; el.animate([{ height: el.offsetHeight + 'px', opacity: 1, marginTop: '8px' }, { height: '0px', opacity: 0, marginTop: '0px' }], { duration: 340, easing: APP_EASE, fill: 'forwards' }); });
+      const gc = $('qgapc');   /* left as written: "regarding what?" folds out of the sentence */
+      if (gc) gc.animate([{ opacity: 1 }, { opacity: 0, offset: .55 }, { opacity: 0, fontSize: '0px', paddingLeft: '0px', paddingRight: '0px', borderWidth: '0px' }], { duration: 340, easing: 'cubic-bezier(.4,0,.2,1)', fill: 'forwards' });
+      ec.classList.add('is-settled'); ec.querySelectorAll('.f.ask').forEach((f) => f.classList.add('settled'));
+    }, ticked + 100));
+    timers.push(setTimeout(go, ticked + 100 + 340 + 260));   /* the entry as it will be billed stays a beat, so it registers (about 0.7s in all) */
   }
   function pass() {
     if (busy || card.ask.hidden) return; busy = true; skipped += 1;
@@ -1001,11 +1011,12 @@ const LINKS = {
   function openGap(n) {   /* Add it: a small box right where the detail goes; Enter saves it, Esc puts the chip back */
     const gc = $('qgapc'); if (!gc || busy || !n) return;
     const box = document.createElement('input'); box.className = 'gin'; box.type = 'text'; box.placeholder = 'what?'; box.setAttribute('aria-label', 'What it was about');
-    gc.replaceWith(box); box.focus({ preventScroll: true });
+    const wrap = document.createElement('span'); wrap.append('regarding ', box);   /* the box goes where "what?" was */
+    gc.replaceWith(wrap); box.focus({ preventScroll: true });
     let left = false;
     const done = (save) => { if (left) return; left = true; const v = box.value.trim();
       if (save && v) { const t = document.createElement('span'); t.className = 'gfill'; t.textContent = v; box.replaceWith(t); tick(n, 'Added \u201c' + v + '\u201d.'); }
-      else { box.replaceWith(gc); gc.focus({ preventScroll: true }); } };
+      else { wrap.replaceWith(gc); gc.focus({ preventScroll: true }); } };
     box.addEventListener('keydown', (e) => { e.stopPropagation(); if (e.key === 'Enter') { e.preventDefault(); done(true); } else if (e.key === 'Escape') { e.preventDefault(); done(false); } });
     box.addEventListener('blur', () => done(true));
   }
@@ -1016,7 +1027,7 @@ const LINKS = {
     qyes.focus({ preventScroll: true });
   }
   $('qback').addEventListener('click', back);
-  qyes.addEventListener('click', settle);
+  qyes.addEventListener('click', () => (accepting ? accepting.finish() : settle()));
   $('qskip').addEventListener('click', pass);
   const MATTERS = [
     ['2207.002', 'Central Perk', 'Trademark Licensing', '24%', 'near'], ['2207.003', 'Central Perk', 'Employment', '3%', 'near'],
@@ -1034,7 +1045,7 @@ const LINKS = {
     const take = (k) => {
       const m = MATTERS.find((x) => x[0] === k);
       row.querySelector('.f-val .v').innerHTML = '<b>' + m[0] + '</b><span>' + m[1] + '</span><small>' + m[2] + '</small>';
-      mp.remove(); tick(n, k === '2207.001' ? n.done : 'Saved as ' + m[0] + ' ' + m[2] + '.');
+      mp.remove(); tick(n, k === '2207.001' ? n.done : 'Saved as ' + m[0] + ' ' + m[1] + '.');
     };
     const draw = () => {
       const q = inp.value.trim().toLowerCase();
@@ -1075,7 +1086,7 @@ const LINKS = {
     if (k === 'm' && q.notes.some((x) => x.change)) { e.preventDefault(); openPicker(); return true; }
     if (k === 'a' && !e.shiftKey && q.notes.some((x) => x.add && !said[q.notes.indexOf(x)])) { e.preventDefault(); openGap(q.notes.find((x) => x.add)); return true; }
     if (k === 'p') { e.preventDefault(); pass(); return true; }
-    if (k === 'enter' && !(e.target.closest && e.target.closest('button, a'))) { e.preventDefault(); settle(); return true; }
+    if (k === 'enter' && !(e.target.closest && e.target.closest('button, a'))) { e.preventDefault(); if (accepting) accepting.finish(); else settle(); return true; }
     return false;
   };
   document.addEventListener('keydown', (e) => {
@@ -1090,7 +1101,6 @@ const LINKS = {
     qi = 0; skipped = 0; hist = []; card.done.hidden = true; card.ask.hidden = false; paint(); slideIn(-1);
     qyes.focus();
   });
-
 
   /* Nav: hide on the way down, show on the way up */
   const nav = $('nav');
@@ -1139,7 +1149,7 @@ const LINKS = {
 
   /* Split headings into words. The heading keeps its real text in an aria-label. */
   function split(el) {
-    el.setAttribute('aria-label', el.textContent.replace(/\s+/g, ' ').trim());
+    const said = document.createElement('span'); said.className = 'sr-only'; said.textContent = el.textContent.replace(/\s+/g, ' ').trim();   /* screen readers get the whole line once; the split words are hidden from them (an aria-label isn't allowed on a paragraph) */
     const walk = (node) => {
       [...node.childNodes].forEach((n) => {
         if (n.nodeType === 3) {
@@ -1154,12 +1164,13 @@ const LINKS = {
       });
     };
     walk(el);
+    el.prepend(said);
     return el.querySelectorAll('.wd');
   }
 
   /* The hero is laid out and shown by the small script right after it, before this one loads */
 
-  /* Hero notes lean toward the pointer (mouse only, paused when the hero is off screen) */
+  /* The hero's glow drifts with the pointer (mouse only, paused when the hero is off screen) */
   if (finePointer) {
     const glows = [...document.querySelectorAll('.hero-glow span')].map((el, k) => ({ d: k ? -60 : 90, x: gsap.quickTo(el, 'x', { duration: 2.4, ease: 'expo.out' }), y: gsap.quickTo(el, 'y', { duration: 2.4, ease: 'expo.out' }) }));
     let heroOn = true;
@@ -1172,18 +1183,124 @@ const LINKS = {
     window.addEventListener('pointermove', move, { passive: true });
   }
 
-
   /* Headings rise word by word, once */
   document.querySelectorAll('.split-me').forEach((h) => {
     if (h.closest('.story')) return;
     const words = split(h);
-    gsap.from(words, { yPercent: 60, opacity: 0, duration: .9, ease: 'expo.out', stagger: .05, scrollTrigger: { trigger: h, start: 'top 85%', once: true } });
+    gsap.from(words, { yPercent: 60, opacity: 0, duration: .9, ease: 'expo.out', stagger: .05, scrollTrigger: { trigger: h, start: window.innerWidth <= 720 ? 'top bottom' : 'top 85%', once: true } });   /* on a phone, as soon as it comes on screen: a hidden heading read as a blank gap */
   });
   /* the handwritten aside arrives after the closing heading has risen in */
   const aside = document.querySelector('.close .aside');
   if (aside) gsap.from(aside, { opacity: 0, y: 8, duration: .9, ease: 'expo.out', delay: .6, scrollTrigger: { trigger: '#close-title', start: 'top 85%', once: true } });
 
   /* The story pins on wide screens and plays its three beats in place */
+  /* the step iv pill holds both labels; this is how wide it is with one of them showing ('.pa' Matched, '.pb' Words added) */
+  const pillW = (sel) => { const p = document.querySelector('.swap-pill'); if (!p) return 'auto'; const cs = getComputedStyle(p);
+    return p.querySelector(sel).getBoundingClientRect().width + parseFloat(cs.paddingLeft) + parseFloat(cs.paddingRight); };
+  /* Step iv, the same on every screen size: an entry never goes blank or jumps. First the row opens and anything that
+     will sit on a new line drops straight down into the room; then the words slide along their lines while added words are
+     written in, left to right, into the gap as it opens; last, a short form ("NDA", "agmt") is written over by its long form.
+     render(p) works out every frame from how far along step iv is (0 to 1), so scrolling back retraces it exactly */
+  const stepFour = (rows) => {
+  const grow = [...rows].filter((r) => r.querySelector('.swap, .add, .xchip'));
+  const shown = (r, sel, on) => r.querySelectorAll(sel).forEach((el) => { el.style.display = on; });
+  const seen = (r, on) => r.querySelectorAll('.xchip').forEach((el) => { el.style.visibility = on ? '' : 'hidden'; });   /* the extra pill keeps its place and is only hidden: Safari redrew it with its icon after the words when it was taken out and put back */
+  const asMatched = (r) => { shown(r, '.swap .sa', 'inline'); shown(r, '.swap .sb, .add', 'none'); seen(r, false); };
+  const asChecked = (r) => { shown(r, '.swap .sa', 'none'); shown(r, '.swap .sb', 'inline'); shown(r, '.add', 'inline-block'); seen(r, true); };
+  const boxWords = (host, into) => [...host.childNodes].forEach((t) => {   /* each word gets its own box, so it can move or be written in */
+    if (t.nodeType !== 3 || !t.data.trim()) return;
+    const frag = document.createDocumentFragment();
+    t.data.split(/(\s+)/).forEach((s) => {
+      if (!s) return;
+      if (/^\s+$/.test(s)) { frag.append(s); return; }
+      const w = document.createElement('span'); w.className = 'wd'; w.style.display = 'inline-block'; w.textContent = s; frag.append(w); into.push(w);
+    });
+    t.replaceWith(frag);
+  });
+  grow.forEach((r) => {
+    const n = r.querySelector('.nar');
+    r._n = n; r._k = []; r._w = []; r._ins = []; r._x = [...r.querySelectorAll('.xchip')];
+    if (!n) return;
+    n.style.position = 'relative';
+    boxWords(n, r._k);
+    r.querySelectorAll('.add').forEach((a) => r._ins.push({ units: [a], open: true }));
+    r.querySelectorAll('.swap').forEach((sw) => {
+      const sa = sw.querySelector('.sa'), sb = sw.querySelector('.sb'), units = [];
+      boxWords(sb, units); r._w.push(...units);
+      const g = sa.cloneNode(true); g.className = 'sa-ghost'; g.setAttribute('aria-hidden', 'true');   /* stands in for the short form */
+      Object.assign(g.style, { position: 'absolute', left: '0', top: '0', whiteSpace: 'nowrap', pointerEvents: 'none', display: 'none' });
+      n.append(g); g._sa = sa;
+      r._ins.push({ units, g });
+    });
+  });
+  const F = 18, P = 10, GAP = 4;   /* the soft edge of the pen writing into a gap, and over a short form; about a space; in px */
+  const ink = (el, u, f) => { const v = u - f >= el._wd ? '' : `linear-gradient(90deg,#000 ${(u - f).toFixed(1)}px,transparent ${u.toFixed(1)}px)`; el.style.webkitMaskImage = v; el.style.maskImage = v; };
+  const unink = (el, a, u, f) => {   /* hides what the long form has written over, from where it starts (a) to the pen (a + u); across the pen's soft edge one fades as the other comes in */
+    const v = u <= 0 ? '' : `linear-gradient(90deg,#000 ${a.toFixed(1)}px,transparent ${a.toFixed(1)}px,transparent ${(a + u - f).toFixed(1)}px,#000 ${(a + u).toFixed(1)}px)`;
+    el.style.webkitMaskImage = v; el.style.maskImage = v; };
+  const rel = (el, r) => { const a = el.getClientRects()[0] || el.getBoundingClientRect(), b = r.getBoundingClientRect(); return { x: a.left - b.left, y: a.top - b.top }; };
+  const rest = (r) => {   /* at either end a row lays itself out: nothing held, nothing moved, nothing masked */
+    r.style.height = '';
+    r._k.forEach((w) => { w.style.transform = ''; });
+    r._ins.forEach((ins) => { ins.units.forEach((el) => { el.style.webkitMaskImage = ''; el.style.maskImage = ''; }); if (ins.g) ins.g.style.display = 'none'; });
+    r._x.forEach((el) => { el.style.opacity = ''; el.style.transform = ''; });
+  };
+  const measure = () => grow.forEach((r) => {
+    rest(r);
+    asMatched(r); r._h0 = r.offsetHeight;
+    r._k.forEach((w) => { w._b = rel(w, r); });
+    r._ins.forEach((ins) => { if (ins.g) ins.g._b = rel(ins.g._sa, r); });
+    asChecked(r); r._h1 = r.offsetHeight;
+    r._k.forEach((w) => { w._a = rel(w, r); });
+    if (r._n) r._na = rel(r._n, r);
+    r._ins.forEach((ins) => {
+      let o = 0;
+      ins.units.forEach((el) => { el._wd = el.getBoundingClientRect().width; el._o = o; o += el._wd; });
+      ins.W = o; ins.t = ins.units.length ? rel(ins.units[0], r) : { x: 0, y: 0 };
+      const g = ins.g; if (!g) return;
+      Object.assign(g.style, { display: 'block', transform: 'none' });   /* where the stand-in's own letters sit inside its box */
+      const rg = document.createRange(); rg.selectNodeContents(g); const t = rg.getClientRects()[0], b = g.getBoundingClientRect();
+      g._o = t ? { x: t.left - b.left, y: t.top - b.top } : { x: 0, y: 0 }; g._wd = b.width;
+      g.style.display = 'none';
+    });
+    asMatched(r); r._at = 'b';
+  });
+  const seg = (p, a, b) => Math.min(1, Math.max(0, (p - a) / (b - a)));
+  const io = (k) => (k < .5 ? 2 * k * k : 1 - Math.pow(-2 * k + 2, 2) / 2);   /* eases in and out */
+  const render = (p) => grow.forEach((r) => {
+    if (p <= 0) { if (r._at !== 'b') { rest(r); asMatched(r); r._at = 'b'; } return; }
+    if (r._at === 'b') asChecked(r);
+    if (p >= 1) { if (r._at !== 'a') { rest(r); r._at = 'a'; } return; }
+    r._at = 'm';
+    const my = io(seg(p, .02, .28)), mx = io(seg(p, .2, .58)), s = io(seg(p, .56, .92));
+    r.style.height = (r._h0 + (r._h1 - r._h0) * my).toFixed(2) + 'px';   /* the row opens; nothing is clipped */
+    r._k.forEach((w) => { w.style.transform = `translate(${((w._b.x - w._a.x) * (1 - mx)).toFixed(2)}px,${((w._b.y - w._a.y) * (1 - my)).toFixed(2)}px)`; });
+    r._ins.forEach((ins) => {
+      if (ins.open) {   /* written into the gap as it opens, never ahead of the words being pushed along */
+        const u = mx * (ins.W + GAP), f = Math.max(.5, F * (1 - mx));
+        ins.units.forEach((el) => ink(el, u - el._o, f));
+        return;
+      }
+      const u = s * (ins.W + P);   /* how far the pen has written, along the words in reading order */
+      ins.units.forEach((el) => ink(el, u - el._o, P));
+      const g = ins.g; if (!g) return;
+      const x = g._b.x + (ins.t.x - g._b.x) * mx, y = g._b.y + (ins.t.y - g._b.y) * my, a = ins.t.x - x;
+      if (u > 0 && a <= 0 && a + u - P >= g._wd) { g.style.display = 'none'; return; }
+      g.style.display = 'block';
+      g.style.transform = `translate(${(x - r._na.x - g._o.x).toFixed(2)}px,${(y - r._na.y - g._o.y).toFixed(2)}px)`;
+      unink(g, a, u, P);
+    });
+    const xk = io(seg(p, .55, .9));
+    r._x.forEach((el) => { el.style.opacity = xk.toFixed(3); el.style.transform = `scale(${(.9 + .1 * xk).toFixed(3)})`; });
+  });
+    const undo = () => grow.forEach((r) => {   /* hands the entries back as they were written in the page */
+      rest(r);
+      r._ins.forEach((ins) => { if (ins.g) ins.g.remove(); });
+      r._k.concat(r._w).forEach((w) => { const host = w.parentNode; w.replaceWith(w.textContent); if (host) host.normalize(); });
+      if (r._n) { r._n.style.position = ''; r._n.normalize(); }
+    });
+    return { grow, measure, render, undo };
+  };
   const mm = gsap.matchMedia();
   mm.add('(min-width: 1101px)', () => {
     const story = document.querySelector('.story');
@@ -1193,29 +1310,15 @@ const LINKS = {
     const rows = story.querySelectorAll('.row');
     const pills = story.querySelectorAll('.pill i');
     gsap.set('.b2, .b3, .b4', { autoAlpha: 0, y: 24 });
-    const nars = story.querySelectorAll('.nar.flag'), adds = story.querySelectorAll('.add');
-    gsap.set(adds, { display: 'none' });
-    gsap.set(nars, { backgroundColor: 'rgba(245,236,214,0)' });
-    gsap.set('.swap-pill', { backgroundColor: '#F4F3F6' });
-    gsap.set('.swap .sa', { display: 'inline' });
-    gsap.set('.swap .sb', { display: 'none' });
-    gsap.set('.swap-pill .pa', { opacity: 1 });
-    gsap.set('.swap-pill .pb', { opacity: 0 });
+    gsap.set('.swap-pill', { backgroundColor: 'rgba(245,236,214,0)', width: () => pillW('.pa') });   /* as wide as Matched, not as Words added */
+    gsap.set('.swap-pill .pa', { opacity: 1, y: 0, force3D: false });
+    gsap.set('.swap-pill .pb', { opacity: 0, y: 4, force3D: false });
     gsap.set(sweeps, { '--hl': 0 });
     gsap.set(rows, { autoAlpha: 0, y: 24 });
     gsap.set(pills, { scale: 0 });
-    gsap.set('.xchip', { display: 'none' });
-    const grow = [...rows].filter((r) => r.querySelector('.swap, .add, .xchip'));   /* rows that get longer in step iv */
-    const measure = () => grow.forEach((r) => {   /* each row's height before and after step iv, so the space can open smoothly */
-      const shown = (sel, on) => r.querySelectorAll(sel).forEach((el) => { el.style.display = on; });
-      r.style.height = ''; r._h0 = r.offsetHeight;
-      shown('.swap .sa', 'none'); shown('.swap .sb', 'inline'); shown('.add', 'inline-block'); shown('.xchip', 'inline-flex');
-      r.querySelectorAll('.add').forEach((a) => { a.style.width = ''; a._w = a.offsetWidth; });
-      r._h1 = r.offsetHeight;
-      shown('.swap .sa', 'inline'); shown('.swap .sb, .add, .xchip', 'none');
-    });
-    measure();
-    ScrollTrigger.addEventListener('refreshInit', () => { gsap.set(grow, { clearProps: 'height' }); gsap.set(adds, { clearProps: 'width' }); measure(); });
+    const iv = stepFour(rows);   /* the entries change in place in step iv: see stepAt below */
+    iv.measure();
+    ScrollTrigger.addEventListener('refreshInit', iv.measure);
     const steps = story.querySelectorAll('.story-steps span');
     let at = [];
     const tl = gsap.timeline({ defaults: { ease: 'power2.inOut' }, scrollTrigger: { trigger: story, start: 'top top', end: '+=3600', pin: '.story-pin', scrub: 0.8, refreshPriority: 1, invalidateOnRefresh: true,
@@ -1234,37 +1337,30 @@ const LINKS = {
       .to({}, { duration: .5 })
       .to('.b3', { autoAlpha: 0, y: -24, duration: .5 }, 'check')
       .to('.b4', { autoAlpha: 1, y: 0, duration: .5 }, 'check+=.3')
-      .to('.swap .sa', { opacity: 0, duration: .25, ease: 'power1.in' }, 'check+=.3')             /* fade out, then make room, then fade in */
-      .fromTo(grow, { height: (i, r) => r._h0, overflow: 'hidden' }, { height: (i, r) => r._h1, duration: .6, ease: 'power2.inOut', immediateRender: false }, 'check+=.5')
-      .set(grow, { height: 'auto', overflow: 'visible' }, 'check+=1.1')
-      .set('.swap .sa', { display: 'none' }, 'check+=.55')
-      .set('.swap .sb', { display: 'inline', opacity: 0 }, 'check+=.55')
-      .set(adds, { display: 'inline-block', opacity: 0, width: 0 }, 'check+=.5')
-      .to(adds, { width: (i, a) => a._w, duration: .6, ease: 'power2.inOut' }, 'check+=.5')   /* the words after it slide over */
-      .to('.swap .sb', { opacity: 1, duration: .45, ease: 'power1.out' }, 'check+=.65')
-      .to(adds, { opacity: 1, duration: .5, ease: 'power1.out' }, 'check+=.9')
-      .to(nars, { backgroundColor: 'rgba(245,236,214,1)', duration: .6, stagger: .14 }, 'check+=.7')
-      .to('.swap-pill', { backgroundColor: '#F5ECD6', duration: .5 }, 'check+=.8')
-      .to('.swap-pill .pa', { opacity: 0, duration: .35, stagger: .08 }, 'check+=.8')
-      .to('.swap-pill .pb', { opacity: 1, duration: .45, stagger: .08 }, 'check+=1')
-      .set('.xchip', { display: 'inline-flex', opacity: 0, scale: .9 }, 'check+=1')
-      .to('.xchip', { opacity: 1, scale: 1, duration: .5, ease: 'power2.out' }, 'check+=1.05')
+      .to({}, { duration: 1.25 }, 'check+=.3')   /* the entries change here, worked out by stepAt below */
+      .to('.swap-pill', { backgroundColor: '#F5ECD6', width: () => pillW('.pb'), duration: .4, ease: 'power1.inOut' }, 'check+=.625')
+      .fromTo('.swap-pill .pa', { opacity: 1, y: 0 }, { opacity: 0, y: -4, duration: .18, ease: 'power1.in', force3D: false, immediateRender: false }, 'check+=.66')   /* the pill's label changes as it widens: the old one lifts away, the new one settles in */
+      .fromTo('.swap-pill .pb', { opacity: 0, y: 4 }, { opacity: 1, y: 0, duration: .26, ease: 'power1.out', force3D: false, immediateRender: false }, 'check+=.86')
       .to({}, { duration: .5 });
     at = ['read', 'match', 'check'].map((l) => (tl.labels[l] + .25) / tl.duration());
     /* The highlights are set from the timeline's own time, not tweened: a tweened CSS variable was left at its end value
        after each ScrollTrigger refresh, so the notes showed highlighted in step i */
     const sweepAt = () => { const t = tl.time() - (tl.labels.read + .4);
       sweeps.forEach((el, i) => { const k = Math.min(1, Math.max(0, (t - i * .1) / .5)); el.style.setProperty('--hl', (1 - (1 - k) * (1 - k)).toFixed(3)); }); };
-    tl.eventCallback('onUpdate', sweepAt);
-    ScrollTrigger.addEventListener('refresh', sweepAt);
-    sweepAt();
+    const stepAt = () => iv.render((tl.time() - (tl.labels.check + .3)) / 1.25);
+    const both = () => { sweepAt(); stepAt(); };
+    tl.eventCallback('onUpdate', both);
+    ScrollTrigger.addEventListener('refresh', both);
+    both();
     steps.forEach((el, n) => { el.onclick = () => {   /* the i to iv marker jumps to that part of the story */
-      const st = tl.scrollTrigger, p = n ? (tl.labels[['read', 'match', 'check'][n - 1]] + 1) / tl.duration() : 0;
+      const st = tl.scrollTrigger, p = n ? (tl.labels[['read', 'match', 'check'][n - 1]] + (n === 3 ? 1.6 : 1)) / tl.duration() : 0;   /* iv lands once the entries have finished changing */
       lenis.scrollTo(st.start + p * (st.end - st.start), { duration: 1.2 });
     }; });
     return () => {
       story.classList.remove('is-pinned');
-      ScrollTrigger.removeEventListener('refresh', sweepAt);
+      ScrollTrigger.removeEventListener('refresh', both);
+      ScrollTrigger.removeEventListener('refreshInit', iv.measure);
+      iv.undo();
       gsap.set('.b1, .b2, .b3, .b4, .sn, .sn .note, .hlt, .row, .xchip, .pill i, .nar, .add, .swap > span, .swap-pill, .swap-pill > span', { clearProps: 'all' });
     };
   });
@@ -1279,10 +1375,46 @@ const LINKS = {
     ro.observe(document.querySelector('.try-stage'));
     return () => ro.disconnect();
   });
+  /* Narrower than 1101px the story isn't pinned: it scrolls as one column, and plays the same beats as each part comes on screen.
+     Each step rises in; the highlights sweep across a note as it nears the middle (step ii, read); the entries rise in with their
+     status pills (step iii, match); then, as the entries reach the middle, the changes from step iv happen in place */
   mm.add('(max-width: 1100px)', () => {
-    const words = [];
-    document.querySelectorAll('.story .row').forEach((r) => words.push(r));
-    gsap.from(words, { y: 24, opacity: 0, duration: .7, ease: 'expo.out', stagger: .06, scrollTrigger: { trigger: '.rows', start: 'top 85%', once: true } });
+    const story = document.querySelector('.story');
+    const both = { toggleActions: 'play none none reverse' };   /* forward on the way down, back on the way up */
+    story.querySelectorAll('.beat').forEach((b) => gsap.from(b, { y: 28, autoAlpha: 0, duration: .9, ease: 'expo.out', scrollTrigger: { trigger: b, start: 'top 92%', ...both } }));
+    story.querySelectorAll('.sn').forEach((sn) => {
+      gsap.from(sn, { y: 32, autoAlpha: 0, duration: .9, ease: 'expo.out', scrollTrigger: { trigger: sn, start: 'top 95%', ...both } });
+      const marks = sn.querySelectorAll('.hlt');
+      if (marks.length) gsap.fromTo(marks, { '--hl': 0 }, { '--hl': 1, duration: .6, stagger: .12, ease: 'none', scrollTrigger: { trigger: sn, start: 'top 75%', end: 'top 50%', scrub: .5 } });   /* read as it rises, unread as it sinks */
+    });
+    const rows = story.querySelectorAll('.row'), pills = story.querySelectorAll('.pill i');
+    gsap.timeline({ scrollTrigger: { trigger: '.rows', start: 'top 85%', ...both } })
+      .from(rows, { y: 24, opacity: 0, duration: .7, ease: 'expo.out', stagger: .06 }, 0)
+      .from(pills, { scale: 0, duration: .3, stagger: .08, ease: 'back.out(3)' }, .3);
+    /* step iv follows the finger, both ways (see stepFour) */
+    const iv = stepFour(rows), { grow, measure, render } = iv;
+    gsap.set('.swap-pill', { backgroundColor: 'rgba(245,236,214,0)', width: () => pillW('.pa') });
+    gsap.set('.swap-pill .pa', { opacity: 1, y: 0, force3D: false });
+    gsap.set('.swap-pill .pb', { opacity: 0, y: 4, force3D: false });
+    measure();
+    let tl = null;
+    const remeasure = () => { measure(); };
+    const redraw = () => { if (tl) render(tl.progress()); };
+    ScrollTrigger.addEventListener('refreshInit', remeasure);
+    ScrollTrigger.addEventListener('refresh', redraw);
+    tl = gsap.timeline({ defaults: { ease: 'none' }, onUpdate: redraw, scrollTrigger: grow.length ? { trigger: grow[0], start: 'top 72%', end: 'top 40%', scrub: .5, invalidateOnRefresh: true } : null })
+      .to({}, { duration: 1 }, 0)
+      .to('.swap-pill', { backgroundColor: '#F5ECD6', width: () => pillW('.pb'), duration: .32, ease: 'power1.inOut' }, .26)
+      .fromTo('.swap-pill .pa', { opacity: 1, y: 0 }, { opacity: 0, y: -4, duration: .18, ease: 'power1.in', force3D: false, immediateRender: false }, .29)   /* the pill's label changes as it widens: the old one lifts away, the new one settles in */
+      .fromTo('.swap-pill .pb', { opacity: 0, y: 4 }, { opacity: 1, y: 0, duration: .2, ease: 'power1.out', force3D: false, immediateRender: false }, .48);
+    render(0);
+    return () => {   /* back to a wide window: hand everything back to the pinned story */
+      ScrollTrigger.removeEventListener('refreshInit', remeasure);
+      ScrollTrigger.removeEventListener('refresh', redraw);
+      tl.kill();
+      iv.undo();
+      gsap.set('.beat, .sn, .hlt, .row, .xchip, .pill i, .nar, .add, .swap > span, .swap-pill, .swap-pill > span', { clearProps: 'all' });
+    };
   });
 
   /* Mission: each word fills in as it scrolls through */
@@ -1298,8 +1430,7 @@ const LINKS = {
   const mound = $('moundPath'), heroMark = document.getElementById('hero-mark');
   let peakX = 50;
   const shapeMound = (p) => {
-    const h = 24 * (1 - p) + 1, x = peakX;
-    mound.setAttribute('d', 'M0 40V30C' + (x * .55).toFixed(1) + ' 30 ' + (x - 12).toFixed(1) + ' ' + (30 - h).toFixed(1) + ' ' + x.toFixed(1) + ' ' + (30 - h).toFixed(1) + 'S' + (x + (100 - x) * .45).toFixed(1) + ' 30 100 30V40Z');
+    mound.setAttribute('d', window.moundD(peakX, p));
     if (heroMark) heroMark.style.setProperty('--sand', Math.max(0, 1 - p * 1.6).toFixed(3));
   };
   ScrollTrigger.create({ trigger: '.mission', start: 'top bottom', end: 'top top', scrub: true,

@@ -24,6 +24,7 @@ phase2_model/data/outputs/*
 *.[jJ][pP][gG]
 *.[jJ][pP][eE][gG]
 !matching/frontend/landing/team/*.jpg
+!matching/frontend/landing/og.jpg
 *.[hH][eE][iI][cCfF]
 *.[mM]4[aA]
 *.mp3
